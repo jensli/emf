@@ -201,6 +201,7 @@ public interface GenOperation extends GenTypedElement
   String getParametersArray(GenClass context);
 
   String getImportedMetaType();
+  String getRawImportedMetaType();
 
   GenPackage getGenPackage();
 

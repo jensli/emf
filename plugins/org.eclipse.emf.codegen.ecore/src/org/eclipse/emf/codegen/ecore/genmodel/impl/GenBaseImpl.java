@@ -1053,7 +1053,7 @@ public abstract class GenBaseImpl extends EObjectImpl implements GenBase
     String listType = getEffectiveListType();
     if (getEffectiveComplianceLevel().getValue() >= GenJDKLevel.JDK50)
     {
-      String itemType = getType(context, eGenericType, true);
+      String itemType = getType(context, eGenericType, true, false);
       listType += "<" + itemType + ">";
     }
     return listType;
@@ -1350,9 +1350,9 @@ public abstract class GenBaseImpl extends EObjectImpl implements GenBase
    * object names will be returned instead of primitive names (e.g. Integer
    * instead of int).
    */
-  protected String getImportedType(GenClass context, EGenericType eGenericType, boolean primitiveAsObject)
+  protected String getImportedType(GenClass context, EGenericType eGenericType, boolean primitiveAsObject, boolean useWildcardParams)
   {
-    String t = getType(context, eGenericType, primitiveAsObject);
+    String t = getType(context, eGenericType, primitiveAsObject, useWildcardParams);
     return !primitiveAsObject && isPrimitiveType(eGenericType.getERawType()) ? t : getGenModel().getImportedName(t);
   }
 
@@ -1362,7 +1362,7 @@ public abstract class GenBaseImpl extends EObjectImpl implements GenBase
    * be returned instead of primitive names (e.g. java.lang.Integer instead
    * of int).
    */
-  protected String getType(GenClass context, EGenericType eGenericType, boolean primitiveAsObject)
+  protected String getType(GenClass context, EGenericType eGenericType, boolean primitiveAsObject, boolean useWildcardParams)
   {
     if (getEffectiveComplianceLevel().getValue() >= GenJDKLevel.JDK50)
     {
@@ -3355,6 +3355,7 @@ public abstract class GenBaseImpl extends EObjectImpl implements GenBase
     ETypeParameter eTypeParameter = eGenericType.getETypeParameter();
     if (eTypeParameter != null)
     {
+      // TODO j: Make this method emit wildcard args!
       if (context != null)
       {
         for (EGenericType eGenericSuperType : context.getEcoreClass().getEAllGenericSuperTypes())
@@ -3625,7 +3626,7 @@ public abstract class GenBaseImpl extends EObjectImpl implements GenBase
   /**
    * @since 2.9
    */
-  protected String addPackagePrefix(String prefix, String name)
+  protected static String addPackagePrefix(String prefix, String name)
   {
     return !isBlank(prefix) ? prefix + "." + name : name;
   }
@@ -3633,7 +3634,7 @@ public abstract class GenBaseImpl extends EObjectImpl implements GenBase
   /**
    * @since 2.9
    */
-  protected String addPackageSuffix(String name, String suffix)
+  protected static String addPackageSuffix(String name, String suffix)
   {
     return !isBlank(suffix) ? name + "." + suffix : name;
   }

@@ -356,8 +356,7 @@ public class GenEnumImpl extends GenDataTypeImpl implements GenEnum
     return result != null ? result : getEcoreEnum();
   }
 
-  @Override
-  public String getImportedMetaType()
+  public String getRawImportedMetaType()
   {
     return getGenModel().getImportedName("org.eclipse.emf.ecore.EEnum");
   }

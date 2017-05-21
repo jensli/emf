@@ -1019,15 +1019,27 @@ public class GenFeatureImpl extends GenTypedElementImpl implements GenFeature
     String importedName = getImportedMetaType();
     return importedName.substring(importedName.lastIndexOf(".") + 1);
   }
+  
+  public String getRawImportedMetaType()
+  {
+    return getGenModel().getImportedName(getEcoreFeature() instanceof EReference
+      ? "org.eclipse.emf.ecore.EReference"
+      : "org.eclipse.emf.ecore.EAttribute");
+  }
 
   public String getImportedMetaType()
   {
-    if (getEcoreFeature() instanceof EReference)
-      return getGenModel().getImportedName("org.eclipse.emf.ecore.EReference");
-    else
-      return getGenModel().getImportedName("org.eclipse.emf.ecore.EAttribute");
-  }
+    if (getGenModel().useGenerics()) {
+      String containerType = getGenClass().isImplementingEobject()
+        ? this.getGenClass().getImportedWildcardObjectInstanceClassName() : "?";
 
+      return getRawImportedMetaType() + "<" + containerType + ", "
+        + this.getTypeGenClassifier().getImportedWildcardObjectInstanceClassName() + ">";
+    } else {
+      return getRawImportedMetaType();
+    }
+  }
+  
   public String getFeatureKind()
   {
     String kind = 

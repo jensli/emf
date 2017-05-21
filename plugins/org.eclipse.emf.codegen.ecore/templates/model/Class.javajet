@@ -2479,9 +2479,10 @@ if (index != -1) { head = typeName.substring(0, index); tail = "<code>" + CodeGe
 		<%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%> container = eContainer();
 		return container == null ? null : (<%=eMapType%>)container.eGet(eContainmentFeature());
 	}
-
 <%}%>
 <%@ include file="Class/insert.javajetinc" fail="silent" %>
 } //<%=isInterface ? " " + genClass.getInterfaceName() : genClass.getClassName()%>
 <%// TODO fix the space above%>
 <%genModel.emitSortedImports();%>
+
+

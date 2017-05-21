@@ -363,12 +363,12 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
     return ecoreClass;
   }
 
-  @Override
-  public String getImportedMetaType()
+  public String getRawImportedMetaType()
   {
     return getGenModel().getImportedName("org.eclipse.emf.ecore.EClass");
   }
 
+  
   public String getInterfaceName()
   {
     return getGenModel().isSuppressInterfaces() ? getName() : getInterfaceName(getName());
@@ -917,7 +917,11 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
     }
     return result;
   }
-
+  
+  public String getImportedWildcardObjectInstanceClassName() {
+    return getImportedWildcardInstanceClassName();
+  }
+  
   public String getInterfaceWildTypeArguments()
   {
     return getTypeArguments(true, true);

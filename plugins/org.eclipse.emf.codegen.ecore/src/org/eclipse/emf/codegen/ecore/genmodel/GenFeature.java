@@ -341,8 +341,11 @@ public interface GenFeature extends GenTypedElement
   String getQualifiedFeatureAccessorName(); // returns the name of the feature get method in the package interface (e.g. Xyz.eINSTANCE.getCompany_Name)
   String getQualifiedFeatureAccessor();
   
-  String getMetaType(); // this returns either "EAttribute" or "EReference"
-  String getImportedMetaType();
+  // TODO j: getMetaType, this is unnessecary isn't is? Name never has '.' in it?
+  // String getMetaType(); 
+  String getImportedMetaType(); // this returns either "EAttribute" or "EReference"
+  String getRawImportedMetaType();
+  
   String getFeatureKind(); // this returns either "attribute", "attribute list", "reference", or "reference list"
   boolean isReferenceType();
 

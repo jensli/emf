@@ -65,15 +65,29 @@ public interface GenClassifier extends GenBase
   EList<GenTypeParameter> getGenTypeParameters();
 
   EClassifier getEcoreClassifier();
+  
+  /**
+   * @return The imported name of the metatype, that is "EClass" or "EDataType", etc. It includes type parameters.  
+   */
   String getImportedMetaType();
-  String getMetaType();
+  
+  /**
+   * @return The imported name of the metatype, that is "EClass" or "EDataType", etc. It excludes type parameters.  
+   */
+  String getRawImportedMetaType();
+  
+  // TODO j: getMetaType, this is unnessecary isn't is? Name never has '.' in it?
+  // String getMetaType();
 
   String getName();
   String getClassifierAccessorName();
   String getQualifiedClassifierAccessor();
 
   String getSafeUncapName();
-
+  
+  /**
+   * The name of the Java type which this classifier represents.
+   */
   String getImportedInstanceClassName();
   
   /**
@@ -92,9 +106,13 @@ public interface GenClassifier extends GenBase
   String getImportedParameterizedInstanceClassName();
 
   /**
+   * The name of the Java type of instances of the model class. With wildcard type arguments (if any).
    * @since 2.3
    */
   String getImportedWildcardInstanceClassName();
+
+  // CHANGE: Added on this level
+  String getImportedWildcardObjectInstanceClassName();
 
   /**
    * @since 2.3
@@ -111,6 +129,9 @@ public interface GenClassifier extends GenBase
    */
   String getFormattedName();
 
+  /**
+   * The name of the classifier field in a generated package implementation. 
+   */
   String getClassifierInstanceName();
   String getClassifierID();
 
@@ -136,4 +157,7 @@ public interface GenClassifier extends GenBase
    * @since 2.6
    */
   String getValidationDelegate(String constraint);
+  
+  // CHANGE j: Added implementsEobject
+  boolean isImplementingEobject();
 }

@@ -83,7 +83,7 @@ public interface GenTypedElement extends GenBase
    * This returns the feature type, either primitive (e.g. "int") or imported class name (e.g. "String", "EList", or "Company").
    * @since 2.3
    */
-  String getImportedType(GenClass context); 
+  String getImportedType(GenClass context);
 
   /**
    * Use {@link #getImportedType(GenClass)} with either <code>null</code> for erasing type parameter references 
@@ -100,6 +100,9 @@ public interface GenTypedElement extends GenBase
    * @since 2.3
    */
   String getObjectType(GenClass context); 
+
+  // TODO j: New interface method: getWildcardObjectType
+  String getWildcardObjectType(GenClass context); 
 
   /**
    * This returns the qualified name of the feature type or, if primitive, of the wrapper class (e.g. "java.lang.Integer").

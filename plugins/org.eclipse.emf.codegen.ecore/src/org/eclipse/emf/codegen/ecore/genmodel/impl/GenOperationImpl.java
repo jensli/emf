@@ -705,6 +705,19 @@ public class GenOperationImpl extends GenTypedElementImpl implements GenOperatio
     }
   }
 
+  public String getRawImportedMetaType()
+  {
+    if (getGenModel().useGenerics()) {
+      String containerType = getGenClass().isImplementingEobject()
+        ? this.getGenClass().getImportedWildcardObjectInstanceClassName() : "?";
+
+      return getRawImportedMetaType() + "<" + containerType + ", "
+        + this.getTypeGenClassifier().getImportedWildcardObjectInstanceClassName() + ">";
+    } else {
+      return getRawImportedMetaType();
+    }
+  }
+
   public String getImportedMetaType()
   {
     return getGenModel().getImportedName("org.eclipse.emf.ecore.EOperation");
@@ -1031,7 +1044,7 @@ public class GenOperationImpl extends GenTypedElementImpl implements GenOperatio
       for (Iterator<EGenericType> i = exceptions.iterator(); i.hasNext(); )
       {
         EGenericType exception = i.next();
-        result.append(getImportedType(context, exception, false));
+        result.append(getImportedType(context, exception, false, false));
         if (i.hasNext())
         {
           result.append(", ");

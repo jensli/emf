@@ -157,7 +157,7 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
     {
       return "java.util.List<" + getType(context, getListDataType().getEcoreDataType(), true) + ">";
     }
-    return getType(context, getEcoreTypedElement().getEGenericType(), false);
+    return getType(context, getEcoreTypedElement().getEGenericType(), false, false);
   }
 
   public String getRawImportedType()
@@ -201,7 +201,7 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
     {
       return getGenModel().getImportedName("java.util.List") + "<" + getImportedType(context, getListDataType().getEcoreDataType(), true) + ">";
     }
-    return getImportedType(context, getEcoreTypedElement().getEGenericType(), false);
+    return getImportedType(context, getEcoreTypedElement().getEGenericType(), false, false);
   }
 
   @Deprecated
@@ -210,24 +210,57 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
     return getObjectType(getContext()); 
   }
 
+  // TODO j: New parameter: useWildcardParams
+  protected String getObjectType(GenClass context, boolean useWildcardParams) {
+	    if (isFeatureMapType()) return getGenModel().getImportedName(getEffectiveFeatureMapWrapperInterface());
+	    if (isMapType()) return getGenModel().getImportedName(getEffectiveMapType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()));
+	    if (isMapEntryType())
+	      if (isListType())
+	        if (getEffectiveComplianceLevel().getValue() < GenJDKLevel.JDK50) return getGenModel().getImportedName(getEffectiveListType());
+	        else return getGenModel().getImportedName(getEffectiveListType() + "<" + getEffectiveMapEntryType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()) + ">");
+	      else return getGenModel().getImportedName(getEffectiveMapEntryType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()));
+	    if (isListType()) return getGenModel().getImportedName(getEffectiveListType(context, getEcoreTypedElement().getEGenericType()));
+	    if (isEObjectType()) return getGenModel().getImportedName(getEffectiveEObjectType());
+	    if (isListDataType() && getEffectiveComplianceLevel().getValue() >= GenJDKLevel.JDK50)
+	    {
+	      return getGenModel().getImportedName("java.util.List") + "<" + getImportedType(context, getListDataType().getEcoreDataType(), true) + ">";
+	    }
+	    return getImportedType(context, getEcoreTypedElement().getEGenericType(), true, useWildcardParams);
+  }
+  
   public String getObjectType(GenClass context)
   {
-    if (isFeatureMapType()) return getGenModel().getImportedName(getEffectiveFeatureMapWrapperInterface());
-    if (isMapType()) return getGenModel().getImportedName(getEffectiveMapType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()));
-    if (isMapEntryType())
-      if (isListType())
-        if (getEffectiveComplianceLevel().getValue() < GenJDKLevel.JDK50) return getGenModel().getImportedName(getEffectiveListType());
-        else return getGenModel().getImportedName(getEffectiveListType() + "<" + getEffectiveMapEntryType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()) + ">");
-      else return getGenModel().getImportedName(getEffectiveMapEntryType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()));
-    if (isListType()) return getGenModel().getImportedName(getEffectiveListType(context, getEcoreTypedElement().getEGenericType()));
-    if (isEObjectType()) return getGenModel().getImportedName(getEffectiveEObjectType());
-    if (isListDataType() && getEffectiveComplianceLevel().getValue() >= GenJDKLevel.JDK50)
-    {
-      return getGenModel().getImportedName("java.util.List") + "<" + getImportedType(context, getListDataType().getEcoreDataType(), true) + ">";
-    }
-    return getImportedType(context, getEcoreTypedElement().getEGenericType(), true);
+	  return getObjectType(context, false);
   }
 
+  
+//  public String getObjectType(GenClass context)
+//  {
+//    // TODO j: Add parameter for wildcard 
+//    if (isFeatureMapType()) return getGenModel().getImportedName(getEffectiveFeatureMapWrapperInterface());
+//    if (isMapType()) return getGenModel().getImportedName(getEffectiveMapType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()));
+//    if (isMapEntryType())
+//      if (isListType())
+//        if (getEffectiveComplianceLevel().getValue() < GenJDKLevel.JDK50) return getGenModel().getImportedName(getEffectiveListType());
+//        else return getGenModel().getImportedName(getEffectiveListType() + "<" + getEffectiveMapEntryType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()) + ">");
+//      else return getGenModel().getImportedName(getEffectiveMapEntryType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()));
+//    if (isListType()) return getGenModel().getImportedName(getEffectiveListType(context, getEcoreTypedElement().getEGenericType()));
+//    if (isEObjectType()) return getGenModel().getImportedName(getEffectiveEObjectType());
+//    if (isListDataType() && getEffectiveComplianceLevel().getValue() >= GenJDKLevel.JDK50)
+//    {
+//      return getGenModel().getImportedName("java.util.List") + "<" + getImportedType(context, getListDataType().getEcoreDataType(), true) + ">";
+//    }
+//    return getImportedType(context, getEcoreTypedElement().getEGenericType(), true);
+//  }
+
+  // TODO j: New method: getWildcardObjectType
+  public String getWildcardObjectType(GenClass context)
+  {
+	  return getObjectType(context, true);
+  }
+
+
+  
   public String getQualifiedObjectType(GenClass context)
   {
     if (isFeatureMapType()) return getEffectiveFeatureMapWrapperInterface();
@@ -243,7 +276,7 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
     {
       return "java.util.List<" + getType(context, getListDataType().getEcoreDataType(), true) + ">";
     }
-    return getType(context, getEcoreTypedElement().getEGenericType(), true);
+    return getType(context, getEcoreTypedElement().getEGenericType(), true, false);
   }
 
   @Deprecated
@@ -268,9 +301,9 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
     if (isListType()) return getGenModel().getImportedName("org.eclipse.emf.common.util.EList") + getListTemplateArguments(context);
     if (isListDataType() && getEffectiveComplianceLevel().getValue() >= GenJDKLevel.JDK50)
     {
-      return getGenModel().getImportedName("java.util.List") + "<" + getImportedType(context, getListDataType().getEcoreDataType(), true) + ">";
+      return getGenModel().getImportedName("java.util.List") + "<" + getImportedType(context, getListDataType().getEcoreDataType(), true, false) + ">";
     }
-    return getImportedType(context, getEcoreTypedElement().getEGenericType(), false);
+    return getImportedType(context, getEcoreTypedElement().getEGenericType(), false, false);
   }
 
   public boolean isFeatureMapType()
@@ -363,7 +396,7 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
   public String getListItemType(GenClass context)
   {
     if (isMapEntryType()) return getGenModel().getImportedName(getEffectiveMapEntryType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()));
-    return getImportedType(context, getEcoreTypedElement().getEGenericType(), true);
+    return getImportedType(context, getEcoreTypedElement().getEGenericType(), true, false);
   }
 
   public String getRawListItemType()
@@ -415,7 +448,7 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
   public String getQualifiedListItemType(GenClass context)
   {
     if (isMapEntryType()) return getEffectiveMapEntryType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()).replace('$', '.');
-    return getType(context, getEcoreTypedElement().getEGenericType(), true).replace('$', '.');
+    return getType(context, getEcoreTypedElement().getEGenericType(), true, false).replace('$', '.');
   }
 
   public boolean isMapType()

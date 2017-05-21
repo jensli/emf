@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 
@@ -198,12 +199,24 @@ public abstract class GenClassifierImpl extends GenBaseImpl implements GenClassi
 
   public abstract EClassifier getEcoreClassifier();
 
-  public abstract String getImportedMetaType();
+//  public abstract String getImportedMetaType();
+//  public abstract String getImportedRawMetaType();
 
-  public String getMetaType()
+  // TODO j: getMetaType, this is unnessecary isn't is? Name never has '.' in it?
+//  public String getMetaType()
+//  {
+//    String importedName = getImportedMetaType();
+//    return importedName.substring(importedName.lastIndexOf(".") + 1);
+//  }
+
+  public String getImportedMetaType()
   {
-    String importedName = getImportedMetaType();
-    return importedName.substring(importedName.lastIndexOf(".") + 1);
+    if (getGenModel().useGenerics()) {
+      String genericEclass = this.isImplementingEobject() ? this.getImportedWildcardObjectInstanceClassName() : "?";
+      return getRawImportedMetaType() + "<" + genericEclass + ">";
+    } else {
+      return getRawImportedMetaType();
+    }
   }
 
   @Override
@@ -247,7 +260,8 @@ public abstract class GenClassifierImpl extends GenBaseImpl implements GenClassi
 
   public String getClassifierInstanceName()
   {
-    return uncapPrefixedName(getName()) + getMetaType();
+	  // CHANGED j: Remove type params in name
+    return uncapPrefixedName(getName()) + getRawImportedMetaType();
   }
 
   public String getClassifierID()
@@ -294,7 +308,7 @@ public abstract class GenClassifierImpl extends GenBaseImpl implements GenClassi
   {
     return getImportedInstanceClassName();
   }
-
+  
   public String getImportedBoundedWildcardInstanceClassName()
   {
     return getImportedInstanceClassName();
@@ -335,4 +349,14 @@ public abstract class GenClassifierImpl extends GenBaseImpl implements GenClassi
     }
     return null;
   }
+  
+  public boolean isImplementingEobject() {
+	    Class<?> instanceClass = this.getEcoreClassifier().getInstanceClass();
+	      
+	      // If an instance is configured then the object might not be an EObject and might
+	      // not satisfy type parameter bounds
+	    return (instanceClass == null || EObject.class.isAssignableFrom(instanceClass))
+	      && !this.getGenModel().isSuppressInterfaces();
+	  }
+
 }

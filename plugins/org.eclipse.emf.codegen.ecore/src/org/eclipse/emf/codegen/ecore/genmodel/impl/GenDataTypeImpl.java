@@ -203,8 +203,7 @@ public class GenDataTypeImpl extends GenClassifierImpl implements GenDataType
     return ecoreDataType;
   }
 
-  @Override
-  public String getImportedMetaType()
+  public String getRawImportedMetaType()
   {
     return getGenModel().getImportedName("org.eclipse.emf.ecore.EDataType");
   }
