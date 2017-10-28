@@ -101,8 +101,8 @@ public interface GenTypedElement extends GenBase
    */
   String getObjectType(GenClass context); 
 
-  // TODO j: New interface method: getWildcardObjectType
-  String getWildcardObjectType(GenClass context); 
+  // CHANGE: New interface method: getWildcardObjectType
+//  String getWildcardObjectType(GenClass context); 
 
   /**
    * This returns the qualified name of the feature type or, if primitive, of the wrapper class (e.g. "java.lang.Integer").

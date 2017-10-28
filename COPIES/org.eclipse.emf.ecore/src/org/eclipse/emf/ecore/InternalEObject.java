@@ -63,7 +63,7 @@ public interface InternalEObject extends EObject
    * @param eObject the object to be identified.
    * @return the fragment segment that resolves to the given object in this object's given feature.
    */
-  String eURIFragmentSegment(EStructuralFeature<?, ?> eFeature, EObject eObject);
+  public String eURIFragmentSegment(EStructuralFeature<?, ?> eStructuralFeature, EObject eObject);
 
   /**
    * Returns the object resolved by the fragment segment.
@@ -245,7 +245,7 @@ public interface InternalEObject extends EObject
      * @param index an index within the content or {@link #NO_INDEX}.
      * @return the value at the index in the content of the object's feature.
      */
-    Object get(InternalEObject object, EStructuralFeature feature, int index);
+    <V> V get(InternalEObject object, EStructuralFeature<?, V> feature, int index);
 
     /**
      * Sets the value at the index in the {@link EObject#eGet(EStructuralFeature,boolean) content} of the object's feature.
@@ -255,7 +255,7 @@ public interface InternalEObject extends EObject
      * @param value the new value.
      * @return the previous value.
      */
-    Object set(InternalEObject object, EStructuralFeature feature, int index, Object value);
+    <V> V set(InternalEObject object, EStructuralFeature<?, V> feature, int index, V value);
 
     /**
      * Returns whether the object's feature is considered set.
@@ -263,14 +263,14 @@ public interface InternalEObject extends EObject
      * @param feature a feature of the object.
      * @return <code>true</code> if the object's feature is considered set.
      */
-    boolean isSet(InternalEObject object, EStructuralFeature feature);
+    boolean isSet(InternalEObject object, EStructuralFeature<?, ?> feature);
 
     /**
      * Unsets the feature of the object.
      * @param object the object in question.
      * @param feature a feature of the object.
      */
-    void unset(InternalEObject object, EStructuralFeature feature);
+    void unset(InternalEObject object, EStructuralFeature<?, ?> feature);
 
     /**
      * Returns whether the {@link EObject#eGet(EStructuralFeature,boolean) content} of the object's feature is empty.
@@ -278,7 +278,7 @@ public interface InternalEObject extends EObject
      * @param feature a {@link ETypedElement#isMany() many-valued} feature of the object.
      * @return <code>true</code> if the content of the object's feature is empty.
      */
-    boolean isEmpty(InternalEObject object, EStructuralFeature feature);
+    boolean isEmpty(InternalEObject object, EStructuralFeature<?, ?> feature);
 
     /**
      * Returns the number of values in the {@link EObject#eGet(EStructuralFeature,boolean) content} of the object's feature.
@@ -286,7 +286,7 @@ public interface InternalEObject extends EObject
      * @param feature a {@link ETypedElement#isMany() many-valued} feature of the object.
      * @return the number of values in the content of the object's feature.
      */
-    int size(InternalEObject object, EStructuralFeature feature);
+    int size(InternalEObject object, EStructuralFeature<?, ?> feature);
 
     /**
      * Returns whether the {@link EObject#eGet(EStructuralFeature,boolean) content} of the object's feature contains the given value.
@@ -295,7 +295,7 @@ public interface InternalEObject extends EObject
      * @param value the value in question.
      * @return <code>true</code> if the content of the object's feature contains the given value.
      */
-    boolean contains(InternalEObject object, EStructuralFeature feature, Object value);
+    boolean contains(InternalEObject object, EStructuralFeature<?, ?> feature, Object value);
     
     /**
      * Returns the first index of the given value in the {@link EObject#eGet(EStructuralFeature,boolean) content} of the object's feature.
@@ -304,7 +304,7 @@ public interface InternalEObject extends EObject
      * @param value the value in question.
      * @return the first index of the given value in the content of the object's feature.
      */
-    int indexOf(InternalEObject object, EStructuralFeature feature, Object value);
+    int indexOf(InternalEObject object, EStructuralFeature<?, ?> feature, Object value);
 
     /**
      * Returns the last index of the given value in the {@link EObject#eGet(EStructuralFeature,boolean) content} of the object's feature.
@@ -313,7 +313,7 @@ public interface InternalEObject extends EObject
      * @param value the value in question.
      * @return the last index of the given value in the content of the object's feature.
      */
-    int lastIndexOf(InternalEObject object, EStructuralFeature feature, Object value);
+    int lastIndexOf(InternalEObject object, EStructuralFeature<?, ?> feature, Object value);
 
     /**
      * Adds the value at the index in the {@link EObject#eGet(EStructuralFeature,boolean) content} of the object's feature.
@@ -322,7 +322,7 @@ public interface InternalEObject extends EObject
      * @param index an index within the content.
      * @param value the value to add.
      */
-    void add(InternalEObject object, EStructuralFeature feature, int index, Object value);
+    void add(InternalEObject object, EStructuralFeature<?, ?> feature, int index, Object value);
 
     /**
      * Removes the value at the index in the {@link EObject#eGet(EStructuralFeature,boolean) content} of the object's feature.
@@ -331,7 +331,7 @@ public interface InternalEObject extends EObject
      * @param index the index within the feature's content of the value to remove.
      * @return the removed value.
      */
-    Object remove(InternalEObject object, EStructuralFeature feature, int index);
+    Object remove(InternalEObject object, EStructuralFeature<?, ?> feature, int index);
 
     /**
      * Moves the value at the source index in the {@link EObject#eGet(EStructuralFeature,boolean) content} of the object's feature
@@ -342,14 +342,14 @@ public interface InternalEObject extends EObject
      * @param sourceIndex the index within the feature's content of the value to move.
      * @return the moved value.
      */
-    Object move(InternalEObject object, EStructuralFeature feature, int targetIndex, int sourceIndex);
+    Object move(InternalEObject object, EStructuralFeature<?, ?> feature, int targetIndex, int sourceIndex);
 
     /**
      * Removes all values form the {@link EObject#eGet(EStructuralFeature,boolean) content} of the object's feature
      * @param object the object in question.
      * @param feature a {@link ETypedElement#isMany() many-valued} feature of the object.
      */
-    void clear(InternalEObject object, EStructuralFeature feature);
+    void clear(InternalEObject object, EStructuralFeature<?, ?> feature);
       
     /**
      * Returns a new array of the values in the {@link EObject#eGet(EStructuralFeature,boolean) content} of the object's feature.
@@ -357,7 +357,7 @@ public interface InternalEObject extends EObject
      * @param feature a {@link ETypedElement#isMany() many-valued} feature of the object.
      * @return a new array of the values in the content of the object's feature.
      */
-    Object[] toArray(InternalEObject object, EStructuralFeature feature);
+    Object[] toArray(InternalEObject object, EStructuralFeature<?, ?> feature);
 
     /**
      * Returns an array of the values in the {@link EObject#eGet(EStructuralFeature,boolean) content} of the object's feature.
@@ -367,7 +367,7 @@ public interface InternalEObject extends EObject
      * @param array the array to fill.
      * @return an array of the values in the content of the object's feature.
      */
-    <T> T[] toArray(InternalEObject object, EStructuralFeature feature, T[] array);
+    <T> T[] toArray(InternalEObject object, EStructuralFeature<?, ?> feature, T[] array);
 
     /**
      * Returns the hash code of the {@link EObject#eGet(EStructuralFeature,boolean) content} of the object's feature.
@@ -375,7 +375,7 @@ public interface InternalEObject extends EObject
      * @param feature a {@link ETypedElement#isMany() many-valued} feature of the object.
      * @return the hash code of the content of the object's feature.
      */ 
-    int hashCode(InternalEObject object, EStructuralFeature feature);
+    int hashCode(InternalEObject object, EStructuralFeature<?, ?> feature);
    
     /**
      * Returns the object's {@link EObject#eContainer container}.
@@ -389,14 +389,14 @@ public interface InternalEObject extends EObject
      * @return the object's containing feature.
      * @see EObject#eContainingFeature
      */
-    EStructuralFeature getContainingFeature(InternalEObject object);  
+    EStructuralFeature<?, ?> getContainingFeature(InternalEObject object);  
 
     /**
      * Creates a new instance of the class.
      * @param eClass the class to instantiate.
      * @return a new instance of the class.
      */
-    EObject create(EClass eClass);
+    <C extends EObject> C create(EClass<C> eClass);
 
   }
 

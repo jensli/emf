@@ -78,7 +78,7 @@ import org.eclipse.emf.ecore.util.ExtendedMetaData;
 public interface EObject extends Notifier
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * Returns the meta class.
    * <p>
    * The meta class defines the {@link EClass#getEAllStructuralFeatures features} 
@@ -88,13 +88,13 @@ public interface EObject extends Notifier
    * @see EClass#getEAllStructuralFeatures
    * @ignore
    * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
+   * @model
+   * @generated
+   */
   EClass<? extends EObject> eClass();
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * Returns the containing resource, or <code>null</code>.
    * <p>
    * An object is contained in a resource
@@ -108,13 +108,13 @@ public interface EObject extends Notifier
    * @see #eContainer
    * @ignore
    * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
+   * @model
+   * @generated
+   */
   Resource eResource();
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * Returns the containing object, or <code>null</code>.
    * <p>
    * An object is contained by another object 
@@ -130,9 +130,9 @@ public interface EObject extends Notifier
    * @see #eContents
    * @ignore
    * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
+   * @model
+   * @generated
+   */
   EObject eContainer();
 
   /**
@@ -159,7 +159,7 @@ public interface EObject extends Notifier
   EStructuralFeature<? extends EObject, ? extends EObject> eContainingFeature();
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * Returns the {@link org.eclipse.emf.ecore.EReference#isContainment containment} feature that properly contains the object,
    * or <code>null</code>, if there is no container.
    * Because of support for wildcard content, 
@@ -175,13 +175,13 @@ public interface EObject extends Notifier
    * @see org.eclipse.emf.ecore.util.FeatureMap.Entry#getEStructuralFeature
    * @ignore
    * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
+   * @model
+   * @generated
+   */
   EReference<? extends EObject, ? extends EObject> eContainmentFeature();
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * Returns a list view of the content objects; it is unmodifiable.
    * <p>
    * This will be the list of {@link EObject}s determined by the
@@ -200,26 +200,26 @@ public interface EObject extends Notifier
    * @see #eAllContents
    * @ignore
    * <!-- end-user-doc -->
-	 * @model many="false"
-	 * @generated
-	 */
+   * @model many="false"
+   * @generated
+   */
   EList<EObject> eContents();
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * Returns a tree iterator that iterates over all the {@link #eContents direct contents} and indirect contents of this object.
    * @return a tree iterator that iterates over all contents.
    * @see Resource#getAllContents
    * @see org.eclipse.emf.ecore.util.EcoreUtil#getAllContents(EObject, boolean)
    * @ignore
    * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
+   * @model
+   * @generated
+   */
   TreeIterator<EObject> eAllContents();
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * Indicates whether this object is a proxy.
    * <p> 
    * A proxy is an object that is defined in a <code>Resource</code> that has not been loaded.
@@ -232,13 +232,13 @@ public interface EObject extends Notifier
    * @see org.eclipse.emf.ecore.util.EcoreUtil#resolve(EObject, org.eclipse.emf.ecore.resource.ResourceSet)
    * @ignore
    * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
+   * @model
+   * @generated
+   */
   boolean eIsProxy();
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * Returns a list view of the cross referenced objects; it is unmodifiable.
    * <p>
    * This will be the list of {@link EObject}s determined by the
@@ -268,13 +268,13 @@ public interface EObject extends Notifier
    * @see org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer
    * @return a list view of the cross referenced objects.
    * <!-- end-user-doc -->
-	 * @model many="false"
-	 * @generated
-	 */
+   * @model many="false"
+   * @generated
+   */
   EList<EObject> eCrossReferences();
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * Returns the value of the given feature of this object.
    * <p>
    * It returns the resolved value, 
@@ -287,13 +287,13 @@ public interface EObject extends Notifier
    * @see #eGet(EStructuralFeature, boolean)
    * @ignore
    * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
+   * @model
+   * @generated
+   */
   <T> T eGet(EStructuralFeature<?, T> feature);
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * Returns the value of the given feature of the object; 
    * the value is optionally {@link org.eclipse.emf.ecore.util.EcoreUtil#resolve(EObject, EObject) resolved} before it is returned.
    * <p>
@@ -333,21 +333,21 @@ public interface EObject extends Notifier
    * @see #eGet(EStructuralFeature)
    * @ignore
    * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
+   * @model
+   * @generated
+   */
   <T> T eGet(EStructuralFeature<?, T> feature, boolean resolve);
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
+   * @model
+   * @generated
+   */
 	<T> void eSet(EStructuralFeature<?, T> feature, T newValue);
 
 		/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * Returns whether the feature of the object is considered to be set.
    * <p>
    * If the feature is {@link ETypedElement#isMany() many-valued},
@@ -375,13 +375,13 @@ public interface EObject extends Notifier
    * @see #eGet(EStructuralFeature, boolean)
    * @ignore
    * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
+   * @model
+   * @generated
+   */
   boolean eIsSet(EStructuralFeature<?, ?> feature);
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * Unsets the feature of the object.
    * <p>
    * If the feature is {@link ETypedElement#isMany() many-valued},
@@ -406,13 +406,13 @@ public interface EObject extends Notifier
    * @see #eGet(EStructuralFeature, boolean)
    * @ignore
    * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
+   * @model
+   * @generated
+   */
   void eUnset(EStructuralFeature<?, ?> feature);
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <p>
    * Invokes the specified operation of the object.  If the operation has
    * parameters, then corresponding arguments must be supplied.  There are no
@@ -431,9 +431,9 @@ public interface EObject extends Notifier
    * </p>
    * @since 2.6
    * <!-- end-user-doc -->
-	 * @model exceptions="org.eclipse.emf.ecore.EInvocationTargetException" argumentsMany="false"
-	 * @generated
-	 */
+   * @model exceptions="org.eclipse.emf.ecore.EInvocationTargetException" argumentsMany="false"
+   * @generated
+   */
   <T> T eInvoke(EOperation<?, T> operation, EList<?> arguments) throws InvocationTargetException;
 
 }

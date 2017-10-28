@@ -37,304 +37,312 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
 {
   /**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
+   * Creates the default factory implementation.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public static EcoreFactory init()
   {
-		try {
-			EcoreFactory theEcoreFactory = (EcoreFactory)EPackage.Registry.INSTANCE.getEFactory(EcorePackage.eNS_URI);
-			if (theEcoreFactory != null) {
-				return theEcoreFactory;
-			}
-		}
-		catch (Exception exception) {
-			EcorePlugin.INSTANCE.log(exception);
-		}
-		return new EcoreFactoryImpl();
-	}
+    try
+    {
+      EcoreFactory theEcoreFactory = (EcoreFactory)EPackage.Registry.INSTANCE.getEFactory(EcorePackage.eNS_URI);
+      if (theEcoreFactory != null)
+      {
+        return theEcoreFactory;
+      }
+    }
+    catch (Exception exception)
+    {
+      EcorePlugin.INSTANCE.log(exception);
+    }
+    return new EcoreFactoryImpl();
+  }
 
   /**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
+   * Creates an instance of the factory.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EcoreFactoryImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
-  public <T> T create(EClass<T> eClass)
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
-		switch (eClass.getClassifierID()) {
-			case EcorePackage.EATTRIBUTE: return createEAttribute();
-			case EcorePackage.EANNOTATION: return createEAnnotation();
-			case EcorePackage.ECLASS: return createEClass();
-			case EcorePackage.EDATA_TYPE: return createEDataType();
-			case EcorePackage.EENUM: return createEEnum();
-			case EcorePackage.EENUM_LITERAL: return createEEnumLiteral();
-			case EcorePackage.EFACTORY: return createEFactory();
-			case EcorePackage.EOBJECT: return createEObject();
-			case EcorePackage.EOPERATION: return createEOperation();
-			case EcorePackage.EPACKAGE: return createEPackage();
-			case EcorePackage.EPARAMETER: return createEParameter();
-			case EcorePackage.EREFERENCE: return createEReference();
-			case EcorePackage.ESTRING_TO_STRING_MAP_ENTRY: return (EObject)createEStringToStringMapEntry();
-			case EcorePackage.EGENERIC_TYPE: return createEGenericType();
-			case EcorePackage.ETYPE_PARAMETER: return createETypeParameter();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
+    switch (eClass.getClassifierID())
+    {
+      case EcorePackage.EATTRIBUTE: return (T) createEAttribute();
+      case EcorePackage.EANNOTATION: return (T) createEAnnotation();
+      case EcorePackage.ECLASS: return (T) createEClass();
+      case EcorePackage.EDATA_TYPE: return (T) createEDataType();
+      case EcorePackage.EENUM: return (T) createEEnum();
+      case EcorePackage.EENUM_LITERAL: return (T) createEEnumLiteral();
+      case EcorePackage.EFACTORY: return (T) createEFactory();
+      case EcorePackage.EOBJECT: return (T) createEObject();
+      case EcorePackage.EOPERATION: return (T) createEOperation();
+      case EcorePackage.EPACKAGE: return (T) createEPackage();
+      case EcorePackage.EPARAMETER: return (T) createEParameter();
+      case EcorePackage.EREFERENCE: return (T) createEReference();
+      case EcorePackage.ESTRING_TO_STRING_MAP_ENTRY: return (T) (EObject)createEStringToStringMapEntry();
+      case EcorePackage.EGENERIC_TYPE: return (T) createEGenericType();
+      case EcorePackage.ETYPE_PARAMETER: return (T) createETypeParameter();
+      default:
+        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
+  @SuppressWarnings("unchecked")
   public <T> T createFromString(EDataType<T> eDataType, String initialValue)
   {
-		switch (eDataType.getClassifierID()) {
-			case EcorePackage.EBIG_DECIMAL:
-				return createEBigDecimalFromString(eDataType, initialValue);
-			case EcorePackage.EBIG_INTEGER:
-				return createEBigIntegerFromString(eDataType, initialValue);
-			case EcorePackage.EBOOLEAN:
-				return createEBooleanFromString(eDataType, initialValue);
-			case EcorePackage.EBOOLEAN_OBJECT:
-				return createEBooleanObjectFromString(eDataType, initialValue);
-			case EcorePackage.EBYTE:
-				return createEByteFromString(eDataType, initialValue);
-			case EcorePackage.EBYTE_ARRAY:
-				return createEByteArrayFromString(eDataType, initialValue);
-			case EcorePackage.EBYTE_OBJECT:
-				return createEByteObjectFromString(eDataType, initialValue);
-			case EcorePackage.ECHAR:
-				return createECharFromString(eDataType, initialValue);
-			case EcorePackage.ECHARACTER_OBJECT:
-				return createECharacterObjectFromString(eDataType, initialValue);
-			case EcorePackage.EDATE:
-				return createEDateFromString(eDataType, initialValue);
-			case EcorePackage.EDOUBLE:
-				return createEDoubleFromString(eDataType, initialValue);
-			case EcorePackage.EDOUBLE_OBJECT:
-				return createEDoubleObjectFromString(eDataType, initialValue);
-			case EcorePackage.EFLOAT:
-				return createEFloatFromString(eDataType, initialValue);
-			case EcorePackage.EFLOAT_OBJECT:
-				return createEFloatObjectFromString(eDataType, initialValue);
-			case EcorePackage.EINT:
-				return createEIntFromString(eDataType, initialValue);
-			case EcorePackage.EINTEGER_OBJECT:
-				return createEIntegerObjectFromString(eDataType, initialValue);
-			case EcorePackage.EJAVA_CLASS:
-				return createEJavaClassFromString(eDataType, initialValue);
-			case EcorePackage.EJAVA_OBJECT:
-				return createEJavaObjectFromString(eDataType, initialValue);
-			case EcorePackage.ELONG:
-				return createELongFromString(eDataType, initialValue);
-			case EcorePackage.ELONG_OBJECT:
-				return createELongObjectFromString(eDataType, initialValue);
-			case EcorePackage.ESHORT:
-				return createEShortFromString(eDataType, initialValue);
-			case EcorePackage.ESHORT_OBJECT:
-				return createEShortObjectFromString(eDataType, initialValue);
-			case EcorePackage.ESTRING:
-				return createEStringFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
+    switch (eDataType.getClassifierID())
+    {
+      case EcorePackage.EBIG_DECIMAL:
+        return (T) createEBigDecimalFromString(eDataType, initialValue);
+      case EcorePackage.EBIG_INTEGER:
+        return (T) createEBigIntegerFromString(eDataType, initialValue);
+      case EcorePackage.EBOOLEAN:
+        return (T) createEBooleanFromString(eDataType, initialValue);
+      case EcorePackage.EBOOLEAN_OBJECT:
+        return (T) createEBooleanObjectFromString(eDataType, initialValue);
+      case EcorePackage.EBYTE:
+        return (T) createEByteFromString(eDataType, initialValue);
+      case EcorePackage.EBYTE_ARRAY:
+        return (T) createEByteArrayFromString(eDataType, initialValue);
+      case EcorePackage.EBYTE_OBJECT:
+        return (T) createEByteObjectFromString(eDataType, initialValue);
+      case EcorePackage.ECHAR:
+        return (T) createECharFromString(eDataType, initialValue);
+      case EcorePackage.ECHARACTER_OBJECT:
+        return (T) createECharacterObjectFromString(eDataType, initialValue);
+      case EcorePackage.EDATE:
+        return (T) createEDateFromString(eDataType, initialValue);
+      case EcorePackage.EDOUBLE:
+        return (T) createEDoubleFromString(eDataType, initialValue);
+      case EcorePackage.EDOUBLE_OBJECT:
+        return (T) createEDoubleObjectFromString(eDataType, initialValue);
+      case EcorePackage.EFLOAT:
+        return (T) createEFloatFromString(eDataType, initialValue);
+      case EcorePackage.EFLOAT_OBJECT:
+        return (T) createEFloatObjectFromString(eDataType, initialValue);
+      case EcorePackage.EINT:
+        return (T) createEIntFromString(eDataType, initialValue);
+      case EcorePackage.EINTEGER_OBJECT:
+        return (T) createEIntegerObjectFromString(eDataType, initialValue);
+      case EcorePackage.EJAVA_CLASS:
+        return (T) createEJavaClassFromString(eDataType, initialValue);
+      case EcorePackage.EJAVA_OBJECT:
+        return (T) createEJavaObjectFromString(eDataType, initialValue);
+      case EcorePackage.ELONG:
+        return (T) createELongFromString(eDataType, initialValue);
+      case EcorePackage.ELONG_OBJECT:
+        return (T) createELongObjectFromString(eDataType, initialValue);
+      case EcorePackage.ESHORT:
+        return (T) createEShortFromString(eDataType, initialValue);
+      case EcorePackage.ESHORT_OBJECT:
+        return (T) createEShortObjectFromString(eDataType, initialValue);
+      case EcorePackage.ESTRING:
+        return (T) createEStringFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public <T> String convertToString(EDataType<T> eDataType, T instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case EcorePackage.EBIG_DECIMAL:
-				return convertEBigDecimalToString(eDataType, instanceValue);
-			case EcorePackage.EBIG_INTEGER:
-				return convertEBigIntegerToString(eDataType, instanceValue);
-			case EcorePackage.EBOOLEAN:
-				return convertEBooleanToString(eDataType, instanceValue);
-			case EcorePackage.EBOOLEAN_OBJECT:
-				return convertEBooleanObjectToString(eDataType, instanceValue);
-			case EcorePackage.EBYTE:
-				return convertEByteToString(eDataType, instanceValue);
-			case EcorePackage.EBYTE_ARRAY:
-				return convertEByteArrayToString(eDataType, instanceValue);
-			case EcorePackage.EBYTE_OBJECT:
-				return convertEByteObjectToString(eDataType, instanceValue);
-			case EcorePackage.ECHAR:
-				return convertECharToString(eDataType, instanceValue);
-			case EcorePackage.ECHARACTER_OBJECT:
-				return convertECharacterObjectToString(eDataType, instanceValue);
-			case EcorePackage.EDATE:
-				return convertEDateToString(eDataType, instanceValue);
-			case EcorePackage.EDOUBLE:
-				return convertEDoubleToString(eDataType, instanceValue);
-			case EcorePackage.EDOUBLE_OBJECT:
-				return convertEDoubleObjectToString(eDataType, instanceValue);
-			case EcorePackage.EFLOAT:
-				return convertEFloatToString(eDataType, instanceValue);
-			case EcorePackage.EFLOAT_OBJECT:
-				return convertEFloatObjectToString(eDataType, instanceValue);
-			case EcorePackage.EINT:
-				return convertEIntToString(eDataType, instanceValue);
-			case EcorePackage.EINTEGER_OBJECT:
-				return convertEIntegerObjectToString(eDataType, instanceValue);
-			case EcorePackage.EJAVA_CLASS:
-				return convertEJavaClassToString(eDataType, instanceValue);
-			case EcorePackage.EJAVA_OBJECT:
-				return convertEJavaObjectToString(eDataType, instanceValue);
-			case EcorePackage.ELONG:
-				return convertELongToString(eDataType, instanceValue);
-			case EcorePackage.ELONG_OBJECT:
-				return convertELongObjectToString(eDataType, instanceValue);
-			case EcorePackage.ESHORT:
-				return convertEShortToString(eDataType, instanceValue);
-			case EcorePackage.ESHORT_OBJECT:
-				return convertEShortObjectToString(eDataType, instanceValue);
-			case EcorePackage.ESTRING:
-				return convertEStringToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
+    switch (eDataType.getClassifierID())
+    {
+      case EcorePackage.EBIG_DECIMAL:
+        return convertEBigDecimalToString(eDataType, instanceValue);
+      case EcorePackage.EBIG_INTEGER:
+        return convertEBigIntegerToString(eDataType, instanceValue);
+      case EcorePackage.EBOOLEAN:
+        return convertEBooleanToString(eDataType, instanceValue);
+      case EcorePackage.EBOOLEAN_OBJECT:
+        return convertEBooleanObjectToString(eDataType, instanceValue);
+      case EcorePackage.EBYTE:
+        return convertEByteToString(eDataType, instanceValue);
+      case EcorePackage.EBYTE_ARRAY:
+        return convertEByteArrayToString(eDataType, instanceValue);
+      case EcorePackage.EBYTE_OBJECT:
+        return convertEByteObjectToString(eDataType, instanceValue);
+      case EcorePackage.ECHAR:
+        return convertECharToString(eDataType, instanceValue);
+      case EcorePackage.ECHARACTER_OBJECT:
+        return convertECharacterObjectToString(eDataType, instanceValue);
+      case EcorePackage.EDATE:
+        return convertEDateToString(eDataType, instanceValue);
+      case EcorePackage.EDOUBLE:
+        return convertEDoubleToString(eDataType, instanceValue);
+      case EcorePackage.EDOUBLE_OBJECT:
+        return convertEDoubleObjectToString(eDataType, instanceValue);
+      case EcorePackage.EFLOAT:
+        return convertEFloatToString(eDataType, instanceValue);
+      case EcorePackage.EFLOAT_OBJECT:
+        return convertEFloatObjectToString(eDataType, instanceValue);
+      case EcorePackage.EINT:
+        return convertEIntToString(eDataType, instanceValue);
+      case EcorePackage.EINTEGER_OBJECT:
+        return convertEIntegerObjectToString(eDataType, instanceValue);
+      case EcorePackage.EJAVA_CLASS:
+        return convertEJavaClassToString(eDataType, instanceValue);
+      case EcorePackage.EJAVA_OBJECT:
+        return convertEJavaObjectToString(eDataType, instanceValue);
+      case EcorePackage.ELONG:
+        return convertELongToString(eDataType, instanceValue);
+      case EcorePackage.ELONG_OBJECT:
+        return convertELongObjectToString(eDataType, instanceValue);
+      case EcorePackage.ESHORT:
+        return convertEShortToString(eDataType, instanceValue);
+      case EcorePackage.ESHORT_OBJECT:
+        return convertEShortObjectToString(eDataType, instanceValue);
+      case EcorePackage.ESTRING:
+        return convertEStringToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
 
 		/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EObject createEObject()
   {
-		EObjectImpl eObject = new EObjectImpl();
-		return eObject;
-	}
+    EObjectImpl eObject = new EObjectImpl();
+    return eObject;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public <C extends EObject, V> EAttribute<C, V> createEAttribute()
   {
-		EAttributeImpl<C, V> eAttribute = new EAttributeImpl<C, V>();
-		return eAttribute;
-	}
+    EAttributeImpl<C, V> eAttribute = new EAttributeImpl<C, V>();
+    return eAttribute;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EAnnotation createEAnnotation()
   {
-		EAnnotationImpl eAnnotation = new EAnnotationImpl();
-		return eAnnotation;
-	}
+    EAnnotationImpl eAnnotation = new EAnnotationImpl();
+    return eAnnotation;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public <T extends EObject> EClass<T> createEClass()
   {
-		EClassImpl<T> eClass = new EClassImpl<T>();
-		return eClass;
-	}
+    EClassImpl<T> eClass = new EClassImpl<T>();
+    return eClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public <T> EDataType<T> createEDataType()
   {
-		EDataTypeImpl<T> eDataType = new EDataTypeImpl<T>();
-		return eDataType;
-	}
+    EDataTypeImpl<T> eDataType = new EDataTypeImpl<T>();
+    return eDataType;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public <T> EParameter<T> createEParameter()
   {
-		EParameterImpl<T> eParameter = new EParameterImpl<T>();
-		return eParameter;
-	}
+    EParameterImpl<T> eParameter = new EParameterImpl<T>();
+    return eParameter;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public <C extends EObject, V> EOperation<C, V> createEOperation()
   {
-		EOperationImpl<C, V> eOperation = new EOperationImpl<C, V>();
-		return eOperation;
-	}
+    EOperationImpl<C, V> eOperation = new EOperationImpl<C, V>();
+    return eOperation;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EPackage createEPackage()
   {
-		EPackageImpl ePackage = new EPackageImpl();
-		return ePackage;
-	}
+    EPackageImpl ePackage = new EPackageImpl();
+    return ePackage;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EFactory createEFactory()
   {
-		EFactoryImpl eFactory = new EFactoryImpl();
-		return eFactory;
-	}
+    EFactoryImpl eFactory = new EFactoryImpl();
+    return eFactory;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EEnumLiteral createEEnumLiteral()
   {
-		EEnumLiteralImpl eEnumLiteral = new EEnumLiteralImpl();
-		return eEnumLiteral;
-	}
+    EEnumLiteralImpl eEnumLiteral = new EEnumLiteralImpl();
+    return eEnumLiteral;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public <T> EEnum<T> createEEnum()
   {
-		EEnumImpl<T> eEnum = new EEnumImpl<T>();
-		return eEnum;
-	}
+    EEnumImpl<T> eEnum = new EEnumImpl<T>();
+    return eEnum;
+  }
 
   protected Boolean booleanValueOf(String initialValue)
   {
@@ -517,48 +525,48 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
   }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public <C extends EObject, V> EReference<C, V> createEReference()
   {
-		EReferenceImpl<C, V> eReference = new EReferenceImpl<C, V>();
-		return eReference;
-	}
+    EReferenceImpl<C, V> eReference = new EReferenceImpl<C, V>();
+    return eReference;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public Map.Entry<String, String> createEStringToStringMapEntry()
   {
-		EStringToStringMapEntryImpl eStringToStringMapEntry = new EStringToStringMapEntryImpl();
-		return eStringToStringMapEntry;
-	}
+    EStringToStringMapEntryImpl eStringToStringMapEntry = new EStringToStringMapEntryImpl();
+    return eStringToStringMapEntry;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EGenericType createEGenericType()
   {
-		EGenericTypeImpl eGenericType = new EGenericTypeImpl();
-		return eGenericType;
-	}
+    EGenericTypeImpl eGenericType = new EGenericTypeImpl();
+    return eGenericType;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public ETypeParameter createETypeParameter()
   {
-		ETypeParameterImpl eTypeParameter = new ETypeParameterImpl();
-		return eTypeParameter;
-	}
+    ETypeParameterImpl eTypeParameter = new ETypeParameterImpl();
+    return eTypeParameter;
+  }
 
   /**
    * <!-- begin-user-doc -->
@@ -601,14 +609,14 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
   }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EcorePackage getEcorePackage()
   {
-		return (EcorePackage)getEPackage();
-	}
+    return (EcorePackage)getEPackage();
+  }
 
   /**
    * @deprecated

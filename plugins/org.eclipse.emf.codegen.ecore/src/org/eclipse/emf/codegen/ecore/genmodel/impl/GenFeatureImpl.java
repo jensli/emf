@@ -1014,27 +1014,34 @@ public class GenFeatureImpl extends GenTypedElementImpl implements GenFeature
       + getGenClass().getFeatureID(this) : getQualifiedFeatureAccessorName() + "()";
   }
 
-  public String getMetaType()
-  {
-    String importedName = getImportedMetaType();
-    return importedName.substring(importedName.lastIndexOf(".") + 1);
-  }
+  // CHANGE: Removed. getImportedMetaType never returns anythong with '.' in it so this could never have worked.
+//  public String getMetaType()
+//  {
+//    String importedName = getImportedMetaType();
+//    return importedName.substring(importedName.lastIndexOf(".") + 1);
+//  }
   
   public String getRawImportedMetaType()
   {
     return getGenModel().getImportedName(getEcoreFeature() instanceof EReference
-      ? "org.eclipse.emf.ecore.EReference"
-      : "org.eclipse.emf.ecore.EAttribute");
+      ? "org.eclipse.emf.ecore.EReference" : "org.eclipse.emf.ecore.EAttribute");
   }
 
   public String getImportedMetaType()
   {
+    // CHANGE gen: Generics added
+    // TODO gen: Code duplicated in GenFeature
     if (getGenModel().useGenerics()) {
       String containerType = getGenClass().isImplementingEobject()
         ? this.getGenClass().getImportedWildcardObjectInstanceClassName() : "?";
+      
+       // System.out.println(getTypeGenClass().getName() + " is EObject: " + getTypeGenClass().isEObjectExtension() + " " + getTypeGenClass().isImplementingEobject());
+        
+//      String containerType = this.getGenClass().getImportedWildcardObjectInstanceClassName();
+    return getRawImportedMetaType() + "<" + containerType + ", " + this.getObjectType(null, true) + ">";
 
-      return getRawImportedMetaType() + "<" + containerType + ", "
-        + this.getTypeGenClassifier().getImportedWildcardObjectInstanceClassName() + ">";
+//      return getRawImportedMetaType() + "<" + containerType + ", "
+//        + this.getTypeGenClassifier().getImportedWildcardObjectInstanceClassName() + ">";
     } else {
       return getRawImportedMetaType();
     }

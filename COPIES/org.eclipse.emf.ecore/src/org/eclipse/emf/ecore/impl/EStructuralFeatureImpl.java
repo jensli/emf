@@ -57,7 +57,7 @@ import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>EStructural Feature</b></em>'.
- * @extends EStructuralFeature.Internal, BasicExtendedMetaData.EStructuralFeatureExtendedMetaData.Holder
+ * @extends EStructuralFeature.Internal<C, V>, BasicExtendedMetaData.EStructuralFeatureExtendedMetaData.Holder
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
@@ -75,32 +75,32 @@ import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
  *
  * @generated
  */
-public abstract class EStructuralFeatureImpl<C extends EObject, V> extends ETypedElementImpl<V> implements EStructuralFeature<C, V>, EStructuralFeature.Internal, BasicExtendedMetaData.EStructuralFeatureExtendedMetaData.Holder
+public abstract class EStructuralFeatureImpl<C extends EObject, V> extends ETypedElementImpl<V> implements EStructuralFeature<C, V>, EStructuralFeature.Internal<C, V>, BasicExtendedMetaData.EStructuralFeatureExtendedMetaData.Holder
 {
   protected int featureID = -1;
-  protected Class<?> containerClass;
+  protected Class<C> containerClass;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected EStructuralFeatureImpl()
   {
-		super();
-		eFlags |= CHANGEABLE_EFLAG;
-	}
+    super();
+    eFlags |= CHANGEABLE_EFLAG;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
-		return EcorePackage.Literals.ESTRUCTURAL_FEATURE;
-	}
+    return EcorePackage.Literals.ESTRUCTURAL_FEATURE;
+  }
 
   @Override
   protected void freeze()
@@ -111,7 +111,7 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     super.freeze();
   }
 
-  protected Object defaultValue = null;
+  protected V defaultValue = null;
   protected EFactory defaultValueFactory = null;
 
   /**
@@ -119,9 +119,9 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
    * <!-- end-user-doc -->
    * @generated modifiable
    */
-  public Object getDefaultValue()
+  public V getDefaultValue()
   {
-    EClassifier eType = getEType();
+    EClassifier<V> eType = getEType();
     String literal = getDefaultValueLiteral();
 
     if (literal == null && eType != null)
@@ -136,12 +136,12 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
         EFactory factory = ePackage.getEFactoryInstance();
         if (factory != defaultValueFactory)
         {
-          EDataType eDataType = (EDataType)eType;
+          EDataType<V> eDataType = (EDataType<V>)eType;
           if (eDataType.isSerializable())
           {
             try
             {
-              defaultValue = factory.createFromString(eDataType, literal);
+              defaultValue = (V)factory.createFromString(eDataType, literal);
             }
             catch (Throwable e)
             {
@@ -160,11 +160,12 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
 
   public void setDefaultValue(Object newDefaultValue)
   {
-    EClassifier eType = getEType();
+    EClassifier<V> eType = getEType();
     if (eType instanceof EDataType)
     {
       EFactory factory = eType.getEPackage().getEFactoryInstance();
-      String literal = factory.convertToString((EDataType)eType, newDefaultValue);
+      @SuppressWarnings("unchecked")
+      String literal = factory.convertToString((EDataType<V>)eType, (V) newDefaultValue);
       defaultValueFactory = null;
       setDefaultValueLiteralGen(literal);
       return;
@@ -179,301 +180,301 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
   }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setDefaultValueLiteralGen(String newDefaultValueLiteral)
   {
-		String oldDefaultValueLiteral = defaultValueLiteral;
-		defaultValueLiteral = newDefaultValueLiteral;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ESTRUCTURAL_FEATURE__DEFAULT_VALUE_LITERAL, oldDefaultValueLiteral, defaultValueLiteral));
-	}
+    String oldDefaultValueLiteral = defaultValueLiteral;
+    defaultValueLiteral = newDefaultValueLiteral;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ESTRUCTURAL_FEATURE__DEFAULT_VALUE_LITERAL, oldDefaultValueLiteral, defaultValueLiteral));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public boolean isUnsettable()
   {
-		return (eFlags & UNSETTABLE_EFLAG) != 0;
-	}
+    return (eFlags & UNSETTABLE_EFLAG) != 0;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setUnsettable(boolean newUnsettable)
   {
-		boolean oldUnsettable = (eFlags & UNSETTABLE_EFLAG) != 0;
-		if (newUnsettable) eFlags |= UNSETTABLE_EFLAG; else eFlags &= ~UNSETTABLE_EFLAG;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ESTRUCTURAL_FEATURE__UNSETTABLE, oldUnsettable, newUnsettable));
-	}
+    boolean oldUnsettable = (eFlags & UNSETTABLE_EFLAG) != 0;
+    if (newUnsettable) eFlags |= UNSETTABLE_EFLAG; else eFlags &= ~UNSETTABLE_EFLAG;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ESTRUCTURAL_FEATURE__UNSETTABLE, oldUnsettable, newUnsettable));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public boolean isDerived()
   {
-		return (eFlags & DERIVED_EFLAG) != 0;
-	}
+    return (eFlags & DERIVED_EFLAG) != 0;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setDerived(boolean newDerived)
   {
-		boolean oldDerived = (eFlags & DERIVED_EFLAG) != 0;
-		if (newDerived) eFlags |= DERIVED_EFLAG; else eFlags &= ~DERIVED_EFLAG;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ESTRUCTURAL_FEATURE__DERIVED, oldDerived, newDerived));
-	}
+    boolean oldDerived = (eFlags & DERIVED_EFLAG) != 0;
+    if (newDerived) eFlags |= DERIVED_EFLAG; else eFlags &= ~DERIVED_EFLAG;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ESTRUCTURAL_FEATURE__DERIVED, oldDerived, newDerived));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
 		public EClass<C> getEContainingClass()
   {
-		if (eContainerFeatureID() != EcorePackage.ESTRUCTURAL_FEATURE__ECONTAINING_CLASS) return null;
-		return (EClass<C>)eInternalContainer();
-	}
+    if (eContainerFeatureID() != EcorePackage.ESTRUCTURAL_FEATURE__ECONTAINING_CLASS) return null;
+    return (EClass<C>)eInternalContainer();
+  }
 
   /**
-	 * The default value of the '{@link #isChangeable() <em>Changeable</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #isChangeable() <em>Changeable</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #isChangeable()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isChangeable()
+   * @generated
+   * @ordered
+   */
   protected static final boolean CHANGEABLE_EDEFAULT = true;
 
   /**
-	 * The flag representing the value of the '{@link #isChangeable() <em>Changeable</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The flag representing the value of the '{@link #isChangeable() <em>Changeable</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #isChangeable()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isChangeable()
+   * @generated
+   * @ordered
+   */
   protected static final int CHANGEABLE_EFLAG = 1 << 10;
 
   /**
-	 * The default value of the '{@link #isVolatile() <em>Volatile</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #isVolatile() <em>Volatile</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #isVolatile()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isVolatile()
+   * @generated
+   * @ordered
+   */
   protected static final boolean VOLATILE_EDEFAULT = false;
 
   /**
-	 * The flag representing the value of the '{@link #isVolatile() <em>Volatile</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The flag representing the value of the '{@link #isVolatile() <em>Volatile</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #isVolatile()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isVolatile()
+   * @generated
+   * @ordered
+   */
   protected static final int VOLATILE_EFLAG = 1 << 11;
 
   /**
-	 * The default value of the '{@link #isTransient() <em>Transient</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #isTransient() <em>Transient</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #isTransient()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isTransient()
+   * @generated
+   * @ordered
+   */
   protected static final boolean TRANSIENT_EDEFAULT = false;
 
   /**
-	 * The flag representing the value of the '{@link #isTransient() <em>Transient</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The flag representing the value of the '{@link #isTransient() <em>Transient</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #isTransient()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isTransient()
+   * @generated
+   * @ordered
+   */
   protected static final int TRANSIENT_EFLAG = 1 << 12;
 
   /**
-	 * The default value of the '{@link #getDefaultValueLiteral() <em>Default Value Literal</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getDefaultValueLiteral() <em>Default Value Literal</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getDefaultValueLiteral()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getDefaultValueLiteral()
+   * @generated
+   * @ordered
+   */
   protected static final String DEFAULT_VALUE_LITERAL_EDEFAULT = null;
 
   /**
-	 * The cached value of the '{@link #getDefaultValueLiteral() <em>Default Value Literal</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getDefaultValueLiteral() <em>Default Value Literal</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getDefaultValueLiteral()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getDefaultValueLiteral()
+   * @generated
+   * @ordered
+   */
   protected String defaultValueLiteral = DEFAULT_VALUE_LITERAL_EDEFAULT;
 
   /**
-	 * The default value of the '{@link #isUnsettable() <em>Unsettable</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #isUnsettable() <em>Unsettable</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #isUnsettable()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isUnsettable()
+   * @generated
+   * @ordered
+   */
   protected static final boolean UNSETTABLE_EDEFAULT = false;
 
   /**
-	 * The flag representing the value of the '{@link #isUnsettable() <em>Unsettable</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The flag representing the value of the '{@link #isUnsettable() <em>Unsettable</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #isUnsettable()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isUnsettable()
+   * @generated
+   * @ordered
+   */
   protected static final int UNSETTABLE_EFLAG = 1 << 13;
 
   /**
-	 * The default value of the '{@link #isDerived() <em>Derived</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #isDerived() <em>Derived</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #isDerived()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isDerived()
+   * @generated
+   * @ordered
+   */
   protected static final boolean DERIVED_EDEFAULT = false;
 
   /**
-	 * The flag representing the value of the '{@link #isDerived() <em>Derived</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The flag representing the value of the '{@link #isDerived() <em>Derived</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #isDerived()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isDerived()
+   * @generated
+   * @ordered
+   */
   protected static final int DERIVED_EFLAG = 1 << 14;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public boolean isTransient()
   {
-		return (eFlags & TRANSIENT_EFLAG) != 0;
-	}
+    return (eFlags & TRANSIENT_EFLAG) != 0;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setTransient(boolean newTransient)
   {
-		boolean oldTransient = (eFlags & TRANSIENT_EFLAG) != 0;
-		if (newTransient) eFlags |= TRANSIENT_EFLAG; else eFlags &= ~TRANSIENT_EFLAG;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ESTRUCTURAL_FEATURE__TRANSIENT, oldTransient, newTransient));
-	}
+    boolean oldTransient = (eFlags & TRANSIENT_EFLAG) != 0;
+    if (newTransient) eFlags |= TRANSIENT_EFLAG; else eFlags &= ~TRANSIENT_EFLAG;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ESTRUCTURAL_FEATURE__TRANSIENT, oldTransient, newTransient));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public boolean isVolatile()
   {
-		return (eFlags & VOLATILE_EFLAG) != 0;
-	}
+    return (eFlags & VOLATILE_EFLAG) != 0;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setVolatile(boolean newVolatile)
   {
-		boolean oldVolatile = (eFlags & VOLATILE_EFLAG) != 0;
-		if (newVolatile) eFlags |= VOLATILE_EFLAG; else eFlags &= ~VOLATILE_EFLAG;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ESTRUCTURAL_FEATURE__VOLATILE, oldVolatile, newVolatile));
-	}
+    boolean oldVolatile = (eFlags & VOLATILE_EFLAG) != 0;
+    if (newVolatile) eFlags |= VOLATILE_EFLAG; else eFlags &= ~VOLATILE_EFLAG;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ESTRUCTURAL_FEATURE__VOLATILE, oldVolatile, newVolatile));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public boolean isChangeable()
   {
-		return (eFlags & CHANGEABLE_EFLAG) != 0;
-	}
+    return (eFlags & CHANGEABLE_EFLAG) != 0;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setChangeable(boolean newChangeable)
   {
-		boolean oldChangeable = (eFlags & CHANGEABLE_EFLAG) != 0;
-		if (newChangeable) eFlags |= CHANGEABLE_EFLAG; else eFlags &= ~CHANGEABLE_EFLAG;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ESTRUCTURAL_FEATURE__CHANGEABLE, oldChangeable, newChangeable));
-	}
+    boolean oldChangeable = (eFlags & CHANGEABLE_EFLAG) != 0;
+    if (newChangeable) eFlags |= CHANGEABLE_EFLAG; else eFlags &= ~CHANGEABLE_EFLAG;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ESTRUCTURAL_FEATURE__CHANGEABLE, oldChangeable, newChangeable));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public String getDefaultValueLiteral()
   {
-		return defaultValueLiteral;
-	}
+    return defaultValueLiteral;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String toString()
   {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (changeable: ");
-		result.append((eFlags & CHANGEABLE_EFLAG) != 0);
-		result.append(", volatile: ");
-		result.append((eFlags & VOLATILE_EFLAG) != 0);
-		result.append(", transient: ");
-		result.append((eFlags & TRANSIENT_EFLAG) != 0);
-		result.append(", defaultValueLiteral: ");
-		result.append(defaultValueLiteral);
-		result.append(", unsettable: ");
-		result.append((eFlags & UNSETTABLE_EFLAG) != 0);
-		result.append(", derived: ");
-		result.append((eFlags & DERIVED_EFLAG) != 0);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (changeable: ");
+    result.append((eFlags & CHANGEABLE_EFLAG) != 0);
+    result.append(", volatile: ");
+    result.append((eFlags & VOLATILE_EFLAG) != 0);
+    result.append(", transient: ");
+    result.append((eFlags & TRANSIENT_EFLAG) != 0);
+    result.append(", defaultValueLiteral: ");
+    result.append(defaultValueLiteral);
+    result.append(", unsettable: ");
+    result.append((eFlags & UNSETTABLE_EFLAG) != 0);
+    result.append(", derived: ");
+    result.append((eFlags & DERIVED_EFLAG) != 0);
+    result.append(')');
+    return result.toString();
+  }
 
   /**
    * @generated modifiable
@@ -491,298 +492,307 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
   /**
    * @generated modifiable
    */
-  public Class<?> getContainerClass()
+  public Class<C> getContainerClass()
   {
     return containerClass;
   }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case EcorePackage.ESTRUCTURAL_FEATURE__EANNOTATIONS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEAnnotations()).basicAdd(otherEnd, msgs);
-			case EcorePackage.ESTRUCTURAL_FEATURE__ECONTAINING_CLASS:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return eBasicSetContainer(otherEnd, EcorePackage.ESTRUCTURAL_FEATURE__ECONTAINING_CLASS, msgs);
-		}
-		return eDynamicInverseAdd(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.ESTRUCTURAL_FEATURE__EANNOTATIONS:
+        return ((InternalEList<InternalEObject>)(InternalEList<?>)getEAnnotations()).basicAdd(otherEnd, msgs);
+      case EcorePackage.ESTRUCTURAL_FEATURE__ECONTAINING_CLASS:
+        if (eInternalContainer() != null)
+          msgs = eBasicRemoveFromContainer(msgs);
+        return eBasicSetContainer(otherEnd, EcorePackage.ESTRUCTURAL_FEATURE__ECONTAINING_CLASS, msgs);
+    }
+    return eDynamicInverseAdd(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case EcorePackage.ESTRUCTURAL_FEATURE__EANNOTATIONS:
-				return ((InternalEList<?>)getEAnnotations()).basicRemove(otherEnd, msgs);
-			case EcorePackage.ESTRUCTURAL_FEATURE__EGENERIC_TYPE:
-				return basicUnsetEGenericType(msgs);
-			case EcorePackage.ESTRUCTURAL_FEATURE__ECONTAINING_CLASS:
-				return eBasicSetContainer(null, EcorePackage.ESTRUCTURAL_FEATURE__ECONTAINING_CLASS, msgs);
-		}
-		return eDynamicInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.ESTRUCTURAL_FEATURE__EANNOTATIONS:
+        return ((InternalEList<?>)getEAnnotations()).basicRemove(otherEnd, msgs);
+      case EcorePackage.ESTRUCTURAL_FEATURE__EGENERIC_TYPE:
+        return basicUnsetEGenericType(msgs);
+      case EcorePackage.ESTRUCTURAL_FEATURE__ECONTAINING_CLASS:
+        return eBasicSetContainer(null, EcorePackage.ESTRUCTURAL_FEATURE__ECONTAINING_CLASS, msgs);
+    }
+    return eDynamicInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
   {
-		switch (eContainerFeatureID()) {
-			case EcorePackage.ESTRUCTURAL_FEATURE__ECONTAINING_CLASS:
-				return eInternalContainer().eInverseRemove(this, EcorePackage.ECLASS__ESTRUCTURAL_FEATURES, EClass.class, msgs);
-		}
-		return eDynamicBasicRemoveFromContainer(msgs);
-	}
+    switch (eContainerFeatureID())
+    {
+      case EcorePackage.ESTRUCTURAL_FEATURE__ECONTAINING_CLASS:
+        return eInternalContainer().eInverseRemove(this, EcorePackage.ECLASS__ESTRUCTURAL_FEATURES, EClass.class, msgs);
+    }
+    return eDynamicBasicRemoveFromContainer(msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case EcorePackage.ESTRUCTURAL_FEATURE__EANNOTATIONS:
-				return getEAnnotations();
-			case EcorePackage.ESTRUCTURAL_FEATURE__NAME:
-				return getName();
-			case EcorePackage.ESTRUCTURAL_FEATURE__ORDERED:
-				return isOrdered();
-			case EcorePackage.ESTRUCTURAL_FEATURE__UNIQUE:
-				return isUnique();
-			case EcorePackage.ESTRUCTURAL_FEATURE__LOWER_BOUND:
-				return getLowerBound();
-			case EcorePackage.ESTRUCTURAL_FEATURE__UPPER_BOUND:
-				return getUpperBound();
-			case EcorePackage.ESTRUCTURAL_FEATURE__MANY:
-				return isMany();
-			case EcorePackage.ESTRUCTURAL_FEATURE__REQUIRED:
-				return isRequired();
-			case EcorePackage.ESTRUCTURAL_FEATURE__ETYPE:
-				if (resolve) return getEType();
-				return basicGetEType();
-			case EcorePackage.ESTRUCTURAL_FEATURE__EGENERIC_TYPE:
-				return getEGenericType();
-			case EcorePackage.ESTRUCTURAL_FEATURE__CHANGEABLE:
-				return isChangeable();
-			case EcorePackage.ESTRUCTURAL_FEATURE__VOLATILE:
-				return isVolatile();
-			case EcorePackage.ESTRUCTURAL_FEATURE__TRANSIENT:
-				return isTransient();
-			case EcorePackage.ESTRUCTURAL_FEATURE__DEFAULT_VALUE_LITERAL:
-				return getDefaultValueLiteral();
-			case EcorePackage.ESTRUCTURAL_FEATURE__DEFAULT_VALUE:
-				return getDefaultValue();
-			case EcorePackage.ESTRUCTURAL_FEATURE__UNSETTABLE:
-				return isUnsettable();
-			case EcorePackage.ESTRUCTURAL_FEATURE__DERIVED:
-				return isDerived();
-			case EcorePackage.ESTRUCTURAL_FEATURE__ECONTAINING_CLASS:
-				return getEContainingClass();
-		}
-		return eDynamicGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.ESTRUCTURAL_FEATURE__EANNOTATIONS:
+        return getEAnnotations();
+      case EcorePackage.ESTRUCTURAL_FEATURE__NAME:
+        return getName();
+      case EcorePackage.ESTRUCTURAL_FEATURE__ORDERED:
+        return isOrdered();
+      case EcorePackage.ESTRUCTURAL_FEATURE__UNIQUE:
+        return isUnique();
+      case EcorePackage.ESTRUCTURAL_FEATURE__LOWER_BOUND:
+        return getLowerBound();
+      case EcorePackage.ESTRUCTURAL_FEATURE__UPPER_BOUND:
+        return getUpperBound();
+      case EcorePackage.ESTRUCTURAL_FEATURE__MANY:
+        return isMany();
+      case EcorePackage.ESTRUCTURAL_FEATURE__REQUIRED:
+        return isRequired();
+      case EcorePackage.ESTRUCTURAL_FEATURE__ETYPE:
+        if (resolve) return getEType();
+        return basicGetEType();
+      case EcorePackage.ESTRUCTURAL_FEATURE__EGENERIC_TYPE:
+        return getEGenericType();
+      case EcorePackage.ESTRUCTURAL_FEATURE__CHANGEABLE:
+        return isChangeable();
+      case EcorePackage.ESTRUCTURAL_FEATURE__VOLATILE:
+        return isVolatile();
+      case EcorePackage.ESTRUCTURAL_FEATURE__TRANSIENT:
+        return isTransient();
+      case EcorePackage.ESTRUCTURAL_FEATURE__DEFAULT_VALUE_LITERAL:
+        return getDefaultValueLiteral();
+      case EcorePackage.ESTRUCTURAL_FEATURE__DEFAULT_VALUE:
+        return getDefaultValue();
+      case EcorePackage.ESTRUCTURAL_FEATURE__UNSETTABLE:
+        return isUnsettable();
+      case EcorePackage.ESTRUCTURAL_FEATURE__DERIVED:
+        return isDerived();
+      case EcorePackage.ESTRUCTURAL_FEATURE__ECONTAINING_CLASS:
+        return getEContainingClass();
+    }
+    return eDynamicGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case EcorePackage.ESTRUCTURAL_FEATURE__EANNOTATIONS:
-				getEAnnotations().clear();
-				getEAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__NAME:
-				setName((String)newValue);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__ORDERED:
-				setOrdered((Boolean)newValue);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__UNIQUE:
-				setUnique((Boolean)newValue);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__LOWER_BOUND:
-				setLowerBound((Integer)newValue);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__UPPER_BOUND:
-				setUpperBound((Integer)newValue);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__ETYPE:
-				setEType((EClassifier<V>)newValue);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__EGENERIC_TYPE:
-				setEGenericType((EGenericType)newValue);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__CHANGEABLE:
-				setChangeable((Boolean)newValue);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__VOLATILE:
-				setVolatile((Boolean)newValue);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__TRANSIENT:
-				setTransient((Boolean)newValue);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__DEFAULT_VALUE_LITERAL:
-				setDefaultValueLiteral((String)newValue);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__UNSETTABLE:
-				setUnsettable((Boolean)newValue);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__DERIVED:
-				setDerived((Boolean)newValue);
-				return;
-		}
-		eDynamicSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.ESTRUCTURAL_FEATURE__EANNOTATIONS:
+        getEAnnotations().clear();
+        getEAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__NAME:
+        setName((String)newValue);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__ORDERED:
+        setOrdered((Boolean)newValue);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__UNIQUE:
+        setUnique((Boolean)newValue);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__LOWER_BOUND:
+        setLowerBound((Integer)newValue);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__UPPER_BOUND:
+        setUpperBound((Integer)newValue);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__ETYPE:
+        setEType((EClassifier<V>)newValue);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__EGENERIC_TYPE:
+        setEGenericType((EGenericType)newValue);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__CHANGEABLE:
+        setChangeable((Boolean)newValue);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__VOLATILE:
+        setVolatile((Boolean)newValue);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__TRANSIENT:
+        setTransient((Boolean)newValue);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__DEFAULT_VALUE_LITERAL:
+        setDefaultValueLiteral((String)newValue);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__UNSETTABLE:
+        setUnsettable((Boolean)newValue);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__DERIVED:
+        setDerived((Boolean)newValue);
+        return;
+    }
+    eDynamicSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case EcorePackage.ESTRUCTURAL_FEATURE__EANNOTATIONS:
-				getEAnnotations().clear();
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__ORDERED:
-				setOrdered(ORDERED_EDEFAULT);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__UNIQUE:
-				setUnique(UNIQUE_EDEFAULT);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__LOWER_BOUND:
-				setLowerBound(LOWER_BOUND_EDEFAULT);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__UPPER_BOUND:
-				setUpperBound(UPPER_BOUND_EDEFAULT);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__ETYPE:
-				unsetEType();
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__EGENERIC_TYPE:
-				unsetEGenericType();
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__CHANGEABLE:
-				setChangeable(CHANGEABLE_EDEFAULT);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__VOLATILE:
-				setVolatile(VOLATILE_EDEFAULT);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__TRANSIENT:
-				setTransient(TRANSIENT_EDEFAULT);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__DEFAULT_VALUE_LITERAL:
-				setDefaultValueLiteral(DEFAULT_VALUE_LITERAL_EDEFAULT);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__UNSETTABLE:
-				setUnsettable(UNSETTABLE_EDEFAULT);
-				return;
-			case EcorePackage.ESTRUCTURAL_FEATURE__DERIVED:
-				setDerived(DERIVED_EDEFAULT);
-				return;
-		}
-		eDynamicUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.ESTRUCTURAL_FEATURE__EANNOTATIONS:
+        getEAnnotations().clear();
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__ORDERED:
+        setOrdered(ORDERED_EDEFAULT);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__UNIQUE:
+        setUnique(UNIQUE_EDEFAULT);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__LOWER_BOUND:
+        setLowerBound(LOWER_BOUND_EDEFAULT);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__UPPER_BOUND:
+        setUpperBound(UPPER_BOUND_EDEFAULT);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__ETYPE:
+        unsetEType();
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__EGENERIC_TYPE:
+        unsetEGenericType();
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__CHANGEABLE:
+        setChangeable(CHANGEABLE_EDEFAULT);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__VOLATILE:
+        setVolatile(VOLATILE_EDEFAULT);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__TRANSIENT:
+        setTransient(TRANSIENT_EDEFAULT);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__DEFAULT_VALUE_LITERAL:
+        setDefaultValueLiteral(DEFAULT_VALUE_LITERAL_EDEFAULT);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__UNSETTABLE:
+        setUnsettable(UNSETTABLE_EDEFAULT);
+        return;
+      case EcorePackage.ESTRUCTURAL_FEATURE__DERIVED:
+        setDerived(DERIVED_EDEFAULT);
+        return;
+    }
+    eDynamicUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case EcorePackage.ESTRUCTURAL_FEATURE__EANNOTATIONS:
-				return eAnnotations != null && !eAnnotations.isEmpty();
-			case EcorePackage.ESTRUCTURAL_FEATURE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case EcorePackage.ESTRUCTURAL_FEATURE__ORDERED:
-				return ((eFlags & ORDERED_EFLAG) != 0) != ORDERED_EDEFAULT;
-			case EcorePackage.ESTRUCTURAL_FEATURE__UNIQUE:
-				return ((eFlags & UNIQUE_EFLAG) != 0) != UNIQUE_EDEFAULT;
-			case EcorePackage.ESTRUCTURAL_FEATURE__LOWER_BOUND:
-				return lowerBound != LOWER_BOUND_EDEFAULT;
-			case EcorePackage.ESTRUCTURAL_FEATURE__UPPER_BOUND:
-				return upperBound != UPPER_BOUND_EDEFAULT;
-			case EcorePackage.ESTRUCTURAL_FEATURE__MANY:
-				return isMany() != MANY_EDEFAULT;
-			case EcorePackage.ESTRUCTURAL_FEATURE__REQUIRED:
-				return isRequired() != REQUIRED_EDEFAULT;
-			case EcorePackage.ESTRUCTURAL_FEATURE__ETYPE:
-				return isSetEType();
-			case EcorePackage.ESTRUCTURAL_FEATURE__EGENERIC_TYPE:
-				return isSetEGenericType();
-			case EcorePackage.ESTRUCTURAL_FEATURE__CHANGEABLE:
-				return ((eFlags & CHANGEABLE_EFLAG) != 0) != CHANGEABLE_EDEFAULT;
-			case EcorePackage.ESTRUCTURAL_FEATURE__VOLATILE:
-				return ((eFlags & VOLATILE_EFLAG) != 0) != VOLATILE_EDEFAULT;
-			case EcorePackage.ESTRUCTURAL_FEATURE__TRANSIENT:
-				return ((eFlags & TRANSIENT_EFLAG) != 0) != TRANSIENT_EDEFAULT;
-			case EcorePackage.ESTRUCTURAL_FEATURE__DEFAULT_VALUE_LITERAL:
-				return DEFAULT_VALUE_LITERAL_EDEFAULT == null ? defaultValueLiteral != null : !DEFAULT_VALUE_LITERAL_EDEFAULT.equals(defaultValueLiteral);
-			case EcorePackage.ESTRUCTURAL_FEATURE__DEFAULT_VALUE:
-				return getDefaultValue() != null;
-			case EcorePackage.ESTRUCTURAL_FEATURE__UNSETTABLE:
-				return ((eFlags & UNSETTABLE_EFLAG) != 0) != UNSETTABLE_EDEFAULT;
-			case EcorePackage.ESTRUCTURAL_FEATURE__DERIVED:
-				return ((eFlags & DERIVED_EFLAG) != 0) != DERIVED_EDEFAULT;
-			case EcorePackage.ESTRUCTURAL_FEATURE__ECONTAINING_CLASS:
-				return getEContainingClass() != null;
-		}
-		return eDynamicIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.ESTRUCTURAL_FEATURE__EANNOTATIONS:
+        return eAnnotations != null && !eAnnotations.isEmpty();
+      case EcorePackage.ESTRUCTURAL_FEATURE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case EcorePackage.ESTRUCTURAL_FEATURE__ORDERED:
+        return ((eFlags & ORDERED_EFLAG) != 0) != ORDERED_EDEFAULT;
+      case EcorePackage.ESTRUCTURAL_FEATURE__UNIQUE:
+        return ((eFlags & UNIQUE_EFLAG) != 0) != UNIQUE_EDEFAULT;
+      case EcorePackage.ESTRUCTURAL_FEATURE__LOWER_BOUND:
+        return lowerBound != LOWER_BOUND_EDEFAULT;
+      case EcorePackage.ESTRUCTURAL_FEATURE__UPPER_BOUND:
+        return upperBound != UPPER_BOUND_EDEFAULT;
+      case EcorePackage.ESTRUCTURAL_FEATURE__MANY:
+        return isMany() != MANY_EDEFAULT;
+      case EcorePackage.ESTRUCTURAL_FEATURE__REQUIRED:
+        return isRequired() != REQUIRED_EDEFAULT;
+      case EcorePackage.ESTRUCTURAL_FEATURE__ETYPE:
+        return isSetEType();
+      case EcorePackage.ESTRUCTURAL_FEATURE__EGENERIC_TYPE:
+        return isSetEGenericType();
+      case EcorePackage.ESTRUCTURAL_FEATURE__CHANGEABLE:
+        return ((eFlags & CHANGEABLE_EFLAG) != 0) != CHANGEABLE_EDEFAULT;
+      case EcorePackage.ESTRUCTURAL_FEATURE__VOLATILE:
+        return ((eFlags & VOLATILE_EFLAG) != 0) != VOLATILE_EDEFAULT;
+      case EcorePackage.ESTRUCTURAL_FEATURE__TRANSIENT:
+        return ((eFlags & TRANSIENT_EFLAG) != 0) != TRANSIENT_EDEFAULT;
+      case EcorePackage.ESTRUCTURAL_FEATURE__DEFAULT_VALUE_LITERAL:
+        return DEFAULT_VALUE_LITERAL_EDEFAULT == null ? defaultValueLiteral != null : !DEFAULT_VALUE_LITERAL_EDEFAULT.equals(defaultValueLiteral);
+      case EcorePackage.ESTRUCTURAL_FEATURE__DEFAULT_VALUE:
+        return getDefaultValue() != null;
+      case EcorePackage.ESTRUCTURAL_FEATURE__UNSETTABLE:
+        return ((eFlags & UNSETTABLE_EFLAG) != 0) != UNSETTABLE_EDEFAULT;
+      case EcorePackage.ESTRUCTURAL_FEATURE__DERIVED:
+        return ((eFlags & DERIVED_EFLAG) != 0) != DERIVED_EDEFAULT;
+      case EcorePackage.ESTRUCTURAL_FEATURE__ECONTAINING_CLASS:
+        return getEContainingClass() != null;
+    }
+    return eDynamicIsSet(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException
   {
-		switch (operationID) {
-			case EcorePackage.ESTRUCTURAL_FEATURE___GET_EANNOTATION__STRING:
-				return getEAnnotation((String)arguments.get(0));
-			case EcorePackage.ESTRUCTURAL_FEATURE___GET_FEATURE_ID:
-				return getFeatureID();
-			case EcorePackage.ESTRUCTURAL_FEATURE___GET_CONTAINER_CLASS:
-				return getContainerClass();
-		}
-		return eDynamicInvoke(operationID, arguments);
-	}
+    switch (operationID)
+    {
+      case EcorePackage.ESTRUCTURAL_FEATURE___GET_EANNOTATION__STRING:
+        return getEAnnotation((String)arguments.get(0));
+      case EcorePackage.ESTRUCTURAL_FEATURE___GET_FEATURE_ID:
+        return getFeatureID();
+      case EcorePackage.ESTRUCTURAL_FEATURE___GET_CONTAINER_CLASS:
+        return getContainerClass();
+    }
+    return eDynamicInvoke(operationID, arguments);
+  }
 
+  @SuppressWarnings("unchecked")
   public void setContainerClass(Class<?> containerClass)
   {
-    this.containerClass = containerClass;
+    this.containerClass = (Class<C>) containerClass;
   }
 
   public boolean isResolveProxies()
@@ -800,7 +810,7 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     return false;
   }
 
-  public EReference getEOpposite()
+  public EReference<?, C> getEOpposite()
   {
     return null;
   }
@@ -810,38 +820,39 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     return false;
   }
 
-  protected EStructuralFeature.Internal.SettingDelegate settingDelegate;
+  protected EStructuralFeature.Internal.SettingDelegate<C, V> settingDelegate;
 
-  public EStructuralFeature.Internal.SettingDelegate getSettingDelegate()
+  @SuppressWarnings("unchecked")
+  public EStructuralFeature.Internal.SettingDelegate<C, V> getSettingDelegate()
   {
     if (settingDelegate == null)
     {
-      EClass eClass  = getEContainingClass();
+      EClass<C> eClass  = getEContainingClass();
       eClass.getFeatureCount();
-      EReference eOpposite = getEOpposite();
+      EReference<?, C> eOpposite = getEOpposite();
       if (eOpposite != null)
       {
         eOpposite.getEContainingClass().getFeatureCount();
       }
 
-      EClassifier eType = getEType();
+      EClassifier<V> eType = getEType();
       Class<?> instanceClass = eType.getInstanceClass();
-      Class<?> dataClass = EcoreUtil.wrapperClassFor(instanceClass);
-      Object defaultValue = getDefaultValue();
-      Object intrinsicDefaultValue = eType.getDefaultValue();
+      Class<V> dataClass = (Class<V>) EcoreUtil.wrapperClassFor(instanceClass);
+      V defaultValue = getDefaultValue();
+      V intrinsicDefaultValue = eType.getDefaultValue();
 
-      EStructuralFeature featureMapFeature;
+      EStructuralFeature<C, V> featureMapFeature;
       SettingDelegate.Factory settingDelegateFactory;
       if ((settingDelegateFactory = EcoreUtil.getSettingDelegateFactory(this)) != null)
       {
         settingDelegate = settingDelegateFactory.createSettingDelegate(this);
       }
       else if (isDerived() && 
-                 (((featureMapFeature = ExtendedMetaData.INSTANCE.getMixedFeature(eClass)) != null && 
+                 (((featureMapFeature = (EStructuralFeature<C, V>) ExtendedMetaData.INSTANCE.getMixedFeature(eClass)) != null && 
                     featureMapFeature != this) ||
-                    ((featureMapFeature = ExtendedMetaData.INSTANCE.getGroup(this)) != null)))
+                    ((featureMapFeature = (EStructuralFeature<C, V>) ExtendedMetaData.INSTANCE.getGroup(this)) != null)))
       {
-        settingDelegate = new InternalSettingDelegateFeatureMapDelegator(this, featureMapFeature);
+        settingDelegate = new InternalSettingDelegateFeatureMapDelegator<C, V>(this, featureMapFeature);
       }
       else if (isMany())
       {
@@ -856,20 +867,20 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
                 if (isResolveProxies())
                 {
                   settingDelegate = 
-                    new InternalSettingDelegateMany
+                    new InternalSettingDelegateMany<C, V>
                       (InternalSettingDelegateMany.CONTAINMENT_UNSETTABLE_DYNAMIC_RESOLVE, this);
                 }
                 else
                 {
                   settingDelegate = 
-                    new InternalSettingDelegateMany
+                    new InternalSettingDelegateMany<C, V>
                       (InternalSettingDelegateMany.CONTAINMENT_UNSETTABLE_DYNAMIC, this);
                 }
               }
               else if (dataClass == Map.Entry.class)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.EMAP_UNSETTABLE, BasicEMap.Entry.class, this);
               }
               else
@@ -877,13 +888,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
                 if (isResolveProxies())
                 {
                   settingDelegate = 
-                    new InternalSettingDelegateMany
+                    new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.CONTAINMENT_UNSETTABLE_RESOLVE, dataClass, this);
                 }
                 else
                 {
                   settingDelegate = 
-                    new InternalSettingDelegateMany
+                    new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.CONTAINMENT_UNSETTABLE, dataClass, this);
                 }
               }
@@ -895,20 +906,20 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
                 if (isResolveProxies())
                 {
                   settingDelegate = 
-                    new InternalSettingDelegateMany
+                    new InternalSettingDelegateMany<C, V>
                       (InternalSettingDelegateMany.CONTAINMENT_DYNAMIC_RESOLVE, this);
                 }
                 else
                 {
                   settingDelegate = 
-                    new InternalSettingDelegateMany
+                    new InternalSettingDelegateMany<C, V>
                       (InternalSettingDelegateMany.CONTAINMENT_DYNAMIC, this);
                 }
               }
               else if (dataClass == Map.Entry.class)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.EMAP, BasicEMap.Entry.class, this);
               }
               else
@@ -916,13 +927,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
                 if (isResolveProxies())
                 {
                   settingDelegate = 
-                    new InternalSettingDelegateMany
+                    new InternalSettingDelegateMany<C, V>
                       (InternalSettingDelegateMany.CONTAINMENT_RESOLVE, dataClass, this);
                 }
                 else
                 {
                   settingDelegate = 
-                    new InternalSettingDelegateMany
+                    new InternalSettingDelegateMany<C, V>
                       (InternalSettingDelegateMany.CONTAINMENT, dataClass, this);
                   
                 }
@@ -938,13 +949,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
                 if (isResolveProxies())
                 {
                   settingDelegate = 
-                    new InternalSettingDelegateMany
+                    new InternalSettingDelegateMany<C, V>
                       (InternalSettingDelegateMany.CONTAINMENT_INVERSE_UNSETTABLE_DYNAMIC_RESOLVE, this, eOpposite);
                 }   
                 else
                 {
                   settingDelegate = 
-                    new InternalSettingDelegateMany
+                    new InternalSettingDelegateMany<C, V>
                       (InternalSettingDelegateMany.CONTAINMENT_INVERSE_UNSETTABLE_DYNAMIC, this, eOpposite);
                 }   
               }
@@ -953,13 +964,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
                 if (isResolveProxies())
                 {
                   settingDelegate = 
-                    new InternalSettingDelegateMany
+                    new InternalSettingDelegateMany<C, V>
                       (InternalSettingDelegateMany.CONTAINMENT_INVERSE_UNSETTABLE_RESOLVE, dataClass, this, eOpposite);
                 }
                 else
                 {
                   settingDelegate = 
-                    new InternalSettingDelegateMany
+                    new InternalSettingDelegateMany<C, V>
                       (InternalSettingDelegateMany.CONTAINMENT_INVERSE_UNSETTABLE, dataClass, this, eOpposite);
                 }
               }
@@ -971,13 +982,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
                 if (isResolveProxies())
                 {
                   settingDelegate = 
-                    new InternalSettingDelegateMany
+                    new InternalSettingDelegateMany<C, V>
                       (InternalSettingDelegateMany.CONTAINMENT_INVERSE_DYNAMIC_RESOLVE, this, eOpposite);
                 }
                 else
                 {
                   settingDelegate = 
-                    new InternalSettingDelegateMany
+                    new InternalSettingDelegateMany<C, V>
                       (InternalSettingDelegateMany.CONTAINMENT_INVERSE_DYNAMIC, this, eOpposite);
                 }
               }
@@ -987,13 +998,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
                 if (isResolveProxies())
                 {
                   settingDelegate = 
-                    new InternalSettingDelegateMany
+                    new InternalSettingDelegateMany<C, V>
                       (InternalSettingDelegateMany.CONTAINMENT_INVERSE_RESOLVE, dataClass, this, eOpposite);
                 }
                 else
                 {
                   settingDelegate = 
-                    new InternalSettingDelegateMany
+                    new InternalSettingDelegateMany<C, V>
                       (InternalSettingDelegateMany.CONTAINMENT_INVERSE, dataClass, this, eOpposite);
                 }
               }
@@ -1013,13 +1024,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
               if (dataClass == null)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.DATA_UNIQUE_UNSETTABLE_DYNAMIC, this);
               }
               else
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.DATA_UNIQUE_UNSETTABLE, dataClass, this);
               }
             }
@@ -1028,13 +1039,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
               if (dataClass == null)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.DATA_UNIQUE_DYNAMIC, this);
               }
               else
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.DATA_UNIQUE, dataClass, this);
               }
             }
@@ -1046,13 +1057,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
               if (dataClass == null)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.DATA_UNSETTABLE_DYNAMIC, this);
               }
               else
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.DATA_UNSETTABLE, dataClass, this);
               }
             }
@@ -1061,13 +1072,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
               if (dataClass == null)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.DATA_DYNAMIC, this);
               }
               else
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.DATA, dataClass, this);
               }
             }
@@ -1082,13 +1093,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
               if (dataClass == null)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.EOBJECT_RESOLVE_UNSETTABLE_DYNAMIC, this);
               }
               else
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.EOBJECT_RESOLVE_UNSETTABLE, dataClass, this);
               }
             }
@@ -1097,13 +1108,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
               if (dataClass == null)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.EOBJECT_RESOLVE_DYNAMIC, this);
               }
               else
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.EOBJECT_RESOLVE, dataClass, this);
               }
             }
@@ -1115,13 +1126,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
               if (dataClass == null)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.EOBJECT_UNSETTABLE_DYNAMIC, this);
               }
               else
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.EOBJECT_UNSETTABLE, dataClass, this);
               }
             }
@@ -1130,13 +1141,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
               if (dataClass == null)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.EOBJECT_DYNAMIC, this);
               }
               else
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.EOBJECT, dataClass, this);
               }
             }
@@ -1151,13 +1162,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
               if (dataClass == null)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.MANY_INVERSE_RESOLVE_UNSETTABLE_DYNAMIC, this, eOpposite);
               }
               else
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.MANY_INVERSE_RESOLVE_UNSETTABLE, dataClass, this, eOpposite);
               }
             }
@@ -1166,13 +1177,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
               if (dataClass == null)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.MANY_INVERSE_RESOLVE_DYNAMIC, this, eOpposite);
               }
               else
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.MANY_INVERSE_RESOLVE, dataClass, this, eOpposite);
               }
             }
@@ -1184,13 +1195,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
               if (dataClass == null)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.MANY_INVERSE_UNSETTABLE_DYNAMIC, this, eOpposite);
               }
               else
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.MANY_INVERSE_UNSETTABLE, dataClass, this, eOpposite);
               }
             }
@@ -1199,13 +1210,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
               if (dataClass == null)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.MANY_INVERSE_DYNAMIC, this, eOpposite);
               }
               else
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.MANY_INVERSE, dataClass, this, eOpposite);
               }
             }
@@ -1220,13 +1231,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
               if (dataClass == null)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.INVERSE_RESOLVE_UNSETTABLE_DYNAMIC, this, eOpposite);
               }
               else
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.INVERSE_RESOLVE_UNSETTABLE, dataClass, this, eOpposite);
               }
             }
@@ -1235,13 +1246,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
               if (dataClass == null)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.INVERSE_RESOLVE_DYNAMIC, this, eOpposite);
               }
               else
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.INVERSE_RESOLVE, dataClass, this, eOpposite);
               }
             }
@@ -1253,13 +1264,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
               if (dataClass == null)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.INVERSE_UNSETTABLE_DYNAMIC, this, eOpposite);
               }
               else
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.INVERSE_UNSETTABLE, dataClass, this, eOpposite);
               }
             }
@@ -1268,13 +1279,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
               if (dataClass == null)
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.INVERSE_DYNAMIC, this, eOpposite);
               }
               else
               {
                 settingDelegate = 
-                  new InternalSettingDelegateMany
+                  new InternalSettingDelegateMany<C, V>
                     (InternalSettingDelegateMany.INVERSE, dataClass, this, eOpposite);
               }
             }
@@ -1285,11 +1296,13 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
       {
         if (isResolveProxies())
         {
-          settingDelegate = new InternalSettingDelegateSingleContainerResolving((EClass)eType, this, eOpposite);
+          settingDelegate = (SettingDelegate<C, V>) new InternalSettingDelegateSingleContainerResolving<C, EObject>(
+              (EClass<EObject>) eType, (EReference<C, EObject>) this, eOpposite);
         }
         else
         {
-          settingDelegate = new InternalSettingDelegateSingleContainer((EClass)eType, this, eOpposite);
+          settingDelegate =  (SettingDelegate<C, V>) new InternalSettingDelegateSingleContainer<C, EObject>(
+              (EClass<EObject>) eType, (EReference<C, EObject>) this, eOpposite);
         }
       }
       else if (eType instanceof EDataType)
@@ -1302,22 +1315,22 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
         {
           if (dataClass == null)
           {
-            settingDelegate = new InternalSettingDelegateSingleDataUnsettableDynamic((EDataType)eType, defaultValue, intrinsicDefaultValue, this);
+            settingDelegate = new InternalSettingDelegateSingleDataUnsettableDynamic<C, V>((EDataType<V>) eType, defaultValue, intrinsicDefaultValue, this);
           }
           else
           {
-            settingDelegate = new InternalSettingDelegateSingleDataUnsettableStatic(dataClass, defaultValue, intrinsicDefaultValue, this, InternalSettingDelegateSingleData.NotificationCreator.get(instanceClass));
+            settingDelegate = new InternalSettingDelegateSingleDataUnsettableStatic<C, V>(dataClass, defaultValue, intrinsicDefaultValue, this, InternalSettingDelegateSingleData.NotificationCreator.get(instanceClass));
           }
         }
         else
         {
           if (dataClass == null)
           {
-            settingDelegate = new InternalSettingDelegateSingleDataDynamic((EDataType)eType, defaultValue, intrinsicDefaultValue, this);
+            settingDelegate = new InternalSettingDelegateSingleDataDynamic<C, V>((EDataType<V>)eType, defaultValue, intrinsicDefaultValue, this);
           }
           else
           {
-            settingDelegate = new InternalSettingDelegateSingleDataStatic(dataClass, defaultValue, intrinsicDefaultValue, this, InternalSettingDelegateSingleData.NotificationCreator.get(instanceClass));
+            settingDelegate = new InternalSettingDelegateSingleDataStatic<C, V>(dataClass, defaultValue, intrinsicDefaultValue, this, InternalSettingDelegateSingleData.NotificationCreator.get(instanceClass));
           }
         }
       }
@@ -1329,22 +1342,22 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
           {
             if (isResolveProxies())
             {
-              settingDelegate = new InternalSettingDelegateSingleEObjectContainmentUnsettableResolving((EClass)eType, this);
+              settingDelegate = new InternalSettingDelegateSingleEObjectContainmentUnsettableResolving((EClass<?>)eType, this);
             }
             else
             {
-              settingDelegate = new InternalSettingDelegateSingleEObjectContainmentUnsettable((EClass)eType, this);
+              settingDelegate = new InternalSettingDelegateSingleEObjectContainmentUnsettable((EClass<?>)eType, this);
             }
           }
           else
           {
             if (isResolveProxies())
             {
-              settingDelegate = new InternalSettingDelegateSingleEObjectContainmentResolving((EClass)eType, this);
+              settingDelegate = new InternalSettingDelegateSingleEObjectContainmentResolving((EClass<?>)eType, this);
             }
             else
             {
-              settingDelegate = new InternalSettingDelegateSingleEObjectContainment((EClass)eType, this);
+              settingDelegate = new InternalSettingDelegateSingleEObjectContainment((EClass<?>)eType, this);
             }
           }
         }
@@ -1354,22 +1367,22 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
           {
             if (isResolveProxies())
             {
-              settingDelegate = new InternalSettingDelegateSingleEObjectContainmentWithInverseUnsettableResolving((EClass)eType, this, eOpposite);
+              settingDelegate = new InternalSettingDelegateSingleEObjectContainmentWithInverseUnsettableResolving((EClass<?>)eType, this, eOpposite);
             }
             else
             {
-              settingDelegate = new InternalSettingDelegateSingleEObjectContainmentWithInverseUnsettable((EClass)eType, this, eOpposite);
+              settingDelegate = new InternalSettingDelegateSingleEObjectContainmentWithInverseUnsettable((EClass<?>)eType, this, eOpposite);
             }
           }
           else
           {
             if (isResolveProxies())
             {
-              settingDelegate = new InternalSettingDelegateSingleEObjectContainmentWithInverseResolving((EClass)eType, this, eOpposite);
+              settingDelegate = new InternalSettingDelegateSingleEObjectContainmentWithInverseResolving((EClass<?>)eType, this, eOpposite);
             }
             else
             {
-              settingDelegate = new InternalSettingDelegateSingleEObjectContainmentWithInverse((EClass)eType, this, eOpposite);
+              settingDelegate = new InternalSettingDelegateSingleEObjectContainmentWithInverse((EClass<?>)eType, this, eOpposite);
             }
           }
         }
@@ -1380,22 +1393,22 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
         {
           if (isUnsettable())
           {
-            settingDelegate = new InternalSettingDelegateSingleEObjectResolvingUnsettable((EClass)eType, this);
+            settingDelegate = new InternalSettingDelegateSingleEObjectResolvingUnsettable((EClass<?>)eType, this);
           }
           else
           {
-            settingDelegate = new InternalSettingDelegateSingleEObjectResolving((EClass)eType, this);
+            settingDelegate = new InternalSettingDelegateSingleEObjectResolving((EClass<?>)eType, this);
           }
         }
         else
         {
           if (isUnsettable())
           {
-            settingDelegate = new InternalSettingDelegateSingleEObjectResolvingWithInverseUnsettable((EClass)eType, this, eOpposite);
+            settingDelegate = new InternalSettingDelegateSingleEObjectResolvingWithInverseUnsettable((EClass<?>)eType, this, eOpposite);
           }
           else
           {
-            settingDelegate = new InternalSettingDelegateSingleEObjectResolvingWithInverse((EClass)eType, this, eOpposite);
+            settingDelegate = new InternalSettingDelegateSingleEObjectResolvingWithInverse((EClass<?>)eType, this, eOpposite);
           }
         }
       }
@@ -1405,22 +1418,22 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
         {
           if (isUnsettable())
           {
-            settingDelegate = new InternalSettingDelegateSingleEObjectUnsettable((EClass)eType, this);
+            settingDelegate = new InternalSettingDelegateSingleEObjectUnsettable((EClass<?>)eType, this);
           }
           else
           {
-            settingDelegate = new InternalSettingDelegateSingleEObject((EClass)eType, this);
+            settingDelegate = new InternalSettingDelegateSingleEObject((EClass<?>)eType, this);
           }
         }
         else
         {
           if (isUnsettable())
           {
-            settingDelegate = new InternalSettingDelegateSingleEObjectWithInverseUnsettable((EClass)eType, this, eOpposite);
+            settingDelegate = new InternalSettingDelegateSingleEObjectWithInverseUnsettable((EClass<?>)eType, this, eOpposite);
           }
           else
           {
-            settingDelegate = new InternalSettingDelegateSingleEObjectWithInverse((EClass)eType, this, eOpposite);
+            settingDelegate = new InternalSettingDelegateSingleEObjectWithInverse((EClass<?>)eType, this, eOpposite);
           }
         }
       }
@@ -1429,44 +1442,44 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     return settingDelegate;
   }
 
-  protected EStructuralFeature.Internal.SettingDelegate createFeatureMapSettingDelegate()
+  protected EStructuralFeature.Internal.SettingDelegate<C, V> createFeatureMapSettingDelegate()
   {
-    return new InternalSettingDelegateMany(InternalSettingDelegateMany.FEATURE_MAP, this);
+    return new InternalSettingDelegateMany<C, V>(InternalSettingDelegateMany.FEATURE_MAP, this);
   }
 
-  public void setSettingDelegate(EStructuralFeature.Internal.SettingDelegate settingDelegate)
+  public void setSettingDelegate(EStructuralFeature.Internal.SettingDelegate<C, V> settingDelegate)
   {
     this.settingDelegate = settingDelegate;
   }
 
-  public static class InternalSettingDelegateFeatureMapDelegator implements EStructuralFeature.Internal.SettingDelegate
+  public static class InternalSettingDelegateFeatureMapDelegator<C extends EObject, V> implements EStructuralFeature.Internal.SettingDelegate<C, V>
   {
-    protected EStructuralFeature feature;
-    protected EStructuralFeature featureMapFeature;
+    protected EStructuralFeature<C, V> feature;
+    protected EStructuralFeature<C, V> featureMapFeature;
 
-    public InternalSettingDelegateFeatureMapDelegator(EStructuralFeature feature, EStructuralFeature featureMapFeature)
+    public InternalSettingDelegateFeatureMapDelegator(EStructuralFeature<C, V> feature, EStructuralFeature<C, V> featureMapFeature)
     {
       this.feature = feature;
       this.featureMapFeature = featureMapFeature;
     }
 
-    protected EStructuralFeature.Setting createDynamicSetting(InternalEObject owner)
+    protected EStructuralFeature.Setting<C, V> createDynamicSetting(InternalEObject owner)
     {
       return ((FeatureMap.Internal)owner.eGet(featureMapFeature)).setting(feature);
     }
 
-    public EStructuralFeature.Setting dynamicSetting(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index)
+    public EStructuralFeature.Setting<C, V> dynamicSetting(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index)
     {
       return createDynamicSetting(owner);
     }
 
-    public Object dynamicGet(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index, boolean resolve, boolean coreType)
+    public V dynamicGet(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index, boolean resolve, boolean coreType)
     {
       FeatureMap.Internal featureMap = (FeatureMap.Internal)owner.eGet(featureMapFeature);
-      return featureMap.setting(feature).get(resolve);
+      return (V) featureMap.setting(feature).get(resolve);
     }
 
-    public void dynamicSet(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index, Object newValue)
+    public void dynamicSet(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index, V newValue)
     {
       FeatureMap.Internal featureMap = (FeatureMap.Internal)owner.eGet(featureMapFeature);
       featureMap.setting(feature).set(newValue);
@@ -1499,7 +1512,7 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     }
   }
 
-  public static class InternalSettingDelegateMany implements EStructuralFeature.Internal.SettingDelegate
+  public static class InternalSettingDelegateMany<C extends EObject, V> implements EStructuralFeature.Internal.SettingDelegate<C, V>
   {
     public static final int CONTAINMENT_UNSETTABLE_DYNAMIC = 0;
     public static final int CONTAINMENT_UNSETTABLE = 1;
@@ -1556,17 +1569,17 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     protected int style;
     protected int dynamicKind;
     protected Class<?> dataClass;
-    protected EStructuralFeature feature;
-    protected EReference inverseFeature;
+    protected EStructuralFeature<C, V> feature;
+    protected EReference<?, C> inverseFeature;
 
-    public InternalSettingDelegateMany(int style, Class<?> dataClass, EStructuralFeature feature)
+    public InternalSettingDelegateMany(int style, Class<?> dataClass, EStructuralFeature<C, V> feature)
     {
       this.style = style;
       this.dataClass = dataClass;
       this.feature = feature;
     }
 
-    public InternalSettingDelegateMany(int style, EStructuralFeature feature)
+    public InternalSettingDelegateMany(int style, EStructuralFeature<C, V> feature)
     {
       this.style = style;
       this.dataClass = Object.class;
@@ -1574,7 +1587,7 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
       this.feature = feature;
     }
 
-    public InternalSettingDelegateMany(int style, Class<?> dataClass, EStructuralFeature feature, EReference inverseFeature)
+    public InternalSettingDelegateMany(int style, Class<?> dataClass, EStructuralFeature<C, V> feature, EReference<?, C> inverseFeature)
     {
       this.style = style;
       this.dataClass = dataClass;
@@ -1582,7 +1595,7 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
       this.inverseFeature = inverseFeature;
     }
 
-    public InternalSettingDelegateMany(int style, EStructuralFeature feature, EReference inverseFeature)
+    public InternalSettingDelegateMany(int style, EStructuralFeature<C, V> feature, EReference<?, C> inverseFeature)
     {
       this.style = style;
       this.dataClass = Object.class;
@@ -1591,7 +1604,7 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
       this.inverseFeature = inverseFeature;
     }
 
-    protected EStructuralFeature.Setting createDynamicSetting(InternalEObject owner)
+    protected EStructuralFeature.Setting<C, V> createDynamicSetting(InternalEObject owner)
     {
       switch (style)
       {
@@ -1629,9 +1642,9 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
         case CONTAINMENT_RESOLVE:
           return new EObjectContainmentEList.Resolving<Object>(dataClass, owner, owner.eClass().getFeatureID(feature));
         case EMAP:
-          return new EcoreEMap<Object, Object>((EClass)feature.getEType(), dataClass, owner, owner.eClass().getFeatureID(feature));
+          return new EcoreEMap<Object, Object>((EClass<?>)feature.getEType(), dataClass, owner, owner.eClass().getFeatureID(feature));
         case EMAP_UNSETTABLE:
-          return new EcoreEMap.Unsettable<Object, Object>((EClass)feature.getEType(), dataClass, owner, owner.eClass().getFeatureID(feature));
+          return new EcoreEMap.Unsettable<Object, Object>((EClass<?>)feature.getEType(), dataClass, owner, owner.eClass().getFeatureID(feature));
         case CONTAINMENT_INVERSE_UNSETTABLE:
           return new EObjectContainmentWithInverseEList.Unsettable<Object>(dataClass, owner, owner.eClass().getFeatureID(feature), inverseFeature.getFeatureID());
         case CONTAINMENT_INVERSE_UNSETTABLE_RESOLVE:
@@ -1698,7 +1711,7 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
       }
     }
 
-    public Object dynamicGet(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index, boolean resolve, boolean coreType)
+    public V dynamicGet(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index, boolean resolve, boolean coreType)
     {
       Object result = settings.dynamicGet(index);
       if (result == null)
@@ -1710,11 +1723,11 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
         switch (style)
         {
           case EMAP_UNSETTABLE:
-          case EMAP : return ((EMap<?, ?>)result).map();
-          case FEATURE_MAP : return ((FeatureMap.Internal)result).getWrapper();
+          case EMAP : return (V) ((EMap<?, ?>)result).map();
+          case FEATURE_MAP : return (V) ((FeatureMap.Internal)result).getWrapper();
         }
       }
-      return result;
+      return (V) result;
     }
 
     public void dynamicSet(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index, Object newValue)
@@ -1774,25 +1787,25 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     }
   }
 
-  public static abstract class InternalSettingDelegateSingle implements EStructuralFeature.Internal.SettingDelegate
+  public static abstract class InternalSettingDelegateSingle<C extends EObject, V> implements EStructuralFeature.Internal.SettingDelegate<C, V>
   {
     public static final Object NIL = EStructuralFeature.Internal.DynamicValueHolder.NIL;
 
-    protected EStructuralFeature feature;
+    protected EStructuralFeature<C, V> feature;
 
-    public InternalSettingDelegateSingle(EStructuralFeature feature)
+    public InternalSettingDelegateSingle(EStructuralFeature<C, V> feature)
     {
       this.feature = feature;
     }
 
-    public EStructuralFeature.Setting dynamicSetting(final InternalEObject owner, final EStructuralFeature.Internal.DynamicValueHolder settings, final int index)
+    public EStructuralFeature.Setting<C, V> dynamicSetting(final InternalEObject owner, final EStructuralFeature.Internal.DynamicValueHolder settings, final int index)
     {
       return
-        new EStructuralFeature.Setting()
+        new EStructuralFeature.Setting<C, V>()
         {
-          public EObject getEObject()
+          public C getEObject()
           {
-            return owner;
+            return (C) owner;
           }
 
           public EStructuralFeature getEStructuralFeature()
@@ -1800,12 +1813,12 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
             return feature;
           }
 
-          public Object get(boolean resolve)
+          public V get(boolean resolve)
           {
             return dynamicGet(owner, settings, index, resolve, true);
           }
 
-          public void set(Object newValue)
+          public void set(V newValue)
           {
             dynamicSet(owner, settings, index, newValue);
           }
@@ -1835,21 +1848,21 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     }
   }
 
-  public static class InternalSettingDelegateSingleContainer extends InternalSettingDelegateSingle
+  public static class InternalSettingDelegateSingleContainer<C extends EObject, V extends EObject>  extends InternalSettingDelegateSingle<C, V>
   {
-    protected EClass eClass;
-    protected EReference inverseFeature;
+    protected EClass<V> eClass;
+    protected EReference<?, C> inverseFeature;
 
-    public InternalSettingDelegateSingleContainer(EClass eClass, EStructuralFeature feature, EReference inverseFeature)
+    public InternalSettingDelegateSingleContainer(EClass<V> eClass, EStructuralFeature<C, V> feature, EReference<?, C> inverseFeature)
     {
       super(feature);
       this.eClass = eClass;
       this.inverseFeature = inverseFeature;
     }
 
-    public Object dynamicGet(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index, boolean resolve, boolean coreType)
+    public V dynamicGet(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index, boolean resolve, boolean coreType)
     {
-      return owner.eContainmentFeature() == inverseFeature ? isResolveProxies() && resolve ? owner.eContainer() : owner.eInternalContainer() : null;
+      return (V) (owner.eContainmentFeature() == inverseFeature ? isResolveProxies() && resolve ? owner.eContainer() : owner.eInternalContainer() : null);
     }
 
     protected boolean isResolveProxies()
@@ -1857,7 +1870,7 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
       return false;
     }
 
-    public void dynamicSet(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index, Object newValue)
+    public void dynamicSet(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index, V newValue)
     {
       if (newValue != null && !eClass.isInstance(newValue))
       {
@@ -1943,9 +1956,9 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     }
   }
   
-  public static class InternalSettingDelegateSingleContainerResolving extends InternalSettingDelegateSingleContainer
+  public static class InternalSettingDelegateSingleContainerResolving<C extends EObject, V extends EObject> extends InternalSettingDelegateSingleContainer<C, V>
   {
-    public InternalSettingDelegateSingleContainerResolving(EClass eClass, EStructuralFeature feature, EReference inverseFeature)
+    public InternalSettingDelegateSingleContainerResolving(EClass<V> eClass, EStructuralFeature<C, V> feature, EReference<?, C> inverseFeature)
     {
       super(eClass, feature, inverseFeature);
     }
@@ -1957,7 +1970,7 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     }
   }
 
-  public static class InternalSettingDelegateSingleData extends InternalSettingDelegateSingle
+  public static class InternalSettingDelegateSingleData<C extends EObject, V> extends InternalSettingDelegateSingle<C, V>
   {
     /**
      * @since 2.9
@@ -2145,15 +2158,15 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
         };
     }
 
-    protected Object defaultValue;
-    protected Object intrinsicDefaultValue;
+    protected V defaultValue;
+    protected V intrinsicDefaultValue;
 
     /**
      * @since 2.9
      */
     protected NotificationCreator notificationCreator;
 
-    public InternalSettingDelegateSingleData(Object defaultValue, Object intrinsicDefaultValue, EStructuralFeature feature)
+    public InternalSettingDelegateSingleData(V defaultValue, V intrinsicDefaultValue, EStructuralFeature<C, V> feature)
     {
       super(feature);
       this.defaultValue = defaultValue;
@@ -2164,7 +2177,7 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     /**
      * @since 2.9
      */
-    public InternalSettingDelegateSingleData(Object defaultValue, Object intrinsicDefaultValue, EStructuralFeature feature, NotificationCreator notificationCreator)
+    public InternalSettingDelegateSingleData(V defaultValue, V intrinsicDefaultValue, EStructuralFeature<C, V> feature, NotificationCreator notificationCreator)
     {
       super(feature);
       this.defaultValue = defaultValue;
@@ -2177,9 +2190,10 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
       throw new ClassCastException();
     }
 
-    public Object dynamicGet(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index, boolean resolve, boolean coreType)
+    public V dynamicGet(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index, boolean resolve, boolean coreType)
     {
-      Object result = settings.dynamicGet(index);
+      @SuppressWarnings("unchecked")
+      V result = (V) settings.dynamicGet(index);
       if (result == null)
       {
         return this.defaultValue;
@@ -2289,11 +2303,11 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     }
   }
 
-  public static class InternalSettingDelegateSingleDataDynamic extends InternalSettingDelegateSingleData
+  public static class InternalSettingDelegateSingleDataDynamic<C extends EObject, V> extends InternalSettingDelegateSingleData<C, V>
   {
-    protected EDataType eDataType;
+    protected EDataType<V> eDataType;
 
-    public InternalSettingDelegateSingleDataDynamic(EDataType eDataType, Object defaultValue, Object intrinsicDefaultValue, EStructuralFeature feature)
+    public InternalSettingDelegateSingleDataDynamic(EDataType<V> eDataType, V defaultValue, V intrinsicDefaultValue, EStructuralFeature<C, V> feature)
     {
       super(defaultValue, intrinsicDefaultValue, feature);
       this.eDataType = eDataType;
@@ -2302,7 +2316,7 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     /**
      * @since 2.9
      */
-    public InternalSettingDelegateSingleDataDynamic(EDataType eDataType, Object defaultValue, Object intrinsicDefaultValue, EStructuralFeature feature, NotificationCreator notificationCreator)
+    public InternalSettingDelegateSingleDataDynamic(EDataType<V> eDataType, V defaultValue, V intrinsicDefaultValue, EStructuralFeature<C, V> feature, NotificationCreator notificationCreator)
     {
       super(defaultValue, intrinsicDefaultValue, feature, notificationCreator);
       this.eDataType = eDataType;
@@ -2318,11 +2332,11 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     }
   }
 
-  public static class InternalSettingDelegateSingleDataStatic extends InternalSettingDelegateSingleData
+  public static class InternalSettingDelegateSingleDataStatic<C extends EObject, V> extends InternalSettingDelegateSingleData<C, V>
   {
-    protected Class<?> dataClass;
+    protected Class<V> dataClass;
 
-    public InternalSettingDelegateSingleDataStatic(Class<?> dataClass, Object defaultValue, Object intrinsicDefaultValue, EStructuralFeature feature)
+    public InternalSettingDelegateSingleDataStatic(Class<V> dataClass, V defaultValue, V intrinsicDefaultValue, EStructuralFeature<C, V> feature)
     {
       super(defaultValue, intrinsicDefaultValue, feature);
       this.dataClass = dataClass;
@@ -2332,7 +2346,7 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     /**
      * @since 2.9
      */
-    public InternalSettingDelegateSingleDataStatic(Class<?> dataClass, Object defaultValue, Object intrinsicDefaultValue, EStructuralFeature feature, NotificationCreator notificationCreator)
+    public InternalSettingDelegateSingleDataStatic(Class<V> dataClass, V defaultValue, V intrinsicDefaultValue, EStructuralFeature<C, V> feature, NotificationCreator notificationCreator)
     {
       super(defaultValue, intrinsicDefaultValue, feature, notificationCreator);
       this.dataClass = dataClass;
@@ -2348,9 +2362,9 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     }
   }
 
-  public static class InternalSettingDelegateSingleDataUnsettable extends InternalSettingDelegateSingleData
+  public static class InternalSettingDelegateSingleDataUnsettable<C extends EObject, V> extends InternalSettingDelegateSingleData<C, V>
   {
-    public InternalSettingDelegateSingleDataUnsettable(Object defaultValue, Object intrinsicDefaultValue, EStructuralFeature feature)
+    public InternalSettingDelegateSingleDataUnsettable(V defaultValue, V intrinsicDefaultValue, EStructuralFeature<C, V> feature)
     {
       super(defaultValue, intrinsicDefaultValue, feature);
     }
@@ -2358,7 +2372,7 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     /**
      * @since 2.9
      */
-    public InternalSettingDelegateSingleDataUnsettable(Object defaultValue, Object intrinsicDefaultValue, EStructuralFeature feature, NotificationCreator notificationCreator)
+    public InternalSettingDelegateSingleDataUnsettable(V defaultValue, V intrinsicDefaultValue, EStructuralFeature<C, V> feature, NotificationCreator notificationCreator)
     {
       super(defaultValue, intrinsicDefaultValue, feature, notificationCreator);
     }
@@ -2470,11 +2484,11 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     }
   }
 
-  public static class InternalSettingDelegateSingleDataUnsettableDynamic extends InternalSettingDelegateSingleDataUnsettable
+  public static class InternalSettingDelegateSingleDataUnsettableDynamic<C extends EObject, V> extends InternalSettingDelegateSingleDataUnsettable<C, V>
   {
-    protected EDataType eDataType;
+    protected EDataType<V> eDataType;
 
-    public InternalSettingDelegateSingleDataUnsettableDynamic(EDataType eDataType, Object defaultValue, Object intrinsicDefaultValue, EStructuralFeature feature)
+    public InternalSettingDelegateSingleDataUnsettableDynamic(EDataType<V> eDataType, V defaultValue, V intrinsicDefaultValue, EStructuralFeature<C, V> feature)
     {
       super(defaultValue, intrinsicDefaultValue, feature);
       this.eDataType = eDataType;
@@ -2483,7 +2497,7 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     /**
      * @since 2.9
      */
-    public InternalSettingDelegateSingleDataUnsettableDynamic(EDataType eDataType, Object defaultValue, Object intrinsicDefaultValue, EStructuralFeature feature, NotificationCreator notificationCreator)
+    public InternalSettingDelegateSingleDataUnsettableDynamic(EDataType<V> eDataType, V defaultValue, V intrinsicDefaultValue, EStructuralFeature<C, V> feature, NotificationCreator notificationCreator)
     {
       super(defaultValue, intrinsicDefaultValue, feature, notificationCreator);
       this.eDataType = eDataType;
@@ -2499,11 +2513,11 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     }
   }
 
-  public static class InternalSettingDelegateSingleDataUnsettableStatic extends InternalSettingDelegateSingleDataUnsettable
+  public static class InternalSettingDelegateSingleDataUnsettableStatic<C extends EObject, V> extends InternalSettingDelegateSingleDataUnsettable<C, V>
   {
-    protected Class<?> dataClass;
+    protected Class<V> dataClass;
 
-    public InternalSettingDelegateSingleDataUnsettableStatic(Class<?> dataClass, Object defaultValue, Object intrinsicDefaultValue, EStructuralFeature feature)
+    public InternalSettingDelegateSingleDataUnsettableStatic(Class<V> dataClass, V defaultValue, V intrinsicDefaultValue, EStructuralFeature<C, V> feature)
     {
       super(defaultValue, intrinsicDefaultValue, feature);
       this.dataClass = dataClass;
@@ -2513,7 +2527,7 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     /**
      * @since 2.9
      */
-    public InternalSettingDelegateSingleDataUnsettableStatic(Class<?> dataClass, Object defaultValue, Object intrinsicDefaultValue, EStructuralFeature feature, NotificationCreator notificationCreator)
+    public InternalSettingDelegateSingleDataUnsettableStatic(Class<V> dataClass, V defaultValue, V intrinsicDefaultValue, EStructuralFeature<C, V> feature, NotificationCreator notificationCreator)
     {
       super(defaultValue, intrinsicDefaultValue, feature, notificationCreator);
       this.dataClass = dataClass;
@@ -2529,18 +2543,18 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
     }
   }
 
-  public static class InternalSettingDelegateSingleEObject extends InternalSettingDelegateSingle
+  public static class InternalSettingDelegateSingleEObject<C extends EObject, V extends EObject> extends InternalSettingDelegateSingle<C, V>
   {
-    protected EClass eClass;
-    protected EReference inverseFeature;
+    protected EClass<V> eClass;
+    protected EReference<?, C> inverseFeature;
 
-    public InternalSettingDelegateSingleEObject(EClass eClass, EStructuralFeature feature)
+    public InternalSettingDelegateSingleEObject(EClass<V> eClass, EStructuralFeature<C, V> feature)
     {
       super(feature);
       this.eClass = eClass;
     }
 
-    public InternalSettingDelegateSingleEObject(EClass eClass, EStructuralFeature feature, EReference inverseFeature)
+    public InternalSettingDelegateSingleEObject(EClass<V> eClass, EStructuralFeature<C, V> feature, EReference<?, C> inverseFeature)
     {
       super(feature);
       this.eClass = eClass;
@@ -2567,7 +2581,7 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
       return false;
     }
 
-    public Object dynamicGet(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index, boolean resolve, boolean coreType)
+    public V dynamicGet(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index, boolean resolve, boolean coreType)
     {
       Object result = settings.dynamicGet(index);
       if (isUnsettable() && result == NIL)
@@ -2624,16 +2638,16 @@ public abstract class EStructuralFeatureImpl<C extends EObject, V> extends EType
           }
         }
 
-        return result;
+        return (V) result;
       }
       else
       {
-        return result;
+        return (V) result;
       }
     }
 
 
-    public void dynamicSet(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index, Object newValue)
+    public void dynamicSet(InternalEObject owner, EStructuralFeature.Internal.DynamicValueHolder settings, int index, V newValue)
     {
       if (newValue != null && !eClass.isInstance(newValue))
       {

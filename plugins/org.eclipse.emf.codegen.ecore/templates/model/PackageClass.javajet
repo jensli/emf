@@ -517,7 +517,7 @@ public interface <%=genPackage.getPackageInterfaceName()%> extends <%=genModel.g
 	}
 
 <%} else {%>
-	// CHANGE j: Class accessor
+	// CHANGE gen: Class accessor
 	<%=genClassifier.getImportedMetaType()%> get<%=genClassifier.getClassifierAccessorName()%>();
 <%}%>
 	<%if (genClassifier instanceof GenClass) { GenClass genClass = (GenClass)genClassifier;%>
@@ -543,13 +543,13 @@ public interface <%=genPackage.getPackageInterfaceName()%> extends <%=genModel.g
 	public <%=genFeature.getImportedMetaType()%> get<%=genFeature.getFeatureAccessorName()%>()
 	{
 	<%if (!genPackage.isLoadedInitialization()) {%>
-		return (<%=genFeature.getImportedMetaType()%>)<%=genClass.getClassifierInstanceName()%>.getEStructuralFeatures().get(<%=genClass.getLocalFeatureIndex(genFeature)%>);
+		return (<%=genFeature.getImportedMetaType()%>) <%=genClass.getClassifierInstanceName()%>.getEStructuralFeatures().get(<%=genClass.getLocalFeatureIndex(genFeature)%>);
 	<%} else {%>
 	return (<%=genFeature.getImportedMetaType()%>)get<%=genClassifier.getClassifierAccessorName()%>().getEStructuralFeatures().get(<%=genClass.getLocalFeatureIndex(genFeature)%>);
 	<%}%>
 	}
 <%} else {%>
-	// CHANGE j: Feature accessor
+	// CHANGE gen: Feature accessor
 	<%=genFeature.getImportedMetaType()%> get<%=genFeature.getFeatureAccessorName()%>();
 <%}%>
 
@@ -576,9 +576,9 @@ public interface <%=genPackage.getPackageInterfaceName()%> extends <%=genModel.g
 	public <%=genOperation.getImportedMetaType()%> get<%=genOperation.getOperationAccessorName()%>()
 	{
 	<%if (!genPackage.isLoadedInitialization()) {%>
-		return <%=genClass.getClassifierInstanceName()%>.getEOperations().get(<%=genClass.getLocalOperationIndex(genOperation)%>);
+		return (<%=genOperation.getImportedMetaType()%>) <%=genClass.getClassifierInstanceName()%>.getEOperations().get(<%=genClass.getLocalOperationIndex(genOperation)%>);
 	<%} else {%>
-	return get<%=genClassifier.getClassifierAccessorName()%>().getEOperations().get(<%=genClass.getLocalOperationIndex(genOperation)%>);
+	return (<%=genOperation.getImportedMetaType()%>) get<%=genClassifier.getClassifierAccessorName()%>().getEOperations().get(<%=genClass.getLocalOperationIndex(genOperation)%>);
 	<%}%>
 	}
 <%} else {%>
@@ -639,6 +639,7 @@ public interface <%=genPackage.getPackageInterfaceName()%> extends <%=genModel.g
 	  <%for (Iterator<GenClass> c=genPackage.getGenClasses().iterator(); c.hasNext();) { GenClass genClass = c.next();%>
 		<%=genClass.getClassifierInstanceName()%> = create<%=genClass.getRawImportedMetaType()%>(<%=genClass.getClassifierID()%>);
 	<%for (GenFeature genFeature : genClass.getGenFeatures()) {%>
+		// CHANGE: Use raw type
 		create<%=genFeature.getRawImportedMetaType()%>(<%=genClass.getClassifierInstanceName()%>, <%=genClass.getFeatureID(genFeature)%>);
 	<%}%>
 	<%if (genModel.isOperationReflection()) {%>
@@ -1205,7 +1206,7 @@ int maxGenericTypeAssignment = 0;
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		 // CHANGE j: Feature constant 
+		 // CHANGE gen: Feature constant 
 		<%=publicStaticFinalFlag%><%=genFeature.getImportedMetaType()%> <%=genClass.getFeatureID(genFeature)%> = eINSTANCE.get<%=genFeature.getFeatureAccessorName()%>();
 
 	  <%}%>
@@ -1217,7 +1218,7 @@ int maxGenericTypeAssignment = 0;
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		 // CHANGE j: Operation constant
+		 // CHANGE gen: Operation constant
 		<%=publicStaticFinalFlag%><%=genOperation.getImportedMetaType()%> <%=genClass.getOperationID(genOperation, false)%> = eINSTANCE.get<%=genOperation.getOperationAccessorName()%>();
 
 	<%}%>

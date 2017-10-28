@@ -91,12 +91,12 @@ public interface EValidator
     /**
      * Returns the label used to identify a feature.
      */
-    String getFeatureLabel(EStructuralFeature eStructuralFeature);
+    String getFeatureLabel(EStructuralFeature<?, ?> eStructuralFeature);
 
     /**
      * Returns the label to identify a value of some data type.
      */
-    String getValueLabel(EDataType eDataType, Object value);
+    String getValueLabel(EDataType<?> eDataType, Object value);
   }
 
   /**
@@ -148,19 +148,19 @@ public interface EValidator
      * Evaluates the given invariant expression against the object in the given context.
      * @return the result of the expression evaluation.
      */
-    boolean validate(EClass eClass, EObject eObject, Map<Object, Object> context, EOperation invariant, String expression);
+    boolean validate(EClass<?> eClass, EObject eObject, Map<Object, Object> context, EOperation<?, ?> invariant, String expression);
 
     /**
      * Evaluates the given constraint expression against the object in the given context.
      * @return the result of the expression evaluation.
      */
-    boolean validate(EClass eClass, EObject eObject, Map<Object, Object> context, String constraint, String expression);
+    boolean validate(EClass<?> eClass, EObject eObject, Map<Object, Object> context, String constraint, String expression);
 
     /**
      * Evaluates the given constraint expression against the value in the given context.
      * @return the result of the expression evaluation.
      */
-    boolean validate(EDataType eDataType, Object value, Map<Object, Object> context, String constraint, String expression);
+    boolean validate(EDataType<?> eDataType, Object value, Map<Object, Object> context, String constraint, String expression);
   }
 
   /**
@@ -171,7 +171,7 @@ public interface EValidator
    */
   boolean validate(EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context);
 
-  boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context);
+  boolean validate(EClass<?> eClass, EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context);
 
-  boolean validate(EDataType eDataType, Object value, DiagnosticChain diagnostics, Map<Object, Object> context);
+  boolean validate(EDataType<?> eDataType, Object value, DiagnosticChain diagnostics, Map<Object, Object> context);
 }

@@ -137,13 +137,15 @@ public interface <%=genPackage.getFactoryInterfaceName()%><%if (!genModel.isSupp
   <%if (genModel.useClassOverrideAnnotation()) {%>
 	@Override
   <%}%>
-	public <T> T create(EClass<T> eClass)
+	// CHANGE: Added generics and annotation
+	@SuppressWarnings("unchecked")
+	public <T extends EObject> T create(EClass<T> eClass)
 	{
 		switch (eClass.getClassifierID())
 		{
 <%for (GenClass genClass : genPackage.getGenClasses()) {%>
 <%if (!genClass.isAbstract()) {%>
-			case <%=genPackage.getImportedPackageInterfaceName()%>.<%=genClass.getClassifierID()%>: return <%=!genClass.isEObjectExtension() ? "(EObject)" : "" %>create<%=genClass.getName()%>();
+			case <%=genPackage.getImportedPackageInterfaceName()%>.<%=genClass.getClassifierID()%>: return (T) <%=!genClass.isEObjectExtension() ? "(EObject)" : "" %>create<%=genClass.getName()%>();
 <%}%>
 <%}%>
 			default:
@@ -160,6 +162,8 @@ public interface <%=genPackage.getFactoryInterfaceName()%><%if (!genModel.isSupp
   <%if (genModel.useClassOverrideAnnotation()) {%>
 	@Override
   <%}%>
+	// CHANGE: Added generics and annotation
+	@SuppressWarnings("unchecked")
 	public <T> T createFromString(<%=genModel.getImportedName("org.eclipse.emf.ecore.EDataType")%><T> eDataType, String initialValue)
 	{
 		switch (eDataType.getClassifierID())
@@ -167,7 +171,7 @@ public interface <%=genPackage.getFactoryInterfaceName()%><%if (!genModel.isSupp
 <%for (GenDataType genDataType : genPackage.getAllGenDataTypes()) {%>
   <%if (genDataType.isSerializable()) {%>
 			case <%=genPackage.getImportedPackageInterfaceName()%>.<%=genDataType.getClassifierID()%>:
-				return create<%=genDataType.getName()%>FromString(eDataType, initialValue);
+				return (T) create<%=genDataType.getName()%>FromString(eDataType, initialValue);
   <%}%>
 <%}%>
 			default:

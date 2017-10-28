@@ -38,6 +38,13 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface GenBase extends EObject
 {
+  
+  public enum TypeArgumentKind {
+    SUBSTITUTION,
+    RAW,
+    WILDCARD
+  }
+  
   /**
    * Returns the value of the '<em><b>Gen Annotations</b></em>' containment reference list.
    * The list contents are of type {@link org.eclipse.emf.codegen.ecore.genmodel.GenAnnotation}.

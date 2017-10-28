@@ -71,6 +71,7 @@ public interface GenClassifier extends GenBase
    */
   String getImportedMetaType();
   
+  // CHANGE: Added
   /**
    * @return The imported name of the metatype, that is "EClass" or "EDataType", etc. It excludes type parameters.  
    */
@@ -111,7 +112,10 @@ public interface GenClassifier extends GenBase
    */
   String getImportedWildcardInstanceClassName();
 
-  // CHANGE: Added on this level
+  // CHANGE: Moved here from GenDataType
+  /**
+   * @return The class name of this gen object, with unbounted wildcard type arguments.
+   */
   String getImportedWildcardObjectInstanceClassName();
 
   /**
@@ -158,6 +162,10 @@ public interface GenClassifier extends GenBase
    */
   String getValidationDelegate(String constraint);
   
+  
   // CHANGE j: Added implementsEobject
+  /**
+   * @return Whether represtented class implements EObject. 
+   */
   boolean isImplementingEobject();
 }

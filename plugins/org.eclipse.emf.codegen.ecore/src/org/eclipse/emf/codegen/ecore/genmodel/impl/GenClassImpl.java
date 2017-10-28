@@ -591,7 +591,7 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
         {
           if (eGenericType.getEClassifier() == extendsEClass)
           {
-            result.append(getTypeArguments(this, eGenericType.getETypeArguments(), false));
+            result.append(getTypeArguments(this, eGenericType.getETypeArguments(), false, false));
             break;
           }
         }
@@ -806,13 +806,15 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
       EGenericType eGenericType = getEcoreClass().getEGenericSuperTypes().get(i);
       if (genClass.isExternalInterface() || genClass.isInterface() || !genClass.getGenModel().isSuppressInterfaces())
       {
+        String internalName = genClass.getInternalQualifiedInterfaceName();
         if (includeTypeArguments && !eGenericType.getETypeArguments().isEmpty())
         {
-          result.add(genClass.getInternalQualifiedInterfaceName() + getTypeArguments(this, eGenericType.getETypeArguments(), false));
+          String typeArguments = getTypeArguments(this, eGenericType.getETypeArguments(), false, false);
+          result.add(internalName + typeArguments);
         }
         else
         {
-          result.add(genClass.getInternalQualifiedInterfaceName());
+          result.add(internalName);
         }
       }
     } 
@@ -868,7 +870,7 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
           for (Iterator<EGenericType> j = genTypeParameter.getEcoreTypeParameter().getEBounds().iterator(); j.hasNext(); )
           {
             EGenericType eBound = j.next();
-            result.append(getTypeArgument(this, eBound, true, false));
+            result.append(getTypeArgument(this, eBound, true, false, false));
             if (j.hasNext())
             {
               result.append(" & ");
@@ -918,6 +920,7 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
     return result;
   }
   
+  // CHANGE: Added
   public String getImportedWildcardObjectInstanceClassName() {
     return getImportedWildcardInstanceClassName();
   }
@@ -992,8 +995,8 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
 
   public boolean isReifiedType(GenClass sourceContext, EGenericType eGenericType)
   {
-    String baseType = getTypeArgument(sourceContext, eGenericType, false, true);
-    String reifiedType = getTypeArgument(this, eGenericType, false, true);
+    String baseType = getTypeArgument(sourceContext, eGenericType, false, true, false);
+    String reifiedType = getTypeArgument(this, eGenericType, false, true, false);
     return !baseType.equals(reifiedType);
   }
 
@@ -3281,7 +3284,7 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
           sb.append('>');
         }
         sb.append("(");
-        sb.append(getTypeArgument(this, eGenericType, true, true));
+        sb.append(getTypeArgument(this, eGenericType, true, true, false));
         sb.append(".class)");
       }
       else if (genFeature.isEffectiveContains())
@@ -3302,7 +3305,7 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
             sb.append('>');
           }
           sb.append("(");
-          sb.append(getTypeArgument(this, eGenericType, true, true));
+          sb.append(getTypeArgument(this, eGenericType, true, true, false));
           sb.append(".class, this, ");
           sb.append(getQualifiedFeatureID(genFeature));
           sb.append(offsetCorrectionField);
@@ -3331,7 +3334,7 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
             sb.append('>');
           }
           sb.append("(");
-          sb.append(getTypeArgument(this, eGenericType, true, true));
+          sb.append(getTypeArgument(this, eGenericType, true, true, false));
           sb.append(".class, this, ");
           sb.append(getQualifiedFeatureID(genFeature));
           sb.append(offsetCorrectionField);
@@ -3363,7 +3366,7 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
             sb.append('>');
           }
           sb.append("(");
-          sb.append(getTypeArgument(this, eGenericType, true, true));
+          sb.append(getTypeArgument(this, eGenericType, true, true, false));
           sb.append(".class, this, ");
           sb.append(getQualifiedFeatureID(genFeature));
           sb.append(offsetCorrectionField);
@@ -3395,7 +3398,7 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
             sb.append('>');
           }
           sb.append("(");
-          sb.append(getTypeArgument(this, eGenericType, true, true));
+          sb.append(getTypeArgument(this, eGenericType, true, true, false));
           sb.append(".class, this, ");
           sb.append(getQualifiedFeatureID(genFeature));
           sb.append(offsetCorrectionField);
@@ -3420,7 +3423,7 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
           sb.append('>');
         }
         sb.append("(");
-        sb.append(isPrimitiveType(eGenericType.getERawType()) ? genFeature.getRawListItemType() : getTypeArgument(this, eGenericType, true, true));
+        sb.append(isPrimitiveType(eGenericType.getERawType()) ? genFeature.getRawListItemType() : getTypeArgument(this, eGenericType, true, true, false));
         sb.append(".class, this, ");
         sb.append(getQualifiedFeatureID(genFeature));
         sb.append(offsetCorrectionField);
@@ -3439,7 +3442,7 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
       sb.append(" { private static final long serialVersionUID = 1L; @Override public ");
       sb.append(getGenModel().getImportedName("java.lang.Class"));
       sb.append("<?> getInverseFeatureClass() { return ");
-      sb.append(getTypeArgument(sourceGenClass, eGenericType, true, true));
+      sb.append(getTypeArgument(sourceGenClass, eGenericType, true, true, false));
       sb.append(".class; } }");
     }
   }

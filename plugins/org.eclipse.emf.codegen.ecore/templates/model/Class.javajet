@@ -424,7 +424,8 @@ public interface <%=genClass.getInterfaceName()%><%=genClass.getTypeParameters()
   <%if (genModel.useClassOverrideAnnotation()) {%>
 	@Override
   <%}%>
-	protected <%=genModel.getImportedName("org.eclipse.emf.ecore.EClass")%> eStaticClass()
+	// CHANGE: Added wildcard 
+	protected <%=genModel.getImportedName("org.eclipse.emf.ecore.EClass") + singleWildcard%> eStaticClass()
 	{
 		return <%=genClass.getQualifiedClassifierAccessor()%>;
 	}

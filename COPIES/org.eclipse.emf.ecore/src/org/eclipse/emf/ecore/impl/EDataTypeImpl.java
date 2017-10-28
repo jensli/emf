@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.util.ExtendedMetaData;
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>EData Type</b></em>'.
- * @extends EDataType.Internal
+ * @extends EDataType.Internal<T>
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
@@ -39,38 +39,38 @@ import org.eclipse.emf.ecore.util.ExtendedMetaData;
  *
  * @generated
  */
-public class EDataTypeImpl<T> extends EClassifierImpl<T> implements EDataType<T>, EDataType.Internal
+public class EDataTypeImpl<T> extends EClassifierImpl<T> implements EDataType<T>, EDataType.Internal<T>
 {
   /**
-	 * The default value of the '{@link #isSerializable() <em>Serializable</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #isSerializable() <em>Serializable</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #isSerializable()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isSerializable()
+   * @generated
+   * @ordered
+   */
   protected static final boolean SERIALIZABLE_EDEFAULT = true;
 
   /**
-	 * The flag representing the value of the '{@link #isSerializable() <em>Serializable</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The flag representing the value of the '{@link #isSerializable() <em>Serializable</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #isSerializable()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isSerializable()
+   * @generated
+   * @ordered
+   */
   protected static final int SERIALIZABLE_EFLAG = 1 << 8;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected EDataTypeImpl()
   {
-		super();
-		eFlags |= SERIALIZABLE_EFLAG;
-	}
+    super();
+    eFlags |= SERIALIZABLE_EFLAG;
+  }
 
   @Override
   protected void freeze()
@@ -81,11 +81,12 @@ public class EDataTypeImpl<T> extends EClassifierImpl<T> implements EDataType<T>
     super.freeze();
   }
 
-  protected Object defaultValue = null;
+  protected T defaultValue = null;
   protected boolean defaultValueIsSet = false;
 
+  @SuppressWarnings("unchecked")
   @Override
-  public Object getDefaultValue()
+  public T getDefaultValue()
   {
     if (!defaultValueIsSet)
     {
@@ -103,21 +104,21 @@ public class EDataTypeImpl<T> extends EClassifierImpl<T> implements EDataType<T>
       if (instanceClass != null && instanceClass.isPrimitive())
       {
         if (instanceClass == Boolean.TYPE)
-          defaultValue = Boolean.FALSE;
+          defaultValue = (T) Boolean.FALSE;
         else if (instanceClass == Integer.TYPE)
-          defaultValue = 0;
+          defaultValue = (T) (Integer) 0;
         else if (instanceClass == Float.TYPE)
-          defaultValue = 0.0F;
+          defaultValue = (T) (Float) 0.0F;
         else if (instanceClass == Double.TYPE)
-          defaultValue = 0.0;
+          defaultValue = (T) (Double) 0.0;
         else if (instanceClass == Long.TYPE)
-          defaultValue = 0L;
+          defaultValue = (T) (Long) 0L;
         else if (instanceClass == Short.TYPE)
-          defaultValue = (short)0;
+          defaultValue = (T) (Short) (short)0;
         else if (instanceClass == Byte.TYPE)
-          defaultValue = (byte)0;
+          defaultValue = (T) (Byte) (byte)0;
         else // if (instanceClass == Character.TYPE)
-          defaultValue = '\u0000';
+          defaultValue = (T) (Character) '\u0000';
       }
       defaultValueIsSet = true;
     }
@@ -152,183 +153,187 @@ public class EDataTypeImpl<T> extends EClassifierImpl<T> implements EDataType<T>
   }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
-		return EcorePackage.Literals.EDATA_TYPE;
-	}
+    return EcorePackage.Literals.EDATA_TYPE;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public boolean isSerializable()
   {
-		return (eFlags & SERIALIZABLE_EFLAG) != 0;
-	}
+    return (eFlags & SERIALIZABLE_EFLAG) != 0;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setSerializable(boolean newSerializable)
   {
-		boolean oldSerializable = (eFlags & SERIALIZABLE_EFLAG) != 0;
-		if (newSerializable) eFlags |= SERIALIZABLE_EFLAG; else eFlags &= ~SERIALIZABLE_EFLAG;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.EDATA_TYPE__SERIALIZABLE, oldSerializable, newSerializable));
-	}
+    boolean oldSerializable = (eFlags & SERIALIZABLE_EFLAG) != 0;
+    if (newSerializable) eFlags |= SERIALIZABLE_EFLAG; else eFlags &= ~SERIALIZABLE_EFLAG;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.EDATA_TYPE__SERIALIZABLE, oldSerializable, newSerializable));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case EcorePackage.EDATA_TYPE__EANNOTATIONS:
-				return getEAnnotations();
-			case EcorePackage.EDATA_TYPE__NAME:
-				return getName();
-			case EcorePackage.EDATA_TYPE__INSTANCE_CLASS_NAME:
-				return getInstanceClassName();
-			case EcorePackage.EDATA_TYPE__INSTANCE_CLASS:
-				return getInstanceClass();
-			case EcorePackage.EDATA_TYPE__DEFAULT_VALUE:
-				return getDefaultValue();
-			case EcorePackage.EDATA_TYPE__INSTANCE_TYPE_NAME:
-				return getInstanceTypeName();
-			case EcorePackage.EDATA_TYPE__EPACKAGE:
-				if (resolve) return getEPackage();
-				return basicGetEPackage();
-			case EcorePackage.EDATA_TYPE__ETYPE_PARAMETERS:
-				return getETypeParameters();
-			case EcorePackage.EDATA_TYPE__SERIALIZABLE:
-				return isSerializable();
-		}
-		return eDynamicGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.EDATA_TYPE__EANNOTATIONS:
+        return getEAnnotations();
+      case EcorePackage.EDATA_TYPE__NAME:
+        return getName();
+      case EcorePackage.EDATA_TYPE__INSTANCE_CLASS_NAME:
+        return getInstanceClassName();
+      case EcorePackage.EDATA_TYPE__INSTANCE_CLASS:
+        return getInstanceClass();
+      case EcorePackage.EDATA_TYPE__DEFAULT_VALUE:
+        return getDefaultValue();
+      case EcorePackage.EDATA_TYPE__INSTANCE_TYPE_NAME:
+        return getInstanceTypeName();
+      case EcorePackage.EDATA_TYPE__EPACKAGE:
+        if (resolve) return getEPackage();
+        return basicGetEPackage();
+      case EcorePackage.EDATA_TYPE__ETYPE_PARAMETERS:
+        return getETypeParameters();
+      case EcorePackage.EDATA_TYPE__SERIALIZABLE:
+        return isSerializable();
+    }
+    return eDynamicGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case EcorePackage.EDATA_TYPE__EANNOTATIONS:
-				getEAnnotations().clear();
-				getEAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
-				return;
-			case EcorePackage.EDATA_TYPE__NAME:
-				setName((String)newValue);
-				return;
-			case EcorePackage.EDATA_TYPE__INSTANCE_CLASS_NAME:
-				setInstanceClassName((String)newValue);
-				return;
-			case EcorePackage.EDATA_TYPE__INSTANCE_TYPE_NAME:
-				setInstanceTypeName((String)newValue);
-				return;
-			case EcorePackage.EDATA_TYPE__ETYPE_PARAMETERS:
-				getETypeParameters().clear();
-				getETypeParameters().addAll((Collection<? extends ETypeParameter>)newValue);
-				return;
-			case EcorePackage.EDATA_TYPE__SERIALIZABLE:
-				setSerializable((Boolean)newValue);
-				return;
-		}
-		eDynamicSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.EDATA_TYPE__EANNOTATIONS:
+        getEAnnotations().clear();
+        getEAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
+        return;
+      case EcorePackage.EDATA_TYPE__NAME:
+        setName((String)newValue);
+        return;
+      case EcorePackage.EDATA_TYPE__INSTANCE_CLASS_NAME:
+        setInstanceClassName((String)newValue);
+        return;
+      case EcorePackage.EDATA_TYPE__INSTANCE_TYPE_NAME:
+        setInstanceTypeName((String)newValue);
+        return;
+      case EcorePackage.EDATA_TYPE__ETYPE_PARAMETERS:
+        getETypeParameters().clear();
+        getETypeParameters().addAll((Collection<? extends ETypeParameter>)newValue);
+        return;
+      case EcorePackage.EDATA_TYPE__SERIALIZABLE:
+        setSerializable((Boolean)newValue);
+        return;
+    }
+    eDynamicSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case EcorePackage.EDATA_TYPE__EANNOTATIONS:
-				getEAnnotations().clear();
-				return;
-			case EcorePackage.EDATA_TYPE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case EcorePackage.EDATA_TYPE__INSTANCE_CLASS_NAME:
-				unsetInstanceClassName();
-				return;
-			case EcorePackage.EDATA_TYPE__INSTANCE_TYPE_NAME:
-				unsetInstanceTypeName();
-				return;
-			case EcorePackage.EDATA_TYPE__ETYPE_PARAMETERS:
-				getETypeParameters().clear();
-				return;
-			case EcorePackage.EDATA_TYPE__SERIALIZABLE:
-				setSerializable(SERIALIZABLE_EDEFAULT);
-				return;
-		}
-		eDynamicUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.EDATA_TYPE__EANNOTATIONS:
+        getEAnnotations().clear();
+        return;
+      case EcorePackage.EDATA_TYPE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case EcorePackage.EDATA_TYPE__INSTANCE_CLASS_NAME:
+        unsetInstanceClassName();
+        return;
+      case EcorePackage.EDATA_TYPE__INSTANCE_TYPE_NAME:
+        unsetInstanceTypeName();
+        return;
+      case EcorePackage.EDATA_TYPE__ETYPE_PARAMETERS:
+        getETypeParameters().clear();
+        return;
+      case EcorePackage.EDATA_TYPE__SERIALIZABLE:
+        setSerializable(SERIALIZABLE_EDEFAULT);
+        return;
+    }
+    eDynamicUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case EcorePackage.EDATA_TYPE__EANNOTATIONS:
-				return eAnnotations != null && !eAnnotations.isEmpty();
-			case EcorePackage.EDATA_TYPE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case EcorePackage.EDATA_TYPE__INSTANCE_CLASS_NAME:
-				return isSetInstanceClassName();
-			case EcorePackage.EDATA_TYPE__INSTANCE_CLASS:
-				return getInstanceClass() != null;
-			case EcorePackage.EDATA_TYPE__DEFAULT_VALUE:
-				return getDefaultValue() != null;
-			case EcorePackage.EDATA_TYPE__INSTANCE_TYPE_NAME:
-				return isSetInstanceTypeName();
-			case EcorePackage.EDATA_TYPE__EPACKAGE:
-				return basicGetEPackage() != null;
-			case EcorePackage.EDATA_TYPE__ETYPE_PARAMETERS:
-				return eTypeParameters != null && !eTypeParameters.isEmpty();
-			case EcorePackage.EDATA_TYPE__SERIALIZABLE:
-				return ((eFlags & SERIALIZABLE_EFLAG) != 0) != SERIALIZABLE_EDEFAULT;
-		}
-		return eDynamicIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.EDATA_TYPE__EANNOTATIONS:
+        return eAnnotations != null && !eAnnotations.isEmpty();
+      case EcorePackage.EDATA_TYPE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case EcorePackage.EDATA_TYPE__INSTANCE_CLASS_NAME:
+        return isSetInstanceClassName();
+      case EcorePackage.EDATA_TYPE__INSTANCE_CLASS:
+        return getInstanceClass() != null;
+      case EcorePackage.EDATA_TYPE__DEFAULT_VALUE:
+        return getDefaultValue() != null;
+      case EcorePackage.EDATA_TYPE__INSTANCE_TYPE_NAME:
+        return isSetInstanceTypeName();
+      case EcorePackage.EDATA_TYPE__EPACKAGE:
+        return basicGetEPackage() != null;
+      case EcorePackage.EDATA_TYPE__ETYPE_PARAMETERS:
+        return eTypeParameters != null && !eTypeParameters.isEmpty();
+      case EcorePackage.EDATA_TYPE__SERIALIZABLE:
+        return ((eFlags & SERIALIZABLE_EFLAG) != 0) != SERIALIZABLE_EDEFAULT;
+    }
+    return eDynamicIsSet(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String toString()
   {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (serializable: ");
-		result.append((eFlags & SERIALIZABLE_EFLAG) != 0);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (serializable: ");
+    result.append((eFlags & SERIALIZABLE_EFLAG) != 0);
+    result.append(')');
+    return result.toString();
+  }
 
   protected ConversionDelegate conversionDelegate;
   protected boolean conversionDelegateIsSet;

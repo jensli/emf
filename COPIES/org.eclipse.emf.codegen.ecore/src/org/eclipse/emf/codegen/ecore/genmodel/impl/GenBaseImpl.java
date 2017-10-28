@@ -3551,15 +3551,15 @@ public abstract class GenBaseImpl extends EObjectImpl implements GenBase
          "QName"
        });
 
-  protected boolean isRemappedXMLType(EClassifier eClassifier)
+  protected boolean isRemappedXMLType(EClassifier<?> eClassifier)
   {
     if (getMainGenModel().getRuntimeVersion() == GenRuntimeVersion.EMF22 && eClassifier instanceof EDataType)
     {
-      EDataType eDataType = (EDataType)eClassifier;
-      List<EDataType> members = getExtendedMetaData().getMemberTypes(eDataType);
+      EDataType<?> eDataType = (EDataType<?>) eClassifier;
+      List<EDataType<?>> members = getExtendedMetaData().getMemberTypes(eDataType);
       if (!members.isEmpty())
       {
-        for (EDataType member : members)
+        for (EDataType<?> member : members)
         {
           if (!isRemappedXMLType(member))
           {

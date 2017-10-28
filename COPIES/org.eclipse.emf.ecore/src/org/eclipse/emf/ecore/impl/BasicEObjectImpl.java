@@ -56,10 +56,10 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
   /**
    * An internal interface for holding less frequently members variables.
    */
-  protected interface EPropertiesHolder<C extends EObject> extends EStructuralFeature.Internal.DynamicValueHolder
+  protected interface EPropertiesHolder extends EStructuralFeature.Internal.DynamicValueHolder
   {
-    EClass<C> getEClass();
-    void setEClass(EClass<C> eClass);
+    EClass<?> getEClass();
+    void setEClass(EClass<?> eClass);
 
     URI getEProxyURI();
     void setEProxyURI(URI eProxyURI);
@@ -80,7 +80,7 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
   /**
    * An internal class for holding the least frequently members variables.
    */
-  protected static class EPropertiesHolderBaseImpl<C extends EObject> implements EPropertiesHolder<C>
+  protected static class EPropertiesHolderBaseImpl<C extends EObject> implements EPropertiesHolder
   {
     protected EClass<C> eClass;
     protected Resource.Internal eResource;
@@ -88,14 +88,15 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
 
     protected static final Object [] NO_SETTINGS = new Object [0];
 
-    public EClass<C> getEClass()
+    public EClass<?> getEClass()
     {
       return eClass;
     }
 
-    public void setEClass(EClass<C> eClass)
+    @SuppressWarnings("unchecked")
+	public void setEClass(EClass<?> eClass)
     {
-      this.eClass = eClass;
+      this.eClass = (EClass<C>) eClass;
     }
 
     public URI getEProxyURI()
@@ -228,7 +229,7 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
     return eStaticClass().getOperationCount();
   }
 
-  protected EPropertiesHolder<?> eProperties()
+  protected EPropertiesHolder eProperties()
   {
     throw new UnsupportedOperationException();
     // if (eProperties == null)
@@ -238,7 +239,7 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
     // return eProperties;
   }
 
-  protected EPropertiesHolder<?> eBasicProperties()
+  protected EPropertiesHolder eBasicProperties()
   {
     throw new UnsupportedOperationException();
     // return eProperties;
@@ -246,7 +247,7 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
 
   protected boolean eHasSettings()
   {
-    EPropertiesHolder<?> eProperties = eBasicProperties();
+    EPropertiesHolder eProperties = eBasicProperties();
     return eProperties != null && eProperties.hasSettings();
   }
 
@@ -263,7 +264,7 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
 
   protected int eDynamicFeatureID(EStructuralFeature<?, ?> eStructuralFeature)
   {
-    return eClass().getFeatureID((EStructuralFeature) eStructuralFeature) - eStaticFeatureCount();
+    return eClass().getFeatureID((EStructuralFeature<?, ?>) eStructuralFeature) - eStaticFeatureCount();
   }
 
   protected EStructuralFeature<?, ?> eDynamicFeature(int dynamicFeatureID)
@@ -272,11 +273,12 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
   }
 
   
-  public <V extends EObject> String eURIFragmentSegment(EStructuralFeature<?, V> eStructuralFeature, V eObject)
+  @SuppressWarnings("unchecked")
+  public String eURIFragmentSegment(EStructuralFeature<?, ?> eStructuralFeature, EObject eObject)
   {
     if (eStructuralFeature == null)
     {
-      for (@SuppressWarnings("unchecked") EContentsEList.FeatureIterator<EObject> crossReferences = 
+      for (EContentsEList.FeatureIterator<EObject> crossReferences = 
              (EContentsEList.FeatureIterator<EObject>)((InternalEList<?>)eCrossReferences()).basicIterator(); 
            crossReferences.hasNext(); )
       {
@@ -312,8 +314,7 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
     }
     else if (eStructuralFeature.isMany())
     {
-      @SuppressWarnings({ "unchecked", "rawtypes" })
-      EList<EAttribute<?, ?>> eKeys = ((EReference)eStructuralFeature).getEKeys();
+      EList<? extends EAttribute<?, ?>> eKeys = ((EReference<EObject, Object>)eStructuralFeature).getEKeys();
       if (eKeys.isEmpty())
       {
         EList<?> eList = (EList<?>)eGet(eStructuralFeature, false);
@@ -327,8 +328,7 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
         result.append('[');
         for (int i = 0, size = eAttributes.length; i < size; ++i)
         {
-          @SuppressWarnings("unchecked")
-          EAttribute<?, V> eAttribute = (EAttribute<?, V>) eAttributes[i];
+          EAttribute<?, ?> eAttribute = (EAttribute<?, ?>) eAttributes[i];
           if (eAttribute == null)
           {
             break;
@@ -341,7 +341,6 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
             }
             result.append(eAttribute.getName());
             result.append('=');
-            @SuppressWarnings("unchecked")
 			EDataType<Object> eDataType = (EDataType<Object>) eAttribute.getEAttributeType();
             EFactory eFactory = eDataType.getEPackage().getEFactoryInstance();
             if (eAttribute.isMany())
@@ -515,7 +514,7 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
       int index = uriFragmentSegment.indexOf('[');
       if (index >= 0)
       {
-        EReference eReference = eReference(uriFragmentSegment.substring(1, index));
+        EReference<?, ?> eReference = eReference(uriFragmentSegment.substring(1, index));
         String predicate = uriFragmentSegment.substring(index + 1, lastIndex);
         return eObjectForURIFragmentPredicate(predicate, eReference);
       }
@@ -528,7 +527,7 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
         dotIndex = uriFragmentSegment.lastIndexOf('.', lastIndex - 1);
         if (dotIndex >= 0)
         {
-          EList<?> eList = (EList<?>)eGet(eStructuralFeature(uriFragmentSegment.substring(1, dotIndex)), false);
+          EList<?> eList = (EList<?>)eGet((EStructuralFeature<?, ?>) eStructuralFeature(uriFragmentSegment.substring(1, dotIndex)), false);
           int position = 0;
           try
           {
@@ -559,16 +558,16 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
     return null;
   }
 
-  private EObject eObjectForURIFragmentPredicate(String predicate, EReference eReference)
+  private <C extends EObject> EObject eObjectForURIFragmentPredicate(String predicate, EReference<C, ?> eReference)
   {
     ArrayList<FeatureMap.Entry> featureMapEntries = new ArrayList<FeatureMap.Entry>();
     int length = predicate.length();
-    EClass eReferenceType = eReference.getEReferenceType();
+    EClass<C> eReferenceType = eReference.getEReferenceType();
     for (int i = 0; i < length; ++i)
     {
       int index = predicate.indexOf('=', i);
-      EAttribute eAttribute = eAttribute(eReferenceType, predicate.substring(i, index));
-      EDataType eDataType = eAttribute.getEAttributeType();
+      EAttribute<C, ?> eAttribute = eAttribute(eReferenceType, predicate.substring(i, index));
+      EDataType<?> eDataType = eAttribute.getEAttributeType();
       EFactory eFactory = eDataType.getEPackage().getEFactoryInstance();
       switch (predicate.charAt(++index))
       {
@@ -729,9 +728,9 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
     return null;
   }
   
-  private EStructuralFeature eStructuralFeature(String name) throws IllegalArgumentException
+  private EStructuralFeature<?, ?> eStructuralFeature(String name) throws IllegalArgumentException
   {
-    EStructuralFeature eStructuralFeature = eClass().getEStructuralFeature(name);
+    EStructuralFeature<?, ?> eStructuralFeature = eClass().getEStructuralFeature(name);
     if (eStructuralFeature == null)
     {
       throw new IllegalArgumentException("The feature '" + name + "' is not a valid feature");
@@ -749,12 +748,12 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
     throw new IllegalArgumentException("The feature '" + name + "' is not a valid reference");
   }
   
-  private EAttribute eAttribute(EClass eClass, String name) throws IllegalArgumentException
+  private <C extends EObject> EAttribute<C, ?> eAttribute(EClass<C> eClass, String name) throws IllegalArgumentException
   {
-    EStructuralFeature eStructuralFeature = eClass.getEStructuralFeature(name);
+    EStructuralFeature<C, ?> eStructuralFeature = eClass.getEStructuralFeature(name);
     if (eStructuralFeature instanceof EAttribute)
     {
-      return (EAttribute)eStructuralFeature;
+      return (EAttribute<C, ?>)eStructuralFeature;
     }
     throw new IllegalArgumentException("The feature '" + name + "' is not a valid attribute");
   }
@@ -848,12 +847,12 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
       };
   }
 
-  public EReference eContainmentFeature()
+  public EReference<? extends EObject, ? extends EObject> eContainmentFeature()
   {
     return eContainmentFeature(this, eInternalContainer(), eContainerFeatureID());
   }
   
-  protected static EReference eContainmentFeature(EObject eObject, EObject eContainer, int eContainerFeatureID)
+  protected static EReference<? extends EObject, ? extends EObject> eContainmentFeature(EObject eObject, EObject eContainer, int eContainerFeatureID)
   {
     if (eContainer == null)
     {
@@ -896,7 +895,8 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
     }
   }
 
-  public EStructuralFeature eContainingFeature()
+  @SuppressWarnings("unchecked")
+  public EStructuralFeature<? extends EObject, ? extends EObject> eContainingFeature()
   {
     EObject eContainer = eInternalContainer();
     if (eContainer == null)
@@ -906,10 +906,10 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
     else
     {
       int eContainerFeatureID = eContainerFeatureID();
-      return
-        eContainerFeatureID <= EOPPOSITE_FEATURE_BASE ?
+      return (EStructuralFeature<? extends EObject, ? extends EObject>)
+        (eContainerFeatureID <= EOPPOSITE_FEATURE_BASE ?
           eContainer.eClass().getEStructuralFeature(EOPPOSITE_FEATURE_BASE - eContainerFeatureID) :
-          ((EReference)eClass().getEStructuralFeature(eContainerFeatureID)).getEOpposite();
+          ((EReference<?, ?>)eClass().getEStructuralFeature(eContainerFeatureID)).getEOpposite());
     }
   }
 
@@ -997,7 +997,7 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
     eProperties().setEResource(resource);
   }
 
-  public Object eGet(EStructuralFeature eFeature)
+  public <V> V eGet(EStructuralFeature<?, V> eFeature)
   {
     return eGet(eFeature, true);
   }
@@ -1007,6 +1007,7 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
     return eGet(eFeature, resolve, true);
   }
 
+  @SuppressWarnings("unchecked")
   public <V> V eGet(EStructuralFeature<?, V> eFeature, boolean resolve, boolean coreType)
   {
     int featureID = eDerivedStructuralFeatureID(eFeature);
@@ -1054,7 +1055,7 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
 
   public <V> V eOpenGet(EStructuralFeature<?, V> eFeature, boolean resolve)
   {
-    EStructuralFeature<?, V> openFeature = ExtendedMetaData.INSTANCE.getAffiliation( eClass(), eFeature);
+    EStructuralFeature<?, ?> openFeature = ExtendedMetaData.INSTANCE.getAffiliation( eClass(), eFeature);
     if (openFeature != null)
     {
       if (!FeatureMapUtil.isFeatureMap(openFeature))
@@ -1085,7 +1086,8 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
 
   public void eSet(int featureID, Object newValue)
   {
-    EStructuralFeature eFeature = eClass().getEStructuralFeature(featureID);
+    @SuppressWarnings("unchecked")
+	EStructuralFeature<?, Object> eFeature = (EStructuralFeature<?, Object>) eClass().getEStructuralFeature(featureID);
     int dynamicFeatureID = featureID - eStaticFeatureCount();
     if (dynamicFeatureID < 0)
     {
@@ -1534,11 +1536,11 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
     }
   }
 
-  public EClass<? extends EObject> eClass()
+  public EClass<?> eClass()
   {
     if (eBasicProperties() != null)
     {
-      EClass<? extends EObject> result = eBasicProperties().getEClass();
+      EClass<?> result = eBasicProperties().getEClass();
       if (result != null)
       {
         return result;
@@ -1567,25 +1569,25 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
     ((EPropertiesHolder) eProperties()).setEClass(eClass);
   }
 
-  protected <V> EStructuralFeature.Internal.SettingDelegate<?, V> eSettingDelegate(EStructuralFeature<?, V> eFeature)
+  protected <C extends EObject, V> EStructuralFeature.Internal.SettingDelegate<C, V> eSettingDelegate(EStructuralFeature<C, V> eFeature)
   {
-    return ((EStructuralFeature.Internal<InternalEObject, V>)eFeature).getSettingDelegate();
+    return ((EStructuralFeature.Internal<C, V>)eFeature).getSettingDelegate();
   }
 
+  @SuppressWarnings("unchecked")
   public <V> EStructuralFeature.Setting<?, V> eSetting(final EStructuralFeature<?, V> eFeature)
   {
     EClass<?> eClass = eClass();
-    int index = eClass.getFeatureID((EStructuralFeature) eFeature);
+    int index = eClass.getFeatureID(eFeature);
     int dynamicIndex = eStaticFeatureCount();
     if (index >= dynamicIndex)
     {
-      @SuppressWarnings("unchecked")
       EStructuralFeature<InternalEObject, V> internalFeature = (EStructuralFeature<InternalEObject, V>) eFeature;
       return eSettingDelegate(internalFeature).dynamicSetting(this, eSettings(), index - dynamicIndex);
     }
     else if (index <= -1)
     {
-      EStructuralFeature<?, V> openFeature = ExtendedMetaData.INSTANCE.getAffiliation(eClass, eFeature);
+      EStructuralFeature<?, ?> openFeature = ExtendedMetaData.INSTANCE.getAffiliation(eClass, eFeature);
       if (openFeature != null)
       {
         if (!FeatureMapUtil.isFeatureMap(openFeature))
@@ -1596,7 +1598,7 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
         int upperBound = openFeature.getUpperBound();
         if (upperBound > 1 || upperBound == ETypedElement.UNBOUNDED_MULTIPLICITY)
         {
-          return (EStructuralFeature.Setting)((FeatureMap.Internal)featureMap).get(eFeature, false);
+          return (EStructuralFeature.Setting<?, V>)((FeatureMap.Internal)featureMap).get(eFeature, false);
         }
       }
       else
@@ -1606,7 +1608,7 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
     }
     else if (eFeature.isMany())
     {
-      return (EStructuralFeature.Setting)eGet(eFeature, false);
+      return (EStructuralFeature.Setting<?, V>)eGet(eFeature, false);
     }
 
     EStructuralFeature.Setting<?, V> setting =
@@ -1645,9 +1647,9 @@ public class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
     return setting;
   }
 
-  protected EOperation.Internal.InvocationDelegate eInvocationDelegate(EOperation eOperation)
+  protected EOperation.Internal.InvocationDelegate eInvocationDelegate(EOperation<?, ?> eOperation)
   {
-    return ((EOperation.Internal)eOperation).getInvocationDelegate();
+    return ((EOperation.Internal<?, ?>)eOperation).getInvocationDelegate();
   }
 
   public InternalEObject.EStore eStore()

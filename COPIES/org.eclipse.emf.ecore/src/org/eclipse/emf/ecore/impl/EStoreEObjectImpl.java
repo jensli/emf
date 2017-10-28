@@ -47,22 +47,22 @@ public class EStoreEObjectImpl extends EObjectImpl implements EStructuralFeature
   /**
    * An internal class for holding less frequently members variables.
    */
-  protected static class EStoreEPropertiesHolderImpl implements BasicEObjectImpl.EPropertiesHolder
+  protected static class EStoreEPropertiesHolderImpl<C extends EObject> implements BasicEObjectImpl.EPropertiesHolder
   {
-    protected EClass eClass;
+    protected EClass<C> eClass;
     protected URI eProxyURI;
     protected Resource.Internal eResource;
     protected EList<EObject> eContents;
     protected EList<EObject> eCrossReferences;
 
-    public EClass getEClass()
+    public EClass<?> getEClass()
     {
       return eClass;
     }
     
-    public void setEClass(EClass eClass)
+    public void setEClass(EClass<?> eClass)
     {
-      this.eClass = eClass;
+      this.eClass = (EClass<C>) eClass;
     }
 
     public URI getEProxyURI()
@@ -1026,7 +1026,7 @@ public class EStoreEObjectImpl extends EObjectImpl implements EStructuralFeature
       return getList(entry).toArray();
     }
 
-    public <T> T[] toArray(InternalEObject eObject, EStructuralFeature feature, T[] array)
+    public <T> T[] toArray(InternalEObject eObject, EStructuralFeature<?, ?> feature, T[] array)
     {
       Entry entry = new Entry(eObject, feature);
       return getList(entry).toArray(array);

@@ -106,12 +106,13 @@ public class EObjectImpl extends BasicEObjectImpl implements EObject
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return EcorePackage.eINSTANCE.getEObject();
   }
 
-  @Override
+  @SuppressWarnings("unchecked")
+@Override
   public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException
   {
     switch (operationID)
@@ -135,19 +136,19 @@ public class EObjectImpl extends BasicEObjectImpl implements EObject
       case EcorePackage.EOBJECT___ECROSS_REFERENCES:
         return eCrossReferences();
       case EcorePackage.EOBJECT___EGET__ESTRUCTURALFEATURE:
-        return eGet((EStructuralFeature)arguments.get(0));
+        return eGet((EStructuralFeature<?, ?>)arguments.get(0));
       case EcorePackage.EOBJECT___EGET__ESTRUCTURALFEATURE_BOOLEAN:
-        return eGet((EStructuralFeature)arguments.get(0), (Boolean)arguments.get(1));
+        return eGet((EStructuralFeature<?, ?>)arguments.get(0), (Boolean)arguments.get(1));
       case EcorePackage.EOBJECT___ESET__ESTRUCTURALFEATURE_OBJECT:
-        eSet((EStructuralFeature)arguments.get(0), arguments.get(1));
+        eSet((EStructuralFeature<?, Object>)arguments.get(0), arguments.get(1));
         return null;
       case EcorePackage.EOBJECT___EIS_SET__ESTRUCTURALFEATURE:
-        return eIsSet((EStructuralFeature)arguments.get(0));
+        return eIsSet((EStructuralFeature<?, ?>)arguments.get(0));
       case EcorePackage.EOBJECT___EUNSET__ESTRUCTURALFEATURE:
-        eUnset((EStructuralFeature)arguments.get(0));
+        eUnset((EStructuralFeature<?, ?>)arguments.get(0));
         return null;
       case EcorePackage.EOBJECT___EINVOKE__EOPERATION_ELIST:
-        return eInvoke((EOperation)arguments.get(0), (EList<?>)arguments.get(1));    
+        return eInvoke((EOperation<?, ?>)arguments.get(0), (EList<?>)arguments.get(1));    
     }
     return eDynamicInvoke(operationID, arguments);
   }
@@ -227,7 +228,7 @@ public class EObjectImpl extends BasicEObjectImpl implements EObject
   {
     if (eProperties == null)
     {
-      eProperties = new EPropertiesHolderImpl();
+      eProperties = new EPropertiesHolderImpl<EObject>();
     }
     return eProperties;
   }
@@ -258,13 +259,13 @@ public class EObjectImpl extends BasicEObjectImpl implements EObject
   }
 
   @Override
-  public EClass eClass()
+  public EClass<?> eClass()
   {
     return (eFlags & EDYNAMIC_CLASS) == 0 ? eStaticClass() : eProperties().getEClass();
   }
 
   @Override
-  public void eSetClass(EClass eClass)
+  public void eSetClass(EClass<?> eClass)
   {
     super.eSetClass(eClass);
     if (eClass != null)

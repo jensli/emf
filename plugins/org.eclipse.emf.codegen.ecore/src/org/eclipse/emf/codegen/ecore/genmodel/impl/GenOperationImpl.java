@@ -707,20 +707,28 @@ public class GenOperationImpl extends GenTypedElementImpl implements GenOperatio
 
   public String getRawImportedMetaType()
   {
-    if (getGenModel().useGenerics()) {
-      String containerType = getGenClass().isImplementingEobject()
-        ? this.getGenClass().getImportedWildcardObjectInstanceClassName() : "?";
-
-      return getRawImportedMetaType() + "<" + containerType + ", "
-        + this.getTypeGenClassifier().getImportedWildcardObjectInstanceClassName() + ">";
-    } else {
-      return getRawImportedMetaType();
-    }
+    return getGenModel().getImportedName("org.eclipse.emf.ecore.EOperation");
   }
 
   public String getImportedMetaType()
   {
-    return getGenModel().getImportedName("org.eclipse.emf.ecore.EOperation");
+    // CHANGE gen: Generics added
+    // TODO gen: Code duplicated in GenFeature
+    if (getGenModel().useGenerics()) {
+      String containerType = getGenClass().isImplementingEobject()
+        ? this.getGenClass().getImportedWildcardObjectInstanceClassName() : "?";
+    return getRawImportedMetaType() + "<" + containerType + ", " + this.getObjectType(null, true) + ">";
+    } else {
+      return getRawImportedMetaType();
+    }
+    
+//    if (getGenModel().useGenerics()) {
+//      String containerType = getGenClass().isImplementingEobject()
+//        ? this.getGenClass().getImportedWildcardObjectInstanceClassName() : "?";
+//      return getRawImportedMetaType() + "<" + containerType + ", " + this.getObjectType(null, true) + ">";
+//    } else {
+//      return getRawImportedMetaType();
+//    }
   }
 
   public GenPackage getGenPackage()
@@ -1134,7 +1142,7 @@ public class GenOperationImpl extends GenTypedElementImpl implements GenOperatio
           for (Iterator<EGenericType> j = genTypeParameter.getEcoreTypeParameter().getEBounds().iterator(); j.hasNext(); )
           {
             EGenericType eBound = j.next();
-            result.append(getTypeArgument(context, eBound, true, false));
+            result.append(getTypeArgument(context, eBound, true, false, false));
             if (j.hasNext())
             {
               result.append(" & ");

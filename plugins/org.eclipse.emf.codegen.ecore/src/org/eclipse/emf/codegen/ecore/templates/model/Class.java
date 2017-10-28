@@ -225,7 +225,7 @@ public class Class
   protected final String TEXT_207 = ";";
   protected final String TEXT_208 = NL + "\t}" + NL + "" + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
   protected final String TEXT_209 = NL + "\t@Override";
-  protected final String TEXT_210 = NL + "\tprotected ";
+  protected final String TEXT_210 = NL + "\t// CHANGE: Added wildcard " + NL + "\tprotected ";
   protected final String TEXT_211 = " eStaticClass()" + NL + "\t{" + NL + "\t\treturn ";
   protected final String TEXT_212 = ";" + NL + "\t}" + NL;
   protected final String TEXT_213 = NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL + "\tprotected static final int ESTATIC_FEATURE_COUNT = ";
@@ -2391,7 +2391,7 @@ public class Class
     stringBuffer.append(TEXT_209);
     }
     stringBuffer.append(TEXT_210);
-    stringBuffer.append(genModel.getImportedName("org.eclipse.emf.ecore.EClass"));
+    stringBuffer.append(genModel.getImportedName("org.eclipse.emf.ecore.EClass") + singleWildcard);
     stringBuffer.append(TEXT_211);
     stringBuffer.append(genClass.getQualifiedClassifierAccessor());
     stringBuffer.append(TEXT_212);

@@ -151,7 +151,7 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
         if (getEffectiveComplianceLevel().getValue() < GenJDKLevel.JDK50) return getEffectiveListType();
         else return getEffectiveListType() + "<" + getEffectiveMapEntryType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()) + ">";
       else return getEffectiveMapEntryType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass());
-    if (isListType()) return getEffectiveListType(context, getEcoreTypedElement().getEGenericType());
+    if (isListType()) return getEffectiveListType(context, getEcoreTypedElement().getEGenericType(), false);
     if (isEObjectType()) return getEffectiveEObjectType();
     if (isListDataType() && getEffectiveComplianceLevel().getValue() >= GenJDKLevel.JDK50)
     {
@@ -195,7 +195,7 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
         if (getEffectiveComplianceLevel().getValue() < GenJDKLevel.JDK50) return getGenModel().getImportedName(getEffectiveListType());
         else return getGenModel().getImportedName(getEffectiveListType() + "<" + getEffectiveMapEntryType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()) + ">");
       else return getGenModel().getImportedName(getEffectiveMapEntryType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()));
-    if (isListType()) return getGenModel().getImportedName(getEffectiveListType(context, getEcoreTypedElement().getEGenericType()));
+    if (isListType()) return getGenModel().getImportedName(getEffectiveListType(context, getEcoreTypedElement().getEGenericType(), false));
     if (isEObjectType()) return getGenModel().getImportedName(getEffectiveEObjectType());
     if (isListDataType() && getEffectiveComplianceLevel().getValue() >= GenJDKLevel.JDK50)
     {
@@ -210,7 +210,7 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
     return getObjectType(getContext()); 
   }
 
-  // TODO j: New parameter: useWildcardParams
+  // CHANGE: New parameter: useWildcardParams
   protected String getObjectType(GenClass context, boolean useWildcardParams) {
 	    if (isFeatureMapType()) return getGenModel().getImportedName(getEffectiveFeatureMapWrapperInterface());
 	    if (isMapType()) return getGenModel().getImportedName(getEffectiveMapType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()));
@@ -219,7 +219,7 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
 	        if (getEffectiveComplianceLevel().getValue() < GenJDKLevel.JDK50) return getGenModel().getImportedName(getEffectiveListType());
 	        else return getGenModel().getImportedName(getEffectiveListType() + "<" + getEffectiveMapEntryType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()) + ">");
 	      else return getGenModel().getImportedName(getEffectiveMapEntryType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()));
-	    if (isListType()) return getGenModel().getImportedName(getEffectiveListType(context, getEcoreTypedElement().getEGenericType()));
+	    if (isListType()) return getGenModel().getImportedName(getEffectiveListType(context, getEcoreTypedElement().getEGenericType(), useWildcardParams));
 	    if (isEObjectType()) return getGenModel().getImportedName(getEffectiveEObjectType());
 	    if (isListDataType() && getEffectiveComplianceLevel().getValue() >= GenJDKLevel.JDK50)
 	    {
@@ -236,7 +236,7 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
   
 //  public String getObjectType(GenClass context)
 //  {
-//    // TODO j: Add parameter for wildcard 
+//    // CHANGE: Add parameter for wildcard 
 //    if (isFeatureMapType()) return getGenModel().getImportedName(getEffectiveFeatureMapWrapperInterface());
 //    if (isMapType()) return getGenModel().getImportedName(getEffectiveMapType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()));
 //    if (isMapEntryType())
@@ -253,11 +253,11 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
 //    return getImportedType(context, getEcoreTypedElement().getEGenericType(), true);
 //  }
 
-  // TODO j: New method: getWildcardObjectType
-  public String getWildcardObjectType(GenClass context)
-  {
-	  return getObjectType(context, true);
-  }
+// CHANGE: New method: getWildcardObjectType
+//  public String getWildcardObjectType(GenClass context)
+//  {
+//	  return getObjectType(context, true);
+//  }
 
 
   
@@ -270,7 +270,7 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
         if (getEffectiveComplianceLevel().getValue() < GenJDKLevel.JDK50) return getEffectiveListType();
         else return getEffectiveListType() + "<" + /*x*/getEffectiveMapEntryType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass()) + ">";
       else return getEffectiveMapEntryType(context, getEcoreTypedElement().getEGenericType(), getMapEntryTypeGenClass());
-    if (isListType()) return getEffectiveListType(context, getEcoreTypedElement().getEGenericType());
+    if (isListType()) return getEffectiveListType(context, getEcoreTypedElement().getEGenericType(), false);
     if (isEObjectType()) return getEffectiveEObjectType();
     if (isListDataType() && getEffectiveComplianceLevel().getValue() >= GenJDKLevel.JDK50)
     {
@@ -406,7 +406,9 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
 
   public String getRawListItemType(GenClass context)
   {
-    return getGenModel().useGenerics() ? getTypeArgument(context, getEcoreTypedElement().getEGenericType(), true, true) : getImportedType(context, getEcoreTypedElement().getEType(), true, true);
+    return getGenModel().useGenerics()
+      ? getTypeArgument(context, getEcoreTypedElement().getEGenericType(), true, true, false)
+      : getImportedType(context, getEcoreTypedElement().getEType(), true, true);
   }
 
   public String getArrayItemType(GenClass context)
@@ -425,12 +427,12 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
         }
         else
         {
-          return getTypeArgument(context, eBounds.get(0), true, false);
+          return getTypeArgument(context, eBounds.get(0), true, false, false);
         }
       }
       else
       {
-        return getTypeArgument(context, eGenericType, true, false);
+        return getTypeArgument(context, eGenericType, true, false, false);
       }
     }
     else
@@ -486,7 +488,7 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
     EGenericType eGenericType = getEcoreTypedElement().getEGenericType();
     if (eGenericType.getETypeArguments().size() == 2)
     {
-      return getTypeArgument(context,eGenericType.getETypeArguments().get(0), true, false);
+      return getTypeArgument(context,eGenericType.getETypeArguments().get(0), true, false, false);
     }
     else
     {
@@ -500,7 +502,7 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
     EGenericType eGenericType = getEcoreTypedElement().getEGenericType();
     if (eGenericType.getETypeArguments().size() == 2)
     {
-      return getTypeArgument(context,eGenericType.getETypeArguments().get(1), true, false);
+      return getTypeArgument(context,eGenericType.getETypeArguments().get(1), true, false, false);
     }
     else
     {
@@ -612,7 +614,7 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
     {
       return false;
     }
-    String substitutedType = getTypeArgument(context, actualEGenericType, false, false);
+    String substitutedType = getTypeArgument(context, actualEGenericType, false, false, false);
     Diagnostic diagnostic = EcoreValidator.EGenericTypeBuilder.INSTANCE.parseInstanceTypeName(substitutedType);
     EGenericType eGenericType = (EGenericType)diagnostic.getData().get(0);
     if (eGenericType != null)

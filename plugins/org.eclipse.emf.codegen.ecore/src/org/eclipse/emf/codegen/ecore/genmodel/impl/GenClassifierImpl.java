@@ -349,7 +349,8 @@ public abstract class GenClassifierImpl extends GenBaseImpl implements GenClassi
     }
     return null;
   }
-  
+
+  // CHANGE: Added.
   public boolean isImplementingEobject() {
 	    Class<?> instanceClass = this.getEcoreClassifier().getInstanceClass();
 	      

@@ -65,196 +65,203 @@ import org.eclipse.emf.ecore.resource.impl.BinaryResourceImpl;
 public class EFactoryImpl extends EModelElementImpl implements EFactory, BinaryResourceImpl.DataConverter.Factory
 {
   /**
-	 * The cached value of the '{@link #getEPackage() <em>EPackage</em>}' reference.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getEPackage() <em>EPackage</em>}' reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getEPackage()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getEPackage()
+   * @generated
+   * @ordered
+   */
   protected EPackage ePackage;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected EFactoryImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
-		return EcorePackage.Literals.EFACTORY;
-	}
+    return EcorePackage.Literals.EFACTORY;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EPackage getEPackage()
   {
-		return ePackage;
-	}
+    return ePackage;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setEPackage(EPackage newEPackage)
   {
-		if (newEPackage != ePackage) {
-			NotificationChain msgs = null;
-			if (ePackage != null)
-				msgs = ((InternalEObject)ePackage).eInverseRemove(this, EcorePackage.EPACKAGE__EFACTORY_INSTANCE, EPackage.class, msgs);
-			if (newEPackage != null)
-				msgs = ((InternalEObject)newEPackage).eInverseAdd(this, EcorePackage.EPACKAGE__EFACTORY_INSTANCE, EPackage.class, msgs);
-			msgs = basicSetEPackage(newEPackage, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.EFACTORY__EPACKAGE, newEPackage, newEPackage));
-	}
+    if (newEPackage != ePackage)
+    {
+      NotificationChain msgs = null;
+      if (ePackage != null)
+        msgs = ((InternalEObject)ePackage).eInverseRemove(this, EcorePackage.EPACKAGE__EFACTORY_INSTANCE, EPackage.class, msgs);
+      if (newEPackage != null)
+        msgs = ((InternalEObject)newEPackage).eInverseAdd(this, EcorePackage.EPACKAGE__EFACTORY_INSTANCE, EPackage.class, msgs);
+      msgs = basicSetEPackage(newEPackage, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.EFACTORY__EPACKAGE, newEPackage, newEPackage));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public NotificationChain basicSetEPackage(EPackage newEPackage, NotificationChain msgs)
   {
-		EPackage oldEPackage = ePackage;
-		ePackage = newEPackage;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EcorePackage.EFACTORY__EPACKAGE, oldEPackage, newEPackage);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+    EPackage oldEPackage = ePackage;
+    ePackage = newEPackage;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EcorePackage.EFACTORY__EPACKAGE, oldEPackage, newEPackage);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case EcorePackage.EFACTORY__EANNOTATIONS:
-				return getEAnnotations();
-			case EcorePackage.EFACTORY__EPACKAGE:
-				return getEPackage();
-		}
-		return eDynamicGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.EFACTORY__EANNOTATIONS:
+        return getEAnnotations();
+      case EcorePackage.EFACTORY__EPACKAGE:
+        return getEPackage();
+    }
+    return eDynamicGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case EcorePackage.EFACTORY__EANNOTATIONS:
-				getEAnnotations().clear();
-				getEAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
-				return;
-			case EcorePackage.EFACTORY__EPACKAGE:
-				setEPackage((EPackage)newValue);
-				return;
-		}
-		eDynamicSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.EFACTORY__EANNOTATIONS:
+        getEAnnotations().clear();
+        getEAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
+        return;
+      case EcorePackage.EFACTORY__EPACKAGE:
+        setEPackage((EPackage)newValue);
+        return;
+    }
+    eDynamicSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case EcorePackage.EFACTORY__EANNOTATIONS:
-				getEAnnotations().clear();
-				return;
-			case EcorePackage.EFACTORY__EPACKAGE:
-				setEPackage((EPackage)null);
-				return;
-		}
-		eDynamicUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.EFACTORY__EANNOTATIONS:
+        getEAnnotations().clear();
+        return;
+      case EcorePackage.EFACTORY__EPACKAGE:
+        setEPackage((EPackage)null);
+        return;
+    }
+    eDynamicUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case EcorePackage.EFACTORY__EANNOTATIONS:
-				return eAnnotations != null && !eAnnotations.isEmpty();
-			case EcorePackage.EFACTORY__EPACKAGE:
-				return ePackage != null;
-		}
-		return eDynamicIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.EFACTORY__EANNOTATIONS:
+        return eAnnotations != null && !eAnnotations.isEmpty();
+      case EcorePackage.EFACTORY__EPACKAGE:
+        return ePackage != null;
+    }
+    return eDynamicIsSet(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
 		@SuppressWarnings({"rawtypes", "unchecked" })
   public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException
   {
-		switch (operationID) {
-			case EcorePackage.EFACTORY___GET_EANNOTATION__STRING:
-				return getEAnnotation((String)arguments.get(0));
-			case EcorePackage.EFACTORY___CREATE__ECLASS:
-				return create((EClass)arguments.get(0));
-			case EcorePackage.EFACTORY___CREATE_FROM_STRING__EDATATYPE_STRING:
-				return createFromString((EDataType)arguments.get(0), (String)arguments.get(1));
-			case EcorePackage.EFACTORY___CONVERT_TO_STRING__EDATATYPE_OBJECT:
-				return convertToString((EDataType)arguments.get(0), arguments.get(1));
-		}
-		return eDynamicInvoke(operationID, arguments);
-	}
+    switch (operationID)
+    {
+      case EcorePackage.EFACTORY___GET_EANNOTATION__STRING:
+        return getEAnnotation((String)arguments.get(0));
+      case EcorePackage.EFACTORY___CREATE__ECLASS:
+        return create((EClass)arguments.get(0));
+      case EcorePackage.EFACTORY___CREATE_FROM_STRING__EDATATYPE_STRING:
+        return createFromString((EDataType)arguments.get(0), (String)arguments.get(1));
+      case EcorePackage.EFACTORY___CONVERT_TO_STRING__EDATATYPE_OBJECT:
+        return convertToString((EDataType)arguments.get(0), arguments.get(1));
+    }
+    return eDynamicInvoke(operationID, arguments);
+  }
 
   /**
    * @generated modifiable
    */
-  public EObject create(EClass eClass) 
+  public <T extends EObject> T create(EClass<T> eClass) 
   {
     if (getEPackage() != eClass.getEPackage() || eClass.isAbstract())
     {
       throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
 
-    for (List<EClass> eSuperTypes = eClass.getESuperTypes(); !eSuperTypes.isEmpty(); )
+    for (List<EClass<?>> eSuperTypes = eClass.getESuperTypes(); !eSuperTypes.isEmpty(); )
     {
-      EClass eSuperType = eSuperTypes.get(0);
+      EClass<?> eSuperType = eSuperTypes.get(0);
       if (eSuperType.getInstanceClass() != null)
       {
         EObject result = eSuperType.getEPackage().getEFactoryInstance().create(eSuperType);
         ((InternalEObject)result).eSetClass(eClass);
-        return result;
+        return (T) result;
       }
       eSuperTypes = eSuperType.getESuperTypes();
     }
@@ -262,18 +269,19 @@ public class EFactoryImpl extends EModelElementImpl implements EFactory, BinaryR
     return basicCreate(eClass);
   }
 
-  protected EObject basicCreate(EClass eClass) 
+  @SuppressWarnings("unchecked")
+  protected <T extends EObject> T basicCreate(EClass<T> eClass) 
   {
     return
-       eClass.getInstanceClassName() == "java.util.Map$Entry" ?
-         new DynamicEObjectImpl.BasicEMapEntry<String, String>(eClass) :
-         new DynamicEObjectImpl(eClass);
+       (T) (eClass.getInstanceClassName() == "java.util.Map$Entry" ?
+       new DynamicEObjectImpl.BasicEMapEntry<String, String>(eClass) :
+       new DynamicEObjectImpl(eClass));
   }
 
   /**
    * @since 2.9
    */
-  public BinaryResourceImpl.DataConverter<?> create(EDataType eDataType)
+  public <T> BinaryResourceImpl.DataConverter<T> create(EDataType<T> eDataType)
   {
     return null;
   }
@@ -281,7 +289,7 @@ public class EFactoryImpl extends EModelElementImpl implements EFactory, BinaryR
   /**
    * @generated NOT
    */
-  public Object createFromString(EDataType eDataType, String stringValue) 
+  public <T> T createFromString(EDataType<T> eDataType, String stringValue) 
   {
     if (stringValue == null)
     {
@@ -295,12 +303,12 @@ public class EFactoryImpl extends EModelElementImpl implements EFactory, BinaryR
 
     if (eDataType instanceof EEnum)
     {
-      Object result = ((EEnum)eDataType).getEEnumLiteralByLiteral(stringValue);
+      Object result = ((EEnum<T>)eDataType).getEEnumLiteralByLiteral(stringValue);
       if (result == null)
       {
         throw new IllegalArgumentException("The value '" + stringValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
       }
-      return result;
+      return (T) result;
     }
 
     switch (ExtendedMetaData.INSTANCE.getWhiteSpaceFacet(eDataType))
@@ -317,13 +325,13 @@ public class EFactoryImpl extends EModelElementImpl implements EFactory, BinaryR
       }
     }
     
-    EDataType baseType = ExtendedMetaData.INSTANCE.getBaseType(eDataType);
+    EDataType<?> baseType = ExtendedMetaData.INSTANCE.getBaseType(eDataType);
     if (baseType != null)
     {
-      return EcoreUtil.createFromString(baseType, stringValue);
+      return (T) EcoreUtil.createFromString(baseType, stringValue);
     }
 
-    EDataType itemType = ExtendedMetaData.INSTANCE.getItemType(eDataType);
+    EDataType<?> itemType = ExtendedMetaData.INSTANCE.getItemType(eDataType);
     if (itemType != null)
     {
       List<Object> result = new ArrayList<Object>();
@@ -331,20 +339,20 @@ public class EFactoryImpl extends EModelElementImpl implements EFactory, BinaryR
       {
         result.add(EcoreUtil.createFromString(itemType, item));
       }
-      return result;
+      return (T) result;
     }
 
-    List<EDataType> memberTypes = ExtendedMetaData.INSTANCE.getMemberTypes(eDataType);
+    List<EDataType<?>> memberTypes = ExtendedMetaData.INSTANCE.getMemberTypes(eDataType);
     if (!memberTypes.isEmpty())
     {
-      for (EDataType memberType : memberTypes)
+      for (EDataType<?> memberType : memberTypes)
       {
         try
         {
           Object result = EcoreUtil.createFromString(memberType, stringValue);
           if (result != null)
           {
-            return result;
+            return (T) result;
           }
         }
         catch (RuntimeException exception)
@@ -355,10 +363,10 @@ public class EFactoryImpl extends EModelElementImpl implements EFactory, BinaryR
       throw new IllegalArgumentException("The value '" + stringValue + "' does not match any member types of the union datatype '" + eDataType.getName() + "'");
     }
 
-    EDataType.Internal.ConversionDelegate conversionDelegate = ((EDataType.Internal)eDataType).getConversionDelegate();
+    EDataType.Internal.ConversionDelegate conversionDelegate = ((EDataType.Internal<T>)eDataType).getConversionDelegate();
     if (conversionDelegate != null)
     {
-      return conversionDelegate.createFromString(stringValue);
+      return (T) conversionDelegate.createFromString(stringValue);
     }
 
     Class<?> c = EcoreUtil.wrapperClassFor(eDataType.getInstanceClass());
@@ -377,7 +385,7 @@ public class EFactoryImpl extends EModelElementImpl implements EFactory, BinaryR
         charValue = carray[0];
       }
 
-      return charValue;
+      return (T) (Character) charValue;
     }
 
     if (c == Date.class)
@@ -386,7 +394,7 @@ public class EFactoryImpl extends EModelElementImpl implements EFactory, BinaryR
       {
         try
         {
-          return EDATE_FORMATS[i].parse(stringValue);
+          return (T) EDATE_FORMATS[i].parse(stringValue);
         }
         catch (ParseException parseException)
         {
@@ -414,7 +422,7 @@ public class EFactoryImpl extends EModelElementImpl implements EFactory, BinaryR
       if (ctor != null)
       {
         Object[] ctorArgs = {stringValue};
-        return ctor.newInstance(ctorArgs);
+        return (T) ctor.newInstance(ctorArgs);
       }
     }
     catch (InstantiationException e)
@@ -445,7 +453,7 @@ public class EFactoryImpl extends EModelElementImpl implements EFactory, BinaryR
       if (valueOf != null)
       {
         Object[] valueOfArgs = {stringValue};
-        return valueOf.invoke(null, valueOfArgs);
+        return (T) valueOf.invoke(null, valueOfArgs);
       }
     }
     catch (IllegalArgumentException e)
@@ -464,21 +472,11 @@ public class EFactoryImpl extends EModelElementImpl implements EFactory, BinaryR
     throw new IllegalArgumentException("The value '" + stringValue + "' is invalid. " + exceptionString, formatException);
   }
 
-  /**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public <T> String convertToString(EDataType<T> eDataType, T instanceValue) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
 
-		/**
+  /**
    * @generated modifiable
    */
-  public String convertToString(EDataType eDataType, Object objectValue)
+  public <T> String convertToString(EDataType<T> eDataType, T objectValue)
   {
     if (getEPackage() != eDataType.getEPackage())
     {
@@ -512,10 +510,10 @@ public class EFactoryImpl extends EModelElementImpl implements EFactory, BinaryR
       return result.substring(0, result.length() - 1);
     }
 
-    List<EDataType> memberTypes = ExtendedMetaData.INSTANCE.getMemberTypes(eDataType);
+    List<EDataType<?>> memberTypes = ExtendedMetaData.INSTANCE.getMemberTypes(eDataType);
     if (!memberTypes.isEmpty())
     {
-      for (EDataType memberType : memberTypes)
+      for (EDataType<?> memberType : memberTypes)
       {
         if (memberType.isInstance(objectValue))
         {
@@ -701,41 +699,43 @@ public class EFactoryImpl extends EModelElementImpl implements EFactory, BinaryR
 
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case EcorePackage.EFACTORY__EANNOTATIONS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEAnnotations()).basicAdd(otherEnd, msgs);
-			case EcorePackage.EFACTORY__EPACKAGE:
-				if (ePackage != null)
-					msgs = ((InternalEObject)ePackage).eInverseRemove(this, EcorePackage.EPACKAGE__EFACTORY_INSTANCE, EPackage.class, msgs);
-				return basicSetEPackage((EPackage)otherEnd, msgs);
-		}
-		return eDynamicInverseAdd(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.EFACTORY__EANNOTATIONS:
+        return ((InternalEList<InternalEObject>)(InternalEList<?>)getEAnnotations()).basicAdd(otherEnd, msgs);
+      case EcorePackage.EFACTORY__EPACKAGE:
+        if (ePackage != null)
+          msgs = ((InternalEObject)ePackage).eInverseRemove(this, EcorePackage.EPACKAGE__EFACTORY_INSTANCE, EPackage.class, msgs);
+        return basicSetEPackage((EPackage)otherEnd, msgs);
+    }
+    return eDynamicInverseAdd(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case EcorePackage.EFACTORY__EANNOTATIONS:
-				return ((InternalEList<?>)getEAnnotations()).basicRemove(otherEnd, msgs);
-			case EcorePackage.EFACTORY__EPACKAGE:
-				return basicSetEPackage(null, msgs);
-		}
-		return eDynamicInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.EFACTORY__EANNOTATIONS:
+        return ((InternalEList<?>)getEAnnotations()).basicRemove(otherEnd, msgs);
+      case EcorePackage.EFACTORY__EPACKAGE:
+        return basicSetEPackage(null, msgs);
+    }
+    return eDynamicInverseRemove(otherEnd, featureID, msgs);
+  }
 
   protected String replaceWhiteSpace(String value)
   {

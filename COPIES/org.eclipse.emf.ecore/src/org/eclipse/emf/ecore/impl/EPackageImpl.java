@@ -77,13 +77,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class EPackageImpl extends ENamedElementImpl implements EPackage, BasicExtendedMetaData.EPackageExtendedMetaData.Holder
 {
   /**
-	 * The default value of the '{@link #getNsURI() <em>Ns URI</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getNsURI() <em>Ns URI</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getNsURI()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getNsURI()
+   * @generated
+   * @ordered
+   */
   protected static final String NS_URI_EDEFAULT = null;
 
   /**
@@ -231,15 +231,15 @@ public class EPackageImpl extends ENamedElementImpl implements EPackage, BasicEx
   }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
-		return EcorePackage.Literals.EPACKAGE;
-	}
+    return EcorePackage.Literals.EPACKAGE;
+  }
 
   /**
    * @generated modifiable
@@ -251,156 +251,158 @@ public class EPackageImpl extends ENamedElementImpl implements EPackage, BasicEx
   }
 
   /**
-	 * The cached value of the '{@link #getNsURI() <em>Ns URI</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getNsURI() <em>Ns URI</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getNsURI()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getNsURI()
+   * @generated
+   * @ordered
+   */
   protected String nsURI = NS_URI_EDEFAULT;
 
   /**
-	 * The default value of the '{@link #getNsPrefix() <em>Ns Prefix</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getNsPrefix() <em>Ns Prefix</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getNsPrefix()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getNsPrefix()
+   * @generated
+   * @ordered
+   */
   protected static final String NS_PREFIX_EDEFAULT = null;
 
   /**
-	 * The cached value of the '{@link #getNsPrefix() <em>Ns Prefix</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getNsPrefix() <em>Ns Prefix</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getNsPrefix()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getNsPrefix()
+   * @generated
+   * @ordered
+   */
   protected String nsPrefix = NS_PREFIX_EDEFAULT;
 
   /**
-	 * The cached value of the '{@link #getEFactoryInstance() <em>EFactory Instance</em>}' reference.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getEFactoryInstance() <em>EFactory Instance</em>}' reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getEFactoryInstance()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getEFactoryInstance()
+   * @generated
+   * @ordered
+   */
   protected EFactory eFactoryInstance;
 
   /**
-	 * The cached value of the '{@link #getEClassifiers() <em>EClassifiers</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getEClassifiers() <em>EClassifiers</em>}' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getEClassifiers()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getEClassifiers()
+   * @generated
+   * @ordered
+   */
   protected EList<EClassifier<?>> eClassifiers;
 
   /**
-	 * The cached value of the '{@link #getESubpackages() <em>ESubpackages</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getESubpackages() <em>ESubpackages</em>}' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getESubpackages()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getESubpackages()
+   * @generated
+   * @ordered
+   */
   protected EList<EPackage> eSubpackages;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public String getNsURI()
   {
-		return nsURI;
-	}
+    return nsURI;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setNsURI(String newNsURI)
   {
-		String oldNsURI = nsURI;
-		nsURI = newNsURI;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.EPACKAGE__NS_URI, oldNsURI, nsURI));
-	}
+    String oldNsURI = nsURI;
+    nsURI = newNsURI;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.EPACKAGE__NS_URI, oldNsURI, nsURI));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public String getNsPrefix()
   {
-		return nsPrefix;
-	}
+    return nsPrefix;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setNsPrefix(String newNsPrefix)
   {
-		String oldNsPrefix = nsPrefix;
-		nsPrefix = newNsPrefix;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.EPACKAGE__NS_PREFIX, oldNsPrefix, nsPrefix));
-	}
+    String oldNsPrefix = nsPrefix;
+    nsPrefix = newNsPrefix;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.EPACKAGE__NS_PREFIX, oldNsPrefix, nsPrefix));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EFactory getEFactoryInstance()
   {
-		return eFactoryInstance;
-	}
+    return eFactoryInstance;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setEFactoryInstance(EFactory newEFactoryInstance)
   {
-		if (newEFactoryInstance != eFactoryInstance) {
-			NotificationChain msgs = null;
-			if (eFactoryInstance != null)
-				msgs = ((InternalEObject)eFactoryInstance).eInverseRemove(this, EcorePackage.EFACTORY__EPACKAGE, EFactory.class, msgs);
-			if (newEFactoryInstance != null)
-				msgs = ((InternalEObject)newEFactoryInstance).eInverseAdd(this, EcorePackage.EFACTORY__EPACKAGE, EFactory.class, msgs);
-			msgs = basicSetEFactoryInstance(newEFactoryInstance, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.EPACKAGE__EFACTORY_INSTANCE, newEFactoryInstance, newEFactoryInstance));
-	}
+    if (newEFactoryInstance != eFactoryInstance)
+    {
+      NotificationChain msgs = null;
+      if (eFactoryInstance != null)
+        msgs = ((InternalEObject)eFactoryInstance).eInverseRemove(this, EcorePackage.EFACTORY__EPACKAGE, EFactory.class, msgs);
+      if (newEFactoryInstance != null)
+        msgs = ((InternalEObject)newEFactoryInstance).eInverseAdd(this, EcorePackage.EFACTORY__EPACKAGE, EFactory.class, msgs);
+      msgs = basicSetEFactoryInstance(newEFactoryInstance, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.EPACKAGE__EFACTORY_INSTANCE, newEFactoryInstance, newEFactoryInstance));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public NotificationChain basicSetEFactoryInstance(EFactory newEFactoryInstance, NotificationChain msgs)
   {
-		EFactory oldEFactoryInstance = eFactoryInstance;
-		eFactoryInstance = newEFactoryInstance;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EcorePackage.EPACKAGE__EFACTORY_INSTANCE, oldEFactoryInstance, newEFactoryInstance);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+    EFactory oldEFactoryInstance = eFactoryInstance;
+    eFactoryInstance = newEFactoryInstance;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EcorePackage.EPACKAGE__EFACTORY_INSTANCE, oldEFactoryInstance, newEFactoryInstance);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
 
   /**
    * <!-- begin-user-doc -->
@@ -457,83 +459,87 @@ public class EPackageImpl extends ENamedElementImpl implements EPackage, BasicEx
   }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case EcorePackage.EPACKAGE__EANNOTATIONS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEAnnotations()).basicAdd(otherEnd, msgs);
-			case EcorePackage.EPACKAGE__EFACTORY_INSTANCE:
-				if (eFactoryInstance != null)
-					msgs = ((InternalEObject)eFactoryInstance).eInverseRemove(this, EcorePackage.EFACTORY__EPACKAGE, EFactory.class, msgs);
-				return basicSetEFactoryInstance((EFactory)otherEnd, msgs);
-			case EcorePackage.EPACKAGE__ECLASSIFIERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEClassifiers()).basicAdd(otherEnd, msgs);
-			case EcorePackage.EPACKAGE__ESUBPACKAGES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getESubpackages()).basicAdd(otherEnd, msgs);
-			case EcorePackage.EPACKAGE__ESUPER_PACKAGE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return eBasicSetContainer(otherEnd, EcorePackage.EPACKAGE__ESUPER_PACKAGE, msgs);
-		}
-		return eDynamicInverseAdd(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.EPACKAGE__EANNOTATIONS:
+        return ((InternalEList<InternalEObject>)(InternalEList<?>)getEAnnotations()).basicAdd(otherEnd, msgs);
+      case EcorePackage.EPACKAGE__EFACTORY_INSTANCE:
+        if (eFactoryInstance != null)
+          msgs = ((InternalEObject)eFactoryInstance).eInverseRemove(this, EcorePackage.EFACTORY__EPACKAGE, EFactory.class, msgs);
+        return basicSetEFactoryInstance((EFactory)otherEnd, msgs);
+      case EcorePackage.EPACKAGE__ECLASSIFIERS:
+        return ((InternalEList<InternalEObject>)(InternalEList<?>)getEClassifiers()).basicAdd(otherEnd, msgs);
+      case EcorePackage.EPACKAGE__ESUBPACKAGES:
+        return ((InternalEList<InternalEObject>)(InternalEList<?>)getESubpackages()).basicAdd(otherEnd, msgs);
+      case EcorePackage.EPACKAGE__ESUPER_PACKAGE:
+        if (eInternalContainer() != null)
+          msgs = eBasicRemoveFromContainer(msgs);
+        return eBasicSetContainer(otherEnd, EcorePackage.EPACKAGE__ESUPER_PACKAGE, msgs);
+    }
+    return eDynamicInverseAdd(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case EcorePackage.EPACKAGE__EANNOTATIONS:
-				return ((InternalEList<?>)getEAnnotations()).basicRemove(otherEnd, msgs);
-			case EcorePackage.EPACKAGE__EFACTORY_INSTANCE:
-				return basicSetEFactoryInstance(null, msgs);
-			case EcorePackage.EPACKAGE__ECLASSIFIERS:
-				return ((InternalEList<?>)getEClassifiers()).basicRemove(otherEnd, msgs);
-			case EcorePackage.EPACKAGE__ESUBPACKAGES:
-				return ((InternalEList<?>)getESubpackages()).basicRemove(otherEnd, msgs);
-			case EcorePackage.EPACKAGE__ESUPER_PACKAGE:
-				return eBasicSetContainer(null, EcorePackage.EPACKAGE__ESUPER_PACKAGE, msgs);
-		}
-		return eDynamicInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.EPACKAGE__EANNOTATIONS:
+        return ((InternalEList<?>)getEAnnotations()).basicRemove(otherEnd, msgs);
+      case EcorePackage.EPACKAGE__EFACTORY_INSTANCE:
+        return basicSetEFactoryInstance(null, msgs);
+      case EcorePackage.EPACKAGE__ECLASSIFIERS:
+        return ((InternalEList<?>)getEClassifiers()).basicRemove(otherEnd, msgs);
+      case EcorePackage.EPACKAGE__ESUBPACKAGES:
+        return ((InternalEList<?>)getESubpackages()).basicRemove(otherEnd, msgs);
+      case EcorePackage.EPACKAGE__ESUPER_PACKAGE:
+        return eBasicSetContainer(null, EcorePackage.EPACKAGE__ESUPER_PACKAGE, msgs);
+    }
+    return eDynamicInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
   {
-		switch (eContainerFeatureID()) {
-			case EcorePackage.EPACKAGE__ESUPER_PACKAGE:
-				return eInternalContainer().eInverseRemove(this, EcorePackage.EPACKAGE__ESUBPACKAGES, EPackage.class, msgs);
-		}
-		return eDynamicBasicRemoveFromContainer(msgs);
-	}
+    switch (eContainerFeatureID())
+    {
+      case EcorePackage.EPACKAGE__ESUPER_PACKAGE:
+        return eInternalContainer().eInverseRemove(this, EcorePackage.EPACKAGE__ESUBPACKAGES, EPackage.class, msgs);
+    }
+    return eDynamicBasicRemoveFromContainer(msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EList<EPackage> getESubpackages()
   {
-		if (eSubpackages == null) {
-			eSubpackages = new EObjectContainmentWithInverseEList.Resolving<EPackage>(EPackage.class, this, EcorePackage.EPACKAGE__ESUBPACKAGES, EcorePackage.EPACKAGE__ESUPER_PACKAGE);
-		}
-		return eSubpackages;
-	}
+    if (eSubpackages == null)
+    {
+      eSubpackages = new EObjectContainmentWithInverseEList.Resolving<EPackage>(EPackage.class, this, EcorePackage.EPACKAGE__ESUBPACKAGES, EcorePackage.EPACKAGE__ESUPER_PACKAGE);
+    }
+    return eSubpackages;
+  }
 
   /**
    * <!-- begin-user-doc -->
@@ -547,182 +553,187 @@ public class EPackageImpl extends ENamedElementImpl implements EPackage, BasicEx
 
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EPackage basicGetESuperPackage()
   {
-		if (eContainerFeatureID() != EcorePackage.EPACKAGE__ESUPER_PACKAGE) return null;
-		return (EPackage)eInternalContainer();
-	}
+    if (eContainerFeatureID() != EcorePackage.EPACKAGE__ESUPER_PACKAGE) return null;
+    return (EPackage)eInternalContainer();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case EcorePackage.EPACKAGE__EANNOTATIONS:
-				return getEAnnotations();
-			case EcorePackage.EPACKAGE__NAME:
-				return getName();
-			case EcorePackage.EPACKAGE__NS_URI:
-				return getNsURI();
-			case EcorePackage.EPACKAGE__NS_PREFIX:
-				return getNsPrefix();
-			case EcorePackage.EPACKAGE__EFACTORY_INSTANCE:
-				return getEFactoryInstance();
-			case EcorePackage.EPACKAGE__ECLASSIFIERS:
-				return getEClassifiers();
-			case EcorePackage.EPACKAGE__ESUBPACKAGES:
-				return getESubpackages();
-			case EcorePackage.EPACKAGE__ESUPER_PACKAGE:
-				if (resolve) return getESuperPackage();
-				return basicGetESuperPackage();
-		}
-		return eDynamicGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.EPACKAGE__EANNOTATIONS:
+        return getEAnnotations();
+      case EcorePackage.EPACKAGE__NAME:
+        return getName();
+      case EcorePackage.EPACKAGE__NS_URI:
+        return getNsURI();
+      case EcorePackage.EPACKAGE__NS_PREFIX:
+        return getNsPrefix();
+      case EcorePackage.EPACKAGE__EFACTORY_INSTANCE:
+        return getEFactoryInstance();
+      case EcorePackage.EPACKAGE__ECLASSIFIERS:
+        return getEClassifiers();
+      case EcorePackage.EPACKAGE__ESUBPACKAGES:
+        return getESubpackages();
+      case EcorePackage.EPACKAGE__ESUPER_PACKAGE:
+        if (resolve) return getESuperPackage();
+        return basicGetESuperPackage();
+    }
+    return eDynamicGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case EcorePackage.EPACKAGE__EANNOTATIONS:
-				getEAnnotations().clear();
-				getEAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
-				return;
-			case EcorePackage.EPACKAGE__NAME:
-				setName((String)newValue);
-				return;
-			case EcorePackage.EPACKAGE__NS_URI:
-				setNsURI((String)newValue);
-				return;
-			case EcorePackage.EPACKAGE__NS_PREFIX:
-				setNsPrefix((String)newValue);
-				return;
-			case EcorePackage.EPACKAGE__EFACTORY_INSTANCE:
-				setEFactoryInstance((EFactory)newValue);
-				return;
-			case EcorePackage.EPACKAGE__ECLASSIFIERS:
-				getEClassifiers().clear();
-				getEClassifiers().addAll((Collection<? extends EClassifier<?>>)newValue);
-				return;
-			case EcorePackage.EPACKAGE__ESUBPACKAGES:
-				getESubpackages().clear();
-				getESubpackages().addAll((Collection<? extends EPackage>)newValue);
-				return;
-		}
-		eDynamicSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.EPACKAGE__EANNOTATIONS:
+        getEAnnotations().clear();
+        getEAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
+        return;
+      case EcorePackage.EPACKAGE__NAME:
+        setName((String)newValue);
+        return;
+      case EcorePackage.EPACKAGE__NS_URI:
+        setNsURI((String)newValue);
+        return;
+      case EcorePackage.EPACKAGE__NS_PREFIX:
+        setNsPrefix((String)newValue);
+        return;
+      case EcorePackage.EPACKAGE__EFACTORY_INSTANCE:
+        setEFactoryInstance((EFactory)newValue);
+        return;
+      case EcorePackage.EPACKAGE__ECLASSIFIERS:
+        getEClassifiers().clear();
+        getEClassifiers().addAll((Collection<? extends EClassifier<?>>)newValue);
+        return;
+      case EcorePackage.EPACKAGE__ESUBPACKAGES:
+        getESubpackages().clear();
+        getESubpackages().addAll((Collection<? extends EPackage>)newValue);
+        return;
+    }
+    eDynamicSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case EcorePackage.EPACKAGE__EANNOTATIONS:
-				getEAnnotations().clear();
-				return;
-			case EcorePackage.EPACKAGE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case EcorePackage.EPACKAGE__NS_URI:
-				setNsURI(NS_URI_EDEFAULT);
-				return;
-			case EcorePackage.EPACKAGE__NS_PREFIX:
-				setNsPrefix(NS_PREFIX_EDEFAULT);
-				return;
-			case EcorePackage.EPACKAGE__EFACTORY_INSTANCE:
-				setEFactoryInstance((EFactory)null);
-				return;
-			case EcorePackage.EPACKAGE__ECLASSIFIERS:
-				getEClassifiers().clear();
-				return;
-			case EcorePackage.EPACKAGE__ESUBPACKAGES:
-				getESubpackages().clear();
-				return;
-		}
-		eDynamicUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.EPACKAGE__EANNOTATIONS:
+        getEAnnotations().clear();
+        return;
+      case EcorePackage.EPACKAGE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case EcorePackage.EPACKAGE__NS_URI:
+        setNsURI(NS_URI_EDEFAULT);
+        return;
+      case EcorePackage.EPACKAGE__NS_PREFIX:
+        setNsPrefix(NS_PREFIX_EDEFAULT);
+        return;
+      case EcorePackage.EPACKAGE__EFACTORY_INSTANCE:
+        setEFactoryInstance((EFactory)null);
+        return;
+      case EcorePackage.EPACKAGE__ECLASSIFIERS:
+        getEClassifiers().clear();
+        return;
+      case EcorePackage.EPACKAGE__ESUBPACKAGES:
+        getESubpackages().clear();
+        return;
+    }
+    eDynamicUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case EcorePackage.EPACKAGE__EANNOTATIONS:
-				return eAnnotations != null && !eAnnotations.isEmpty();
-			case EcorePackage.EPACKAGE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case EcorePackage.EPACKAGE__NS_URI:
-				return NS_URI_EDEFAULT == null ? nsURI != null : !NS_URI_EDEFAULT.equals(nsURI);
-			case EcorePackage.EPACKAGE__NS_PREFIX:
-				return NS_PREFIX_EDEFAULT == null ? nsPrefix != null : !NS_PREFIX_EDEFAULT.equals(nsPrefix);
-			case EcorePackage.EPACKAGE__EFACTORY_INSTANCE:
-				return eFactoryInstance != null;
-			case EcorePackage.EPACKAGE__ECLASSIFIERS:
-				return eClassifiers != null && !eClassifiers.isEmpty();
-			case EcorePackage.EPACKAGE__ESUBPACKAGES:
-				return eSubpackages != null && !eSubpackages.isEmpty();
-			case EcorePackage.EPACKAGE__ESUPER_PACKAGE:
-				return basicGetESuperPackage() != null;
-		}
-		return eDynamicIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case EcorePackage.EPACKAGE__EANNOTATIONS:
+        return eAnnotations != null && !eAnnotations.isEmpty();
+      case EcorePackage.EPACKAGE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case EcorePackage.EPACKAGE__NS_URI:
+        return NS_URI_EDEFAULT == null ? nsURI != null : !NS_URI_EDEFAULT.equals(nsURI);
+      case EcorePackage.EPACKAGE__NS_PREFIX:
+        return NS_PREFIX_EDEFAULT == null ? nsPrefix != null : !NS_PREFIX_EDEFAULT.equals(nsPrefix);
+      case EcorePackage.EPACKAGE__EFACTORY_INSTANCE:
+        return eFactoryInstance != null;
+      case EcorePackage.EPACKAGE__ECLASSIFIERS:
+        return eClassifiers != null && !eClassifiers.isEmpty();
+      case EcorePackage.EPACKAGE__ESUBPACKAGES:
+        return eSubpackages != null && !eSubpackages.isEmpty();
+      case EcorePackage.EPACKAGE__ESUPER_PACKAGE:
+        return basicGetESuperPackage() != null;
+    }
+    return eDynamicIsSet(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException
   {
-		switch (operationID) {
-			case EcorePackage.EPACKAGE___GET_EANNOTATION__STRING:
-				return getEAnnotation((String)arguments.get(0));
-			case EcorePackage.EPACKAGE___GET_ECLASSIFIER__STRING:
-				return getEClassifier((String)arguments.get(0));
-		}
-		return eDynamicInvoke(operationID, arguments);
-	}
+    switch (operationID)
+    {
+      case EcorePackage.EPACKAGE___GET_EANNOTATION__STRING:
+        return getEAnnotation((String)arguments.get(0));
+      case EcorePackage.EPACKAGE___GET_ECLASSIFIER__STRING:
+        return getEClassifier((String)arguments.get(0));
+    }
+    return eDynamicInvoke(operationID, arguments);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String toString()
   {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (nsURI: ");
-		result.append(nsURI);
-		result.append(", nsPrefix: ");
-		result.append(nsPrefix);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (nsURI: ");
+    result.append(nsURI);
+    result.append(", nsPrefix: ");
+    result.append(nsPrefix);
+    result.append(')');
+    return result.toString();
+  }
 
   private static Resource.Factory resourceFactory;
 
@@ -751,7 +762,7 @@ public class EPackageImpl extends ENamedElementImpl implements EPackage, BasicEx
 
   protected EClass createEClass(int id)
   {
-    EClassImpl c = (EClassImpl)ecoreFactory.createEClass();
+    EClassImpl<?> c = (EClassImpl<?>)ecoreFactory.createEClass();
     c.setClassifierID(id);
     getEClassifiers().add(c);
     return c;
@@ -759,30 +770,30 @@ public class EPackageImpl extends ENamedElementImpl implements EPackage, BasicEx
 
   protected EEnum createEEnum(int id)
   {
-    EEnumImpl e = (EEnumImpl)ecoreFactory.createEEnum();
+    EEnumImpl<?> e = (EEnumImpl<?>)ecoreFactory.createEEnum();
     e.setClassifierID(id);
     getEClassifiers().add(e);
     return e;
   }
 
-  protected EDataType createEDataType(int id)
+  protected EDataType<?> createEDataType(int id)
   {
-    EDataTypeImpl d = (EDataTypeImpl)ecoreFactory.createEDataType();
+    EDataTypeImpl<?> d = (EDataTypeImpl<?>)ecoreFactory.createEDataType();
     d.setClassifierID(id);
     getEClassifiers().add(d);
     return d;
   }
 
-  protected void createEAttribute(EClass owner, int id)
+  protected <T extends EObject> void createEAttribute(EClass<T> owner, int id)
   {
-    EAttributeImpl a = (EAttributeImpl)ecoreFactory.createEAttribute();
+    EAttributeImpl<T, ?> a = (EAttributeImpl<T, ?>)ecoreFactory.<T, Object>createEAttribute();
     a.setFeatureID(id);
     owner.getEStructuralFeatures().add(a);
   }
 
-  protected void createEReference(EClass owner, int id)
+  protected <T extends EObject> void createEReference(EClass<T> owner, int id)
   {
-    EReferenceImpl r = (EReferenceImpl)ecoreFactory.createEReference();
+    EReferenceImpl<T, ?> r = (EReferenceImpl<T, ?>) ecoreFactory.<T, Object>createEReference();
     r.setFeatureID(id);
     owner.getEStructuralFeatures().add(r);
   }
@@ -790,14 +801,14 @@ public class EPackageImpl extends ENamedElementImpl implements EPackage, BasicEx
   /**
    * @since 2.6
    */
-  protected void createEOperation(EClass owner, int id)
+  protected <T extends EObject> void createEOperation(EClass<T> owner, int id)
   {
-    EOperationImpl o = (EOperationImpl)ecoreFactory.createEOperation();
+    EOperationImpl<T, ?> o = (EOperationImpl<T, ?>)ecoreFactory.<T, Object>createEOperation();
     o.setOperationID(id);
     owner.getEOperations().add(o);
   }
 
-  protected ETypeParameter addETypeParameter(EClassifier owner, String name)
+  protected ETypeParameter addETypeParameter(EClassifier<?> owner, String name)
   {
     ETypeParameter eTypeParameter = ecoreFactory.createETypeParameter();
     eTypeParameter.setName(name);
@@ -805,7 +816,7 @@ public class EPackageImpl extends ENamedElementImpl implements EPackage, BasicEx
     return eTypeParameter;
   }
 
-  protected ETypeParameter addETypeParameter(EOperation owner, String name)
+  protected ETypeParameter addETypeParameter(EOperation<?, ?> owner, String name)
   {
     ETypeParameter eTypeParameter = ecoreFactory.createETypeParameter();
     eTypeParameter.setName(name);
@@ -826,7 +837,7 @@ public class EPackageImpl extends ENamedElementImpl implements EPackage, BasicEx
     return eGenericType;
   }
 
-  protected EGenericType createEGenericType(EClassifier eClassifier)
+  protected EGenericType createEGenericType(EClassifier<?> eClassifier)
   {
     EGenericType eGenericType = ecoreFactory.createEGenericType();
     eGenericType.setEClassifier(eClassifier);
@@ -837,7 +848,7 @@ public class EPackageImpl extends ENamedElementImpl implements EPackage, BasicEx
   final static protected boolean IS_INTERFACE = true;
   final static protected boolean IS_GENERATED_INSTANCE_CLASS = true;
 
-  protected EClass initEClass(EClass c, Class<?> instanceClass, String name, boolean isAbstract, boolean isInterface)
+  protected EClass initEClass(EClass<?> c, Class<?> instanceClass, String name, boolean isAbstract, boolean isInterface)
   {
     initEClassifier(c, ecorePackage.getEClass(), instanceClass, name);
     c.setAbstract(isAbstract);
@@ -845,7 +856,7 @@ public class EPackageImpl extends ENamedElementImpl implements EPackage, BasicEx
     return c;
   }
 
-  protected EClass initEClass(EClass c, Class<?> instanceClass, String name, boolean isAbstract, boolean isInterface, boolean isGenerated)
+  protected EClass initEClass(EClass<?> c, Class<?> instanceClass, String name, boolean isAbstract, boolean isInterface, boolean isGenerated)
   {
     initEClassifier(c, ecorePackage.getEClass(), instanceClass, name, isGenerated);
     c.setAbstract(isAbstract);
@@ -854,7 +865,7 @@ public class EPackageImpl extends ENamedElementImpl implements EPackage, BasicEx
   }
 
   protected EClass initEClass
-    (EClass c, Class<?> instanceClass, String name, boolean isAbstract, boolean isInterface, boolean isGenerated, String instanceTypeName)
+    (EClass<?> c, Class<?> instanceClass, String name, boolean isAbstract, boolean isInterface, boolean isGenerated, String instanceTypeName)
   {
     initEClass(c, instanceClass, name, isAbstract, isInterface, isGenerated);
     if (instanceTypeName != null)

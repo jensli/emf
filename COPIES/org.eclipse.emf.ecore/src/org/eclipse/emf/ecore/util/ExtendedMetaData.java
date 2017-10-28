@@ -130,32 +130,32 @@ public interface ExtendedMetaData
    * and references corresponding to attributes and elements declared globally in a schema. It is identified by its
    * XML name, an empty string.
    */
-  EClass getDocumentRoot(EPackage ePackage);
+  EClass<?> getDocumentRoot(EPackage ePackage);
 
   /**
    * Sets the specified class to be a document root. The document root class holds attributes and references
    * corresponding to attributes and elements declared globally in a schema. Its XML name is set to an empty string,
    * and its content kind to mixed content.
    */  
-  void setDocumentRoot(EClass eClass);
+  void setDocumentRoot(EClass<?> eClass);
 
   /**
    * Returns whether the given class is a document root, i.e., whether it has an empty string as its XML Name.
    * @since 2.4
    */
-  boolean isDocumentRoot(EClass eClass);
+  boolean isDocumentRoot(EClass<?> eClass);
 
   /**
    * If the given class has mixed content type, returns the "xmlns:prefix" feature, which is used to store namespace
    * prefix-to-URI mappings.
    */
-  EReference getXMLNSPrefixMapFeature(EClass eClass);
+  EReference<?, ?> getXMLNSPrefixMapFeature(EClass<?> eClass);
 
   /**
    * If the given class has mixed content type, returns the "xsi:schemaLocation" feature, which is used to store
    * namespace URI-schema location pairs.
    */
-  EReference getXSISchemaLocationMapFeature(EClass eClass);
+  EReference<?, ?> getXSISchemaLocationMapFeature(EClass<?> eClass);
 
   /**
    * Returns whether model instance serializations of the specified package should use namespace qualification.
@@ -180,41 +180,41 @@ public interface ExtendedMetaData
    * Returns the namespace to use for instances of the given classifier, the same namespace as for the package that
    * contains it.
    */
-  String getNamespace(EClassifier eClassifier);
+  String getNamespace(EClassifier<?> eClassifier);
 
   /**
    * Returns the namespace associated with the specified structural feature. This allows features to be included in a
    * class that correspond to elements and attributes defined in another schema (i.e. an attribute or element
    * reference).
    */
-  String getNamespace(EStructuralFeature eStructuralFeature);
+  String getNamespace(EStructuralFeature<?, ?> eStructuralFeature);
 
   /**
    * Sets the namespace associated with the specified structural feature. This allows features to be included in a
    * class that correspond to elements and attributes defined in another schema (i.e. an attribute or element
    * reference).
    */
-  void setNamespace(EStructuralFeature eStructuralFeature, String namespace);
+  void setNamespace(EStructuralFeature<?, ?> eStructuralFeature, String namespace);
 
   /**
    * Returns the XML name for a classifier. This is the original name specified for the type in the schema, which
    * may be mapped into a valid and conventional Java class name for the Ecore class.
    * <p>details key: "name"
    */
-  String getName(EClassifier eClassifier);
+  String getName(EClassifier<?> eClassifier);
 
   /**
    * Sets the XML name for a classifier.  This should be the original name specified for the type in the schema, which
    * may be mapped into a valid and conventional Java class name for the Ecore class.
    * <p>details key: "name"
    */
-  void setName(EClassifier eClassifier, String name);
+  void setName(EClassifier<?> eClassifier, String name);
 
   /**
    * Returns whether the given classifier's XML name contains "_._", which is used to indicate an anonymous type
    * declaration. 
    */
-  boolean isAnonymous(EClassifier eClassifier);
+  boolean isAnonymous(EClassifier<?> eClassifier);
 
   /**
    * Returns the XML name for a structural feature. This is the original name specified for the element or attribute
@@ -222,7 +222,7 @@ public interface ExtendedMetaData
    * This is also the name which should be used for the element or attribute in instance documents.
    * <p>details key: "name"
    */
-  String getName(EStructuralFeature eStructuralFeature);
+  String getName(EStructuralFeature<?, ?> eStructuralFeature);
 
   /**
    * Set the XML name for a structural feature. This should be the original name specified for the element or attribute
@@ -230,53 +230,53 @@ public interface ExtendedMetaData
    * This is also the name which should be used for the element or attribute in instance documents.
    * <p>details key: "name"
    */
-  void setName(EStructuralFeature eStructuralFeature, String name);
+  void setName(EStructuralFeature<?, ?> eStructuralFeature, String name);
 
   /**
    * Returns the classifier with the given XML name within the package with the given namespace.
    */
-  EClassifier getType(String namespace, String name);
+  EClassifier<?> getType(String namespace, String name);
 
   /**
    * Returns the structural feature with the given XML name that corresponds to a global attribute within the package
    * with the given namespace.
    */
-  EStructuralFeature getAttribute(String namespace, String name);
+  EStructuralFeature<?, ?> getAttribute(String namespace, String name);
 
   /**
    * Returns the structural feature with the given XML name that corresponds to a global element within the package
    * with the given namespace.
    */
-  EStructuralFeature getElement(String namespace, String name);
+  EStructuralFeature<?, ?> getElement(String namespace, String name);
 
   /**
    * Returns the classifier with the given XML name within the given package.
    */
-  EClassifier getType(EPackage ePackage, String name);
+  EClassifier<?> getType(EPackage ePackage, String name);
 
   /**
    * Returns a structural feature within a class, corresponding to a local attribute with the given namespace and name,
    * or, failing that, a document root feature corresponding to a global attribute with the given namespace and name
    * that is {@link #getAffiliation(EClass, EStructuralFeature) affiliated} with a feature in the class. 
    */
-  EStructuralFeature getAttribute(EClass eClass, String namespace, String name);
+  EStructuralFeature<?, ?> getAttribute(EClass<?> eClass, String namespace, String name);
 
   /**
    * Returns a structural feature within a class, corresponding to a local element with the given namespace and name,
    * or, failing that, a document root feature corresponding to a global element with the given namespace and name
    * that is {@link #getAffiliation(EClass, EStructuralFeature) affiliated} with a feature in the class. 
    */
-  EStructuralFeature getElement(EClass eClass, String namespace, String name);
+  EStructuralFeature<?, ?> getElement(EClass<?> eClass, String namespace, String name);
 
   /**
    * If the given class represents simple content, returns the simple feature used to store its content.
    */
-  EStructuralFeature getSimpleFeature(EClass eClass);
+  EStructuralFeature<?, ?> getSimpleFeature(EClass<?> eClass);
 
   /**
    * If the given class represents mixed content, returns the wildcard element feature used to store its content.
    */
-  EAttribute getMixedFeature(EClass eClass);
+  EAttribute<?, ?> getMixedFeature(EClass<?> eClass);
 
   /**
    * The feature kind ID for an unspecified kind.
@@ -345,7 +345,7 @@ public interface ExtendedMetaData
    * @see #ELEMENT_WILDCARD_FEATURE
    * @see #GROUP_FEATURE
    */
-  int getFeatureKind(EStructuralFeature eStructuralFeature);
+  int getFeatureKind(EStructuralFeature<?, ?> eStructuralFeature);
 
   /**
    * Sets the kind of XML structure that should be used to represent the given structural feature.
@@ -358,7 +358,7 @@ public interface ExtendedMetaData
    * @see #ELEMENT_WILDCARD_FEATURE
    * @see #GROUP_FEATURE
    */
-  void setFeatureKind(EStructuralFeature eStructuralFeature, int kind);
+  void setFeatureKind(EStructuralFeature<?, ?> eStructuralFeature, int kind);
 
   /**
    * The content kind ID for an unspecified kind.
@@ -411,7 +411,7 @@ public interface ExtendedMetaData
    * @see #MIXED_CONTENT
    * @see #ELEMENT_ONLY_CONTENT
    */
-  int getContentKind(EClass eClass);
+  int getContentKind(EClass<?> eClass);
 
   /**
    * Sets the kind of XML content of the type corresponding to the given class.
@@ -422,7 +422,7 @@ public interface ExtendedMetaData
    * @see #MIXED_CONTENT
    * @see #ELEMENT_ONLY_CONTENT
    */
-  void setContentKind(EClass eClass, int kind);
+  void setContentKind(EClass<?> eClass, int kind);
 
   /**
    * The derivation kind ID for an unspecified derivation.
@@ -461,67 +461,67 @@ public interface ExtendedMetaData
    * @see #LIST_DERIVATION
    * @see #UNION_DERIVATION
    */
-  int getDerivationKind(EDataType eDataType);
+  int getDerivationKind(EDataType<?> eDataType);
 
   /**
    * If a data type corresponds to simple type that derives from another by restriction, returns the data type
    * corresponding to the base type.
    * <p>details key: "baseType" 
    */
-  EDataType getBaseType(EDataType eDataType);
+  EDataType<?> getBaseType(EDataType<?> eDataType);
 
   /**
    * Sets the base type for a data type, indicating that the data type corresponds to a simple type that derives from
    * another by restriction.
    * <p>details key: "baseType"
    */
-  void setBaseType(EDataType eDataType, EDataType baseType);
+  void setBaseType(EDataType<?> eDataType, EDataType<?> baseType);
 
   /**
    * If a data type corresponds to a list type, returns the data type corresponding to its item type.
    * <p>details key: "itemType"
    */
-  EDataType getItemType(EDataType eDataType);
+  EDataType<?> getItemType(EDataType<?> eDataType);
 
   /**
    * Sets the item type for a data type, indicating that the data type corresponds to a list type. 
    * <p>details key: "itemType"
    */
-  void setItemType(EDataType eDataType, EDataType itemType);
+  void setItemType(EDataType<?> eDataType, EDataType<?> itemType);
 
   /**
    * If a data type corresponds to a union type, returns the data types corresponding to its member types. 
    * <p>details key: "memberTypes"
    */
-  List<EDataType> getMemberTypes(EDataType eDataType);
+  List<EDataType<?>> getMemberTypes(EDataType<?> eDataType);
 
   /**
    * Sets the member types for a data type, indicating that the data type corresponds to a union type. 
    * <p>details key: "memberTypes"
    */
-  void setMemberTypes(EDataType eDataType, List<EDataType> memberTypes);
+  void setMemberTypes(EDataType<?> eDataType, List<EDataType<?>> memberTypes);
 
   /**
    * Returns all the structural features of the given class, and its super classes, corresponding to XML attributes
    * and attribute wildcards.
    */
-  List<EStructuralFeature> getAllAttributes(EClass eClass);
+  List<EStructuralFeature<?, ?>> getAllAttributes(EClass<?> eClass);
 
   /**
    * Returns all the structural features of the given class, and its super classes, corresponding to elements, element
    * wildards, and model groups.
    */
-  List<EStructuralFeature> getAllElements(EClass eClass);
+  List<EStructuralFeature<?, ?>> getAllElements(EClass<?> eClass);
 
   /**
    * Returns the structural features of the given class corresponding to XML attributes and attribute wildcards.
    */
-  List<EStructuralFeature> getAttributes(EClass eClass);
+  <C extends EObject> List<EStructuralFeature<C, ?>> getAttributes(EClass<C> eClass);
 
   /**
    * Returns the structural features of the given class corresponding to elements, element wildcards, and model groups.
    */
-  List<EStructuralFeature> getElements(EClass eClass);
+  <C extends EObject> List<EStructuralFeature<C, ?>> getElements(EClass<C> eClass);
 
   /**
    * Tests whether any of a list of wildcards matches a given namespace.
@@ -537,13 +537,13 @@ public interface ExtendedMetaData
    * Returns the allowable namespace patterns for a structural feature corresponding to an any or anyAttribute wildcard.
    * <p>details key: "wildcards" 
    */
-  List<String> getWildcards(EStructuralFeature eStructuralFeature);
+  List<String> getWildcards(EStructuralFeature<?, ?> eStructuralFeature);
 
   /**
    * Sets the allowable namespace patterns for a structural feature corresponding to an any or anyAttribute wildcard.
    * <p>details key: "wildcards"
    */
-  void setWildcards(EStructuralFeature eStructuralFeature, List<String> wildcards);
+  void setWildcards(EStructuralFeature<?, ?> eStructuralFeature, List<String> wildcards);
 
   /**
    * The processing kind ID for unspecified processing.
@@ -588,7 +588,7 @@ public interface ExtendedMetaData
    * @see #LAX_PROCESSING
    * @see #SKIP_PROCESSING
    */
-  int getProcessingKind(EStructuralFeature eStructuralFeature);
+  int getProcessingKind(EStructuralFeature<?, ?> eStructuralFeature);
 
   /**
    * Sets the kind of contents processing to be used for a structural feature corresponding to an any wildcard.
@@ -598,35 +598,35 @@ public interface ExtendedMetaData
    * @see #LAX_PROCESSING
    * @see #SKIP_PROCESSING
    */
-  void setProcessingKind(EStructuralFeature eStructuralFeature, int processingKind);
+  void setProcessingKind(EStructuralFeature<?, ?> eStructuralFeature, int processingKind);
 
   /**
    * Returns the substitution group affiliation for the given structural feature, that is, the feature corresponding to
    * the head element of the substitution group to which the element corresponding to the given feature belongs.
    * <p>details key: "affiliation"
    */
-  EStructuralFeature getAffiliation(EStructuralFeature eStructuralFeature);
+  EStructuralFeature<?, ?> getAffiliation(EStructuralFeature<?, ?> eStructuralFeature);
 
   /**
    * Sets the substitution group affiliation for the given structural feature. Both feature and its affiliation feature
    * should be in a document root class, such that they correspond to global structural feature declarations.
    * <p>details key: "affiliation"
    */
-  void setAffiliation(EStructuralFeature eStructuralFeature, EStructuralFeature affiliation);
+  void setAffiliation(EStructuralFeature<?, ?> eStructuralFeature, EStructuralFeature<?, ?> affiliation);
 
   /**
    * Returns the feature representing the model group feature, substitution group head feature, or wildcard feature to which the implementation
    * of the given feature is delegated.
    * <p>details key: "group"
    */
-  <V> EStructuralFeature<?, V> getGroup(EStructuralFeature<?, V> eStructuralFeature);
+  EStructuralFeature<?, ?> getGroup(EStructuralFeature<?, ?> eStructuralFeature);
 
   /**
    * Sets a model group feature, substitution group head feature, or wildcard feature, to which the implementation of the given feature should be
    * delegated.
    * <p>details key: "group"
    */
-  void setGroup(EStructuralFeature eStructuralFeature, EStructuralFeature group);
+  void setGroup(EStructuralFeature<?, ?> eStructuralFeature, EStructuralFeature<?, ?> group);
 
   /**
    * Returns a structural feature within the given class that is or is associated with the given structural feature.
@@ -638,17 +638,17 @@ public interface ExtendedMetaData
    * comment), or a wildcard element feature appropriate for the namespace of the given feature.
    */
   // TODO: Right types?
-  <C extends EObject, V> EStructuralFeature<C, V> getAffiliation(EClass<C> eClass, EStructuralFeature<?, V> eStructuralFeature);
+  EStructuralFeature<?, ?> getAffiliation(EClass<?> eClass, EStructuralFeature<?, ?> eStructuralFeature);
 
   /**
    * Returns a wildcard feature in the given class that allows allows attribute values from the given namespace.
    */
-  EStructuralFeature getAttributeWildcardAffiliation(EClass eClass, String namespace, String name);
+  EStructuralFeature<?, ?> getAttributeWildcardAffiliation(EClass<?> eClass, String namespace, String name);
 
   /**
    * Returns a wildcard feature in the given class that allows allows element values from the given namespace.
    */
-  EStructuralFeature getElementWildcardAffiliation(EClass eClass, String namespace, String name);
+  EStructuralFeature<?, ?> getElementWildcardAffiliation(EClass<?> eClass, String namespace, String name);
 
   /**
    * The white space kind ID for an unspecified kind.
@@ -693,7 +693,7 @@ public interface ExtendedMetaData
    * @see #REPLACE_WHITE_SPACE
    * @see #COLLAPSE_WHITE_SPACE
    */
-  int getWhiteSpaceFacet(EDataType eDataType);
+  int getWhiteSpaceFacet(EDataType<?> eDataType);
 
   /**
    * Sets the white space constraint on the given data type.
@@ -703,139 +703,139 @@ public interface ExtendedMetaData
    * @see #REPLACE_WHITE_SPACE
    * @see #COLLAPSE_WHITE_SPACE
    */
-  void setWhiteSpaceFacet(EDataType eDataType, int whiteSpace);
+  void setWhiteSpaceFacet(EDataType<?> eDataType, int whiteSpace);
 
   /**
    * Returns the enumeration constraint on the given data type.
    * <p>details key: "enumeration"
    */
-  List<String> getEnumerationFacet(EDataType eDataType);
+  List<String> getEnumerationFacet(EDataType<?> eDataType);
 
   /**
    * Sets the enumeration constraint on the given data type.
    * <p>details key: "enumeration"
    */
-  void setEnumerationFacet(EDataType eDataType, List<String> literals);
+  void setEnumerationFacet(EDataType<?> eDataType, List<String> literals);
 
   /**
    * Returns the pattern constraint on the given data type.
    * <p>details key: "pattern"
    */
-  List<String> getPatternFacet(EDataType eDataType);
+  List<String> getPatternFacet(EDataType<?> eDataType);
 
   /**
    * Sets the pattern constraint on the given data type.
    * <p>details key: "pattern"
    */
-  void setPatternFacet(EDataType eDataType, List<String> pattern);
+  void setPatternFacet(EDataType<?> eDataType, List<String> pattern);
 
   /**
    * Returns the total digits constraint on the given data type.
    * <p>details key: "totalDigits"
    */
-  int getTotalDigitsFacet(EDataType eDataType);
+  int getTotalDigitsFacet(EDataType<?> eDataType);
 
   /**
    * Sets the total digits constraint on the given data type.
    * <p>details key: "totalDigits"
    */
-  void setTotalDigitsFacet(EDataType eDataType, int digits);
+  void setTotalDigitsFacet(EDataType<?> eDataType, int digits);
 
   /**
    * Returns the fraction digits constraint on the given data type.
    * <p>details key: "fractionDigits"
    */
-  int getFractionDigitsFacet(EDataType eDataType);
+  int getFractionDigitsFacet(EDataType<?> eDataType);
 
   /**
    * Sets the fraction digits constraint on the given data type.
    * <p>details key: "fractionDigits"
    */
-  void setFractionDigitsFacet(EDataType eDataType, int digits);
+  void setFractionDigitsFacet(EDataType<?> eDataType, int digits);
 
   /**
    * Returns the length constraint on the given data type.
    * <p>details key: "length"
    */
-  int getLengthFacet(EDataType eDataType);
+  int getLengthFacet(EDataType<?> eDataType);
 
   /**
    * Sets the length constraint on the given data type.
    * <p>details key: "length"
    */
-  void setLengthFacet(EDataType eDataType, int length);
+  void setLengthFacet(EDataType<?> eDataType, int length);
 
   /**
    * Returns the minumum length constraint on the given data type.
    * <p>details key: "minLength"
    */
-  int getMinLengthFacet(EDataType eDataType);
+  int getMinLengthFacet(EDataType<?> eDataType);
 
   /**
    * Sets the minimum length constraint on the given data type.
    * <p>details key: "minLength"
    */
-  void setMinLengthFacet(EDataType eDataType, int length);
+  void setMinLengthFacet(EDataType<?> eDataType, int length);
 
   /**
    * Returns the maximum length constraint on the given data type.
    * <p>details key: "maxLength"
    */
-  int getMaxLengthFacet(EDataType eDataType);
+  int getMaxLengthFacet(EDataType<?> eDataType);
 
   /**
    * Sets the maximum length constraint on the given data type.
    * <p>details key: "maxLength"
    */
-  void setMaxLengthFacet(EDataType eDataType, int length);
+  void setMaxLengthFacet(EDataType<?> eDataType, int length);
 
   /**
    * Returns the minimum (exclusive) constraint on the given data type.
    * <p>details key: "minExclusive"
    */
-  String getMinExclusiveFacet(EDataType eDataType);
+  String getMinExclusiveFacet(EDataType<?> eDataType);
 
   /**
    * Sets the minimum (exclusive) constraint on the given data type.
    * <p>details key: "minExclusive"
    */
-  void setMinExclusiveFacet(EDataType eDataType, String literal);
+  void setMinExclusiveFacet(EDataType<?> eDataType, String literal);
 
   /**
    * Returns the maximum (exclusive) constraint on the given data type.
    * <p>details key: "maxExclusive"
    */
-  String getMaxExclusiveFacet(EDataType eDataType);
+  String getMaxExclusiveFacet(EDataType<?> eDataType);
 
   /**
    * Sets the maximum (exclusive) constraint on the given data type.
    * <p>details key: "maxExclusive"
    */
-  void setMaxExclusiveFacet(EDataType eDataType, String literal);
+  void setMaxExclusiveFacet(EDataType<?> eDataType, String literal);
 
   /**
    * Returns the minimum (inclusive) constraint on the given data type.
    * <p>details key: "minInclusive"
    */
-  String getMinInclusiveFacet(EDataType eDataType);
+  String getMinInclusiveFacet(EDataType<?> eDataType);
 
   /**
    * Sets the minimum (inclusive) constraint on the given data type.
    * <p>details key: "minInclusive"
    */
-  void setMinInclusiveFacet(EDataType eDataType, String literal);
+  void setMinInclusiveFacet(EDataType<?> eDataType, String literal);
 
   /**
    * Returns the maximum (inclusive) constraint on the given data type.
    * <p>details key: "maxInclusive"
    */
-  String getMaxInclusiveFacet(EDataType eDataType);
+  String getMaxInclusiveFacet(EDataType<?> eDataType);
 
   /**
    * Sets the maximum (inclusive) constraint on the given data type.
    * <p>details key: "maxInclusive"
    */
-  void setMaxInclusiveFacet(EDataType eDataType, String literal);
+  void setMaxInclusiveFacet(EDataType<?> eDataType, String literal);
 
   /**
    * Returns a package from the demand package registry, creating it (with a document root class) if necessary.
@@ -846,20 +846,20 @@ public interface ExtendedMetaData
    * Returns a class from the namespace-specified package in the demand package registry, demand creating it, and the
    * package, if necessary.
    */
-  EClassifier demandType(String namespace, String name);
+  EClassifier<?> demandType(String namespace, String name);
 
   /**
    * Returns a feature corresponding to a global element or attribute from the namespace-specified package in the
    * demand package registry, creating it, and the package, if necessary. Elements are created as references and
    * attributes as attributes.
    */
-  EStructuralFeature demandFeature(String namespace, String name, boolean isElement);
+  EStructuralFeature<?, ?> demandFeature(String namespace, String name, boolean isElement);
 
   /**
    * Returns a feature corresponding to a global element or attribute from the namespace-specified package in the
    * demand package registry, creating it, and the package, if necessary.
    */
-  EStructuralFeature demandFeature(String namespace, String name, boolean isElement, boolean isReference);
+  EStructuralFeature<?, ?> demandFeature(String namespace, String name, boolean isElement, boolean isReference);
 
   /**
    * Returns the instance's collection of demand-created packages.

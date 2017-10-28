@@ -33,9 +33,9 @@ import java.util.Map;
 public interface EDataType<T> extends EClassifier<T>
 {
   /**
-	 * Returns the value of the '<em><b>Serializable</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Serializable</b></em>' attribute.
+   * The default value is <code>"true"</code>.
+   * <!-- begin-user-doc -->
    * <p>
    * It represents whether values of this type will be {@link org.eclipse.emf.ecore.resource.Resource#save(java.util.Map) serialized}.
    * For a serializable data type,
@@ -48,29 +48,29 @@ public interface EDataType<T> extends EClassifier<T>
    * Clients will typically need to hand write the bodies of these generated methods.
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Serializable</em>' attribute.
-	 * @see #setSerializable(boolean)
-	 * @see org.eclipse.emf.ecore.EcorePackage#getEDataType_Serializable()
-	 * @model default="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Serializable</em>' attribute.
+   * @see #setSerializable(boolean)
+   * @see org.eclipse.emf.ecore.EcorePackage#getEDataType_Serializable()
+   * @model default="true"
+   * @generated
+   */
   boolean isSerializable();
 
   /**
-	 * Sets the value of the '{@link org.eclipse.emf.ecore.EDataType#isSerializable <em>Serializable</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.eclipse.emf.ecore.EDataType#isSerializable <em>Serializable</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Serializable</em>' attribute.
-	 * @see #isSerializable()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Serializable</em>' attribute.
+   * @see #isSerializable()
+   * @generated
+   */
   void setSerializable(boolean value);
 
   /**
    * Internal API implemented by all data types.
    * @since 2.8
    */
-  interface Internal extends EDataType, InternalEObject
+  interface Internal<T> extends EDataType<T>, InternalEObject
   {
     /**
      * An API for converting values of the data type to and from a string representation.
@@ -87,7 +87,7 @@ public interface EDataType<T> extends EClassifier<T>
          * @param eDataType the EDataType for which a conversion delegate is to be created.
          * @return a new conversion delegate for the given EDataType.
          */
-        ConversionDelegate createConversionDelegate(EDataType eDataType);
+        ConversionDelegate createConversionDelegate(EDataType<?> eDataType);
 
         /**
          * A <code>Factory</code> wrapper that is used by the {@link Factory.Registry}.

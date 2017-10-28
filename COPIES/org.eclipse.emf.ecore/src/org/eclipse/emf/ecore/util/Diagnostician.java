@@ -55,12 +55,12 @@ public class Diagnostician implements EValidator.SubstitutionLabelProvider, EVal
     return EcoreUtil.getIdentification(eObject);
   }
 
-  public String getFeatureLabel(EStructuralFeature eStructuralFeature)
+  public String getFeatureLabel(EStructuralFeature<?, ?> eStructuralFeature)
   {
     return eStructuralFeature.getName();
   }
 
-  public String getValueLabel(EDataType eDataType, Object value)
+  public String getValueLabel(EDataType<?> eDataType, Object value)
   {
     return EcoreUtil.convertToString(eDataType, value);
   }
@@ -92,7 +92,7 @@ public class Diagnostician implements EValidator.SubstitutionLabelProvider, EVal
   /**
    * @since 2.4
    */
-  public BasicDiagnostic createDefaultDiagnostic(EDataType eDataType, Object value)
+  public BasicDiagnostic createDefaultDiagnostic(EDataType<?> eDataType, Object value)
   {
     return
       new BasicDiagnostic
@@ -137,13 +137,13 @@ public class Diagnostician implements EValidator.SubstitutionLabelProvider, EVal
     return validate(eObject.eClass(), eObject, diagnostics, context); 
   }
 
-  public boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context)
+  public boolean validate(EClass<?> eClass, EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context)
   {
     Object eValidator;
-    EClass eType = eClass;
+    EClass<?> eType = eClass;
     while ((eValidator = eValidatorRegistry.get(eType.eContainer())) == null)
     {
-      List<EClass> eSuperTypes = eType.getESuperTypes();
+      List<EClass<?>> eSuperTypes = eType.getESuperTypes();
       if (eSuperTypes.isEmpty())
       {
         eValidator = eValidatorRegistry.get(null);
@@ -166,7 +166,7 @@ public class Diagnostician implements EValidator.SubstitutionLabelProvider, EVal
   /**
    * @since 2.9
    */
-  protected boolean doValidate(EValidator eValidator, EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context)
+  protected boolean doValidate(EValidator eValidator, EClass<?> eClass, EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context)
   {
     return eValidator.validate(eClass, eObject, diagnostics, context);
   }
@@ -192,14 +192,14 @@ public class Diagnostician implements EValidator.SubstitutionLabelProvider, EVal
     }
   }
 
-  public Diagnostic validate(EDataType eDataType, Object value)
+  public Diagnostic validate(EDataType<?> eDataType, Object value)
   {
     BasicDiagnostic diagnostics = createDefaultDiagnostic(eDataType, value);
     validate(eDataType, value, diagnostics, createDefaultContext());
     return diagnostics;
   }
 
-  public boolean validate(EDataType eDataType, Object value, DiagnosticChain diagnostics, Map<Object, Object> context)
+  public boolean validate(EDataType<?> eDataType, Object value, DiagnosticChain diagnostics, Map<Object, Object> context)
   {
     Object eValidator = eValidatorRegistry.get(eDataType.eContainer());
     if (eValidator == null)
@@ -213,7 +213,7 @@ public class Diagnostician implements EValidator.SubstitutionLabelProvider, EVal
   /**
    * @since 2.9
    */
-  protected boolean doValidate(EValidator eValidator, EDataType eDataType, Object value, DiagnosticChain diagnostics, Map<Object, Object> context)
+  protected boolean doValidate(EValidator eValidator, EDataType<?> eDataType, Object value, DiagnosticChain diagnostics, Map<Object, Object> context)
   {
     return eValidator.validate(eDataType, value, diagnostics, context);
   }

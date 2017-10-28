@@ -31,8 +31,8 @@ public class DynamicEObjectImpl extends EObjectImpl implements EStructuralFeatur
   public static final class BasicEMapEntry<K, V> extends DynamicEObjectImpl implements BasicEMap.Entry<K, V>
   {
     protected int hash = -1;
-    protected EStructuralFeature keyFeature;
-    protected EStructuralFeature valueFeature;
+    protected EStructuralFeature<?, K> keyFeature;
+    protected EStructuralFeature<?, V> valueFeature;
 
     /**
      * Creates a dynamic EObject.
@@ -45,18 +45,17 @@ public class DynamicEObjectImpl extends EObjectImpl implements EStructuralFeatur
     /**
      * Creates a dynamic EObject.
      */
-    public BasicEMapEntry(EClass eClass) 
+    public BasicEMapEntry(EClass<?> eClass) 
     {
       super(eClass);
     }
 
-    @SuppressWarnings("unchecked")
     public K getKey()
     {
       return (K)eGet(keyFeature);
     }
 
-    public void setKey(Object key)
+    public void setKey(K key)
     {
       eSet(keyFeature, key);
     }
@@ -76,7 +75,6 @@ public class DynamicEObjectImpl extends EObjectImpl implements EStructuralFeatur
       this.hash = hash;
     }
 
-    @SuppressWarnings("unchecked")
     public V getValue()
     {
       return (V)eGet(valueFeature);
@@ -84,17 +82,18 @@ public class DynamicEObjectImpl extends EObjectImpl implements EStructuralFeatur
 
     public V setValue(V value)
     {
-      @SuppressWarnings("unchecked") V result = (V)eGet(valueFeature);
+      V result = (V)eGet(valueFeature);
       eSet(valueFeature, value);
       return result;
     }
 
-    @Override
-    public void eSetClass(EClass eClass)
+    @SuppressWarnings("unchecked")
+	@Override
+    public void eSetClass(EClass<?> eClass)
     {
       super.eSetClass(eClass);
-      keyFeature = eClass.getEStructuralFeature("key");
-      valueFeature = eClass.getEStructuralFeature("value");
+      keyFeature = (EStructuralFeature<?, K>) eClass.getEStructuralFeature("key");
+      valueFeature = (EStructuralFeature<?, V>) eClass.getEStructuralFeature("value");
     }
   }
 
@@ -108,12 +107,12 @@ public class DynamicEObjectImpl extends EObjectImpl implements EStructuralFeatur
     protected EList<EObject> eContents;
     protected EList<EObject> eCrossReferences;
 
-    public EClass getEClass()
+    public EClass<?> getEClass()
     {
       throw new UnsupportedOperationException();
     }
 
-    public void setEClass(EClass eClass)
+    public void setEClass(EClass<?> eClass)
     {
       throw new UnsupportedOperationException();
     }
@@ -184,7 +183,7 @@ public class DynamicEObjectImpl extends EObjectImpl implements EStructuralFeatur
     }
   }
 
-  protected EClass eClass;
+  protected EClass<?> eClass;
   protected Object [] eSettings;
 
   protected static final Object [] ENO_SETTINGS = new Object [0];
@@ -200,7 +199,7 @@ public class DynamicEObjectImpl extends EObjectImpl implements EStructuralFeatur
   /**
    * Creates a dynamic EObject.
    */
-  public DynamicEObjectImpl(EClass eClass) 
+  public DynamicEObjectImpl(EClass<?> eClass) 
   {
     super();
     eSetClass(eClass);
@@ -213,7 +212,7 @@ public class DynamicEObjectImpl extends EObjectImpl implements EStructuralFeatur
   }
 
   @Override
-  public int eDerivedStructuralFeatureID(EStructuralFeature eStructuralFeature)
+  public int eDerivedStructuralFeatureID(EStructuralFeature<?, ?> eStructuralFeature)
   {
     return eClass().getFeatureID(eStructuralFeature);
   }
@@ -253,36 +252,36 @@ public class DynamicEObjectImpl extends EObjectImpl implements EStructuralFeatur
   }
 
   @Override
-  public int eDerivedOperationID(EOperation eOperation)
+  public int eDerivedOperationID(EOperation<?, ?> eOperation)
   {
-    EClass eClass = eClass();
-    EOperation override = eClass.getOverride(eOperation);
+    EClass<?> eClass = eClass();
+    EOperation<?, ?> override = eClass.getOverride(eOperation);
     return eClass.getOperationID(override != null ? override : eOperation);
   }
 
   @Override
   public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException
   {
-    EOperation eOperation = eClass().getEOperation(operationID);
+    EOperation<?, ?> eOperation = eClass().getEOperation(operationID);
     assert eOperation != null : "Invalid operationID: " + operationID;
       
     return eInvocationDelegate(eOperation).dynamicInvoke(this, arguments);
   }
   
   @Override
-  protected EClass eDynamicClass()
+  protected EClass<?> eDynamicClass()
   {
     return eClass;
   }
 
   @Override
-  public EClass eClass()
+  public EClass<?> eClass()
   {
     return eClass;
   }
 
   @Override
-  public void eSetClass(EClass eClass)
+  public void eSetClass(EClass<?> eClass)
   {
     this.eClass = eClass;
   }

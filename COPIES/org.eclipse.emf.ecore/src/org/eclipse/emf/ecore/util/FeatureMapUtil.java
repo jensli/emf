@@ -1515,12 +1515,12 @@ public final class FeatureMapUtil
     
     protected class Cache extends WeakHashMap<Object, Object>
     {
-      public Boolean get(EStructuralFeature eStructuralFeature)
+      public Boolean get(EStructuralFeature<?, ?> eStructuralFeature)
       {
         return (Boolean)get((Object)eStructuralFeature);
       }
 
-      public void put(EStructuralFeature eStructuralFeature, Boolean isValid)
+      public void put(EStructuralFeature<?, ?> eStructuralFeature, Boolean isValid)
       {
         Cache newCache = new Cache();
         newCache.putAll(cache);
@@ -1699,7 +1699,7 @@ public final class FeatureMapUtil
         ExtendedMetaData.INSTANCE.getName(eStructuralFeature);
         extendedMetaData = holder.getExtendedMetaData();
       }
-      Map<EClass, Validator> validatorMap = extendedMetaData.getValidatorMap();
+      Map<EClass<?>, Validator> validatorMap = extendedMetaData.getValidatorMap();
       Validator result = validatorMap.get(containingClass);
       if (result == null)
       {

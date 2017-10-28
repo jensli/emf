@@ -302,7 +302,7 @@ public class BinaryResourceImpl extends ResourceImpl
      */
     public interface Factory
     {
-      DataConverter<?> create(EDataType eDataType);
+      <T> DataConverter<T> create(EDataType<T> eDataType);
     }
 
     public boolean isTabulated()
@@ -378,7 +378,7 @@ public class BinaryResourceImpl extends ResourceImpl
     protected InternalEObject[][] internalEObjectDataArrayBuffer = new InternalEObject[50][];
     protected int internalEObjectDataArrayBufferCount = -1;
 
-    Map<EDataType, DataConverter<?>> dataConverterMap = new HashMap<EDataType, DataConverter<?>>();
+    Map<EDataType<?>, DataConverter<?>> dataConverterMap = new HashMap<EDataType<?>, DataConverter<?>>();
 
     protected static int getStyle(Map<?, ?> options)
     {
@@ -522,11 +522,11 @@ public class BinaryResourceImpl extends ResourceImpl
 
       FEATURE_MAP;
 
-      public static FeatureKind get(EStructuralFeature eStructuralFeature)
+      public static FeatureKind get(EStructuralFeature<?, ?> eStructuralFeature)
       {
         if (eStructuralFeature instanceof EReference)
         {
-          EReference eReference = (EReference)eStructuralFeature;
+          EReference<?, ?> eReference = (EReference<?, ?>)eStructuralFeature;
           if (eReference.isContainment())
           {
             if (eReference.isResolveProxies())
@@ -588,8 +588,8 @@ public class BinaryResourceImpl extends ResourceImpl
         }
         else
         {
-          EAttribute eAttribute = (EAttribute)eStructuralFeature;
-          EDataType eDataType = eAttribute.getEAttributeType();
+          EAttribute<?, ?> eAttribute = (EAttribute<?, ?>)eStructuralFeature;
+          EDataType<?> eDataType = eAttribute.getEAttributeType();
           String instanceClassName = eDataType.getInstanceClassName();
           if (instanceClassName == "org.eclipse.emf.ecore.util.FeatureMap$Entry")
           {
@@ -726,7 +726,7 @@ public class BinaryResourceImpl extends ResourceImpl
       public boolean isProxyTransient;
       public FeatureKind kind;
       public EFactory eFactory;
-      public EDataType eDataType;
+      public EDataType<?> eDataType;
       /**
        * @since 2.9
        */
@@ -738,7 +738,7 @@ public class BinaryResourceImpl extends ResourceImpl
 
     protected OutputStream outputStream;
     protected Map<EPackage, EPackageData> ePackageDataMap = new HashMap<EPackage, EPackageData>();
-    protected Map<EClass, EClassData> eClassDataMap = new HashMap<EClass, EClassData>();
+    protected Map<EClass<?>, EClassData> eClassDataMap = new HashMap<EClass<?>, EClassData>();
     protected Map<EObject, Integer> eObjectIDMap = new HashMap<EObject, Integer>();
     protected Map<URI, Integer> uriToIDMap = new HashMap<URI, Integer>();
 
@@ -1092,7 +1092,7 @@ public class BinaryResourceImpl extends ResourceImpl
           }
           else
           {
-            writeSegmentedString(eStructuralFeatureData.eFactory.convertToString(eStructuralFeatureData.eDataType, value));
+            writeSegmentedString(eStructuralFeatureData.eFactory.convertToString((EDataType<Object>)eStructuralFeatureData.eDataType, value));
           }
           break;
         }
@@ -1108,7 +1108,7 @@ public class BinaryResourceImpl extends ResourceImpl
           }
           else
           {
-            writeString(eStructuralFeatureData.eFactory.convertToString(eStructuralFeatureData.eDataType, value));
+            writeString(eStructuralFeatureData.eFactory.convertToString((EDataType<Object>) eStructuralFeatureData.eDataType, value));
           }
           break;
         }
@@ -1121,7 +1121,7 @@ public class BinaryResourceImpl extends ResourceImpl
           }
           else
           {
-            String literal = eStructuralFeatureData.eFactory.convertToString(eStructuralFeatureData.eDataType, value);
+            String literal = eStructuralFeatureData.eFactory.convertToString((EDataType<Object>) eStructuralFeatureData.eDataType, value);
             writeSegmentedString(literal);
           }
           break;
@@ -1360,7 +1360,7 @@ public class BinaryResourceImpl extends ResourceImpl
           }
           else
           {
-            writeSegmentedString(eStructuralFeatureData.eFactory.convertToString(eStructuralFeatureData.eDataType, value));
+            writeSegmentedString(eStructuralFeatureData.eFactory.convertToString((EDataType<Object>) eStructuralFeatureData.eDataType, value));
           }
           break;
         }
@@ -1376,7 +1376,7 @@ public class BinaryResourceImpl extends ResourceImpl
           }
           else
           {
-            writeString(eStructuralFeatureData.eFactory.convertToString(eStructuralFeatureData.eDataType, value));
+            writeString(eStructuralFeatureData.eFactory.convertToString((EDataType<Object>) eStructuralFeatureData.eDataType, value));
           }
           break;
         }
@@ -1388,7 +1388,7 @@ public class BinaryResourceImpl extends ResourceImpl
           }
           else
           {
-            String literal = eStructuralFeatureData.eFactory.convertToString(eStructuralFeatureData.eDataType, value);
+            String literal = eStructuralFeatureData.eFactory.convertToString((EDataType<Object>) eStructuralFeatureData.eDataType, value);
             writeSegmentedString(literal);
           }
           break;
@@ -1409,7 +1409,7 @@ public class BinaryResourceImpl extends ResourceImpl
           {
             for (int j = 0; j < length; ++j)
             {
-              String literal = eStructuralFeatureData.eFactory.convertToString(eStructuralFeatureData.eDataType, dataValues.get(j));
+              String literal = eStructuralFeatureData.eFactory.convertToString((EDataType<Object>) eStructuralFeatureData.eDataType, dataValues.get(j));
               writeSegmentedString(literal);
             }
           }

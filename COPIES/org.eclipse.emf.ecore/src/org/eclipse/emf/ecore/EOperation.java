@@ -42,59 +42,59 @@ import org.eclipse.emf.common.util.EList;
 public interface EOperation<C extends EObject, V> extends ETypedElement<V>
 {
   /**
-	 * Returns the value of the '<em><b>EContaining Class</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.eclipse.emf.ecore.EClass#getEOperations <em>EOperations</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>EContaining Class</b></em>' container reference.
+   * It is bidirectional and its opposite is '{@link org.eclipse.emf.ecore.EClass#getEOperations <em>EOperations</em>}'.
+   * <!-- begin-user-doc -->
    * <p>
    * It represents a method in the Java sense.
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>EContaining Class</em>' container reference.
-	 * @see org.eclipse.emf.ecore.EcorePackage#getEOperation_EContainingClass()
-	 * @see org.eclipse.emf.ecore.EClass#getEOperations
-	 * @model opposite="eOperations" resolveProxies="false" changeable="false"
-	 * @generated
-	 */
+   * @return the value of the '<em>EContaining Class</em>' container reference.
+   * @see org.eclipse.emf.ecore.EcorePackage#getEOperation_EContainingClass()
+   * @see org.eclipse.emf.ecore.EClass#getEOperations
+   * @model opposite="eOperations" resolveProxies="false" changeable="false"
+   * @generated
+   */
   EClass<C> getEContainingClass();
 
   /**
-	 * Returns the value of the '<em><b>EParameters</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}<code>&lt;?&gt;</code>.
-	 * It is bidirectional and its opposite is '{@link org.eclipse.emf.ecore.EParameter#getEOperation <em>EOperation</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>EParameters</b></em>' containment reference list.
+   * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}<code>&lt;?&gt;</code>.
+   * It is bidirectional and its opposite is '{@link org.eclipse.emf.ecore.EParameter#getEOperation <em>EOperation</em>}'.
+   * <!-- begin-user-doc -->
    * <p>
    * It represents the valid arguments for this operation.
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>EParameters</em>' containment reference list.
-	 * @see org.eclipse.emf.ecore.EcorePackage#getEOperation_EParameters()
-	 * @see org.eclipse.emf.ecore.EParameter#getEOperation
-	 * @model opposite="eOperation" containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>EParameters</em>' containment reference list.
+   * @see org.eclipse.emf.ecore.EcorePackage#getEOperation_EParameters()
+   * @see org.eclipse.emf.ecore.EParameter#getEOperation
+   * @model opposite="eOperation" containment="true"
+   * @generated
+   */
   EList<EParameter<?>> getEParameters();
 
   /**
-	 * Returns the value of the '<em><b>EExceptions</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.EClassifier}<code>&lt;?&gt;</code>.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>EExceptions</b></em>' reference list.
+   * The list contents are of type {@link org.eclipse.emf.ecore.EClassifier}<code>&lt;?&gt;</code>.
+   * <!-- begin-user-doc -->
    * <p>
    * It represents the exceptions thrown by this operation
    * and is derived from the {@link #getEGenericExceptions() generic exceptions}.
    * </p>
    * @see #getEGenericExceptions()
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>EExceptions</em>' reference list.
-	 * @see org.eclipse.emf.ecore.EcorePackage#getEOperation_EExceptions()
-	 * @model unsettable="true" suppressedIsSetVisibility="true" suppressedUnsetVisibility="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>EExceptions</em>' reference list.
+   * @see org.eclipse.emf.ecore.EcorePackage#getEOperation_EExceptions()
+   * @model unsettable="true" suppressedIsSetVisibility="true" suppressedUnsetVisibility="true"
+   * @generated
+   */
   EList<EClassifier<?>> getEExceptions();
 
   /**
-	 * Returns the value of the '<em><b>EGeneric Exceptions</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.EGenericType}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>EGeneric Exceptions</b></em>' containment reference list.
+   * The list contents are of type {@link org.eclipse.emf.ecore.EGenericType}.
+   * <!-- begin-user-doc -->
    * <p>
    * It represents the generic exceptions thrown by this operation.
    * The {@link #getEExceptions() exceptions} list is derived from this one, i.e., it represents the {@link EGenericType#getERawType() erasure} of each generic exception.
@@ -102,50 +102,50 @@ public interface EOperation<C extends EObject, V> extends ETypedElement<V>
    * @see #getEExceptions()
    * @since 2.3
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>EGeneric Exceptions</em>' containment reference list.
-	 * @see org.eclipse.emf.ecore.EcorePackage#getEOperation_EGenericExceptions()
-	 * @model containment="true" unsettable="true" suppressedIsSetVisibility="true" suppressedUnsetVisibility="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>EGeneric Exceptions</em>' containment reference list.
+   * @see org.eclipse.emf.ecore.EcorePackage#getEOperation_EGenericExceptions()
+   * @model containment="true" unsettable="true" suppressedIsSetVisibility="true" suppressedUnsetVisibility="true"
+   * @generated
+   */
   EList<EGenericType> getEGenericExceptions();
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * Returns the ID relative to the {@link #getEContainingClass containing} class.
    * @return  the relative ID.
    * @since 2.6
    * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
+   * @model kind="operation"
+   * @generated
+   */
   int getOperationID();
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * Returns whether this operation is an override of some other operation.
    * @param someOperation some other operation.
    * @return whether this operation is an override of some other operation.
    * @since 2.6
    * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
+   * @model
+   * @generated
+   */
   boolean isOverrideOf(EOperation<?, ?> someOperation);
 
   /**
-	 * Returns the value of the '<em><b>EType Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.ETypeParameter}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>EType Parameters</b></em>' containment reference list.
+   * The list contents are of type {@link org.eclipse.emf.ecore.ETypeParameter}.
+   * <!-- begin-user-doc -->
    * <p>
    * An operation can optionally introduce type parameters.
    * </p>
    * @since 2.3
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>EType Parameters</em>' containment reference list.
-	 * @see org.eclipse.emf.ecore.EcorePackage#getEOperation_ETypeParameters()
-	 * @model containment="true" resolveProxies="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>EType Parameters</em>' containment reference list.
+   * @see org.eclipse.emf.ecore.EcorePackage#getEOperation_ETypeParameters()
+   * @model containment="true" resolveProxies="true"
+   * @generated
+   */
   EList<ETypeParameter> getETypeParameters();
 
   /**
@@ -153,7 +153,7 @@ public interface EOperation<C extends EObject, V> extends ETypedElement<V>
    * 
    * @since 2.6
    */
-  interface Internal extends EOperation, InternalEObject
+  interface Internal<C extends EObject, V> extends EOperation<C, V>, InternalEObject
   {
 	/**
 	 * A pluggable, dynamic implementation of operation behavior.
@@ -171,7 +171,7 @@ public interface EOperation<C extends EObject, V> extends ETypedElement<V>
          * @param operation the operation
          * @return its invocation delegate
          */
-        InvocationDelegate createInvocationDelegate(EOperation operation);
+        InvocationDelegate createInvocationDelegate(EOperation<?, ?> operation);
 
         /**
          * A <code>Factory</code> wrapper that is used by the {@link Factory.Registry}.

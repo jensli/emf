@@ -676,15 +676,15 @@ public class MinimalEObjectImpl extends BasicEObjectImpl implements EStructuralF
   }
 
   @Override
-  protected EClass eDynamicClass()
+  protected EClass<?> eDynamicClass()
   {
-     return (EClass)getField(CLASS);
+     return (EClass<?>)getField(CLASS);
   }
 
   @Override
-  public EClass eClass()
+  public EClass<? extends EObject> eClass()
   {
-    EClass eClass = eDynamicClass();
+    EClass<?> eClass = eDynamicClass();
     return eClass == null ? eStaticClass() : eClass;
   }
 
