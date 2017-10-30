@@ -1032,16 +1032,9 @@ public class GenFeatureImpl extends GenTypedElementImpl implements GenFeature
     // CHANGE gen: Generics added
     // TODO gen: Code duplicated in GenFeature
     if (getGenModel().useGenerics()) {
-      String containerType = getGenClass().isImplementingEobject()
-        ? this.getGenClass().getImportedWildcardObjectInstanceClassName() : "?";
-      
-       // System.out.println(getTypeGenClass().getName() + " is EObject: " + getTypeGenClass().isEObjectExtension() + " " + getTypeGenClass().isImplementingEobject());
-        
-//      String containerType = this.getGenClass().getImportedWildcardObjectInstanceClassName();
-    return getRawImportedMetaType() + "<" + containerType + ", " + this.getObjectType(null, true) + ">";
-
-//      return getRawImportedMetaType() + "<" + containerType + ", "
-//        + this.getTypeGenClassifier().getImportedWildcardObjectInstanceClassName() + ">";
+        String containerType = getGenClass().isImplementingEobject()
+          ? this.getGenClass().getImportedWildcardObjectInstanceClassName() : "?";
+      return getRawImportedMetaType() + "<" + containerType + ", " + this.getObjectType(null, true) + ">";
     } else {
       return getRawImportedMetaType();
     }

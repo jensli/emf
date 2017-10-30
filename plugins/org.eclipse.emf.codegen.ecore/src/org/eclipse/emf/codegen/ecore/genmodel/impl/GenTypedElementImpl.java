@@ -186,6 +186,7 @@ public abstract class GenTypedElementImpl extends GenBaseImpl implements GenType
     return getImportedType(getContext());
   }
 
+  // CHANGE gen: This method now returns types with type parameters
   public String getImportedType(GenClass context)
   {
     if (isFeatureMapType()) return getGenModel().getImportedName(getEffectiveFeatureMapWrapperInterface());

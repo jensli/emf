@@ -1349,11 +1349,8 @@ public abstract class GenBaseImpl extends EObjectImpl implements GenBase
    * imported form will be returned.  If primitiveAsObject is true, wrapper
    * object names will be returned instead of primitive names (e.g. Integer
    * instead of int).
-   * 
-   * @param
    */
-  // CHANGE: Added parameter
-  // TODO j: useWildcardParams not used!
+  // CHANGE gen: Added useWildcard parameter
   protected String getImportedType(GenClass context, EGenericType eGenericType, boolean primitiveAsObject, boolean useWildcardParams)
   {
     String t = getType(context, eGenericType, primitiveAsObject, useWildcardParams);
@@ -1366,16 +1363,15 @@ public abstract class GenBaseImpl extends EObjectImpl implements GenBase
    * be returned instead of primitive names (e.g. java.lang.Integer instead
    * of int).
    */
-  // CHANGE: Added parameter
-  // TODO j: useWildcardParams not used!
+  // CHANGE gen: Added useWildcard parameter
   protected String getType(GenClass context, EGenericType eGenericType, boolean primitiveAsObject, boolean useWildcardParams)
   {
     if (getEffectiveComplianceLevel().getValue() >= GenJDKLevel.JDK50)
     {
       return
-        primitiveAsObject && isPrimitiveType(eGenericType.getERawType()) ?
-          getPrimitiveObjectType(eGenericType.getERawType()) :
-          getTypeArgument(context, eGenericType, false, false, useWildcardParams);
+        primitiveAsObject && isPrimitiveType(eGenericType.getERawType())
+          ? getPrimitiveObjectType(eGenericType.getERawType())
+          : getTypeArgument(context, eGenericType, false, false, useWildcardParams);
     }
     else
     {
@@ -3358,12 +3354,9 @@ public abstract class GenBaseImpl extends EObjectImpl implements GenBase
 
   protected String getTypeArgument(GenClass context, EGenericType eGenericType, boolean isImported, boolean isErased, boolean isWildcard)
   {
-    // if (isWildcard) return "?";
-    
     ETypeParameter eTypeParameter = eGenericType.getETypeParameter();
     if (eTypeParameter != null)
     {
-      // TODO j: Make this method emit wildcard args! Later: I think the preceeding comment is now moot.
       if (context != null)
       {
         for (EGenericType eGenericSuperType : context.getEcoreClass().getEAllGenericSuperTypes())
@@ -3391,6 +3384,7 @@ public abstract class GenBaseImpl extends EObjectImpl implements GenBase
       else
       {
         if (isWildcard) {
+          // TODO gen: Should type bounds be included?
           return "?";
         } else {
           return isImported ? getImportedType(context, getBoundType(eGenericType), false) : getType(context, getBoundType(eGenericType), false);
@@ -3638,7 +3632,7 @@ public abstract class GenBaseImpl extends EObjectImpl implements GenBase
   /**
    * @since 2.9
    */
-  protected static String addPackagePrefix(String prefix, String name)
+  protected String addPackagePrefix(String prefix, String name)
   {
     return !isBlank(prefix) ? prefix + "." + name : name;
   }
@@ -3646,7 +3640,7 @@ public abstract class GenBaseImpl extends EObjectImpl implements GenBase
   /**
    * @since 2.9
    */
-  protected static String addPackageSuffix(String name, String suffix)
+  protected String addPackageSuffix(String name, String suffix)
   {
     return !isBlank(suffix) ? name + "." + suffix : name;
   }

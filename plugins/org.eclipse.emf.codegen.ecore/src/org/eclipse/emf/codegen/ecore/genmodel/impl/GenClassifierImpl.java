@@ -209,6 +209,7 @@ public abstract class GenClassifierImpl extends GenBaseImpl implements GenClassi
 //    return importedName.substring(importedName.lastIndexOf(".") + 1);
 //  }
 
+  // CHANGE gen: Moved here from GenClass
   public String getImportedMetaType()
   {
     if (getGenModel().useGenerics()) {
@@ -352,12 +353,12 @@ public abstract class GenClassifierImpl extends GenBaseImpl implements GenClassi
 
   // CHANGE: Added.
   public boolean isImplementingEobject() {
-	    Class<?> instanceClass = this.getEcoreClassifier().getInstanceClass();
-	      
-	      // If an instance is configured then the object might not be an EObject and might
-	      // not satisfy type parameter bounds
-	    return (instanceClass == null || EObject.class.isAssignableFrom(instanceClass))
-	      && !this.getGenModel().isSuppressInterfaces();
-	  }
+     Class<?> instanceClass = this.getEcoreClassifier().getInstanceClass();
+
+     // If an instance is configured then the object might not be an EObject and might
+     // not satisfy type parameter bounds
+     return (instanceClass == null || EObject.class.isAssignableFrom(instanceClass))
+       && !this.getGenModel().isSuppressInterfaces();
+  }
 
 }

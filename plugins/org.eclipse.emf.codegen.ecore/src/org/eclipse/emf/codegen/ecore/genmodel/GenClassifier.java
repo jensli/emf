@@ -67,13 +67,15 @@ public interface GenClassifier extends GenBase
   EClassifier getEcoreClassifier();
   
   /**
-   * @return The imported name of the metatype, that is "EClass" or "EDataType", etc. It includes type parameters.  
+   * @return The imported name of the metatype, that is "EClass<T>" or "EDataType",
+   *         etc. It includes type parameters.
    */
   String getImportedMetaType();
   
   // CHANGE: Added
   /**
-   * @return The imported name of the metatype, that is "EClass" or "EDataType", etc. It excludes type parameters.  
+   * @return The imported name of the metatype, that is "EClass" or "EDataType",
+   *         etc. It does not include type parameters.
    */
   String getRawImportedMetaType();
   

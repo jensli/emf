@@ -363,12 +363,12 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
     return ecoreClass;
   }
 
+  // CHANGE gen: Renamed from getImportedMetaType, which have been moved to GenClassifierImpl
   public String getRawImportedMetaType()
   {
     return getGenModel().getImportedName("org.eclipse.emf.ecore.EClass");
   }
 
-  
   public String getInterfaceName()
   {
     return getGenModel().isSuppressInterfaces() ? getName() : getInterfaceName(getName());
@@ -806,15 +806,13 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
       EGenericType eGenericType = getEcoreClass().getEGenericSuperTypes().get(i);
       if (genClass.isExternalInterface() || genClass.isInterface() || !genClass.getGenModel().isSuppressInterfaces())
       {
-        String internalName = genClass.getInternalQualifiedInterfaceName();
         if (includeTypeArguments && !eGenericType.getETypeArguments().isEmpty())
         {
-          String typeArguments = getTypeArguments(this, eGenericType.getETypeArguments(), false, false);
-          result.add(internalName + typeArguments);
+          result.add(genClass.getInternalQualifiedInterfaceName() + getTypeArguments(this, eGenericType.getETypeArguments(), false, false));
         }
         else
         {
-          result.add(internalName);
+          result.add(genClass.getInternalQualifiedInterfaceName());
         }
       }
     } 
