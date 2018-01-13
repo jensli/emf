@@ -137,7 +137,7 @@ public interface <%=genPackage.getFactoryInterfaceName()%><%if (!genModel.isSupp
   <%if (genModel.useClassOverrideAnnotation()) {%>
 	@Override
   <%}%>
-	// CHANGE: Added generics and annotation
+	// CHANGE gen: Added generics and annotation
 	@SuppressWarnings("unchecked")
 	public <T extends EObject> T create(EClass<T> eClass)
 	{
@@ -162,7 +162,7 @@ public interface <%=genPackage.getFactoryInterfaceName()%><%if (!genModel.isSupp
   <%if (genModel.useClassOverrideAnnotation()) {%>
 	@Override
   <%}%>
-	// CHANGE: Added generics and annotation
+	// CHANGE gen: Added generics and annotation
 	@SuppressWarnings("unchecked")
 	public <T> T createFromString(<%=genModel.getImportedName("org.eclipse.emf.ecore.EDataType")%><T> eDataType, String initialValue)
 	{
@@ -170,8 +170,9 @@ public interface <%=genPackage.getFactoryInterfaceName()%><%if (!genModel.isSupp
 		{
 <%for (GenDataType genDataType : genPackage.getAllGenDataTypes()) {%>
   <%if (genDataType.isSerializable()) {%>
+			// CHANGE gen: Cast added 1
 			case <%=genPackage.getImportedPackageInterfaceName()%>.<%=genDataType.getClassifierID()%>:
-				return (T) create<%=genDataType.getName()%>FromString(eDataType, initialValue);
+				return (T) create<%=genDataType.getName()%>FromString((<%=genModel.getImportedName("org.eclipse.emf.ecore.EDataType")%><<%=genDataType.getImportedParameterizedObjectInstanceClassName()%>>) eDataType, initialValue);
   <%}%>
 <%}%>
 			default:
@@ -184,6 +185,9 @@ public interface <%=genPackage.getFactoryInterfaceName()%><%if (!genModel.isSupp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+  <%if (genModel.useGenerics()) {%>
+	@SuppressWarnings("unchecked")
+  <%}%>
   <%if (genModel.useClassOverrideAnnotation()) {%>
 	@Override
   <%}%>
@@ -194,7 +198,7 @@ public interface <%=genPackage.getFactoryInterfaceName()%><%if (!genModel.isSupp
 <%for (GenDataType genDataType : genPackage.getAllGenDataTypes()) {%>
   <%if (genDataType.isSerializable()) {%>
 			case <%=genPackage.getImportedPackageInterfaceName()%>.<%=genDataType.getClassifierID()%>:
-				return convert<%=genDataType.getName()%>ToString(eDataType, instanceValue);
+				return convert<%=genDataType.getName()%>ToString((<%=genModel.getImportedName("org.eclipse.emf.ecore.EDataType")%><<%=genDataType.getImportedParameterizedObjectInstanceClassName()%>>) eDataType, (<%=genDataType.getImportedParameterizedObjectInstanceClassName()%>) instanceValue);
   <%}%>
 <%}%>
 			default:
@@ -339,7 +343,7 @@ public interface <%=genPackage.getFactoryInterfaceName()%><%if (!genModel.isSupp
     <%if (!genPackage.isDataTypeConverters() && genModel.useGenerics() && genDataType.isUncheckedCast() && !genDataType.hasCreatorBody()) {%>
 	@SuppressWarnings("unchecked")
     <%}%>
-	public <%=genDataType.getImportedParameterizedObjectInstanceClassName()%> create<%=genDataType.getName()%>FromString(<%=genModel.getImportedName("org.eclipse.emf.ecore.EDataType")%> eDataType, String initialValue)
+	public <%=genDataType.getImportedParameterizedObjectInstanceClassName()%> create<%=genDataType.getName()%>FromString(<%=genModel.getImportedName("org.eclipse.emf.ecore.EDataType")%><<%=genDataType.getImportedParameterizedObjectInstanceClassName()%>> eDataType, String initialValue)
 	{
     <%if (genDataType instanceof GenEnum) {%>
       <%if (genPackage.isDataTypeConverters() || genDataType.hasCreatorBody()) {%>
@@ -458,17 +462,18 @@ public interface <%=genPackage.getFactoryInterfaceName()%><%if (!genModel.isSupp
 		for (<%=genModel.getImportedName("java.lang.Object")%> item : instanceValue)
         <%}%>
 		{
+			// CHANGE gen: Cast added
       <%if (genItemType.getGenPackage() == genPackage) {%>
         <%if (genPackage.isDataTypeConverters()) { genItemType = genItemType.getObjectType();%>
-			result.append(convert<%=genItemType.getName()%>((<%=genItemType.getObjectInstanceClassName()%>)<%=item%>));
+			result.append(convert<%=genItemType.getName()%>((<%=genItemType.getImportedWildcardObjectInstanceClassName()%>) <%=item%>));
         <%} else {%>
-			result.append(convert<%=genItemType.getName()%>ToString(<%=genItemType.getQualifiedClassifierAccessor()%>, <%=item%>));
+			result.append(convert<%=genItemType.getName()%>ToString(<%=genItemType.getQualifiedClassifierAccessor()%>, (<%=genItemType.getImportedWildcardObjectInstanceClassName()%>) <%=item%>));
         <%}%>
       <%} else {%>
         <%if (genItemType.getGenPackage().isDataTypeConverters()) { genItemType = genItemType.getObjectType();%>
 			result.append(<%=genItemType.getGenPackage().getQualifiedEFactoryInternalInstanceAccessor()%>.convert<%=genItemType.getName()%>((<%=genItemType.getObjectInstanceClassName()%>)<%=item%>));
         <%} else {%>
-			result.append(<%=genItemType.getGenPackage().getQualifiedEFactoryInternalInstanceAccessor()%>.convertToString(<%=genItemType.getQualifiedClassifierAccessor()%>, <%=item%>));
+			result.append(<%=genItemType.getGenPackage().getQualifiedEFactoryInternalInstanceAccessor()%>.convertToString(<%=genItemType.getQualifiedClassifierAccessor()%>, (<%=genItemType.getImportedWildcardObjectInstanceClassName()%>) <%=item%>));
         <%}%>
       <%}%>
 			result.append(' ');
@@ -482,23 +487,24 @@ public interface <%=genPackage.getFactoryInterfaceName()%><%if (!genModel.isSupp
 		{
 			try
 			{
+				// CHANGE gen: Cast added 2
           <%if (genMemberType.getGenPackage() == genPackage) {%>
             <%if (genPackage.isDataTypeConverters()) {%>
               <%if (genMemberType.getQualifiedInstanceClassName().equals(genDataType.getQualifiedInstanceClassName())) {%>
 				String value = convert<%=genMemberType.getName()%>(instanceValue);
               <%} else if (genMemberType.isPrimitiveType() && genModel.getComplianceLevel().getValue() < GenJDKLevel.JDK50) {%>
-				String value = convert<%=genMemberType.getName()%>(((<%=genMemberType.getObjectType().getImportedInstanceClassName()%>)instanceValue).<%=genMemberType.getPrimitiveValueFunction()%>());
+				String value = convert<%=genMemberType.getName()%>(((<%=genMemberType.getObjectType().getImportedWildcardObjectInstanceClassName()%>)instanceValue).<%=genMemberType.getPrimitiveValueFunction()%>());
               <%} else {%>
-				String value = convert<%=genMemberType.getName()%>((<%=genMemberType.getObjectType().getImportedBoundedWildcardInstanceClassName()%>)instanceValue);
+				String value = convert<%=genMemberType.getName()%>((<%=genMemberType.getObjectType().getImportedWildcardObjectInstanceClassName()%>)instanceValue);
               <%}%>
             <%} else {%>
 				String value = convert<%=genMemberType.getName()%>ToString(<%=genMemberType.getQualifiedClassifierAccessor()%>, instanceValue);
             <%}%>
           <%} else {%>
             <%if (genMemberType.getGenPackage().isDataTypeConverters()) { genMemberType = genMemberType.getObjectType();%>
-				String value = <%=genMemberType.getGenPackage().getQualifiedEFactoryInternalInstanceAccessor()%>.convert<%=genMemberType.getName()%>((<%=genMemberType.getObjectInstanceClassName()%>)instanceValue);
+				String value = <%=genMemberType.getGenPackage().getQualifiedEFactoryInternalInstanceAccessor()%>.convert<%=genMemberType.getName()%>((<%=genMemberType.getImportedWildcardObjectInstanceClassName()%>) instanceValue);
             <%} else {%>
-				String value = <%=genMemberType.getGenPackage().getQualifiedEFactoryInternalInstanceAccessor()%>.convertToString(<%=genMemberType.getQualifiedClassifierAccessor()%>, instanceValue);
+				String value = <%=genMemberType.getGenPackage().getQualifiedEFactoryInternalInstanceAccessor()%>.convertToString(<%=genMemberType.getQualifiedClassifierAccessor()%>, (<%=genMemberType.getImportedWildcardObjectInstanceClassName()%>) instanceValue);
             <%}%>
           <%}%>
 				if (value != null) return value;
@@ -557,7 +563,7 @@ public interface <%=genPackage.getFactoryInterfaceName()%><%if (!genModel.isSupp
     <%if (genModel.useGenerics() && (genDataType.getItemType() != null || genDataType.isUncheckedCast()) && (genPackage.isDataTypeConverters() || genDataType.hasCreatorBody())) {%>
 	@SuppressWarnings("unchecked")
     <%}%>
-	public String convert<%=genDataType.getName()%>ToString(<%=genModel.getImportedName("org.eclipse.emf.ecore.EDataType")%> eDataType, Object instanceValue)
+	public String convert<%=genDataType.getName()%>ToString(<%=genModel.getImportedName("org.eclipse.emf.ecore.EDataType")%><<%=genDataType.getImportedParameterizedObjectInstanceClassName()%>> eDataType, <%=genDataType.getImportedParameterizedObjectInstanceClassName()%> instanceValue)
 	{
     <%if (genDataType instanceof GenEnum) {%>
       <%if (genPackage.isDataTypeConverters() || genDataType.hasConverterBody()) {%>
@@ -586,9 +592,9 @@ public interface <%=genPackage.getFactoryInterfaceName()%><%if (!genModel.isSupp
         <%}%>
 		{
         <%if (genItemType.getGenPackage() == genPackage) {%>
-			result.append(convert<%=genItemType.getName()%>ToString(<%=genItemType.getQualifiedClassifierAccessor()%>, <%=item%>));
+			result.append(convert<%=genItemType.getName()%>ToString(<%=genItemType.getQualifiedClassifierAccessor()%>, (<%=genItemType.getImportedWildcardObjectInstanceClassName()%>) <%=item%>));
         <%} else {%>
-			result.append(<%=genItemType.getGenPackage().getQualifiedEFactoryInternalInstanceAccessor()%>.convertToString(<%=genItemType.getQualifiedClassifierAccessor()%>, <%=item%>));
+			result.append(<%=genItemType.getGenPackage().getQualifiedEFactoryInternalInstanceAccessor()%>.convertToString(<%=genItemType.getQualifiedClassifierAccessor()%>, (<%=genItemType.getImportedWildcardObjectInstanceClassName()%>) <%=item%>));
         <%}%>
 			result.append(' ');
 		}
@@ -608,10 +614,11 @@ public interface <%=genPackage.getFactoryInterfaceName()%><%if (!genModel.isSupp
 		{
 			try
 			{
+				// CHANGE gen: Cast added 3
         <%if (genMemberType.getGenPackage() == genPackage) {%>
-				String value = convert<%=genMemberType.getName()%>ToString(<%=genMemberType.getQualifiedClassifierAccessor()%>, instanceValue);
+				String value = convert<%=genMemberType.getName()%>ToString(<%=genMemberType.getQualifiedClassifierAccessor()%>, (<%=genMemberType.getImportedWildcardObjectInstanceClassName()%>) instanceValue);
         <%} else {%>
-				String value = <%=genMemberType.getGenPackage().getQualifiedEFactoryInternalInstanceAccessor()%>.convertToString(<%=genMemberType.getQualifiedClassifierAccessor()%>, instanceValue);
+				String value = <%=genMemberType.getGenPackage().getQualifiedEFactoryInternalInstanceAccessor()%>.convertToString(<%=genMemberType.getQualifiedClassifierAccessor()%>, (<%=genMemberType.getImportedWildcardObjectInstanceClassName()%>) instanceValue);
         <%}%>
 				if (value != null) return value;
 			}
