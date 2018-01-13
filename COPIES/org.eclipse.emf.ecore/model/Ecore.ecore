@@ -91,9 +91,7 @@
     <eOperations name="getOverride">
       <eGenericType eClassifier="#//EOperation">
         <eTypeArguments eTypeParameter="#//EClass/T"/>
-        <eTypeArguments>
-          <eUpperBound eTypeParameter="#//EClass/getOverride/V"/>
-        </eTypeArguments>
+        <eTypeArguments eTypeParameter="#//EClass/getOverride/V"/>
       </eGenericType>
       <eTypeParameters name="V"/>
       <eParameters name="operation">
@@ -363,9 +361,7 @@
     </eOperations>
     <eOperations name="eContainmentFeature">
       <eGenericType eClassifier="#//EReference">
-        <eTypeArguments>
-          <eUpperBound eClassifier="#//EObject"/>
-        </eTypeArguments>
+        <eTypeArguments/>
         <eTypeArguments>
           <eUpperBound eClassifier="#//EObject"/>
         </eTypeArguments>
@@ -568,7 +564,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eKeys" upperBound="-1">
       <eGenericType eClassifier="#//EAttribute">
-        <eTypeArguments eTypeParameter="#//EReference/C"/>
+        <eTypeArguments/>
         <eTypeArguments/>
       </eGenericType>
     </eStructuralFeatures>
