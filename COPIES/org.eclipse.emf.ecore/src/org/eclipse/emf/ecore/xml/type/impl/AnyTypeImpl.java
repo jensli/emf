@@ -73,7 +73,7 @@ public class AnyTypeImpl extends EObjectImpl implements AnyType
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return XMLTypePackage.Literals.ANY_TYPE;
   }

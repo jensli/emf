@@ -451,7 +451,7 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public List<String> createENTITIESFromString(EDataType eDataType, String initialValue)
+  public List<String> createENTITIESFromString(EDataType<List<String>> eDataType, String initialValue)
   {
     return createENTITIESBaseFromString(XMLTypePackage.Literals.ENTITIES_BASE, initialValue);
   }
@@ -471,7 +471,7 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertENTITIESToString(EDataType eDataType, Object instanceValue)
+  public String convertENTITIESToString(EDataType<List<String>> eDataType, Object instanceValue)
   {
     return convertENTITIESBaseToString(XMLTypePackage.Literals.ENTITIES_BASE, instanceValue);
   }
@@ -497,7 +497,7 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public List<String> createENTITIESBaseFromString(EDataType eDataType, String initialValue)
+  public List<String> createENTITIESBaseFromString(EDataType<List<String>> eDataType, String initialValue)
   {
     return createENTITIESBase(initialValue);
   }
@@ -512,9 +512,10 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
     if (instanceValue == null) return null;
     if (instanceValue.isEmpty()) return "";
     StringBuffer result = new StringBuffer();
+    // CHANGE gen: Cast added 4
     for (Object item : instanceValue)
     {
-      result.append(convertENTITY((String)item));
+      result.append(convertENTITY((String) item));
       result.append(' ');
     }
     return result.substring(0, result.length() - 1);
@@ -888,7 +889,7 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public List<String> createIDREFSFromString(EDataType eDataType, String initialValue)
+  public List<String> createIDREFSFromString(EDataType<List<String>> eDataType, String initialValue)
   {
     return createIDREFSBaseFromString(XMLTypePackage.Literals.IDREFS_BASE, initialValue);
   }
@@ -908,7 +909,7 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertIDREFSToString(EDataType eDataType, Object instanceValue)
+  public String convertIDREFSToString(EDataType<List<String>> eDataType, Object instanceValue)
   {
     return convertIDREFSBaseToString(XMLTypePackage.Literals.IDREFS_BASE, instanceValue);
   }
@@ -934,7 +935,7 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public List<String> createIDREFSBaseFromString(EDataType eDataType, String initialValue)
+  public List<String> createIDREFSBaseFromString(EDataType<List<String>> eDataType, String initialValue)
   {
     return createIDREFSBase(initialValue);
   }
@@ -949,9 +950,10 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
     if (instanceValue == null) return null;
     if (instanceValue.isEmpty()) return "";
     StringBuffer result = new StringBuffer();
+    // CHANGE gen: Cast added 4
     for (Object item : instanceValue)
     {
-      result.append(convertIDREF((String)item));
+      result.append(convertIDREF((String) item));
       result.append(' ');
     }
     return result.substring(0, result.length() - 1);
@@ -963,7 +965,7 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * @generated
    */
   @SuppressWarnings("unchecked")
-  public String convertIDREFSBaseToString(EDataType eDataType, Object instanceValue)
+  public String convertIDREFSBaseToString(EDataType<List<String>> eDataType, Object instanceValue)
   {
     return convertIDREFSBase((List<? extends String>)instanceValue);
   }
@@ -1143,7 +1145,7 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BigInteger createNegativeIntegerFromString(EDataType eDataType, String initialValue)
+  public BigInteger createNegativeIntegerFromString(EDataType<BigInteger> eDataType, String initialValue)
   {
     return createNonPositiveIntegerFromString(XMLTypePackage.Literals.NON_POSITIVE_INTEGER, initialValue);
   }
@@ -1163,7 +1165,7 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertNegativeIntegerToString(EDataType eDataType, Object instanceValue)
+  public String convertNegativeIntegerToString(EDataType<BigInteger> eDataType, Object instanceValue)
   {
     return convertNonPositiveIntegerToString(XMLTypePackage.Literals.NON_POSITIVE_INTEGER, instanceValue);
   }
@@ -1203,7 +1205,7 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public List<String> createNMTOKENSFromString(EDataType eDataType, String initialValue)
+  public List<String> createNMTOKENSFromString(EDataType<List<String>> eDataType, String initialValue)
   {
     return createNMTOKENSBaseFromString(XMLTypePackage.Literals.NMTOKENS_BASE, initialValue);
   }
@@ -1223,7 +1225,7 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertNMTOKENSToString(EDataType eDataType, Object instanceValue)
+  public String convertNMTOKENSToString(EDataType<List<String>> eDataType, Object instanceValue)
   {
     return convertNMTOKENSBaseToString(XMLTypePackage.Literals.NMTOKENS_BASE, instanceValue);
   }
@@ -1249,7 +1251,7 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public List<String> createNMTOKENSBaseFromString(EDataType eDataType, String initialValue)
+  public List<String> createNMTOKENSBaseFromString(EDataType<List<String>> eDataType, String initialValue)
   {
     return createNMTOKENSBase(initialValue);
   }
@@ -1264,9 +1266,10 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
     if (instanceValue == null) return null;
     if (instanceValue.isEmpty()) return "";
     StringBuffer result = new StringBuffer();
+    // CHANGE gen: Cast added 4
     for (Object item : instanceValue)
     {
-      result.append(convertNMTOKEN((String)item));
+      result.append(convertNMTOKEN((String) item));
       result.append(' ');
     }
     return result.substring(0, result.length() - 1);
@@ -1387,7 +1390,7 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BigInteger createPositiveIntegerFromString(EDataType eDataType, String initialValue)
+  public BigInteger createPositiveIntegerFromString(EDataType<BigInteger> eDataType, String initialValue)
   {
     return createNonNegativeIntegerFromString(XMLTypePackage.Literals.NON_NEGATIVE_INTEGER, initialValue);
   }
@@ -1407,7 +1410,7 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertPositiveIntegerToString(EDataType eDataType, Object instanceValue)
+  public String convertPositiveIntegerToString(EDataType<BigInteger> eDataType, Object instanceValue)
   {
     return convertNonNegativeIntegerToString(XMLTypePackage.Literals.NON_NEGATIVE_INTEGER, instanceValue);
   }
@@ -1674,7 +1677,7 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BigInteger createUnsignedLongFromString(EDataType eDataType, String initialValue)
+  public BigInteger createUnsignedLongFromString(EDataType<BigInteger> eDataType, String initialValue)
   {
     return createNonNegativeIntegerFromString(XMLTypePackage.Literals.NON_NEGATIVE_INTEGER, initialValue);
   }
@@ -1694,7 +1697,7 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertUnsignedLongToString(EDataType eDataType, Object instanceValue)
+  public String convertUnsignedLongToString(EDataType<BigInteger> eDataType, Object instanceValue)
   {
     return convertNonNegativeIntegerToString(XMLTypePackage.Literals.NON_NEGATIVE_INTEGER, instanceValue);
   }
@@ -1785,14 +1788,15 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * @generated
    */
   @Override
-  public EObject create(EClass eClass)
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
     switch (eClass.getClassifierID())
     {
-      case XMLTypePackage.ANY_TYPE: return createAnyType();
-      case XMLTypePackage.PROCESSING_INSTRUCTION: return createProcessingInstruction();
-      case XMLTypePackage.SIMPLE_ANY_TYPE: return createSimpleAnyType();
-      case XMLTypePackage.XML_TYPE_DOCUMENT_ROOT: return createXMLTypeDocumentRoot();
+      case XMLTypePackage.ANY_TYPE: return (T) createAnyType();
+      case XMLTypePackage.PROCESSING_INSTRUCTION: return (T) createProcessingInstruction();
+      case XMLTypePackage.SIMPLE_ANY_TYPE: return (T) createSimpleAnyType();
+      case XMLTypePackage.XML_TYPE_DOCUMENT_ROOT: return (T) createXMLTypeDocumentRoot();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -1804,126 +1808,128 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * @generated
    */
   @Override
-  public Object createFromString(EDataType eDataType, String initialValue)
+  @SuppressWarnings("unchecked")
+  public <T> T createFromString(EDataType<T> eDataType, String initialValue)
   {
+    // CHANGE gen: Cast added 1
     switch (eDataType.getClassifierID())
     {
       case XMLTypePackage.ANY_SIMPLE_TYPE:
-        return createAnySimpleTypeFromString(eDataType, initialValue);
+        return (T) createAnySimpleTypeFromString((EDataType<Object>) eDataType, initialValue);
       case XMLTypePackage.ANY_URI:
-        return createAnyURIFromString(eDataType, initialValue);
+        return (T) createAnyURIFromString((EDataType<String>) eDataType, initialValue);
       case XMLTypePackage.BASE64_BINARY:
-        return createBase64BinaryFromString(eDataType, initialValue);
+        return (T) createBase64BinaryFromString((EDataType<byte[]>) eDataType, initialValue);
       case XMLTypePackage.BOOLEAN:
-        return createBooleanFromString(eDataType, initialValue);
+        return (T) createBooleanFromString((EDataType<Boolean>) eDataType, initialValue);
       case XMLTypePackage.BOOLEAN_OBJECT:
-        return createBooleanObjectFromString(eDataType, initialValue);
+        return (T) createBooleanObjectFromString((EDataType<Boolean>) eDataType, initialValue);
       case XMLTypePackage.BYTE:
-        return createByteFromString(eDataType, initialValue);
+        return (T) createByteFromString((EDataType<Byte>) eDataType, initialValue);
       case XMLTypePackage.BYTE_OBJECT:
-        return createByteObjectFromString(eDataType, initialValue);
+        return (T) createByteObjectFromString((EDataType<Byte>) eDataType, initialValue);
       case XMLTypePackage.DATE:
-        return createDateFromString(eDataType, initialValue);
+        return (T) createDateFromString((EDataType<XMLGregorianCalendar>) eDataType, initialValue);
       case XMLTypePackage.DATE_TIME:
-        return createDateTimeFromString(eDataType, initialValue);
+        return (T) createDateTimeFromString((EDataType<XMLGregorianCalendar>) eDataType, initialValue);
       case XMLTypePackage.DECIMAL:
-        return createDecimalFromString(eDataType, initialValue);
+        return (T) createDecimalFromString((EDataType<BigDecimal>) eDataType, initialValue);
       case XMLTypePackage.DOUBLE:
-        return createDoubleFromString(eDataType, initialValue);
+        return (T) createDoubleFromString((EDataType<Double>) eDataType, initialValue);
       case XMLTypePackage.DOUBLE_OBJECT:
-        return createDoubleObjectFromString(eDataType, initialValue);
+        return (T) createDoubleObjectFromString((EDataType<Double>) eDataType, initialValue);
       case XMLTypePackage.DURATION:
-        return createDurationFromString(eDataType, initialValue);
+        return (T) createDurationFromString((EDataType<Duration>) eDataType, initialValue);
       case XMLTypePackage.ENTITIES:
-        return createENTITIESFromString(eDataType, initialValue);
+        return (T) createENTITIESFromString((EDataType<List<String>>) eDataType, initialValue);
       case XMLTypePackage.ENTITIES_BASE:
-        return createENTITIESBaseFromString(eDataType, initialValue);
+        return (T) createENTITIESBaseFromString((EDataType<List<String>>) eDataType, initialValue);
       case XMLTypePackage.ENTITY:
-        return createENTITYFromString(eDataType, initialValue);
+        return (T) createENTITYFromString((EDataType<String>) eDataType, initialValue);
       case XMLTypePackage.FLOAT:
-        return createFloatFromString(eDataType, initialValue);
+        return (T) createFloatFromString((EDataType<Float>) eDataType, initialValue);
       case XMLTypePackage.FLOAT_OBJECT:
-        return createFloatObjectFromString(eDataType, initialValue);
+        return (T) createFloatObjectFromString((EDataType<Float>) eDataType, initialValue);
       case XMLTypePackage.GDAY:
-        return createGDayFromString(eDataType, initialValue);
+        return (T) createGDayFromString((EDataType<XMLGregorianCalendar>) eDataType, initialValue);
       case XMLTypePackage.GMONTH:
-        return createGMonthFromString(eDataType, initialValue);
+        return (T) createGMonthFromString((EDataType<XMLGregorianCalendar>) eDataType, initialValue);
       case XMLTypePackage.GMONTH_DAY:
-        return createGMonthDayFromString(eDataType, initialValue);
+        return (T) createGMonthDayFromString((EDataType<XMLGregorianCalendar>) eDataType, initialValue);
       case XMLTypePackage.GYEAR:
-        return createGYearFromString(eDataType, initialValue);
+        return (T) createGYearFromString((EDataType<XMLGregorianCalendar>) eDataType, initialValue);
       case XMLTypePackage.GYEAR_MONTH:
-        return createGYearMonthFromString(eDataType, initialValue);
+        return (T) createGYearMonthFromString((EDataType<XMLGregorianCalendar>) eDataType, initialValue);
       case XMLTypePackage.HEX_BINARY:
-        return createHexBinaryFromString(eDataType, initialValue);
+        return (T) createHexBinaryFromString((EDataType<byte[]>) eDataType, initialValue);
       case XMLTypePackage.ID:
-        return createIDFromString(eDataType, initialValue);
+        return (T) createIDFromString((EDataType<String>) eDataType, initialValue);
       case XMLTypePackage.IDREF:
-        return createIDREFFromString(eDataType, initialValue);
+        return (T) createIDREFFromString((EDataType<String>) eDataType, initialValue);
       case XMLTypePackage.IDREFS:
-        return createIDREFSFromString(eDataType, initialValue);
+        return (T) createIDREFSFromString((EDataType<List<String>>) eDataType, initialValue);
       case XMLTypePackage.IDREFS_BASE:
-        return createIDREFSBaseFromString(eDataType, initialValue);
+        return (T) createIDREFSBaseFromString((EDataType<List<String>>) eDataType, initialValue);
       case XMLTypePackage.INT:
-        return createIntFromString(eDataType, initialValue);
+        return (T) createIntFromString((EDataType<Integer>) eDataType, initialValue);
       case XMLTypePackage.INTEGER:
-        return createIntegerFromString(eDataType, initialValue);
+        return (T) createIntegerFromString((EDataType<BigInteger>) eDataType, initialValue);
       case XMLTypePackage.INT_OBJECT:
-        return createIntObjectFromString(eDataType, initialValue);
+        return (T) createIntObjectFromString((EDataType<Integer>) eDataType, initialValue);
       case XMLTypePackage.LANGUAGE:
-        return createLanguageFromString(eDataType, initialValue);
+        return (T) createLanguageFromString((EDataType<String>) eDataType, initialValue);
       case XMLTypePackage.LONG:
-        return createLongFromString(eDataType, initialValue);
+        return (T) createLongFromString((EDataType<Long>) eDataType, initialValue);
       case XMLTypePackage.LONG_OBJECT:
-        return createLongObjectFromString(eDataType, initialValue);
+        return (T) createLongObjectFromString((EDataType<Long>) eDataType, initialValue);
       case XMLTypePackage.NAME:
-        return createNameFromString(eDataType, initialValue);
+        return (T) createNameFromString((EDataType<String>) eDataType, initialValue);
       case XMLTypePackage.NC_NAME:
-        return createNCNameFromString(eDataType, initialValue);
+        return (T) createNCNameFromString((EDataType<String>) eDataType, initialValue);
       case XMLTypePackage.NEGATIVE_INTEGER:
-        return createNegativeIntegerFromString(eDataType, initialValue);
+        return (T) createNegativeIntegerFromString((EDataType<BigInteger>) eDataType, initialValue);
       case XMLTypePackage.NMTOKEN:
-        return createNMTOKENFromString(eDataType, initialValue);
+        return (T) createNMTOKENFromString((EDataType<String>) eDataType, initialValue);
       case XMLTypePackage.NMTOKENS:
-        return createNMTOKENSFromString(eDataType, initialValue);
+        return (T) createNMTOKENSFromString((EDataType<List<String>>) eDataType, initialValue);
       case XMLTypePackage.NMTOKENS_BASE:
-        return createNMTOKENSBaseFromString(eDataType, initialValue);
+        return (T) createNMTOKENSBaseFromString((EDataType<List<String>>) eDataType, initialValue);
       case XMLTypePackage.NON_NEGATIVE_INTEGER:
-        return createNonNegativeIntegerFromString(eDataType, initialValue);
+        return (T) createNonNegativeIntegerFromString((EDataType<BigInteger>) eDataType, initialValue);
       case XMLTypePackage.NON_POSITIVE_INTEGER:
-        return createNonPositiveIntegerFromString(eDataType, initialValue);
+        return (T) createNonPositiveIntegerFromString((EDataType<BigInteger>) eDataType, initialValue);
       case XMLTypePackage.NORMALIZED_STRING:
-        return createNormalizedStringFromString(eDataType, initialValue);
+        return (T) createNormalizedStringFromString((EDataType<String>) eDataType, initialValue);
       case XMLTypePackage.NOTATION:
-        return createNOTATIONFromString(eDataType, initialValue);
+        return (T) createNOTATIONFromString((EDataType<QName>) eDataType, initialValue);
       case XMLTypePackage.POSITIVE_INTEGER:
-        return createPositiveIntegerFromString(eDataType, initialValue);
+        return (T) createPositiveIntegerFromString((EDataType<BigInteger>) eDataType, initialValue);
       case XMLTypePackage.QNAME:
-        return createQNameFromString(eDataType, initialValue);
+        return (T) createQNameFromString((EDataType<QName>) eDataType, initialValue);
       case XMLTypePackage.SHORT:
-        return createShortFromString(eDataType, initialValue);
+        return (T) createShortFromString((EDataType<Short>) eDataType, initialValue);
       case XMLTypePackage.SHORT_OBJECT:
-        return createShortObjectFromString(eDataType, initialValue);
+        return (T) createShortObjectFromString((EDataType<Short>) eDataType, initialValue);
       case XMLTypePackage.STRING:
-        return createStringFromString(eDataType, initialValue);
+        return (T) createStringFromString((EDataType<String>) eDataType, initialValue);
       case XMLTypePackage.TIME:
-        return createTimeFromString(eDataType, initialValue);
+        return (T) createTimeFromString((EDataType<XMLGregorianCalendar>) eDataType, initialValue);
       case XMLTypePackage.TOKEN:
-        return createTokenFromString(eDataType, initialValue);
+        return (T) createTokenFromString((EDataType<String>) eDataType, initialValue);
       case XMLTypePackage.UNSIGNED_BYTE:
-        return createUnsignedByteFromString(eDataType, initialValue);
+        return (T) createUnsignedByteFromString((EDataType<Short>) eDataType, initialValue);
       case XMLTypePackage.UNSIGNED_BYTE_OBJECT:
-        return createUnsignedByteObjectFromString(eDataType, initialValue);
+        return (T) createUnsignedByteObjectFromString((EDataType<Short>) eDataType, initialValue);
       case XMLTypePackage.UNSIGNED_INT:
-        return createUnsignedIntFromString(eDataType, initialValue);
+        return (T) createUnsignedIntFromString((EDataType<Long>) eDataType, initialValue);
       case XMLTypePackage.UNSIGNED_INT_OBJECT:
-        return createUnsignedIntObjectFromString(eDataType, initialValue);
+        return (T) createUnsignedIntObjectFromString((EDataType<Long>) eDataType, initialValue);
       case XMLTypePackage.UNSIGNED_LONG:
-        return createUnsignedLongFromString(eDataType, initialValue);
+        return (T) createUnsignedLongFromString((EDataType<BigInteger>) eDataType, initialValue);
       case XMLTypePackage.UNSIGNED_SHORT:
-        return createUnsignedShortFromString(eDataType, initialValue);
+        return (T) createUnsignedShortFromString((EDataType<Integer>) eDataType, initialValue);
       case XMLTypePackage.UNSIGNED_SHORT_OBJECT:
-        return createUnsignedShortObjectFromString(eDataType, initialValue);
+        return (T) createUnsignedShortObjectFromString((EDataType<Integer>) eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -1934,127 +1940,128 @@ public class XMLTypeFactoryImpl extends EFactoryImpl implements XMLTypeFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
-  public String convertToString(EDataType eDataType, Object instanceValue)
+  public <T> String convertToString(EDataType<T> eDataType, T instanceValue)
   {
     switch (eDataType.getClassifierID())
     {
       case XMLTypePackage.ANY_SIMPLE_TYPE:
-        return convertAnySimpleTypeToString(eDataType, instanceValue);
+        return convertAnySimpleTypeToString((EDataType<Object>) eDataType, (Object) instanceValue);
       case XMLTypePackage.ANY_URI:
-        return convertAnyURIToString(eDataType, instanceValue);
+        return convertAnyURIToString((EDataType<String>) eDataType, (String) instanceValue);
       case XMLTypePackage.BASE64_BINARY:
-        return convertBase64BinaryToString(eDataType, instanceValue);
+        return convertBase64BinaryToString((EDataType<byte[]>) eDataType, (byte[]) instanceValue);
       case XMLTypePackage.BOOLEAN:
-        return convertBooleanToString(eDataType, instanceValue);
+        return convertBooleanToString((EDataType<Boolean>) eDataType, (Boolean) instanceValue);
       case XMLTypePackage.BOOLEAN_OBJECT:
-        return convertBooleanObjectToString(eDataType, instanceValue);
+        return convertBooleanObjectToString((EDataType<Boolean>) eDataType, (Boolean) instanceValue);
       case XMLTypePackage.BYTE:
-        return convertByteToString(eDataType, instanceValue);
+        return convertByteToString((EDataType<Byte>) eDataType, (Byte) instanceValue);
       case XMLTypePackage.BYTE_OBJECT:
-        return convertByteObjectToString(eDataType, instanceValue);
+        return convertByteObjectToString((EDataType<Byte>) eDataType, (Byte) instanceValue);
       case XMLTypePackage.DATE:
-        return convertDateToString(eDataType, instanceValue);
+        return convertDateToString((EDataType<XMLGregorianCalendar>) eDataType, (XMLGregorianCalendar) instanceValue);
       case XMLTypePackage.DATE_TIME:
-        return convertDateTimeToString(eDataType, instanceValue);
+        return convertDateTimeToString((EDataType<XMLGregorianCalendar>) eDataType, (XMLGregorianCalendar) instanceValue);
       case XMLTypePackage.DECIMAL:
-        return convertDecimalToString(eDataType, instanceValue);
+        return convertDecimalToString((EDataType<BigDecimal>) eDataType, (BigDecimal) instanceValue);
       case XMLTypePackage.DOUBLE:
-        return convertDoubleToString(eDataType, instanceValue);
+        return convertDoubleToString((EDataType<Double>) eDataType, (Double) instanceValue);
       case XMLTypePackage.DOUBLE_OBJECT:
-        return convertDoubleObjectToString(eDataType, instanceValue);
+        return convertDoubleObjectToString((EDataType<Double>) eDataType, (Double) instanceValue);
       case XMLTypePackage.DURATION:
-        return convertDurationToString(eDataType, instanceValue);
+        return convertDurationToString((EDataType<Duration>) eDataType, (Duration) instanceValue);
       case XMLTypePackage.ENTITIES:
-        return convertENTITIESToString(eDataType, instanceValue);
+        return convertENTITIESToString((EDataType<List<String>>) eDataType, (List<String>) instanceValue);
       case XMLTypePackage.ENTITIES_BASE:
-        return convertENTITIESBaseToString(eDataType, instanceValue);
+        return convertENTITIESBaseToString((EDataType<List<String>>) eDataType, (List<String>) instanceValue);
       case XMLTypePackage.ENTITY:
-        return convertENTITYToString(eDataType, instanceValue);
+        return convertENTITYToString((EDataType<String>) eDataType, (String) instanceValue);
       case XMLTypePackage.FLOAT:
-        return convertFloatToString(eDataType, instanceValue);
+        return convertFloatToString((EDataType<Float>) eDataType, (Float) instanceValue);
       case XMLTypePackage.FLOAT_OBJECT:
-        return convertFloatObjectToString(eDataType, instanceValue);
+        return convertFloatObjectToString((EDataType<Float>) eDataType, (Float) instanceValue);
       case XMLTypePackage.GDAY:
-        return convertGDayToString(eDataType, instanceValue);
+        return convertGDayToString((EDataType<XMLGregorianCalendar>) eDataType, (XMLGregorianCalendar) instanceValue);
       case XMLTypePackage.GMONTH:
-        return convertGMonthToString(eDataType, instanceValue);
+        return convertGMonthToString((EDataType<XMLGregorianCalendar>) eDataType, (XMLGregorianCalendar) instanceValue);
       case XMLTypePackage.GMONTH_DAY:
-        return convertGMonthDayToString(eDataType, instanceValue);
+        return convertGMonthDayToString((EDataType<XMLGregorianCalendar>) eDataType, (XMLGregorianCalendar) instanceValue);
       case XMLTypePackage.GYEAR:
-        return convertGYearToString(eDataType, instanceValue);
+        return convertGYearToString((EDataType<XMLGregorianCalendar>) eDataType, (XMLGregorianCalendar) instanceValue);
       case XMLTypePackage.GYEAR_MONTH:
-        return convertGYearMonthToString(eDataType, instanceValue);
+        return convertGYearMonthToString((EDataType<XMLGregorianCalendar>) eDataType, (XMLGregorianCalendar) instanceValue);
       case XMLTypePackage.HEX_BINARY:
-        return convertHexBinaryToString(eDataType, instanceValue);
+        return convertHexBinaryToString((EDataType<byte[]>) eDataType, (byte[]) instanceValue);
       case XMLTypePackage.ID:
-        return convertIDToString(eDataType, instanceValue);
+        return convertIDToString((EDataType<String>) eDataType, (String) instanceValue);
       case XMLTypePackage.IDREF:
-        return convertIDREFToString(eDataType, instanceValue);
+        return convertIDREFToString((EDataType<String>) eDataType, (String) instanceValue);
       case XMLTypePackage.IDREFS:
-        return convertIDREFSToString(eDataType, instanceValue);
+        return convertIDREFSToString((EDataType<List<String>>) eDataType, (List<String>) instanceValue);
       case XMLTypePackage.IDREFS_BASE:
-        return convertIDREFSBaseToString(eDataType, instanceValue);
+        return convertIDREFSBaseToString((EDataType<List<String>>) eDataType, (List<String>) instanceValue);
       case XMLTypePackage.INT:
-        return convertIntToString(eDataType, instanceValue);
+        return convertIntToString((EDataType<Integer>) eDataType, (Integer) instanceValue);
       case XMLTypePackage.INTEGER:
-        return convertIntegerToString(eDataType, instanceValue);
+        return convertIntegerToString((EDataType<BigInteger>) eDataType, (BigInteger) instanceValue);
       case XMLTypePackage.INT_OBJECT:
-        return convertIntObjectToString(eDataType, instanceValue);
+        return convertIntObjectToString((EDataType<Integer>) eDataType, (Integer) instanceValue);
       case XMLTypePackage.LANGUAGE:
-        return convertLanguageToString(eDataType, instanceValue);
+        return convertLanguageToString((EDataType<String>) eDataType, (String) instanceValue);
       case XMLTypePackage.LONG:
-        return convertLongToString(eDataType, instanceValue);
+        return convertLongToString((EDataType<Long>) eDataType, (Long) instanceValue);
       case XMLTypePackage.LONG_OBJECT:
-        return convertLongObjectToString(eDataType, instanceValue);
+        return convertLongObjectToString((EDataType<Long>) eDataType, (Long) instanceValue);
       case XMLTypePackage.NAME:
-        return convertNameToString(eDataType, instanceValue);
+        return convertNameToString((EDataType<String>) eDataType, (String) instanceValue);
       case XMLTypePackage.NC_NAME:
-        return convertNCNameToString(eDataType, instanceValue);
+        return convertNCNameToString((EDataType<String>) eDataType, (String) instanceValue);
       case XMLTypePackage.NEGATIVE_INTEGER:
-        return convertNegativeIntegerToString(eDataType, instanceValue);
+        return convertNegativeIntegerToString((EDataType<BigInteger>) eDataType, (BigInteger) instanceValue);
       case XMLTypePackage.NMTOKEN:
-        return convertNMTOKENToString(eDataType, instanceValue);
+        return convertNMTOKENToString((EDataType<String>) eDataType, (String) instanceValue);
       case XMLTypePackage.NMTOKENS:
-        return convertNMTOKENSToString(eDataType, instanceValue);
+        return convertNMTOKENSToString((EDataType<List<String>>) eDataType, (List<String>) instanceValue);
       case XMLTypePackage.NMTOKENS_BASE:
-        return convertNMTOKENSBaseToString(eDataType, instanceValue);
+        return convertNMTOKENSBaseToString((EDataType<List<String>>) eDataType, (List<String>) instanceValue);
       case XMLTypePackage.NON_NEGATIVE_INTEGER:
-        return convertNonNegativeIntegerToString(eDataType, instanceValue);
+        return convertNonNegativeIntegerToString((EDataType<BigInteger>) eDataType, (BigInteger) instanceValue);
       case XMLTypePackage.NON_POSITIVE_INTEGER:
-        return convertNonPositiveIntegerToString(eDataType, instanceValue);
+        return convertNonPositiveIntegerToString((EDataType<BigInteger>) eDataType, (BigInteger) instanceValue);
       case XMLTypePackage.NORMALIZED_STRING:
-        return convertNormalizedStringToString(eDataType, instanceValue);
+        return convertNormalizedStringToString((EDataType<String>) eDataType, (String) instanceValue);
       case XMLTypePackage.NOTATION:
-        return convertNOTATIONToString(eDataType, instanceValue);
+        return convertNOTATIONToString((EDataType<QName>) eDataType, (QName) instanceValue);
       case XMLTypePackage.POSITIVE_INTEGER:
-        return convertPositiveIntegerToString(eDataType, instanceValue);
+        return convertPositiveIntegerToString((EDataType<BigInteger>) eDataType, (BigInteger) instanceValue);
       case XMLTypePackage.QNAME:
-        return convertQNameToString(eDataType, instanceValue);
+        return convertQNameToString((EDataType<QName>) eDataType, (QName) instanceValue);
       case XMLTypePackage.SHORT:
-        return convertShortToString(eDataType, instanceValue);
+        return convertShortToString((EDataType<Short>) eDataType, (Short) instanceValue);
       case XMLTypePackage.SHORT_OBJECT:
-        return convertShortObjectToString(eDataType, instanceValue);
+        return convertShortObjectToString((EDataType<Short>) eDataType, (Short) instanceValue);
       case XMLTypePackage.STRING:
-        return convertStringToString(eDataType, instanceValue);
+        return convertStringToString((EDataType<String>) eDataType, (String) instanceValue);
       case XMLTypePackage.TIME:
-        return convertTimeToString(eDataType, instanceValue);
+        return convertTimeToString((EDataType<XMLGregorianCalendar>) eDataType, (XMLGregorianCalendar) instanceValue);
       case XMLTypePackage.TOKEN:
-        return convertTokenToString(eDataType, instanceValue);
+        return convertTokenToString((EDataType<String>) eDataType, (String) instanceValue);
       case XMLTypePackage.UNSIGNED_BYTE:
-        return convertUnsignedByteToString(eDataType, instanceValue);
+        return convertUnsignedByteToString((EDataType<Short>) eDataType, (Short) instanceValue);
       case XMLTypePackage.UNSIGNED_BYTE_OBJECT:
-        return convertUnsignedByteObjectToString(eDataType, instanceValue);
+        return convertUnsignedByteObjectToString((EDataType<Short>) eDataType, (Short) instanceValue);
       case XMLTypePackage.UNSIGNED_INT:
-        return convertUnsignedIntToString(eDataType, instanceValue);
+        return convertUnsignedIntToString((EDataType<Long>) eDataType, (Long) instanceValue);
       case XMLTypePackage.UNSIGNED_INT_OBJECT:
-        return convertUnsignedIntObjectToString(eDataType, instanceValue);
+        return convertUnsignedIntObjectToString((EDataType<Long>) eDataType, (Long) instanceValue);
       case XMLTypePackage.UNSIGNED_LONG:
-        return convertUnsignedLongToString(eDataType, instanceValue);
+        return convertUnsignedLongToString((EDataType<BigInteger>) eDataType, (BigInteger) instanceValue);
       case XMLTypePackage.UNSIGNED_SHORT:
-        return convertUnsignedShortToString(eDataType, instanceValue);
+        return convertUnsignedShortToString((EDataType<Integer>) eDataType, (Integer) instanceValue);
       case XMLTypePackage.UNSIGNED_SHORT_OBJECT:
-        return convertUnsignedShortObjectToString(eDataType, instanceValue);
+        return convertUnsignedShortObjectToString((EDataType<Integer>) eDataType, (Integer) instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }

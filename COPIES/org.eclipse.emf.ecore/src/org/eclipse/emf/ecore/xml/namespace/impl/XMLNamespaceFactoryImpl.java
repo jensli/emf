@@ -73,11 +73,12 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * @generated
    */
   @Override
-  public EObject create(EClass eClass)
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
     switch (eClass.getClassifierID())
     {
-      case XMLNamespacePackage.XML_NAMESPACE_DOCUMENT_ROOT: return createXMLNamespaceDocumentRoot();
+      case XMLNamespacePackage.XML_NAMESPACE_DOCUMENT_ROOT: return (T) createXMLNamespaceDocumentRoot();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -89,18 +90,20 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * @generated
    */
   @Override
-  public Object createFromString(EDataType eDataType, String initialValue)
+  @SuppressWarnings("unchecked")
+  public <T> T createFromString(EDataType<T> eDataType, String initialValue)
   {
+    // CHANGE gen: Cast added 1
     switch (eDataType.getClassifierID())
     {
       case XMLNamespacePackage.SPACE_TYPE:
-        return createSpaceTypeFromString(eDataType, initialValue);
+        return (T) createSpaceTypeFromString((EDataType<SpaceType>) eDataType, initialValue);
       case XMLNamespacePackage.LANG_TYPE:
-        return createLangTypeFromString(eDataType, initialValue);
+        return (T) createLangTypeFromString((EDataType<String>) eDataType, initialValue);
       case XMLNamespacePackage.LANG_TYPE_NULL:
-        return createLangTypeNullFromString(eDataType, initialValue);
+        return (T) createLangTypeNullFromString((EDataType<String>) eDataType, initialValue);
       case XMLNamespacePackage.SPACE_TYPE_OBJECT:
-        return createSpaceTypeObjectFromString(eDataType, initialValue);
+        return (T) createSpaceTypeObjectFromString((EDataType<SpaceType>) eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -111,19 +114,20 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
-  public String convertToString(EDataType eDataType, Object instanceValue)
+  public <T> String convertToString(EDataType<T> eDataType, T instanceValue)
   {
     switch (eDataType.getClassifierID())
     {
       case XMLNamespacePackage.SPACE_TYPE:
-        return convertSpaceTypeToString(eDataType, instanceValue);
+        return convertSpaceTypeToString((EDataType<SpaceType>) eDataType, (SpaceType) instanceValue);
       case XMLNamespacePackage.LANG_TYPE:
-        return convertLangTypeToString(eDataType, instanceValue);
+        return convertLangTypeToString((EDataType<String>) eDataType, (String) instanceValue);
       case XMLNamespacePackage.LANG_TYPE_NULL:
-        return convertLangTypeNullToString(eDataType, instanceValue);
+        return convertLangTypeNullToString((EDataType<String>) eDataType, (String) instanceValue);
       case XMLNamespacePackage.SPACE_TYPE_OBJECT:
-        return convertSpaceTypeObjectToString(eDataType, instanceValue);
+        return convertSpaceTypeObjectToString((EDataType<SpaceType>) eDataType, (SpaceType) instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -145,7 +149,7 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public SpaceType createSpaceTypeFromString(EDataType eDataType, String initialValue)
+  public SpaceType createSpaceTypeFromString(EDataType<SpaceType> eDataType, String initialValue)
   {
     SpaceType result = SpaceType.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -157,7 +161,7 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertSpaceTypeToString(EDataType eDataType, Object instanceValue)
+  public String convertSpaceTypeToString(EDataType<SpaceType> eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -167,7 +171,7 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public String createLangTypeFromString(EDataType eDataType, String initialValue)
+  public String createLangTypeFromString(EDataType<String> eDataType, String initialValue)
   {
     if (initialValue == null) return null;
     String result = null;
@@ -206,14 +210,15 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertLangTypeToString(EDataType eDataType, Object instanceValue)
+  public String convertLangTypeToString(EDataType<String> eDataType, Object instanceValue)
   {
     if (instanceValue == null) return null;
     if (XMLTypePackage.Literals.LANGUAGE.isInstance(instanceValue))
     {
       try
       {
-        String value = XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.LANGUAGE, instanceValue);
+        // CHANGE gen: Cast added 3
+        String value = XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.LANGUAGE, (String) instanceValue);
         if (value != null) return value;
       }
       catch (Exception e)
@@ -225,7 +230,8 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
     {
       try
       {
-        String value = convertLangTypeNullToString(XMLNamespacePackage.Literals.LANG_TYPE_NULL, instanceValue);
+        // CHANGE gen: Cast added 3
+        String value = convertLangTypeNullToString(XMLNamespacePackage.Literals.LANG_TYPE_NULL, (String) instanceValue);
         if (value != null) return value;
       }
       catch (Exception e)
@@ -241,7 +247,7 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public String createLangTypeNullFromString(EDataType eDataType, String initialValue)
+  public String createLangTypeNullFromString(EDataType<String> eDataType, String initialValue)
   {
     return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
   }
@@ -251,7 +257,7 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertLangTypeNullToString(EDataType eDataType, Object instanceValue)
+  public String convertLangTypeNullToString(EDataType<String> eDataType, Object instanceValue)
   {
     return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.STRING, instanceValue);
   }
@@ -261,7 +267,7 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public SpaceType createSpaceTypeObjectFromString(EDataType eDataType, String initialValue)
+  public SpaceType createSpaceTypeObjectFromString(EDataType<SpaceType> eDataType, String initialValue)
   {
     return createSpaceTypeFromString(XMLNamespacePackage.Literals.SPACE_TYPE, initialValue);
   }
@@ -271,7 +277,7 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertSpaceTypeObjectToString(EDataType eDataType, Object instanceValue)
+  public String convertSpaceTypeObjectToString(EDataType<SpaceType> eDataType, Object instanceValue)
   {
     return convertSpaceTypeToString(XMLNamespacePackage.Literals.SPACE_TYPE, instanceValue);
   }

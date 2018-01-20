@@ -97,7 +97,7 @@ public class XMLTypeDocumentRootImpl extends EObjectImpl implements XMLTypeDocum
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return XMLTypePackage.Literals.XML_TYPE_DOCUMENT_ROOT;
   }

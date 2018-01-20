@@ -186,7 +186,7 @@ public class XMLNamespaceDocumentRootImpl extends EObjectImpl implements XMLName
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return XMLNamespacePackage.Literals.XML_NAMESPACE_DOCUMENT_ROOT;
   }

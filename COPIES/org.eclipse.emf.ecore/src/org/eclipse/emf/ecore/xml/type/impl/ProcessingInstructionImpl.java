@@ -92,7 +92,7 @@ public class ProcessingInstructionImpl extends EObjectImpl implements Processing
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return XMLTypePackage.Literals.PROCESSING_INSTRUCTION;
   }

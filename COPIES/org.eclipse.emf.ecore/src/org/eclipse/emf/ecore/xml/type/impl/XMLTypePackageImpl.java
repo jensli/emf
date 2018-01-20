@@ -18,6 +18,8 @@ import java.util.List;
 import javax.xml.datatype.Duration;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -26,6 +28,8 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMap.Entry;
 import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.eclipse.emf.ecore.xml.type.ProcessingInstruction;
 import org.eclipse.emf.ecore.xml.type.SimpleAnyType;
@@ -49,434 +53,434 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass anyTypeEClass = null;
+  private EClass<AnyType> anyTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass processingInstructionEClass = null;
+  private EClass<ProcessingInstruction> processingInstructionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass simpleAnyTypeEClass = null;
+  private EClass<SimpleAnyType> simpleAnyTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass xmlTypeDocumentRootEClass = null;
+  private EClass<XMLTypeDocumentRoot> xmlTypeDocumentRootEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType anySimpleTypeEDataType = null;
+  private EDataType<Object> anySimpleTypeEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType anyURIEDataType = null;
+  private EDataType<String> anyURIEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType base64BinaryEDataType = null;
+  private EDataType<byte[]> base64BinaryEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType booleanEDataType = null;
+  private EDataType<Boolean> booleanEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType booleanObjectEDataType = null;
+  private EDataType<Boolean> booleanObjectEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType decimalEDataType = null;
+  private EDataType<BigDecimal> decimalEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType integerEDataType = null;
+  private EDataType<BigInteger> integerEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType intObjectEDataType = null;
+  private EDataType<Integer> intObjectEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType longEDataType = null;
+  private EDataType<Long> longEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType longObjectEDataType = null;
+  private EDataType<Long> longObjectEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType intEDataType = null;
+  private EDataType<Integer> intEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType shortEDataType = null;
+  private EDataType<Short> shortEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType shortObjectEDataType = null;
+  private EDataType<Short> shortObjectEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType byteEDataType = null;
+  private EDataType<Byte> byteEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType byteObjectEDataType = null;
+  private EDataType<Byte> byteObjectEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType dateEDataType = null;
+  private EDataType<XMLGregorianCalendar> dateEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType dateTimeEDataType = null;
+  private EDataType<XMLGregorianCalendar> dateTimeEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType stringEDataType = null;
+  private EDataType<String> stringEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType doubleEDataType = null;
+  private EDataType<Double> doubleEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType doubleObjectEDataType = null;
+  private EDataType<Double> doubleObjectEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType durationEDataType = null;
+  private EDataType<Duration> durationEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType entitiesBaseEDataType = null;
+  private EDataType<List<String>> entitiesBaseEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType normalizedStringEDataType = null;
+  private EDataType<String> normalizedStringEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType tokenEDataType = null;
+  private EDataType<String> tokenEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType nameEDataType = null;
+  private EDataType<String> nameEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType ncNameEDataType = null;
+  private EDataType<String> ncNameEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType entityEDataType = null;
+  private EDataType<String> entityEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType entitiesEDataType = null;
+  private EDataType<List<String>> entitiesEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType floatEDataType = null;
+  private EDataType<Float> floatEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType floatObjectEDataType = null;
+  private EDataType<Float> floatObjectEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType gDayEDataType = null;
+  private EDataType<XMLGregorianCalendar> gDayEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType gMonthEDataType = null;
+  private EDataType<XMLGregorianCalendar> gMonthEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType gMonthDayEDataType = null;
+  private EDataType<XMLGregorianCalendar> gMonthDayEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType gYearEDataType = null;
+  private EDataType<XMLGregorianCalendar> gYearEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType gYearMonthEDataType = null;
+  private EDataType<XMLGregorianCalendar> gYearMonthEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType hexBinaryEDataType = null;
+  private EDataType<byte[]> hexBinaryEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType idEDataType = null;
+  private EDataType<String> idEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType idrefEDataType = null;
+  private EDataType<String> idrefEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType idrefsBaseEDataType = null;
+  private EDataType<List<String>> idrefsBaseEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType idrefsEDataType = null;
+  private EDataType<List<String>> idrefsEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType languageEDataType = null;
+  private EDataType<String> languageEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType nonPositiveIntegerEDataType = null;
+  private EDataType<BigInteger> nonPositiveIntegerEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType negativeIntegerEDataType = null;
+  private EDataType<BigInteger> negativeIntegerEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType nmtokenEDataType = null;
+  private EDataType<String> nmtokenEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType nmtokensBaseEDataType = null;
+  private EDataType<List<String>> nmtokensBaseEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType nmtokensEDataType = null;
+  private EDataType<List<String>> nmtokensEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType nonNegativeIntegerEDataType = null;
+  private EDataType<BigInteger> nonNegativeIntegerEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType notationEDataType = null;
+  private EDataType<QName> notationEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType positiveIntegerEDataType = null;
+  private EDataType<BigInteger> positiveIntegerEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType qNameEDataType = null;
+  private EDataType<QName> qNameEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType timeEDataType = null;
+  private EDataType<XMLGregorianCalendar> timeEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType unsignedLongEDataType = null;
+  private EDataType<BigInteger> unsignedLongEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType unsignedIntEDataType = null;
+  private EDataType<Long> unsignedIntEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType unsignedIntObjectEDataType = null;
+  private EDataType<Long> unsignedIntObjectEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType unsignedShortEDataType = null;
+  private EDataType<Integer> unsignedShortEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType unsignedShortObjectEDataType = null;
+  private EDataType<Integer> unsignedShortObjectEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType unsignedByteEDataType = null;
+  private EDataType<Short> unsignedByteEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType unsignedByteObjectEDataType = null;
+  private EDataType<Short> unsignedByteObjectEDataType = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -557,7 +561,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAnyType()
+  public EClass<AnyType> getAnyType()
   {
     return anyTypeEClass;
   }
@@ -567,9 +571,10 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAnyType_Mixed()
+  @SuppressWarnings("unchecked")
+  public EAttribute<AnyType, FeatureMap> getAnyType_Mixed()
   {
-    return (EAttribute)anyTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<AnyType, FeatureMap>) anyTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -577,9 +582,10 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAnyType_Any()
+  @SuppressWarnings("unchecked")
+  public EAttribute<AnyType, FeatureMap> getAnyType_Any()
   {
-    return (EAttribute)anyTypeEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<AnyType, FeatureMap>) anyTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -587,9 +593,10 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAnyType_AnyAttribute()
+  @SuppressWarnings("unchecked")
+  public EAttribute<AnyType, FeatureMap> getAnyType_AnyAttribute()
   {
-    return (EAttribute)anyTypeEClass.getEStructuralFeatures().get(2);
+    return (EAttribute<AnyType, FeatureMap>) anyTypeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -597,7 +604,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getProcessingInstruction()
+  public EClass<ProcessingInstruction> getProcessingInstruction()
   {
     return processingInstructionEClass;
   }
@@ -607,9 +614,10 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getProcessingInstruction_Data()
+  @SuppressWarnings("unchecked")
+  public EAttribute<ProcessingInstruction, String> getProcessingInstruction_Data()
   {
-    return (EAttribute)processingInstructionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<ProcessingInstruction, String>) processingInstructionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -617,9 +625,10 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getProcessingInstruction_Target()
+  @SuppressWarnings("unchecked")
+  public EAttribute<ProcessingInstruction, String> getProcessingInstruction_Target()
   {
-    return (EAttribute)processingInstructionEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<ProcessingInstruction, String>) processingInstructionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -627,7 +636,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSimpleAnyType()
+  public EClass<SimpleAnyType> getSimpleAnyType()
   {
     return simpleAnyTypeEClass;
   }
@@ -637,9 +646,10 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSimpleAnyType_RawValue()
+  @SuppressWarnings("unchecked")
+  public EAttribute<SimpleAnyType, String> getSimpleAnyType_RawValue()
   {
-    return (EAttribute)simpleAnyTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<SimpleAnyType, String>) simpleAnyTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -647,9 +657,10 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSimpleAnyType_Value()
+  @SuppressWarnings("unchecked")
+  public EAttribute<SimpleAnyType, Object> getSimpleAnyType_Value()
   {
-    return (EAttribute)simpleAnyTypeEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<SimpleAnyType, Object>) simpleAnyTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -657,9 +668,10 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSimpleAnyType_InstanceType()
+  @SuppressWarnings("unchecked")
+  public EReference<SimpleAnyType, EDataType> getSimpleAnyType_InstanceType()
   {
-    return (EReference)simpleAnyTypeEClass.getEStructuralFeatures().get(2);
+    return (EReference<SimpleAnyType, EDataType>) simpleAnyTypeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -667,7 +679,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getXMLTypeDocumentRoot()
+  public EClass<XMLTypeDocumentRoot> getXMLTypeDocumentRoot()
   {
     return xmlTypeDocumentRootEClass;
   }
@@ -677,9 +689,10 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXMLTypeDocumentRoot_Mixed()
+  @SuppressWarnings("unchecked")
+  public EAttribute<XMLTypeDocumentRoot, FeatureMap> getXMLTypeDocumentRoot_Mixed()
   {
-    return (EAttribute)xmlTypeDocumentRootEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<XMLTypeDocumentRoot, FeatureMap>) xmlTypeDocumentRootEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -687,9 +700,10 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getXMLTypeDocumentRoot_XMLNSPrefixMap()
+  @SuppressWarnings("unchecked")
+  public EReference<XMLTypeDocumentRoot, EMap<String, String>> getXMLTypeDocumentRoot_XMLNSPrefixMap()
   {
-    return (EReference)xmlTypeDocumentRootEClass.getEStructuralFeatures().get(1);
+    return (EReference<XMLTypeDocumentRoot, EMap<String, String>>) xmlTypeDocumentRootEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -697,9 +711,10 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getXMLTypeDocumentRoot_XSISchemaLocation()
+  @SuppressWarnings("unchecked")
+  public EReference<XMLTypeDocumentRoot, EMap<String, String>> getXMLTypeDocumentRoot_XSISchemaLocation()
   {
-    return (EReference)xmlTypeDocumentRootEClass.getEStructuralFeatures().get(2);
+    return (EReference<XMLTypeDocumentRoot, EMap<String, String>>) xmlTypeDocumentRootEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -707,9 +722,10 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXMLTypeDocumentRoot_CDATA()
+  @SuppressWarnings("unchecked")
+  public EAttribute<XMLTypeDocumentRoot, EList<String>> getXMLTypeDocumentRoot_CDATA()
   {
-    return (EAttribute)xmlTypeDocumentRootEClass.getEStructuralFeatures().get(3);
+    return (EAttribute<XMLTypeDocumentRoot, EList<String>>) xmlTypeDocumentRootEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -717,9 +733,10 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXMLTypeDocumentRoot_Comment()
+  @SuppressWarnings("unchecked")
+  public EAttribute<XMLTypeDocumentRoot, EList<String>> getXMLTypeDocumentRoot_Comment()
   {
-    return (EAttribute)xmlTypeDocumentRootEClass.getEStructuralFeatures().get(4);
+    return (EAttribute<XMLTypeDocumentRoot, EList<String>>) xmlTypeDocumentRootEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -727,9 +744,10 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXMLTypeDocumentRoot_Text()
+  @SuppressWarnings("unchecked")
+  public EAttribute<XMLTypeDocumentRoot, EList<String>> getXMLTypeDocumentRoot_Text()
   {
-    return (EAttribute)xmlTypeDocumentRootEClass.getEStructuralFeatures().get(6);
+    return (EAttribute<XMLTypeDocumentRoot, EList<String>>) xmlTypeDocumentRootEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -737,9 +755,10 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getXMLTypeDocumentRoot_ProcessingInstruction()
+  @SuppressWarnings("unchecked")
+  public EReference<XMLTypeDocumentRoot, EList<ProcessingInstruction>> getXMLTypeDocumentRoot_ProcessingInstruction()
   {
-    return (EReference)xmlTypeDocumentRootEClass.getEStructuralFeatures().get(5);
+    return (EReference<XMLTypeDocumentRoot, EList<ProcessingInstruction>>) xmlTypeDocumentRootEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -747,7 +766,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getAnySimpleType()
+  public EDataType<Object> getAnySimpleType()
   {
     return anySimpleTypeEDataType;
   }
@@ -757,7 +776,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getAnyURI()
+  public EDataType<String> getAnyURI()
   {
     return anyURIEDataType;
   }
@@ -767,7 +786,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getBase64Binary()
+  public EDataType<byte[]> getBase64Binary()
   {
     return base64BinaryEDataType;
   }
@@ -777,7 +796,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getBoolean()
+  public EDataType<Boolean> getBoolean()
   {
     return booleanEDataType;
   }
@@ -787,7 +806,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getBooleanObject()
+  public EDataType<Boolean> getBooleanObject()
   {
     return booleanObjectEDataType;
   }
@@ -797,7 +816,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getDecimal()
+  public EDataType<BigDecimal> getDecimal()
   {
     return decimalEDataType;
   }
@@ -807,7 +826,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getInteger()
+  public EDataType<BigInteger> getInteger()
   {
     return integerEDataType;
   }
@@ -817,7 +836,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getIntObject()
+  public EDataType<Integer> getIntObject()
   {
     return intObjectEDataType;
   }
@@ -827,7 +846,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getLong()
+  public EDataType<Long> getLong()
   {
     return longEDataType;
   }
@@ -837,7 +856,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getLongObject()
+  public EDataType<Long> getLongObject()
   {
     return longObjectEDataType;
   }
@@ -847,7 +866,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getInt()
+  public EDataType<Integer> getInt()
   {
     return intEDataType;
   }
@@ -857,7 +876,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getShort()
+  public EDataType<Short> getShort()
   {
     return shortEDataType;
   }
@@ -867,7 +886,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getShortObject()
+  public EDataType<Short> getShortObject()
   {
     return shortObjectEDataType;
   }
@@ -877,7 +896,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getByte()
+  public EDataType<Byte> getByte()
   {
     return byteEDataType;
   }
@@ -887,7 +906,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getByteObject()
+  public EDataType<Byte> getByteObject()
   {
     return byteObjectEDataType;
   }
@@ -897,7 +916,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getDate()
+  public EDataType<XMLGregorianCalendar> getDate()
   {
     return dateEDataType;
   }
@@ -907,7 +926,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getDateTime()
+  public EDataType<XMLGregorianCalendar> getDateTime()
   {
     return dateTimeEDataType;
   }
@@ -917,7 +936,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getString()
+  public EDataType<String> getString()
   {
     return stringEDataType;
   }
@@ -927,7 +946,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getDouble()
+  public EDataType<Double> getDouble()
   {
     return doubleEDataType;
   }
@@ -937,7 +956,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getDoubleObject()
+  public EDataType<Double> getDoubleObject()
   {
     return doubleObjectEDataType;
   }
@@ -947,7 +966,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getDuration()
+  public EDataType<Duration> getDuration()
   {
     return durationEDataType;
   }
@@ -957,7 +976,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getENTITIESBase()
+  public EDataType<List<String>> getENTITIESBase()
   {
     return entitiesBaseEDataType;
   }
@@ -967,7 +986,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getNormalizedString()
+  public EDataType<String> getNormalizedString()
   {
     return normalizedStringEDataType;
   }
@@ -977,7 +996,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getToken()
+  public EDataType<String> getToken()
   {
     return tokenEDataType;
   }
@@ -987,7 +1006,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getName_()
+  public EDataType<String> getName_()
   {
     return nameEDataType;
   }
@@ -997,7 +1016,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getNCName()
+  public EDataType<String> getNCName()
   {
     return ncNameEDataType;
   }
@@ -1007,7 +1026,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getENTITY()
+  public EDataType<String> getENTITY()
   {
     return entityEDataType;
   }
@@ -1017,7 +1036,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getENTITIES()
+  public EDataType<List<String>> getENTITIES()
   {
     return entitiesEDataType;
   }
@@ -1027,7 +1046,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getFloat()
+  public EDataType<Float> getFloat()
   {
     return floatEDataType;
   }
@@ -1037,7 +1056,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getFloatObject()
+  public EDataType<Float> getFloatObject()
   {
     return floatObjectEDataType;
   }
@@ -1047,7 +1066,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getGDay()
+  public EDataType<XMLGregorianCalendar> getGDay()
   {
     return gDayEDataType;
   }
@@ -1057,7 +1076,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getGMonth()
+  public EDataType<XMLGregorianCalendar> getGMonth()
   {
     return gMonthEDataType;
   }
@@ -1067,7 +1086,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getGMonthDay()
+  public EDataType<XMLGregorianCalendar> getGMonthDay()
   {
     return gMonthDayEDataType;
   }
@@ -1077,7 +1096,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getGYear()
+  public EDataType<XMLGregorianCalendar> getGYear()
   {
     return gYearEDataType;
   }
@@ -1087,7 +1106,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getGYearMonth()
+  public EDataType<XMLGregorianCalendar> getGYearMonth()
   {
     return gYearMonthEDataType;
   }
@@ -1097,7 +1116,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getHexBinary()
+  public EDataType<byte[]> getHexBinary()
   {
     return hexBinaryEDataType;
   }
@@ -1107,7 +1126,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getID()
+  public EDataType<String> getID()
   {
     return idEDataType;
   }
@@ -1117,7 +1136,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getIDREF()
+  public EDataType<String> getIDREF()
   {
     return idrefEDataType;
   }
@@ -1127,7 +1146,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getIDREFSBase()
+  public EDataType<List<String>> getIDREFSBase()
   {
     return idrefsBaseEDataType;
   }
@@ -1137,7 +1156,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getIDREFS()
+  public EDataType<List<String>> getIDREFS()
   {
     return idrefsEDataType;
   }
@@ -1147,7 +1166,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getLanguage()
+  public EDataType<String> getLanguage()
   {
     return languageEDataType;
   }
@@ -1157,7 +1176,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getNonPositiveInteger()
+  public EDataType<BigInteger> getNonPositiveInteger()
   {
     return nonPositiveIntegerEDataType;
   }
@@ -1167,7 +1186,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getNegativeInteger()
+  public EDataType<BigInteger> getNegativeInteger()
   {
     return negativeIntegerEDataType;
   }
@@ -1177,7 +1196,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getNMTOKEN()
+  public EDataType<String> getNMTOKEN()
   {
     return nmtokenEDataType;
   }
@@ -1187,7 +1206,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getNMTOKENSBase()
+  public EDataType<List<String>> getNMTOKENSBase()
   {
     return nmtokensBaseEDataType;
   }
@@ -1197,7 +1216,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getNMTOKENS()
+  public EDataType<List<String>> getNMTOKENS()
   {
     return nmtokensEDataType;
   }
@@ -1207,7 +1226,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getNonNegativeInteger()
+  public EDataType<BigInteger> getNonNegativeInteger()
   {
     return nonNegativeIntegerEDataType;
   }
@@ -1217,7 +1236,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getNOTATION()
+  public EDataType<QName> getNOTATION()
   {
     return notationEDataType;
   }
@@ -1227,7 +1246,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getPositiveInteger()
+  public EDataType<BigInteger> getPositiveInteger()
   {
     return positiveIntegerEDataType;
   }
@@ -1237,7 +1256,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getQName()
+  public EDataType<QName> getQName()
   {
     return qNameEDataType;
   }
@@ -1247,7 +1266,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getTime()
+  public EDataType<XMLGregorianCalendar> getTime()
   {
     return timeEDataType;
   }
@@ -1257,7 +1276,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getUnsignedLong()
+  public EDataType<BigInteger> getUnsignedLong()
   {
     return unsignedLongEDataType;
   }
@@ -1267,7 +1286,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getUnsignedInt()
+  public EDataType<Long> getUnsignedInt()
   {
     return unsignedIntEDataType;
   }
@@ -1277,7 +1296,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getUnsignedIntObject()
+  public EDataType<Long> getUnsignedIntObject()
   {
     return unsignedIntObjectEDataType;
   }
@@ -1287,7 +1306,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getUnsignedShort()
+  public EDataType<Integer> getUnsignedShort()
   {
     return unsignedShortEDataType;
   }
@@ -1297,7 +1316,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getUnsignedShortObject()
+  public EDataType<Integer> getUnsignedShortObject()
   {
     return unsignedShortObjectEDataType;
   }
@@ -1307,7 +1326,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getUnsignedByte()
+  public EDataType<Short> getUnsignedByte()
   {
     return unsignedByteEDataType;
   }
@@ -1317,7 +1336,7 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getUnsignedByteObject()
+  public EDataType<Short> getUnsignedByteObject()
   {
     return unsignedByteObjectEDataType;
   }
@@ -1346,94 +1365,172 @@ public class XMLTypePackageImpl extends EPackageImpl implements XMLTypePackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    anyTypeEClass = createEClass(ANY_TYPE);
+    // CHANGE gen: Add cast
+    anyTypeEClass = (EClass<AnyType>) createEClass(ANY_TYPE);
+    // CHANGE gen: Use raw type
     createEAttribute(anyTypeEClass, ANY_TYPE__MIXED);
+    // CHANGE gen: Use raw type
     createEAttribute(anyTypeEClass, ANY_TYPE__ANY);
+    // CHANGE gen: Use raw type
     createEAttribute(anyTypeEClass, ANY_TYPE__ANY_ATTRIBUTE);
 
-    processingInstructionEClass = createEClass(PROCESSING_INSTRUCTION);
+    // CHANGE gen: Add cast
+    processingInstructionEClass = (EClass<ProcessingInstruction>) createEClass(PROCESSING_INSTRUCTION);
+    // CHANGE gen: Use raw type
     createEAttribute(processingInstructionEClass, PROCESSING_INSTRUCTION__DATA);
+    // CHANGE gen: Use raw type
     createEAttribute(processingInstructionEClass, PROCESSING_INSTRUCTION__TARGET);
 
-    simpleAnyTypeEClass = createEClass(SIMPLE_ANY_TYPE);
+    // CHANGE gen: Add cast
+    simpleAnyTypeEClass = (EClass<SimpleAnyType>) createEClass(SIMPLE_ANY_TYPE);
+    // CHANGE gen: Use raw type
     createEAttribute(simpleAnyTypeEClass, SIMPLE_ANY_TYPE__RAW_VALUE);
+    // CHANGE gen: Use raw type
     createEAttribute(simpleAnyTypeEClass, SIMPLE_ANY_TYPE__VALUE);
+    // CHANGE gen: Use raw type
     createEReference(simpleAnyTypeEClass, SIMPLE_ANY_TYPE__INSTANCE_TYPE);
 
-    xmlTypeDocumentRootEClass = createEClass(XML_TYPE_DOCUMENT_ROOT);
+    // CHANGE gen: Add cast
+    xmlTypeDocumentRootEClass = (EClass<XMLTypeDocumentRoot>) createEClass(XML_TYPE_DOCUMENT_ROOT);
+    // CHANGE gen: Use raw type
     createEAttribute(xmlTypeDocumentRootEClass, XML_TYPE_DOCUMENT_ROOT__MIXED);
+    // CHANGE gen: Use raw type
     createEReference(xmlTypeDocumentRootEClass, XML_TYPE_DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
+    // CHANGE gen: Use raw type
     createEReference(xmlTypeDocumentRootEClass, XML_TYPE_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
+    // CHANGE gen: Use raw type
     createEAttribute(xmlTypeDocumentRootEClass, XML_TYPE_DOCUMENT_ROOT__CDATA);
+    // CHANGE gen: Use raw type
     createEAttribute(xmlTypeDocumentRootEClass, XML_TYPE_DOCUMENT_ROOT__COMMENT);
+    // CHANGE gen: Use raw type
     createEReference(xmlTypeDocumentRootEClass, XML_TYPE_DOCUMENT_ROOT__PROCESSING_INSTRUCTION);
+    // CHANGE gen: Use raw type
     createEAttribute(xmlTypeDocumentRootEClass, XML_TYPE_DOCUMENT_ROOT__TEXT);
 
     // Create data types
-    anySimpleTypeEDataType = createEDataType(ANY_SIMPLE_TYPE);
-    anyURIEDataType = createEDataType(ANY_URI);
-    base64BinaryEDataType = createEDataType(BASE64_BINARY);
-    booleanEDataType = createEDataType(BOOLEAN);
-    booleanObjectEDataType = createEDataType(BOOLEAN_OBJECT);
-    byteEDataType = createEDataType(BYTE);
-    byteObjectEDataType = createEDataType(BYTE_OBJECT);
-    dateEDataType = createEDataType(DATE);
-    dateTimeEDataType = createEDataType(DATE_TIME);
-    decimalEDataType = createEDataType(DECIMAL);
-    doubleEDataType = createEDataType(DOUBLE);
-    doubleObjectEDataType = createEDataType(DOUBLE_OBJECT);
-    durationEDataType = createEDataType(DURATION);
-    entitiesEDataType = createEDataType(ENTITIES);
-    entitiesBaseEDataType = createEDataType(ENTITIES_BASE);
-    entityEDataType = createEDataType(ENTITY);
-    floatEDataType = createEDataType(FLOAT);
-    floatObjectEDataType = createEDataType(FLOAT_OBJECT);
-    gDayEDataType = createEDataType(GDAY);
-    gMonthEDataType = createEDataType(GMONTH);
-    gMonthDayEDataType = createEDataType(GMONTH_DAY);
-    gYearEDataType = createEDataType(GYEAR);
-    gYearMonthEDataType = createEDataType(GYEAR_MONTH);
-    hexBinaryEDataType = createEDataType(HEX_BINARY);
-    idEDataType = createEDataType(ID);
-    idrefEDataType = createEDataType(IDREF);
-    idrefsEDataType = createEDataType(IDREFS);
-    idrefsBaseEDataType = createEDataType(IDREFS_BASE);
-    intEDataType = createEDataType(INT);
-    integerEDataType = createEDataType(INTEGER);
-    intObjectEDataType = createEDataType(INT_OBJECT);
-    languageEDataType = createEDataType(LANGUAGE);
-    longEDataType = createEDataType(LONG);
-    longObjectEDataType = createEDataType(LONG_OBJECT);
-    nameEDataType = createEDataType(NAME);
-    ncNameEDataType = createEDataType(NC_NAME);
-    negativeIntegerEDataType = createEDataType(NEGATIVE_INTEGER);
-    nmtokenEDataType = createEDataType(NMTOKEN);
-    nmtokensEDataType = createEDataType(NMTOKENS);
-    nmtokensBaseEDataType = createEDataType(NMTOKENS_BASE);
-    nonNegativeIntegerEDataType = createEDataType(NON_NEGATIVE_INTEGER);
-    nonPositiveIntegerEDataType = createEDataType(NON_POSITIVE_INTEGER);
-    normalizedStringEDataType = createEDataType(NORMALIZED_STRING);
-    notationEDataType = createEDataType(NOTATION);
-    positiveIntegerEDataType = createEDataType(POSITIVE_INTEGER);
-    qNameEDataType = createEDataType(QNAME);
-    shortEDataType = createEDataType(SHORT);
-    shortObjectEDataType = createEDataType(SHORT_OBJECT);
-    stringEDataType = createEDataType(STRING);
-    timeEDataType = createEDataType(TIME);
-    tokenEDataType = createEDataType(TOKEN);
-    unsignedByteEDataType = createEDataType(UNSIGNED_BYTE);
-    unsignedByteObjectEDataType = createEDataType(UNSIGNED_BYTE_OBJECT);
-    unsignedIntEDataType = createEDataType(UNSIGNED_INT);
-    unsignedIntObjectEDataType = createEDataType(UNSIGNED_INT_OBJECT);
-    unsignedLongEDataType = createEDataType(UNSIGNED_LONG);
-    unsignedShortEDataType = createEDataType(UNSIGNED_SHORT);
-    unsignedShortObjectEDataType = createEDataType(UNSIGNED_SHORT_OBJECT);
+    // CHANGE gen: Cast
+    anySimpleTypeEDataType = (EDataType<Object>) createEDataType(ANY_SIMPLE_TYPE);
+    // CHANGE gen: Cast
+    anyURIEDataType = (EDataType<String>) createEDataType(ANY_URI);
+    // CHANGE gen: Cast
+    base64BinaryEDataType = (EDataType<byte[]>) createEDataType(BASE64_BINARY);
+    // CHANGE gen: Cast
+    booleanEDataType = (EDataType<Boolean>) createEDataType(BOOLEAN);
+    // CHANGE gen: Cast
+    booleanObjectEDataType = (EDataType<Boolean>) createEDataType(BOOLEAN_OBJECT);
+    // CHANGE gen: Cast
+    byteEDataType = (EDataType<Byte>) createEDataType(BYTE);
+    // CHANGE gen: Cast
+    byteObjectEDataType = (EDataType<Byte>) createEDataType(BYTE_OBJECT);
+    // CHANGE gen: Cast
+    dateEDataType = (EDataType<XMLGregorianCalendar>) createEDataType(DATE);
+    // CHANGE gen: Cast
+    dateTimeEDataType = (EDataType<XMLGregorianCalendar>) createEDataType(DATE_TIME);
+    // CHANGE gen: Cast
+    decimalEDataType = (EDataType<BigDecimal>) createEDataType(DECIMAL);
+    // CHANGE gen: Cast
+    doubleEDataType = (EDataType<Double>) createEDataType(DOUBLE);
+    // CHANGE gen: Cast
+    doubleObjectEDataType = (EDataType<Double>) createEDataType(DOUBLE_OBJECT);
+    // CHANGE gen: Cast
+    durationEDataType = (EDataType<Duration>) createEDataType(DURATION);
+    // CHANGE gen: Cast
+    entitiesEDataType = (EDataType<List<String>>) createEDataType(ENTITIES);
+    // CHANGE gen: Cast
+    entitiesBaseEDataType = (EDataType<List<String>>) createEDataType(ENTITIES_BASE);
+    // CHANGE gen: Cast
+    entityEDataType = (EDataType<String>) createEDataType(ENTITY);
+    // CHANGE gen: Cast
+    floatEDataType = (EDataType<Float>) createEDataType(FLOAT);
+    // CHANGE gen: Cast
+    floatObjectEDataType = (EDataType<Float>) createEDataType(FLOAT_OBJECT);
+    // CHANGE gen: Cast
+    gDayEDataType = (EDataType<XMLGregorianCalendar>) createEDataType(GDAY);
+    // CHANGE gen: Cast
+    gMonthEDataType = (EDataType<XMLGregorianCalendar>) createEDataType(GMONTH);
+    // CHANGE gen: Cast
+    gMonthDayEDataType = (EDataType<XMLGregorianCalendar>) createEDataType(GMONTH_DAY);
+    // CHANGE gen: Cast
+    gYearEDataType = (EDataType<XMLGregorianCalendar>) createEDataType(GYEAR);
+    // CHANGE gen: Cast
+    gYearMonthEDataType = (EDataType<XMLGregorianCalendar>) createEDataType(GYEAR_MONTH);
+    // CHANGE gen: Cast
+    hexBinaryEDataType = (EDataType<byte[]>) createEDataType(HEX_BINARY);
+    // CHANGE gen: Cast
+    idEDataType = (EDataType<String>) createEDataType(ID);
+    // CHANGE gen: Cast
+    idrefEDataType = (EDataType<String>) createEDataType(IDREF);
+    // CHANGE gen: Cast
+    idrefsEDataType = (EDataType<List<String>>) createEDataType(IDREFS);
+    // CHANGE gen: Cast
+    idrefsBaseEDataType = (EDataType<List<String>>) createEDataType(IDREFS_BASE);
+    // CHANGE gen: Cast
+    intEDataType = (EDataType<Integer>) createEDataType(INT);
+    // CHANGE gen: Cast
+    integerEDataType = (EDataType<BigInteger>) createEDataType(INTEGER);
+    // CHANGE gen: Cast
+    intObjectEDataType = (EDataType<Integer>) createEDataType(INT_OBJECT);
+    // CHANGE gen: Cast
+    languageEDataType = (EDataType<String>) createEDataType(LANGUAGE);
+    // CHANGE gen: Cast
+    longEDataType = (EDataType<Long>) createEDataType(LONG);
+    // CHANGE gen: Cast
+    longObjectEDataType = (EDataType<Long>) createEDataType(LONG_OBJECT);
+    // CHANGE gen: Cast
+    nameEDataType = (EDataType<String>) createEDataType(NAME);
+    // CHANGE gen: Cast
+    ncNameEDataType = (EDataType<String>) createEDataType(NC_NAME);
+    // CHANGE gen: Cast
+    negativeIntegerEDataType = (EDataType<BigInteger>) createEDataType(NEGATIVE_INTEGER);
+    // CHANGE gen: Cast
+    nmtokenEDataType = (EDataType<String>) createEDataType(NMTOKEN);
+    // CHANGE gen: Cast
+    nmtokensEDataType = (EDataType<List<String>>) createEDataType(NMTOKENS);
+    // CHANGE gen: Cast
+    nmtokensBaseEDataType = (EDataType<List<String>>) createEDataType(NMTOKENS_BASE);
+    // CHANGE gen: Cast
+    nonNegativeIntegerEDataType = (EDataType<BigInteger>) createEDataType(NON_NEGATIVE_INTEGER);
+    // CHANGE gen: Cast
+    nonPositiveIntegerEDataType = (EDataType<BigInteger>) createEDataType(NON_POSITIVE_INTEGER);
+    // CHANGE gen: Cast
+    normalizedStringEDataType = (EDataType<String>) createEDataType(NORMALIZED_STRING);
+    // CHANGE gen: Cast
+    notationEDataType = (EDataType<QName>) createEDataType(NOTATION);
+    // CHANGE gen: Cast
+    positiveIntegerEDataType = (EDataType<BigInteger>) createEDataType(POSITIVE_INTEGER);
+    // CHANGE gen: Cast
+    qNameEDataType = (EDataType<QName>) createEDataType(QNAME);
+    // CHANGE gen: Cast
+    shortEDataType = (EDataType<Short>) createEDataType(SHORT);
+    // CHANGE gen: Cast
+    shortObjectEDataType = (EDataType<Short>) createEDataType(SHORT_OBJECT);
+    // CHANGE gen: Cast
+    stringEDataType = (EDataType<String>) createEDataType(STRING);
+    // CHANGE gen: Cast
+    timeEDataType = (EDataType<XMLGregorianCalendar>) createEDataType(TIME);
+    // CHANGE gen: Cast
+    tokenEDataType = (EDataType<String>) createEDataType(TOKEN);
+    // CHANGE gen: Cast
+    unsignedByteEDataType = (EDataType<Short>) createEDataType(UNSIGNED_BYTE);
+    // CHANGE gen: Cast
+    unsignedByteObjectEDataType = (EDataType<Short>) createEDataType(UNSIGNED_BYTE_OBJECT);
+    // CHANGE gen: Cast
+    unsignedIntEDataType = (EDataType<Long>) createEDataType(UNSIGNED_INT);
+    // CHANGE gen: Cast
+    unsignedIntObjectEDataType = (EDataType<Long>) createEDataType(UNSIGNED_INT_OBJECT);
+    // CHANGE gen: Cast
+    unsignedLongEDataType = (EDataType<BigInteger>) createEDataType(UNSIGNED_LONG);
+    // CHANGE gen: Cast
+    unsignedShortEDataType = (EDataType<Integer>) createEDataType(UNSIGNED_SHORT);
+    // CHANGE gen: Cast
+    unsignedShortObjectEDataType = (EDataType<Integer>) createEDataType(UNSIGNED_SHORT_OBJECT);
   }
 
   /**

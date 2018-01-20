@@ -82,7 +82,7 @@ public class SimpleAnyTypeImpl extends AnyTypeImpl implements SimpleAnyType
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return XMLTypePackage.Literals.SIMPLE_ANY_TYPE;
   }

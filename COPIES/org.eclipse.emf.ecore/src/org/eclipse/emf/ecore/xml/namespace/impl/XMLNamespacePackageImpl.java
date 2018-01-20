@@ -11,6 +11,7 @@
 package org.eclipse.emf.ecore.xml.namespace.impl;
 
 
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -19,6 +20,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMap.Entry;
 import org.eclipse.emf.ecore.xml.namespace.SpaceType;
 import org.eclipse.emf.ecore.xml.namespace.XMLNamespaceDocumentRoot;
 import org.eclipse.emf.ecore.xml.namespace.XMLNamespaceFactory;
@@ -40,35 +43,35 @@ public class XMLNamespacePackageImpl extends EPackageImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass xmlNamespaceDocumentRootEClass = null;
+  private EClass<XMLNamespaceDocumentRoot> xmlNamespaceDocumentRootEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum spaceTypeEEnum = null;
+  private EEnum<SpaceType> spaceTypeEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType langTypeEDataType = null;
+  private EDataType<String> langTypeEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType langTypeNullEDataType = null;
+  private EDataType<String> langTypeNullEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType spaceTypeObjectEDataType = null;
+  private EDataType<SpaceType> spaceTypeObjectEDataType = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -152,7 +155,7 @@ public class XMLNamespacePackageImpl extends EPackageImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getXMLNamespaceDocumentRoot()
+  public EClass<XMLNamespaceDocumentRoot> getXMLNamespaceDocumentRoot()
   {
     return xmlNamespaceDocumentRootEClass;
   }
@@ -162,9 +165,10 @@ public class XMLNamespacePackageImpl extends EPackageImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXMLNamespaceDocumentRoot_Mixed()
+  @SuppressWarnings("unchecked")
+  public EAttribute<XMLNamespaceDocumentRoot, FeatureMap> getXMLNamespaceDocumentRoot_Mixed()
   {
-    return (EAttribute)xmlNamespaceDocumentRootEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<XMLNamespaceDocumentRoot, FeatureMap>) xmlNamespaceDocumentRootEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -172,9 +176,10 @@ public class XMLNamespacePackageImpl extends EPackageImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getXMLNamespaceDocumentRoot_XMLNSPrefixMap()
+  @SuppressWarnings("unchecked")
+  public EReference<XMLNamespaceDocumentRoot, EMap<String, String>> getXMLNamespaceDocumentRoot_XMLNSPrefixMap()
   {
-    return (EReference)xmlNamespaceDocumentRootEClass.getEStructuralFeatures().get(1);
+    return (EReference<XMLNamespaceDocumentRoot, EMap<String, String>>) xmlNamespaceDocumentRootEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -182,9 +187,10 @@ public class XMLNamespacePackageImpl extends EPackageImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getXMLNamespaceDocumentRoot_XSISchemaLocation()
+  @SuppressWarnings("unchecked")
+  public EReference<XMLNamespaceDocumentRoot, EMap<String, String>> getXMLNamespaceDocumentRoot_XSISchemaLocation()
   {
-    return (EReference)xmlNamespaceDocumentRootEClass.getEStructuralFeatures().get(2);
+    return (EReference<XMLNamespaceDocumentRoot, EMap<String, String>>) xmlNamespaceDocumentRootEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -192,9 +198,10 @@ public class XMLNamespacePackageImpl extends EPackageImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXMLNamespaceDocumentRoot_Base()
+  @SuppressWarnings("unchecked")
+  public EAttribute<XMLNamespaceDocumentRoot, String> getXMLNamespaceDocumentRoot_Base()
   {
-    return (EAttribute)xmlNamespaceDocumentRootEClass.getEStructuralFeatures().get(3);
+    return (EAttribute<XMLNamespaceDocumentRoot, String>) xmlNamespaceDocumentRootEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -202,9 +209,10 @@ public class XMLNamespacePackageImpl extends EPackageImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXMLNamespaceDocumentRoot_Id()
+  @SuppressWarnings("unchecked")
+  public EAttribute<XMLNamespaceDocumentRoot, String> getXMLNamespaceDocumentRoot_Id()
   {
-    return (EAttribute)xmlNamespaceDocumentRootEClass.getEStructuralFeatures().get(4);
+    return (EAttribute<XMLNamespaceDocumentRoot, String>) xmlNamespaceDocumentRootEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -212,9 +220,10 @@ public class XMLNamespacePackageImpl extends EPackageImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXMLNamespaceDocumentRoot_Lang()
+  @SuppressWarnings("unchecked")
+  public EAttribute<XMLNamespaceDocumentRoot, String> getXMLNamespaceDocumentRoot_Lang()
   {
-    return (EAttribute)xmlNamespaceDocumentRootEClass.getEStructuralFeatures().get(5);
+    return (EAttribute<XMLNamespaceDocumentRoot, String>) xmlNamespaceDocumentRootEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -222,9 +231,10 @@ public class XMLNamespacePackageImpl extends EPackageImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXMLNamespaceDocumentRoot_Space()
+  @SuppressWarnings("unchecked")
+  public EAttribute<XMLNamespaceDocumentRoot, SpaceType> getXMLNamespaceDocumentRoot_Space()
   {
-    return (EAttribute)xmlNamespaceDocumentRootEClass.getEStructuralFeatures().get(6);
+    return (EAttribute<XMLNamespaceDocumentRoot, SpaceType>) xmlNamespaceDocumentRootEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -232,7 +242,7 @@ public class XMLNamespacePackageImpl extends EPackageImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EEnum getSpaceType()
+  public EEnum<SpaceType> getSpaceType()
   {
     return spaceTypeEEnum;
   }
@@ -242,7 +252,7 @@ public class XMLNamespacePackageImpl extends EPackageImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getLangType()
+  public EDataType<String> getLangType()
   {
     return langTypeEDataType;
   }
@@ -252,7 +262,7 @@ public class XMLNamespacePackageImpl extends EPackageImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getLangTypeNull()
+  public EDataType<String> getLangTypeNull()
   {
     return langTypeNullEDataType;
   }
@@ -262,7 +272,7 @@ public class XMLNamespacePackageImpl extends EPackageImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getSpaceTypeObject()
+  public EDataType<SpaceType> getSpaceTypeObject()
   {
     return spaceTypeObjectEDataType;
   }
@@ -291,28 +301,41 @@ public class XMLNamespacePackageImpl extends EPackageImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    xmlNamespaceDocumentRootEClass = createEClass(XML_NAMESPACE_DOCUMENT_ROOT);
+    // CHANGE gen: Add cast
+    xmlNamespaceDocumentRootEClass = (EClass<XMLNamespaceDocumentRoot>) createEClass(XML_NAMESPACE_DOCUMENT_ROOT);
+    // CHANGE gen: Use raw type
     createEAttribute(xmlNamespaceDocumentRootEClass, XML_NAMESPACE_DOCUMENT_ROOT__MIXED);
+    // CHANGE gen: Use raw type
     createEReference(xmlNamespaceDocumentRootEClass, XML_NAMESPACE_DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
+    // CHANGE gen: Use raw type
     createEReference(xmlNamespaceDocumentRootEClass, XML_NAMESPACE_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
+    // CHANGE gen: Use raw type
     createEAttribute(xmlNamespaceDocumentRootEClass, XML_NAMESPACE_DOCUMENT_ROOT__BASE);
+    // CHANGE gen: Use raw type
     createEAttribute(xmlNamespaceDocumentRootEClass, XML_NAMESPACE_DOCUMENT_ROOT__ID);
+    // CHANGE gen: Use raw type
     createEAttribute(xmlNamespaceDocumentRootEClass, XML_NAMESPACE_DOCUMENT_ROOT__LANG);
+    // CHANGE gen: Use raw type
     createEAttribute(xmlNamespaceDocumentRootEClass, XML_NAMESPACE_DOCUMENT_ROOT__SPACE);
 
     // Create enums
-    spaceTypeEEnum = createEEnum(SPACE_TYPE);
+ 		// CHANGE gen: Cast
+    spaceTypeEEnum = (EEnum<SpaceType>) createEEnum(SPACE_TYPE);
 
     // Create data types
-    langTypeEDataType = createEDataType(LANG_TYPE);
-    langTypeNullEDataType = createEDataType(LANG_TYPE_NULL);
-    spaceTypeObjectEDataType = createEDataType(SPACE_TYPE_OBJECT);
+    // CHANGE gen: Cast
+    langTypeEDataType = (EDataType<String>) createEDataType(LANG_TYPE);
+    // CHANGE gen: Cast
+    langTypeNullEDataType = (EDataType<String>) createEDataType(LANG_TYPE_NULL);
+    // CHANGE gen: Cast
+    spaceTypeObjectEDataType = (EDataType<SpaceType>) createEDataType(SPACE_TYPE_OBJECT);
   }
 
   /**

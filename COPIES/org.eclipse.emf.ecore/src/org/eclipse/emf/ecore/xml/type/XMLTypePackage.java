@@ -11,11 +11,21 @@
 package org.eclipse.emf.ecore.xml.type;
 
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.List;
+import javax.xml.datatype.Duration;
+import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.namespace.QName;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMap.Entry;
 
 
 /**
@@ -883,7 +893,7 @@ public interface XMLTypePackage extends EPackage
    * @see org.eclipse.emf.ecore.xml.type.AnyType
    * @generated
    */
-  EClass getAnyType();
+  EClass<AnyType> getAnyType();
 
   /**
    * Returns the meta object for the attribute list '{@link org.eclipse.emf.ecore.xml.type.AnyType#getMixed <em>Mixed</em>}'.
@@ -894,7 +904,7 @@ public interface XMLTypePackage extends EPackage
    * @see #getAnyType()
    * @generated
    */
-  EAttribute getAnyType_Mixed();
+  EAttribute<AnyType, FeatureMap> getAnyType_Mixed();
 
   /**
    * Returns the meta object for the attribute list '{@link org.eclipse.emf.ecore.xml.type.AnyType#getAny <em>Any</em>}'.
@@ -905,7 +915,7 @@ public interface XMLTypePackage extends EPackage
    * @see #getAnyType()
    * @generated
    */
-  EAttribute getAnyType_Any();
+  EAttribute<AnyType, FeatureMap> getAnyType_Any();
 
   /**
    * Returns the meta object for the attribute list '{@link org.eclipse.emf.ecore.xml.type.AnyType#getAnyAttribute <em>Any Attribute</em>}'.
@@ -916,7 +926,7 @@ public interface XMLTypePackage extends EPackage
    * @see #getAnyType()
    * @generated
    */
-  EAttribute getAnyType_AnyAttribute();
+  EAttribute<AnyType, FeatureMap> getAnyType_AnyAttribute();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.xml.type.ProcessingInstruction <em>Processing Instruction</em>}'.
@@ -926,7 +936,7 @@ public interface XMLTypePackage extends EPackage
    * @see org.eclipse.emf.ecore.xml.type.ProcessingInstruction
    * @generated
    */
-  EClass getProcessingInstruction();
+  EClass<ProcessingInstruction> getProcessingInstruction();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.ecore.xml.type.ProcessingInstruction#getData <em>Data</em>}'.
@@ -937,7 +947,7 @@ public interface XMLTypePackage extends EPackage
    * @see #getProcessingInstruction()
    * @generated
    */
-  EAttribute getProcessingInstruction_Data();
+  EAttribute<ProcessingInstruction, String> getProcessingInstruction_Data();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.ecore.xml.type.ProcessingInstruction#getTarget <em>Target</em>}'.
@@ -948,7 +958,7 @@ public interface XMLTypePackage extends EPackage
    * @see #getProcessingInstruction()
    * @generated
    */
-  EAttribute getProcessingInstruction_Target();
+  EAttribute<ProcessingInstruction, String> getProcessingInstruction_Target();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.xml.type.SimpleAnyType <em>Simple Any Type</em>}'.
@@ -958,7 +968,7 @@ public interface XMLTypePackage extends EPackage
    * @see org.eclipse.emf.ecore.xml.type.SimpleAnyType
    * @generated
    */
-  EClass getSimpleAnyType();
+  EClass<SimpleAnyType> getSimpleAnyType();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.ecore.xml.type.SimpleAnyType#getRawValue <em>Raw Value</em>}'.
@@ -969,7 +979,7 @@ public interface XMLTypePackage extends EPackage
    * @see #getSimpleAnyType()
    * @generated
    */
-  EAttribute getSimpleAnyType_RawValue();
+  EAttribute<SimpleAnyType, String> getSimpleAnyType_RawValue();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.ecore.xml.type.SimpleAnyType#getValue <em>Value</em>}'.
@@ -980,7 +990,7 @@ public interface XMLTypePackage extends EPackage
    * @see #getSimpleAnyType()
    * @generated
    */
-  EAttribute getSimpleAnyType_Value();
+  EAttribute<SimpleAnyType, Object> getSimpleAnyType_Value();
 
   /**
    * Returns the meta object for the reference '{@link org.eclipse.emf.ecore.xml.type.SimpleAnyType#getInstanceType <em>Instance Type</em>}'.
@@ -991,7 +1001,7 @@ public interface XMLTypePackage extends EPackage
    * @see #getSimpleAnyType()
    * @generated
    */
-  EReference getSimpleAnyType_InstanceType();
+  EReference<SimpleAnyType, EDataType> getSimpleAnyType_InstanceType();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.xml.type.XMLTypeDocumentRoot <em>Document Root</em>}'.
@@ -1001,7 +1011,7 @@ public interface XMLTypePackage extends EPackage
    * @see org.eclipse.emf.ecore.xml.type.XMLTypeDocumentRoot
    * @generated
    */
-  EClass getXMLTypeDocumentRoot();
+  EClass<XMLTypeDocumentRoot> getXMLTypeDocumentRoot();
 
   /**
    * Returns the meta object for the attribute list '{@link org.eclipse.emf.ecore.xml.type.XMLTypeDocumentRoot#getMixed <em>Mixed</em>}'.
@@ -1012,7 +1022,7 @@ public interface XMLTypePackage extends EPackage
    * @see #getXMLTypeDocumentRoot()
    * @generated
    */
-  EAttribute getXMLTypeDocumentRoot_Mixed();
+  EAttribute<XMLTypeDocumentRoot, FeatureMap> getXMLTypeDocumentRoot_Mixed();
 
   /**
    * Returns the meta object for the map '{@link org.eclipse.emf.ecore.xml.type.XMLTypeDocumentRoot#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}'.
@@ -1023,7 +1033,7 @@ public interface XMLTypePackage extends EPackage
    * @see #getXMLTypeDocumentRoot()
    * @generated
    */
-  EReference getXMLTypeDocumentRoot_XMLNSPrefixMap();
+  EReference<XMLTypeDocumentRoot, EMap<String, String>> getXMLTypeDocumentRoot_XMLNSPrefixMap();
 
   /**
    * Returns the meta object for the map '{@link org.eclipse.emf.ecore.xml.type.XMLTypeDocumentRoot#getXSISchemaLocation <em>XSI Schema Location</em>}'.
@@ -1034,7 +1044,7 @@ public interface XMLTypePackage extends EPackage
    * @see #getXMLTypeDocumentRoot()
    * @generated
    */
-  EReference getXMLTypeDocumentRoot_XSISchemaLocation();
+  EReference<XMLTypeDocumentRoot, EMap<String, String>> getXMLTypeDocumentRoot_XSISchemaLocation();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.ecore.xml.type.XMLTypeDocumentRoot <em>CDATA</em>}'.
@@ -1045,7 +1055,7 @@ public interface XMLTypePackage extends EPackage
    * @see #getXMLTypeDocumentRoot()
    * @generated
    */
-  EAttribute getXMLTypeDocumentRoot_CDATA();
+  EAttribute<XMLTypeDocumentRoot, EList<String>> getXMLTypeDocumentRoot_CDATA();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.ecore.xml.type.XMLTypeDocumentRoot <em>Comment</em>}'.
@@ -1056,7 +1066,7 @@ public interface XMLTypePackage extends EPackage
    * @see #getXMLTypeDocumentRoot()
    * @generated
    */
-  EAttribute getXMLTypeDocumentRoot_Comment();
+  EAttribute<XMLTypeDocumentRoot, EList<String>> getXMLTypeDocumentRoot_Comment();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.ecore.xml.type.XMLTypeDocumentRoot <em>Text</em>}'.
@@ -1067,7 +1077,7 @@ public interface XMLTypePackage extends EPackage
    * @see #getXMLTypeDocumentRoot()
    * @generated
    */
-  EAttribute getXMLTypeDocumentRoot_Text();
+  EAttribute<XMLTypeDocumentRoot, EList<String>> getXMLTypeDocumentRoot_Text();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.ecore.xml.type.XMLTypeDocumentRoot <em>Processing Instruction</em>}'.
@@ -1078,7 +1088,7 @@ public interface XMLTypePackage extends EPackage
    * @see #getXMLTypeDocumentRoot()
    * @generated
    */
-  EReference getXMLTypeDocumentRoot_ProcessingInstruction();
+  EReference<XMLTypeDocumentRoot, EList<ProcessingInstruction>> getXMLTypeDocumentRoot_ProcessingInstruction();
 
   /**
    * Returns the meta object for data type '{@link java.lang.Object <em>Any Simple Type</em>}'.
@@ -1090,7 +1100,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='anySimpleType'"
    * @generated
    */
-  EDataType getAnySimpleType();
+  EDataType<Object> getAnySimpleType();
 
   /**
    * Returns the meta object for data type '{@link java.lang.String <em>Any URI</em>}'.
@@ -1102,7 +1112,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='anyURI' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getAnyURI();
+  EDataType<String> getAnyURI();
 
   /**
    * Returns the meta object for data type '<em>Base64 Binary</em>'.
@@ -1113,7 +1123,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='base64Binary' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getBase64Binary();
+  EDataType<byte[]> getBase64Binary();
 
   /**
    * Returns the meta object for data type '<em>Boolean</em>'.
@@ -1124,7 +1134,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='boolean' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getBoolean();
+  EDataType<Boolean> getBoolean();
 
   /**
    * Returns the meta object for data type '{@link java.lang.Boolean <em>Boolean Object</em>}'.
@@ -1136,7 +1146,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='boolean:Object' baseType='boolean'"
    * @generated
    */
-  EDataType getBooleanObject();
+  EDataType<Boolean> getBooleanObject();
 
   /**
    * Returns the meta object for data type '{@link java.math.BigDecimal <em>Decimal</em>}'.
@@ -1148,7 +1158,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='decimal' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getDecimal();
+  EDataType<BigDecimal> getDecimal();
 
   /**
    * Returns the meta object for data type '{@link java.math.BigInteger <em>Integer</em>}'.
@@ -1160,7 +1170,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='integer'"
    * @generated
    */
-  EDataType getInteger();
+  EDataType<BigInteger> getInteger();
 
   /**
    * Returns the meta object for data type '{@link java.lang.Integer <em>Int Object</em>}'.
@@ -1172,7 +1182,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='int:Object' baseType='int'"
    * @generated
    */
-  EDataType getIntObject();
+  EDataType<Integer> getIntObject();
 
   /**
    * Returns the meta object for data type '<em>Long</em>'.
@@ -1183,7 +1193,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='long'"
    * @generated
    */
-  EDataType getLong();
+  EDataType<Long> getLong();
 
   /**
    * Returns the meta object for data type '{@link java.lang.Long <em>Long Object</em>}'.
@@ -1195,7 +1205,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='long:Object' baseType='long'"
    * @generated
    */
-  EDataType getLongObject();
+  EDataType<Long> getLongObject();
 
   /**
    * Returns the meta object for data type '<em>Int</em>'.
@@ -1206,7 +1216,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='int'"
    * @generated
    */
-  EDataType getInt();
+  EDataType<Integer> getInt();
 
   /**
    * Returns the meta object for data type '<em>Short</em>'.
@@ -1217,7 +1227,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='short'"
    * @generated
    */
-  EDataType getShort();
+  EDataType<Short> getShort();
 
   /**
    * Returns the meta object for data type '{@link java.lang.Short <em>Short Object</em>}'.
@@ -1229,7 +1239,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='short:Object' baseType='short'"
    * @generated
    */
-  EDataType getShortObject();
+  EDataType<Short> getShortObject();
 
   /**
    * Returns the meta object for data type '<em>Byte</em>'.
@@ -1240,7 +1250,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='byte'"
    * @generated
    */
-  EDataType getByte();
+  EDataType<Byte> getByte();
 
   /**
    * Returns the meta object for data type '{@link java.lang.Byte <em>Byte Object</em>}'.
@@ -1252,7 +1262,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='byte:Object' baseType='byte'"
    * @generated
    */
-  EDataType getByteObject();
+  EDataType<Byte> getByteObject();
 
   /**
    * Returns the meta object for data type '{@link javax.xml.datatype.XMLGregorianCalendar <em>Date</em>}'.
@@ -1264,7 +1274,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='date' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getDate();
+  EDataType<XMLGregorianCalendar> getDate();
 
   /**
    * Returns the meta object for data type '{@link javax.xml.datatype.XMLGregorianCalendar <em>Date Time</em>}'.
@@ -1276,7 +1286,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='dateTime' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getDateTime();
+  EDataType<XMLGregorianCalendar> getDateTime();
 
   /**
    * Returns the meta object for data type '{@link java.lang.String <em>String</em>}'.
@@ -1288,7 +1298,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='string' whiteSpace='preserve'"
    * @generated
    */
-  EDataType getString();
+  EDataType<String> getString();
 
   /**
    * Returns the meta object for data type '<em>Double</em>'.
@@ -1299,7 +1309,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='double' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getDouble();
+  EDataType<Double> getDouble();
 
   /**
    * Returns the meta object for data type '{@link java.lang.Double <em>Double Object</em>}'.
@@ -1311,7 +1321,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='double:Object' baseType='double'"
    * @generated
    */
-  EDataType getDoubleObject();
+  EDataType<Double> getDoubleObject();
 
   /**
    * Returns the meta object for data type '{@link javax.xml.datatype.Duration <em>Duration</em>}'.
@@ -1323,7 +1333,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='duration' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getDuration();
+  EDataType<Duration> getDuration();
 
   /**
    * Returns the meta object for data type '{@link java.util.List <em>ENTITIES Base</em>}'.
@@ -1335,7 +1345,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='ENTITIES_._base' itemType='ENTITY'"
    * @generated
    */
-  EDataType getENTITIESBase();
+  EDataType<List<String>> getENTITIESBase();
 
   /**
    * Returns the meta object for data type '{@link java.lang.String <em>Normalized String</em>}'.
@@ -1347,7 +1357,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='normalizedString' baseType='string' whiteSpace='replace'"
    * @generated
    */
-  EDataType getNormalizedString();
+  EDataType<String> getNormalizedString();
 
   /**
    * Returns the meta object for data type '{@link java.lang.String <em>Token</em>}'.
@@ -1359,7 +1369,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='token' baseType='normalizedString' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getToken();
+  EDataType<String> getToken();
 
   /**
    * Returns the meta object for data type '{@link java.lang.String <em>Name</em>}'.
@@ -1371,7 +1381,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='Name' baseType='token' pattern='\\i\\c*'"
    * @generated
    */
-  EDataType getName_();
+  EDataType<String> getName_();
 
   /**
    * Returns the meta object for data type '{@link java.lang.String <em>NC Name</em>}'.
@@ -1383,7 +1393,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='NCName' baseType='Name' pattern='[\\i-[:]][\\c-[:]]*'"
    * @generated
    */
-  EDataType getNCName();
+  EDataType<String> getNCName();
 
   /**
    * Returns the meta object for data type '{@link java.lang.String <em>ENTITY</em>}'.
@@ -1395,7 +1405,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='ENTITY' baseType='NCName'"
    * @generated
    */
-  EDataType getENTITY();
+  EDataType<String> getENTITY();
 
   /**
    * Returns the meta object for data type '{@link java.util.List <em>ENTITIES</em>}'.
@@ -1407,7 +1417,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='ENTITIES' baseType='ENTITIES_._base' minLength='1'"
    * @generated
    */
-  EDataType getENTITIES();
+  EDataType<List<String>> getENTITIES();
 
   /**
    * Returns the meta object for data type '<em>Float</em>'.
@@ -1418,7 +1428,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='float' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getFloat();
+  EDataType<Float> getFloat();
 
   /**
    * Returns the meta object for data type '{@link java.lang.Float <em>Float Object</em>}'.
@@ -1430,7 +1440,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='float:Object' baseType='float'"
    * @generated
    */
-  EDataType getFloatObject();
+  EDataType<Float> getFloatObject();
 
   /**
    * Returns the meta object for data type '{@link javax.xml.datatype.XMLGregorianCalendar <em>GDay</em>}'.
@@ -1442,7 +1452,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='gDay' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getGDay();
+  EDataType<XMLGregorianCalendar> getGDay();
 
   /**
    * Returns the meta object for data type '{@link javax.xml.datatype.XMLGregorianCalendar <em>GMonth</em>}'.
@@ -1454,7 +1464,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='gMonth' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getGMonth();
+  EDataType<XMLGregorianCalendar> getGMonth();
 
   /**
    * Returns the meta object for data type '{@link javax.xml.datatype.XMLGregorianCalendar <em>GMonth Day</em>}'.
@@ -1466,7 +1476,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='gMonthDay' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getGMonthDay();
+  EDataType<XMLGregorianCalendar> getGMonthDay();
 
   /**
    * Returns the meta object for data type '{@link javax.xml.datatype.XMLGregorianCalendar <em>GYear</em>}'.
@@ -1478,7 +1488,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='gYear' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getGYear();
+  EDataType<XMLGregorianCalendar> getGYear();
 
   /**
    * Returns the meta object for data type '{@link javax.xml.datatype.XMLGregorianCalendar <em>GYear Month</em>}'.
@@ -1490,7 +1500,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='gYearMonth' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getGYearMonth();
+  EDataType<XMLGregorianCalendar> getGYearMonth();
 
   /**
    * Returns the meta object for data type '<em>Hex Binary</em>'.
@@ -1501,7 +1511,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='hexBinary' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getHexBinary();
+  EDataType<byte[]> getHexBinary();
 
   /**
    * Returns the meta object for data type '{@link java.lang.String <em>ID</em>}'.
@@ -1513,7 +1523,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='ID' baseType='NCName'"
    * @generated
    */
-  EDataType getID();
+  EDataType<String> getID();
 
   /**
    * Returns the meta object for data type '{@link java.lang.String <em>IDREF</em>}'.
@@ -1525,7 +1535,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='IDREF' baseType='NCName'"
    * @generated
    */
-  EDataType getIDREF();
+  EDataType<String> getIDREF();
 
   /**
    * Returns the meta object for data type '{@link java.util.List <em>IDREFS Base</em>}'.
@@ -1537,7 +1547,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='IDREFS_._base' itemType='IDREF'"
    * @generated
    */
-  EDataType getIDREFSBase();
+  EDataType<List<String>> getIDREFSBase();
 
   /**
    * Returns the meta object for data type '{@link java.util.List <em>IDREFS</em>}'.
@@ -1549,7 +1559,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='IDREFS' baseType='IDREFS_._base' minLength='1'"
    * @generated
    */
-  EDataType getIDREFS();
+  EDataType<List<String>> getIDREFS();
 
   /**
    * Returns the meta object for data type '{@link java.lang.String <em>Language</em>}'.
@@ -1561,7 +1571,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='language' baseType='token' pattern='[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*'"
    * @generated
    */
-  EDataType getLanguage();
+  EDataType<String> getLanguage();
 
   /**
    * Returns the meta object for data type '{@link java.math.BigInteger <em>Non Positive Integer</em>}'.
@@ -1573,7 +1583,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='nonPositiveInteger' baseType='integer' maxInclusive='0'"
    * @generated
    */
-  EDataType getNonPositiveInteger();
+  EDataType<BigInteger> getNonPositiveInteger();
 
   /**
    * Returns the meta object for data type '{@link java.math.BigInteger <em>Negative Integer</em>}'.
@@ -1585,7 +1595,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='negativeInteger' baseType='nonPositiveInteger' maxInclusive='-1'"
    * @generated
    */
-  EDataType getNegativeInteger();
+  EDataType<BigInteger> getNegativeInteger();
 
   /**
    * Returns the meta object for data type '{@link java.lang.String <em>NMTOKEN</em>}'.
@@ -1597,7 +1607,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='NMTOKEN' baseType='token' pattern='\\c+'"
    * @generated
    */
-  EDataType getNMTOKEN();
+  EDataType<String> getNMTOKEN();
 
   /**
    * Returns the meta object for data type '{@link java.util.List <em>NMTOKENS Base</em>}'.
@@ -1609,7 +1619,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='NMTOKENS_._base' itemType='NMTOKEN'"
    * @generated
    */
-  EDataType getNMTOKENSBase();
+  EDataType<List<String>> getNMTOKENSBase();
 
   /**
    * Returns the meta object for data type '{@link java.util.List <em>NMTOKENS</em>}'.
@@ -1621,7 +1631,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='NMTOKENS' baseType='NMTOKENS_._base' minLength='1'"
    * @generated
    */
-  EDataType getNMTOKENS();
+  EDataType<List<String>> getNMTOKENS();
 
   /**
    * Returns the meta object for data type '{@link java.math.BigInteger <em>Non Negative Integer</em>}'.
@@ -1633,7 +1643,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='nonNegativeInteger' baseType='integer' minInclusive='0'"
    * @generated
    */
-  EDataType getNonNegativeInteger();
+  EDataType<BigInteger> getNonNegativeInteger();
 
   /**
    * Returns the meta object for data type '{@link javax.xml.namespace.QName <em>NOTATION</em>}'.
@@ -1645,7 +1655,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='NOTATION' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getNOTATION();
+  EDataType<QName> getNOTATION();
 
   /**
    * Returns the meta object for data type '{@link java.math.BigInteger <em>Positive Integer</em>}'.
@@ -1657,7 +1667,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='positiveInteger' baseType='nonNegativeInteger' minInclusive='1'"
    * @generated
    */
-  EDataType getPositiveInteger();
+  EDataType<BigInteger> getPositiveInteger();
 
   /**
    * Returns the meta object for data type '{@link javax.xml.namespace.QName <em>QName</em>}'.
@@ -1669,7 +1679,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='QName' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getQName();
+  EDataType<QName> getQName();
 
   /**
    * Returns the meta object for data type '{@link javax.xml.datatype.XMLGregorianCalendar <em>Time</em>}'.
@@ -1681,7 +1691,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='time' whiteSpace='collapse'"
    * @generated
    */
-  EDataType getTime();
+  EDataType<XMLGregorianCalendar> getTime();
 
   /**
    * Returns the meta object for data type '{@link java.math.BigInteger <em>Unsigned Long</em>}'.
@@ -1693,7 +1703,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='unsignedLong' baseType='nonNegativeInteger' maxInclusive='18446744073709551615' minInclusive='0'"
    * @generated
    */
-  EDataType getUnsignedLong();
+  EDataType<BigInteger> getUnsignedLong();
 
   /**
    * Returns the meta object for data type '<em>Unsigned Int</em>'.
@@ -1704,7 +1714,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='unsignedInt' maxInclusive='4294967295' minInclusive='0'"
    * @generated
    */
-  EDataType getUnsignedInt();
+  EDataType<Long> getUnsignedInt();
 
   /**
    * Returns the meta object for data type '{@link java.lang.Long <em>Unsigned Int Object</em>}'.
@@ -1716,7 +1726,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='unsignedInt:Object' baseType='unsignedInt'"
    * @generated
    */
-  EDataType getUnsignedIntObject();
+  EDataType<Long> getUnsignedIntObject();
 
   /**
    * Returns the meta object for data type '<em>Unsigned Short</em>'.
@@ -1727,7 +1737,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='unsignedShort' maxInclusive='65535' minInclusive='0'"
    * @generated
    */
-  EDataType getUnsignedShort();
+  EDataType<Integer> getUnsignedShort();
 
   /**
    * Returns the meta object for data type '{@link java.lang.Integer <em>Unsigned Short Object</em>}'.
@@ -1739,7 +1749,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='unsignedShort:Object' baseType='unsignedShort'"
    * @generated
    */
-  EDataType getUnsignedShortObject();
+  EDataType<Integer> getUnsignedShortObject();
 
   /**
    * Returns the meta object for data type '<em>Unsigned Byte</em>'.
@@ -1750,7 +1760,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='unsignedByte' maxInclusive='255' minInclusive='0'"
    * @generated
    */
-  EDataType getUnsignedByte();
+  EDataType<Short> getUnsignedByte();
 
   /**
    * Returns the meta object for data type '{@link java.lang.Short <em>Unsigned Byte Object</em>}'.
@@ -1762,7 +1772,7 @@ public interface XMLTypePackage extends EPackage
    *        extendedMetaData="name='unsignedByte:Object' baseType='unsignedByte'"
    * @generated
    */
-  EDataType getUnsignedByteObject();
+  EDataType<Short> getUnsignedByteObject();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1795,7 +1805,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getAnyType()
      * @generated
      */
-    EClass ANY_TYPE = eINSTANCE.getAnyType();
+    EClass<AnyType> ANY_TYPE = eINSTANCE.getAnyType();
 
     /**
      * The meta object literal for the '<em><b>Mixed</b></em>' attribute list feature.
@@ -1803,7 +1813,7 @@ public interface XMLTypePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ANY_TYPE__MIXED = eINSTANCE.getAnyType_Mixed();
+    EAttribute<AnyType, FeatureMap> ANY_TYPE__MIXED = eINSTANCE.getAnyType_Mixed();
 
     /**
      * The meta object literal for the '<em><b>Any</b></em>' attribute list feature.
@@ -1811,7 +1821,7 @@ public interface XMLTypePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ANY_TYPE__ANY = eINSTANCE.getAnyType_Any();
+    EAttribute<AnyType, FeatureMap> ANY_TYPE__ANY = eINSTANCE.getAnyType_Any();
 
     /**
      * The meta object literal for the '<em><b>Any Attribute</b></em>' attribute list feature.
@@ -1819,7 +1829,7 @@ public interface XMLTypePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ANY_TYPE__ANY_ATTRIBUTE = eINSTANCE.getAnyType_AnyAttribute();
+    EAttribute<AnyType, FeatureMap> ANY_TYPE__ANY_ATTRIBUTE = eINSTANCE.getAnyType_AnyAttribute();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.ecore.xml.type.impl.ProcessingInstructionImpl <em>Processing Instruction</em>}' class.
@@ -1829,7 +1839,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getProcessingInstruction()
      * @generated
      */
-    EClass PROCESSING_INSTRUCTION = eINSTANCE.getProcessingInstruction();
+    EClass<ProcessingInstruction> PROCESSING_INSTRUCTION = eINSTANCE.getProcessingInstruction();
 
     /**
      * The meta object literal for the '<em><b>Data</b></em>' attribute feature.
@@ -1837,7 +1847,7 @@ public interface XMLTypePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROCESSING_INSTRUCTION__DATA = eINSTANCE.getProcessingInstruction_Data();
+    EAttribute<ProcessingInstruction, String> PROCESSING_INSTRUCTION__DATA = eINSTANCE.getProcessingInstruction_Data();
 
     /**
      * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
@@ -1845,7 +1855,7 @@ public interface XMLTypePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROCESSING_INSTRUCTION__TARGET = eINSTANCE.getProcessingInstruction_Target();
+    EAttribute<ProcessingInstruction, String> PROCESSING_INSTRUCTION__TARGET = eINSTANCE.getProcessingInstruction_Target();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.ecore.xml.type.impl.SimpleAnyTypeImpl <em>Simple Any Type</em>}' class.
@@ -1855,7 +1865,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getSimpleAnyType()
      * @generated
      */
-    EClass SIMPLE_ANY_TYPE = eINSTANCE.getSimpleAnyType();
+    EClass<SimpleAnyType> SIMPLE_ANY_TYPE = eINSTANCE.getSimpleAnyType();
 
     /**
      * The meta object literal for the '<em><b>Raw Value</b></em>' attribute feature.
@@ -1863,7 +1873,7 @@ public interface XMLTypePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SIMPLE_ANY_TYPE__RAW_VALUE = eINSTANCE.getSimpleAnyType_RawValue();
+    EAttribute<SimpleAnyType, String> SIMPLE_ANY_TYPE__RAW_VALUE = eINSTANCE.getSimpleAnyType_RawValue();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -1871,7 +1881,7 @@ public interface XMLTypePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SIMPLE_ANY_TYPE__VALUE = eINSTANCE.getSimpleAnyType_Value();
+    EAttribute<SimpleAnyType, Object> SIMPLE_ANY_TYPE__VALUE = eINSTANCE.getSimpleAnyType_Value();
 
     /**
      * The meta object literal for the '<em><b>Instance Type</b></em>' reference feature.
@@ -1879,7 +1889,7 @@ public interface XMLTypePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SIMPLE_ANY_TYPE__INSTANCE_TYPE = eINSTANCE.getSimpleAnyType_InstanceType();
+    EReference<SimpleAnyType, EDataType> SIMPLE_ANY_TYPE__INSTANCE_TYPE = eINSTANCE.getSimpleAnyType_InstanceType();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.ecore.xml.type.impl.XMLTypeDocumentRootImpl <em>Document Root</em>}' class.
@@ -1889,7 +1899,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getXMLTypeDocumentRoot()
      * @generated
      */
-    EClass XML_TYPE_DOCUMENT_ROOT = eINSTANCE.getXMLTypeDocumentRoot();
+    EClass<XMLTypeDocumentRoot> XML_TYPE_DOCUMENT_ROOT = eINSTANCE.getXMLTypeDocumentRoot();
 
     /**
      * The meta object literal for the '<em><b>Mixed</b></em>' attribute list feature.
@@ -1897,7 +1907,7 @@ public interface XMLTypePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute XML_TYPE_DOCUMENT_ROOT__MIXED = eINSTANCE.getXMLTypeDocumentRoot_Mixed();
+    EAttribute<XMLTypeDocumentRoot, FeatureMap> XML_TYPE_DOCUMENT_ROOT__MIXED = eINSTANCE.getXMLTypeDocumentRoot_Mixed();
 
     /**
      * The meta object literal for the '<em><b>XMLNS Prefix Map</b></em>' map feature.
@@ -1905,7 +1915,7 @@ public interface XMLTypePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference XML_TYPE_DOCUMENT_ROOT__XMLNS_PREFIX_MAP = eINSTANCE.getXMLTypeDocumentRoot_XMLNSPrefixMap();
+    EReference<XMLTypeDocumentRoot, EMap<String, String>> XML_TYPE_DOCUMENT_ROOT__XMLNS_PREFIX_MAP = eINSTANCE.getXMLTypeDocumentRoot_XMLNSPrefixMap();
 
     /**
      * The meta object literal for the '<em><b>XSI Schema Location</b></em>' map feature.
@@ -1913,7 +1923,7 @@ public interface XMLTypePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference XML_TYPE_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION = eINSTANCE.getXMLTypeDocumentRoot_XSISchemaLocation();
+    EReference<XMLTypeDocumentRoot, EMap<String, String>> XML_TYPE_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION = eINSTANCE.getXMLTypeDocumentRoot_XSISchemaLocation();
 
     /**
      * The meta object literal for the '<em><b>CDATA</b></em>' attribute feature.
@@ -1921,7 +1931,7 @@ public interface XMLTypePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute XML_TYPE_DOCUMENT_ROOT__CDATA = eINSTANCE.getXMLTypeDocumentRoot_CDATA();
+    EAttribute<XMLTypeDocumentRoot, EList<String>> XML_TYPE_DOCUMENT_ROOT__CDATA = eINSTANCE.getXMLTypeDocumentRoot_CDATA();
 
     /**
      * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
@@ -1929,7 +1939,7 @@ public interface XMLTypePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute XML_TYPE_DOCUMENT_ROOT__COMMENT = eINSTANCE.getXMLTypeDocumentRoot_Comment();
+    EAttribute<XMLTypeDocumentRoot, EList<String>> XML_TYPE_DOCUMENT_ROOT__COMMENT = eINSTANCE.getXMLTypeDocumentRoot_Comment();
 
     /**
      * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
@@ -1937,7 +1947,7 @@ public interface XMLTypePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute XML_TYPE_DOCUMENT_ROOT__TEXT = eINSTANCE.getXMLTypeDocumentRoot_Text();
+    EAttribute<XMLTypeDocumentRoot, EList<String>> XML_TYPE_DOCUMENT_ROOT__TEXT = eINSTANCE.getXMLTypeDocumentRoot_Text();
 
     /**
      * The meta object literal for the '<em><b>Processing Instruction</b></em>' containment reference feature.
@@ -1945,7 +1955,7 @@ public interface XMLTypePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference XML_TYPE_DOCUMENT_ROOT__PROCESSING_INSTRUCTION = eINSTANCE.getXMLTypeDocumentRoot_ProcessingInstruction();
+    EReference<XMLTypeDocumentRoot, EList<ProcessingInstruction>> XML_TYPE_DOCUMENT_ROOT__PROCESSING_INSTRUCTION = eINSTANCE.getXMLTypeDocumentRoot_ProcessingInstruction();
 
     /**
      * The meta object literal for the '<em>Any Simple Type</em>' data type.
@@ -1955,7 +1965,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getAnySimpleType()
      * @generated
      */
-    EDataType ANY_SIMPLE_TYPE = eINSTANCE.getAnySimpleType();
+    EDataType<Object> ANY_SIMPLE_TYPE = eINSTANCE.getAnySimpleType();
 
     /**
      * The meta object literal for the '<em>Any URI</em>' data type.
@@ -1965,7 +1975,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getAnyURI()
      * @generated
      */
-    EDataType ANY_URI = eINSTANCE.getAnyURI();
+    EDataType<String> ANY_URI = eINSTANCE.getAnyURI();
 
     /**
      * The meta object literal for the '<em>Base64 Binary</em>' data type.
@@ -1974,7 +1984,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getBase64Binary()
      * @generated
      */
-    EDataType BASE64_BINARY = eINSTANCE.getBase64Binary();
+    EDataType<byte[]> BASE64_BINARY = eINSTANCE.getBase64Binary();
 
     /**
      * The meta object literal for the '<em>Boolean</em>' data type.
@@ -1983,7 +1993,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getBoolean()
      * @generated
      */
-    EDataType BOOLEAN = eINSTANCE.getBoolean();
+    EDataType<Boolean> BOOLEAN = eINSTANCE.getBoolean();
 
     /**
      * The meta object literal for the '<em>Boolean Object</em>' data type.
@@ -1993,7 +2003,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getBooleanObject()
      * @generated
      */
-    EDataType BOOLEAN_OBJECT = eINSTANCE.getBooleanObject();
+    EDataType<Boolean> BOOLEAN_OBJECT = eINSTANCE.getBooleanObject();
 
     /**
      * The meta object literal for the '<em>Byte</em>' data type.
@@ -2002,7 +2012,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getByte()
      * @generated
      */
-    EDataType BYTE = eINSTANCE.getByte();
+    EDataType<Byte> BYTE = eINSTANCE.getByte();
 
     /**
      * The meta object literal for the '<em>Byte Object</em>' data type.
@@ -2012,7 +2022,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getByteObject()
      * @generated
      */
-    EDataType BYTE_OBJECT = eINSTANCE.getByteObject();
+    EDataType<Byte> BYTE_OBJECT = eINSTANCE.getByteObject();
 
     /**
      * The meta object literal for the '<em>Date</em>' data type.
@@ -2022,7 +2032,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getDate()
      * @generated
      */
-    EDataType DATE = eINSTANCE.getDate();
+    EDataType<XMLGregorianCalendar> DATE = eINSTANCE.getDate();
 
     /**
      * The meta object literal for the '<em>Date Time</em>' data type.
@@ -2032,7 +2042,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getDateTime()
      * @generated
      */
-    EDataType DATE_TIME = eINSTANCE.getDateTime();
+    EDataType<XMLGregorianCalendar> DATE_TIME = eINSTANCE.getDateTime();
 
     /**
      * The meta object literal for the '<em>Decimal</em>' data type.
@@ -2042,7 +2052,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getDecimal()
      * @generated
      */
-    EDataType DECIMAL = eINSTANCE.getDecimal();
+    EDataType<BigDecimal> DECIMAL = eINSTANCE.getDecimal();
 
     /**
      * The meta object literal for the '<em>Double</em>' data type.
@@ -2051,7 +2061,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getDouble()
      * @generated
      */
-    EDataType DOUBLE = eINSTANCE.getDouble();
+    EDataType<Double> DOUBLE = eINSTANCE.getDouble();
 
     /**
      * The meta object literal for the '<em>Double Object</em>' data type.
@@ -2061,7 +2071,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getDoubleObject()
      * @generated
      */
-    EDataType DOUBLE_OBJECT = eINSTANCE.getDoubleObject();
+    EDataType<Double> DOUBLE_OBJECT = eINSTANCE.getDoubleObject();
 
     /**
      * The meta object literal for the '<em>Duration</em>' data type.
@@ -2071,7 +2081,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getDuration()
      * @generated
      */
-    EDataType DURATION = eINSTANCE.getDuration();
+    EDataType<Duration> DURATION = eINSTANCE.getDuration();
 
     /**
      * The meta object literal for the '<em>ENTITIES</em>' data type.
@@ -2081,7 +2091,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getENTITIES()
      * @generated
      */
-    EDataType ENTITIES = eINSTANCE.getENTITIES();
+    EDataType<List<String>> ENTITIES = eINSTANCE.getENTITIES();
 
     /**
      * The meta object literal for the '<em>ENTITIES Base</em>' data type.
@@ -2091,7 +2101,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getENTITIESBase()
      * @generated
      */
-    EDataType ENTITIES_BASE = eINSTANCE.getENTITIESBase();
+    EDataType<List<String>> ENTITIES_BASE = eINSTANCE.getENTITIESBase();
 
     /**
      * The meta object literal for the '<em>ENTITY</em>' data type.
@@ -2101,7 +2111,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getENTITY()
      * @generated
      */
-    EDataType ENTITY = eINSTANCE.getENTITY();
+    EDataType<String> ENTITY = eINSTANCE.getENTITY();
 
     /**
      * The meta object literal for the '<em>Float</em>' data type.
@@ -2110,7 +2120,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getFloat()
      * @generated
      */
-    EDataType FLOAT = eINSTANCE.getFloat();
+    EDataType<Float> FLOAT = eINSTANCE.getFloat();
 
     /**
      * The meta object literal for the '<em>Float Object</em>' data type.
@@ -2120,7 +2130,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getFloatObject()
      * @generated
      */
-    EDataType FLOAT_OBJECT = eINSTANCE.getFloatObject();
+    EDataType<Float> FLOAT_OBJECT = eINSTANCE.getFloatObject();
 
     /**
      * The meta object literal for the '<em>GDay</em>' data type.
@@ -2130,7 +2140,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getGDay()
      * @generated
      */
-    EDataType GDAY = eINSTANCE.getGDay();
+    EDataType<XMLGregorianCalendar> GDAY = eINSTANCE.getGDay();
 
     /**
      * The meta object literal for the '<em>GMonth</em>' data type.
@@ -2140,7 +2150,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getGMonth()
      * @generated
      */
-    EDataType GMONTH = eINSTANCE.getGMonth();
+    EDataType<XMLGregorianCalendar> GMONTH = eINSTANCE.getGMonth();
 
     /**
      * The meta object literal for the '<em>GMonth Day</em>' data type.
@@ -2150,7 +2160,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getGMonthDay()
      * @generated
      */
-    EDataType GMONTH_DAY = eINSTANCE.getGMonthDay();
+    EDataType<XMLGregorianCalendar> GMONTH_DAY = eINSTANCE.getGMonthDay();
 
     /**
      * The meta object literal for the '<em>GYear</em>' data type.
@@ -2160,7 +2170,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getGYear()
      * @generated
      */
-    EDataType GYEAR = eINSTANCE.getGYear();
+    EDataType<XMLGregorianCalendar> GYEAR = eINSTANCE.getGYear();
 
     /**
      * The meta object literal for the '<em>GYear Month</em>' data type.
@@ -2170,7 +2180,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getGYearMonth()
      * @generated
      */
-    EDataType GYEAR_MONTH = eINSTANCE.getGYearMonth();
+    EDataType<XMLGregorianCalendar> GYEAR_MONTH = eINSTANCE.getGYearMonth();
 
     /**
      * The meta object literal for the '<em>Hex Binary</em>' data type.
@@ -2179,7 +2189,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getHexBinary()
      * @generated
      */
-    EDataType HEX_BINARY = eINSTANCE.getHexBinary();
+    EDataType<byte[]> HEX_BINARY = eINSTANCE.getHexBinary();
 
     /**
      * The meta object literal for the '<em>ID</em>' data type.
@@ -2189,7 +2199,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getID()
      * @generated
      */
-    EDataType ID = eINSTANCE.getID();
+    EDataType<String> ID = eINSTANCE.getID();
 
     /**
      * The meta object literal for the '<em>IDREF</em>' data type.
@@ -2199,7 +2209,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getIDREF()
      * @generated
      */
-    EDataType IDREF = eINSTANCE.getIDREF();
+    EDataType<String> IDREF = eINSTANCE.getIDREF();
 
     /**
      * The meta object literal for the '<em>IDREFS</em>' data type.
@@ -2209,7 +2219,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getIDREFS()
      * @generated
      */
-    EDataType IDREFS = eINSTANCE.getIDREFS();
+    EDataType<List<String>> IDREFS = eINSTANCE.getIDREFS();
 
     /**
      * The meta object literal for the '<em>IDREFS Base</em>' data type.
@@ -2219,7 +2229,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getIDREFSBase()
      * @generated
      */
-    EDataType IDREFS_BASE = eINSTANCE.getIDREFSBase();
+    EDataType<List<String>> IDREFS_BASE = eINSTANCE.getIDREFSBase();
 
     /**
      * The meta object literal for the '<em>Int</em>' data type.
@@ -2228,7 +2238,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getInt()
      * @generated
      */
-    EDataType INT = eINSTANCE.getInt();
+    EDataType<Integer> INT = eINSTANCE.getInt();
 
     /**
      * The meta object literal for the '<em>Integer</em>' data type.
@@ -2238,7 +2248,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getInteger()
      * @generated
      */
-    EDataType INTEGER = eINSTANCE.getInteger();
+    EDataType<BigInteger> INTEGER = eINSTANCE.getInteger();
 
     /**
      * The meta object literal for the '<em>Int Object</em>' data type.
@@ -2248,7 +2258,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getIntObject()
      * @generated
      */
-    EDataType INT_OBJECT = eINSTANCE.getIntObject();
+    EDataType<Integer> INT_OBJECT = eINSTANCE.getIntObject();
 
     /**
      * The meta object literal for the '<em>Language</em>' data type.
@@ -2258,7 +2268,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getLanguage()
      * @generated
      */
-    EDataType LANGUAGE = eINSTANCE.getLanguage();
+    EDataType<String> LANGUAGE = eINSTANCE.getLanguage();
 
     /**
      * The meta object literal for the '<em>Long</em>' data type.
@@ -2267,7 +2277,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getLong()
      * @generated
      */
-    EDataType LONG = eINSTANCE.getLong();
+    EDataType<Long> LONG = eINSTANCE.getLong();
 
     /**
      * The meta object literal for the '<em>Long Object</em>' data type.
@@ -2277,7 +2287,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getLongObject()
      * @generated
      */
-    EDataType LONG_OBJECT = eINSTANCE.getLongObject();
+    EDataType<Long> LONG_OBJECT = eINSTANCE.getLongObject();
 
     /**
      * The meta object literal for the '<em>Name</em>' data type.
@@ -2287,7 +2297,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getName_()
      * @generated
      */
-    EDataType NAME = eINSTANCE.getName_();
+    EDataType<String> NAME = eINSTANCE.getName_();
 
     /**
      * The meta object literal for the '<em>NC Name</em>' data type.
@@ -2297,7 +2307,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getNCName()
      * @generated
      */
-    EDataType NC_NAME = eINSTANCE.getNCName();
+    EDataType<String> NC_NAME = eINSTANCE.getNCName();
 
     /**
      * The meta object literal for the '<em>Negative Integer</em>' data type.
@@ -2307,7 +2317,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getNegativeInteger()
      * @generated
      */
-    EDataType NEGATIVE_INTEGER = eINSTANCE.getNegativeInteger();
+    EDataType<BigInteger> NEGATIVE_INTEGER = eINSTANCE.getNegativeInteger();
 
     /**
      * The meta object literal for the '<em>NMTOKEN</em>' data type.
@@ -2317,7 +2327,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getNMTOKEN()
      * @generated
      */
-    EDataType NMTOKEN = eINSTANCE.getNMTOKEN();
+    EDataType<String> NMTOKEN = eINSTANCE.getNMTOKEN();
 
     /**
      * The meta object literal for the '<em>NMTOKENS</em>' data type.
@@ -2327,7 +2337,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getNMTOKENS()
      * @generated
      */
-    EDataType NMTOKENS = eINSTANCE.getNMTOKENS();
+    EDataType<List<String>> NMTOKENS = eINSTANCE.getNMTOKENS();
 
     /**
      * The meta object literal for the '<em>NMTOKENS Base</em>' data type.
@@ -2337,7 +2347,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getNMTOKENSBase()
      * @generated
      */
-    EDataType NMTOKENS_BASE = eINSTANCE.getNMTOKENSBase();
+    EDataType<List<String>> NMTOKENS_BASE = eINSTANCE.getNMTOKENSBase();
 
     /**
      * The meta object literal for the '<em>Non Negative Integer</em>' data type.
@@ -2347,7 +2357,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getNonNegativeInteger()
      * @generated
      */
-    EDataType NON_NEGATIVE_INTEGER = eINSTANCE.getNonNegativeInteger();
+    EDataType<BigInteger> NON_NEGATIVE_INTEGER = eINSTANCE.getNonNegativeInteger();
 
     /**
      * The meta object literal for the '<em>Non Positive Integer</em>' data type.
@@ -2357,7 +2367,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getNonPositiveInteger()
      * @generated
      */
-    EDataType NON_POSITIVE_INTEGER = eINSTANCE.getNonPositiveInteger();
+    EDataType<BigInteger> NON_POSITIVE_INTEGER = eINSTANCE.getNonPositiveInteger();
 
     /**
      * The meta object literal for the '<em>Normalized String</em>' data type.
@@ -2367,7 +2377,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getNormalizedString()
      * @generated
      */
-    EDataType NORMALIZED_STRING = eINSTANCE.getNormalizedString();
+    EDataType<String> NORMALIZED_STRING = eINSTANCE.getNormalizedString();
 
     /**
      * The meta object literal for the '<em>NOTATION</em>' data type.
@@ -2377,7 +2387,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getNOTATION()
      * @generated
      */
-    EDataType NOTATION = eINSTANCE.getNOTATION();
+    EDataType<QName> NOTATION = eINSTANCE.getNOTATION();
 
     /**
      * The meta object literal for the '<em>Positive Integer</em>' data type.
@@ -2387,7 +2397,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getPositiveInteger()
      * @generated
      */
-    EDataType POSITIVE_INTEGER = eINSTANCE.getPositiveInteger();
+    EDataType<BigInteger> POSITIVE_INTEGER = eINSTANCE.getPositiveInteger();
 
     /**
      * The meta object literal for the '<em>QName</em>' data type.
@@ -2397,7 +2407,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getQName()
      * @generated
      */
-    EDataType QNAME = eINSTANCE.getQName();
+    EDataType<QName> QNAME = eINSTANCE.getQName();
 
     /**
      * The meta object literal for the '<em>Short</em>' data type.
@@ -2406,7 +2416,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getShort()
      * @generated
      */
-    EDataType SHORT = eINSTANCE.getShort();
+    EDataType<Short> SHORT = eINSTANCE.getShort();
 
     /**
      * The meta object literal for the '<em>Short Object</em>' data type.
@@ -2416,7 +2426,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getShortObject()
      * @generated
      */
-    EDataType SHORT_OBJECT = eINSTANCE.getShortObject();
+    EDataType<Short> SHORT_OBJECT = eINSTANCE.getShortObject();
 
     /**
      * The meta object literal for the '<em>String</em>' data type.
@@ -2426,7 +2436,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getString()
      * @generated
      */
-    EDataType STRING = eINSTANCE.getString();
+    EDataType<String> STRING = eINSTANCE.getString();
 
     /**
      * The meta object literal for the '<em>Time</em>' data type.
@@ -2436,7 +2446,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getTime()
      * @generated
      */
-    EDataType TIME = eINSTANCE.getTime();
+    EDataType<XMLGregorianCalendar> TIME = eINSTANCE.getTime();
 
     /**
      * The meta object literal for the '<em>Token</em>' data type.
@@ -2446,7 +2456,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getToken()
      * @generated
      */
-    EDataType TOKEN = eINSTANCE.getToken();
+    EDataType<String> TOKEN = eINSTANCE.getToken();
 
     /**
      * The meta object literal for the '<em>Unsigned Byte</em>' data type.
@@ -2455,7 +2465,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getUnsignedByte()
      * @generated
      */
-    EDataType UNSIGNED_BYTE = eINSTANCE.getUnsignedByte();
+    EDataType<Short> UNSIGNED_BYTE = eINSTANCE.getUnsignedByte();
 
     /**
      * The meta object literal for the '<em>Unsigned Byte Object</em>' data type.
@@ -2465,7 +2475,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getUnsignedByteObject()
      * @generated
      */
-    EDataType UNSIGNED_BYTE_OBJECT = eINSTANCE.getUnsignedByteObject();
+    EDataType<Short> UNSIGNED_BYTE_OBJECT = eINSTANCE.getUnsignedByteObject();
 
     /**
      * The meta object literal for the '<em>Unsigned Int</em>' data type.
@@ -2474,7 +2484,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getUnsignedInt()
      * @generated
      */
-    EDataType UNSIGNED_INT = eINSTANCE.getUnsignedInt();
+    EDataType<Long> UNSIGNED_INT = eINSTANCE.getUnsignedInt();
 
     /**
      * The meta object literal for the '<em>Unsigned Int Object</em>' data type.
@@ -2484,7 +2494,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getUnsignedIntObject()
      * @generated
      */
-    EDataType UNSIGNED_INT_OBJECT = eINSTANCE.getUnsignedIntObject();
+    EDataType<Long> UNSIGNED_INT_OBJECT = eINSTANCE.getUnsignedIntObject();
 
     /**
      * The meta object literal for the '<em>Unsigned Long</em>' data type.
@@ -2494,7 +2504,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getUnsignedLong()
      * @generated
      */
-    EDataType UNSIGNED_LONG = eINSTANCE.getUnsignedLong();
+    EDataType<BigInteger> UNSIGNED_LONG = eINSTANCE.getUnsignedLong();
 
     /**
      * The meta object literal for the '<em>Unsigned Short</em>' data type.
@@ -2503,7 +2513,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getUnsignedShort()
      * @generated
      */
-    EDataType UNSIGNED_SHORT = eINSTANCE.getUnsignedShort();
+    EDataType<Integer> UNSIGNED_SHORT = eINSTANCE.getUnsignedShort();
 
     /**
      * The meta object literal for the '<em>Unsigned Short Object</em>' data type.
@@ -2513,7 +2523,7 @@ public interface XMLTypePackage extends EPackage
      * @see org.eclipse.emf.ecore.xml.type.impl.XMLTypePackageImpl#getUnsignedShortObject()
      * @generated
      */
-    EDataType UNSIGNED_SHORT_OBJECT = eINSTANCE.getUnsignedShortObject();
+    EDataType<Integer> UNSIGNED_SHORT_OBJECT = eINSTANCE.getUnsignedShortObject();
 
   }
 
