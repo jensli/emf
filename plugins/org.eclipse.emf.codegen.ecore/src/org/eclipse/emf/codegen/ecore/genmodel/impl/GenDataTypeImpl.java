@@ -295,31 +295,10 @@ public class GenDataTypeImpl extends GenClassifierImpl implements GenDataType
     return result;
   }
 
+  // CHANGE gen: Added
   public String getImportedWildcardObjectInstanceClassName()
   {
-    String result = getObjectInstanceClassName();
-    if (getEffectiveComplianceLevel().getValue() >= GenJDKLevel.JDK50)
-    {
-      if (getEffectiveItemType() != null)
-      {
-        result += "<?>";
-      }
-      else if (!getEcoreDataType().getETypeParameters().isEmpty())
-      {
-        result += "<";
-        for (Iterator<ETypeParameter> i = getEcoreDataType().getETypeParameters().iterator(); i.hasNext(); )
-        {
-          i.next();
-          result += "?";
-          if (i.hasNext())
-          {
-            result += ", ";
-          }
-        }
-        result += ">";
-      }
-    }
-    return result;
+    return getImportedParameterizedObjectInstanceClassName();
   }
   
   @Override
@@ -1248,5 +1227,15 @@ public class GenDataTypeImpl extends GenClassifierImpl implements GenDataType
   public String getConverterBody(String indentation)
   {
     return indentAndImport(getConverterBody(), indentation);
+  }
+  
+  // CHANGE gen: Added, copied from GenClassImpl
+  public String getImportedMetaType()
+  {
+    if (getGenModel().useGenerics()) {
+      return getRawImportedMetaType() + "<" + this.getImportedWildcardObjectInstanceClassName() + ">";
+    } else {
+      return getRawImportedMetaType();
+    }
   }
 }

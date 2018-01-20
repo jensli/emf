@@ -1308,7 +1308,7 @@ public abstract class GenBaseImpl extends EObjectImpl implements GenBase
     }
 
     String instanceClassName = eType.getInstanceClassName();
-	if ("org.eclipse.emf.common.util.Enumerator".equals(instanceClassName))
+    if ("org.eclipse.emf.common.util.Enumerator".equals(instanceClassName))
     {
       for (EDataType baseType = getExtendedMetaData().getBaseType((EDataType)eType);
            baseType != null;
@@ -1368,10 +1368,15 @@ public abstract class GenBaseImpl extends EObjectImpl implements GenBase
   {
     if (getEffectiveComplianceLevel().getValue() >= GenJDKLevel.JDK50)
     {
-      return
-        primitiveAsObject && isPrimitiveType(eGenericType.getERawType())
-          ? getPrimitiveObjectType(eGenericType.getERawType())
-          : getTypeArgument(context, eGenericType, false, false, useWildcardParams);
+      // CHANGE gen: Handle null
+      if (eGenericType == null) {
+        return "java.lang.Void";
+      } else {
+        return
+          primitiveAsObject && isPrimitiveType(eGenericType.getERawType())
+            ? getPrimitiveObjectType(eGenericType.getERawType())
+            : getTypeArgument(context, eGenericType, false, false, useWildcardParams);
+      }
     }
     else
     {

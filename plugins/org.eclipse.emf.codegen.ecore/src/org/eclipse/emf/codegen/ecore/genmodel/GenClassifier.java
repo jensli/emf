@@ -114,7 +114,7 @@ public interface GenClassifier extends GenBase
    */
   String getImportedWildcardInstanceClassName();
 
-  // CHANGE: Moved here from GenDataType
+  // CHANGE: Added? Like getImportedWildcardInstanceClassName but wraps primitives
   /**
    * @return The class name of this gen object, with unbounted wildcard type arguments.
    */

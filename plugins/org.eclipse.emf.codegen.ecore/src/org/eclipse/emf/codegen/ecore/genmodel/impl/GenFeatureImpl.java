@@ -1014,7 +1014,7 @@ public class GenFeatureImpl extends GenTypedElementImpl implements GenFeature
       + getGenClass().getFeatureID(this) : getQualifiedFeatureAccessorName() + "()";
   }
 
-  // CHANGE: Removed. getImportedMetaType never returns anythong with '.' in it so this could never have worked.
+  // CHANGE gen: Removed. getImportedMetaType never returns anythong with '.' in it so this could never have worked.
 //  public String getMetaType()
 //  {
 //    String importedName = getImportedMetaType();

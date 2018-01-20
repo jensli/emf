@@ -717,7 +717,7 @@ public class GenOperationImpl extends GenTypedElementImpl implements GenOperatio
     if (getGenModel().useGenerics()) {
       String containerType = getGenClass().isImplementingEobject()
         ? this.getGenClass().getImportedWildcardObjectInstanceClassName() : "?";
-    return getRawImportedMetaType() + "<" + containerType + ", " + this.getObjectType(null, true) + ">";
+      return getRawImportedMetaType() + "<" + containerType + ", " + this.getObjectType(null, true) + ">";
     } else {
       return getRawImportedMetaType();
     }

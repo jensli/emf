@@ -166,11 +166,11 @@ public interface <%=genPackage.getFactoryInterfaceName()%><%if (!genModel.isSupp
 	@SuppressWarnings("unchecked")
 	public <T> T createFromString(<%=genModel.getImportedName("org.eclipse.emf.ecore.EDataType")%><T> eDataType, String initialValue)
 	{
+		// CHANGE gen: Cast added 1
 		switch (eDataType.getClassifierID())
 		{
 <%for (GenDataType genDataType : genPackage.getAllGenDataTypes()) {%>
   <%if (genDataType.isSerializable()) {%>
-			// CHANGE gen: Cast added 1
 			case <%=genPackage.getImportedPackageInterfaceName()%>.<%=genDataType.getClassifierID()%>:
 				return (T) create<%=genDataType.getName()%>FromString((<%=genModel.getImportedName("org.eclipse.emf.ecore.EDataType")%><<%=genDataType.getImportedParameterizedObjectInstanceClassName()%>>) eDataType, initialValue);
   <%}%>
@@ -459,10 +459,10 @@ public interface <%=genPackage.getFactoryInterfaceName()%><%if (!genModel.isSupp
         <%String item; if (!genModel.useGenerics()) { item = "i.next()"; %>
 		for (<%=genModel.getImportedName("java.util.Iterator")%> i = instanceValue.iterator(); i.hasNext(); )
         <%} else { item = "item";%>
+		// CHANGE gen: Cast added 4
 		for (<%=genModel.getImportedName("java.lang.Object")%> item : instanceValue)
         <%}%>
 		{
-			// CHANGE gen: Cast added
       <%if (genItemType.getGenPackage() == genPackage) {%>
         <%if (genPackage.isDataTypeConverters()) { genItemType = genItemType.getObjectType();%>
 			result.append(convert<%=genItemType.getName()%>((<%=genItemType.getImportedWildcardObjectInstanceClassName()%>) <%=item%>));
@@ -563,7 +563,7 @@ public interface <%=genPackage.getFactoryInterfaceName()%><%if (!genModel.isSupp
     <%if (genModel.useGenerics() && (genDataType.getItemType() != null || genDataType.isUncheckedCast()) && (genPackage.isDataTypeConverters() || genDataType.hasCreatorBody())) {%>
 	@SuppressWarnings("unchecked")
     <%}%>
-	public String convert<%=genDataType.getName()%>ToString(<%=genModel.getImportedName("org.eclipse.emf.ecore.EDataType")%><<%=genDataType.getImportedParameterizedObjectInstanceClassName()%>> eDataType, <%=genDataType.getImportedParameterizedObjectInstanceClassName()%> instanceValue)
+	public String convert<%=genDataType.getName()%>ToString(<%=genModel.getImportedName("org.eclipse.emf.ecore.EDataType")%><<%=genDataType.getImportedParameterizedObjectInstanceClassName()%>> eDataType, Object instanceValue)
 	{
     <%if (genDataType instanceof GenEnum) {%>
       <%if (genPackage.isDataTypeConverters() || genDataType.hasConverterBody()) {%>

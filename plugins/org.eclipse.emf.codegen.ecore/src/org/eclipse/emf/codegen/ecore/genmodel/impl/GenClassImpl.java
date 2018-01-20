@@ -918,7 +918,7 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
     return result;
   }
   
-  // CHANGE: Added
+  // CHANGE gen: Added
   public String getImportedWildcardObjectInstanceClassName() {
     return getImportedWildcardInstanceClassName();
   }
@@ -3897,6 +3897,17 @@ public class GenClassImpl extends GenClassifierImpl implements GenClass
       {
         return getAllGenFeatures().size() > 0;
       }
+    }
+  }
+  
+  // CHANGE gen:
+  public String getImportedMetaType()
+  {
+    if (getGenModel().useGenerics()) {
+      String genericEclass = this.isImplementingEobject() ? this.getImportedWildcardObjectInstanceClassName() : "?";
+      return getRawImportedMetaType() + "<" + genericEclass + ">";
+    } else {
+      return getRawImportedMetaType();
     }
   }
 }

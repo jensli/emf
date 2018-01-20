@@ -202,23 +202,24 @@ public abstract class GenClassifierImpl extends GenBaseImpl implements GenClassi
 //  public abstract String getImportedMetaType();
 //  public abstract String getImportedRawMetaType();
 
-  // TODO j: getMetaType, this is unnessecary isn't is? Name never has '.' in it?
+  // TODO gen: getMetaType, this is unnessecary isn't is? Name never has '.' in it?
 //  public String getMetaType()
 //  {
 //    String importedName = getImportedMetaType();
 //    return importedName.substring(importedName.lastIndexOf(".") + 1);
 //  }
 
-  // CHANGE gen: Moved here from GenClass
-  public String getImportedMetaType()
-  {
-    if (getGenModel().useGenerics()) {
-      String genericEclass = this.isImplementingEobject() ? this.getImportedWildcardObjectInstanceClassName() : "?";
-      return getRawImportedMetaType() + "<" + genericEclass + ">";
-    } else {
-      return getRawImportedMetaType();
-    }
-  }
+//  // TODO gen: Moved here from GenClass
+//  public String getImportedMetaType()
+//  {
+//    // TODO gen: Update for data type
+//    if (getGenModel().useGenerics()) {
+//      String genericEclass = this.isImplementingEobject() ? this.getImportedWildcardObjectInstanceClassName() : "?";
+//      return getRawImportedMetaType() + "<" + genericEclass + ">";
+//    } else {
+//      return getRawImportedMetaType();
+//    }
+//  }
 
   @Override
   public String getName()
@@ -261,7 +262,7 @@ public abstract class GenClassifierImpl extends GenBaseImpl implements GenClassi
 
   public String getClassifierInstanceName()
   {
-	  // CHANGED j: Remove type params in name
+	  // CHANGE gen: Remove type params in name
     return uncapPrefixedName(getName()) + getRawImportedMetaType();
   }
 
@@ -351,7 +352,7 @@ public abstract class GenClassifierImpl extends GenBaseImpl implements GenClassi
     return null;
   }
 
-  // CHANGE: Added.
+  // CHANGE gen: Added.
   public boolean isImplementingEobject() {
      Class<?> instanceClass = this.getEcoreClassifier().getInstanceClass();
 

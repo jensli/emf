@@ -225,7 +225,7 @@ public class Class
   protected final String TEXT_207 = ";";
   protected final String TEXT_208 = NL + "\t}" + NL + "" + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
   protected final String TEXT_209 = NL + "\t@Override";
-  protected final String TEXT_210 = NL + "\t// CHANGE: Added wildcard " + NL + "\tprotected ";
+  protected final String TEXT_210 = NL + "\t// CHANGE gen: Added wildcard " + NL + "\tprotected ";
   protected final String TEXT_211 = " eStaticClass()" + NL + "\t{" + NL + "\t\treturn ";
   protected final String TEXT_212 = ";" + NL + "\t}" + NL;
   protected final String TEXT_213 = NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL + "\tprotected static final int ESTATIC_FEATURE_COUNT = ";
@@ -1862,10 +1862,9 @@ public class Class
   protected final String TEXT_1844 = NL + "\tpublic ";
   protected final String TEXT_1845 = " getEMap()" + NL + "\t{" + NL + "\t\t";
   protected final String TEXT_1846 = " container = eContainer();" + NL + "\t\treturn container == null ? null : (";
-  protected final String TEXT_1847 = ")container.eGet(eContainmentFeature());" + NL + "\t}";
+  protected final String TEXT_1847 = ")container.eGet(eContainmentFeature());" + NL + "\t}" + NL;
   protected final String TEXT_1848 = NL + "} //";
-  protected final String TEXT_1849 = NL + NL;
-  protected final String TEXT_1850 = NL;
+  protected final String TEXT_1849 = NL;
 
   public String generate(Object argument)
   {
@@ -6211,7 +6210,6 @@ if (index != -1) { head = typeName.substring(0, index); tail = "<code>" + CodeGe
     // TODO fix the space above
     genModel.emitSortedImports();
     stringBuffer.append(TEXT_1849);
-    stringBuffer.append(TEXT_1850);
     return stringBuffer.toString();
   }
 }
