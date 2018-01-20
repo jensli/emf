@@ -1,11 +1,19 @@
 package org.eclipse.emf.ecore;
 
 
+import java.lang.reflect.InvocationTargetException;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.Date;
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.FeatureMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,14 +74,10 @@ public interface EcorePackage extends EPackage
   EcorePackage eINSTANCE = org.eclipse.emf.ecore.impl.EcorePackageImpl.init();
 
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.EModelElementImpl <em>EModel Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.EModelElementImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEModelElement()
    * @generated
    */
@@ -126,14 +130,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.ENamedElementImpl <em>ENamed Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.ENamedElementImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getENamedElement()
    * @generated
    */
@@ -196,14 +196,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.ETypedElementImpl <em>ETyped Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.ETypedElementImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getETypedElement()
    * @generated
    */
@@ -346,14 +342,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.EStructuralFeatureImpl <em>EStructural Feature</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.EStructuralFeatureImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEStructuralFeature()
    * @generated
    */
@@ -600,14 +592,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.EAttributeImpl <em>EAttribute</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.EAttributeImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEAttribute()
    * @generated
    */
@@ -874,14 +862,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.EAnnotationImpl <em>EAnnotation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.EAnnotationImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEAnnotation()
    * @generated
    */
@@ -984,14 +968,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.EClassifierImpl <em>EClassifier</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.EClassifierImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEClassifier()
    * @generated
    */
@@ -1138,14 +1118,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.EClassImpl <em>EClass</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.EClassImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEClass()
    * @generated
    */
@@ -1572,14 +1548,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.EDataTypeImpl <em>EData Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.EDataTypeImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEDataType()
    * @generated
    */
@@ -1736,14 +1708,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.EEnumImpl <em>EEnum</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.EEnumImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEEnum()
    * @generated
    */
@@ -1946,14 +1914,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.EEnumLiteralImpl <em>EEnum Literal</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.EEnumLiteralImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEEnumLiteral()
    * @generated
    */
@@ -2056,14 +2020,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.EFactoryImpl <em>EFactory</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.EFactoryImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEFactory()
    * @generated
    */
@@ -2162,14 +2122,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.EObjectImpl <em>EObject</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.EObjectImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEObject()
    * @generated
    */
@@ -2380,14 +2336,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.EOperationImpl <em>EOperation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.EOperationImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEOperation()
    * @generated
    */
@@ -2604,14 +2556,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.EPackageImpl <em>EPackage</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.EPackageImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEPackage()
    * @generated
    */
@@ -2746,14 +2694,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.EParameterImpl <em>EParameter</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.EParameterImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEParameter()
    * @generated
    */
@@ -2906,14 +2850,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.EReferenceImpl <em>EReference</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.EReferenceImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEReference()
    * @generated
    */
@@ -3220,14 +3160,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl <em>EString To String Map Entry</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEStringToStringMapEntry()
    * @generated
    */
@@ -3278,14 +3214,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.EGenericTypeImpl <em>EGeneric Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.EGenericTypeImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEGenericType()
    * @generated
    */
@@ -3388,14 +3320,10 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * The meta object id for the '{@link org.eclipse.emf.ecore.impl.ETypeParameterImpl <em>EType Parameter</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.impl.ETypeParameterImpl
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getETypeParameter()
    * @generated
    */
@@ -3468,14 +3396,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * The meta object id for the '<em>EBig Decimal</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see java.math.BigDecimal
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEBigDecimal()
    * @generated
    */
@@ -3483,14 +3408,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EBig Integer</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see java.math.BigInteger
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEBigInteger()
    * @generated
    */
@@ -3498,7 +3420,6 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EBoolean</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3511,14 +3432,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EBoolean Object</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see java.lang.Boolean
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEBooleanObject()
    * @generated
    */
@@ -3526,7 +3444,6 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EByte</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3539,7 +3456,6 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EByte Array</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3552,14 +3468,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EByte Object</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see java.lang.Byte
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEByteObject()
    * @generated
    */
@@ -3567,7 +3480,6 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EChar</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3580,14 +3492,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>ECharacter Object</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see java.lang.Character
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getECharacterObject()
    * @generated
    */
@@ -3595,14 +3504,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EDate</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see java.util.Date
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEDate()
    * @generated
    */
@@ -3610,14 +3516,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EDiagnostic Chain</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see org.eclipse.emf.common.util.DiagnosticChain
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEDiagnosticChain()
    * @generated
    */
@@ -3625,7 +3528,6 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EDouble</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3638,14 +3540,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EDouble Object</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see java.lang.Double
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEDoubleObject()
    * @generated
    */
@@ -3653,14 +3552,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EE List</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see org.eclipse.emf.common.util.EList
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEEList()
    * @generated
    */
@@ -3668,14 +3564,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EEnumerator</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see org.eclipse.emf.common.util.Enumerator
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEEnumerator()
    * @generated
    */
@@ -3683,14 +3576,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EFeature Map</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see org.eclipse.emf.ecore.util.FeatureMap
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEFeatureMap()
    * @generated
    */
@@ -3698,14 +3588,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EFeature Map Entry</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see org.eclipse.emf.ecore.util.FeatureMap.Entry
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEFeatureMapEntry()
    * @generated
    */
@@ -3713,7 +3600,6 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EFloat</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3726,14 +3612,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EFloat Object</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see java.lang.Float
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEFloatObject()
    * @generated
    */
@@ -3741,7 +3624,6 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EInt</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3754,14 +3636,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EInteger Object</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see java.lang.Integer
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEIntegerObject()
    * @generated
    */
@@ -3769,14 +3648,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EJava Class</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see java.lang.Class
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEJavaClass()
    * @generated
    */
@@ -3784,14 +3660,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EJava Object</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see java.lang.Object
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEJavaObject()
    * @generated
    */
@@ -3799,7 +3672,6 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>ELong</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3812,14 +3684,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>ELong Object</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see java.lang.Long
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getELongObject()
    * @generated
    */
@@ -3827,14 +3696,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EMap</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see java.util.Map
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEMap()
    * @generated
    */
@@ -3842,14 +3708,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EResource</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see org.eclipse.emf.ecore.resource.Resource
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEResource()
    * @generated
    */
@@ -3857,14 +3720,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EResource Set</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see org.eclipse.emf.ecore.resource.ResourceSet
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEResourceSet()
    * @generated
    */
@@ -3872,7 +3732,6 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EShort</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3885,14 +3744,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EShort Object</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see java.lang.Short
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEShortObject()
    * @generated
    */
@@ -3900,14 +3756,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EString</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see java.lang.String
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEString()
    * @generated
    */
@@ -3915,14 +3768,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>ETree Iterator</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see org.eclipse.emf.common.util.TreeIterator
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getETreeIterator()
    * @generated
    */
@@ -3930,14 +3780,11 @@ public interface EcorePackage extends EPackage
 
   
   /**
-  
    * The meta object id for the '<em>EInvocation Target Exception</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
     
    * @see java.lang.reflect.InvocationTargetException
-    
-  
    * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEInvocationTargetException()
    * @generated
    */
@@ -3946,14 +3793,11 @@ public interface EcorePackage extends EPackage
   
 
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.EAttribute <em>EAttribute</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EAttribute</em>'.
    * @see org.eclipse.emf.ecore.EAttribute
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -3990,14 +3834,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.EAnnotation <em>EAnnotation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EAnnotation</em>'.
    * @see org.eclipse.emf.ecore.EAnnotation
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -4070,14 +3911,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.EClass <em>EClass</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EClass</em>'.
    * @see org.eclipse.emf.ecore.EClass
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -4393,14 +4231,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.EClassifier <em>EClassifier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EClassifier</em>'.
    * @see org.eclipse.emf.ecore.EClassifier
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -4506,14 +4341,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.EDataType <em>EData Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EData Type</em>'.
    * @see org.eclipse.emf.ecore.EDataType
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -4538,14 +4370,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.EEnum <em>EEnum</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EEnum</em>'.
    * @see org.eclipse.emf.ecore.EEnum
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -4602,14 +4431,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.EEnumLiteral <em>EEnum Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EEnum Literal</em>'.
    * @see org.eclipse.emf.ecore.EEnumLiteral
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -4670,14 +4496,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.EFactory <em>EFactory</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EFactory</em>'.
    * @see org.eclipse.emf.ecore.EFactory
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -4706,7 +4529,7 @@ public interface EcorePackage extends EPackage
    * @see org.eclipse.emf.ecore.EFactory#create(org.eclipse.emf.ecore.EClass)
    * @generated
    */
-  EOperation<EFactory, EObject> getEFactory__Create__EClass();
+  EOperation<EFactory, ?> getEFactory__Create__EClass();
 
   
   /**
@@ -4717,7 +4540,7 @@ public interface EcorePackage extends EPackage
    * @see org.eclipse.emf.ecore.EFactory#createFromString(org.eclipse.emf.ecore.EDataType, java.lang.String)
    * @generated
    */
-  EOperation<EFactory, Object> getEFactory__CreateFromString__EDataType_String();
+  EOperation<EFactory, ?> getEFactory__CreateFromString__EDataType_String();
 
   
   /**
@@ -4734,14 +4557,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.EModelElement <em>EModel Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EModel Element</em>'.
    * @see org.eclipse.emf.ecore.EModelElement
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -4776,14 +4596,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.ENamedElement <em>ENamed Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>ENamed Element</em>'.
    * @see org.eclipse.emf.ecore.ENamedElement
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -4807,14 +4624,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.EObject <em>EObject</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EObject</em>'.
    * @see org.eclipse.emf.ecore.EObject
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -4831,7 +4645,7 @@ public interface EcorePackage extends EPackage
    * @see org.eclipse.emf.ecore.EObject#eClass()
    * @generated
    */
-  EOperation<EObject, EClass<?>> getEObject__EClass();
+  EOperation<EObject, EClass<? extends EObject>> getEObject__EClass();
 
   
   /**
@@ -4875,7 +4689,7 @@ public interface EcorePackage extends EPackage
    * @see org.eclipse.emf.ecore.EObject#eContainingFeature()
    * @generated
    */
-  EOperation<EObject, EStructuralFeature<?, ?>> getEObject__EContainingFeature();
+  EOperation<EObject, EStructuralFeature<? extends EObject, ? extends EObject>> getEObject__EContainingFeature();
 
   
   /**
@@ -4886,7 +4700,7 @@ public interface EcorePackage extends EPackage
    * @see org.eclipse.emf.ecore.EObject#eContainmentFeature()
    * @generated
    */
-  EOperation<EObject, EReference<?, ?>> getEObject__EContainmentFeature();
+  EOperation<EObject, EReference<?, ? extends EObject>> getEObject__EContainmentFeature();
 
   
   /**
@@ -4897,7 +4711,7 @@ public interface EcorePackage extends EPackage
    * @see org.eclipse.emf.ecore.EObject#eContents()
    * @generated
    */
-  EOperation<EObject, EList<?>> getEObject__EContents();
+  EOperation<EObject, EList<EObject>> getEObject__EContents();
 
   
   /**
@@ -4908,7 +4722,7 @@ public interface EcorePackage extends EPackage
    * @see org.eclipse.emf.ecore.EObject#eAllContents()
    * @generated
    */
-  EOperation<EObject, TreeIterator<?>> getEObject__EAllContents();
+  EOperation<EObject, TreeIterator<EObject>> getEObject__EAllContents();
 
   
   /**
@@ -4919,7 +4733,7 @@ public interface EcorePackage extends EPackage
    * @see org.eclipse.emf.ecore.EObject#eCrossReferences()
    * @generated
    */
-  EOperation<EObject, EList<?>> getEObject__ECrossReferences();
+  EOperation<EObject, EList<EObject>> getEObject__ECrossReferences();
 
   
   /**
@@ -4930,7 +4744,7 @@ public interface EcorePackage extends EPackage
    * @see org.eclipse.emf.ecore.EObject#eGet(org.eclipse.emf.ecore.EStructuralFeature)
    * @generated
    */
-  EOperation<EObject, Object> getEObject__EGet__EStructuralFeature();
+  EOperation<EObject, ?> getEObject__EGet__EStructuralFeature();
 
   
   /**
@@ -4941,7 +4755,7 @@ public interface EcorePackage extends EPackage
    * @see org.eclipse.emf.ecore.EObject#eGet(org.eclipse.emf.ecore.EStructuralFeature, boolean)
    * @generated
    */
-  EOperation<EObject, Object> getEObject__EGet__EStructuralFeature_boolean();
+  EOperation<EObject, ?> getEObject__EGet__EStructuralFeature_boolean();
 
   
   /**
@@ -4985,20 +4799,17 @@ public interface EcorePackage extends EPackage
    * @see org.eclipse.emf.ecore.EObject#eInvoke(org.eclipse.emf.ecore.EOperation, org.eclipse.emf.common.util.EList)
    * @generated
    */
-  EOperation<EObject, Object> getEObject__EInvoke__EOperation_EList();
+  EOperation<EObject, ?> getEObject__EInvoke__EOperation_EList();
 
   
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.EOperation <em>EOperation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EOperation</em>'.
    * @see org.eclipse.emf.ecore.EOperation
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -5092,14 +4903,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.EPackage <em>EPackage</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EPackage</em>'.
    * @see org.eclipse.emf.ecore.EPackage
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -5194,14 +5002,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.EParameter <em>EParameter</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EParameter</em>'.
    * @see org.eclipse.emf.ecore.EParameter
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -5225,14 +5030,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.EReference <em>EReference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EReference</em>'.
    * @see org.eclipse.emf.ecore.EReference
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -5319,14 +5121,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.EStructuralFeature <em>EStructural Feature</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EStructural Feature</em>'.
    * @see org.eclipse.emf.ecore.EStructuralFeature
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -5461,14 +5260,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.ETypedElement <em>ETyped Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>ETyped Element</em>'.
    * @see org.eclipse.emf.ecore.ETypedElement
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -5582,18 +5378,13 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link java.util.Map.Entry <em>EString To String Map Entry</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EString To String Map Entry</em>'.
    * @see java.util.Map.Entry
-    
    * @model keyDataType="org.eclipse.emf.ecore.EString"
-  
    *        valueDataType="org.eclipse.emf.ecore.EString"
-  
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -5629,14 +5420,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.EGenericType <em>EGeneric Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EGeneric Type</em>'.
    * @see org.eclipse.emf.ecore.EGenericType
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -5731,14 +5519,11 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
    * Returns the meta object for class '{@link org.eclipse.emf.ecore.ETypeParameter <em>EType Parameter</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>EType Parameter</em>'.
    * @see org.eclipse.emf.ecore.ETypeParameter
-    
-  
    * @generated
    */
   // CHANGE j: Class accessor
@@ -5762,684 +5547,377 @@ public interface EcorePackage extends EPackage
     
   
   /**
-  
-    
    * Returns the meta object for data type '{@link java.math.BigDecimal <em>EBig Decimal</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EBig Decimal</em>'.
-    
    * @see java.math.BigDecimal
-    
-    
    * @model instanceClass="java.math.BigDecimal"
-    
    *        extendedMetaData="baseType='http://www.w3.org/2001/XMLSchema#decimal'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEBigDecimal();
+  EDataType<BigDecimal> getEBigDecimal();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link java.math.BigInteger <em>EBig Integer</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EBig Integer</em>'.
-    
    * @see java.math.BigInteger
-    
-    
    * @model instanceClass="java.math.BigInteger"
-    
    *        extendedMetaData="baseType='http://www.w3.org/2001/XMLSchema#integer'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEBigInteger();
+  EDataType<BigInteger> getEBigInteger();
   
   /**
-  
-    
    * Returns the meta object for data type '<em>EBoolean</em>'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EBoolean</em>'.
-    
-    
    * @model instanceClass="boolean"
-    
    *        extendedMetaData="baseType='http://www.w3.org/2001/XMLSchema#boolean'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEBoolean();
+  EDataType<Boolean> getEBoolean();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link java.lang.Boolean <em>EBoolean Object</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EBoolean Object</em>'.
-    
    * @see java.lang.Boolean
-    
-    
    * @model instanceClass="java.lang.Boolean"
-    
    *        extendedMetaData="baseType='EBoolean' name='EBoolean:Object'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEBooleanObject();
+  EDataType<Boolean> getEBooleanObject();
   
   /**
-  
-    
    * Returns the meta object for data type '<em>EByte</em>'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EByte</em>'.
-    
-    
    * @model instanceClass="byte"
-    
    *        extendedMetaData="baseType='http://www.w3.org/2001/XMLSchema#byte'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEByte();
+  EDataType<Byte> getEByte();
   
   /**
-  
-    
    * Returns the meta object for data type '<em>EByte Array</em>'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EByte Array</em>'.
-    
-    
    * @model instanceClass="byte[]"
-    
    *        extendedMetaData="baseType='http://www.w3.org/2001/XMLSchema#hexBinary'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEByteArray();
+  EDataType<byte[]> getEByteArray();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link java.lang.Byte <em>EByte Object</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EByte Object</em>'.
-    
    * @see java.lang.Byte
-    
-    
    * @model instanceClass="java.lang.Byte"
-    
    *        extendedMetaData="baseType='EByte' name='EByte:Object'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEByteObject();
+  EDataType<Byte> getEByteObject();
   
   /**
-  
-    
    * Returns the meta object for data type '<em>EChar</em>'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EChar</em>'.
-    
-    
    * @model instanceClass="char"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEChar();
+  EDataType<Character> getEChar();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link java.lang.Character <em>ECharacter Object</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>ECharacter Object</em>'.
-    
    * @see java.lang.Character
-    
-    
    * @model instanceClass="java.lang.Character"
-    
    *        extendedMetaData="baseType='EChar' name='EChar:Object'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getECharacterObject();
+  EDataType<Character> getECharacterObject();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link java.util.Date <em>EDate</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EDate</em>'.
-    
    * @see java.util.Date
-    
-    
    * @model instanceClass="java.util.Date"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEDate();
+  EDataType<Date> getEDate();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link org.eclipse.emf.common.util.DiagnosticChain <em>EDiagnostic Chain</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EDiagnostic Chain</em>'.
-    
    * @see org.eclipse.emf.common.util.DiagnosticChain
-    
-    
    * @model instanceClass="org.eclipse.emf.common.util.DiagnosticChain" serializeable="false"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEDiagnosticChain();
+  EDataType<DiagnosticChain> getEDiagnosticChain();
   
   /**
-  
-    
    * Returns the meta object for data type '<em>EDouble</em>'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EDouble</em>'.
-    
-    
    * @model instanceClass="double"
-    
    *        extendedMetaData="baseType='http://www.w3.org/2001/XMLSchema#double'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEDouble();
+  EDataType<Double> getEDouble();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link java.lang.Double <em>EDouble Object</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EDouble Object</em>'.
-    
    * @see java.lang.Double
-    
-    
    * @model instanceClass="java.lang.Double"
-    
    *        extendedMetaData="baseType='EDouble' name='EDouble:Object'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEDoubleObject();
+  EDataType<Double> getEDoubleObject();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link org.eclipse.emf.common.util.EList <em>EE List</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EE List</em>'.
-    
    * @see org.eclipse.emf.common.util.EList
-    
-    
    * @model instanceClass="org.eclipse.emf.common.util.EList" serializeable="false" typeParameters="E"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEEList();
+  EDataType<EList<?>> getEEList();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link org.eclipse.emf.common.util.Enumerator <em>EEnumerator</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EEnumerator</em>'.
-    
    * @see org.eclipse.emf.common.util.Enumerator
-    
-    
    * @model instanceClass="org.eclipse.emf.common.util.Enumerator" serializeable="false"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEEnumerator();
+  EDataType<Enumerator> getEEnumerator();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link org.eclipse.emf.ecore.util.FeatureMap <em>EFeature Map</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EFeature Map</em>'.
-    
    * @see org.eclipse.emf.ecore.util.FeatureMap
-    
-    
    * @model instanceClass="org.eclipse.emf.ecore.util.FeatureMap" serializeable="false"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEFeatureMap();
+  EDataType<FeatureMap> getEFeatureMap();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link org.eclipse.emf.ecore.util.FeatureMap.Entry <em>EFeature Map Entry</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EFeature Map Entry</em>'.
-    
    * @see org.eclipse.emf.ecore.util.FeatureMap.Entry
-    
-    
    * @model instanceClass="org.eclipse.emf.ecore.util.FeatureMap$Entry" serializeable="false"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEFeatureMapEntry();
+  EDataType<FeatureMap.Entry> getEFeatureMapEntry();
   
   /**
-  
-    
    * Returns the meta object for data type '<em>EFloat</em>'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EFloat</em>'.
-    
-    
    * @model instanceClass="float"
-    
    *        extendedMetaData="baseType='http://www.w3.org/2001/XMLSchema#float'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEFloat();
+  EDataType<Float> getEFloat();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link java.lang.Float <em>EFloat Object</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EFloat Object</em>'.
-    
    * @see java.lang.Float
-    
-    
    * @model instanceClass="java.lang.Float"
-    
    *        extendedMetaData="baseType='EFloat' name='EFloat:Object'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEFloatObject();
+  EDataType<Float> getEFloatObject();
   
   /**
-  
-    
    * Returns the meta object for data type '<em>EInt</em>'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EInt</em>'.
-    
-    
    * @model instanceClass="int"
-    
    *        extendedMetaData="baseType='http://www.w3.org/2001/XMLSchema#int'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEInt();
+  EDataType<Integer> getEInt();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link java.lang.Integer <em>EInteger Object</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EInteger Object</em>'.
-    
    * @see java.lang.Integer
-    
-    
    * @model instanceClass="java.lang.Integer"
-    
    *        extendedMetaData="baseType='EInt' name='EInt:Object'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEIntegerObject();
+  EDataType<Integer> getEIntegerObject();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link java.lang.Class <em>EJava Class</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EJava Class</em>'.
-    
    * @see java.lang.Class
-    
-    
    * @model instanceClass="java.lang.Class" typeParameters="T"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEJavaClass();
+  EDataType<Class<?>> getEJavaClass();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link java.lang.Object <em>EJava Object</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EJava Object</em>'.
-    
    * @see java.lang.Object
-    
-    
    * @model instanceClass="java.lang.Object"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEJavaObject();
+  EDataType<Object> getEJavaObject();
   
   /**
-  
-    
    * Returns the meta object for data type '<em>ELong</em>'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>ELong</em>'.
-    
-    
    * @model instanceClass="long"
-    
    *        extendedMetaData="baseType='http://www.w3.org/2001/XMLSchema#long'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getELong();
+  EDataType<Long> getELong();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link java.lang.Long <em>ELong Object</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>ELong Object</em>'.
-    
    * @see java.lang.Long
-    
-    
    * @model instanceClass="java.lang.Long"
-    
    *        extendedMetaData="baseType='ELong' name='ELong:Object'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getELongObject();
+  EDataType<Long> getELongObject();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link java.util.Map <em>EMap</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EMap</em>'.
-    
    * @see java.util.Map
-    
-    
    * @model instanceClass="java.util.Map" serializeable="false" typeParameters="K V"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEMap();
+  EDataType<Map<?, ?>> getEMap();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link org.eclipse.emf.ecore.resource.Resource <em>EResource</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EResource</em>'.
-    
    * @see org.eclipse.emf.ecore.resource.Resource
-    
-    
    * @model instanceClass="org.eclipse.emf.ecore.resource.Resource" serializeable="false"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEResource();
+  EDataType<Resource> getEResource();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link org.eclipse.emf.ecore.resource.ResourceSet <em>EResource Set</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EResource Set</em>'.
-    
    * @see org.eclipse.emf.ecore.resource.ResourceSet
-    
-    
    * @model instanceClass="org.eclipse.emf.ecore.resource.ResourceSet" serializeable="false"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEResourceSet();
+  EDataType<ResourceSet> getEResourceSet();
   
   /**
-  
-    
    * Returns the meta object for data type '<em>EShort</em>'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EShort</em>'.
-    
-    
    * @model instanceClass="short"
-    
    *        extendedMetaData="baseType='http://www.w3.org/2001/XMLSchema#short'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEShort();
+  EDataType<Short> getEShort();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link java.lang.Short <em>EShort Object</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EShort Object</em>'.
-    
    * @see java.lang.Short
-    
-    
    * @model instanceClass="java.lang.Short"
-    
    *        extendedMetaData="baseType='EShort' name='EShort:Object'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEShortObject();
+  EDataType<Short> getEShortObject();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link java.lang.String <em>EString</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EString</em>'.
-    
    * @see java.lang.String
-    
-    
    * @model instanceClass="java.lang.String"
-    
    *        extendedMetaData="baseType='http://www.w3.org/2001/XMLSchema#string'"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEString();
+  EDataType<String> getEString();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link org.eclipse.emf.common.util.TreeIterator <em>ETree Iterator</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>ETree Iterator</em>'.
-    
    * @see org.eclipse.emf.common.util.TreeIterator
-    
-    
    * @model instanceClass="org.eclipse.emf.common.util.TreeIterator" serializeable="false" typeParameters="E"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getETreeIterator();
+  EDataType<TreeIterator<?>> getETreeIterator();
   
   /**
-  
-    
    * Returns the meta object for data type '{@link java.lang.reflect.InvocationTargetException <em>EInvocation Target Exception</em>}'.
-    
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>EInvocation Target Exception</em>'.
-    
    * @see java.lang.reflect.InvocationTargetException
-    
-    
    * @model instanceClass="java.lang.reflect.InvocationTargetException" serializeable="false"
-    
-  
    * @generated
    */
-  // CHANGE j: Class accessor
-  EDataType<?> getEInvocationTargetException();
+  EDataType<InvocationTargetException> getEInvocationTargetException();
   
   /**
    * Returns the factory that creates the instances of the model.
@@ -6466,14 +5944,10 @@ public interface EcorePackage extends EPackage
   interface Literals
   {
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.EAttributeImpl <em>EAttribute</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.EAttributeImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEAttribute()
      * @generated
      */
@@ -6505,14 +5979,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.EAnnotationImpl <em>EAnnotation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.EAnnotationImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEAnnotation()
      * @generated
      */
@@ -6571,14 +6041,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.EClassImpl <em>EClass</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.EClassImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEClass()
      * @generated
      */
@@ -6837,14 +6303,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.EClassifierImpl <em>EClassifier</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.EClassifierImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEClassifier()
      * @generated
      */
@@ -6931,14 +6393,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.EDataTypeImpl <em>EData Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.EDataTypeImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEDataType()
      * @generated
      */
@@ -6961,14 +6419,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.EEnumImpl <em>EEnum</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.EEnumImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEEnum()
      * @generated
      */
@@ -7020,14 +6474,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.EEnumLiteralImpl <em>EEnum Literal</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.EEnumLiteralImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEEnumLiteral()
      * @generated
      */
@@ -7077,14 +6527,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.EFactoryImpl <em>EFactory</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.EFactoryImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEFactory()
      * @generated
      */
@@ -7109,8 +6555,7 @@ public interface EcorePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-     // CHANGE j: Operation constant
-    EOperation<EFactory, EObject> EFACTORY___CREATE__ECLASS = eINSTANCE.getEFactory__Create__EClass();
+     EOperation<EFactory, ?> EFACTORY___CREATE__ECLASS = eINSTANCE.getEFactory__Create__EClass();
 
   
     /**
@@ -7119,8 +6564,7 @@ public interface EcorePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-     // CHANGE j: Operation constant
-    EOperation<EFactory, Object> EFACTORY___CREATE_FROM_STRING__EDATATYPE_STRING = eINSTANCE.getEFactory__CreateFromString__EDataType_String();
+     EOperation<EFactory, ?> EFACTORY___CREATE_FROM_STRING__EDATATYPE_STRING = eINSTANCE.getEFactory__CreateFromString__EDataType_String();
 
   
     /**
@@ -7136,14 +6580,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.EModelElementImpl <em>EModel Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.EModelElementImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEModelElement()
      * @generated
      */
@@ -7175,14 +6615,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.ENamedElementImpl <em>ENamed Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.ENamedElementImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getENamedElement()
      * @generated
      */
@@ -7204,14 +6640,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.EObjectImpl <em>EObject</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.EObjectImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEObject()
      * @generated
      */
@@ -7227,8 +6659,7 @@ public interface EcorePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-     // CHANGE j: Operation constant
-    EOperation<EObject, EClass<?>> EOBJECT___ECLASS = eINSTANCE.getEObject__EClass();
+     EOperation<EObject, EClass<? extends EObject>> EOBJECT___ECLASS = eINSTANCE.getEObject__EClass();
 
   
     /**
@@ -7267,8 +6698,7 @@ public interface EcorePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-     // CHANGE j: Operation constant
-    EOperation<EObject, EStructuralFeature<?, ?>> EOBJECT___ECONTAINING_FEATURE = eINSTANCE.getEObject__EContainingFeature();
+     EOperation<EObject, EStructuralFeature<? extends EObject, ? extends EObject>> EOBJECT___ECONTAINING_FEATURE = eINSTANCE.getEObject__EContainingFeature();
 
   
     /**
@@ -7277,8 +6707,7 @@ public interface EcorePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-     // CHANGE j: Operation constant
-    EOperation<EObject, EReference<?, ?>> EOBJECT___ECONTAINMENT_FEATURE = eINSTANCE.getEObject__EContainmentFeature();
+     EOperation<EObject, EReference<?, ? extends EObject>> EOBJECT___ECONTAINMENT_FEATURE = eINSTANCE.getEObject__EContainmentFeature();
 
   
     /**
@@ -7287,8 +6716,7 @@ public interface EcorePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-     // CHANGE j: Operation constant
-    EOperation<EObject, EList<?>> EOBJECT___ECONTENTS = eINSTANCE.getEObject__EContents();
+     EOperation<EObject, EList<EObject>> EOBJECT___ECONTENTS = eINSTANCE.getEObject__EContents();
 
   
     /**
@@ -7297,8 +6725,7 @@ public interface EcorePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-     // CHANGE j: Operation constant
-    EOperation<EObject, TreeIterator<?>> EOBJECT___EALL_CONTENTS = eINSTANCE.getEObject__EAllContents();
+     EOperation<EObject, TreeIterator<EObject>> EOBJECT___EALL_CONTENTS = eINSTANCE.getEObject__EAllContents();
 
   
     /**
@@ -7307,8 +6734,7 @@ public interface EcorePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-     // CHANGE j: Operation constant
-    EOperation<EObject, EList<?>> EOBJECT___ECROSS_REFERENCES = eINSTANCE.getEObject__ECrossReferences();
+     EOperation<EObject, EList<EObject>> EOBJECT___ECROSS_REFERENCES = eINSTANCE.getEObject__ECrossReferences();
 
   
     /**
@@ -7317,8 +6743,7 @@ public interface EcorePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-     // CHANGE j: Operation constant
-    EOperation<EObject, Object> EOBJECT___EGET__ESTRUCTURALFEATURE = eINSTANCE.getEObject__EGet__EStructuralFeature();
+     EOperation<EObject, ?> EOBJECT___EGET__ESTRUCTURALFEATURE = eINSTANCE.getEObject__EGet__EStructuralFeature();
 
   
     /**
@@ -7327,8 +6752,7 @@ public interface EcorePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-     // CHANGE j: Operation constant
-    EOperation<EObject, Object> EOBJECT___EGET__ESTRUCTURALFEATURE_BOOLEAN = eINSTANCE.getEObject__EGet__EStructuralFeature_boolean();
+     EOperation<EObject, ?> EOBJECT___EGET__ESTRUCTURALFEATURE_BOOLEAN = eINSTANCE.getEObject__EGet__EStructuralFeature_boolean();
 
   
     /**
@@ -7367,21 +6791,16 @@ public interface EcorePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-     // CHANGE j: Operation constant
-    EOperation<EObject, Object> EOBJECT___EINVOKE__EOPERATION_ELIST = eINSTANCE.getEObject__EInvoke__EOperation_EList();
+     EOperation<EObject, ?> EOBJECT___EINVOKE__EOPERATION_ELIST = eINSTANCE.getEObject__EInvoke__EOperation_EList();
 
   
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.EOperationImpl <em>EOperation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.EOperationImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEOperation()
      * @generated
      */
@@ -7459,14 +6878,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.EPackageImpl <em>EPackage</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.EPackageImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEPackage()
      * @generated
      */
@@ -7543,14 +6958,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.EParameterImpl <em>EParameter</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.EParameterImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEParameter()
      * @generated
      */
@@ -7572,14 +6983,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.EReferenceImpl <em>EReference</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.EReferenceImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEReference()
      * @generated
      */
@@ -7649,14 +7056,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.EStructuralFeatureImpl <em>EStructural Feature</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.EStructuralFeatureImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEStructuralFeature()
      * @generated
      */
@@ -7766,14 +7169,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.ETypedElementImpl <em>ETyped Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.ETypedElementImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getETypedElement()
      * @generated
      */
@@ -7864,14 +7263,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl <em>EString To String Map Entry</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEStringToStringMapEntry()
      * @generated
      */
@@ -7902,14 +7297,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.EGenericTypeImpl <em>EGeneric Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.EGenericTypeImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEGenericType()
      * @generated
      */
@@ -7986,14 +7377,10 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
-    
      * The meta object literal for the '{@link org.eclipse.emf.ecore.impl.ETypeParameterImpl <em>EType Parameter</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.impl.ETypeParameterImpl
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getETypeParameter()
      * @generated
      */
@@ -8015,37 +7402,30 @@ public interface EcorePackage extends EPackage
     
   
     /**
-  
      * The meta object literal for the '<em>EBig Decimal</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see java.math.BigDecimal
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEBigDecimal()
      * @generated
      */
-    EDataType<?> EBIG_DECIMAL = eINSTANCE.getEBigDecimal();
+    EDataType<BigDecimal> EBIG_DECIMAL = eINSTANCE.getEBigDecimal();
 
   
     /**
-  
      * The meta object literal for the '<em>EBig Integer</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see java.math.BigInteger
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEBigInteger()
      * @generated
      */
-    EDataType<?> EBIG_INTEGER = eINSTANCE.getEBigInteger();
+    EDataType<BigInteger> EBIG_INTEGER = eINSTANCE.getEBigInteger();
 
   
     /**
-  
      * The meta object literal for the '<em>EBoolean</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8054,26 +7434,22 @@ public interface EcorePackage extends EPackage
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEBoolean()
      * @generated
      */
-    EDataType<?> EBOOLEAN = eINSTANCE.getEBoolean();
+    EDataType<Boolean> EBOOLEAN = eINSTANCE.getEBoolean();
 
   
     /**
-  
      * The meta object literal for the '<em>EBoolean Object</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see java.lang.Boolean
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEBooleanObject()
      * @generated
      */
-    EDataType<?> EBOOLEAN_OBJECT = eINSTANCE.getEBooleanObject();
+    EDataType<Boolean> EBOOLEAN_OBJECT = eINSTANCE.getEBooleanObject();
 
   
     /**
-  
      * The meta object literal for the '<em>EByte</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8082,11 +7458,10 @@ public interface EcorePackage extends EPackage
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEByte()
      * @generated
      */
-    EDataType<?> EBYTE = eINSTANCE.getEByte();
+    EDataType<Byte> EBYTE = eINSTANCE.getEByte();
 
   
     /**
-  
      * The meta object literal for the '<em>EByte Array</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8095,26 +7470,22 @@ public interface EcorePackage extends EPackage
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEByteArray()
      * @generated
      */
-    EDataType<?> EBYTE_ARRAY = eINSTANCE.getEByteArray();
+    EDataType<byte[]> EBYTE_ARRAY = eINSTANCE.getEByteArray();
 
   
     /**
-  
      * The meta object literal for the '<em>EByte Object</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see java.lang.Byte
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEByteObject()
      * @generated
      */
-    EDataType<?> EBYTE_OBJECT = eINSTANCE.getEByteObject();
+    EDataType<Byte> EBYTE_OBJECT = eINSTANCE.getEByteObject();
 
   
     /**
-  
      * The meta object literal for the '<em>EChar</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8123,56 +7494,46 @@ public interface EcorePackage extends EPackage
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEChar()
      * @generated
      */
-    EDataType<?> ECHAR = eINSTANCE.getEChar();
+    EDataType<Character> ECHAR = eINSTANCE.getEChar();
 
   
     /**
-  
      * The meta object literal for the '<em>ECharacter Object</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see java.lang.Character
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getECharacterObject()
      * @generated
      */
-    EDataType<?> ECHARACTER_OBJECT = eINSTANCE.getECharacterObject();
+    EDataType<Character> ECHARACTER_OBJECT = eINSTANCE.getECharacterObject();
 
   
     /**
-  
      * The meta object literal for the '<em>EDate</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see java.util.Date
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEDate()
      * @generated
      */
-    EDataType<?> EDATE = eINSTANCE.getEDate();
+    EDataType<Date> EDATE = eINSTANCE.getEDate();
 
   
     /**
-  
      * The meta object literal for the '<em>EDiagnostic Chain</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see org.eclipse.emf.common.util.DiagnosticChain
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEDiagnosticChain()
      * @generated
      */
-    EDataType<?> EDIAGNOSTIC_CHAIN = eINSTANCE.getEDiagnosticChain();
+    EDataType<DiagnosticChain> EDIAGNOSTIC_CHAIN = eINSTANCE.getEDiagnosticChain();
 
   
     /**
-  
      * The meta object literal for the '<em>EDouble</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8181,86 +7542,70 @@ public interface EcorePackage extends EPackage
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEDouble()
      * @generated
      */
-    EDataType<?> EDOUBLE = eINSTANCE.getEDouble();
+    EDataType<Double> EDOUBLE = eINSTANCE.getEDouble();
 
   
     /**
-  
      * The meta object literal for the '<em>EDouble Object</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see java.lang.Double
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEDoubleObject()
      * @generated
      */
-    EDataType<?> EDOUBLE_OBJECT = eINSTANCE.getEDoubleObject();
+    EDataType<Double> EDOUBLE_OBJECT = eINSTANCE.getEDoubleObject();
 
   
     /**
-  
      * The meta object literal for the '<em>EE List</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see org.eclipse.emf.common.util.EList
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEEList()
      * @generated
      */
-    EDataType<?> EE_LIST = eINSTANCE.getEEList();
+    EDataType<EList<?>> EE_LIST = eINSTANCE.getEEList();
 
   
     /**
-  
      * The meta object literal for the '<em>EEnumerator</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see org.eclipse.emf.common.util.Enumerator
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEEnumerator()
      * @generated
      */
-    EDataType<?> EENUMERATOR = eINSTANCE.getEEnumerator();
+    EDataType<Enumerator> EENUMERATOR = eINSTANCE.getEEnumerator();
 
   
     /**
-  
      * The meta object literal for the '<em>EFeature Map</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see org.eclipse.emf.ecore.util.FeatureMap
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEFeatureMap()
      * @generated
      */
-    EDataType<?> EFEATURE_MAP = eINSTANCE.getEFeatureMap();
+    EDataType<FeatureMap> EFEATURE_MAP = eINSTANCE.getEFeatureMap();
 
   
     /**
-  
      * The meta object literal for the '<em>EFeature Map Entry</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see org.eclipse.emf.ecore.util.FeatureMap.Entry
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEFeatureMapEntry()
      * @generated
      */
-    EDataType<?> EFEATURE_MAP_ENTRY = eINSTANCE.getEFeatureMapEntry();
+    EDataType<FeatureMap.Entry> EFEATURE_MAP_ENTRY = eINSTANCE.getEFeatureMapEntry();
 
   
     /**
-  
      * The meta object literal for the '<em>EFloat</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8269,26 +7614,22 @@ public interface EcorePackage extends EPackage
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEFloat()
      * @generated
      */
-    EDataType<?> EFLOAT = eINSTANCE.getEFloat();
+    EDataType<Float> EFLOAT = eINSTANCE.getEFloat();
 
   
     /**
-  
      * The meta object literal for the '<em>EFloat Object</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see java.lang.Float
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEFloatObject()
      * @generated
      */
-    EDataType<?> EFLOAT_OBJECT = eINSTANCE.getEFloatObject();
+    EDataType<Float> EFLOAT_OBJECT = eINSTANCE.getEFloatObject();
 
   
     /**
-  
      * The meta object literal for the '<em>EInt</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8297,56 +7638,46 @@ public interface EcorePackage extends EPackage
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEInt()
      * @generated
      */
-    EDataType<?> EINT = eINSTANCE.getEInt();
+    EDataType<Integer> EINT = eINSTANCE.getEInt();
 
   
     /**
-  
      * The meta object literal for the '<em>EInteger Object</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see java.lang.Integer
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEIntegerObject()
      * @generated
      */
-    EDataType<?> EINTEGER_OBJECT = eINSTANCE.getEIntegerObject();
+    EDataType<Integer> EINTEGER_OBJECT = eINSTANCE.getEIntegerObject();
 
   
     /**
-  
      * The meta object literal for the '<em>EJava Class</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see java.lang.Class
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEJavaClass()
      * @generated
      */
-    EDataType<?> EJAVA_CLASS = eINSTANCE.getEJavaClass();
+    EDataType<Class<?>> EJAVA_CLASS = eINSTANCE.getEJavaClass();
 
   
     /**
-  
      * The meta object literal for the '<em>EJava Object</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see java.lang.Object
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEJavaObject()
      * @generated
      */
-    EDataType<?> EJAVA_OBJECT = eINSTANCE.getEJavaObject();
+    EDataType<Object> EJAVA_OBJECT = eINSTANCE.getEJavaObject();
 
   
     /**
-  
      * The meta object literal for the '<em>ELong</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8355,71 +7686,58 @@ public interface EcorePackage extends EPackage
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getELong()
      * @generated
      */
-    EDataType<?> ELONG = eINSTANCE.getELong();
+    EDataType<Long> ELONG = eINSTANCE.getELong();
 
   
     /**
-  
      * The meta object literal for the '<em>ELong Object</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see java.lang.Long
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getELongObject()
      * @generated
      */
-    EDataType<?> ELONG_OBJECT = eINSTANCE.getELongObject();
+    EDataType<Long> ELONG_OBJECT = eINSTANCE.getELongObject();
 
   
     /**
-  
      * The meta object literal for the '<em>EMap</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see java.util.Map
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEMap()
      * @generated
      */
-    EDataType<?> EMAP = eINSTANCE.getEMap();
+    EDataType<Map<?, ?>> EMAP = eINSTANCE.getEMap();
 
   
     /**
-  
      * The meta object literal for the '<em>EResource</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see org.eclipse.emf.ecore.resource.Resource
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEResource()
      * @generated
      */
-    EDataType<?> ERESOURCE = eINSTANCE.getEResource();
+    EDataType<Resource> ERESOURCE = eINSTANCE.getEResource();
 
   
     /**
-  
      * The meta object literal for the '<em>EResource Set</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see org.eclipse.emf.ecore.resource.ResourceSet
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEResourceSet()
      * @generated
      */
-    EDataType<?> ERESOURCE_SET = eINSTANCE.getEResourceSet();
+    EDataType<ResourceSet> ERESOURCE_SET = eINSTANCE.getEResourceSet();
 
   
     /**
-  
      * The meta object literal for the '<em>EShort</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8428,67 +7746,55 @@ public interface EcorePackage extends EPackage
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEShort()
      * @generated
      */
-    EDataType<?> ESHORT = eINSTANCE.getEShort();
+    EDataType<Short> ESHORT = eINSTANCE.getEShort();
 
   
     /**
-  
      * The meta object literal for the '<em>EShort Object</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see java.lang.Short
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEShortObject()
      * @generated
      */
-    EDataType<?> ESHORT_OBJECT = eINSTANCE.getEShortObject();
+    EDataType<Short> ESHORT_OBJECT = eINSTANCE.getEShortObject();
 
   
     /**
-  
      * The meta object literal for the '<em>EString</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see java.lang.String
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEString()
      * @generated
      */
-    EDataType<?> ESTRING = eINSTANCE.getEString();
+    EDataType<String> ESTRING = eINSTANCE.getEString();
 
   
     /**
-  
      * The meta object literal for the '<em>ETree Iterator</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see org.eclipse.emf.common.util.TreeIterator
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getETreeIterator()
      * @generated
      */
-    EDataType<?> ETREE_ITERATOR = eINSTANCE.getETreeIterator();
+    EDataType<TreeIterator<?>> ETREE_ITERATOR = eINSTANCE.getETreeIterator();
 
   
     /**
-  
      * The meta object literal for the '<em>EInvocation Target Exception</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
     
      * @see java.lang.reflect.InvocationTargetException
-    
-  
      * @see org.eclipse.emf.ecore.impl.EcorePackageImpl#getEInvocationTargetException()
      * @generated
      */
-    EDataType<?> EINVOCATION_TARGET_EXCEPTION = eINSTANCE.getEInvocationTargetException();
+    EDataType<InvocationTargetException> EINVOCATION_TARGET_EXCEPTION = eINSTANCE.getEInvocationTargetException();
 
   
   }

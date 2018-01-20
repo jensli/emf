@@ -419,7 +419,7 @@ public interface EClass<T extends EObject> extends EClassifier<T>
    * @model
    * @generated
    */
-  <V> EOperation<T, ? extends V> getOverride(EOperation<?, V> operation);
+  <V> EOperation<T, V> getOverride(EOperation<?, V> operation);
 
   /**
    * <!-- begin-user-doc -->

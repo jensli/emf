@@ -116,7 +116,7 @@ public class EReferenceImpl<C extends EObject, V> extends EStructuralFeatureImpl
    * @generated
    * @ordered
    */
-  protected EList<EAttribute<C, ?>> eKeys;
+  protected EList<EAttribute<?, ?>> eKeys;
 
   /**
    * <!-- begin-user-doc -->
@@ -317,11 +317,11 @@ public class EReferenceImpl<C extends EObject, V> extends EStructuralFeatureImpl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EAttribute<C, ?>> getEKeys()
+  public EList<EAttribute<?, ?>> getEKeys()
   {
     if (eKeys == null)
     {
-      eKeys = new EObjectResolvingEList<EAttribute<C, ?>>(EAttribute.class, this, EcorePackage.EREFERENCE__EKEYS);
+      eKeys = new EObjectResolvingEList<EAttribute<?, ?>>(EAttribute.class, this, EcorePackage.EREFERENCE__EKEYS);
     }
     return eKeys;
   }
@@ -456,7 +456,7 @@ public class EReferenceImpl<C extends EObject, V> extends EStructuralFeatureImpl
         return;
       case EcorePackage.EREFERENCE__EKEYS:
         getEKeys().clear();
-        getEKeys().addAll((Collection<? extends EAttribute<C, ?>>)newValue);
+        getEKeys().addAll((Collection<? extends EAttribute<?, ?>>)newValue);
         return;
     }
     eDynamicSet(featureID, newValue);

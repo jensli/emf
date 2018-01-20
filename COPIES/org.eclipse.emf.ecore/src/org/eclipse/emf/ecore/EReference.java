@@ -141,7 +141,7 @@ public interface EReference<C extends EObject, V> extends EStructuralFeature<C, 
 
   /**
    * Returns the value of the '<em><b>EKeys</b></em>' reference list.
-   * The list contents are of type {@link org.eclipse.emf.ecore.EAttribute}<code>&lt;C, ?&gt;</code>.
+   * The list contents are of type {@link org.eclipse.emf.ecore.EAttribute}<code>&lt;?, ?&gt;</code>.
    * <!-- begin-user-doc -->
    * <p>
    * This represents a subset of the attributes on the referenced type that uniquely identify an instance within this reference.
@@ -152,6 +152,6 @@ public interface EReference<C extends EObject, V> extends EStructuralFeature<C, 
    * @model
    * @generated
    */
-  EList<EAttribute<C, ?>> getEKeys();
+  EList<EAttribute<?, ?>> getEKeys();
 
 }

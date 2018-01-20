@@ -2076,7 +2076,8 @@ public class BasicExtendedMetaData implements ExtendedMetaData
       }
       else
       {
-        EAttribute<?, ?> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+        @SuppressWarnings("rawtypes")
+        EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
         eAttribute.setName(name);
         eAttribute.setEType(XMLTypePackage.eINSTANCE.getAnySimpleType());
         eAttribute.setDerived(true);

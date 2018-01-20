@@ -110,54 +110,55 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
   @SuppressWarnings("unchecked")
   public <T> T createFromString(EDataType<T> eDataType, String initialValue)
   {
+    // CHANGE gen: Cast added 1
     switch (eDataType.getClassifierID())
     {
       case EcorePackage.EBIG_DECIMAL:
-        return (T) createEBigDecimalFromString(eDataType, initialValue);
+        return (T) createEBigDecimalFromString((EDataType<BigDecimal>) eDataType, initialValue);
       case EcorePackage.EBIG_INTEGER:
-        return (T) createEBigIntegerFromString(eDataType, initialValue);
+        return (T) createEBigIntegerFromString((EDataType<BigInteger>) eDataType, initialValue);
       case EcorePackage.EBOOLEAN:
-        return (T) createEBooleanFromString(eDataType, initialValue);
+        return (T) createEBooleanFromString((EDataType<Boolean>) eDataType, initialValue);
       case EcorePackage.EBOOLEAN_OBJECT:
-        return (T) createEBooleanObjectFromString(eDataType, initialValue);
+        return (T) createEBooleanObjectFromString((EDataType<Boolean>) eDataType, initialValue);
       case EcorePackage.EBYTE:
-        return (T) createEByteFromString(eDataType, initialValue);
+        return (T) createEByteFromString((EDataType<Byte>) eDataType, initialValue);
       case EcorePackage.EBYTE_ARRAY:
-        return (T) createEByteArrayFromString(eDataType, initialValue);
+        return (T) createEByteArrayFromString((EDataType<byte[]>) eDataType, initialValue);
       case EcorePackage.EBYTE_OBJECT:
-        return (T) createEByteObjectFromString(eDataType, initialValue);
+        return (T) createEByteObjectFromString((EDataType<Byte>) eDataType, initialValue);
       case EcorePackage.ECHAR:
-        return (T) createECharFromString(eDataType, initialValue);
+        return (T) createECharFromString((EDataType<Character>) eDataType, initialValue);
       case EcorePackage.ECHARACTER_OBJECT:
-        return (T) createECharacterObjectFromString(eDataType, initialValue);
+        return (T) createECharacterObjectFromString((EDataType<Character>) eDataType, initialValue);
       case EcorePackage.EDATE:
-        return (T) createEDateFromString(eDataType, initialValue);
+        return (T) createEDateFromString((EDataType<Date>) eDataType, initialValue);
       case EcorePackage.EDOUBLE:
-        return (T) createEDoubleFromString(eDataType, initialValue);
+        return (T) createEDoubleFromString((EDataType<Double>) eDataType, initialValue);
       case EcorePackage.EDOUBLE_OBJECT:
-        return (T) createEDoubleObjectFromString(eDataType, initialValue);
+        return (T) createEDoubleObjectFromString((EDataType<Double>) eDataType, initialValue);
       case EcorePackage.EFLOAT:
-        return (T) createEFloatFromString(eDataType, initialValue);
+        return (T) createEFloatFromString((EDataType<Float>) eDataType, initialValue);
       case EcorePackage.EFLOAT_OBJECT:
-        return (T) createEFloatObjectFromString(eDataType, initialValue);
+        return (T) createEFloatObjectFromString((EDataType<Float>) eDataType, initialValue);
       case EcorePackage.EINT:
-        return (T) createEIntFromString(eDataType, initialValue);
+        return (T) createEIntFromString((EDataType<Integer>) eDataType, initialValue);
       case EcorePackage.EINTEGER_OBJECT:
-        return (T) createEIntegerObjectFromString(eDataType, initialValue);
+        return (T) createEIntegerObjectFromString((EDataType<Integer>) eDataType, initialValue);
       case EcorePackage.EJAVA_CLASS:
-        return (T) createEJavaClassFromString(eDataType, initialValue);
+        return (T) createEJavaClassFromString((EDataType<Class<?>>) eDataType, initialValue);
       case EcorePackage.EJAVA_OBJECT:
-        return (T) createEJavaObjectFromString(eDataType, initialValue);
+        return (T) createEJavaObjectFromString((EDataType<Object>) eDataType, initialValue);
       case EcorePackage.ELONG:
-        return (T) createELongFromString(eDataType, initialValue);
+        return (T) createELongFromString((EDataType<Long>) eDataType, initialValue);
       case EcorePackage.ELONG_OBJECT:
-        return (T) createELongObjectFromString(eDataType, initialValue);
+        return (T) createELongObjectFromString((EDataType<Long>) eDataType, initialValue);
       case EcorePackage.ESHORT:
-        return (T) createEShortFromString(eDataType, initialValue);
+        return (T) createEShortFromString((EDataType<Short>) eDataType, initialValue);
       case EcorePackage.ESHORT_OBJECT:
-        return (T) createEShortObjectFromString(eDataType, initialValue);
+        return (T) createEShortObjectFromString((EDataType<Short>) eDataType, initialValue);
       case EcorePackage.ESTRING:
-        return (T) createEStringFromString(eDataType, initialValue);
+        return (T) createEStringFromString((EDataType<String>) eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -168,56 +169,57 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
 	 * <!-- end-user-doc -->
    * @generated
    */
-	@Override
+	@SuppressWarnings("unchecked")
+  @Override
 	public <T> String convertToString(EDataType<T> eDataType, T instanceValue) {
     switch (eDataType.getClassifierID())
     {
       case EcorePackage.EBIG_DECIMAL:
-        return convertEBigDecimalToString(eDataType, instanceValue);
+        return convertEBigDecimalToString((EDataType<BigDecimal>) eDataType, (BigDecimal) instanceValue);
       case EcorePackage.EBIG_INTEGER:
-        return convertEBigIntegerToString(eDataType, instanceValue);
+        return convertEBigIntegerToString((EDataType<BigInteger>) eDataType, (BigInteger) instanceValue);
       case EcorePackage.EBOOLEAN:
-        return convertEBooleanToString(eDataType, instanceValue);
+        return convertEBooleanToString((EDataType<Boolean>) eDataType, (Boolean) instanceValue);
       case EcorePackage.EBOOLEAN_OBJECT:
-        return convertEBooleanObjectToString(eDataType, instanceValue);
+        return convertEBooleanObjectToString((EDataType<Boolean>) eDataType, (Boolean) instanceValue);
       case EcorePackage.EBYTE:
-        return convertEByteToString(eDataType, instanceValue);
+        return convertEByteToString((EDataType<Byte>) eDataType, (Byte) instanceValue);
       case EcorePackage.EBYTE_ARRAY:
-        return convertEByteArrayToString(eDataType, instanceValue);
+        return convertEByteArrayToString((EDataType<byte[]>) eDataType, (byte[]) instanceValue);
       case EcorePackage.EBYTE_OBJECT:
-        return convertEByteObjectToString(eDataType, instanceValue);
+        return convertEByteObjectToString((EDataType<Byte>) eDataType, (Byte) instanceValue);
       case EcorePackage.ECHAR:
-        return convertECharToString(eDataType, instanceValue);
+        return convertECharToString((EDataType<Character>) eDataType, (Character) instanceValue);
       case EcorePackage.ECHARACTER_OBJECT:
-        return convertECharacterObjectToString(eDataType, instanceValue);
+        return convertECharacterObjectToString((EDataType<Character>) eDataType, (Character) instanceValue);
       case EcorePackage.EDATE:
-        return convertEDateToString(eDataType, instanceValue);
+        return convertEDateToString((EDataType<Date>) eDataType, (Date) instanceValue);
       case EcorePackage.EDOUBLE:
-        return convertEDoubleToString(eDataType, instanceValue);
+        return convertEDoubleToString((EDataType<Double>) eDataType, (Double) instanceValue);
       case EcorePackage.EDOUBLE_OBJECT:
-        return convertEDoubleObjectToString(eDataType, instanceValue);
+        return convertEDoubleObjectToString((EDataType<Double>) eDataType, (Double) instanceValue);
       case EcorePackage.EFLOAT:
-        return convertEFloatToString(eDataType, instanceValue);
+        return convertEFloatToString((EDataType<Float>) eDataType, (Float) instanceValue);
       case EcorePackage.EFLOAT_OBJECT:
-        return convertEFloatObjectToString(eDataType, instanceValue);
+        return convertEFloatObjectToString((EDataType<Float>) eDataType, (Float) instanceValue);
       case EcorePackage.EINT:
-        return convertEIntToString(eDataType, instanceValue);
+        return convertEIntToString((EDataType<Integer>) eDataType, (Integer) instanceValue);
       case EcorePackage.EINTEGER_OBJECT:
-        return convertEIntegerObjectToString(eDataType, instanceValue);
+        return convertEIntegerObjectToString((EDataType<Integer>) eDataType, (Integer) instanceValue);
       case EcorePackage.EJAVA_CLASS:
-        return convertEJavaClassToString(eDataType, instanceValue);
+        return convertEJavaClassToString((EDataType<Class<?>>) eDataType, (Class<?>) instanceValue);
       case EcorePackage.EJAVA_OBJECT:
-        return convertEJavaObjectToString(eDataType, instanceValue);
+        return convertEJavaObjectToString((EDataType<Object>) eDataType, (Object) instanceValue);
       case EcorePackage.ELONG:
-        return convertELongToString(eDataType, instanceValue);
+        return convertELongToString((EDataType<Long>) eDataType, (Long) instanceValue);
       case EcorePackage.ELONG_OBJECT:
-        return convertELongObjectToString(eDataType, instanceValue);
+        return convertELongObjectToString((EDataType<Long>) eDataType, (Long) instanceValue);
       case EcorePackage.ESHORT:
-        return convertEShortToString(eDataType, instanceValue);
+        return convertEShortToString((EDataType<Short>) eDataType, (Short) instanceValue);
       case EcorePackage.ESHORT_OBJECT:
-        return convertEShortObjectToString(eDataType, instanceValue);
+        return convertEShortObjectToString((EDataType<Short>) eDataType, (Short) instanceValue);
       case EcorePackage.ESTRING:
-        return convertEStringToString(eDataType, instanceValue);
+        return convertEStringToString((EDataType<String>) eDataType, (String) instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -365,7 +367,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Boolean createEBooleanObjectFromString(EDataType metaObject, String initialValue) 
+  public Boolean createEBooleanObjectFromString(EDataType<?> metaObject, String initialValue) 
   {
     return initialValue == null ? null : booleanValueOf(initialValue);
   }
@@ -375,7 +377,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEBooleanObjectToString(EDataType metaObject, Object instanceValue) 
+  public String convertEBooleanObjectToString(EDataType<?> metaObject, Object instanceValue) 
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -385,7 +387,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Character createECharacterObjectFromString(EDataType metaObject, String initialValue) 
+  public Character createECharacterObjectFromString(EDataType<?> metaObject, String initialValue) 
   {
     if (initialValue == null)
     {
@@ -410,7 +412,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertECharacterObjectToString(EDataType metaObject, Object instanceValue) 
+  public String convertECharacterObjectToString(EDataType<?> metaObject, Object instanceValue) 
   {
     if (instanceValue instanceof Character)
     {
@@ -425,7 +427,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Date createEDateFromString(EDataType eDataType, String initialValue)
+  public Date createEDateFromString(EDataType<?> eDataType, String initialValue)
   {
     if (initialValue == null)
     {
@@ -452,7 +454,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEDateToString(EDataType eDataType, Object instanceValue)
+  public String convertEDateToString(EDataType<?> eDataType, Object instanceValue)
   {
     if (instanceValue == null)
     {
@@ -469,7 +471,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Double createEDoubleObjectFromString(EDataType metaObject, String initialValue) 
+  public Double createEDoubleObjectFromString(EDataType<?> metaObject, String initialValue) 
   {
     return initialValue == null ? null : Double.valueOf(initialValue);
   }
@@ -479,7 +481,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEDoubleObjectToString(EDataType metaObject, Object instanceValue) 
+  public String convertEDoubleObjectToString(EDataType<?> metaObject, Object instanceValue) 
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -489,7 +491,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Float createEFloatObjectFromString(EDataType metaObject, String initialValue) 
+  public Float createEFloatObjectFromString(EDataType<?> metaObject, String initialValue) 
   {
     return initialValue == null ? null : Float.valueOf(initialValue);
   }
@@ -499,7 +501,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEFloatObjectToString(EDataType metaObject, Object instanceValue) 
+  public String convertEFloatObjectToString(EDataType<?> metaObject, Object instanceValue) 
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -509,7 +511,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Integer createEIntegerObjectFromString(EDataType metaObject, String initialValue) 
+  public Integer createEIntegerObjectFromString(EDataType<?> metaObject, String initialValue) 
   {
     return initialValue == null ? null : Integer.valueOf(initialValue);
   }
@@ -519,7 +521,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEIntegerObjectToString(EDataType metaObject, Object instanceValue) 
+  public String convertEIntegerObjectToString(EDataType<?> metaObject, Object instanceValue) 
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -573,7 +575,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public BigDecimal createEBigDecimalFromString(EDataType eDataType, String initialValue)
+  public BigDecimal createEBigDecimalFromString(EDataType<?> eDataType, String initialValue)
   {
     return initialValue == null ? null : new BigDecimal(initialValue);
   }
@@ -583,7 +585,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEBigDecimalToString(EDataType eDataType, Object instanceValue)
+  public String convertEBigDecimalToString(EDataType<?> eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -593,7 +595,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public BigInteger createEBigIntegerFromString(EDataType eDataType, String initialValue)
+  public BigInteger createEBigIntegerFromString(EDataType<?> eDataType, String initialValue)
   {
     return initialValue == null ? null : new BigInteger(initialValue);
   }
@@ -603,7 +605,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEBigIntegerToString(EDataType eDataType, Object instanceValue)
+  public String convertEBigIntegerToString(EDataType<?> eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -632,7 +634,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String createEStringFromString(EDataType metaObject, String initialValue) 
+  public String createEStringFromString(EDataType<?> metaObject, String initialValue) 
   {
     return initialValue;
   }
@@ -642,7 +644,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEStringToString(EDataType metaObject, Object instanceValue) 
+  public String convertEStringToString(EDataType<?> metaObject, Object instanceValue) 
   {
     return (String)instanceValue;
   }
@@ -652,7 +654,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Integer createEIntFromString(EDataType metaObject, String initialValue) 
+  public Integer createEIntFromString(EDataType<?> metaObject, String initialValue) 
   {
     return initialValue == null ? null : Integer.valueOf(initialValue);
   }
@@ -662,7 +664,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEIntToString(EDataType metaObject, Object instanceValue) 
+  public String convertEIntToString(EDataType<?> metaObject, Object instanceValue) 
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -672,7 +674,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Boolean createEBooleanFromString(EDataType metaObject, String initialValue) 
+  public Boolean createEBooleanFromString(EDataType<?> metaObject, String initialValue) 
   {
     return initialValue == null ? null : booleanValueOf(initialValue);
   }
@@ -682,7 +684,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEBooleanToString(EDataType metaObject, Object instanceValue) 
+  public String convertEBooleanToString(EDataType<?> metaObject, Object instanceValue) 
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -692,7 +694,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Byte createEByteObjectFromString(EDataType metaObject, String initialValue) 
+  public Byte createEByteObjectFromString(EDataType<?> metaObject, String initialValue) 
   {
     return initialValue == null ? null : Byte.valueOf(initialValue);
   }
@@ -702,7 +704,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEByteObjectToString(EDataType metaObject, Object instanceValue) 
+  public String convertEByteObjectToString(EDataType<?> metaObject, Object instanceValue) 
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -712,7 +714,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Float createEFloatFromString(EDataType metaObject, String initialValue) 
+  public Float createEFloatFromString(EDataType<?> metaObject, String initialValue) 
   {
     return initialValue == null ? null : Float.valueOf(initialValue);
   }
@@ -722,7 +724,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEFloatToString(EDataType metaObject, Object instanceValue) 
+  public String convertEFloatToString(EDataType<?> metaObject, Object instanceValue) 
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -732,7 +734,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Character createECharFromString(EDataType metaObject, String initialValue) 
+  public Character createECharFromString(EDataType<?> metaObject, String initialValue) 
   {
     if (initialValue == null)
     {
@@ -756,7 +758,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertECharToString(EDataType metaObject, Object instanceValue) 
+  public String convertECharToString(EDataType<?> metaObject, Object instanceValue) 
   {
     if (instanceValue instanceof Character)
     {
@@ -771,7 +773,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Long createELongFromString(EDataType metaObject, String initialValue) 
+  public Long createELongFromString(EDataType<?> metaObject, String initialValue) 
   {
     return initialValue == null ? null : Long.valueOf(initialValue);
   }
@@ -781,7 +783,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertELongToString(EDataType metaObject, Object instanceValue) 
+  public String convertELongToString(EDataType<?> metaObject, Object instanceValue) 
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -791,7 +793,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Double createEDoubleFromString(EDataType metaObject, String initialValue) 
+  public Double createEDoubleFromString(EDataType<?> metaObject, String initialValue) 
   {
     return initialValue == null ? null : Double.valueOf(initialValue);
   }
@@ -801,7 +803,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEDoubleToString(EDataType metaObject, Object instanceValue) 
+  public String convertEDoubleToString(EDataType<?> metaObject, Object instanceValue) 
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -811,7 +813,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Byte createEByteFromString(EDataType metaObject, String initialValue) 
+  public Byte createEByteFromString(EDataType<?> metaObject, String initialValue) 
   {
     return initialValue == null ? null : Byte.valueOf(initialValue);
   }
@@ -821,7 +823,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEByteToString(EDataType metaObject, Object instanceValue) 
+  public String convertEByteToString(EDataType<?> metaObject, Object instanceValue) 
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -832,7 +834,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public byte[] createEByteArrayFromString(EDataType eDataType, String initialValue)
+  public byte[] createEByteArrayFromString(EDataType<?> eDataType, String initialValue)
   {
     return hexStringToBytes(initialValue);
   }
@@ -849,7 +851,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEByteArrayToString(EDataType eDataType, Object instanceValue)
+  public String convertEByteArrayToString(EDataType<?> eDataType, Object instanceValue)
   {
     if (instanceValue == null)
     {
@@ -867,7 +869,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Short createEShortFromString(EDataType metaObject, String initialValue) 
+  public Short createEShortFromString(EDataType<?> metaObject, String initialValue) 
   {
     return initialValue == null ? null : Short.valueOf(initialValue);
   }
@@ -877,7 +879,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEShortToString(EDataType metaObject, Object instanceValue) 
+  public String convertEShortToString(EDataType<?> metaObject, Object instanceValue) 
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -887,7 +889,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Class<?> createEJavaClassFromString(EDataType metaObject, String initialValue) 
+  public Class<?> createEJavaClassFromString(EDataType<?> metaObject, String initialValue) 
   {
     try
     {
@@ -913,7 +915,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEJavaClassToString(EDataType metaObject, Object instanceValue)
+  public String convertEJavaClassToString(EDataType<?> metaObject, Object instanceValue)
   {
     return instanceValue == null ? "" : ((Class<?>)instanceValue).getName();
   }
@@ -923,7 +925,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Object createEJavaObjectFromString(EDataType eDataType, String initialValue)
+  public Object createEJavaObjectFromString(EDataType<?> eDataType, String initialValue)
   {
     return createFromString(initialValue);
   }
@@ -933,7 +935,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEJavaObjectToString(EDataType eDataType, Object instanceValue)
+  public String convertEJavaObjectToString(EDataType<?> eDataType, Object instanceValue)
   {
     return convertToString(instanceValue);
   }
@@ -943,7 +945,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Long createELongObjectFromString(EDataType metaObject, String initialValue) 
+  public Long createELongObjectFromString(EDataType<?> metaObject, String initialValue) 
   {
     return initialValue == null ? null : Long.valueOf(initialValue);
   }
@@ -953,7 +955,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertELongObjectToString(EDataType metaObject, Object instanceValue) 
+  public String convertELongObjectToString(EDataType<?> metaObject, Object instanceValue) 
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -963,7 +965,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Short createEShortObjectFromString(EDataType metaObject, String initialValue) 
+  public Short createEShortObjectFromString(EDataType<?> metaObject, String initialValue) 
   {
     return initialValue == null ? null : Short.valueOf(initialValue);
   }
@@ -973,7 +975,7 @@ public class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public String convertEShortObjectToString(EDataType metaObject, Object instanceValue) 
+  public String convertEShortObjectToString(EDataType<?> metaObject, Object instanceValue) 
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

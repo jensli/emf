@@ -1383,7 +1383,8 @@ public class EClassImpl<T extends EObject> extends EClassifierImpl<T> implements
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public <V> EOperation<T, ? extends V> getOverride(EOperation<?, V> operation)
+  @SuppressWarnings("unchecked")
+  public <V> EOperation<T, V> getOverride(EOperation<?, V> operation)
   {
     EOperation<T, ?> [] eAllOperationsData  = getEAllOperationsData();
     if (eOperationToOverrideMap == null)
@@ -1403,7 +1404,7 @@ public class EClassImpl<T extends EObject> extends EClassifierImpl<T> implements
       }
       eOperationToOverrideMap = result;
     }
-    return (EOperation<T, ? extends V>) eOperationToOverrideMap.get(operation);
+    return (EOperation<T, V>) eOperationToOverrideMap.get(operation);
   }
 
   /**
@@ -1946,12 +1947,12 @@ public class EClassImpl<T extends EObject> extends EClassifierImpl<T> implements
           }
 
           @Override
-          protected <T> T[] delegateToArray(T[] array)
+          protected <E> E[] delegateToArray(E[] array)
           {
             int size = delegateSize();
             if (array.length < size)
             {
-              @SuppressWarnings("unchecked") T[] newArray = (T[])Array.newInstance(array.getClass().getComponentType(), size);
+              @SuppressWarnings("unchecked") E[] newArray = (E[])Array.newInstance(array.getClass().getComponentType(), size);
               array = newArray;
             }
           
@@ -1963,7 +1964,7 @@ public class EClassImpl<T extends EObject> extends EClassifierImpl<T> implements
             int index = 0;
             for (EGenericType eGenericType : getEGenericSuperTypes())
             {
-              @SuppressWarnings("unchecked") T rawType = (T)unwrap(eGenericType);
+              @SuppressWarnings("unchecked") E rawType = (E)unwrap(eGenericType);
               array[index++] = rawType;
             }
 

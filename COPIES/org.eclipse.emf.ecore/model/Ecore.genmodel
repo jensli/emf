@@ -69,6 +69,8 @@
     </genDataTypes>
     <genDataTypes ecoreDataType="Ecore.ecore#//EInvocationTargetException"/>
     <genClasses ecoreClass="Ecore.ecore#//EAttribute">
+      <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EAttribute/C"/>
+      <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EAttribute/V"/>
       <genFeatures createChild="false" propertyDescription="Whether the value of this attribute uniquely identifies an object within its containing resource"
           ecoreFeature="ecore:EAttribute Ecore.ecore#//EAttribute/iD"/>
       <genFeatures property="Readonly" createChild="false" propertyDescription="The data type of this attribute"
@@ -84,6 +86,7 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference Ecore.ecore#//EAnnotation/references"/>
     </genClasses>
     <genClasses ecoreClass="Ecore.ecore#//EClass">
+      <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EClass/T"/>
       <genFeatures createChild="false" propertyDescription="Whether instances of this class can be created"
           ecoreFeature="ecore:EAttribute Ecore.ecore#//EClass/abstract"/>
       <genFeatures createChild="false" propertyDescription="Whether no corresponding implementation will be generated for this class"
@@ -127,12 +130,14 @@
       </genOperations>
       <genOperations ecoreOperation="Ecore.ecore#//EClass/getOverride">
         <genParameters ecoreParameter="Ecore.ecore#//EClass/getOverride/operation"/>
+        <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EClass/getOverride/V"/>
       </genOperations>
       <genOperations ecoreOperation="Ecore.ecore#//EClass/getFeatureType">
         <genParameters ecoreParameter="Ecore.ecore#//EClass/getFeatureType/feature"/>
       </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="Ecore.ecore#//EClassifier">
+      <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EClassifier/T"/>
       <genFeatures createChild="false" propertyDescription="The erased instance class name denoted by this classifier"
           ecoreFeature="ecore:EAttribute Ecore.ecore#//EClassifier/instanceClassName">
         <propertyFilterFlags>org.eclipse.ui.views.properties.expert</propertyFilterFlags>
@@ -150,10 +155,12 @@
       <genOperations ecoreOperation="Ecore.ecore#//EClassifier/getClassifierID"/>
     </genClasses>
     <genClasses ecoreClass="Ecore.ecore#//EDataType">
+      <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EDataType/T"/>
       <genFeatures createChild="false" propertyDescription="Whether a value of this data type can be serialized using the factory"
           ecoreFeature="ecore:EAttribute Ecore.ecore#//EDataType/serializable"/>
     </genClasses>
     <genClasses ecoreClass="Ecore.ecore#//EEnum">
+      <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EEnum/T"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ecore.ecore#//EEnum/eLiterals"/>
       <genOperations ecoreOperation="Ecore.ecore#//EEnum/getEEnumLiteral">
         <genParameters ecoreParameter="Ecore.ecore#//EEnum/getEEnumLiteral/name"/>
@@ -178,14 +185,17 @@
           ecoreFeature="ecore:EReference Ecore.ecore#//EFactory/ePackage"/>
       <genOperations ecoreOperation="Ecore.ecore#//EFactory/create">
         <genParameters ecoreParameter="Ecore.ecore#//EFactory/create/eClass"/>
+        <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EFactory/create/T"/>
       </genOperations>
       <genOperations ecoreOperation="Ecore.ecore#//EFactory/createFromString">
         <genParameters ecoreParameter="Ecore.ecore#//EFactory/createFromString/eDataType"/>
         <genParameters ecoreParameter="Ecore.ecore#//EFactory/createFromString/literalValue"/>
+        <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EFactory/createFromString/T"/>
       </genOperations>
       <genOperations ecoreOperation="Ecore.ecore#//EFactory/convertToString">
         <genParameters ecoreParameter="Ecore.ecore#//EFactory/convertToString/eDataType"/>
         <genParameters ecoreParameter="Ecore.ecore#//EFactory/convertToString/instanceValue"/>
+        <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EFactory/convertToString/T"/>
       </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="Ecore.ecore#//EModelElement">
@@ -210,14 +220,17 @@
       <genOperations ecoreOperation="Ecore.ecore#//EObject/eCrossReferences"/>
       <genOperations ecoreOperation="Ecore.ecore#//EObject/eGet">
         <genParameters ecoreParameter="Ecore.ecore#//EObject/eGet/feature"/>
+        <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EObject/eGet/T"/>
       </genOperations>
       <genOperations ecoreOperation="Ecore.ecore#//EObject/eGet.1">
         <genParameters ecoreParameter="Ecore.ecore#//EObject/eGet.1/feature"/>
         <genParameters ecoreParameter="Ecore.ecore#//EObject/eGet.1/resolve"/>
+        <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EObject/eGet.1/T"/>
       </genOperations>
       <genOperations ecoreOperation="Ecore.ecore#//EObject/eSet">
         <genParameters ecoreParameter="Ecore.ecore#//EObject/eSet/feature"/>
         <genParameters ecoreParameter="Ecore.ecore#//EObject/eSet/newValue"/>
+        <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EObject/eSet/T"/>
       </genOperations>
       <genOperations ecoreOperation="Ecore.ecore#//EObject/eIsSet">
         <genParameters ecoreParameter="Ecore.ecore#//EObject/eIsSet/feature"/>
@@ -228,9 +241,12 @@
       <genOperations ecoreOperation="Ecore.ecore#//EObject/eInvoke">
         <genParameters ecoreParameter="Ecore.ecore#//EObject/eInvoke/operation"/>
         <genParameters ecoreParameter="Ecore.ecore#//EObject/eInvoke/arguments"/>
+        <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EObject/eInvoke/T"/>
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="Ecore.ecore#//EOperation">
+      <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EOperation/C"/>
+      <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EOperation/V"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Ecore.ecore#//EOperation/eContainingClass"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ecore.ecore#//EOperation/eTypeParameters"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ecore.ecore#//EOperation/eParameters"/>
@@ -259,9 +275,12 @@
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="Ecore.ecore#//EParameter">
+      <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EParameter/T"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Ecore.ecore#//EParameter/eOperation"/>
     </genClasses>
     <genClasses ecoreClass="Ecore.ecore#//EReference">
+      <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EReference/C"/>
+      <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EReference/V"/>
       <genFeatures createChild="false" propertyDescription="Whether this reference represents a composite relationship"
           ecoreFeature="ecore:EAttribute Ecore.ecore#//EReference/containment"/>
       <genFeatures property="Readonly" createChild="false" propertyDescription="Whether this reference has as its opposite a containment reference"
@@ -278,6 +297,8 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference Ecore.ecore#//EReference/eKeys"/>
     </genClasses>
     <genClasses image="false" ecoreClass="Ecore.ecore#//EStructuralFeature">
+      <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EStructuralFeature/C"/>
+      <genTypeParameters ecoreTypeParameter="Ecore.ecore#//EStructuralFeature/V"/>
       <genFeatures createChild="false" propertyDescription="Whether the value of this feature can be changed"
           ecoreFeature="ecore:EAttribute Ecore.ecore#//EStructuralFeature/changeable"/>
       <genFeatures createChild="false" propertyDescription="Whether no field will be generated for this feature"
@@ -302,6 +323,7 @@
       <genOperations ecoreOperation="Ecore.ecore#//EStructuralFeature/getContainerClass"/>
     </genClasses>
     <genClasses image="false" ecoreClass="Ecore.ecore#//ETypedElement">
+      <genTypeParameters ecoreTypeParameter="Ecore.ecore#//ETypedElement/C"/>
       <genFeatures createChild="false" propertyDescription="Whether the order in which values occur is meaningful"
           ecoreFeature="ecore:EAttribute Ecore.ecore#//ETypedElement/ordered"/>
       <genFeatures createChild="false" propertyDescription="Whether the same value may occur more than once"

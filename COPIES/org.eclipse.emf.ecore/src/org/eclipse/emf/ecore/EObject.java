@@ -178,7 +178,7 @@ public interface EObject extends Notifier
    * @model
    * @generated
    */
-  EReference<? extends EObject, ? extends EObject> eContainmentFeature();
+  EReference<?, ? extends EObject> eContainmentFeature();
 
   /**
    * <!-- begin-user-doc -->
