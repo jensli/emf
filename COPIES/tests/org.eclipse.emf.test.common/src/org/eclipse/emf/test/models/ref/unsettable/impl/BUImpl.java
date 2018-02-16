@@ -90,7 +90,7 @@ public class BUImpl extends EObjectImpl implements BU
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return URefPackage.Literals.BU;
   }

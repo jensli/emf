@@ -112,7 +112,7 @@ public class NodeImpl extends EObjectImpl implements Node
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return TreePackage.Literals.NODE;
   }

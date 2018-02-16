@@ -37,7 +37,7 @@ public class RawUnboundedContainerImpl extends UnboundedGenericContainerImpl imp
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.RAW_UNBOUNDED_CONTAINER;
   }

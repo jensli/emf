@@ -10,6 +10,7 @@
  */
 package org.eclipse.emf.test.models.lib;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -267,7 +268,7 @@ public interface LibPackage extends EPackage
    * @see org.eclipse.emf.test.models.lib.Library
    * @generated
    */
-  EClass getLibrary();
+  EClass<Library> getLibrary();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.lib.Library#getName <em>Name</em>}'.
@@ -278,7 +279,7 @@ public interface LibPackage extends EPackage
    * @see #getLibrary()
    * @generated
    */
-  EAttribute getLibrary_Name();
+  EAttribute<Library, String> getLibrary_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.emf.test.models.lib.Library#getBooks <em>Books</em>}'.
@@ -289,7 +290,7 @@ public interface LibPackage extends EPackage
    * @see #getLibrary()
    * @generated
    */
-  EReference getLibrary_Books();
+  EReference<Library, EList<Book>> getLibrary_Books();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.lib.Library#getAddress <em>Address</em>}'.
@@ -300,7 +301,7 @@ public interface LibPackage extends EPackage
    * @see #getLibrary()
    * @generated
    */
-  EReference getLibrary_Address();
+  EReference<Library, Address> getLibrary_Address();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.emf.test.models.lib.Library#getWriters <em>Writers</em>}'.
@@ -311,7 +312,7 @@ public interface LibPackage extends EPackage
    * @see #getLibrary()
    * @generated
    */
-  EReference getLibrary_Writers();
+  EReference<Library, EList<Person>> getLibrary_Writers();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.lib.Library#getCafeteria <em>Cafeteria</em>}'.
@@ -322,7 +323,7 @@ public interface LibPackage extends EPackage
    * @see #getLibrary()
    * @generated
    */
-  EReference getLibrary_Cafeteria();
+  EReference<Library, Cafeteria> getLibrary_Cafeteria();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.lib.Book <em>Book</em>}'.
@@ -332,7 +333,7 @@ public interface LibPackage extends EPackage
    * @see org.eclipse.emf.test.models.lib.Book
    * @generated
    */
-  EClass getBook();
+  EClass<Book> getBook();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.lib.Book#getTitle <em>Title</em>}'.
@@ -343,7 +344,7 @@ public interface LibPackage extends EPackage
    * @see #getBook()
    * @generated
    */
-  EAttribute getBook_Title();
+  EAttribute<Book, String> getBook_Title();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.lib.Address <em>Address</em>}'.
@@ -353,7 +354,7 @@ public interface LibPackage extends EPackage
    * @see org.eclipse.emf.test.models.lib.Address
    * @generated
    */
-  EClass getAddress();
+  EClass<Address> getAddress();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.lib.Address#getPostalCode <em>Postal Code</em>}'.
@@ -364,7 +365,7 @@ public interface LibPackage extends EPackage
    * @see #getAddress()
    * @generated
    */
-  EAttribute getAddress_PostalCode();
+  EAttribute<Address, String> getAddress_PostalCode();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.lib.Person <em>Person</em>}'.
@@ -374,7 +375,7 @@ public interface LibPackage extends EPackage
    * @see org.eclipse.emf.test.models.lib.Person
    * @generated
    */
-  EClass getPerson();
+  EClass<Person> getPerson();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.lib.Person#getName <em>Name</em>}'.
@@ -385,7 +386,7 @@ public interface LibPackage extends EPackage
    * @see #getPerson()
    * @generated
    */
-  EAttribute getPerson_Name();
+  EAttribute<Person, String> getPerson_Name();
 
   /**
    * Returns the meta object for the container reference '{@link org.eclipse.emf.test.models.lib.Person#getLibrary <em>Library</em>}'.
@@ -396,7 +397,7 @@ public interface LibPackage extends EPackage
    * @see #getPerson()
    * @generated
    */
-  EReference getPerson_Library();
+  EReference<Person, Library> getPerson_Library();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.lib.Cafeteria <em>Cafeteria</em>}'.
@@ -406,7 +407,7 @@ public interface LibPackage extends EPackage
    * @see org.eclipse.emf.test.models.lib.Cafeteria
    * @generated
    */
-  EClass getCafeteria();
+  EClass<Cafeteria> getCafeteria();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.lib.Cafeteria#getName <em>Name</em>}'.
@@ -417,7 +418,7 @@ public interface LibPackage extends EPackage
    * @see #getCafeteria()
    * @generated
    */
-  EAttribute getCafeteria_Name();
+  EAttribute<Cafeteria, String> getCafeteria_Name();
 
   /**
    * Returns the meta object for the container reference '{@link org.eclipse.emf.test.models.lib.Cafeteria#getLibrary <em>Library</em>}'.
@@ -428,7 +429,7 @@ public interface LibPackage extends EPackage
    * @see #getCafeteria()
    * @generated
    */
-  EReference getCafeteria_Library();
+  EReference<Cafeteria, Library> getCafeteria_Library();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -461,7 +462,7 @@ public interface LibPackage extends EPackage
      * @see org.eclipse.emf.test.models.lib.impl.LibPackageImpl#getLibrary()
      * @generated
      */
-    EClass LIBRARY = eINSTANCE.getLibrary();
+    EClass<Library> LIBRARY = eINSTANCE.getLibrary();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -469,7 +470,7 @@ public interface LibPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LIBRARY__NAME = eINSTANCE.getLibrary_Name();
+    EAttribute<Library, String> LIBRARY__NAME = eINSTANCE.getLibrary_Name();
 
     /**
      * The meta object literal for the '<em><b>Books</b></em>' containment reference list feature.
@@ -477,7 +478,7 @@ public interface LibPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LIBRARY__BOOKS = eINSTANCE.getLibrary_Books();
+    EReference<Library, EList<Book>> LIBRARY__BOOKS = eINSTANCE.getLibrary_Books();
 
     /**
      * The meta object literal for the '<em><b>Address</b></em>' containment reference feature.
@@ -485,7 +486,7 @@ public interface LibPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LIBRARY__ADDRESS = eINSTANCE.getLibrary_Address();
+    EReference<Library, Address> LIBRARY__ADDRESS = eINSTANCE.getLibrary_Address();
 
     /**
      * The meta object literal for the '<em><b>Writers</b></em>' containment reference list feature.
@@ -493,7 +494,7 @@ public interface LibPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LIBRARY__WRITERS = eINSTANCE.getLibrary_Writers();
+    EReference<Library, EList<Person>> LIBRARY__WRITERS = eINSTANCE.getLibrary_Writers();
 
     /**
      * The meta object literal for the '<em><b>Cafeteria</b></em>' containment reference feature.
@@ -501,7 +502,7 @@ public interface LibPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LIBRARY__CAFETERIA = eINSTANCE.getLibrary_Cafeteria();
+    EReference<Library, Cafeteria> LIBRARY__CAFETERIA = eINSTANCE.getLibrary_Cafeteria();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.lib.impl.BookImpl <em>Book</em>}' class.
@@ -511,7 +512,7 @@ public interface LibPackage extends EPackage
      * @see org.eclipse.emf.test.models.lib.impl.LibPackageImpl#getBook()
      * @generated
      */
-    EClass BOOK = eINSTANCE.getBook();
+    EClass<Book> BOOK = eINSTANCE.getBook();
 
     /**
      * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
@@ -519,7 +520,7 @@ public interface LibPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BOOK__TITLE = eINSTANCE.getBook_Title();
+    EAttribute<Book, String> BOOK__TITLE = eINSTANCE.getBook_Title();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.lib.impl.AddressImpl <em>Address</em>}' class.
@@ -529,7 +530,7 @@ public interface LibPackage extends EPackage
      * @see org.eclipse.emf.test.models.lib.impl.LibPackageImpl#getAddress()
      * @generated
      */
-    EClass ADDRESS = eINSTANCE.getAddress();
+    EClass<Address> ADDRESS = eINSTANCE.getAddress();
 
     /**
      * The meta object literal for the '<em><b>Postal Code</b></em>' attribute feature.
@@ -537,7 +538,7 @@ public interface LibPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ADDRESS__POSTAL_CODE = eINSTANCE.getAddress_PostalCode();
+    EAttribute<Address, String> ADDRESS__POSTAL_CODE = eINSTANCE.getAddress_PostalCode();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.lib.impl.PersonImpl <em>Person</em>}' class.
@@ -547,7 +548,7 @@ public interface LibPackage extends EPackage
      * @see org.eclipse.emf.test.models.lib.impl.LibPackageImpl#getPerson()
      * @generated
      */
-    EClass PERSON = eINSTANCE.getPerson();
+    EClass<Person> PERSON = eINSTANCE.getPerson();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -555,7 +556,7 @@ public interface LibPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PERSON__NAME = eINSTANCE.getPerson_Name();
+    EAttribute<Person, String> PERSON__NAME = eINSTANCE.getPerson_Name();
 
     /**
      * The meta object literal for the '<em><b>Library</b></em>' container reference feature.
@@ -563,7 +564,7 @@ public interface LibPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PERSON__LIBRARY = eINSTANCE.getPerson_Library();
+    EReference<Person, Library> PERSON__LIBRARY = eINSTANCE.getPerson_Library();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.lib.impl.CafeteriaImpl <em>Cafeteria</em>}' class.
@@ -573,7 +574,7 @@ public interface LibPackage extends EPackage
      * @see org.eclipse.emf.test.models.lib.impl.LibPackageImpl#getCafeteria()
      * @generated
      */
-    EClass CAFETERIA = eINSTANCE.getCafeteria();
+    EClass<Cafeteria> CAFETERIA = eINSTANCE.getCafeteria();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -581,7 +582,7 @@ public interface LibPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CAFETERIA__NAME = eINSTANCE.getCafeteria_Name();
+    EAttribute<Cafeteria, String> CAFETERIA__NAME = eINSTANCE.getCafeteria_Name();
 
     /**
      * The meta object literal for the '<em><b>Library</b></em>' container reference feature.
@@ -589,7 +590,7 @@ public interface LibPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CAFETERIA__LIBRARY = eINSTANCE.getCafeteria_Library();
+    EReference<Cafeteria, Library> CAFETERIA__LIBRARY = eINSTANCE.getCafeteria_Library();
 
   }
 

@@ -90,7 +90,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return DBItemPackage.Literals.DOCUMENT_ROOT;
   }

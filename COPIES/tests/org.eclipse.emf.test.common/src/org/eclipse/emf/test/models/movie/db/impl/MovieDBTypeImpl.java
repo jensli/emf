@@ -77,7 +77,7 @@ public class MovieDBTypeImpl extends EObjectImpl implements MovieDBType
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return DBPackage.Literals.MOVIE_DB_TYPE;
   }

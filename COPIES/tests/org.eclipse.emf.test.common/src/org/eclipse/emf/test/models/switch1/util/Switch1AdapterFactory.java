@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.test.models.switch1.*;
 import org.eclipse.emf.test.models.switch1.EClass0;
 import org.eclipse.emf.test.models.switch1.EClass1;
 import org.eclipse.emf.test.models.switch1.Switch1Package;

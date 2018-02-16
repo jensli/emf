@@ -12,6 +12,9 @@ package org.eclipse.emf.test.models.customer.impl;
 
 import java.math.BigInteger;
 
+import javax.xml.datatype.XMLGregorianCalendar;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -20,6 +23,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 import org.eclipse.emf.test.models.customer.AddressType;
 import org.eclipse.emf.test.models.customer.CanadaAddr;
@@ -50,77 +54,77 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass addressTypeEClass = null;
+  private EClass<AddressType> addressTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass canadaAddrEClass = null;
+  private EClass<CanadaAddr> canadaAddrEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass creditInfoEClass = null;
+  private EClass<CreditInfo> creditInfoEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass customersTypeEClass = null;
+  private EClass<CustomersType> customersTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass customerTypeEClass = null;
+  private EClass<CustomerType> customerTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass documentRootEClass = null;
+  private EClass<DocumentRoot> documentRootEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass usAddrEClass = null;
+  private EClass<USAddr> usAddrEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum usStateEEnum = null;
+  private EEnum<USState> usStateEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType usStateObjectEDataType = null;
+  private EDataType<USState> usStateObjectEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType zipCodesEDataType = null;
+  private EDataType<BigInteger> zipCodesEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType zipUnionEDataType = null;
+  private EDataType<Object> zipUnionEDataType = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -212,7 +216,7 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAddressType()
+  public EClass<AddressType> getAddressType()
   {
     return addressTypeEClass;
   }
@@ -222,9 +226,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAddressType_Street()
+  @SuppressWarnings("unchecked")
+  public EAttribute<AddressType, String> getAddressType_Street()
   {
-    return (EAttribute)addressTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<AddressType, String>) addressTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -232,9 +237,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAddressType_Town()
+  @SuppressWarnings("unchecked")
+  public EAttribute<AddressType, String> getAddressType_Town()
   {
-    return (EAttribute)addressTypeEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<AddressType, String>) addressTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -242,7 +248,7 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCanadaAddr()
+  public EClass<CanadaAddr> getCanadaAddr()
   {
     return canadaAddrEClass;
   }
@@ -252,9 +258,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCanadaAddr_Zip()
+  @SuppressWarnings("unchecked")
+  public EAttribute<CanadaAddr, String> getCanadaAddr_Zip()
   {
-    return (EAttribute)canadaAddrEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<CanadaAddr, String>) canadaAddrEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -262,9 +269,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCanadaAddr_Province()
+  @SuppressWarnings("unchecked")
+  public EAttribute<CanadaAddr, String> getCanadaAddr_Province()
   {
-    return (EAttribute)canadaAddrEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<CanadaAddr, String>) canadaAddrEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -272,7 +280,7 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCreditInfo()
+  public EClass<CreditInfo> getCreditInfo()
   {
     return creditInfoEClass;
   }
@@ -282,9 +290,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCreditInfo_Holder()
+  @SuppressWarnings("unchecked")
+  public EAttribute<CreditInfo, String> getCreditInfo_Holder()
   {
-    return (EAttribute)creditInfoEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<CreditInfo, String>) creditInfoEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -292,9 +301,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCreditInfo_CcNumber()
+  @SuppressWarnings("unchecked")
+  public EAttribute<CreditInfo, BigInteger> getCreditInfo_CcNumber()
   {
-    return (EAttribute)creditInfoEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<CreditInfo, BigInteger>) creditInfoEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -302,9 +312,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCreditInfo_ExpireDate()
+  @SuppressWarnings("unchecked")
+  public EAttribute<CreditInfo, XMLGregorianCalendar> getCreditInfo_ExpireDate()
   {
-    return (EAttribute)creditInfoEClass.getEStructuralFeatures().get(2);
+    return (EAttribute<CreditInfo, XMLGregorianCalendar>) creditInfoEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -312,7 +323,7 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCustomersType()
+  public EClass<CustomersType> getCustomersType()
   {
     return customersTypeEClass;
   }
@@ -322,9 +333,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCustomersType_Mixed()
+  @SuppressWarnings("unchecked")
+  public EAttribute<CustomersType, FeatureMap> getCustomersType_Mixed()
   {
-    return (EAttribute)customersTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<CustomersType, FeatureMap>) customersTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -332,9 +344,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCustomersType_Customer()
+  @SuppressWarnings("unchecked")
+  public EReference<CustomersType, EList<CustomerType>> getCustomersType_Customer()
   {
-    return (EReference)customersTypeEClass.getEStructuralFeatures().get(1);
+    return (EReference<CustomersType, EList<CustomerType>>) customersTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -342,7 +355,7 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCustomerType()
+  public EClass<CustomerType> getCustomerType()
   {
     return customerTypeEClass;
   }
@@ -352,9 +365,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCustomerType_Name()
+  @SuppressWarnings("unchecked")
+  public EAttribute<CustomerType, String> getCustomerType_Name()
   {
-    return (EAttribute)customerTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<CustomerType, String>) customerTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -362,9 +376,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCustomerType_Address()
+  @SuppressWarnings("unchecked")
+  public EReference<CustomerType, AddressType> getCustomerType_Address()
   {
-    return (EReference)customerTypeEClass.getEStructuralFeatures().get(1);
+    return (EReference<CustomerType, AddressType>) customerTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -372,9 +387,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCustomerType_CreditCard()
+  @SuppressWarnings("unchecked")
+  public EReference<CustomerType, CreditInfo> getCustomerType_CreditCard()
   {
-    return (EReference)customerTypeEClass.getEStructuralFeatures().get(2);
+    return (EReference<CustomerType, CreditInfo>) customerTypeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -382,9 +398,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCustomerType_PaymentDay()
+  @SuppressWarnings("unchecked")
+  public EAttribute<CustomerType, XMLGregorianCalendar> getCustomerType_PaymentDay()
   {
-    return (EAttribute)customerTypeEClass.getEStructuralFeatures().get(3);
+    return (EAttribute<CustomerType, XMLGregorianCalendar>) customerTypeEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -392,9 +409,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCustomerType_ID()
+  @SuppressWarnings("unchecked")
+  public EAttribute<CustomerType, String> getCustomerType_ID()
   {
-    return (EAttribute)customerTypeEClass.getEStructuralFeatures().get(4);
+    return (EAttribute<CustomerType, String>) customerTypeEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -402,7 +420,7 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDocumentRoot()
+  public EClass<DocumentRoot> getDocumentRoot()
   {
     return documentRootEClass;
   }
@@ -412,9 +430,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDocumentRoot_Mixed()
+  @SuppressWarnings("unchecked")
+  public EAttribute<DocumentRoot, FeatureMap> getDocumentRoot_Mixed()
   {
-    return (EAttribute)documentRootEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<DocumentRoot, FeatureMap>) documentRootEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -422,9 +441,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_XMLNSPrefixMap()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, EMap<String, String>> getDocumentRoot_XMLNSPrefixMap()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(1);
+    return (EReference<DocumentRoot, EMap<String, String>>) documentRootEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -432,9 +452,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_XSISchemaLocation()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, EMap<String, String>> getDocumentRoot_XSISchemaLocation()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(2);
+    return (EReference<DocumentRoot, EMap<String, String>>) documentRootEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -442,9 +463,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_Customers()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, CustomersType> getDocumentRoot_Customers()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(3);
+    return (EReference<DocumentRoot, CustomersType>) documentRootEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -452,9 +474,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDocumentRoot_ID()
+  @SuppressWarnings("unchecked")
+  public EAttribute<DocumentRoot, String> getDocumentRoot_ID()
   {
-    return (EAttribute)documentRootEClass.getEStructuralFeatures().get(4);
+    return (EAttribute<DocumentRoot, String>) documentRootEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -462,7 +485,7 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getUSAddr()
+  public EClass<USAddr> getUSAddr()
   {
     return usAddrEClass;
   }
@@ -472,9 +495,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUSAddr_Zip()
+  @SuppressWarnings("unchecked")
+  public EAttribute<USAddr, Object> getUSAddr_Zip()
   {
-    return (EAttribute)usAddrEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<USAddr, Object>) usAddrEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -482,9 +506,10 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUSAddr_State()
+  @SuppressWarnings("unchecked")
+  public EAttribute<USAddr, String> getUSAddr_State()
   {
-    return (EAttribute)usAddrEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<USAddr, String>) usAddrEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -492,7 +517,7 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EEnum getUSState()
+  public EEnum<USState> getUSState()
   {
     return usStateEEnum;
   }
@@ -502,7 +527,7 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getUSStateObject()
+  public EDataType<USState> getUSStateObject()
   {
     return usStateObjectEDataType;
   }
@@ -512,7 +537,7 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getZipCodes()
+  public EDataType<BigInteger> getZipCodes()
   {
     return zipCodesEDataType;
   }
@@ -522,7 +547,7 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getZipUnion()
+  public EDataType<Object> getZipUnion()
   {
     return zipUnionEDataType;
   }
@@ -551,54 +576,87 @@ public class CustomerPackageImpl extends EPackageImpl implements CustomerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    addressTypeEClass = createEClass(ADDRESS_TYPE);
+    // CHANGE gen: Add cast
+    addressTypeEClass = (EClass<AddressType>) createEClass(ADDRESS_TYPE);
+    // CHANGE gen: Use raw type
     createEAttribute(addressTypeEClass, ADDRESS_TYPE__STREET);
+    // CHANGE gen: Use raw type
     createEAttribute(addressTypeEClass, ADDRESS_TYPE__TOWN);
 
-    canadaAddrEClass = createEClass(CANADA_ADDR);
+    // CHANGE gen: Add cast
+    canadaAddrEClass = (EClass<CanadaAddr>) createEClass(CANADA_ADDR);
+    // CHANGE gen: Use raw type
     createEAttribute(canadaAddrEClass, CANADA_ADDR__ZIP);
+    // CHANGE gen: Use raw type
     createEAttribute(canadaAddrEClass, CANADA_ADDR__PROVINCE);
 
-    creditInfoEClass = createEClass(CREDIT_INFO);
+    // CHANGE gen: Add cast
+    creditInfoEClass = (EClass<CreditInfo>) createEClass(CREDIT_INFO);
+    // CHANGE gen: Use raw type
     createEAttribute(creditInfoEClass, CREDIT_INFO__HOLDER);
+    // CHANGE gen: Use raw type
     createEAttribute(creditInfoEClass, CREDIT_INFO__CC_NUMBER);
+    // CHANGE gen: Use raw type
     createEAttribute(creditInfoEClass, CREDIT_INFO__EXPIRE_DATE);
 
-    customersTypeEClass = createEClass(CUSTOMERS_TYPE);
+    // CHANGE gen: Add cast
+    customersTypeEClass = (EClass<CustomersType>) createEClass(CUSTOMERS_TYPE);
+    // CHANGE gen: Use raw type
     createEAttribute(customersTypeEClass, CUSTOMERS_TYPE__MIXED);
+    // CHANGE gen: Use raw type
     createEReference(customersTypeEClass, CUSTOMERS_TYPE__CUSTOMER);
 
-    customerTypeEClass = createEClass(CUSTOMER_TYPE);
+    // CHANGE gen: Add cast
+    customerTypeEClass = (EClass<CustomerType>) createEClass(CUSTOMER_TYPE);
+    // CHANGE gen: Use raw type
     createEAttribute(customerTypeEClass, CUSTOMER_TYPE__NAME);
+    // CHANGE gen: Use raw type
     createEReference(customerTypeEClass, CUSTOMER_TYPE__ADDRESS);
+    // CHANGE gen: Use raw type
     createEReference(customerTypeEClass, CUSTOMER_TYPE__CREDIT_CARD);
+    // CHANGE gen: Use raw type
     createEAttribute(customerTypeEClass, CUSTOMER_TYPE__PAYMENT_DAY);
+    // CHANGE gen: Use raw type
     createEAttribute(customerTypeEClass, CUSTOMER_TYPE__ID);
 
-    documentRootEClass = createEClass(DOCUMENT_ROOT);
+    // CHANGE gen: Add cast
+    documentRootEClass = (EClass<DocumentRoot>) createEClass(DOCUMENT_ROOT);
+    // CHANGE gen: Use raw type
     createEAttribute(documentRootEClass, DOCUMENT_ROOT__MIXED);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__CUSTOMERS);
+    // CHANGE gen: Use raw type
     createEAttribute(documentRootEClass, DOCUMENT_ROOT__ID);
 
-    usAddrEClass = createEClass(US_ADDR);
+    // CHANGE gen: Add cast
+    usAddrEClass = (EClass<USAddr>) createEClass(US_ADDR);
+    // CHANGE gen: Use raw type
     createEAttribute(usAddrEClass, US_ADDR__ZIP);
+    // CHANGE gen: Use raw type
     createEAttribute(usAddrEClass, US_ADDR__STATE);
 
     // Create enums
-    usStateEEnum = createEEnum(US_STATE);
+ 		// CHANGE gen: Cast
+    usStateEEnum = (EEnum<USState>) createEEnum(US_STATE);
 
     // Create data types
-    usStateObjectEDataType = createEDataType(US_STATE_OBJECT);
-    zipCodesEDataType = createEDataType(ZIP_CODES);
-    zipUnionEDataType = createEDataType(ZIP_UNION);
+    // CHANGE gen: Cast
+    usStateObjectEDataType = (EDataType<USState>) createEDataType(US_STATE_OBJECT);
+    // CHANGE gen: Cast
+    zipCodesEDataType = (EDataType<BigInteger>) createEDataType(ZIP_CODES);
+    // CHANGE gen: Cast
+    zipUnionEDataType = (EDataType<Object>) createEDataType(ZIP_UNION);
   }
 
   /**

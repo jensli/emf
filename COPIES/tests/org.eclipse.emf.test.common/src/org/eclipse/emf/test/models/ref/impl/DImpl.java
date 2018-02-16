@@ -81,7 +81,7 @@ public class DImpl extends EObjectImpl implements D
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return RefPackage.Literals.D;
   }

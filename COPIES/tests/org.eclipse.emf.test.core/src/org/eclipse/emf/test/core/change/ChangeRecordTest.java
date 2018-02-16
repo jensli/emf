@@ -32,6 +32,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
@@ -72,7 +73,7 @@ public class ChangeRecordTest
 
   private ResourceSet resourceSet;
   private EAnnotation eAnnotation;
-  private EClass eClass0;
+  private EClass<?> eClass0;
 
   public ChangeRecordTest(boolean callSummarize)
   {
@@ -115,7 +116,7 @@ public class ChangeRecordTest
   {
     ChangeRecorder changeRecorder = new ChangeRecorder(resourceSet);
 
-    EClass eClass1 = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> eClass1 = EcoreFactory.eINSTANCE.createEClass();
     if (callSummarize) changeRecorder.summarize();
     eClass1.setName("testEClass1");
     if (callSummarize) changeRecorder.summarize();
@@ -167,7 +168,7 @@ public class ChangeRecordTest
   @Test
   public void testRemoveElementAndApply()
   {
-    EClass eClass1 = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> eClass1 = EcoreFactory.eINSTANCE.createEClass();
     eClass1.setName("testEClass1");
     eAnnotation.getContents().add(eClass1);
 
@@ -226,7 +227,7 @@ public class ChangeRecordTest
   @Test
   public void testAddElementAndApply()
   {
-    EClass eClass1 = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> eClass1 = EcoreFactory.eINSTANCE.createEClass();
     eClass1.setName("testEClass1");
 
     List<EObject> beforeChange = new ArrayList<EObject>(eAnnotation.getContents());
@@ -282,7 +283,7 @@ public class ChangeRecordTest
   @Test
   public void testMoveElementAndApply()
   {
-    EClass eClass1 = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> eClass1 = EcoreFactory.eINSTANCE.createEClass();
     eClass1.setName("testEClass1");
 
     eAnnotation.getContents().add(EcoreFactory.eINSTANCE.createEClass());
@@ -358,7 +359,7 @@ public class ChangeRecordTest
   @Test
   public void testApply()
   {
-    EClass eClass1 = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> eClass1 = EcoreFactory.eINSTANCE.createEClass();
     eClass1.setName("testEClass1");
     eAnnotation.getContents().add(eClass1);
 
@@ -397,7 +398,7 @@ public class ChangeRecordTest
   @Test
   public void testApplyAndReverse()
   {
-    EClass eClass1 = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> eClass1 = EcoreFactory.eINSTANCE.createEClass();
     eClass1.setName("testEClass1");
     eAnnotation.getContents().add(eClass1);
 
@@ -455,7 +456,7 @@ public class ChangeRecordTest
 
     assertEquals(1, changeDescription.getObjectChanges().size());
 
-    EClass eClass1 = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> eClass1 = EcoreFactory.eINSTANCE.createEClass();
     eClass1.setName("testEClass1");
     eAnnotation.getContents().add(eClass1);
 
@@ -569,41 +570,41 @@ public class ChangeRecordTest
   /*
    * Bugzilla 81013
    */
+  @SuppressWarnings({ "unchecked", "rawtypes" })
   @Test
-  public void testResumeRecording() throws Exception
+  public <P extends EObject> void testResumeRecording() throws Exception
   {
     EPackage pack = EcoreFactory.eINSTANCE.createEPackage();
     pack.setName("pack");
     pack.setNsURI("http://www.eclipse.org/emf/pack");
 
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<P> person = EcoreFactory.eINSTANCE.createEClass();
     person.setName("Person");
     pack.getEClassifiers().add(person);
 
-    EAttribute name = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<P, String> name = EcoreFactory.eINSTANCE.createEAttribute();
     name.setName("name");
     name.setEType(EcorePackage.Literals.ESTRING);
     person.getEStructuralFeatures().add(name);
-    EAttribute id = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<P, String> id = EcoreFactory.eINSTANCE.createEAttribute();
     id.setName("id");
     id.setEType(EcorePackage.Literals.ESTRING);
     person.getEStructuralFeatures().add(id);
 
-    EReference friendsReference = EcoreFactory.eINSTANCE.createEReference();
+    EReference<P, EList<P>> friendsReference = EcoreFactory.eINSTANCE.createEReference();
     friendsReference.setName("Friends");
-    friendsReference.setEType(person);
+    friendsReference.setEType((EClass)person);
     friendsReference.setContainment(true);
     friendsReference.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
     person.getEStructuralFeatures().add(friendsReference);
 
-    EObject john = pack.getEFactoryInstance().create(person);
+    P john = pack.getEFactoryInstance().create(person);
     john.eSet(id, "123");
-    EObject mary = pack.getEFactoryInstance().create(person);
+    P mary = pack.getEFactoryInstance().create(person);
     mary.eSet(name, "Mary");
-    EObject peter = pack.getEFactoryInstance().create(person);
+    P peter = pack.getEFactoryInstance().create(person);
     peter.eSet(name, "Peter");
-    @SuppressWarnings("unchecked")
-    List<EObject> friendsOfJohn = ((List<EObject>)john.eGet(friendsReference));
+    List<P> friendsOfJohn = john.eGet(friendsReference);
     friendsOfJohn.add(peter);
 
     Resource resource = new ResourceImpl();
@@ -639,7 +640,7 @@ public class ChangeRecordTest
     changeRecorder.beginRecording(changeDescription, Arrays.asList(new Object[]{john}));
     mary.eSet(name, "Mary P");
     john.eSet(id, "789");
-    EObject joe = pack.getEFactoryInstance().create(person);
+    P joe = pack.getEFactoryInstance().create(person);
     joe.eSet(name, "Joe");
     friendsOfJohn.add(joe);
     if (callSummarize) changeRecorder.summarize(); else changeRecorder.endRecording();
@@ -690,7 +691,7 @@ public class ChangeRecordTest
     changeRecorder.beginRecording(changeDescription, Arrays.asList(new Object[]{resource, john, mary, joe}));
     mary.eSet(name, "Mary Po");
     john.eSet(id, "0");
-    EObject jane = pack.getEFactoryInstance().create(person);
+    P jane = pack.getEFactoryInstance().create(person);
     jane.eSet(name, "Jane");
     friendsOfJohn.add(jane);
     // Mary was added when recording, so now she will be removed from the ChangeDescription completely
@@ -776,37 +777,38 @@ public class ChangeRecordTest
    * Bugzilla 122989
    */
   @Test
-  public void testResumeSerializedRecording() throws Exception
+  public <P extends EObject> void testResumeSerializedRecording() throws Exception
   {
     EPackage pack = EcoreFactory.eINSTANCE.createEPackage();
     pack.setName("pack");
     pack.setNsURI("http://www.eclipse.org/emf/pack");
 
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<P> person = EcoreFactory.eINSTANCE.createEClass();
     person.setName("Person");
     pack.getEClassifiers().add(person);
 
-    EAttribute name = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<P, String> name = EcoreFactory.eINSTANCE.createEAttribute();
     name.setName("name");
     name.setEType(EcorePackage.Literals.ESTRING);
     person.getEStructuralFeatures().add(name);
-    EAttribute id = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<P, String> id = EcoreFactory.eINSTANCE.createEAttribute();
     id.setName("id");
     id.setEType(EcorePackage.Literals.ESTRING);
     person.getEStructuralFeatures().add(id);
 
-    EReference friendsReference = EcoreFactory.eINSTANCE.createEReference();
+    EReference<P, EList<P>> friendsReference = EcoreFactory.eINSTANCE.createEReference();
     friendsReference.setName("Friends");
-    friendsReference.setEType(person);
+    @SuppressWarnings("unchecked")
+    EClassifier<EList<P>> multiPerson = (EClassifier<EList<P>>)person;
+    friendsReference.setEType(multiPerson);
     friendsReference.setContainment(true);
     friendsReference.setUpperBound(6);
     person.getEStructuralFeatures().add(friendsReference);
 
-    EObject john = pack.getEFactoryInstance().create(person);
+    P john = pack.getEFactoryInstance().create(person);
     john.eSet(id, "123");
-    @SuppressWarnings("unchecked")
-    List<EObject> friendsOfJohn = ((List<EObject>)john.eGet(friendsReference));
-    EObject mary = pack.getEFactoryInstance().create(person);
+    List<P> friendsOfJohn = john.eGet(friendsReference);
+    P mary = pack.getEFactoryInstance().create(person);
     mary.eSet(name, "Mary");
 
     URI johnURI = URI.createFileURI(TestUtil.getPluginDirectory(AllSuites.PLUGIN_ID) + "/johnTRSR.xmi");
@@ -947,14 +949,14 @@ public class ChangeRecordTest
     pack.setNsURI("http://www.eclipse.org/emf/pack");
 
     Resource resource1 = new ResourceImpl(URI.createURI("resource1"));
-    EClass aClass = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> aClass = EcoreFactory.eINSTANCE.createEClass();
     resource1.getContents().add(aClass);
 
     ChangeRecorder changeRecorder = new ChangeRecorder(resourceSet);
     resourceSet.getResources().add(resource1);
     resource1.getContents().add(pack);
     pack.setNsPrefix("prefix");
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> person = EcoreFactory.eINSTANCE.createEClass();
     pack.getEClassifiers().add(person);
     changeRecorder.endRecording();
 
@@ -982,14 +984,14 @@ public class ChangeRecordTest
     pack.setNsURI("http://www.eclipse.org/emf/pack");
 
     Resource resource1 = new ResourceImpl(URI.createURI("resource1"));
-    EClass aClass = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> aClass = EcoreFactory.eINSTANCE.createEClass();
     resource1.getContents().add(aClass);
 
     ChangeRecorder changeRecorder = new ChangeRecorder(resourceSet);
     resourceSet.getResources().set(0, resource1);
     resource1.getContents().add(pack);
     pack.setNsPrefix("prefix");
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> person = EcoreFactory.eINSTANCE.createEClass();
     pack.getEClassifiers().add(person);
     changeRecorder.endRecording();
 
@@ -1016,11 +1018,11 @@ public class ChangeRecordTest
     pack.setNsURI("http://www.eclipse.org/emf/pack");
 
     Resource resource1 = new ResourceImpl(URI.createURI("resource1"));
-    EClass aClass = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> aClass = EcoreFactory.eINSTANCE.createEClass();
     resource1.getContents().add(aClass);
 
     Resource resource2 = new ResourceImpl(URI.createURI("resource1"));
-    EClass bClass = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> bClass = EcoreFactory.eINSTANCE.createEClass();
     resource2.getContents().add(bClass);
 
     List<Resource> list = new ArrayList<Resource>();
@@ -1031,7 +1033,7 @@ public class ChangeRecordTest
     resourceSet.getResources().addAll(list);
     resource1.getContents().add(pack);
     pack.setNsPrefix("prefix");
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> person = EcoreFactory.eINSTANCE.createEClass();
     pack.getEClassifiers().add(person);
     changeRecorder.endRecording();
 
@@ -1051,27 +1053,28 @@ public class ChangeRecordTest
    * Bugzilla 136653
    */
   @Test
-  public void testUnsettableList() throws Exception
+  public <P extends EObject> void testUnsettableList() throws Exception
   {
     EPackage pack = EcoreFactory.eINSTANCE.createEPackage();
     pack.setName("pack");
     pack.setNsURI("http://www.eclipse.org/emf/pack");
 
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<P> person = EcoreFactory.eINSTANCE.createEClass();
     pack.getEClassifiers().add(person);
     person.setName("Person");
 
-    EReference friends = EcoreFactory.eINSTANCE.createEReference();
+    EReference<P, EList<P>> friends = EcoreFactory.eINSTANCE.createEReference();
     person.getEStructuralFeatures().add(friends);
     friends.setName("friends");
     friends.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
     friends.setUnsettable(true);
     friends.setContainment(true);
-    friends.setEType(person);
-
-    EObject john = EcoreUtil.create(person);
     @SuppressWarnings("unchecked")
-    List<EObject> johnsFriends = (List<EObject>)john.eGet(friends);
+    EClassifier<EList<P>> multiPerson = (EClassifier<EList<P>>)person;
+    friends.setEType(multiPerson);
+
+    P john = EcoreUtil.create(person);
+    List<P> johnsFriends = john.eGet(friends);
     assertTrue(johnsFriends.isEmpty());
     assertFalse(john.eIsSet(friends));
 
@@ -1082,7 +1085,7 @@ public class ChangeRecordTest
     assertTrue(johnsFriends.isEmpty());
     assertFalse(john.eIsSet(friends));
 
-    EObject mary = EcoreUtil.create(person);
+    P mary = EcoreUtil.create(person);
     johnsFriends.add(mary);
     assertEquals(1, johnsFriends.size());
     assertEquals(mary, johnsFriends.get(0));
@@ -1110,21 +1113,21 @@ public class ChangeRecordTest
     pack.setNsURI("http://www.eclipse.org/emf/pack");
 
     Resource resource1 = new XMLResourceImpl(URI.createFileURI("resource1.xml"));
-    EClass aClass = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> aClass = EcoreFactory.eINSTANCE.createEClass();
     resource1.getContents().add(aClass);
 
     ByteArrayOutputStream baosResource1 = new ByteArrayOutputStream();
     resource1.save(baosResource1, null);
 
     Resource resource2 = new XMLResourceImpl(URI.createFileURI("resource2.xml"));
-    EClass bClass = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> bClass = EcoreFactory.eINSTANCE.createEClass();
     resource2.getContents().add(bClass);
 
     ByteArrayOutputStream baosResource2 = new ByteArrayOutputStream();
     resource2.save(baosResource2, null);
 
     Resource resource3 = new XMLResourceImpl(URI.createFileURI("resource3.xml"));
-    EClass cClass = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> cClass = EcoreFactory.eINSTANCE.createEClass();
     resource3.getContents().add(cClass);
 
     ByteArrayOutputStream baosResource3 = new ByteArrayOutputStream();
@@ -1135,7 +1138,7 @@ public class ChangeRecordTest
 
     resource1 = resourceSet.createResource(resource1.getURI());
     resource1.load(new ByteArrayInputStream(baosResource1.toByteArray()), null);
-    aClass = (EClass)resource1.getContents().get(0);
+    aClass = (EClass<?>)resource1.getContents().get(0);
 
     class MyChangeRecorder extends ChangeRecorder
     {
@@ -1153,7 +1156,7 @@ public class ChangeRecordTest
     MyChangeRecorder changeRecorder = new MyChangeRecorder(resourceSet);
     resource2 = resourceSet.createResource(resource2.getURI());
     resource2.load(new ByteArrayInputStream(baosResource2.toByteArray()), null);
-    bClass = (EClass)resource2.getContents().get(0);
+    bClass = (EClass<?>)resource2.getContents().get(0);
     changeRecorder.endRecording();
 
     assertTrue(resource1.eAdapters().contains(changeRecorder));
@@ -1168,7 +1171,7 @@ public class ChangeRecordTest
 
     resource3 = resourceSet.createResource(resource3.getURI());
     resource3.load(new ByteArrayInputStream(baosResource3.toByteArray()), null);
-    cClass = (EClass)resource2.getContents().get(0);
+    cClass = (EClass<?>)resource2.getContents().get(0);
 
     assertTrue(resource3.eAdapters().contains(changeRecorder));
     assertTrue(cClass.eAdapters().contains(changeRecorder));
@@ -1188,9 +1191,9 @@ public class ChangeRecordTest
 
     EPackage pkg1 = EcoreFactory.eINSTANCE.createEPackage();
     pkg1.setName("package1"); //$NON-NLS-1$
-    EClass class1 = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> class1 = EcoreFactory.eINSTANCE.createEClass();
     class1.setName("Class1"); //$NON-NLS-1$
-    EClass class2 = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> class2 = EcoreFactory.eINSTANCE.createEClass();
     class2.setName("Class2"); //$NON-NLS-1$
 
     res1.getContents().add(pkg1);
@@ -1242,13 +1245,13 @@ public class ChangeRecordTest
 
     EPackage pkg1 = EcoreFactory.eINSTANCE.createEPackage();
     pkg1.setName("package1"); //$NON-NLS-1$
-    EClass class1 = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> class1 = EcoreFactory.eINSTANCE.createEClass();
     class1.setName("Class1"); //$NON-NLS-1$
     ETypeParameter typeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
     typeParameter.setName("E");
     class1.getETypeParameters().add(typeParameter);
     //
-    EClass class2 = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> class2 = EcoreFactory.eINSTANCE.createEClass();
     class2.setName("Class2"); //$NON-NLS-1$
 
     res1.getContents().add(pkg1);
@@ -1298,16 +1301,16 @@ public class ChangeRecordTest
   }
 
   @Test
-  public void testEType() throws Exception
+  public <T extends EObject> void testEType() throws Exception
   {
     ResourceSet resourceSet = new ResourceSetImpl();
     Resource res1 = resourceSet.createResource(URI.createURI("null://res1.ecore")); //$NON-NLS-1$
 
     EPackage pkg1 = EcoreFactory.eINSTANCE.createEPackage();
     pkg1.setName("package1"); //$NON-NLS-1$
-    EClass class1 = EcoreFactory.eINSTANCE.createEClass();
+    EClass<T> class1 = EcoreFactory.eINSTANCE.createEClass();
     class1.setName("Class1"); //$NON-NLS-1$
-    EAttribute att1 = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<T, String> att1 = EcoreFactory.eINSTANCE.createEAttribute();
     att1.setName("att1");
 
     res1.getContents().add(pkg1);
@@ -1346,9 +1349,9 @@ public class ChangeRecordTest
     ResourceSet resourceSet = new ResourceSetImpl();
     Resource res1 = resourceSet.createResource(URI.createURI("null://res1.ecore")); //$NON-NLS-1$
 
-    EOperation eOperation = EcoreFactory.eINSTANCE.createEOperation();
+    EOperation<?, ?> eOperation = EcoreFactory.eINSTANCE.createEOperation();
     eOperation.setName("operation");
-    EClass aException = EcoreFactory.eINSTANCE.createEClass();
+    EClass<?> aException = EcoreFactory.eINSTANCE.createEClass();
     aException.setName("AException");
 
     res1.getContents().add(eOperation);

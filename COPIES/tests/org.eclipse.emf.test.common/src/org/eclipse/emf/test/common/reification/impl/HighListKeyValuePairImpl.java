@@ -37,7 +37,7 @@ public class HighListKeyValuePairImpl extends BoundedTListKeyValuePairImpl<High>
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.HIGH_LIST_KEY_VALUE_PAIR;
   }

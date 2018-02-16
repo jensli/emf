@@ -87,7 +87,7 @@ public class WriterImpl extends EObjectImpl implements Writer
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return LibraryPackage.Literals.WRITER;
   }

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.test.models.switch3.*;
 import org.eclipse.emf.test.models.switch3.EClass4;
 import org.eclipse.emf.test.models.switch3.EClass5;
 import org.eclipse.emf.test.models.switch3.Switch3Factory;
@@ -68,12 +69,13 @@ public class Switch3FactoryImpl extends EFactoryImpl implements Switch3Factory
    * @generated
    */
   @Override
-  public EObject create(EClass eClass)
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
     switch (eClass.getClassifierID())
     {
-      case Switch3Package.ECLASS4: return createEClass4();
-      case Switch3Package.ECLASS5: return createEClass5();
+      case Switch3Package.ECLASS4: return (T) createEClass4();
+      case Switch3Package.ECLASS5: return (T) createEClass5();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }

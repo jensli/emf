@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.xml.type.util.XMLTypeValidator;
+import org.eclipse.emf.test.models.customer.*;
 import org.eclipse.emf.test.models.customer.AddressType;
 import org.eclipse.emf.test.models.customer.CanadaAddr;
 import org.eclipse.emf.test.models.customer.CreditInfo;

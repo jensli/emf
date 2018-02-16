@@ -38,7 +38,7 @@ public class StringListKeyValuePairImpl extends KeyValuePairImpl<EList<String>, 
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.STRING_LIST_KEY_VALUE_PAIR;
   }

@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypeParameter;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.EcoreValidator;
@@ -51,7 +52,7 @@ public class EcoreValidationTest
   }
 
   @Test
-  public void testEcoreValidator()
+  public <T extends EObject, S extends EObject> void testEcoreValidator()
   {
     // Validate that the Ecore package instance itself is okay.
     {
@@ -118,7 +119,7 @@ public class EcoreValidationTest
     // A named element without a name is invalid, unless strict element names are disabled.
     //
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
       Diagnostic diagnostic = Diagnostician.INSTANCE.validate(eClass);
       assertEquals(1, diagnostic.getChildren().size());
       assertDiagnostic
@@ -134,7 +135,7 @@ public class EcoreValidationTest
 
     // An instance type name with type arguments is valid.
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<T> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       eClass.setInstanceTypeName("_<_>");
       Diagnostic diagnostic = Diagnostician.INSTANCE.validate(eClass);
@@ -143,7 +144,7 @@ public class EcoreValidationTest
 
     // An instance type name that's just an empty string is not valid.
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       eClass.setInstanceTypeName("");
       Diagnostic diagnostic = Diagnostician.INSTANCE.validate(eClass);
@@ -158,7 +159,7 @@ public class EcoreValidationTest
 
     // An instance type name with unbalanced "<" is not valid.
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       eClass.setInstanceTypeName("_<_");
       Diagnostic diagnostic = Diagnostician.INSTANCE.validate(eClass);
@@ -173,7 +174,7 @@ public class EcoreValidationTest
 
     // An instance type name with unbalanced "[" is not valid.
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       eClass.setInstanceTypeName("_[");
       Diagnostic diagnostic = Diagnostician.INSTANCE.validate(eClass);
@@ -188,7 +189,7 @@ public class EcoreValidationTest
 
     // A class that is an interface must also be abstract.
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       eClass.setInterface(true);
       Diagnostic diagnostic = Diagnostician.INSTANCE.validate(eClass);
@@ -203,24 +204,24 @@ public class EcoreValidationTest
 
     // A class can't have more than one attribute that is an ID.
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<T> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       {
-        EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+        EAttribute<T, String> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
         eAttribute.setName("a");
         eAttribute.setID(true);
         eAttribute.setEType(EcorePackage.Literals.ESTRING);
         eClass.getEStructuralFeatures().add(eAttribute);
       }
       {
-        EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+        EAttribute<T, String> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
         eAttribute.setName("b");
         eAttribute.setID(true);
         eAttribute.setEType(EcorePackage.Literals.ESTRING);
         eClass.getEStructuralFeatures().add(eAttribute);
       }
       {
-        EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+        EAttribute<T, String> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
         eAttribute.setName("c");
         eAttribute.setID(true);
         eAttribute.setEType(EcorePackage.Literals.ESTRING);
@@ -238,16 +239,16 @@ public class EcoreValidationTest
 
     // A class can't have two attributes with the same name.
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<T> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       {
-        EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+        EAttribute<T, String> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
         eAttribute.setName("a");
         eAttribute.setEType(EcorePackage.Literals.ESTRING);
         eClass.getEStructuralFeatures().add(eAttribute);
       }
       {
-        EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+        EAttribute<T, String> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
         eAttribute.setName("a");
         eAttribute.setEType(EcorePackage.Literals.ESTRING);
         eClass.getEStructuralFeatures().add(eAttribute);
@@ -264,16 +265,16 @@ public class EcoreValidationTest
 
     // A class can't have two attributes with the matching names.
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<T> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       {
-        EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+        EAttribute<T, String> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
         eAttribute.setName("a");
         eAttribute.setEType(EcorePackage.Literals.ESTRING);
         eClass.getEStructuralFeatures().add(eAttribute);
       }
       {
-        EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+        EAttribute<T, String> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
         eAttribute.setName("A_");
         eAttribute.setEType(EcorePackage.Literals.ESTRING);
         eClass.getEStructuralFeatures().add(eAttribute);
@@ -290,13 +291,13 @@ public class EcoreValidationTest
 
     // A class can't have two operations with matching signatures.
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<T> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       {
-        EOperation eOperation = EcoreFactory.eINSTANCE.createEOperation();
+        EOperation<T, Void> eOperation = EcoreFactory.eINSTANCE.createEOperation();
         eOperation.setName("a");
         {
-          EParameter eParameter = EcoreFactory.eINSTANCE.createEParameter();
+          EParameter<byte[]> eParameter = EcoreFactory.eINSTANCE.createEParameter();
           eParameter.setName("x");
           eParameter.setEType(XMLTypePackage.Literals.HEX_BINARY);
           eOperation.getEParameters().add(eParameter);
@@ -304,10 +305,10 @@ public class EcoreValidationTest
         eClass.getEOperations().add(eOperation);
       }
       {
-        EOperation eOperation = EcoreFactory.eINSTANCE.createEOperation();
+        EOperation<T, Void> eOperation = EcoreFactory.eINSTANCE.createEOperation();
         eOperation.setName("a");
         {
-          EParameter eParameter = EcoreFactory.eINSTANCE.createEParameter();
+          EParameter<byte[]> eParameter = EcoreFactory.eINSTANCE.createEParameter();
           eParameter.setName("x");
           eParameter.setEType(XMLTypePackage.Literals.BASE64_BINARY);
           eOperation.getEParameters().add(eParameter);
@@ -326,7 +327,7 @@ public class EcoreValidationTest
 
     // A class can't have circular super types.
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.getESuperTypes().add(eClass);
       eClass.setName("_");
       Diagnostic diagnostic = Diagnostician.INSTANCE.validate(eClass);
@@ -341,7 +342,7 @@ public class EcoreValidationTest
 
     // A map entry class must have a key feature and a value feature.
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       eClass.setInstanceClassName("java.util.Map$Entry");
       Diagnostic diagnostic = Diagnostician.INSTANCE.validate(eClass);
@@ -362,7 +363,7 @@ public class EcoreValidationTest
 
     // Two enum literals can't have the same name nor matching names.
     {
-      EEnum eEnum = EcoreFactory.eINSTANCE.createEEnum();
+      EEnum<?> eEnum = EcoreFactory.eINSTANCE.createEEnum();
       eEnum.setName("_");
       {
         EEnumLiteral eEnumLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
@@ -391,7 +392,7 @@ public class EcoreValidationTest
 
     // Two enum literals can't have the same literals.
     {
-      EEnum eEnum = EcoreFactory.eINSTANCE.createEEnum();
+      EEnum<?> eEnum = EcoreFactory.eINSTANCE.createEEnum();
       eEnum.setName("_");
       {
         EEnumLiteral eEnumLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
@@ -424,22 +425,22 @@ public class EcoreValidationTest
 
     // Two parameters cannot have the same name.
     {
-      EOperation eOperation = EcoreFactory.eINSTANCE.createEOperation();
+      EOperation<?, Void> eOperation = EcoreFactory.eINSTANCE.createEOperation();
       eOperation.setName("_");
       {
-        EParameter eParameter = EcoreFactory.eINSTANCE.createEParameter();
+        EParameter<String> eParameter = EcoreFactory.eINSTANCE.createEParameter();
         eParameter.setName("a");
         eParameter.setEType(EcorePackage.Literals.ESTRING);
         eOperation.getEParameters().add(eParameter);
       }
       {
-        EParameter eParameter = EcoreFactory.eINSTANCE.createEParameter();
+        EParameter<String> eParameter = EcoreFactory.eINSTANCE.createEParameter();
         eParameter.setName("a");
         eParameter.setEType(EcorePackage.Literals.ESTRING);
         eOperation.getEParameters().add(eParameter);
       }
       {
-        EParameter eParameter = EcoreFactory.eINSTANCE.createEParameter();
+        EParameter<String> eParameter = EcoreFactory.eINSTANCE.createEParameter();
         eParameter.setName("a");
         eParameter.setEType(EcorePackage.Literals.ESTRING);
         eOperation.getEParameters().add(eParameter);
@@ -456,7 +457,7 @@ public class EcoreValidationTest
 
     // Two type parameters cannot have the same name.
     {
-      EOperation eOperation = EcoreFactory.eINSTANCE.createEOperation();
+      EOperation<?, Void> eOperation = EcoreFactory.eINSTANCE.createEOperation();
       eOperation.setName("_");
       {
         ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -486,7 +487,7 @@ public class EcoreValidationTest
 
     // Two type parameters cannot have the same name.
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       {
         ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -516,7 +517,7 @@ public class EcoreValidationTest
 
     // A void operation must have upper bound 1.
     {
-      EOperation eOperation = EcoreFactory.eINSTANCE.createEOperation();
+      EOperation<?, Void> eOperation = EcoreFactory.eINSTANCE.createEOperation();
       eOperation.setName("_");
       eOperation.setUpperBound(2);
       Diagnostic diagnostic = Diagnostician.INSTANCE.validate(eOperation);
@@ -667,17 +668,17 @@ public class EcoreValidationTest
       ePackage.setNsURI("_");
       ePackage.setNsPrefix("");
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("a");
         ePackage.getEClassifiers().add(eClass);
       }
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("a");
         ePackage.getEClassifiers().add(eClass);
       }
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("A");
         ePackage.getEClassifiers().add(eClass);
       }
@@ -721,7 +722,7 @@ public class EcoreValidationTest
     }
 
     {
-      EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+      EAttribute<?, Resource> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
       eAttribute.setName("_");
       eAttribute.setEType(EcorePackage.Literals.ERESOURCE);
 
@@ -740,19 +741,19 @@ public class EcoreValidationTest
     for (int i = 0; i < 100; ++i)
     {
       EPackage ePackage = EcoreFactory.eINSTANCE.createEPackage();
-      EClass A;
-      EReference a;
-      EClass B;
-      EReference b;
+      EClass<EObject> A;
+      EReference<EObject, EObject> a;
+      EClass<EObject> B;
+      EReference<EObject, EObject> b;
       ePackage.setName("_");
       ePackage.setNsURI("_");
       ePackage.setNsPrefix("");
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<EObject> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("A");
         ePackage.getEClassifiers().add(eClass);
         {
-          EReference eReference = EcoreFactory.eINSTANCE.createEReference();
+          EReference<EObject, EObject> eReference = EcoreFactory.eINSTANCE.createEReference();
           eReference.setName("b");
           eClass.getEStructuralFeatures().add(eReference);
           b = eReference;
@@ -760,11 +761,11 @@ public class EcoreValidationTest
         A = eClass;
       }
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<EObject> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("B");
         ePackage.getEClassifiers().add(eClass);
         {
-          EReference eReference = EcoreFactory.eINSTANCE.createEReference();
+          EReference<EObject, EObject> eReference = EcoreFactory.eINSTANCE.createEReference();
           eReference.setName("a");
           eClass.getEStructuralFeatures().add(eReference);
           a = eReference;
@@ -964,7 +965,7 @@ public class EcoreValidationTest
 
     // The lower bound of a typed element must be >= 0.
     {
-      EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+      EAttribute<?, String> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
       eAttribute.setName("a");
       eAttribute.setEType(EcorePackage.Literals.ESTRING);
       eAttribute.setLowerBound(-1);
@@ -981,7 +982,7 @@ public class EcoreValidationTest
 
     // The upper bound of a typed elements must be -2, -1, or >= 1 not 3.
     {
-      EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+      EAttribute<?, String> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
       eAttribute.setName("a");
       eAttribute.setEType(EcorePackage.Literals.ESTRING);
       eAttribute.setUpperBound(-3);
@@ -998,7 +999,7 @@ public class EcoreValidationTest
 
     // The upper bound of a typed element cannot be 0.
     {
-      EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+      EAttribute<?, String> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
       eAttribute.setName("a");
       eAttribute.setEType(EcorePackage.Literals.ESTRING);
       eAttribute.setUpperBound(0);
@@ -1015,7 +1016,7 @@ public class EcoreValidationTest
 
     // The lower bound of a typed element must be less than or equal to the upper bound, unless the upper bound is -1, or -2.
     {
-      EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+      EAttribute<?, String> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
       eAttribute.setName("a");
       eAttribute.setEType(EcorePackage.Literals.ESTRING);
       eAttribute.setLowerBound(2);
@@ -1032,7 +1033,7 @@ public class EcoreValidationTest
 
     // An attribute must have a type that's a data type.
     {
-      EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+      EAttribute<EObject, EObject> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
       eAttribute.setName("a");
       eAttribute.setEType(EcorePackage.Literals.EOBJECT); // <-- Bad class type.
 
@@ -1055,7 +1056,7 @@ public class EcoreValidationTest
 
     // A generic type used as the type of an attribute must not refer to a class.
     {
-      EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+      EAttribute<?, EObject> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
       eAttribute.setName("a");
       EGenericType eGenericType = EcoreFactory.eINSTANCE.createEGenericType();
       eGenericType.setEClassifier(EcorePackage.Literals.EOBJECT); // <-- Bad class type.
@@ -1080,7 +1081,7 @@ public class EcoreValidationTest
 
     // A reference must have a type that's a class.
     {
-      EReference eReference = EcoreFactory.eINSTANCE.createEReference();
+      EReference<?, String> eReference = EcoreFactory.eINSTANCE.createEReference();
       eReference.setName("r");
       eReference.setEType(EcorePackage.Literals.ESTRING);
 
@@ -1102,7 +1103,7 @@ public class EcoreValidationTest
 
     // A generic type used as the type of a reference must not refer to a data type.
     {
-      EReference eReference = EcoreFactory.eINSTANCE.createEReference();
+      EReference<?, Object> eReference = EcoreFactory.eINSTANCE.createEReference();
       eReference.setName("r");
       EGenericType eGenericType = EcoreFactory.eINSTANCE.createEGenericType();
       eGenericType.setEClassifier(EcorePackage.Literals.EJAVA_OBJECT);
@@ -1127,12 +1128,12 @@ public class EcoreValidationTest
 
     // A reference with a valid key that's a feature of the reference's type.
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<EObject> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
 
-      EAttribute a;
+      EAttribute<EObject, String> a;
       {
-        EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+        EAttribute<EObject, String> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
         eAttribute.setName("a");
         eAttribute.setEType(EcorePackage.Literals.ESTRING);
         eClass.getEStructuralFeatures().add(eAttribute);
@@ -1140,7 +1141,7 @@ public class EcoreValidationTest
       }
 
       {
-        EReference eReference = EcoreFactory.eINSTANCE.createEReference();
+        EReference<EObject, EObject> eReference = EcoreFactory.eINSTANCE.createEReference();
         eReference.setName("r");
         eReference.setEType(eClass);
         eReference.getEKeys().add(a);
@@ -1153,21 +1154,21 @@ public class EcoreValidationTest
 
     // Reference with a key that isn't a feature of the type.
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<EObject> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
 
-      EAttribute a;
+      EAttribute<EObject, String> a;
       {
-        EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+        EAttribute<EObject, String> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
         eAttribute.setName("a");
         eAttribute.setEType(EcorePackage.Literals.ESTRING);
         eClass.getEStructuralFeatures().add(eAttribute);
         a = eAttribute;
       }
 
-      EReference r;
+      EReference<EObject, EObject> r;
       {
-        EReference eReference = EcoreFactory.eINSTANCE.createEReference();
+        EReference<EObject, EObject> eReference = EcoreFactory.eINSTANCE.createEReference();
         eReference.setName("r");
         eReference.setEType(EcorePackage.Literals.EOBJECT); // <-- Reference's type doesn't have the key attribute as a feature.
         eReference.getEKeys().add(a);
@@ -1187,7 +1188,7 @@ public class EcoreValidationTest
 
     // A generic type can act as a wildcard only when used as the type argument of a generic type, not when used as the type of a type element.
     {
-      EOperation eOperation = EcoreFactory.eINSTANCE.createEOperation();
+      EOperation<?, ?> eOperation = EcoreFactory.eINSTANCE.createEOperation();
       eOperation.setName("_");
       EGenericType eGenericType = EcoreFactory.eINSTANCE.createEGenericType();
       eOperation.setEGenericType(eGenericType);
@@ -1207,7 +1208,7 @@ public class EcoreValidationTest
     // A generic type must not reference both a classifier and a type parameter.
     {
       ETypeParameter T;
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       {
         ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -1238,7 +1239,7 @@ public class EcoreValidationTest
 
     // A generic super type must refer to a class.
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       {
         EGenericType eGenericType = EcoreFactory.eINSTANCE.createEGenericType();
@@ -1257,7 +1258,7 @@ public class EcoreValidationTest
 
     // No two generic super types may reference the same class.
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       {
         EGenericType eGenericType = EcoreFactory.eINSTANCE.createEGenericType();
@@ -1281,7 +1282,7 @@ public class EcoreValidationTest
 
     // A generic type used as a type argument can be a wildcard.
     {
-      EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+      EAttribute<?, ?> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
       eAttribute.setName("a");
       {
         EGenericType eGenericType = EcoreFactory.eINSTANCE.createEGenericType();
@@ -1299,7 +1300,7 @@ public class EcoreValidationTest
 
     // A generic type used as a valid wildcard can have a lower bound.
     {
-      EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+      EAttribute<?, ?> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
       eAttribute.setName("a");
       {
         EGenericType eGenericType = EcoreFactory.eINSTANCE.createEGenericType();
@@ -1322,7 +1323,7 @@ public class EcoreValidationTest
 
     // A generic type used as a valid wildcard can have an upper bound.
     {
-      EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+      EAttribute<?, ?> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
       eAttribute.setName("a");
       {
         EGenericType eGenericType = EcoreFactory.eINSTANCE.createEGenericType();
@@ -1345,7 +1346,7 @@ public class EcoreValidationTest
 
     // A generic type can't have both an upper and lower bound.
     {
-      EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+      EAttribute<?, ?> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
       eAttribute.setName("a");
       {
         EGenericType eGenericType = EcoreFactory.eINSTANCE.createEGenericType();
@@ -1379,7 +1380,7 @@ public class EcoreValidationTest
 
     // A generic type can't have an upper bound except when used as a type argument.
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       {
         EGenericType eGenericType = EcoreFactory.eINSTANCE.createEGenericType();
@@ -1404,7 +1405,7 @@ public class EcoreValidationTest
 
     // A generic type with bounds can't also refer to a type parameter or classifier
     {
-      EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+      EAttribute<?, ?> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
       eAttribute.setName("a");
       {
         EGenericType eGenericType = EcoreFactory.eINSTANCE.createEGenericType();
@@ -1469,13 +1470,13 @@ public class EcoreValidationTest
 
     // Generic type's classifier cannot specify a primitive type except as the generic type of a typed element.
     {
-      EClass aClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<?> aClass = EcoreFactory.eINSTANCE.createEClass();
       aClass.setName("AClass");
       ETypeParameter e = EcoreFactory.eINSTANCE.createETypeParameter();
       e.setName("E");
       aClass.getETypeParameters().add(e);
 
-      EClass bClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<?> bClass = EcoreFactory.eINSTANCE.createEClass();
       bClass.setName("BClass");
       EGenericType superType = EcoreFactory.eINSTANCE.createEGenericType();
       superType.setEClassifier(aClass);
@@ -1522,10 +1523,10 @@ public class EcoreValidationTest
     // Generic type must not reference an out of scope type parameter
     {
       ETypeParameter T;
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<EObject> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       {
-        EOperation eOperation = EcoreFactory.eINSTANCE.createEOperation();
+        EOperation<EObject, ?> eOperation = EcoreFactory.eINSTANCE.createEOperation();
         eOperation.setName("f");
         {
           ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -1536,7 +1537,7 @@ public class EcoreValidationTest
         eClass.getEOperations().add(eOperation);
       }
       {
-        EAttribute eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
+        EAttribute<EObject, ?> eAttribute = EcoreFactory.eINSTANCE.createEAttribute();
         eAttribute.setName("a");
         {
           EGenericType eGenericType = EcoreFactory.eINSTANCE.createEGenericType();
@@ -1558,7 +1559,7 @@ public class EcoreValidationTest
 
     // Generic type must not make a forward reference to a type parameter
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       {
         ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -1584,7 +1585,7 @@ public class EcoreValidationTest
     // Type parameter can be used as the type argument of the
     // bound
     {
-      EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+      EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
       eClass.setName("_");
       {
         ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -1607,9 +1608,9 @@ public class EcoreValidationTest
 
     // A generic super type can validly use type arguments.
     {
-      EClass A;
+      EClass<?> A;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("A");
         {
           ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -1618,9 +1619,9 @@ public class EcoreValidationTest
         }
         A = eClass;
       }
-      EClass B;
+      EClass<?> B;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("B");
         {
           ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -1648,9 +1649,9 @@ public class EcoreValidationTest
 
     // A generic super type must not have wildcard type arguments.
     {
-      EClass A;
+      EClass<?> A;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("A");
         {
           ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -1659,9 +1660,9 @@ public class EcoreValidationTest
         }
         A = eClass;
       }
-      EClass B;
+      EClass<?> B;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("B");
         {
           ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -1694,9 +1695,9 @@ public class EcoreValidationTest
 
     // Generic super types can pass template parameters in complex ways with redundant diamond inheritance.
     {
-      EClass A;
+      EClass<?> A;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("A");
         {
           ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -1705,9 +1706,9 @@ public class EcoreValidationTest
         }
         A = eClass;
       }
-      EClass B;
+      EClass<?> B;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("B");
         {
           ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -1729,9 +1730,9 @@ public class EcoreValidationTest
         B = eClass;
       }
 
-      EClass C;
+      EClass<?> C;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("C");
         {
           ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -1770,9 +1771,9 @@ public class EcoreValidationTest
 
     // Generic super types can pass instantiate template parameters in complex ways with redundant diamond inheritance.
     {
-      EClass A;
+      EClass<?> A;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("A");
         {
           ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -1781,9 +1782,9 @@ public class EcoreValidationTest
         }
         A = eClass;
       }
-      EClass B;
+      EClass<?> B;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("B");
         {
           ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -1805,9 +1806,9 @@ public class EcoreValidationTest
         B = eClass;
       }
 
-      EClass C;
+      EClass<?> C;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("C");
 
         {
@@ -1841,9 +1842,9 @@ public class EcoreValidationTest
 
     // Generic super types can pass instantiate template parameters in complex ways with redundant diamond inheritance.
     {
-      EClass A;
+      EClass<?> A;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("A");
         {
           ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -1852,9 +1853,9 @@ public class EcoreValidationTest
         }
         A = eClass;
       }
-      EClass B;
+      EClass<?> B;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("B");
         {
           ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -1876,9 +1877,9 @@ public class EcoreValidationTest
         B = eClass;
       }
 
-      EClass C;
+      EClass<?> C;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("C");
 
         {
@@ -1926,9 +1927,9 @@ public class EcoreValidationTest
 
       // interface X {}
       //
-      EClass X;
+      EClass<?> X;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("X");
 
         ePackage.getEClassifiers().add(eClass);
@@ -1937,9 +1938,9 @@ public class EcoreValidationTest
 
       // interface Y extends X {}
       //
-      EClass Y;
+      EClass<?> Y;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("Y");
         eClass.getESuperTypes().add(X);
 
@@ -1949,9 +1950,9 @@ public class EcoreValidationTest
 
       // interface Container<E> {}
       //
-      EClass Container;
+      EClass<?> Container;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("Container");
         {
           ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -1964,9 +1965,9 @@ public class EcoreValidationTest
 
       // interface A<T extends Container<?>> {}
       //
-      EClass A;
+      EClass<?> A;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("A");
         {
           ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -1992,9 +1993,9 @@ public class EcoreValidationTest
 
       // interface B<T extends Container<EString>> extends A<T> {}
       //
-      EClass B;
+      EClass<?> B;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("B");
         ETypeParameter T;
         {
@@ -2139,9 +2140,9 @@ public class EcoreValidationTest
 
       // interface X {}
       //
-      EClass eClassX;
+      EClass<?> eClassX;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("X");
 
         ePackage.getEClassifiers().add(eClass);
@@ -2152,7 +2153,7 @@ public class EcoreValidationTest
       //
       // EClass eClassY;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("Y");
         eClass.getESuperTypes().add(eClassX);
 
@@ -2162,9 +2163,9 @@ public class EcoreValidationTest
 
       // interface Container<E> {}
       //
-      EClass eClassContainer;
+      EClass<?> eClassContainer;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("Container");
         {
           ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -2179,7 +2180,7 @@ public class EcoreValidationTest
       //
       // EClass eClassDerivedContainer;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("DerivedContainer");
         {
           ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -2205,10 +2206,10 @@ public class EcoreValidationTest
       //    <E1, F1 extends E1, G1 extends Container<E1>> void foo();
       // }
       //
-      EClass eClassHolder;
-      EOperation eOperationFoo;
+      EClass<?> eClassHolder;
+      EOperation<?, ?> eOperationFoo;
       {
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<EObject> eClass = EcoreFactory.eINSTANCE.createEClass();
         eClass.setName("Holder");
         {
           ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -2262,7 +2263,7 @@ public class EcoreValidationTest
         eClassHolder = eClass;
 
         {
-          EOperation eOperation = EcoreFactory.eINSTANCE.createEOperation();
+          EOperation<EObject, ?> eOperation = EcoreFactory.eINSTANCE.createEOperation();
           eOperation.setName("foo");
           {
             ETypeParameter eTypeParameter = EcoreFactory.eINSTANCE.createETypeParameter();
@@ -2309,7 +2310,7 @@ public class EcoreValidationTest
         }
         case 1:
         {
-          EParameter eParameter = EcoreFactory.eINSTANCE.createEParameter();
+          EParameter<?> eParameter = EcoreFactory.eINSTANCE.createEParameter();
           eParameter.setName("x");
           eOperationFoo.getEParameters().add(eParameter);
           {
@@ -2348,7 +2349,7 @@ public class EcoreValidationTest
         }
         case 2:
         {
-          EParameter eParameter = EcoreFactory.eINSTANCE.createEParameter();
+          EParameter<?> eParameter = EcoreFactory.eINSTANCE.createEParameter();
           eParameter.setName("x");
           eOperationFoo.getEParameters().add(eParameter);
           {
@@ -2384,7 +2385,7 @@ public class EcoreValidationTest
         }
         case 3:
         {
-          EParameter eParameter = EcoreFactory.eINSTANCE.createEParameter();
+          EParameter<?> eParameter = EcoreFactory.eINSTANCE.createEParameter();
           eParameter.setName("x");
           eOperationFoo.getEParameters().add(eParameter);
           {
@@ -2437,7 +2438,7 @@ public class EcoreValidationTest
         }
         case 4:
         {
-          EParameter eParameter = EcoreFactory.eINSTANCE.createEParameter();
+          EParameter<?> eParameter = EcoreFactory.eINSTANCE.createEParameter();
           eParameter.setName("x");
           eOperationFoo.getEParameters().add(eParameter);
           {
@@ -2497,7 +2498,7 @@ public class EcoreValidationTest
         }
         case 5:
         {
-          EParameter eParameter = EcoreFactory.eINSTANCE.createEParameter();
+          EParameter<?> eParameter = EcoreFactory.eINSTANCE.createEParameter();
           eParameter.setName("x");
           eOperationFoo.getEParameters().add(eParameter);
           {
@@ -2559,7 +2560,7 @@ public class EcoreValidationTest
         }
         case 7:
         {
-          EParameter eParameter = EcoreFactory.eINSTANCE.createEParameter();
+          EParameter<?> eParameter = EcoreFactory.eINSTANCE.createEParameter();
           eParameter.setName("x");
           eOperationFoo.getEParameters().add(eParameter);
           {
@@ -2618,7 +2619,7 @@ public class EcoreValidationTest
         }
         case 8:
         {
-          EParameter eParameter = EcoreFactory.eINSTANCE.createEParameter();
+          EParameter<?> eParameter = EcoreFactory.eINSTANCE.createEParameter();
           eParameter.setName("x");
           eOperationFoo.getEParameters().add(eParameter);
           {

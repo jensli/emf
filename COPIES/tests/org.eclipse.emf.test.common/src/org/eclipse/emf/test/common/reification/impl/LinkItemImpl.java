@@ -51,7 +51,7 @@ public class LinkItemImpl extends BidirectionalImpl<LinkItem> implements LinkIte
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.LINK_ITEM;
   }

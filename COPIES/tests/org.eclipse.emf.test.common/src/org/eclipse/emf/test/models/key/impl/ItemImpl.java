@@ -95,7 +95,7 @@ public class ItemImpl extends EObjectImpl implements Item
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return KeyPackage.Literals.ITEM;
   }

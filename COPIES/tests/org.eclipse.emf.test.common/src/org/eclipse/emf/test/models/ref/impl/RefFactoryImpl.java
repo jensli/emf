@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.test.models.ref.*;
 import org.eclipse.emf.test.models.ref.A;
 import org.eclipse.emf.test.models.ref.B;
 import org.eclipse.emf.test.models.ref.C;
@@ -75,19 +76,20 @@ public class RefFactoryImpl extends EFactoryImpl implements RefFactory
    * @generated
    */
   @Override
-  public EObject create(EClass eClass)
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
     switch (eClass.getClassifierID())
     {
-      case RefPackage.A: return createA();
-      case RefPackage.B: return createB();
-      case RefPackage.C1: return createC1();
-      case RefPackage.C2: return createC2();
-      case RefPackage.C: return createC();
-      case RefPackage.D: return createD();
-      case RefPackage.E: return createE();
-      case RefPackage.C4: return createC4();
-      case RefPackage.C3: return createC3();
+      case RefPackage.A: return (T) createA();
+      case RefPackage.B: return (T) createB();
+      case RefPackage.C1: return (T) createC1();
+      case RefPackage.C2: return (T) createC2();
+      case RefPackage.C: return (T) createC();
+      case RefPackage.D: return (T) createD();
+      case RefPackage.E: return (T) createE();
+      case RefPackage.C4: return (T) createC4();
+      case RefPackage.C3: return (T) createC3();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }

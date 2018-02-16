@@ -119,7 +119,7 @@ public class ChangeDescriptionReverseTest
       void makeChanges()
       {
         EPackage ePackage = (EPackage)ecoreResource.getContents().get(0);
-        EClass eClass = EcoreFactory.eINSTANCE.createEClass();
+        EClass<?> eClass = EcoreFactory.eINSTANCE.createEClass();
         ePackage.getEClassifiers().add(5, eClass);
         eClass.setName("NewClass");
         EAnnotation eAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
@@ -222,7 +222,7 @@ public class ChangeDescriptionReverseTest
       {
         EPackage ecorePackage = (EPackage)ecoreResource.getContents().get(0);
         EPackage xmlTypePackage = (EPackage)xmlTypeResource.getContents().get(0);
-        EClassifier eClassifier = ecorePackage.getEClassifiers().get(10);
+        EClassifier<?> eClassifier = ecorePackage.getEClassifiers().get(10);
         eClassifier.setName(eClassifier.getName() + "Suffix");
         xmlTypePackage.getEClassifiers().get(0).getEAnnotations().get(0).getContents().add(eClassifier);
         eClassifier.setName(eClassifier.getName() + "Suffix");
@@ -253,13 +253,13 @@ public class ChangeDescriptionReverseTest
       {
         EPackage ecorePackage = (EPackage)ecoreResource.getContents().get(0);
         EPackage xmlTypePackage = (EPackage)xmlTypeResource.getContents().get(0);
-        EClassifier eClassifier = ecorePackage.getEClassifiers().get(10);
+        EClassifier<?> eClassifier = ecorePackage.getEClassifiers().get(10);
         eClassifier.setName(eClassifier.getName() + "Suffix");
         xmlTypePackage.getEClassifiers().get(0).getEAnnotations().get(0).getContents().add(eClassifier);
         eClassifier.setName(eClassifier.getName() + "Suffix");
         xmlTypePackage.getEClassifiers().get(0).setName("BadName");
         xmlTypePackage.getEClassifiers().remove(12);
-        EDataType myEDataType = EcoreFactory.eINSTANCE.createEDataType();
+        EDataType<?> myEDataType = EcoreFactory.eINSTANCE.createEDataType();
         myEDataType.setName("My");
         xmlTypePackage.getEClassifiers().add(myEDataType);
         myEDataType.setInstanceTypeName("java.util.List<?>");

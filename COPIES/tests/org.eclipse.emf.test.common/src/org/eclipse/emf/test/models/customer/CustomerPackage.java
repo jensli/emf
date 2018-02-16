@@ -10,12 +10,17 @@
  */
 package org.eclipse.emf.test.models.customer;
 
+import java.math.BigInteger;
+import javax.xml.datatype.XMLGregorianCalendar;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.util.FeatureMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -473,7 +478,7 @@ public interface CustomerPackage extends EPackage
    * @see org.eclipse.emf.test.models.customer.AddressType
    * @generated
    */
-  EClass getAddressType();
+  EClass<AddressType> getAddressType();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.customer.AddressType#getStreet <em>Street</em>}'.
@@ -484,7 +489,7 @@ public interface CustomerPackage extends EPackage
    * @see #getAddressType()
    * @generated
    */
-  EAttribute getAddressType_Street();
+  EAttribute<AddressType, String> getAddressType_Street();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.customer.AddressType#getTown <em>Town</em>}'.
@@ -495,7 +500,7 @@ public interface CustomerPackage extends EPackage
    * @see #getAddressType()
    * @generated
    */
-  EAttribute getAddressType_Town();
+  EAttribute<AddressType, String> getAddressType_Town();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.customer.CanadaAddr <em>Canada Addr</em>}'.
@@ -505,7 +510,7 @@ public interface CustomerPackage extends EPackage
    * @see org.eclipse.emf.test.models.customer.CanadaAddr
    * @generated
    */
-  EClass getCanadaAddr();
+  EClass<CanadaAddr> getCanadaAddr();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.customer.CanadaAddr#getZip <em>Zip</em>}'.
@@ -516,7 +521,7 @@ public interface CustomerPackage extends EPackage
    * @see #getCanadaAddr()
    * @generated
    */
-  EAttribute getCanadaAddr_Zip();
+  EAttribute<CanadaAddr, String> getCanadaAddr_Zip();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.customer.CanadaAddr#getProvince <em>Province</em>}'.
@@ -527,7 +532,7 @@ public interface CustomerPackage extends EPackage
    * @see #getCanadaAddr()
    * @generated
    */
-  EAttribute getCanadaAddr_Province();
+  EAttribute<CanadaAddr, String> getCanadaAddr_Province();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.customer.CreditInfo <em>Credit Info</em>}'.
@@ -537,7 +542,7 @@ public interface CustomerPackage extends EPackage
    * @see org.eclipse.emf.test.models.customer.CreditInfo
    * @generated
    */
-  EClass getCreditInfo();
+  EClass<CreditInfo> getCreditInfo();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.customer.CreditInfo#getHolder <em>Holder</em>}'.
@@ -548,7 +553,7 @@ public interface CustomerPackage extends EPackage
    * @see #getCreditInfo()
    * @generated
    */
-  EAttribute getCreditInfo_Holder();
+  EAttribute<CreditInfo, String> getCreditInfo_Holder();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.customer.CreditInfo#getCcNumber <em>Cc Number</em>}'.
@@ -559,7 +564,7 @@ public interface CustomerPackage extends EPackage
    * @see #getCreditInfo()
    * @generated
    */
-  EAttribute getCreditInfo_CcNumber();
+  EAttribute<CreditInfo, BigInteger> getCreditInfo_CcNumber();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.customer.CreditInfo#getExpireDate <em>Expire Date</em>}'.
@@ -570,7 +575,7 @@ public interface CustomerPackage extends EPackage
    * @see #getCreditInfo()
    * @generated
    */
-  EAttribute getCreditInfo_ExpireDate();
+  EAttribute<CreditInfo, XMLGregorianCalendar> getCreditInfo_ExpireDate();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.customer.CustomersType <em>Customers Type</em>}'.
@@ -580,7 +585,7 @@ public interface CustomerPackage extends EPackage
    * @see org.eclipse.emf.test.models.customer.CustomersType
    * @generated
    */
-  EClass getCustomersType();
+  EClass<CustomersType> getCustomersType();
 
   /**
    * Returns the meta object for the attribute list '{@link org.eclipse.emf.test.models.customer.CustomersType#getMixed <em>Mixed</em>}'.
@@ -591,7 +596,7 @@ public interface CustomerPackage extends EPackage
    * @see #getCustomersType()
    * @generated
    */
-  EAttribute getCustomersType_Mixed();
+  EAttribute<CustomersType, FeatureMap> getCustomersType_Mixed();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.emf.test.models.customer.CustomersType#getCustomer <em>Customer</em>}'.
@@ -602,7 +607,7 @@ public interface CustomerPackage extends EPackage
    * @see #getCustomersType()
    * @generated
    */
-  EReference getCustomersType_Customer();
+  EReference<CustomersType, EList<CustomerType>> getCustomersType_Customer();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.customer.CustomerType <em>Type</em>}'.
@@ -612,7 +617,7 @@ public interface CustomerPackage extends EPackage
    * @see org.eclipse.emf.test.models.customer.CustomerType
    * @generated
    */
-  EClass getCustomerType();
+  EClass<CustomerType> getCustomerType();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.customer.CustomerType#getName <em>Name</em>}'.
@@ -623,7 +628,7 @@ public interface CustomerPackage extends EPackage
    * @see #getCustomerType()
    * @generated
    */
-  EAttribute getCustomerType_Name();
+  EAttribute<CustomerType, String> getCustomerType_Name();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.customer.CustomerType#getAddress <em>Address</em>}'.
@@ -634,7 +639,7 @@ public interface CustomerPackage extends EPackage
    * @see #getCustomerType()
    * @generated
    */
-  EReference getCustomerType_Address();
+  EReference<CustomerType, AddressType> getCustomerType_Address();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.customer.CustomerType#getCreditCard <em>Credit Card</em>}'.
@@ -645,7 +650,7 @@ public interface CustomerPackage extends EPackage
    * @see #getCustomerType()
    * @generated
    */
-  EReference getCustomerType_CreditCard();
+  EReference<CustomerType, CreditInfo> getCustomerType_CreditCard();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.customer.CustomerType#getPaymentDay <em>Payment Day</em>}'.
@@ -656,7 +661,7 @@ public interface CustomerPackage extends EPackage
    * @see #getCustomerType()
    * @generated
    */
-  EAttribute getCustomerType_PaymentDay();
+  EAttribute<CustomerType, XMLGregorianCalendar> getCustomerType_PaymentDay();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.customer.CustomerType#getID <em>ID</em>}'.
@@ -667,7 +672,7 @@ public interface CustomerPackage extends EPackage
    * @see #getCustomerType()
    * @generated
    */
-  EAttribute getCustomerType_ID();
+  EAttribute<CustomerType, String> getCustomerType_ID();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.customer.DocumentRoot <em>Document Root</em>}'.
@@ -677,7 +682,7 @@ public interface CustomerPackage extends EPackage
    * @see org.eclipse.emf.test.models.customer.DocumentRoot
    * @generated
    */
-  EClass getDocumentRoot();
+  EClass<DocumentRoot> getDocumentRoot();
 
   /**
    * Returns the meta object for the attribute list '{@link org.eclipse.emf.test.models.customer.DocumentRoot#getMixed <em>Mixed</em>}'.
@@ -688,7 +693,7 @@ public interface CustomerPackage extends EPackage
    * @see #getDocumentRoot()
    * @generated
    */
-  EAttribute getDocumentRoot_Mixed();
+  EAttribute<DocumentRoot, FeatureMap> getDocumentRoot_Mixed();
 
   /**
    * Returns the meta object for the map '{@link org.eclipse.emf.test.models.customer.DocumentRoot#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}'.
@@ -699,7 +704,7 @@ public interface CustomerPackage extends EPackage
    * @see #getDocumentRoot()
    * @generated
    */
-  EReference getDocumentRoot_XMLNSPrefixMap();
+  EReference<DocumentRoot, EMap<String, String>> getDocumentRoot_XMLNSPrefixMap();
 
   /**
    * Returns the meta object for the map '{@link org.eclipse.emf.test.models.customer.DocumentRoot#getXSISchemaLocation <em>XSI Schema Location</em>}'.
@@ -710,7 +715,7 @@ public interface CustomerPackage extends EPackage
    * @see #getDocumentRoot()
    * @generated
    */
-  EReference getDocumentRoot_XSISchemaLocation();
+  EReference<DocumentRoot, EMap<String, String>> getDocumentRoot_XSISchemaLocation();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.customer.DocumentRoot#getCustomers <em>Customers</em>}'.
@@ -721,7 +726,7 @@ public interface CustomerPackage extends EPackage
    * @see #getDocumentRoot()
    * @generated
    */
-  EReference getDocumentRoot_Customers();
+  EReference<DocumentRoot, CustomersType> getDocumentRoot_Customers();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.customer.DocumentRoot#getID <em>ID</em>}'.
@@ -732,7 +737,7 @@ public interface CustomerPackage extends EPackage
    * @see #getDocumentRoot()
    * @generated
    */
-  EAttribute getDocumentRoot_ID();
+  EAttribute<DocumentRoot, String> getDocumentRoot_ID();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.customer.USAddr <em>US Addr</em>}'.
@@ -742,7 +747,7 @@ public interface CustomerPackage extends EPackage
    * @see org.eclipse.emf.test.models.customer.USAddr
    * @generated
    */
-  EClass getUSAddr();
+  EClass<USAddr> getUSAddr();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.customer.USAddr#getZip <em>Zip</em>}'.
@@ -753,7 +758,7 @@ public interface CustomerPackage extends EPackage
    * @see #getUSAddr()
    * @generated
    */
-  EAttribute getUSAddr_Zip();
+  EAttribute<USAddr, Object> getUSAddr_Zip();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.customer.USAddr#getState <em>State</em>}'.
@@ -764,7 +769,7 @@ public interface CustomerPackage extends EPackage
    * @see #getUSAddr()
    * @generated
    */
-  EAttribute getUSAddr_State();
+  EAttribute<USAddr, String> getUSAddr_State();
 
   /**
    * Returns the meta object for enum '{@link org.eclipse.emf.test.models.customer.USState <em>US State</em>}'.
@@ -774,7 +779,7 @@ public interface CustomerPackage extends EPackage
    * @see org.eclipse.emf.test.models.customer.USState
    * @generated
    */
-  EEnum getUSState();
+  EEnum<USState> getUSState();
 
   /**
    * Returns the meta object for data type '{@link org.eclipse.emf.test.models.customer.USState <em>US State Object</em>}'.
@@ -786,7 +791,7 @@ public interface CustomerPackage extends EPackage
    *        extendedMetaData="name='USState:Object' baseType='USState'"
    * @generated
    */
-  EDataType getUSStateObject();
+  EDataType<USState> getUSStateObject();
 
   /**
    * Returns the meta object for data type '{@link java.math.BigInteger <em>Zip Codes</em>}'.
@@ -798,7 +803,7 @@ public interface CustomerPackage extends EPackage
    *        extendedMetaData="name='zipCodes' baseType='http://www.eclipse.org/emf/2003/XMLType#integer' minInclusive='10000' maxInclusive='99999'"
    * @generated
    */
-  EDataType getZipCodes();
+  EDataType<BigInteger> getZipCodes();
 
   /**
    * Returns the meta object for data type '{@link java.lang.Object <em>Zip Union</em>}'.
@@ -810,7 +815,7 @@ public interface CustomerPackage extends EPackage
    *        extendedMetaData="name='zipUnion' memberTypes='USState zipCodes'"
    * @generated
    */
-  EDataType getZipUnion();
+  EDataType<Object> getZipUnion();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -843,7 +848,7 @@ public interface CustomerPackage extends EPackage
      * @see org.eclipse.emf.test.models.customer.impl.CustomerPackageImpl#getAddressType()
      * @generated
      */
-    EClass ADDRESS_TYPE = eINSTANCE.getAddressType();
+    EClass<AddressType> ADDRESS_TYPE = eINSTANCE.getAddressType();
 
     /**
      * The meta object literal for the '<em><b>Street</b></em>' attribute feature.
@@ -851,7 +856,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ADDRESS_TYPE__STREET = eINSTANCE.getAddressType_Street();
+    EAttribute<AddressType, String> ADDRESS_TYPE__STREET = eINSTANCE.getAddressType_Street();
 
     /**
      * The meta object literal for the '<em><b>Town</b></em>' attribute feature.
@@ -859,7 +864,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ADDRESS_TYPE__TOWN = eINSTANCE.getAddressType_Town();
+    EAttribute<AddressType, String> ADDRESS_TYPE__TOWN = eINSTANCE.getAddressType_Town();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.customer.impl.CanadaAddrImpl <em>Canada Addr</em>}' class.
@@ -869,7 +874,7 @@ public interface CustomerPackage extends EPackage
      * @see org.eclipse.emf.test.models.customer.impl.CustomerPackageImpl#getCanadaAddr()
      * @generated
      */
-    EClass CANADA_ADDR = eINSTANCE.getCanadaAddr();
+    EClass<CanadaAddr> CANADA_ADDR = eINSTANCE.getCanadaAddr();
 
     /**
      * The meta object literal for the '<em><b>Zip</b></em>' attribute feature.
@@ -877,7 +882,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CANADA_ADDR__ZIP = eINSTANCE.getCanadaAddr_Zip();
+    EAttribute<CanadaAddr, String> CANADA_ADDR__ZIP = eINSTANCE.getCanadaAddr_Zip();
 
     /**
      * The meta object literal for the '<em><b>Province</b></em>' attribute feature.
@@ -885,7 +890,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CANADA_ADDR__PROVINCE = eINSTANCE.getCanadaAddr_Province();
+    EAttribute<CanadaAddr, String> CANADA_ADDR__PROVINCE = eINSTANCE.getCanadaAddr_Province();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.customer.impl.CreditInfoImpl <em>Credit Info</em>}' class.
@@ -895,7 +900,7 @@ public interface CustomerPackage extends EPackage
      * @see org.eclipse.emf.test.models.customer.impl.CustomerPackageImpl#getCreditInfo()
      * @generated
      */
-    EClass CREDIT_INFO = eINSTANCE.getCreditInfo();
+    EClass<CreditInfo> CREDIT_INFO = eINSTANCE.getCreditInfo();
 
     /**
      * The meta object literal for the '<em><b>Holder</b></em>' attribute feature.
@@ -903,7 +908,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CREDIT_INFO__HOLDER = eINSTANCE.getCreditInfo_Holder();
+    EAttribute<CreditInfo, String> CREDIT_INFO__HOLDER = eINSTANCE.getCreditInfo_Holder();
 
     /**
      * The meta object literal for the '<em><b>Cc Number</b></em>' attribute feature.
@@ -911,7 +916,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CREDIT_INFO__CC_NUMBER = eINSTANCE.getCreditInfo_CcNumber();
+    EAttribute<CreditInfo, BigInteger> CREDIT_INFO__CC_NUMBER = eINSTANCE.getCreditInfo_CcNumber();
 
     /**
      * The meta object literal for the '<em><b>Expire Date</b></em>' attribute feature.
@@ -919,7 +924,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CREDIT_INFO__EXPIRE_DATE = eINSTANCE.getCreditInfo_ExpireDate();
+    EAttribute<CreditInfo, XMLGregorianCalendar> CREDIT_INFO__EXPIRE_DATE = eINSTANCE.getCreditInfo_ExpireDate();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.customer.impl.CustomersTypeImpl <em>Customers Type</em>}' class.
@@ -929,7 +934,7 @@ public interface CustomerPackage extends EPackage
      * @see org.eclipse.emf.test.models.customer.impl.CustomerPackageImpl#getCustomersType()
      * @generated
      */
-    EClass CUSTOMERS_TYPE = eINSTANCE.getCustomersType();
+    EClass<CustomersType> CUSTOMERS_TYPE = eINSTANCE.getCustomersType();
 
     /**
      * The meta object literal for the '<em><b>Mixed</b></em>' attribute list feature.
@@ -937,7 +942,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CUSTOMERS_TYPE__MIXED = eINSTANCE.getCustomersType_Mixed();
+    EAttribute<CustomersType, FeatureMap> CUSTOMERS_TYPE__MIXED = eINSTANCE.getCustomersType_Mixed();
 
     /**
      * The meta object literal for the '<em><b>Customer</b></em>' containment reference list feature.
@@ -945,7 +950,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CUSTOMERS_TYPE__CUSTOMER = eINSTANCE.getCustomersType_Customer();
+    EReference<CustomersType, EList<CustomerType>> CUSTOMERS_TYPE__CUSTOMER = eINSTANCE.getCustomersType_Customer();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.customer.impl.CustomerTypeImpl <em>Type</em>}' class.
@@ -955,7 +960,7 @@ public interface CustomerPackage extends EPackage
      * @see org.eclipse.emf.test.models.customer.impl.CustomerPackageImpl#getCustomerType()
      * @generated
      */
-    EClass CUSTOMER_TYPE = eINSTANCE.getCustomerType();
+    EClass<CustomerType> CUSTOMER_TYPE = eINSTANCE.getCustomerType();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -963,7 +968,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CUSTOMER_TYPE__NAME = eINSTANCE.getCustomerType_Name();
+    EAttribute<CustomerType, String> CUSTOMER_TYPE__NAME = eINSTANCE.getCustomerType_Name();
 
     /**
      * The meta object literal for the '<em><b>Address</b></em>' containment reference feature.
@@ -971,7 +976,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CUSTOMER_TYPE__ADDRESS = eINSTANCE.getCustomerType_Address();
+    EReference<CustomerType, AddressType> CUSTOMER_TYPE__ADDRESS = eINSTANCE.getCustomerType_Address();
 
     /**
      * The meta object literal for the '<em><b>Credit Card</b></em>' containment reference feature.
@@ -979,7 +984,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CUSTOMER_TYPE__CREDIT_CARD = eINSTANCE.getCustomerType_CreditCard();
+    EReference<CustomerType, CreditInfo> CUSTOMER_TYPE__CREDIT_CARD = eINSTANCE.getCustomerType_CreditCard();
 
     /**
      * The meta object literal for the '<em><b>Payment Day</b></em>' attribute feature.
@@ -987,7 +992,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CUSTOMER_TYPE__PAYMENT_DAY = eINSTANCE.getCustomerType_PaymentDay();
+    EAttribute<CustomerType, XMLGregorianCalendar> CUSTOMER_TYPE__PAYMENT_DAY = eINSTANCE.getCustomerType_PaymentDay();
 
     /**
      * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
@@ -995,7 +1000,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CUSTOMER_TYPE__ID = eINSTANCE.getCustomerType_ID();
+    EAttribute<CustomerType, String> CUSTOMER_TYPE__ID = eINSTANCE.getCustomerType_ID();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.customer.impl.DocumentRootImpl <em>Document Root</em>}' class.
@@ -1005,7 +1010,7 @@ public interface CustomerPackage extends EPackage
      * @see org.eclipse.emf.test.models.customer.impl.CustomerPackageImpl#getDocumentRoot()
      * @generated
      */
-    EClass DOCUMENT_ROOT = eINSTANCE.getDocumentRoot();
+    EClass<DocumentRoot> DOCUMENT_ROOT = eINSTANCE.getDocumentRoot();
 
     /**
      * The meta object literal for the '<em><b>Mixed</b></em>' attribute list feature.
@@ -1013,7 +1018,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DOCUMENT_ROOT__MIXED = eINSTANCE.getDocumentRoot_Mixed();
+    EAttribute<DocumentRoot, FeatureMap> DOCUMENT_ROOT__MIXED = eINSTANCE.getDocumentRoot_Mixed();
 
     /**
      * The meta object literal for the '<em><b>XMLNS Prefix Map</b></em>' map feature.
@@ -1021,7 +1026,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOCUMENT_ROOT__XMLNS_PREFIX_MAP = eINSTANCE.getDocumentRoot_XMLNSPrefixMap();
+    EReference<DocumentRoot, EMap<String, String>> DOCUMENT_ROOT__XMLNS_PREFIX_MAP = eINSTANCE.getDocumentRoot_XMLNSPrefixMap();
 
     /**
      * The meta object literal for the '<em><b>XSI Schema Location</b></em>' map feature.
@@ -1029,7 +1034,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOCUMENT_ROOT__XSI_SCHEMA_LOCATION = eINSTANCE.getDocumentRoot_XSISchemaLocation();
+    EReference<DocumentRoot, EMap<String, String>> DOCUMENT_ROOT__XSI_SCHEMA_LOCATION = eINSTANCE.getDocumentRoot_XSISchemaLocation();
 
     /**
      * The meta object literal for the '<em><b>Customers</b></em>' containment reference feature.
@@ -1037,7 +1042,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOCUMENT_ROOT__CUSTOMERS = eINSTANCE.getDocumentRoot_Customers();
+    EReference<DocumentRoot, CustomersType> DOCUMENT_ROOT__CUSTOMERS = eINSTANCE.getDocumentRoot_Customers();
 
     /**
      * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
@@ -1045,7 +1050,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DOCUMENT_ROOT__ID = eINSTANCE.getDocumentRoot_ID();
+    EAttribute<DocumentRoot, String> DOCUMENT_ROOT__ID = eINSTANCE.getDocumentRoot_ID();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.customer.impl.USAddrImpl <em>US Addr</em>}' class.
@@ -1055,7 +1060,7 @@ public interface CustomerPackage extends EPackage
      * @see org.eclipse.emf.test.models.customer.impl.CustomerPackageImpl#getUSAddr()
      * @generated
      */
-    EClass US_ADDR = eINSTANCE.getUSAddr();
+    EClass<USAddr> US_ADDR = eINSTANCE.getUSAddr();
 
     /**
      * The meta object literal for the '<em><b>Zip</b></em>' attribute feature.
@@ -1063,7 +1068,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute US_ADDR__ZIP = eINSTANCE.getUSAddr_Zip();
+    EAttribute<USAddr, Object> US_ADDR__ZIP = eINSTANCE.getUSAddr_Zip();
 
     /**
      * The meta object literal for the '<em><b>State</b></em>' attribute feature.
@@ -1071,7 +1076,7 @@ public interface CustomerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute US_ADDR__STATE = eINSTANCE.getUSAddr_State();
+    EAttribute<USAddr, String> US_ADDR__STATE = eINSTANCE.getUSAddr_State();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.customer.USState <em>US State</em>}' enum.
@@ -1081,7 +1086,7 @@ public interface CustomerPackage extends EPackage
      * @see org.eclipse.emf.test.models.customer.impl.CustomerPackageImpl#getUSState()
      * @generated
      */
-    EEnum US_STATE = eINSTANCE.getUSState();
+    EEnum<USState> US_STATE = eINSTANCE.getUSState();
 
     /**
      * The meta object literal for the '<em>US State Object</em>' data type.
@@ -1091,7 +1096,7 @@ public interface CustomerPackage extends EPackage
      * @see org.eclipse.emf.test.models.customer.impl.CustomerPackageImpl#getUSStateObject()
      * @generated
      */
-    EDataType US_STATE_OBJECT = eINSTANCE.getUSStateObject();
+    EDataType<USState> US_STATE_OBJECT = eINSTANCE.getUSStateObject();
 
     /**
      * The meta object literal for the '<em>Zip Codes</em>' data type.
@@ -1101,7 +1106,7 @@ public interface CustomerPackage extends EPackage
      * @see org.eclipse.emf.test.models.customer.impl.CustomerPackageImpl#getZipCodes()
      * @generated
      */
-    EDataType ZIP_CODES = eINSTANCE.getZipCodes();
+    EDataType<BigInteger> ZIP_CODES = eINSTANCE.getZipCodes();
 
     /**
      * The meta object literal for the '<em>Zip Union</em>' data type.
@@ -1111,7 +1116,7 @@ public interface CustomerPackage extends EPackage
      * @see org.eclipse.emf.test.models.customer.impl.CustomerPackageImpl#getZipUnion()
      * @generated
      */
-    EDataType ZIP_UNION = eINSTANCE.getZipUnion();
+    EDataType<Object> ZIP_UNION = eINSTANCE.getZipUnion();
 
   }
 

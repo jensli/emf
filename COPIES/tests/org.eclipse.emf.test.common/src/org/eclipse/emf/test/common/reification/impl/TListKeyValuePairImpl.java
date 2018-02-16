@@ -38,7 +38,7 @@ public class TListKeyValuePairImpl<T> extends KeyValuePairImpl<EList<T>, TListKe
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.TLIST_KEY_VALUE_PAIR;
   }

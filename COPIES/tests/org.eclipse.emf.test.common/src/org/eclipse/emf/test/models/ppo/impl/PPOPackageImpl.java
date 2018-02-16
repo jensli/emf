@@ -12,6 +12,7 @@ package org.eclipse.emf.test.models.ppo.impl;
 
 import java.util.Date;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -41,35 +42,35 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass itemEClass = null;
+  private EClass<Item> itemEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass usAddressEClass = null;
+  private EClass<USAddress> usAddressEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass purchaseOrderEClass = null;
+  private EClass<PurchaseOrder> purchaseOrderEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType skuEDataType = null;
+  private EDataType<String> skuEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType dateEDataType = null;
+  private EDataType<Date> dateEDataType = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -150,7 +151,7 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getItem()
+  public EClass<Item> getItem()
   {
     return itemEClass;
   }
@@ -160,9 +161,10 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getItem_ProductName()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Item, String> getItem_ProductName()
   {
-    return (EAttribute)itemEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<Item, String>) itemEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -170,9 +172,10 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getItem_Quantity()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Item, Integer> getItem_Quantity()
   {
-    return (EAttribute)itemEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<Item, Integer>) itemEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -180,9 +183,10 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getItem_USPrice()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Item, Integer> getItem_USPrice()
   {
-    return (EAttribute)itemEClass.getEStructuralFeatures().get(2);
+    return (EAttribute<Item, Integer>) itemEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -190,9 +194,10 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getItem_Comment()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Item, String> getItem_Comment()
   {
-    return (EAttribute)itemEClass.getEStructuralFeatures().get(3);
+    return (EAttribute<Item, String>) itemEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -200,9 +205,10 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getItem_ShipDate()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Item, Date> getItem_ShipDate()
   {
-    return (EAttribute)itemEClass.getEStructuralFeatures().get(4);
+    return (EAttribute<Item, Date>) itemEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -210,9 +216,10 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getItem_PartNum()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Item, String> getItem_PartNum()
   {
-    return (EAttribute)itemEClass.getEStructuralFeatures().get(5);
+    return (EAttribute<Item, String>) itemEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -220,7 +227,7 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getUSAddress()
+  public EClass<USAddress> getUSAddress()
   {
     return usAddressEClass;
   }
@@ -230,9 +237,10 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUSAddress_Name()
+  @SuppressWarnings("unchecked")
+  public EAttribute<USAddress, String> getUSAddress_Name()
   {
-    return (EAttribute)usAddressEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<USAddress, String>) usAddressEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -240,9 +248,10 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUSAddress_Street()
+  @SuppressWarnings("unchecked")
+  public EAttribute<USAddress, String> getUSAddress_Street()
   {
-    return (EAttribute)usAddressEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<USAddress, String>) usAddressEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -250,9 +259,10 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUSAddress_City()
+  @SuppressWarnings("unchecked")
+  public EAttribute<USAddress, String> getUSAddress_City()
   {
-    return (EAttribute)usAddressEClass.getEStructuralFeatures().get(2);
+    return (EAttribute<USAddress, String>) usAddressEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -260,9 +270,10 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUSAddress_State()
+  @SuppressWarnings("unchecked")
+  public EAttribute<USAddress, String> getUSAddress_State()
   {
-    return (EAttribute)usAddressEClass.getEStructuralFeatures().get(3);
+    return (EAttribute<USAddress, String>) usAddressEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -270,9 +281,10 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUSAddress_Zip()
+  @SuppressWarnings("unchecked")
+  public EAttribute<USAddress, Integer> getUSAddress_Zip()
   {
-    return (EAttribute)usAddressEClass.getEStructuralFeatures().get(4);
+    return (EAttribute<USAddress, Integer>) usAddressEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -280,9 +292,10 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUSAddress_Country()
+  @SuppressWarnings("unchecked")
+  public EAttribute<USAddress, String> getUSAddress_Country()
   {
-    return (EAttribute)usAddressEClass.getEStructuralFeatures().get(5);
+    return (EAttribute<USAddress, String>) usAddressEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -290,7 +303,7 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getPurchaseOrder()
+  public EClass<PurchaseOrder> getPurchaseOrder()
   {
     return purchaseOrderEClass;
   }
@@ -300,9 +313,10 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPurchaseOrder_Items()
+  @SuppressWarnings("unchecked")
+  public EReference<PurchaseOrder, EList<Item>> getPurchaseOrder_Items()
   {
-    return (EReference)purchaseOrderEClass.getEStructuralFeatures().get(0);
+    return (EReference<PurchaseOrder, EList<Item>>) purchaseOrderEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -310,9 +324,10 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPurchaseOrder_Comment()
+  @SuppressWarnings("unchecked")
+  public EAttribute<PurchaseOrder, String> getPurchaseOrder_Comment()
   {
-    return (EAttribute)purchaseOrderEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<PurchaseOrder, String>) purchaseOrderEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -320,9 +335,10 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPurchaseOrder_OrderDate()
+  @SuppressWarnings("unchecked")
+  public EAttribute<PurchaseOrder, Date> getPurchaseOrder_OrderDate()
   {
-    return (EAttribute)purchaseOrderEClass.getEStructuralFeatures().get(2);
+    return (EAttribute<PurchaseOrder, Date>) purchaseOrderEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -330,9 +346,10 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPurchaseOrder_BillTo()
+  @SuppressWarnings("unchecked")
+  public EReference<PurchaseOrder, USAddress> getPurchaseOrder_BillTo()
   {
-    return (EReference)purchaseOrderEClass.getEStructuralFeatures().get(3);
+    return (EReference<PurchaseOrder, USAddress>) purchaseOrderEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -340,9 +357,10 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPurchaseOrder_ShipTo()
+  @SuppressWarnings("unchecked")
+  public EReference<PurchaseOrder, USAddress> getPurchaseOrder_ShipTo()
   {
-    return (EReference)purchaseOrderEClass.getEStructuralFeatures().get(4);
+    return (EReference<PurchaseOrder, USAddress>) purchaseOrderEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -350,7 +368,7 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getSKU()
+  public EDataType<String> getSKU()
   {
     return skuEDataType;
   }
@@ -360,7 +378,7 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getDate()
+  public EDataType<Date> getDate()
   {
     return dateEDataType;
   }
@@ -389,38 +407,61 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    itemEClass = createEClass(ITEM);
+    // CHANGE gen: Add cast
+    itemEClass = (EClass<Item>) createEClass(ITEM);
+    // CHANGE gen: Use raw type
     createEAttribute(itemEClass, ITEM__PRODUCT_NAME);
+    // CHANGE gen: Use raw type
     createEAttribute(itemEClass, ITEM__QUANTITY);
+    // CHANGE gen: Use raw type
     createEAttribute(itemEClass, ITEM__US_PRICE);
+    // CHANGE gen: Use raw type
     createEAttribute(itemEClass, ITEM__COMMENT);
+    // CHANGE gen: Use raw type
     createEAttribute(itemEClass, ITEM__SHIP_DATE);
+    // CHANGE gen: Use raw type
     createEAttribute(itemEClass, ITEM__PART_NUM);
 
-    usAddressEClass = createEClass(US_ADDRESS);
+    // CHANGE gen: Add cast
+    usAddressEClass = (EClass<USAddress>) createEClass(US_ADDRESS);
+    // CHANGE gen: Use raw type
     createEAttribute(usAddressEClass, US_ADDRESS__NAME);
+    // CHANGE gen: Use raw type
     createEAttribute(usAddressEClass, US_ADDRESS__STREET);
+    // CHANGE gen: Use raw type
     createEAttribute(usAddressEClass, US_ADDRESS__CITY);
+    // CHANGE gen: Use raw type
     createEAttribute(usAddressEClass, US_ADDRESS__STATE);
+    // CHANGE gen: Use raw type
     createEAttribute(usAddressEClass, US_ADDRESS__ZIP);
+    // CHANGE gen: Use raw type
     createEAttribute(usAddressEClass, US_ADDRESS__COUNTRY);
 
-    purchaseOrderEClass = createEClass(PURCHASE_ORDER);
+    // CHANGE gen: Add cast
+    purchaseOrderEClass = (EClass<PurchaseOrder>) createEClass(PURCHASE_ORDER);
+    // CHANGE gen: Use raw type
     createEReference(purchaseOrderEClass, PURCHASE_ORDER__ITEMS);
+    // CHANGE gen: Use raw type
     createEAttribute(purchaseOrderEClass, PURCHASE_ORDER__COMMENT);
+    // CHANGE gen: Use raw type
     createEAttribute(purchaseOrderEClass, PURCHASE_ORDER__ORDER_DATE);
+    // CHANGE gen: Use raw type
     createEReference(purchaseOrderEClass, PURCHASE_ORDER__BILL_TO);
+    // CHANGE gen: Use raw type
     createEReference(purchaseOrderEClass, PURCHASE_ORDER__SHIP_TO);
 
     // Create data types
-    skuEDataType = createEDataType(SKU);
-    dateEDataType = createEDataType(DATE);
+    // CHANGE gen: Cast
+    skuEDataType = (EDataType<String>) createEDataType(SKU);
+    // CHANGE gen: Cast
+    dateEDataType = (EDataType<Date>) createEDataType(DATE);
   }
 
   /**
@@ -470,7 +511,7 @@ public class PPOPackageImpl extends EPackageImpl implements PPOPackage
     initEAttribute(getUSAddress_Zip(), ecorePackage.getEInt(), "zip", null, 0, 1, USAddress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getUSAddress_Country(), ecorePackage.getEString(), "country", "US", 0, 1, USAddress.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    EOperation op = addEOperation(usAddressEClass, ecorePackage.getEBoolean(), "hasUSState", 0, 1, IS_UNIQUE, IS_ORDERED);
+    EOperation<?, ?> op = addEOperation(usAddressEClass, ecorePackage.getEBoolean(), "hasUSState", 0, 1, IS_UNIQUE, IS_ORDERED);
     addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
     EGenericType g1 = createEGenericType(ecorePackage.getEMap());
     EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());

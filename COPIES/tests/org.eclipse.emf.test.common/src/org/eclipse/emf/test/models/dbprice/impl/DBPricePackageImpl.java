@@ -35,14 +35,14 @@ public class DBPricePackageImpl extends EPackageImpl implements DBPricePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass pencilTypeEClass = null;
+  private EClass<PencilType> pencilTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass penTypeEClass = null;
+  private EClass<PenType> penTypeEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -120,7 +120,7 @@ public class DBPricePackageImpl extends EPackageImpl implements DBPricePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getPencilType()
+  public EClass<PencilType> getPencilType()
   {
     return pencilTypeEClass;
   }
@@ -130,9 +130,10 @@ public class DBPricePackageImpl extends EPackageImpl implements DBPricePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPencilType_Price()
+  @SuppressWarnings("unchecked")
+  public EAttribute<PencilType, Integer> getPencilType_Price()
   {
-    return (EAttribute)pencilTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<PencilType, Integer>) pencilTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -140,7 +141,7 @@ public class DBPricePackageImpl extends EPackageImpl implements DBPricePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getPenType()
+  public EClass<PenType> getPenType()
   {
     return penTypeEClass;
   }
@@ -150,9 +151,10 @@ public class DBPricePackageImpl extends EPackageImpl implements DBPricePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPenType_Price()
+  @SuppressWarnings("unchecked")
+  public EAttribute<PenType, Integer> getPenType_Price()
   {
-    return (EAttribute)penTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<PenType, Integer>) penTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -179,16 +181,21 @@ public class DBPricePackageImpl extends EPackageImpl implements DBPricePackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    pencilTypeEClass = createEClass(PENCIL_TYPE);
+    // CHANGE gen: Add cast
+    pencilTypeEClass = (EClass<PencilType>) createEClass(PENCIL_TYPE);
+    // CHANGE gen: Use raw type
     createEAttribute(pencilTypeEClass, PENCIL_TYPE__PRICE);
 
-    penTypeEClass = createEClass(PEN_TYPE);
+    // CHANGE gen: Add cast
+    penTypeEClass = (EClass<PenType>) createEClass(PEN_TYPE);
+    // CHANGE gen: Use raw type
     createEAttribute(penTypeEClass, PEN_TYPE__PRICE);
   }
 

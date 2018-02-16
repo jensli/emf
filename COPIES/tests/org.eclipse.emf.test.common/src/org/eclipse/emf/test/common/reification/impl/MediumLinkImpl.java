@@ -36,7 +36,7 @@ public class MediumLinkImpl extends MediumBidirectionalImpl<MediumLink> implemen
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.MEDIUM_LINK;
   }

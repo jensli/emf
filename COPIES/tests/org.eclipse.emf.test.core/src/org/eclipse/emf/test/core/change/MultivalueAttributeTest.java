@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.ETypedElement;
@@ -42,33 +43,37 @@ import org.eclipse.emf.test.common.TestUtil;
 import org.junit.Before;
 import org.junit.Test;
 
-public class MultivalueAttributeTest
+public class MultivalueAttributeTest<T extends EObject>
 {
   private EObject thing;
-  private EAttribute manyInt;
-  private EAttribute manyString;
+  private EAttribute<T, EList<Integer>> manyInt;
+  private EAttribute<T, EList<String>> manyString;
 
   @Before
-  public void setUp() throws Exception
+  public  void setUp() throws Exception
   {
     EPackage ePackage = EcoreFactory.eINSTANCE.createEPackage();
     ePackage.setName("ThingPack");
     ePackage.setNsURI("http://thing.com");
     EPackage.Registry.INSTANCE.put(ePackage.getNsURI(), ePackage);
 
-    EClass thingEClass = EcoreFactory.eINSTANCE.createEClass();
+    EClass<T> thingEClass = EcoreFactory.eINSTANCE.createEClass();
     thingEClass.setName("Thing");
     ePackage.getEClassifiers().add(thingEClass);
 
     manyInt = EcoreFactory.eINSTANCE.createEAttribute();
     manyInt.setName("manyInt");
-    manyInt.setEType(EcorePackage.Literals.EINT);
+    @SuppressWarnings("unchecked")
+    EDataType<EList<Integer>> eints = (EDataType<EList<Integer>>) (Object) EcorePackage.Literals.EINT;
+    manyInt.setEType(eints);
     manyInt.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
     thingEClass.getEStructuralFeatures().add(manyInt);
 
     manyString = EcoreFactory.eINSTANCE.createEAttribute();
     manyString.setName("manyString");
-    manyString.setEType(EcorePackage.Literals.ESTRING);
+    @SuppressWarnings("unchecked")
+    EDataType<EList<String>> estrings = (EDataType<EList<String>>) (Object) EcorePackage.Literals.ESTRING;
+    manyString.setEType(estrings);
     manyString.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
     thingEClass.getEStructuralFeatures().add(manyString);
 
@@ -80,10 +85,9 @@ public class MultivalueAttributeTest
     return getManyInt(thing);
   }
 
-  @SuppressWarnings("unchecked")
   private List<Integer> getManyInt(EObject eObject)
   {
-    return (List<Integer>)eObject.eGet(manyInt);
+    return eObject.eGet(manyInt);
   }
 
   private List<String> getManyString()
@@ -91,10 +95,9 @@ public class MultivalueAttributeTest
     return getManyString(thing);
   }
 
-  @SuppressWarnings("unchecked")
   private List<String> getManyString(EObject eObject)
   {
-    return (List<String>)eObject.eGet(manyString);
+    return eObject.eGet(manyString);
   }
 
   @Test

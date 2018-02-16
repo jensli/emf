@@ -89,7 +89,7 @@ public abstract class AddressTypeImpl extends EObjectImpl implements AddressType
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return CustomerPackage.Literals.ADDRESS_TYPE;
   }

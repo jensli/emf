@@ -52,6 +52,13 @@
             genModel="model/XMLType.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated XMLType -->
+      <parser
+            type="xmltype"
+            class="org.eclipse.emf.ecore.xml.type.util.XMLTypeResourceFactoryImpl"/>
+   </extension>
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://www.w3.org/XML/1998/namespace"

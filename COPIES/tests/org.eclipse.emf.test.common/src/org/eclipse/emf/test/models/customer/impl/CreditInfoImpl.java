@@ -114,7 +114,7 @@ public class CreditInfoImpl extends EObjectImpl implements CreditInfo
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return CustomerPackage.Literals.CREDIT_INFO;
   }

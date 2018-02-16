@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.test.models.library.*;
 import org.eclipse.emf.test.models.library.Book;
 import org.eclipse.emf.test.models.library.BookCategory;
 import org.eclipse.emf.test.models.library.Library;
@@ -71,13 +72,14 @@ public class LibraryFactoryImpl extends EFactoryImpl implements LibraryFactory
    * @generated
    */
   @Override
-  public EObject create(EClass eClass)
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
     switch (eClass.getClassifierID())
     {
-      case LibraryPackage.BOOK: return createBook();
-      case LibraryPackage.LIBRARY: return createLibrary();
-      case LibraryPackage.WRITER: return createWriter();
+      case LibraryPackage.BOOK: return (T) createBook();
+      case LibraryPackage.LIBRARY: return (T) createLibrary();
+      case LibraryPackage.WRITER: return (T) createWriter();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -89,12 +91,14 @@ public class LibraryFactoryImpl extends EFactoryImpl implements LibraryFactory
    * @generated
    */
   @Override
-  public Object createFromString(EDataType eDataType, String initialValue)
+  @SuppressWarnings("unchecked")
+  public <T> T createFromString(EDataType<T> eDataType, String initialValue)
   {
+    // CHANGE gen: Cast added 1
     switch (eDataType.getClassifierID())
     {
       case LibraryPackage.BOOK_CATEGORY:
-        return createBookCategoryFromString(eDataType, initialValue);
+        return (T) createBookCategoryFromString((EDataType<BookCategory>) eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -105,13 +109,14 @@ public class LibraryFactoryImpl extends EFactoryImpl implements LibraryFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
-  public String convertToString(EDataType eDataType, Object instanceValue)
+  public <T> String convertToString(EDataType<T> eDataType, T instanceValue)
   {
     switch (eDataType.getClassifierID())
     {
       case LibraryPackage.BOOK_CATEGORY:
-        return convertBookCategoryToString(eDataType, instanceValue);
+        return convertBookCategoryToString((EDataType<BookCategory>) eDataType, (BookCategory) instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -155,7 +160,7 @@ public class LibraryFactoryImpl extends EFactoryImpl implements LibraryFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BookCategory createBookCategoryFromString(EDataType eDataType, String initialValue)
+  public BookCategory createBookCategoryFromString(EDataType<BookCategory> eDataType, String initialValue)
   {
     BookCategory result = BookCategory.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -167,7 +172,10 @@ public class LibraryFactoryImpl extends EFactoryImpl implements LibraryFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertBookCategoryToString(EDataType eDataType, Object instanceValue)
+  // CHANGE gen: Add type parameter, convert type to string
+  // CHANGE gen: Note, instanceValue has type Object. Change the signature made a lot of duplicate
+  // methods get generated for hand-modified convert methods, because signatures didn't match.
+  public String convertBookCategoryToString(EDataType<BookCategory> eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

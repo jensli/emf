@@ -119,7 +119,7 @@ public class EUImpl extends EObjectImpl implements EU
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return URefPackage.Literals.EU;
   }

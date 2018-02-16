@@ -13,6 +13,7 @@ package org.eclipse.emf.test.models.tree.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.eclipse.emf.test.models.tree.*;
 import org.eclipse.emf.test.models.tree.Data;
 import org.eclipse.emf.test.models.tree.Node;
 import org.eclipse.emf.test.models.tree.TreePackage;

@@ -13,6 +13,7 @@ package org.eclipse.emf.test.models.order.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.eclipse.emf.test.models.order.*;
 import org.eclipse.emf.test.models.order.CustomerOrder;
 import org.eclipse.emf.test.models.order.DocumentRoot;
 import org.eclipse.emf.test.models.order.Order;

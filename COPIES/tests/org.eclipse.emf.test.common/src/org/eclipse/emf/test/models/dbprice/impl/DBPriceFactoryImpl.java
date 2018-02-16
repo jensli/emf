@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.test.models.dbprice.*;
 import org.eclipse.emf.test.models.dbprice.DBPriceFactory;
 import org.eclipse.emf.test.models.dbprice.DBPricePackage;
 import org.eclipse.emf.test.models.dbprice.PenType;
@@ -68,12 +69,13 @@ public class DBPriceFactoryImpl extends EFactoryImpl implements DBPriceFactory
    * @generated
    */
   @Override
-  public EObject create(EClass eClass)
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
     switch (eClass.getClassifierID())
     {
-      case DBPricePackage.PENCIL_TYPE: return createPencilType();
-      case DBPricePackage.PEN_TYPE: return createPenType();
+      case DBPricePackage.PENCIL_TYPE: return (T) createPencilType();
+      case DBPricePackage.PEN_TYPE: return (T) createPenType();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }

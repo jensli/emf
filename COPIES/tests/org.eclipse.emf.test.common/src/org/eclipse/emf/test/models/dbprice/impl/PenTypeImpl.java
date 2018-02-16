@@ -77,7 +77,7 @@ public class PenTypeImpl extends EObjectImpl implements PenType
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return DBPricePackage.Literals.PEN_TYPE;
   }

@@ -69,30 +69,22 @@ public interface EFactory extends EModelElement
    * @model
    * @generated
    */
-  // TODO j: Added type parameter
   <T extends EObject> T create(EClass<T> eClass);
 
   /**
    * <!-- begin-user-doc -->
-   * Creates an instance of the data type from the literal value.
-   * @param literalValue literal value of the instance.
-   * @return an instance of the data type.
-   * @see #convertToString(EDataType, Object)
-   * @ignore
    * <!-- end-user-doc -->
    * @model
    * @generated
    */
-  // TODO j: Added type parameter
   <T> T createFromString(EDataType<T> eDataType, String literalValue);
 
   /**
    * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
    * @model
    * @generated
    */
-  // TODO j: Added type parameter
-	<T> String convertToString(EDataType<T> eDataType, T instanceValue);
+  <T> String convertToString(EDataType<T> eDataType, T instanceValue);
 
 }

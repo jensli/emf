@@ -181,7 +181,7 @@ public class USAddressImpl extends EObjectImpl implements USAddress
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return PPOPackage.Literals.US_ADDRESS;
   }

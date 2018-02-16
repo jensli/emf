@@ -99,7 +99,7 @@ public class LibraryImpl extends EObjectImpl implements Library
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return LibraryPackage.Literals.LIBRARY;
   }

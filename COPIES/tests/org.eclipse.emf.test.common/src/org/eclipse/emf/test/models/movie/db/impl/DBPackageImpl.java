@@ -12,6 +12,8 @@ package org.eclipse.emf.test.models.movie.db.impl;
 
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -20,8 +22,10 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 import org.eclipse.emf.test.models.customer.CustomerPackage;
+import org.eclipse.emf.test.models.customer.CustomerType;
 import org.eclipse.emf.test.models.customer.impl.CustomerPackageImpl;
 import org.eclipse.emf.test.models.movie.db.CriticsReviewType;
 import org.eclipse.emf.test.models.movie.db.CustomerReviewType;
@@ -48,84 +52,84 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass criticsReviewTypeEClass = null;
+  private EClass<CriticsReviewType> criticsReviewTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass customerReviewTypeEClass = null;
+  private EClass<CustomerReviewType> customerReviewTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass documentRootEClass = null;
+  private EClass<DocumentRoot> documentRootEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass movieDBTypeEClass = null;
+  private EClass<MovieDBType> movieDBTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass movieTypeEClass = null;
+  private EClass<MovieType> movieTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum genreTypesEEnum = null;
+  private EEnum<GenreTypes> genreTypesEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType actorsListEDataType = null;
+  private EDataType<List<String>> actorsListEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType genreTypesObjectEDataType = null;
+  private EDataType<GenreTypes> genreTypesObjectEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType ratingTypeEDataType = null;
+  private EDataType<Integer> ratingTypeEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType ratingTypeObjectEDataType = null;
+  private EDataType<Integer> ratingTypeObjectEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType ratingValuesEDataType = null;
+  private EDataType<Integer> ratingValuesEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType ratingValuesObjectEDataType = null;
+  private EDataType<Integer> ratingValuesObjectEDataType = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -217,7 +221,7 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCriticsReviewType()
+  public EClass<CriticsReviewType> getCriticsReviewType()
   {
     return criticsReviewTypeEClass;
   }
@@ -227,9 +231,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCriticsReviewType_Rating()
+  @SuppressWarnings("unchecked")
+  public EAttribute<CriticsReviewType, Integer> getCriticsReviewType_Rating()
   {
-    return (EAttribute)criticsReviewTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<CriticsReviewType, Integer>) criticsReviewTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -237,9 +242,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCriticsReviewType_ReviewedBy()
+  @SuppressWarnings("unchecked")
+  public EAttribute<CriticsReviewType, String> getCriticsReviewType_ReviewedBy()
   {
-    return (EAttribute)criticsReviewTypeEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<CriticsReviewType, String>) criticsReviewTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -247,7 +253,7 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCustomerReviewType()
+  public EClass<CustomerReviewType> getCustomerReviewType()
   {
     return customerReviewTypeEClass;
   }
@@ -257,9 +263,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCustomerReviewType_Comment()
+  @SuppressWarnings("unchecked")
+  public EAttribute<CustomerReviewType, String> getCustomerReviewType_Comment()
   {
-    return (EAttribute)customerReviewTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<CustomerReviewType, String>) customerReviewTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -267,7 +274,7 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDocumentRoot()
+  public EClass<DocumentRoot> getDocumentRoot()
   {
     return documentRootEClass;
   }
@@ -277,9 +284,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDocumentRoot_Mixed()
+  @SuppressWarnings("unchecked")
+  public EAttribute<DocumentRoot, FeatureMap> getDocumentRoot_Mixed()
   {
-    return (EAttribute)documentRootEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<DocumentRoot, FeatureMap>) documentRootEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -287,9 +295,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_XMLNSPrefixMap()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, EMap<String, String>> getDocumentRoot_XMLNSPrefixMap()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(1);
+    return (EReference<DocumentRoot, EMap<String, String>>) documentRootEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -297,9 +306,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_XSISchemaLocation()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, EMap<String, String>> getDocumentRoot_XSISchemaLocation()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(2);
+    return (EReference<DocumentRoot, EMap<String, String>>) documentRootEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -307,9 +317,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_CheckedOutBy()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, CustomerType> getDocumentRoot_CheckedOutBy()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(3);
+    return (EReference<DocumentRoot, CustomerType>) documentRootEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -317,9 +328,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_CriticsReview()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, CriticsReviewType> getDocumentRoot_CriticsReview()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(4);
+    return (EReference<DocumentRoot, CriticsReviewType>) documentRootEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -327,9 +339,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_CustomerReview()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, CustomerReviewType> getDocumentRoot_CustomerReview()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(5);
+    return (EReference<DocumentRoot, CustomerReviewType>) documentRootEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -337,9 +350,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDocumentRoot_Language()
+  @SuppressWarnings("unchecked")
+  public EAttribute<DocumentRoot, String> getDocumentRoot_Language()
   {
-    return (EAttribute)documentRootEClass.getEStructuralFeatures().get(6);
+    return (EAttribute<DocumentRoot, String>) documentRootEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -347,9 +361,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_MovieDB()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, MovieDBType> getDocumentRoot_MovieDB()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(7);
+    return (EReference<DocumentRoot, MovieDBType>) documentRootEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -357,9 +372,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDocumentRoot_SpecialFeatures()
+  @SuppressWarnings("unchecked")
+  public EAttribute<DocumentRoot, String> getDocumentRoot_SpecialFeatures()
   {
-    return (EAttribute)documentRootEClass.getEStructuralFeatures().get(8);
+    return (EAttribute<DocumentRoot, String>) documentRootEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -367,7 +383,7 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMovieDBType()
+  public EClass<MovieDBType> getMovieDBType()
   {
     return movieDBTypeEClass;
   }
@@ -377,9 +393,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMovieDBType_MovieDBFeatureMap()
+  @SuppressWarnings("unchecked")
+  public EAttribute<MovieDBType, FeatureMap> getMovieDBType_MovieDBFeatureMap()
   {
-    return (EAttribute)movieDBTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<MovieDBType, FeatureMap>) movieDBTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -387,9 +404,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMovieDBType_Movie()
+  @SuppressWarnings("unchecked")
+  public EReference<MovieDBType, EList<MovieType>> getMovieDBType_Movie()
   {
-    return (EReference)movieDBTypeEClass.getEStructuralFeatures().get(1);
+    return (EReference<MovieDBType, EList<MovieType>>) movieDBTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -397,9 +415,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMovieDBType_Comment()
+  @SuppressWarnings("unchecked")
+  public EAttribute<MovieDBType, String> getMovieDBType_Comment()
   {
-    return (EAttribute)movieDBTypeEClass.getEStructuralFeatures().get(2);
+    return (EAttribute<MovieDBType, String>) movieDBTypeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -407,7 +426,7 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMovieType()
+  public EClass<MovieType> getMovieType()
   {
     return movieTypeEClass;
   }
@@ -417,9 +436,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMovieType_Title()
+  @SuppressWarnings("unchecked")
+  public EAttribute<MovieType, String> getMovieType_Title()
   {
-    return (EAttribute)movieTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<MovieType, String>) movieTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -427,9 +447,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMovieType_Actors()
+  @SuppressWarnings("unchecked")
+  public EAttribute<MovieType, List<String>> getMovieType_Actors()
   {
-    return (EAttribute)movieTypeEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<MovieType, List<String>>) movieTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -437,9 +458,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMovieType_Director()
+  @SuppressWarnings("unchecked")
+  public EAttribute<MovieType, String> getMovieType_Director()
   {
-    return (EAttribute)movieTypeEClass.getEStructuralFeatures().get(2);
+    return (EAttribute<MovieType, String>) movieTypeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -447,9 +469,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMovieType_Genre()
+  @SuppressWarnings("unchecked")
+  public EAttribute<MovieType, GenreTypes> getMovieType_Genre()
   {
-    return (EAttribute)movieTypeEClass.getEStructuralFeatures().get(3);
+    return (EAttribute<MovieType, GenreTypes>) movieTypeEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -457,9 +480,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMovieType_Summary()
+  @SuppressWarnings("unchecked")
+  public EAttribute<MovieType, String> getMovieType_Summary()
   {
-    return (EAttribute)movieTypeEClass.getEStructuralFeatures().get(4);
+    return (EAttribute<MovieType, String>) movieTypeEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -467,9 +491,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMovieType_CriticsReviewGroup()
+  @SuppressWarnings("unchecked")
+  public EAttribute<MovieType, FeatureMap> getMovieType_CriticsReviewGroup()
   {
-    return (EAttribute)movieTypeEClass.getEStructuralFeatures().get(5);
+    return (EAttribute<MovieType, FeatureMap>) movieTypeEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -477,9 +502,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMovieType_CriticsReview()
+  @SuppressWarnings("unchecked")
+  public EReference<MovieType, EList<CriticsReviewType>> getMovieType_CriticsReview()
   {
-    return (EReference)movieTypeEClass.getEStructuralFeatures().get(6);
+    return (EReference<MovieType, EList<CriticsReviewType>>) movieTypeEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -487,9 +513,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMovieType_CheckedOutBy()
+  @SuppressWarnings("unchecked")
+  public EReference<MovieType, CustomerType> getMovieType_CheckedOutBy()
   {
-    return (EReference)movieTypeEClass.getEStructuralFeatures().get(7);
+    return (EReference<MovieType, CustomerType>) movieTypeEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -497,9 +524,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMovieType_Any()
+  @SuppressWarnings("unchecked")
+  public EAttribute<MovieType, FeatureMap> getMovieType_Any()
   {
-    return (EAttribute)movieTypeEClass.getEStructuralFeatures().get(8);
+    return (EAttribute<MovieType, FeatureMap>) movieTypeEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -507,9 +535,10 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMovieType_ID()
+  @SuppressWarnings("unchecked")
+  public EAttribute<MovieType, String> getMovieType_ID()
   {
-    return (EAttribute)movieTypeEClass.getEStructuralFeatures().get(9);
+    return (EAttribute<MovieType, String>) movieTypeEClass.getEStructuralFeatures().get(9);
   }
 
   /**
@@ -517,7 +546,7 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EEnum getGenreTypes()
+  public EEnum<GenreTypes> getGenreTypes()
   {
     return genreTypesEEnum;
   }
@@ -527,7 +556,7 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getActorsList()
+  public EDataType<List<String>> getActorsList()
   {
     return actorsListEDataType;
   }
@@ -537,7 +566,7 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getGenreTypesObject()
+  public EDataType<GenreTypes> getGenreTypesObject()
   {
     return genreTypesObjectEDataType;
   }
@@ -547,7 +576,7 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getRatingType()
+  public EDataType<Integer> getRatingType()
   {
     return ratingTypeEDataType;
   }
@@ -557,7 +586,7 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getRatingTypeObject()
+  public EDataType<Integer> getRatingTypeObject()
   {
     return ratingTypeObjectEDataType;
   }
@@ -567,7 +596,7 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getRatingValues()
+  public EDataType<Integer> getRatingValues()
   {
     return ratingValuesEDataType;
   }
@@ -577,7 +606,7 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getRatingValuesObject()
+  public EDataType<Integer> getRatingValuesObject()
   {
     return ratingValuesObjectEDataType;
   }
@@ -606,57 +635,95 @@ public class DBPackageImpl extends EPackageImpl implements DBPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    criticsReviewTypeEClass = createEClass(CRITICS_REVIEW_TYPE);
+    // CHANGE gen: Add cast
+    criticsReviewTypeEClass = (EClass<CriticsReviewType>) createEClass(CRITICS_REVIEW_TYPE);
+    // CHANGE gen: Use raw type
     createEAttribute(criticsReviewTypeEClass, CRITICS_REVIEW_TYPE__RATING);
+    // CHANGE gen: Use raw type
     createEAttribute(criticsReviewTypeEClass, CRITICS_REVIEW_TYPE__REVIEWED_BY);
 
-    customerReviewTypeEClass = createEClass(CUSTOMER_REVIEW_TYPE);
+    // CHANGE gen: Add cast
+    customerReviewTypeEClass = (EClass<CustomerReviewType>) createEClass(CUSTOMER_REVIEW_TYPE);
+    // CHANGE gen: Use raw type
     createEAttribute(customerReviewTypeEClass, CUSTOMER_REVIEW_TYPE__COMMENT);
 
-    documentRootEClass = createEClass(DOCUMENT_ROOT);
+    // CHANGE gen: Add cast
+    documentRootEClass = (EClass<DocumentRoot>) createEClass(DOCUMENT_ROOT);
+    // CHANGE gen: Use raw type
     createEAttribute(documentRootEClass, DOCUMENT_ROOT__MIXED);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__CHECKED_OUT_BY);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__CRITICS_REVIEW);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__CUSTOMER_REVIEW);
+    // CHANGE gen: Use raw type
     createEAttribute(documentRootEClass, DOCUMENT_ROOT__LANGUAGE);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__MOVIE_DB);
+    // CHANGE gen: Use raw type
     createEAttribute(documentRootEClass, DOCUMENT_ROOT__SPECIAL_FEATURES);
 
-    movieDBTypeEClass = createEClass(MOVIE_DB_TYPE);
+    // CHANGE gen: Add cast
+    movieDBTypeEClass = (EClass<MovieDBType>) createEClass(MOVIE_DB_TYPE);
+    // CHANGE gen: Use raw type
     createEAttribute(movieDBTypeEClass, MOVIE_DB_TYPE__MOVIE_DB_FEATURE_MAP);
+    // CHANGE gen: Use raw type
     createEReference(movieDBTypeEClass, MOVIE_DB_TYPE__MOVIE);
+    // CHANGE gen: Use raw type
     createEAttribute(movieDBTypeEClass, MOVIE_DB_TYPE__COMMENT);
 
-    movieTypeEClass = createEClass(MOVIE_TYPE);
+    // CHANGE gen: Add cast
+    movieTypeEClass = (EClass<MovieType>) createEClass(MOVIE_TYPE);
+    // CHANGE gen: Use raw type
     createEAttribute(movieTypeEClass, MOVIE_TYPE__TITLE);
+    // CHANGE gen: Use raw type
     createEAttribute(movieTypeEClass, MOVIE_TYPE__ACTORS);
+    // CHANGE gen: Use raw type
     createEAttribute(movieTypeEClass, MOVIE_TYPE__DIRECTOR);
+    // CHANGE gen: Use raw type
     createEAttribute(movieTypeEClass, MOVIE_TYPE__GENRE);
+    // CHANGE gen: Use raw type
     createEAttribute(movieTypeEClass, MOVIE_TYPE__SUMMARY);
+    // CHANGE gen: Use raw type
     createEAttribute(movieTypeEClass, MOVIE_TYPE__CRITICS_REVIEW_GROUP);
+    // CHANGE gen: Use raw type
     createEReference(movieTypeEClass, MOVIE_TYPE__CRITICS_REVIEW);
+    // CHANGE gen: Use raw type
     createEReference(movieTypeEClass, MOVIE_TYPE__CHECKED_OUT_BY);
+    // CHANGE gen: Use raw type
     createEAttribute(movieTypeEClass, MOVIE_TYPE__ANY);
+    // CHANGE gen: Use raw type
     createEAttribute(movieTypeEClass, MOVIE_TYPE__ID);
 
     // Create enums
-    genreTypesEEnum = createEEnum(GENRE_TYPES);
+ 		// CHANGE gen: Cast
+    genreTypesEEnum = (EEnum<GenreTypes>) createEEnum(GENRE_TYPES);
 
     // Create data types
-    actorsListEDataType = createEDataType(ACTORS_LIST);
-    genreTypesObjectEDataType = createEDataType(GENRE_TYPES_OBJECT);
-    ratingTypeEDataType = createEDataType(RATING_TYPE);
-    ratingTypeObjectEDataType = createEDataType(RATING_TYPE_OBJECT);
-    ratingValuesEDataType = createEDataType(RATING_VALUES);
-    ratingValuesObjectEDataType = createEDataType(RATING_VALUES_OBJECT);
+    // CHANGE gen: Cast
+    actorsListEDataType = (EDataType<List<String>>) createEDataType(ACTORS_LIST);
+    // CHANGE gen: Cast
+    genreTypesObjectEDataType = (EDataType<GenreTypes>) createEDataType(GENRE_TYPES_OBJECT);
+    // CHANGE gen: Cast
+    ratingTypeEDataType = (EDataType<Integer>) createEDataType(RATING_TYPE);
+    // CHANGE gen: Cast
+    ratingTypeObjectEDataType = (EDataType<Integer>) createEDataType(RATING_TYPE_OBJECT);
+    // CHANGE gen: Cast
+    ratingValuesEDataType = (EDataType<Integer>) createEDataType(RATING_VALUES);
+    // CHANGE gen: Cast
+    ratingValuesObjectEDataType = (EDataType<Integer>) createEDataType(RATING_VALUES_OBJECT);
   }
 
   /**

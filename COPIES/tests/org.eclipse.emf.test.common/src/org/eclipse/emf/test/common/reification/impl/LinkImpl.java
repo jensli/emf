@@ -51,7 +51,7 @@ public class LinkImpl extends BidirectionalImpl<Link> implements Link
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.LINK;
   }

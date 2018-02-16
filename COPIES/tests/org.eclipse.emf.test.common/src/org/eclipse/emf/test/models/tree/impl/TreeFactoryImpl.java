@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.test.models.tree.*;
 import org.eclipse.emf.test.models.tree.Data;
 import org.eclipse.emf.test.models.tree.Node;
 import org.eclipse.emf.test.models.tree.TreeFactory;
@@ -68,12 +69,13 @@ public class TreeFactoryImpl extends EFactoryImpl implements TreeFactory
    * @generated
    */
   @Override
-  public EObject create(EClass eClass)
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
     switch (eClass.getClassifierID())
     {
-      case TreePackage.NODE: return createNode();
-      case TreePackage.DATA: return createData();
+      case TreePackage.NODE: return (T) createNode();
+      case TreePackage.DATA: return (T) createData();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }

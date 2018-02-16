@@ -36,7 +36,7 @@ public class IntegerListKeyValuePairImpl extends TListKeyValuePairImpl<Integer> 
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.INTEGER_LIST_KEY_VALUE_PAIR;
   }

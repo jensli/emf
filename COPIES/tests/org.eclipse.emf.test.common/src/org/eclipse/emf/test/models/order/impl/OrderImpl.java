@@ -114,7 +114,7 @@ public class OrderImpl extends EObjectImpl implements Order
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return OrderPackage.Literals.ORDER;
   }

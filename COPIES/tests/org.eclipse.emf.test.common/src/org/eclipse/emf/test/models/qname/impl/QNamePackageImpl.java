@@ -12,6 +12,8 @@ package org.eclipse.emf.test.models.qname.impl;
 
 import java.util.List;
 
+import javax.xml.namespace.QName;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -19,6 +21,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 import org.eclipse.emf.test.models.qname.DocumentRoot;
 import org.eclipse.emf.test.models.qname.QNameFactory;
@@ -39,42 +42,42 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass documentRootEClass = null;
+  private EClass<DocumentRoot> documentRootEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass resourceTypeEClass = null;
+  private EClass<ResourceType> resourceTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType intQNameUnionEDataType = null;
+  private EDataType<Object> intQNameUnionEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType listUnionEDataType = null;
+  private EDataType<List<Object>> listUnionEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType qnameListEDataType = null;
+  private EDataType<List<QName>> qnameListEDataType = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EDataType unionEDataType = null;
+  private EDataType<Object> unionEDataType = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -158,7 +161,7 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDocumentRoot()
+  public EClass<DocumentRoot> getDocumentRoot()
   {
     return documentRootEClass;
   }
@@ -168,9 +171,10 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDocumentRoot_Mixed()
+  @SuppressWarnings("unchecked")
+  public EAttribute<DocumentRoot, FeatureMap> getDocumentRoot_Mixed()
   {
-    return (EAttribute)documentRootEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<DocumentRoot, FeatureMap>) documentRootEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -178,9 +182,10 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_XMLNSPrefixMap()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, EMap<String, String>> getDocumentRoot_XMLNSPrefixMap()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(1);
+    return (EReference<DocumentRoot, EMap<String, String>>) documentRootEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -188,9 +193,10 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_XSISchemaLocation()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, EMap<String, String>> getDocumentRoot_XSISchemaLocation()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(2);
+    return (EReference<DocumentRoot, EMap<String, String>>) documentRootEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -198,9 +204,10 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDocumentRoot_AnyE()
+  @SuppressWarnings("unchecked")
+  public EAttribute<DocumentRoot, QName> getDocumentRoot_AnyE()
   {
-    return (EAttribute)documentRootEClass.getEStructuralFeatures().get(3);
+    return (EAttribute<DocumentRoot, QName>) documentRootEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -208,9 +215,10 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDocumentRoot_AnyEU()
+  @SuppressWarnings("unchecked")
+  public EAttribute<DocumentRoot, List<Object>> getDocumentRoot_AnyEU()
   {
-    return (EAttribute)documentRootEClass.getEStructuralFeatures().get(4);
+    return (EAttribute<DocumentRoot, List<Object>>) documentRootEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -218,9 +226,10 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_Resource()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, ResourceType> getDocumentRoot_Resource()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(5);
+    return (EReference<DocumentRoot, ResourceType>) documentRootEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -228,9 +237,10 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDocumentRoot_AInt()
+  @SuppressWarnings("unchecked")
+  public EAttribute<DocumentRoot, Integer> getDocumentRoot_AInt()
   {
-    return (EAttribute)documentRootEClass.getEStructuralFeatures().get(6);
+    return (EAttribute<DocumentRoot, Integer>) documentRootEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -238,9 +248,10 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDocumentRoot_AQname()
+  @SuppressWarnings("unchecked")
+  public EAttribute<DocumentRoot, QName> getDocumentRoot_AQname()
   {
-    return (EAttribute)documentRootEClass.getEStructuralFeatures().get(7);
+    return (EAttribute<DocumentRoot, QName>) documentRootEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -248,9 +259,10 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDocumentRoot_AUnion()
+  @SuppressWarnings("unchecked")
+  public EAttribute<DocumentRoot, List<Object>> getDocumentRoot_AUnion()
   {
-    return (EAttribute)documentRootEClass.getEStructuralFeatures().get(8);
+    return (EAttribute<DocumentRoot, List<Object>>) documentRootEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -258,7 +270,7 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getResourceType()
+  public EClass<ResourceType> getResourceType()
   {
     return resourceTypeEClass;
   }
@@ -268,9 +280,10 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getResourceType_Unionvalue()
+  @SuppressWarnings("unchecked")
+  public EAttribute<ResourceType, Object> getResourceType_Unionvalue()
   {
-    return (EAttribute)resourceTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<ResourceType, Object>) resourceTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -278,9 +291,10 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getResourceType_Qnamelist()
+  @SuppressWarnings("unchecked")
+  public EAttribute<ResourceType, List<QName>> getResourceType_Qnamelist()
   {
-    return (EAttribute)resourceTypeEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<ResourceType, List<QName>>) resourceTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -288,9 +302,10 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getResourceType_Intvalue()
+  @SuppressWarnings("unchecked")
+  public EAttribute<ResourceType, Integer> getResourceType_Intvalue()
   {
-    return (EAttribute)resourceTypeEClass.getEStructuralFeatures().get(2);
+    return (EAttribute<ResourceType, Integer>) resourceTypeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -298,9 +313,10 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getResourceType_Any()
+  @SuppressWarnings("unchecked")
+  public EAttribute<ResourceType, FeatureMap> getResourceType_Any()
   {
-    return (EAttribute)resourceTypeEClass.getEStructuralFeatures().get(3);
+    return (EAttribute<ResourceType, FeatureMap>) resourceTypeEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -308,9 +324,10 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getResourceType_MyQname()
+  @SuppressWarnings("unchecked")
+  public EAttribute<ResourceType, List<QName>> getResourceType_MyQname()
   {
-    return (EAttribute)resourceTypeEClass.getEStructuralFeatures().get(4);
+    return (EAttribute<ResourceType, List<QName>>) resourceTypeEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -318,9 +335,10 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getResourceType_AnyAttribute()
+  @SuppressWarnings("unchecked")
+  public EAttribute<ResourceType, FeatureMap> getResourceType_AnyAttribute()
   {
-    return (EAttribute)resourceTypeEClass.getEStructuralFeatures().get(5);
+    return (EAttribute<ResourceType, FeatureMap>) resourceTypeEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -328,7 +346,7 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getIntQNameUnion()
+  public EDataType<Object> getIntQNameUnion()
   {
     return intQNameUnionEDataType;
   }
@@ -338,7 +356,7 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getListUnion()
+  public EDataType<List<Object>> getListUnion()
   {
     return listUnionEDataType;
   }
@@ -348,7 +366,7 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getQnameList()
+  public EDataType<List<QName>> getQnameList()
   {
     return qnameListEDataType;
   }
@@ -358,7 +376,7 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDataType getUnion()
+  public EDataType<Object> getUnion()
   {
     return unionEDataType;
   }
@@ -387,36 +405,58 @@ public class QNamePackageImpl extends EPackageImpl implements QNamePackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    documentRootEClass = createEClass(DOCUMENT_ROOT);
+    // CHANGE gen: Add cast
+    documentRootEClass = (EClass<DocumentRoot>) createEClass(DOCUMENT_ROOT);
+    // CHANGE gen: Use raw type
     createEAttribute(documentRootEClass, DOCUMENT_ROOT__MIXED);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
+    // CHANGE gen: Use raw type
     createEAttribute(documentRootEClass, DOCUMENT_ROOT__ANY_E);
+    // CHANGE gen: Use raw type
     createEAttribute(documentRootEClass, DOCUMENT_ROOT__ANY_EU);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__RESOURCE);
+    // CHANGE gen: Use raw type
     createEAttribute(documentRootEClass, DOCUMENT_ROOT__AINT);
+    // CHANGE gen: Use raw type
     createEAttribute(documentRootEClass, DOCUMENT_ROOT__AQNAME);
+    // CHANGE gen: Use raw type
     createEAttribute(documentRootEClass, DOCUMENT_ROOT__AUNION);
 
-    resourceTypeEClass = createEClass(RESOURCE_TYPE);
+    // CHANGE gen: Add cast
+    resourceTypeEClass = (EClass<ResourceType>) createEClass(RESOURCE_TYPE);
+    // CHANGE gen: Use raw type
     createEAttribute(resourceTypeEClass, RESOURCE_TYPE__UNIONVALUE);
+    // CHANGE gen: Use raw type
     createEAttribute(resourceTypeEClass, RESOURCE_TYPE__QNAMELIST);
+    // CHANGE gen: Use raw type
     createEAttribute(resourceTypeEClass, RESOURCE_TYPE__INTVALUE);
+    // CHANGE gen: Use raw type
     createEAttribute(resourceTypeEClass, RESOURCE_TYPE__ANY);
+    // CHANGE gen: Use raw type
     createEAttribute(resourceTypeEClass, RESOURCE_TYPE__MY_QNAME);
+    // CHANGE gen: Use raw type
     createEAttribute(resourceTypeEClass, RESOURCE_TYPE__ANY_ATTRIBUTE);
 
     // Create data types
-    intQNameUnionEDataType = createEDataType(INT_QNAME_UNION);
-    listUnionEDataType = createEDataType(LIST_UNION);
-    qnameListEDataType = createEDataType(QNAME_LIST);
-    unionEDataType = createEDataType(UNION);
+    // CHANGE gen: Cast
+    intQNameUnionEDataType = (EDataType<Object>) createEDataType(INT_QNAME_UNION);
+    // CHANGE gen: Cast
+    listUnionEDataType = (EDataType<List<Object>>) createEDataType(LIST_UNION);
+    // CHANGE gen: Cast
+    qnameListEDataType = (EDataType<List<QName>>) createEDataType(QNAME_LIST);
+    // CHANGE gen: Cast
+    unionEDataType = (EDataType<Object>) createEDataType(UNION);
   }
 
   /**

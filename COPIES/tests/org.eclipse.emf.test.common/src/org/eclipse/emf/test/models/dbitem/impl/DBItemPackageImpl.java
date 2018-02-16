@@ -10,16 +10,20 @@
  */
 package org.eclipse.emf.test.models.dbitem.impl;
 
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.test.models.dbitem.DBItemFactory;
 import org.eclipse.emf.test.models.dbitem.DBItemPackage;
 import org.eclipse.emf.test.models.dbitem.DbType;
 import org.eclipse.emf.test.models.dbitem.DocumentRoot;
 import org.eclipse.emf.test.models.dbprice.DBPricePackage;
+import org.eclipse.emf.test.models.dbprice.PenType;
+import org.eclipse.emf.test.models.dbprice.PencilType;
 import org.eclipse.emf.test.models.dbprice.impl.DBPricePackageImpl;
 
 /**
@@ -35,14 +39,14 @@ public class DBItemPackageImpl extends EPackageImpl implements DBItemPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass dbTypeEClass = null;
+  private EClass<DbType> dbTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass documentRootEClass = null;
+  private EClass<DocumentRoot> documentRootEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -117,7 +121,7 @@ public class DBItemPackageImpl extends EPackageImpl implements DBItemPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDbType()
+  public EClass<DbType> getDbType()
   {
     return dbTypeEClass;
   }
@@ -127,9 +131,10 @@ public class DBItemPackageImpl extends EPackageImpl implements DBItemPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDbType_RedPen()
+  @SuppressWarnings("unchecked")
+  public EReference<DbType, PenType> getDbType_RedPen()
   {
-    return (EReference)dbTypeEClass.getEStructuralFeatures().get(0);
+    return (EReference<DbType, PenType>) dbTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -137,9 +142,10 @@ public class DBItemPackageImpl extends EPackageImpl implements DBItemPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDbType_BluePen()
+  @SuppressWarnings("unchecked")
+  public EReference<DbType, PenType> getDbType_BluePen()
   {
-    return (EReference)dbTypeEClass.getEStructuralFeatures().get(1);
+    return (EReference<DbType, PenType>) dbTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -147,9 +153,10 @@ public class DBItemPackageImpl extends EPackageImpl implements DBItemPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDbType_RedPencil()
+  @SuppressWarnings("unchecked")
+  public EReference<DbType, PencilType> getDbType_RedPencil()
   {
-    return (EReference)dbTypeEClass.getEStructuralFeatures().get(2);
+    return (EReference<DbType, PencilType>) dbTypeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -157,9 +164,10 @@ public class DBItemPackageImpl extends EPackageImpl implements DBItemPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDbType_BluePencil()
+  @SuppressWarnings("unchecked")
+  public EReference<DbType, PencilType> getDbType_BluePencil()
   {
-    return (EReference)dbTypeEClass.getEStructuralFeatures().get(3);
+    return (EReference<DbType, PencilType>) dbTypeEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -167,7 +175,7 @@ public class DBItemPackageImpl extends EPackageImpl implements DBItemPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDocumentRoot()
+  public EClass<DocumentRoot> getDocumentRoot()
   {
     return documentRootEClass;
   }
@@ -177,9 +185,10 @@ public class DBItemPackageImpl extends EPackageImpl implements DBItemPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDocumentRoot_Mixed()
+  @SuppressWarnings("unchecked")
+  public EAttribute<DocumentRoot, FeatureMap> getDocumentRoot_Mixed()
   {
-    return (EAttribute)documentRootEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<DocumentRoot, FeatureMap>) documentRootEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -187,9 +196,10 @@ public class DBItemPackageImpl extends EPackageImpl implements DBItemPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_XMLNSPrefixMap()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, EMap<String, String>> getDocumentRoot_XMLNSPrefixMap()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(1);
+    return (EReference<DocumentRoot, EMap<String, String>>) documentRootEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -197,9 +207,10 @@ public class DBItemPackageImpl extends EPackageImpl implements DBItemPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_XSISchemaLocation()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, EMap<String, String>> getDocumentRoot_XSISchemaLocation()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(2);
+    return (EReference<DocumentRoot, EMap<String, String>>) documentRootEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -207,9 +218,10 @@ public class DBItemPackageImpl extends EPackageImpl implements DBItemPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_Dbitem()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, DbType> getDocumentRoot_Dbitem()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(3);
+    return (EReference<DocumentRoot, DbType>) documentRootEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -236,22 +248,33 @@ public class DBItemPackageImpl extends EPackageImpl implements DBItemPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    dbTypeEClass = createEClass(DB_TYPE);
+    // CHANGE gen: Add cast
+    dbTypeEClass = (EClass<DbType>) createEClass(DB_TYPE);
+    // CHANGE gen: Use raw type
     createEReference(dbTypeEClass, DB_TYPE__RED_PEN);
+    // CHANGE gen: Use raw type
     createEReference(dbTypeEClass, DB_TYPE__BLUE_PEN);
+    // CHANGE gen: Use raw type
     createEReference(dbTypeEClass, DB_TYPE__RED_PENCIL);
+    // CHANGE gen: Use raw type
     createEReference(dbTypeEClass, DB_TYPE__BLUE_PENCIL);
 
-    documentRootEClass = createEClass(DOCUMENT_ROOT);
+    // CHANGE gen: Add cast
+    documentRootEClass = (EClass<DocumentRoot>) createEClass(DOCUMENT_ROOT);
+    // CHANGE gen: Use raw type
     createEAttribute(documentRootEClass, DOCUMENT_ROOT__MIXED);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__DBITEM);
   }
 

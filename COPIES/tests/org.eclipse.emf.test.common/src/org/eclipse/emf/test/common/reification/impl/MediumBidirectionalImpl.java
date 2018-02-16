@@ -70,7 +70,7 @@ public class MediumBidirectionalImpl<T extends MediumBidirectional<T> & Medium> 
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.MEDIUM_BIDIRECTIONAL;
   }

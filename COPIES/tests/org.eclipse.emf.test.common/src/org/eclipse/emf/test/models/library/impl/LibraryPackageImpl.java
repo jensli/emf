@@ -10,6 +10,7 @@
  */
 package org.eclipse.emf.test.models.library.impl;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -36,28 +37,28 @@ public class LibraryPackageImpl extends EPackageImpl implements LibraryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass bookEClass = null;
+  private EClass<Book> bookEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass libraryEClass = null;
+  private EClass<Library> libraryEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass writerEClass = null;
+  private EClass<Writer> writerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum bookCategoryEEnum = null;
+  private EEnum<BookCategory> bookCategoryEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -127,7 +128,7 @@ public class LibraryPackageImpl extends EPackageImpl implements LibraryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBook()
+  public EClass<Book> getBook()
   {
     return bookEClass;
   }
@@ -137,9 +138,10 @@ public class LibraryPackageImpl extends EPackageImpl implements LibraryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBook_Title()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Book, String> getBook_Title()
   {
-    return (EAttribute)bookEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<Book, String>) bookEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -147,9 +149,10 @@ public class LibraryPackageImpl extends EPackageImpl implements LibraryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBook_Pages()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Book, Integer> getBook_Pages()
   {
-    return (EAttribute)bookEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<Book, Integer>) bookEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -157,9 +160,10 @@ public class LibraryPackageImpl extends EPackageImpl implements LibraryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBook_Category()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Book, BookCategory> getBook_Category()
   {
-    return (EAttribute)bookEClass.getEStructuralFeatures().get(2);
+    return (EAttribute<Book, BookCategory>) bookEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -167,9 +171,10 @@ public class LibraryPackageImpl extends EPackageImpl implements LibraryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBook_Author()
+  @SuppressWarnings("unchecked")
+  public EReference<Book, Writer> getBook_Author()
   {
-    return (EReference)bookEClass.getEStructuralFeatures().get(3);
+    return (EReference<Book, Writer>) bookEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -177,7 +182,7 @@ public class LibraryPackageImpl extends EPackageImpl implements LibraryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLibrary()
+  public EClass<Library> getLibrary()
   {
     return libraryEClass;
   }
@@ -187,9 +192,10 @@ public class LibraryPackageImpl extends EPackageImpl implements LibraryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLibrary_Name()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Library, String> getLibrary_Name()
   {
-    return (EAttribute)libraryEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<Library, String>) libraryEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -197,9 +203,10 @@ public class LibraryPackageImpl extends EPackageImpl implements LibraryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLibrary_Writers()
+  @SuppressWarnings("unchecked")
+  public EReference<Library, EList<Writer>> getLibrary_Writers()
   {
-    return (EReference)libraryEClass.getEStructuralFeatures().get(1);
+    return (EReference<Library, EList<Writer>>) libraryEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -207,9 +214,10 @@ public class LibraryPackageImpl extends EPackageImpl implements LibraryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLibrary_Books()
+  @SuppressWarnings("unchecked")
+  public EReference<Library, EList<Book>> getLibrary_Books()
   {
-    return (EReference)libraryEClass.getEStructuralFeatures().get(2);
+    return (EReference<Library, EList<Book>>) libraryEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -217,7 +225,7 @@ public class LibraryPackageImpl extends EPackageImpl implements LibraryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getWriter()
+  public EClass<Writer> getWriter()
   {
     return writerEClass;
   }
@@ -227,9 +235,10 @@ public class LibraryPackageImpl extends EPackageImpl implements LibraryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getWriter_Name()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Writer, String> getWriter_Name()
   {
-    return (EAttribute)writerEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<Writer, String>) writerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -237,9 +246,10 @@ public class LibraryPackageImpl extends EPackageImpl implements LibraryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getWriter_Books()
+  @SuppressWarnings("unchecked")
+  public EReference<Writer, EList<Book>> getWriter_Books()
   {
-    return (EReference)writerEClass.getEStructuralFeatures().get(1);
+    return (EReference<Writer, EList<Book>>) writerEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -247,7 +257,7 @@ public class LibraryPackageImpl extends EPackageImpl implements LibraryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EEnum getBookCategory()
+  public EEnum<BookCategory> getBookCategory()
   {
     return bookCategoryEEnum;
   }
@@ -276,29 +286,43 @@ public class LibraryPackageImpl extends EPackageImpl implements LibraryPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    bookEClass = createEClass(BOOK);
+    // CHANGE gen: Add cast
+    bookEClass = (EClass<Book>) createEClass(BOOK);
+    // CHANGE gen: Use raw type
     createEAttribute(bookEClass, BOOK__TITLE);
+    // CHANGE gen: Use raw type
     createEAttribute(bookEClass, BOOK__PAGES);
+    // CHANGE gen: Use raw type
     createEAttribute(bookEClass, BOOK__CATEGORY);
+    // CHANGE gen: Use raw type
     createEReference(bookEClass, BOOK__AUTHOR);
 
-    libraryEClass = createEClass(LIBRARY);
+    // CHANGE gen: Add cast
+    libraryEClass = (EClass<Library>) createEClass(LIBRARY);
+    // CHANGE gen: Use raw type
     createEAttribute(libraryEClass, LIBRARY__NAME);
+    // CHANGE gen: Use raw type
     createEReference(libraryEClass, LIBRARY__WRITERS);
+    // CHANGE gen: Use raw type
     createEReference(libraryEClass, LIBRARY__BOOKS);
 
-    writerEClass = createEClass(WRITER);
+    // CHANGE gen: Add cast
+    writerEClass = (EClass<Writer>) createEClass(WRITER);
+    // CHANGE gen: Use raw type
     createEAttribute(writerEClass, WRITER__NAME);
+    // CHANGE gen: Use raw type
     createEReference(writerEClass, WRITER__BOOKS);
 
     // Create enums
-    bookCategoryEEnum = createEEnum(BOOK_CATEGORY);
+ 		// CHANGE gen: Cast
+    bookCategoryEEnum = (EEnum<BookCategory>) createEEnum(BOOK_CATEGORY);
   }
 
   /**

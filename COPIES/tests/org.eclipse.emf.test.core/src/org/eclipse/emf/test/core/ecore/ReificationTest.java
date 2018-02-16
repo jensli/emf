@@ -409,11 +409,11 @@ public class ReificationTest
   public void testPackage(EPackage ePackage)
   {
     List<EObject> eObjects = new BasicEList<EObject>();
-    for (EClassifier eClassifer : ePackage.getEClassifiers())
+    for (EClassifier<?> eClassifer : ePackage.getEClassifiers())
     {
       if (eClassifer instanceof EClass)
       {
-        EClass eClass = (EClass)eClassifer;
+        EClass<?> eClass = (EClass<?>)eClassifer;
         if (!eClass.isAbstract())
         {
           eObjects.add(EcoreUtil.create(eClass));
@@ -423,8 +423,8 @@ public class ReificationTest
 
     for (EObject eObject : eObjects)
     {
-      EClass eClass = eObject.eClass();
-      for (EReference eReference : eClass.getEAllReferences())
+      EClass<?> eClass = eObject.eClass();
+      for (EReference<?, ?> eReference : eClass.getEAllReferences())
       {
         EGenericType eGenericType = eClass.getFeatureType(eReference);
         for (EObject otherEObject : eObjects)

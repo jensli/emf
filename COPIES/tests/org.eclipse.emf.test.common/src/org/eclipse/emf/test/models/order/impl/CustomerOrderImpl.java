@@ -107,7 +107,7 @@ public class CustomerOrderImpl extends EObjectImpl implements CustomerOrder
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return OrderPackage.Literals.CUSTOMER_ORDER;
   }

@@ -10,6 +10,7 @@
  */
 package org.eclipse.emf.test.models.ref.unsettable.impl;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -35,63 +36,63 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass c1UEClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.unsettable.C1U> c1UEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass c2UEClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.unsettable.C2U> c2UEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass auEClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.unsettable.AU> auEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass buEClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.unsettable.BU> buEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass cuEClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.unsettable.CU> cuEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass duEClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.unsettable.DU> duEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass c4UEClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.unsettable.C4U> c4UEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass c3UEClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.unsettable.C3U> c3UEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass euEClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.unsettable.EU> euEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -169,7 +170,7 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getC1U()
+  public EClass<org.eclipse.emf.test.models.ref.unsettable.C1U> getC1U()
   {
     return c1UEClass;
   }
@@ -179,9 +180,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC1U_Au()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.C1U, org.eclipse.emf.test.models.ref.unsettable.AU> getC1U_Au()
   {
-    return (EReference)c1UEClass.getEStructuralFeatures().get(0);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.C1U, org.eclipse.emf.test.models.ref.unsettable.AU>) c1UEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -189,9 +191,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC1U_Bu()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.C1U, EList<org.eclipse.emf.test.models.ref.unsettable.BU>> getC1U_Bu()
   {
-    return (EReference)c1UEClass.getEStructuralFeatures().get(1);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.C1U, EList<org.eclipse.emf.test.models.ref.unsettable.BU>>) c1UEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -199,7 +202,7 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getC2U()
+  public EClass<org.eclipse.emf.test.models.ref.unsettable.C2U> getC2U()
   {
     return c2UEClass;
   }
@@ -209,9 +212,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC2U_Au()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.C2U, org.eclipse.emf.test.models.ref.unsettable.AU> getC2U_Au()
   {
-    return (EReference)c2UEClass.getEStructuralFeatures().get(0);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.C2U, org.eclipse.emf.test.models.ref.unsettable.AU>) c2UEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -219,9 +223,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC2U_Bu()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.C2U, EList<org.eclipse.emf.test.models.ref.unsettable.BU>> getC2U_Bu()
   {
-    return (EReference)c2UEClass.getEStructuralFeatures().get(1);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.C2U, EList<org.eclipse.emf.test.models.ref.unsettable.BU>>) c2UEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -229,7 +234,7 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAU()
+  public EClass<org.eclipse.emf.test.models.ref.unsettable.AU> getAU()
   {
     return auEClass;
   }
@@ -239,9 +244,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAU_Bu()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.AU, org.eclipse.emf.test.models.ref.unsettable.BU> getAU_Bu()
   {
-    return (EReference)auEClass.getEStructuralFeatures().get(0);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.AU, org.eclipse.emf.test.models.ref.unsettable.BU>) auEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -249,9 +255,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAU_C2u()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.AU, org.eclipse.emf.test.models.ref.unsettable.C2U> getAU_C2u()
   {
-    return (EReference)auEClass.getEStructuralFeatures().get(1);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.AU, org.eclipse.emf.test.models.ref.unsettable.C2U>) auEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -259,9 +266,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAU_Cu()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.AU, org.eclipse.emf.test.models.ref.unsettable.CU> getAU_Cu()
   {
-    return (EReference)auEClass.getEStructuralFeatures().get(2);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.AU, org.eclipse.emf.test.models.ref.unsettable.CU>) auEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -269,7 +277,7 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBU()
+  public EClass<org.eclipse.emf.test.models.ref.unsettable.BU> getBU()
   {
     return buEClass;
   }
@@ -279,9 +287,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBU_Au()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.BU, org.eclipse.emf.test.models.ref.unsettable.AU> getBU_Au()
   {
-    return (EReference)buEClass.getEStructuralFeatures().get(0);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.BU, org.eclipse.emf.test.models.ref.unsettable.AU>) buEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -289,9 +298,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBU_C2u()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.BU, org.eclipse.emf.test.models.ref.unsettable.C2U> getBU_C2u()
   {
-    return (EReference)buEClass.getEStructuralFeatures().get(1);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.BU, org.eclipse.emf.test.models.ref.unsettable.C2U>) buEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -299,9 +309,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBU_Du()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.BU, EList<org.eclipse.emf.test.models.ref.unsettable.DU>> getBU_Du()
   {
-    return (EReference)buEClass.getEStructuralFeatures().get(2);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.BU, EList<org.eclipse.emf.test.models.ref.unsettable.DU>>) buEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -309,7 +320,7 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCU()
+  public EClass<org.eclipse.emf.test.models.ref.unsettable.CU> getCU()
   {
     return cuEClass;
   }
@@ -319,9 +330,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCU_Du()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.CU, EList<org.eclipse.emf.test.models.ref.unsettable.DU>> getCU_Du()
   {
-    return (EReference)cuEClass.getEStructuralFeatures().get(0);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.CU, EList<org.eclipse.emf.test.models.ref.unsettable.DU>>) cuEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -329,9 +341,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCU_C4u()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.CU, org.eclipse.emf.test.models.ref.unsettable.C4U> getCU_C4u()
   {
-    return (EReference)cuEClass.getEStructuralFeatures().get(1);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.CU, org.eclipse.emf.test.models.ref.unsettable.C4U>) cuEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -339,7 +352,7 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDU()
+  public EClass<org.eclipse.emf.test.models.ref.unsettable.DU> getDU()
   {
     return duEClass;
   }
@@ -349,9 +362,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDU_Cu()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.DU, org.eclipse.emf.test.models.ref.unsettable.CU> getDU_Cu()
   {
-    return (EReference)duEClass.getEStructuralFeatures().get(0);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.DU, org.eclipse.emf.test.models.ref.unsettable.CU>) duEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -359,9 +373,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDU_C4u()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.DU, org.eclipse.emf.test.models.ref.unsettable.C4U> getDU_C4u()
   {
-    return (EReference)duEClass.getEStructuralFeatures().get(1);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.DU, org.eclipse.emf.test.models.ref.unsettable.C4U>) duEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -369,9 +384,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDU_Eu()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.DU, EList<org.eclipse.emf.test.models.ref.unsettable.EU>> getDU_Eu()
   {
-    return (EReference)duEClass.getEStructuralFeatures().get(2);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.DU, EList<org.eclipse.emf.test.models.ref.unsettable.EU>>) duEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -379,7 +395,7 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getC4U()
+  public EClass<org.eclipse.emf.test.models.ref.unsettable.C4U> getC4U()
   {
     return c4UEClass;
   }
@@ -389,9 +405,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC4U_Cu()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.C4U, org.eclipse.emf.test.models.ref.unsettable.CU> getC4U_Cu()
   {
-    return (EReference)c4UEClass.getEStructuralFeatures().get(0);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.C4U, org.eclipse.emf.test.models.ref.unsettable.CU>) c4UEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -399,9 +416,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC4U_Du()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.C4U, EList<org.eclipse.emf.test.models.ref.unsettable.DU>> getC4U_Du()
   {
-    return (EReference)c4UEClass.getEStructuralFeatures().get(1);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.C4U, EList<org.eclipse.emf.test.models.ref.unsettable.DU>>) c4UEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -409,7 +427,7 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getC3U()
+  public EClass<org.eclipse.emf.test.models.ref.unsettable.C3U> getC3U()
   {
     return c3UEClass;
   }
@@ -419,9 +437,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC3U_Cu()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.C3U, org.eclipse.emf.test.models.ref.unsettable.CU> getC3U_Cu()
   {
-    return (EReference)c3UEClass.getEStructuralFeatures().get(0);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.C3U, org.eclipse.emf.test.models.ref.unsettable.CU>) c3UEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -429,9 +448,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC3U_Du()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.C3U, EList<org.eclipse.emf.test.models.ref.unsettable.DU>> getC3U_Du()
   {
-    return (EReference)c3UEClass.getEStructuralFeatures().get(1);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.C3U, EList<org.eclipse.emf.test.models.ref.unsettable.DU>>) c3UEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -439,7 +459,7 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEU()
+  public EClass<org.eclipse.emf.test.models.ref.unsettable.EU> getEU()
   {
     return euEClass;
   }
@@ -449,9 +469,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEU_Name()
+  @SuppressWarnings("unchecked")
+  public EAttribute<org.eclipse.emf.test.models.ref.unsettable.EU, String> getEU_Name()
   {
-    return (EAttribute)euEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<org.eclipse.emf.test.models.ref.unsettable.EU, String>) euEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -459,9 +480,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEU_Ids()
+  @SuppressWarnings("unchecked")
+  public EAttribute<org.eclipse.emf.test.models.ref.unsettable.EU, EList<String>> getEU_Ids()
   {
-    return (EAttribute)euEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<org.eclipse.emf.test.models.ref.unsettable.EU, EList<String>>) euEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -469,9 +491,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEU_Labels()
+  @SuppressWarnings("unchecked")
+  public EAttribute<org.eclipse.emf.test.models.ref.unsettable.EU, EList<String>> getEU_Labels()
   {
-    return (EAttribute)euEClass.getEStructuralFeatures().get(2);
+    return (EAttribute<org.eclipse.emf.test.models.ref.unsettable.EU, EList<String>>) euEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -479,9 +502,10 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEU_Du()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.unsettable.EU, EList<org.eclipse.emf.test.models.ref.unsettable.DU>> getEU_Du()
   {
-    return (EReference)euEClass.getEStructuralFeatures().get(3);
+    return (EReference<org.eclipse.emf.test.models.ref.unsettable.EU, EList<org.eclipse.emf.test.models.ref.unsettable.DU>>) euEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -508,51 +532,84 @@ public class URefPackageImpl extends EPackageImpl implements URefPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    c1UEClass = createEClass(C1U);
+    // CHANGE gen: Add cast
+    c1UEClass = (EClass<org.eclipse.emf.test.models.ref.unsettable.C1U>) createEClass(C1U);
+    // CHANGE gen: Use raw type
     createEReference(c1UEClass, C1U__AU);
+    // CHANGE gen: Use raw type
     createEReference(c1UEClass, C1U__BU);
 
-    c2UEClass = createEClass(C2U);
+    // CHANGE gen: Add cast
+    c2UEClass = (EClass<org.eclipse.emf.test.models.ref.unsettable.C2U>) createEClass(C2U);
+    // CHANGE gen: Use raw type
     createEReference(c2UEClass, C2U__AU);
+    // CHANGE gen: Use raw type
     createEReference(c2UEClass, C2U__BU);
 
-    auEClass = createEClass(AU);
+    // CHANGE gen: Add cast
+    auEClass = (EClass<org.eclipse.emf.test.models.ref.unsettable.AU>) createEClass(AU);
+    // CHANGE gen: Use raw type
     createEReference(auEClass, AU__BU);
+    // CHANGE gen: Use raw type
     createEReference(auEClass, AU__C2U);
+    // CHANGE gen: Use raw type
     createEReference(auEClass, AU__CU);
 
-    buEClass = createEClass(BU);
+    // CHANGE gen: Add cast
+    buEClass = (EClass<org.eclipse.emf.test.models.ref.unsettable.BU>) createEClass(BU);
+    // CHANGE gen: Use raw type
     createEReference(buEClass, BU__AU);
+    // CHANGE gen: Use raw type
     createEReference(buEClass, BU__C2U);
+    // CHANGE gen: Use raw type
     createEReference(buEClass, BU__DU);
 
-    cuEClass = createEClass(CU);
+    // CHANGE gen: Add cast
+    cuEClass = (EClass<org.eclipse.emf.test.models.ref.unsettable.CU>) createEClass(CU);
+    // CHANGE gen: Use raw type
     createEReference(cuEClass, CU__DU);
+    // CHANGE gen: Use raw type
     createEReference(cuEClass, CU__C4U);
 
-    duEClass = createEClass(DU);
+    // CHANGE gen: Add cast
+    duEClass = (EClass<org.eclipse.emf.test.models.ref.unsettable.DU>) createEClass(DU);
+    // CHANGE gen: Use raw type
     createEReference(duEClass, DU__CU);
+    // CHANGE gen: Use raw type
     createEReference(duEClass, DU__C4U);
+    // CHANGE gen: Use raw type
     createEReference(duEClass, DU__EU);
 
-    c4UEClass = createEClass(C4U);
+    // CHANGE gen: Add cast
+    c4UEClass = (EClass<org.eclipse.emf.test.models.ref.unsettable.C4U>) createEClass(C4U);
+    // CHANGE gen: Use raw type
     createEReference(c4UEClass, C4U__CU);
+    // CHANGE gen: Use raw type
     createEReference(c4UEClass, C4U__DU);
 
-    c3UEClass = createEClass(C3U);
+    // CHANGE gen: Add cast
+    c3UEClass = (EClass<org.eclipse.emf.test.models.ref.unsettable.C3U>) createEClass(C3U);
+    // CHANGE gen: Use raw type
     createEReference(c3UEClass, C3U__CU);
+    // CHANGE gen: Use raw type
     createEReference(c3UEClass, C3U__DU);
 
-    euEClass = createEClass(EU);
+    // CHANGE gen: Add cast
+    euEClass = (EClass<org.eclipse.emf.test.models.ref.unsettable.EU>) createEClass(EU);
+    // CHANGE gen: Use raw type
     createEAttribute(euEClass, EU__NAME);
+    // CHANGE gen: Use raw type
     createEAttribute(euEClass, EU__IDS);
+    // CHANGE gen: Use raw type
     createEAttribute(euEClass, EU__LABELS);
+    // CHANGE gen: Use raw type
     createEReference(euEClass, EU__DU);
   }
 

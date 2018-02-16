@@ -87,7 +87,7 @@ public class C1UImpl extends EObjectImpl implements C1U
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return URefPackage.Literals.C1U;
   }

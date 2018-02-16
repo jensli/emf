@@ -68,7 +68,7 @@ public class BookImpl extends EObjectImpl implements Book
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return LibPackage.Literals.BOOK;
   }

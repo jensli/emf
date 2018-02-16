@@ -7,6 +7,7 @@
  */
 package org.eclipse.emf.test.common.reification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -1024,7 +1025,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.Root
    * @generated
    */
-  EClass getRoot();
+  EClass<Root> getRoot();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.common.reification.Root#getName <em>Name</em>}'.
@@ -1035,7 +1036,7 @@ public interface ReificationPackage extends EPackage
    * @see #getRoot()
    * @generated
    */
-  EAttribute getRoot_Name();
+  EAttribute<Root, String> getRoot_Name();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.common.reification.Root#getContainer <em>Container</em>}'.
@@ -1046,7 +1047,7 @@ public interface ReificationPackage extends EPackage
    * @see #getRoot()
    * @generated
    */
-  EReference getRoot_Container();
+  EReference<Root, Container> getRoot_Container();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.common.reification.Root#getUnboundedGenericContainerWithRawType <em>Unbounded Generic Container With Raw Type</em>}'.
@@ -1057,7 +1058,7 @@ public interface ReificationPackage extends EPackage
    * @see #getRoot()
    * @generated
    */
-  EReference getRoot_UnboundedGenericContainerWithRawType();
+  EReference<Root, UnboundedGenericContainer> getRoot_UnboundedGenericContainerWithRawType();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.common.reification.Root#getUnboundedGenericContainerWithWildcard <em>Unbounded Generic Container With Wildcard</em>}'.
@@ -1068,7 +1069,7 @@ public interface ReificationPackage extends EPackage
    * @see #getRoot()
    * @generated
    */
-  EReference getRoot_UnboundedGenericContainerWithWildcard();
+  EReference<Root, UnboundedGenericContainer<?>> getRoot_UnboundedGenericContainerWithWildcard();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.common.reification.Root#getUnboundedGenericContainerWithSuper <em>Unbounded Generic Container With Super</em>}'.
@@ -1079,7 +1080,7 @@ public interface ReificationPackage extends EPackage
    * @see #getRoot()
    * @generated
    */
-  EReference getRoot_UnboundedGenericContainerWithSuper();
+  EReference<Root, UnboundedGenericContainer<? super Medium>> getRoot_UnboundedGenericContainerWithSuper();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.common.reification.Root#getUnboundedGenericContainerWithExtends <em>Unbounded Generic Container With Extends</em>}'.
@@ -1090,7 +1091,7 @@ public interface ReificationPackage extends EPackage
    * @see #getRoot()
    * @generated
    */
-  EReference getRoot_UnboundedGenericContainerWithExtends();
+  EReference<Root, UnboundedGenericContainer<? extends Medium>> getRoot_UnboundedGenericContainerWithExtends();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.common.reification.Root#getBoundedGenericContainerWithRawType <em>Bounded Generic Container With Raw Type</em>}'.
@@ -1101,7 +1102,7 @@ public interface ReificationPackage extends EPackage
    * @see #getRoot()
    * @generated
    */
-  EReference getRoot_BoundedGenericContainerWithRawType();
+  EReference<Root, BoundedGenericContainer> getRoot_BoundedGenericContainerWithRawType();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.common.reification.Root#getBoundedGenericContainerWithWildcard <em>Bounded Generic Container With Wildcard</em>}'.
@@ -1112,7 +1113,7 @@ public interface ReificationPackage extends EPackage
    * @see #getRoot()
    * @generated
    */
-  EReference getRoot_BoundedGenericContainerWithWildcard();
+  EReference<Root, BoundedGenericContainer<?>> getRoot_BoundedGenericContainerWithWildcard();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.common.reification.Root#getBoundedGenericContainerWithSuper <em>Bounded Generic Container With Super</em>}'.
@@ -1123,7 +1124,7 @@ public interface ReificationPackage extends EPackage
    * @see #getRoot()
    * @generated
    */
-  EReference getRoot_BoundedGenericContainerWithSuper();
+  EReference<Root, BoundedGenericContainer<? super Medium>> getRoot_BoundedGenericContainerWithSuper();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.common.reification.Root#getBoundedGenericContainerWithExtends <em>Bounded Generic Container With Extends</em>}'.
@@ -1134,7 +1135,7 @@ public interface ReificationPackage extends EPackage
    * @see #getRoot()
    * @generated
    */
-  EReference getRoot_BoundedGenericContainerWithExtends();
+  EReference<Root, BoundedGenericContainer<? extends Medium>> getRoot_BoundedGenericContainerWithExtends();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.VeryLow <em>Very Low</em>}'.
@@ -1144,7 +1145,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.VeryLow
    * @generated
    */
-  EClass getVeryLow();
+  EClass<VeryLow> getVeryLow();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.Low <em>Low</em>}'.
@@ -1154,7 +1155,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.Low
    * @generated
    */
-  EClass getLow();
+  EClass<Low> getLow();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.Medium <em>Medium</em>}'.
@@ -1164,7 +1165,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.Medium
    * @generated
    */
-  EClass getMedium();
+  EClass<Medium> getMedium();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.High <em>High</em>}'.
@@ -1174,7 +1175,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.High
    * @generated
    */
-  EClass getHigh();
+  EClass<High> getHigh();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.VeryHigh <em>Very High</em>}'.
@@ -1184,7 +1185,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.VeryHigh
    * @generated
    */
-  EClass getVeryHigh();
+  EClass<VeryHigh> getVeryHigh();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.Container <em>Container</em>}'.
@@ -1194,7 +1195,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.Container
    * @generated
    */
-  EClass getContainer();
+  EClass<Container> getContainer();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.UnboundedGenericContainer <em>Unbounded Generic Container</em>}'.
@@ -1204,7 +1205,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.UnboundedGenericContainer
    * @generated
    */
-  EClass getUnboundedGenericContainer();
+  EClass<UnboundedGenericContainer<?>> getUnboundedGenericContainer();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.common.reification.UnboundedGenericContainer#getContent <em>Content</em>}'.
@@ -1215,7 +1216,7 @@ public interface ReificationPackage extends EPackage
    * @see #getUnboundedGenericContainer()
    * @generated
    */
-  EReference getUnboundedGenericContainer_Content();
+  EReference<UnboundedGenericContainer<?>, ?> getUnboundedGenericContainer_Content();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.RawUnboundedContainer <em>Raw Unbounded Container</em>}'.
@@ -1225,7 +1226,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.RawUnboundedContainer
    * @generated
    */
-  EClass getRawUnboundedContainer();
+  EClass<RawUnboundedContainer> getRawUnboundedContainer();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.MediumUnboundedContainer <em>Medium Unbounded Container</em>}'.
@@ -1235,7 +1236,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.MediumUnboundedContainer
    * @generated
    */
-  EClass getMediumUnboundedContainer();
+  EClass<MediumUnboundedContainer> getMediumUnboundedContainer();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.BoundedGenericContainer <em>Bounded Generic Container</em>}'.
@@ -1245,7 +1246,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.BoundedGenericContainer
    * @generated
    */
-  EClass getBoundedGenericContainer();
+  EClass<BoundedGenericContainer<?>> getBoundedGenericContainer();
 
   /**
    * Returns the meta object for the reference '{@link org.eclipse.emf.test.common.reification.BoundedGenericContainer#getContent <em>Content</em>}'.
@@ -1256,7 +1257,7 @@ public interface ReificationPackage extends EPackage
    * @see #getBoundedGenericContainer()
    * @generated
    */
-  EReference getBoundedGenericContainer_Content();
+  EReference<BoundedGenericContainer<?>, ?> getBoundedGenericContainer_Content();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.HighBoundedContainer <em>High Bounded Container</em>}'.
@@ -1266,7 +1267,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.HighBoundedContainer
    * @generated
    */
-  EClass getHighBoundedContainer();
+  EClass<HighBoundedContainer> getHighBoundedContainer();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.KeyValuePair <em>Key Value Pair</em>}'.
@@ -1276,7 +1277,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.KeyValuePair
    * @generated
    */
-  EClass getKeyValuePair();
+  EClass<KeyValuePair<?, ?>> getKeyValuePair();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.common.reification.KeyValuePair#getKey <em>Key</em>}'.
@@ -1287,7 +1288,7 @@ public interface ReificationPackage extends EPackage
    * @see #getKeyValuePair()
    * @generated
    */
-  EAttribute getKeyValuePair_Key();
+  EAttribute<KeyValuePair<?, ?>, ?> getKeyValuePair_Key();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.common.reification.KeyValuePair#getValue <em>Value</em>}'.
@@ -1298,7 +1299,7 @@ public interface ReificationPackage extends EPackage
    * @see #getKeyValuePair()
    * @generated
    */
-  EReference getKeyValuePair_Value();
+  EReference<KeyValuePair<?, ?>, ?> getKeyValuePair_Value();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.RawKeyValuePair <em>Raw Key Value Pair</em>}'.
@@ -1308,7 +1309,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.RawKeyValuePair
    * @generated
    */
-  EClass getRawKeyValuePair();
+  EClass<RawKeyValuePair> getRawKeyValuePair();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.StringListKeyValuePair <em>String List Key Value Pair</em>}'.
@@ -1318,7 +1319,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.StringListKeyValuePair
    * @generated
    */
-  EClass getStringListKeyValuePair();
+  EClass<StringListKeyValuePair> getStringListKeyValuePair();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.TListKeyValuePair <em>TList Key Value Pair</em>}'.
@@ -1328,7 +1329,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.TListKeyValuePair
    * @generated
    */
-  EClass getTListKeyValuePair();
+  EClass<TListKeyValuePair<?>> getTListKeyValuePair();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.BoundedTListKeyValuePair <em>Bounded TList Key Value Pair</em>}'.
@@ -1338,7 +1339,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.BoundedTListKeyValuePair
    * @generated
    */
-  EClass getBoundedTListKeyValuePair();
+  EClass<BoundedTListKeyValuePair<?>> getBoundedTListKeyValuePair();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.HighListKeyValuePair <em>High List Key Value Pair</em>}'.
@@ -1348,7 +1349,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.HighListKeyValuePair
    * @generated
    */
-  EClass getHighListKeyValuePair();
+  EClass<HighListKeyValuePair> getHighListKeyValuePair();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.IntegerListKeyValuePair <em>Integer List Key Value Pair</em>}'.
@@ -1358,7 +1359,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.IntegerListKeyValuePair
    * @generated
    */
-  EClass getIntegerListKeyValuePair();
+  EClass<IntegerListKeyValuePair> getIntegerListKeyValuePair();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.KeyValuePairContainer <em>Key Value Pair Container</em>}'.
@@ -1368,7 +1369,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.KeyValuePairContainer
    * @generated
    */
-  EClass getKeyValuePairContainer();
+  EClass<KeyValuePairContainer<?, ?>> getKeyValuePairContainer();
 
   /**
    * Returns the meta object for the reference list '{@link org.eclipse.emf.test.common.reification.KeyValuePairContainer#getKeyValuePairsList <em>Key Value Pairs</em>}'.
@@ -1379,7 +1380,7 @@ public interface ReificationPackage extends EPackage
    * @see #getKeyValuePairContainer()
    * @generated
    */
-  EReference getKeyValuePairContainer_KeyValuePairs();
+  EReference<KeyValuePairContainer<?, ?>, EList<KeyValuePair<?, ?>>> getKeyValuePairContainer_KeyValuePairs();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.StringListKeyValuePairContainer <em>String List Key Value Pair Container</em>}'.
@@ -1389,7 +1390,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.StringListKeyValuePairContainer
    * @generated
    */
-  EClass getStringListKeyValuePairContainer();
+  EClass<StringListKeyValuePairContainer> getStringListKeyValuePairContainer();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.Bidirectional <em>Bidirectional</em>}'.
@@ -1399,7 +1400,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.Bidirectional
    * @generated
    */
-  EClass getBidirectional();
+  EClass<Bidirectional<?>> getBidirectional();
 
   /**
    * Returns the meta object for the reference '{@link org.eclipse.emf.test.common.reification.Bidirectional#getIn <em>In</em>}'.
@@ -1410,7 +1411,7 @@ public interface ReificationPackage extends EPackage
    * @see #getBidirectional()
    * @generated
    */
-  EReference getBidirectional_In();
+  EReference<Bidirectional<?>, ?> getBidirectional_In();
 
   /**
    * Returns the meta object for the reference '{@link org.eclipse.emf.test.common.reification.Bidirectional#getOut <em>Out</em>}'.
@@ -1421,7 +1422,7 @@ public interface ReificationPackage extends EPackage
    * @see #getBidirectional()
    * @generated
    */
-  EReference getBidirectional_Out();
+  EReference<Bidirectional<?>, ?> getBidirectional_Out();
 
   /**
    * Returns the meta object for the reference '{@link org.eclipse.emf.test.common.reification.Bidirectional#getValue <em>Value</em>}'.
@@ -1432,7 +1433,7 @@ public interface ReificationPackage extends EPackage
    * @see #getBidirectional()
    * @generated
    */
-  EReference getBidirectional_Value();
+  EReference<Bidirectional<?>, ?> getBidirectional_Value();
 
   /**
    * Returns the meta object for the reference list '{@link org.eclipse.emf.test.common.reification.Bidirectional#getValuesList <em>Values</em>}'.
@@ -1443,7 +1444,7 @@ public interface ReificationPackage extends EPackage
    * @see #getBidirectional()
    * @generated
    */
-  EReference getBidirectional_Values();
+  EReference<Bidirectional<?>, EList<?>> getBidirectional_Values();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.Link <em>Link</em>}'.
@@ -1453,7 +1454,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.Link
    * @generated
    */
-  EClass getLink();
+  EClass<Link> getLink();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.RawLink <em>Raw Link</em>}'.
@@ -1463,7 +1464,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.RawLink
    * @generated
    */
-  EClass getRawLink();
+  EClass<RawLink> getRawLink();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.LinkItem <em>Link Item</em>}'.
@@ -1473,7 +1474,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.LinkItem
    * @generated
    */
-  EClass getLinkItem();
+  EClass<LinkItem> getLinkItem();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.MediumBidirectional <em>Medium Bidirectional</em>}'.
@@ -1483,7 +1484,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.MediumBidirectional
    * @generated
    */
-  EClass getMediumBidirectional();
+  EClass<MediumBidirectional<?>> getMediumBidirectional();
 
   /**
    * Returns the meta object for the reference list '{@link org.eclipse.emf.test.common.reification.MediumBidirectional#getContentsList <em>Contents</em>}'.
@@ -1494,7 +1495,7 @@ public interface ReificationPackage extends EPackage
    * @see #getMediumBidirectional()
    * @generated
    */
-  EReference getMediumBidirectional_Contents();
+  EReference<MediumBidirectional<?>, EList<MediumBidirectional<?>>> getMediumBidirectional_Contents();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.common.reification.MediumLink <em>Medium Link</em>}'.
@@ -1504,7 +1505,7 @@ public interface ReificationPackage extends EPackage
    * @see org.eclipse.emf.test.common.reification.MediumLink
    * @generated
    */
-  EClass getMediumLink();
+  EClass<MediumLink> getMediumLink();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1537,7 +1538,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getRoot()
      * @generated
      */
-    EClass ROOT = eINSTANCE.getRoot();
+    EClass<Root> ROOT = eINSTANCE.getRoot();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1545,7 +1546,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ROOT__NAME = eINSTANCE.getRoot_Name();
+    EAttribute<Root, String> ROOT__NAME = eINSTANCE.getRoot_Name();
 
     /**
      * The meta object literal for the '<em><b>Container</b></em>' containment reference feature.
@@ -1553,7 +1554,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ROOT__CONTAINER = eINSTANCE.getRoot_Container();
+    EReference<Root, Container> ROOT__CONTAINER = eINSTANCE.getRoot_Container();
 
     /**
      * The meta object literal for the '<em><b>Unbounded Generic Container With Raw Type</b></em>' containment reference feature.
@@ -1561,7 +1562,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ROOT__UNBOUNDED_GENERIC_CONTAINER_WITH_RAW_TYPE = eINSTANCE.getRoot_UnboundedGenericContainerWithRawType();
+    EReference<Root, UnboundedGenericContainer> ROOT__UNBOUNDED_GENERIC_CONTAINER_WITH_RAW_TYPE = eINSTANCE.getRoot_UnboundedGenericContainerWithRawType();
 
     /**
      * The meta object literal for the '<em><b>Unbounded Generic Container With Wildcard</b></em>' containment reference feature.
@@ -1569,7 +1570,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ROOT__UNBOUNDED_GENERIC_CONTAINER_WITH_WILDCARD = eINSTANCE.getRoot_UnboundedGenericContainerWithWildcard();
+    EReference<Root, UnboundedGenericContainer<?>> ROOT__UNBOUNDED_GENERIC_CONTAINER_WITH_WILDCARD = eINSTANCE.getRoot_UnboundedGenericContainerWithWildcard();
 
     /**
      * The meta object literal for the '<em><b>Unbounded Generic Container With Super</b></em>' containment reference feature.
@@ -1577,7 +1578,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ROOT__UNBOUNDED_GENERIC_CONTAINER_WITH_SUPER = eINSTANCE.getRoot_UnboundedGenericContainerWithSuper();
+    EReference<Root, UnboundedGenericContainer<? super Medium>> ROOT__UNBOUNDED_GENERIC_CONTAINER_WITH_SUPER = eINSTANCE.getRoot_UnboundedGenericContainerWithSuper();
 
     /**
      * The meta object literal for the '<em><b>Unbounded Generic Container With Extends</b></em>' containment reference feature.
@@ -1585,7 +1586,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ROOT__UNBOUNDED_GENERIC_CONTAINER_WITH_EXTENDS = eINSTANCE.getRoot_UnboundedGenericContainerWithExtends();
+    EReference<Root, UnboundedGenericContainer<? extends Medium>> ROOT__UNBOUNDED_GENERIC_CONTAINER_WITH_EXTENDS = eINSTANCE.getRoot_UnboundedGenericContainerWithExtends();
 
     /**
      * The meta object literal for the '<em><b>Bounded Generic Container With Raw Type</b></em>' containment reference feature.
@@ -1593,7 +1594,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ROOT__BOUNDED_GENERIC_CONTAINER_WITH_RAW_TYPE = eINSTANCE.getRoot_BoundedGenericContainerWithRawType();
+    EReference<Root, BoundedGenericContainer> ROOT__BOUNDED_GENERIC_CONTAINER_WITH_RAW_TYPE = eINSTANCE.getRoot_BoundedGenericContainerWithRawType();
 
     /**
      * The meta object literal for the '<em><b>Bounded Generic Container With Wildcard</b></em>' containment reference feature.
@@ -1601,7 +1602,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ROOT__BOUNDED_GENERIC_CONTAINER_WITH_WILDCARD = eINSTANCE.getRoot_BoundedGenericContainerWithWildcard();
+    EReference<Root, BoundedGenericContainer<?>> ROOT__BOUNDED_GENERIC_CONTAINER_WITH_WILDCARD = eINSTANCE.getRoot_BoundedGenericContainerWithWildcard();
 
     /**
      * The meta object literal for the '<em><b>Bounded Generic Container With Super</b></em>' containment reference feature.
@@ -1609,7 +1610,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ROOT__BOUNDED_GENERIC_CONTAINER_WITH_SUPER = eINSTANCE.getRoot_BoundedGenericContainerWithSuper();
+    EReference<Root, BoundedGenericContainer<? super Medium>> ROOT__BOUNDED_GENERIC_CONTAINER_WITH_SUPER = eINSTANCE.getRoot_BoundedGenericContainerWithSuper();
 
     /**
      * The meta object literal for the '<em><b>Bounded Generic Container With Extends</b></em>' containment reference feature.
@@ -1617,7 +1618,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ROOT__BOUNDED_GENERIC_CONTAINER_WITH_EXTENDS = eINSTANCE.getRoot_BoundedGenericContainerWithExtends();
+    EReference<Root, BoundedGenericContainer<? extends Medium>> ROOT__BOUNDED_GENERIC_CONTAINER_WITH_EXTENDS = eINSTANCE.getRoot_BoundedGenericContainerWithExtends();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.VeryLowImpl <em>Very Low</em>}' class.
@@ -1627,7 +1628,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getVeryLow()
      * @generated
      */
-    EClass VERY_LOW = eINSTANCE.getVeryLow();
+    EClass<VeryLow> VERY_LOW = eINSTANCE.getVeryLow();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.LowImpl <em>Low</em>}' class.
@@ -1637,7 +1638,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getLow()
      * @generated
      */
-    EClass LOW = eINSTANCE.getLow();
+    EClass<Low> LOW = eINSTANCE.getLow();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.MediumImpl <em>Medium</em>}' class.
@@ -1647,7 +1648,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getMedium()
      * @generated
      */
-    EClass MEDIUM = eINSTANCE.getMedium();
+    EClass<Medium> MEDIUM = eINSTANCE.getMedium();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.HighImpl <em>High</em>}' class.
@@ -1657,7 +1658,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getHigh()
      * @generated
      */
-    EClass HIGH = eINSTANCE.getHigh();
+    EClass<High> HIGH = eINSTANCE.getHigh();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.VeryHighImpl <em>Very High</em>}' class.
@@ -1667,7 +1668,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getVeryHigh()
      * @generated
      */
-    EClass VERY_HIGH = eINSTANCE.getVeryHigh();
+    EClass<VeryHigh> VERY_HIGH = eINSTANCE.getVeryHigh();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.ContainerImpl <em>Container</em>}' class.
@@ -1677,7 +1678,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getContainer()
      * @generated
      */
-    EClass CONTAINER = eINSTANCE.getContainer();
+    EClass<Container> CONTAINER = eINSTANCE.getContainer();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.UnboundedGenericContainerImpl <em>Unbounded Generic Container</em>}' class.
@@ -1687,7 +1688,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getUnboundedGenericContainer()
      * @generated
      */
-    EClass UNBOUNDED_GENERIC_CONTAINER = eINSTANCE.getUnboundedGenericContainer();
+    EClass<UnboundedGenericContainer<?>> UNBOUNDED_GENERIC_CONTAINER = eINSTANCE.getUnboundedGenericContainer();
 
     /**
      * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
@@ -1695,7 +1696,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference UNBOUNDED_GENERIC_CONTAINER__CONTENT = eINSTANCE.getUnboundedGenericContainer_Content();
+    EReference<UnboundedGenericContainer<?>, ?> UNBOUNDED_GENERIC_CONTAINER__CONTENT = eINSTANCE.getUnboundedGenericContainer_Content();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.RawUnboundedContainerImpl <em>Raw Unbounded Container</em>}' class.
@@ -1705,7 +1706,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getRawUnboundedContainer()
      * @generated
      */
-    EClass RAW_UNBOUNDED_CONTAINER = eINSTANCE.getRawUnboundedContainer();
+    EClass<RawUnboundedContainer> RAW_UNBOUNDED_CONTAINER = eINSTANCE.getRawUnboundedContainer();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.MediumUnboundedContainerImpl <em>Medium Unbounded Container</em>}' class.
@@ -1715,7 +1716,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getMediumUnboundedContainer()
      * @generated
      */
-    EClass MEDIUM_UNBOUNDED_CONTAINER = eINSTANCE.getMediumUnboundedContainer();
+    EClass<MediumUnboundedContainer> MEDIUM_UNBOUNDED_CONTAINER = eINSTANCE.getMediumUnboundedContainer();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.BoundedGenericContainerImpl <em>Bounded Generic Container</em>}' class.
@@ -1725,7 +1726,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getBoundedGenericContainer()
      * @generated
      */
-    EClass BOUNDED_GENERIC_CONTAINER = eINSTANCE.getBoundedGenericContainer();
+    EClass<BoundedGenericContainer<?>> BOUNDED_GENERIC_CONTAINER = eINSTANCE.getBoundedGenericContainer();
 
     /**
      * The meta object literal for the '<em><b>Content</b></em>' reference feature.
@@ -1733,7 +1734,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BOUNDED_GENERIC_CONTAINER__CONTENT = eINSTANCE.getBoundedGenericContainer_Content();
+    EReference<BoundedGenericContainer<?>, ?> BOUNDED_GENERIC_CONTAINER__CONTENT = eINSTANCE.getBoundedGenericContainer_Content();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.HighBoundedContainerImpl <em>High Bounded Container</em>}' class.
@@ -1743,7 +1744,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getHighBoundedContainer()
      * @generated
      */
-    EClass HIGH_BOUNDED_CONTAINER = eINSTANCE.getHighBoundedContainer();
+    EClass<HighBoundedContainer> HIGH_BOUNDED_CONTAINER = eINSTANCE.getHighBoundedContainer();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.KeyValuePairImpl <em>Key Value Pair</em>}' class.
@@ -1753,7 +1754,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getKeyValuePair()
      * @generated
      */
-    EClass KEY_VALUE_PAIR = eINSTANCE.getKeyValuePair();
+    EClass<KeyValuePair<?, ?>> KEY_VALUE_PAIR = eINSTANCE.getKeyValuePair();
 
     /**
      * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
@@ -1761,7 +1762,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute KEY_VALUE_PAIR__KEY = eINSTANCE.getKeyValuePair_Key();
+    EAttribute<KeyValuePair<?, ?>, ?> KEY_VALUE_PAIR__KEY = eINSTANCE.getKeyValuePair_Key();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
@@ -1769,7 +1770,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference KEY_VALUE_PAIR__VALUE = eINSTANCE.getKeyValuePair_Value();
+    EReference<KeyValuePair<?, ?>, ?> KEY_VALUE_PAIR__VALUE = eINSTANCE.getKeyValuePair_Value();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.RawKeyValuePairImpl <em>Raw Key Value Pair</em>}' class.
@@ -1779,7 +1780,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getRawKeyValuePair()
      * @generated
      */
-    EClass RAW_KEY_VALUE_PAIR = eINSTANCE.getRawKeyValuePair();
+    EClass<RawKeyValuePair> RAW_KEY_VALUE_PAIR = eINSTANCE.getRawKeyValuePair();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.StringListKeyValuePairImpl <em>String List Key Value Pair</em>}' class.
@@ -1789,7 +1790,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getStringListKeyValuePair()
      * @generated
      */
-    EClass STRING_LIST_KEY_VALUE_PAIR = eINSTANCE.getStringListKeyValuePair();
+    EClass<StringListKeyValuePair> STRING_LIST_KEY_VALUE_PAIR = eINSTANCE.getStringListKeyValuePair();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.TListKeyValuePairImpl <em>TList Key Value Pair</em>}' class.
@@ -1799,7 +1800,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getTListKeyValuePair()
      * @generated
      */
-    EClass TLIST_KEY_VALUE_PAIR = eINSTANCE.getTListKeyValuePair();
+    EClass<TListKeyValuePair<?>> TLIST_KEY_VALUE_PAIR = eINSTANCE.getTListKeyValuePair();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.BoundedTListKeyValuePairImpl <em>Bounded TList Key Value Pair</em>}' class.
@@ -1809,7 +1810,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getBoundedTListKeyValuePair()
      * @generated
      */
-    EClass BOUNDED_TLIST_KEY_VALUE_PAIR = eINSTANCE.getBoundedTListKeyValuePair();
+    EClass<BoundedTListKeyValuePair<?>> BOUNDED_TLIST_KEY_VALUE_PAIR = eINSTANCE.getBoundedTListKeyValuePair();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.HighListKeyValuePairImpl <em>High List Key Value Pair</em>}' class.
@@ -1819,7 +1820,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getHighListKeyValuePair()
      * @generated
      */
-    EClass HIGH_LIST_KEY_VALUE_PAIR = eINSTANCE.getHighListKeyValuePair();
+    EClass<HighListKeyValuePair> HIGH_LIST_KEY_VALUE_PAIR = eINSTANCE.getHighListKeyValuePair();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.IntegerListKeyValuePairImpl <em>Integer List Key Value Pair</em>}' class.
@@ -1829,7 +1830,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getIntegerListKeyValuePair()
      * @generated
      */
-    EClass INTEGER_LIST_KEY_VALUE_PAIR = eINSTANCE.getIntegerListKeyValuePair();
+    EClass<IntegerListKeyValuePair> INTEGER_LIST_KEY_VALUE_PAIR = eINSTANCE.getIntegerListKeyValuePair();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.KeyValuePairContainerImpl <em>Key Value Pair Container</em>}' class.
@@ -1839,7 +1840,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getKeyValuePairContainer()
      * @generated
      */
-    EClass KEY_VALUE_PAIR_CONTAINER = eINSTANCE.getKeyValuePairContainer();
+    EClass<KeyValuePairContainer<?, ?>> KEY_VALUE_PAIR_CONTAINER = eINSTANCE.getKeyValuePairContainer();
 
     /**
      * The meta object literal for the '<em><b>Key Value Pairs</b></em>' reference list feature.
@@ -1847,7 +1848,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference KEY_VALUE_PAIR_CONTAINER__KEY_VALUE_PAIRS = eINSTANCE.getKeyValuePairContainer_KeyValuePairs();
+    EReference<KeyValuePairContainer<?, ?>, EList<KeyValuePair<?, ?>>> KEY_VALUE_PAIR_CONTAINER__KEY_VALUE_PAIRS = eINSTANCE.getKeyValuePairContainer_KeyValuePairs();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.StringListKeyValuePairContainerImpl <em>String List Key Value Pair Container</em>}' class.
@@ -1857,7 +1858,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getStringListKeyValuePairContainer()
      * @generated
      */
-    EClass STRING_LIST_KEY_VALUE_PAIR_CONTAINER = eINSTANCE.getStringListKeyValuePairContainer();
+    EClass<StringListKeyValuePairContainer> STRING_LIST_KEY_VALUE_PAIR_CONTAINER = eINSTANCE.getStringListKeyValuePairContainer();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.BidirectionalImpl <em>Bidirectional</em>}' class.
@@ -1867,7 +1868,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getBidirectional()
      * @generated
      */
-    EClass BIDIRECTIONAL = eINSTANCE.getBidirectional();
+    EClass<Bidirectional<?>> BIDIRECTIONAL = eINSTANCE.getBidirectional();
 
     /**
      * The meta object literal for the '<em><b>In</b></em>' reference feature.
@@ -1875,7 +1876,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BIDIRECTIONAL__IN = eINSTANCE.getBidirectional_In();
+    EReference<Bidirectional<?>, ?> BIDIRECTIONAL__IN = eINSTANCE.getBidirectional_In();
 
     /**
      * The meta object literal for the '<em><b>Out</b></em>' reference feature.
@@ -1883,7 +1884,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BIDIRECTIONAL__OUT = eINSTANCE.getBidirectional_Out();
+    EReference<Bidirectional<?>, ?> BIDIRECTIONAL__OUT = eINSTANCE.getBidirectional_Out();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' reference feature.
@@ -1891,7 +1892,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BIDIRECTIONAL__VALUE = eINSTANCE.getBidirectional_Value();
+    EReference<Bidirectional<?>, ?> BIDIRECTIONAL__VALUE = eINSTANCE.getBidirectional_Value();
 
     /**
      * The meta object literal for the '<em><b>Values</b></em>' reference list feature.
@@ -1899,7 +1900,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BIDIRECTIONAL__VALUES = eINSTANCE.getBidirectional_Values();
+    EReference<Bidirectional<?>, EList<?>> BIDIRECTIONAL__VALUES = eINSTANCE.getBidirectional_Values();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.LinkImpl <em>Link</em>}' class.
@@ -1909,7 +1910,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getLink()
      * @generated
      */
-    EClass LINK = eINSTANCE.getLink();
+    EClass<Link> LINK = eINSTANCE.getLink();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.RawLinkImpl <em>Raw Link</em>}' class.
@@ -1919,7 +1920,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getRawLink()
      * @generated
      */
-    EClass RAW_LINK = eINSTANCE.getRawLink();
+    EClass<RawLink> RAW_LINK = eINSTANCE.getRawLink();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.LinkItemImpl <em>Link Item</em>}' class.
@@ -1929,7 +1930,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getLinkItem()
      * @generated
      */
-    EClass LINK_ITEM = eINSTANCE.getLinkItem();
+    EClass<LinkItem> LINK_ITEM = eINSTANCE.getLinkItem();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.MediumBidirectionalImpl <em>Medium Bidirectional</em>}' class.
@@ -1939,7 +1940,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getMediumBidirectional()
      * @generated
      */
-    EClass MEDIUM_BIDIRECTIONAL = eINSTANCE.getMediumBidirectional();
+    EClass<MediumBidirectional<?>> MEDIUM_BIDIRECTIONAL = eINSTANCE.getMediumBidirectional();
 
     /**
      * The meta object literal for the '<em><b>Contents</b></em>' reference list feature.
@@ -1947,7 +1948,7 @@ public interface ReificationPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MEDIUM_BIDIRECTIONAL__CONTENTS = eINSTANCE.getMediumBidirectional_Contents();
+    EReference<MediumBidirectional<?>, EList<MediumBidirectional<?>>> MEDIUM_BIDIRECTIONAL__CONTENTS = eINSTANCE.getMediumBidirectional_Contents();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.common.reification.impl.MediumLinkImpl <em>Medium Link</em>}' class.
@@ -1957,7 +1958,7 @@ public interface ReificationPackage extends EPackage
      * @see org.eclipse.emf.test.common.reification.impl.ReificationPackageImpl#getMediumLink()
      * @generated
      */
-    EClass MEDIUM_LINK = eINSTANCE.getMediumLink();
+    EClass<MediumLink> MEDIUM_LINK = eINSTANCE.getMediumLink();
 
   }
 

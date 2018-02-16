@@ -57,7 +57,7 @@ public class BoundedGenericContainerImpl<T extends Medium> extends EObjectImpl i
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.BOUNDED_GENERIC_CONTAINER;
   }

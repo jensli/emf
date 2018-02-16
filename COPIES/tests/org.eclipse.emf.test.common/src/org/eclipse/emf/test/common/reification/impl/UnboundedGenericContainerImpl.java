@@ -57,7 +57,7 @@ public class UnboundedGenericContainerImpl<T> extends EObjectImpl implements Unb
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.UNBOUNDED_GENERIC_CONTAINER;
   }

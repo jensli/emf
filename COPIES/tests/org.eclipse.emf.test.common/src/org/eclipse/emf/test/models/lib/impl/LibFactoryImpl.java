@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.test.models.lib.*;
 import org.eclipse.emf.test.models.lib.Address;
 import org.eclipse.emf.test.models.lib.Book;
 import org.eclipse.emf.test.models.lib.Cafeteria;
@@ -71,15 +72,16 @@ public class LibFactoryImpl extends EFactoryImpl implements LibFactory
    * @generated
    */
   @Override
-  public EObject create(EClass eClass)
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
     switch (eClass.getClassifierID())
     {
-      case LibPackage.LIBRARY: return createLibrary();
-      case LibPackage.BOOK: return createBook();
-      case LibPackage.ADDRESS: return createAddress();
-      case LibPackage.PERSON: return createPerson();
-      case LibPackage.CAFETERIA: return createCafeteria();
+      case LibPackage.LIBRARY: return (T) createLibrary();
+      case LibPackage.BOOK: return (T) createBook();
+      case LibPackage.ADDRESS: return (T) createAddress();
+      case LibPackage.PERSON: return (T) createPerson();
+      case LibPackage.CAFETERIA: return (T) createCafeteria();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }

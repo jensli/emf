@@ -13,6 +13,7 @@ package org.eclipse.emf.test.models.movie.db.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.eclipse.emf.test.models.movie.db.*;
 import org.eclipse.emf.test.models.movie.db.CriticsReviewType;
 import org.eclipse.emf.test.models.movie.db.CustomerReviewType;
 import org.eclipse.emf.test.models.movie.db.DBPackage;

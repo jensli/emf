@@ -88,7 +88,7 @@ public class USAddrImpl extends AddressTypeImpl implements USAddr
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return CustomerPackage.Literals.US_ADDR;
   }

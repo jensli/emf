@@ -67,7 +67,7 @@ public class CustomerReviewTypeImpl extends CriticsReviewTypeImpl implements Cus
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return DBPackage.Literals.CUSTOMER_REVIEW_TYPE;
   }

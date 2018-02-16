@@ -73,7 +73,7 @@ public class PersonImpl extends EObjectImpl implements Person
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return LibPackage.Literals.PERSON;
   }

@@ -132,7 +132,7 @@ public class PurchaseOrderImpl extends EObjectImpl implements PurchaseOrder
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return PPOPackage.Literals.PURCHASE_ORDER;
   }

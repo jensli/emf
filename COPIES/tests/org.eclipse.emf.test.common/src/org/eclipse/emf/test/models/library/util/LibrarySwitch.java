@@ -13,6 +13,7 @@ package org.eclipse.emf.test.models.library.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.eclipse.emf.test.models.library.*;
 import org.eclipse.emf.test.models.library.Book;
 import org.eclipse.emf.test.models.library.Library;
 import org.eclipse.emf.test.models.library.LibraryPackage;

@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.xml.type.XMLTypeFactory;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
+import org.eclipse.emf.test.models.qname.*;
 import org.eclipse.emf.test.models.qname.DocumentRoot;
 import org.eclipse.emf.test.models.qname.QNameFactory;
 import org.eclipse.emf.test.models.qname.QNamePackage;
@@ -76,12 +77,13 @@ public class QNameFactoryImpl extends EFactoryImpl implements QNameFactory
    * @generated
    */
   @Override
-  public EObject create(EClass eClass)
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
     switch (eClass.getClassifierID())
     {
-      case QNamePackage.DOCUMENT_ROOT: return createDocumentRoot();
-      case QNamePackage.RESOURCE_TYPE: return createResourceType();
+      case QNamePackage.DOCUMENT_ROOT: return (T) createDocumentRoot();
+      case QNamePackage.RESOURCE_TYPE: return (T) createResourceType();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -93,18 +95,20 @@ public class QNameFactoryImpl extends EFactoryImpl implements QNameFactory
    * @generated
    */
   @Override
-  public Object createFromString(EDataType eDataType, String initialValue)
+  @SuppressWarnings("unchecked")
+  public <T> T createFromString(EDataType<T> eDataType, String initialValue)
   {
+    // CHANGE gen: Cast 1
     switch (eDataType.getClassifierID())
     {
       case QNamePackage.INT_QNAME_UNION:
-        return createIntQNameUnionFromString(eDataType, initialValue);
+        return (T) createIntQNameUnionFromString((EDataType<Object>) eDataType, initialValue);
       case QNamePackage.LIST_UNION:
-        return createListUnionFromString(eDataType, initialValue);
+        return (T) createListUnionFromString((EDataType<List<Object>>) eDataType, initialValue);
       case QNamePackage.QNAME_LIST:
-        return createQnameListFromString(eDataType, initialValue);
+        return (T) createQnameListFromString((EDataType<List<QName>>) eDataType, initialValue);
       case QNamePackage.UNION:
-        return createUnionFromString(eDataType, initialValue);
+        return (T) createUnionFromString((EDataType<Object>) eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -115,19 +119,20 @@ public class QNameFactoryImpl extends EFactoryImpl implements QNameFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
-  public String convertToString(EDataType eDataType, Object instanceValue)
+  public <T> String convertToString(EDataType<T> eDataType, T instanceValue)
   {
     switch (eDataType.getClassifierID())
     {
       case QNamePackage.INT_QNAME_UNION:
-        return convertIntQNameUnionToString(eDataType, instanceValue);
+        return convertIntQNameUnionToString((EDataType<Object>) eDataType, (Object) instanceValue);
       case QNamePackage.LIST_UNION:
-        return convertListUnionToString(eDataType, instanceValue);
+        return convertListUnionToString((EDataType<List<Object>>) eDataType, (List<Object>) instanceValue);
       case QNamePackage.QNAME_LIST:
-        return convertQnameListToString(eDataType, instanceValue);
+        return convertQnameListToString((EDataType<List<QName>>) eDataType, (List<QName>) instanceValue);
       case QNamePackage.UNION:
-        return convertUnionToString(eDataType, instanceValue);
+        return convertUnionToString((EDataType<Object>) eDataType, (Object) instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -160,7 +165,7 @@ public class QNameFactoryImpl extends EFactoryImpl implements QNameFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Object createIntQNameUnionFromString(EDataType eDataType, String initialValue)
+  public Object createIntQNameUnionFromString(EDataType<Object> eDataType, String initialValue)
   {
     if (initialValue == null) return null;
     Object result = null;
@@ -199,14 +204,14 @@ public class QNameFactoryImpl extends EFactoryImpl implements QNameFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertIntQNameUnionToString(EDataType eDataType, Object instanceValue)
+  public String convertIntQNameUnionToString(EDataType<Object> eDataType, Object instanceValue)
   {
     if (instanceValue == null) return null;
     if (XMLTypePackage.Literals.INT.isInstance(instanceValue))
     {
       try
       {
-        String value = XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.INT, instanceValue);
+        String value = XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.INT, (Integer)instanceValue);
         if (value != null) return value;
       }
       catch (Exception e)
@@ -218,7 +223,7 @@ public class QNameFactoryImpl extends EFactoryImpl implements QNameFactory
     {
       try
       {
-        String value = XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.QNAME, instanceValue);
+        String value = XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.QNAME, (QName)instanceValue);
         if (value != null) return value;
       }
       catch (Exception e)
@@ -234,7 +239,7 @@ public class QNameFactoryImpl extends EFactoryImpl implements QNameFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public List<Object> createListUnionFromString(EDataType eDataType, String initialValue)
+  public List<Object> createListUnionFromString(EDataType<List<Object>> eDataType, String initialValue)
   {
     if (initialValue == null) return null;
     List<Object> result = new ArrayList<Object>();
@@ -250,7 +255,10 @@ public class QNameFactoryImpl extends EFactoryImpl implements QNameFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertListUnionToString(EDataType eDataType, Object instanceValue)
+  // CHANGE gen: Add type parameter, convert type to string
+  // CHANGE gen: Note, instanceValue has type Object. Change the signature made a lot of duplicate
+  // methods get generated for hand-modified convert methods, because signatures didn't match.
+  public String convertListUnionToString(EDataType<List<Object>> eDataType, Object instanceValue)
   {
     if (instanceValue == null) return null;
     List<?> list = (List<?>)instanceValue;
@@ -258,7 +266,7 @@ public class QNameFactoryImpl extends EFactoryImpl implements QNameFactory
     StringBuffer result = new StringBuffer();
     for (Object item : list)
     {
-      result.append(convertUnionToString(QNamePackage.Literals.UNION, item));
+      result.append(convertUnionToString(QNamePackage.Literals.UNION, (Object) item));
       result.append(' ');
     }
     return result.substring(0, result.length() - 1);
@@ -269,7 +277,7 @@ public class QNameFactoryImpl extends EFactoryImpl implements QNameFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public List<QName> createQnameListFromString(EDataType eDataType, String initialValue)
+  public List<QName> createQnameListFromString(EDataType<List<QName>> eDataType, String initialValue)
   {
     if (initialValue == null) return null;
     List<QName> result = new ArrayList<QName>();
@@ -285,7 +293,10 @@ public class QNameFactoryImpl extends EFactoryImpl implements QNameFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertQnameListToString(EDataType eDataType, Object instanceValue)
+  // CHANGE gen: Add type parameter, convert type to string
+  // CHANGE gen: Note, instanceValue has type Object. Change the signature made a lot of duplicate
+  // methods get generated for hand-modified convert methods, because signatures didn't match.
+  public String convertQnameListToString(EDataType<List<QName>> eDataType, Object instanceValue)
   {
     if (instanceValue == null) return null;
     List<?> list = (List<?>)instanceValue;
@@ -293,7 +304,8 @@ public class QNameFactoryImpl extends EFactoryImpl implements QNameFactory
     StringBuffer result = new StringBuffer();
     for (Object item : list)
     {
-      result.append(XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.QNAME, item));
+      // CHANGE gen: Added cast 6
+      result.append(XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.QNAME, (QName) item));
       result.append(' ');
     }
     return result.substring(0, result.length() - 1);
@@ -304,7 +316,7 @@ public class QNameFactoryImpl extends EFactoryImpl implements QNameFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Object createUnionFromString(EDataType eDataType, String initialValue)
+  public Object createUnionFromString(EDataType<Object> eDataType, String initialValue)
   {
     if (initialValue == null) return null;
     Object result = null;
@@ -343,14 +355,14 @@ public class QNameFactoryImpl extends EFactoryImpl implements QNameFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertUnionToString(EDataType eDataType, Object instanceValue)
+  public String convertUnionToString(EDataType<Object> eDataType, Object instanceValue)
   {
     if (instanceValue == null) return null;
     if (XMLTypePackage.Literals.BOOLEAN.isInstance(instanceValue))
     {
       try
       {
-        String value = XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.BOOLEAN, instanceValue);
+        String value = XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.BOOLEAN, (Boolean)instanceValue);
         if (value != null) return value;
       }
       catch (Exception e)
@@ -362,7 +374,8 @@ public class QNameFactoryImpl extends EFactoryImpl implements QNameFactory
     {
       try
       {
-        String value = convertIntQNameUnionToString(QNamePackage.Literals.INT_QNAME_UNION, instanceValue);
+        // CHANGE gen: Cast 3
+        String value = convertIntQNameUnionToString(QNamePackage.Literals.INT_QNAME_UNION, (Object)instanceValue);
         if (value != null) return value;
       }
       catch (Exception e)

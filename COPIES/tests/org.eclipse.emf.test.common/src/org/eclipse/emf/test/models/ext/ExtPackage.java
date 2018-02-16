@@ -10,6 +10,7 @@
  */
 package org.eclipse.emf.test.models.ext;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -184,7 +185,7 @@ public interface ExtPackage extends EPackage
    * @see org.eclipse.emf.test.models.ext.ExtE
    * @generated
    */
-  EClass getExtE();
+  EClass<ExtE> getExtE();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ext.ExtE#getValue <em>Value</em>}'.
@@ -195,7 +196,7 @@ public interface ExtPackage extends EPackage
    * @see #getExtE()
    * @generated
    */
-  EAttribute getExtE_Value();
+  EAttribute<ExtE, Integer> getExtE_Value();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.emf.test.models.ext.ExtE#getF <em>F</em>}'.
@@ -206,7 +207,7 @@ public interface ExtPackage extends EPackage
    * @see #getExtE()
    * @generated
    */
-  EReference getExtE_F();
+  EReference<ExtE, EList<F>> getExtE_F();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ext.F <em>F</em>}'.
@@ -216,7 +217,7 @@ public interface ExtPackage extends EPackage
    * @see org.eclipse.emf.test.models.ext.F
    * @generated
    */
-  EClass getF();
+  EClass<F> getF();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ext.F#getId <em>Id</em>}'.
@@ -227,7 +228,7 @@ public interface ExtPackage extends EPackage
    * @see #getF()
    * @generated
    */
-  EAttribute getF_Id();
+  EAttribute<F, String> getF_Id();
 
   /**
    * Returns the meta object for the container reference '{@link org.eclipse.emf.test.models.ext.F#getE <em>E</em>}'.
@@ -238,7 +239,7 @@ public interface ExtPackage extends EPackage
    * @see #getF()
    * @generated
    */
-  EReference getF_E();
+  EReference<F, ExtE> getF_E();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -271,7 +272,7 @@ public interface ExtPackage extends EPackage
      * @see org.eclipse.emf.test.models.ext.impl.ExtPackageImpl#getExtE()
      * @generated
      */
-    EClass EXT_E = eINSTANCE.getExtE();
+    EClass<ExtE> EXT_E = eINSTANCE.getExtE();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -279,7 +280,7 @@ public interface ExtPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXT_E__VALUE = eINSTANCE.getExtE_Value();
+    EAttribute<ExtE, Integer> EXT_E__VALUE = eINSTANCE.getExtE_Value();
 
     /**
      * The meta object literal for the '<em><b>F</b></em>' containment reference list feature.
@@ -287,7 +288,7 @@ public interface ExtPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXT_E__F = eINSTANCE.getExtE_F();
+    EReference<ExtE, EList<F>> EXT_E__F = eINSTANCE.getExtE_F();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ext.impl.FImpl <em>F</em>}' class.
@@ -297,7 +298,7 @@ public interface ExtPackage extends EPackage
      * @see org.eclipse.emf.test.models.ext.impl.ExtPackageImpl#getF()
      * @generated
      */
-    EClass F = eINSTANCE.getF();
+    EClass<F> F = eINSTANCE.getF();
 
     /**
      * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
@@ -305,7 +306,7 @@ public interface ExtPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute F__ID = eINSTANCE.getF_Id();
+    EAttribute<F, String> F__ID = eINSTANCE.getF_Id();
 
     /**
      * The meta object literal for the '<em><b>E</b></em>' container reference feature.
@@ -313,7 +314,7 @@ public interface ExtPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference F__E = eINSTANCE.getF_E();
+    EReference<F, ExtE> F__E = eINSTANCE.getF_E();
 
   }
 

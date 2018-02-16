@@ -10,6 +10,7 @@
  */
 package org.eclipse.emf.test.models.ext.impl;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -36,14 +37,14 @@ public class ExtPackageImpl extends EPackageImpl implements ExtPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass extEEClass = null;
+  private EClass<ExtE> extEEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass fEClass = null;
+  private EClass<org.eclipse.emf.test.models.ext.F> fEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -121,7 +122,7 @@ public class ExtPackageImpl extends EPackageImpl implements ExtPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getExtE()
+  public EClass<ExtE> getExtE()
   {
     return extEEClass;
   }
@@ -131,9 +132,10 @@ public class ExtPackageImpl extends EPackageImpl implements ExtPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getExtE_Value()
+  @SuppressWarnings("unchecked")
+  public EAttribute<ExtE, Integer> getExtE_Value()
   {
-    return (EAttribute)extEEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<ExtE, Integer>) extEEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -141,9 +143,10 @@ public class ExtPackageImpl extends EPackageImpl implements ExtPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExtE_F()
+  @SuppressWarnings("unchecked")
+  public EReference<ExtE, EList<org.eclipse.emf.test.models.ext.F>> getExtE_F()
   {
-    return (EReference)extEEClass.getEStructuralFeatures().get(1);
+    return (EReference<ExtE, EList<org.eclipse.emf.test.models.ext.F>>) extEEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -151,7 +154,7 @@ public class ExtPackageImpl extends EPackageImpl implements ExtPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getF()
+  public EClass<org.eclipse.emf.test.models.ext.F> getF()
   {
     return fEClass;
   }
@@ -161,9 +164,10 @@ public class ExtPackageImpl extends EPackageImpl implements ExtPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getF_Id()
+  @SuppressWarnings("unchecked")
+  public EAttribute<org.eclipse.emf.test.models.ext.F, String> getF_Id()
   {
-    return (EAttribute)fEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<org.eclipse.emf.test.models.ext.F, String>) fEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -171,9 +175,10 @@ public class ExtPackageImpl extends EPackageImpl implements ExtPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getF_E()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ext.F, ExtE> getF_E()
   {
-    return (EReference)fEClass.getEStructuralFeatures().get(1);
+    return (EReference<org.eclipse.emf.test.models.ext.F, ExtE>) fEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -200,18 +205,25 @@ public class ExtPackageImpl extends EPackageImpl implements ExtPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    extEEClass = createEClass(EXT_E);
+    // CHANGE gen: Add cast
+    extEEClass = (EClass<ExtE>) createEClass(EXT_E);
+    // CHANGE gen: Use raw type
     createEAttribute(extEEClass, EXT_E__VALUE);
+    // CHANGE gen: Use raw type
     createEReference(extEEClass, EXT_E__F);
 
-    fEClass = createEClass(F);
+    // CHANGE gen: Add cast
+    fEClass = (EClass<org.eclipse.emf.test.models.ext.F>) createEClass(F);
+    // CHANGE gen: Use raw type
     createEAttribute(fEClass, F__ID);
+    // CHANGE gen: Use raw type
     createEReference(fEClass, F__E);
   }
 

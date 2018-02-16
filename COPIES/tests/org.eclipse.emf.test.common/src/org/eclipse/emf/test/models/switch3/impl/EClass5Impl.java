@@ -88,7 +88,7 @@ public class EClass5Impl extends EClass4Impl implements EClass5
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return Switch3Package.Literals.ECLASS5;
   }

@@ -37,7 +37,7 @@ public class ContainerImpl extends EObjectImpl implements Container
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.CONTAINER;
   }

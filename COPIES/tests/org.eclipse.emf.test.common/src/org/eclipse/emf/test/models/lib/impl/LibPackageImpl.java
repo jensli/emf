@@ -10,6 +10,7 @@
  */
 package org.eclipse.emf.test.models.lib.impl;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -36,35 +37,35 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass libraryEClass = null;
+  private EClass<Library> libraryEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass bookEClass = null;
+  private EClass<Book> bookEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass addressEClass = null;
+  private EClass<Address> addressEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass personEClass = null;
+  private EClass<Person> personEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass cafeteriaEClass = null;
+  private EClass<Cafeteria> cafeteriaEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -134,7 +135,7 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLibrary()
+  public EClass<Library> getLibrary()
   {
     return libraryEClass;
   }
@@ -144,9 +145,10 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLibrary_Name()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Library, String> getLibrary_Name()
   {
-    return (EAttribute)libraryEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<Library, String>) libraryEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -154,9 +156,10 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLibrary_Books()
+  @SuppressWarnings("unchecked")
+  public EReference<Library, EList<Book>> getLibrary_Books()
   {
-    return (EReference)libraryEClass.getEStructuralFeatures().get(1);
+    return (EReference<Library, EList<Book>>) libraryEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -164,9 +167,10 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLibrary_Address()
+  @SuppressWarnings("unchecked")
+  public EReference<Library, Address> getLibrary_Address()
   {
-    return (EReference)libraryEClass.getEStructuralFeatures().get(2);
+    return (EReference<Library, Address>) libraryEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -174,9 +178,10 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLibrary_Writers()
+  @SuppressWarnings("unchecked")
+  public EReference<Library, EList<Person>> getLibrary_Writers()
   {
-    return (EReference)libraryEClass.getEStructuralFeatures().get(3);
+    return (EReference<Library, EList<Person>>) libraryEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -184,9 +189,10 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLibrary_Cafeteria()
+  @SuppressWarnings("unchecked")
+  public EReference<Library, Cafeteria> getLibrary_Cafeteria()
   {
-    return (EReference)libraryEClass.getEStructuralFeatures().get(4);
+    return (EReference<Library, Cafeteria>) libraryEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -194,7 +200,7 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBook()
+  public EClass<Book> getBook()
   {
     return bookEClass;
   }
@@ -204,9 +210,10 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBook_Title()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Book, String> getBook_Title()
   {
-    return (EAttribute)bookEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<Book, String>) bookEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -214,7 +221,7 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAddress()
+  public EClass<Address> getAddress()
   {
     return addressEClass;
   }
@@ -224,9 +231,10 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAddress_PostalCode()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Address, String> getAddress_PostalCode()
   {
-    return (EAttribute)addressEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<Address, String>) addressEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -234,7 +242,7 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getPerson()
+  public EClass<Person> getPerson()
   {
     return personEClass;
   }
@@ -244,9 +252,10 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPerson_Name()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Person, String> getPerson_Name()
   {
-    return (EAttribute)personEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<Person, String>) personEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -254,9 +263,10 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPerson_Library()
+  @SuppressWarnings("unchecked")
+  public EReference<Person, Library> getPerson_Library()
   {
-    return (EReference)personEClass.getEStructuralFeatures().get(1);
+    return (EReference<Person, Library>) personEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -264,7 +274,7 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCafeteria()
+  public EClass<Cafeteria> getCafeteria()
   {
     return cafeteriaEClass;
   }
@@ -274,9 +284,10 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCafeteria_Name()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Cafeteria, String> getCafeteria_Name()
   {
-    return (EAttribute)cafeteriaEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<Cafeteria, String>) cafeteriaEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -284,9 +295,10 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCafeteria_Library()
+  @SuppressWarnings("unchecked")
+  public EReference<Cafeteria, Library> getCafeteria_Library()
   {
-    return (EReference)cafeteriaEClass.getEStructuralFeatures().get(1);
+    return (EReference<Cafeteria, Library>) cafeteriaEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -313,31 +325,48 @@ public class LibPackageImpl extends EPackageImpl implements LibPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    libraryEClass = createEClass(LIBRARY);
+    // CHANGE gen: Add cast
+    libraryEClass = (EClass<Library>) createEClass(LIBRARY);
+    // CHANGE gen: Use raw type
     createEAttribute(libraryEClass, LIBRARY__NAME);
+    // CHANGE gen: Use raw type
     createEReference(libraryEClass, LIBRARY__BOOKS);
+    // CHANGE gen: Use raw type
     createEReference(libraryEClass, LIBRARY__ADDRESS);
+    // CHANGE gen: Use raw type
     createEReference(libraryEClass, LIBRARY__WRITERS);
+    // CHANGE gen: Use raw type
     createEReference(libraryEClass, LIBRARY__CAFETERIA);
 
-    bookEClass = createEClass(BOOK);
+    // CHANGE gen: Add cast
+    bookEClass = (EClass<Book>) createEClass(BOOK);
+    // CHANGE gen: Use raw type
     createEAttribute(bookEClass, BOOK__TITLE);
 
-    addressEClass = createEClass(ADDRESS);
+    // CHANGE gen: Add cast
+    addressEClass = (EClass<Address>) createEClass(ADDRESS);
+    // CHANGE gen: Use raw type
     createEAttribute(addressEClass, ADDRESS__POSTAL_CODE);
 
-    personEClass = createEClass(PERSON);
+    // CHANGE gen: Add cast
+    personEClass = (EClass<Person>) createEClass(PERSON);
+    // CHANGE gen: Use raw type
     createEAttribute(personEClass, PERSON__NAME);
+    // CHANGE gen: Use raw type
     createEReference(personEClass, PERSON__LIBRARY);
 
-    cafeteriaEClass = createEClass(CAFETERIA);
+    // CHANGE gen: Add cast
+    cafeteriaEClass = (EClass<Cafeteria>) createEClass(CAFETERIA);
+    // CHANGE gen: Use raw type
     createEAttribute(cafeteriaEClass, CAFETERIA__NAME);
+    // CHANGE gen: Use raw type
     createEReference(cafeteriaEClass, CAFETERIA__LIBRARY);
   }
 

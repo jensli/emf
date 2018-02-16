@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.test.models.order.*;
 import org.eclipse.emf.test.models.order.CustomerOrder;
 import org.eclipse.emf.test.models.order.DocumentRoot;
 import org.eclipse.emf.test.models.order.Order;
@@ -69,13 +70,14 @@ public class OrderFactoryImpl extends EFactoryImpl implements OrderFactory
    * @generated
    */
   @Override
-  public EObject create(EClass eClass)
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
     switch (eClass.getClassifierID())
     {
-      case OrderPackage.CUSTOMER_ORDER: return createCustomerOrder();
-      case OrderPackage.DOCUMENT_ROOT: return createDocumentRoot();
-      case OrderPackage.ORDER: return createOrder();
+      case OrderPackage.CUSTOMER_ORDER: return (T) createCustomerOrder();
+      case OrderPackage.DOCUMENT_ROOT: return (T) createDocumentRoot();
+      case OrderPackage.ORDER: return (T) createOrder();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }

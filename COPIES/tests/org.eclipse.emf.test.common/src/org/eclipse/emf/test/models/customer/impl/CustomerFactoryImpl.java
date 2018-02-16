@@ -1,17 +1,7 @@
-/**
- * Copyright (c) 2007 IBM Corporation and others.
- * All rights reserved.  This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *   IBM - Initial API and implementation
- */
 package org.eclipse.emf.test.models.customer.impl;
 
-import java.math.BigInteger;
 
+import java.math.BigInteger;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -21,15 +11,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.xml.type.XMLTypeFactory;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
-import org.eclipse.emf.test.models.customer.CanadaAddr;
-import org.eclipse.emf.test.models.customer.CreditInfo;
-import org.eclipse.emf.test.models.customer.CustomerFactory;
-import org.eclipse.emf.test.models.customer.CustomerPackage;
-import org.eclipse.emf.test.models.customer.CustomerType;
-import org.eclipse.emf.test.models.customer.CustomersType;
-import org.eclipse.emf.test.models.customer.DocumentRoot;
-import org.eclipse.emf.test.models.customer.USAddr;
-import org.eclipse.emf.test.models.customer.USState;
+import org.eclipse.emf.test.models.customer.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -79,16 +61,18 @@ public class CustomerFactoryImpl extends EFactoryImpl implements CustomerFactory
    * @generated
    */
   @Override
-  public EObject create(EClass eClass)
+  // CHANGE: Added generics and annotation
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
     switch (eClass.getClassifierID())
     {
-      case CustomerPackage.CANADA_ADDR: return createCanadaAddr();
-      case CustomerPackage.CREDIT_INFO: return createCreditInfo();
-      case CustomerPackage.CUSTOMERS_TYPE: return createCustomersType();
-      case CustomerPackage.CUSTOMER_TYPE: return createCustomerType();
-      case CustomerPackage.DOCUMENT_ROOT: return createDocumentRoot();
-      case CustomerPackage.US_ADDR: return createUSAddr();
+      case CustomerPackage.CANADA_ADDR: return (T) createCanadaAddr();
+      case CustomerPackage.CREDIT_INFO: return (T) createCreditInfo();
+      case CustomerPackage.CUSTOMERS_TYPE: return (T) createCustomersType();
+      case CustomerPackage.CUSTOMER_TYPE: return (T) createCustomerType();
+      case CustomerPackage.DOCUMENT_ROOT: return (T) createDocumentRoot();
+      case CustomerPackage.US_ADDR: return (T) createUSAddr();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -100,18 +84,21 @@ public class CustomerFactoryImpl extends EFactoryImpl implements CustomerFactory
    * @generated
    */
   @Override
-  public Object createFromString(EDataType eDataType, String initialValue)
+  // CHANGE: Added generics and annotation
+  @SuppressWarnings("unchecked")
+  public <T> T createFromString(EDataType<T> eDataType, String initialValue)
   {
+    // CHANGE gen: Cast added 1
     switch (eDataType.getClassifierID())
     {
       case CustomerPackage.US_STATE:
-        return createUSStateFromString(eDataType, initialValue);
+        return (T) createUSStateFromString((EDataType<USState>) eDataType, initialValue);
       case CustomerPackage.US_STATE_OBJECT:
-        return createUSStateObjectFromString(eDataType, initialValue);
+        return (T) createUSStateObjectFromString((EDataType<USState>) eDataType, initialValue);
       case CustomerPackage.ZIP_CODES:
-        return createZipCodesFromString(eDataType, initialValue);
+        return (T) createZipCodesFromString((EDataType<BigInteger>) eDataType, initialValue);
       case CustomerPackage.ZIP_UNION:
-        return createZipUnionFromString(eDataType, initialValue);
+        return (T) createZipUnionFromString((EDataType<Object>) eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -122,19 +109,20 @@ public class CustomerFactoryImpl extends EFactoryImpl implements CustomerFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
-  public String convertToString(EDataType eDataType, Object instanceValue)
+  public <T> String convertToString(EDataType<T> eDataType, T instanceValue)
   {
     switch (eDataType.getClassifierID())
     {
       case CustomerPackage.US_STATE:
-        return convertUSStateToString(eDataType, instanceValue);
+        return convertUSStateToString((EDataType<USState>) eDataType, (USState) instanceValue);
       case CustomerPackage.US_STATE_OBJECT:
-        return convertUSStateObjectToString(eDataType, instanceValue);
+        return convertUSStateObjectToString((EDataType<USState>) eDataType, (USState) instanceValue);
       case CustomerPackage.ZIP_CODES:
-        return convertZipCodesToString(eDataType, instanceValue);
+        return convertZipCodesToString((EDataType<BigInteger>) eDataType, (BigInteger) instanceValue);
       case CustomerPackage.ZIP_UNION:
-        return convertZipUnionToString(eDataType, instanceValue);
+        return convertZipUnionToString((EDataType<Object>) eDataType, (Object) instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -211,7 +199,7 @@ public class CustomerFactoryImpl extends EFactoryImpl implements CustomerFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public USState createUSStateFromString(EDataType eDataType, String initialValue)
+  public USState createUSStateFromString(EDataType<USState> eDataType, String initialValue)
   {
     USState result = USState.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -223,7 +211,10 @@ public class CustomerFactoryImpl extends EFactoryImpl implements CustomerFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertUSStateToString(EDataType eDataType, Object instanceValue)
+  // CHANGE gen: Add type parameter, convert type to string
+  // CHANGE gen: Note, instanceValue has type Object. Change the signature made a lot of duplicate
+  // methods get generated for hand-modified convert methods, because signatures didn't match.
+  public String convertUSStateToString(EDataType<USState> eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -233,7 +224,7 @@ public class CustomerFactoryImpl extends EFactoryImpl implements CustomerFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public USState createUSStateObjectFromString(EDataType eDataType, String initialValue)
+  public USState createUSStateObjectFromString(EDataType<USState> eDataType, String initialValue)
   {
     return createUSStateFromString(CustomerPackage.Literals.US_STATE, initialValue);
   }
@@ -243,7 +234,10 @@ public class CustomerFactoryImpl extends EFactoryImpl implements CustomerFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertUSStateObjectToString(EDataType eDataType, Object instanceValue)
+  // CHANGE gen: Add type parameter, convert type to string
+  // CHANGE gen: Note, instanceValue has type Object. Change the signature made a lot of duplicate
+  // methods get generated for hand-modified convert methods, because signatures didn't match.
+  public String convertUSStateObjectToString(EDataType<USState> eDataType, Object instanceValue)
   {
     return convertUSStateToString(CustomerPackage.Literals.US_STATE, instanceValue);
   }
@@ -253,7 +247,7 @@ public class CustomerFactoryImpl extends EFactoryImpl implements CustomerFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BigInteger createZipCodesFromString(EDataType eDataType, String initialValue)
+  public BigInteger createZipCodesFromString(EDataType<BigInteger> eDataType, String initialValue)
   {
     return (BigInteger)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.INTEGER, initialValue);
   }
@@ -263,9 +257,13 @@ public class CustomerFactoryImpl extends EFactoryImpl implements CustomerFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertZipCodesToString(EDataType eDataType, Object instanceValue)
+  // CHANGE gen: Add type parameter, convert type to string
+  // CHANGE gen: Note, instanceValue has type Object. Change the signature made a lot of duplicate
+  // methods get generated for hand-modified convert methods, because signatures didn't match.
+  public String convertZipCodesToString(EDataType<BigInteger> eDataType, Object instanceValue)
   {
-    return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.INTEGER, instanceValue);
+    // CHANGE gen: Added cast
+    return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.INTEGER, (BigInteger)instanceValue);
   }
 
   /**
@@ -273,7 +271,7 @@ public class CustomerFactoryImpl extends EFactoryImpl implements CustomerFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Object createZipUnionFromString(EDataType eDataType, String initialValue)
+  public Object createZipUnionFromString(EDataType<Object> eDataType, String initialValue)
   {
     if (initialValue == null) return null;
     Object result = null;
@@ -312,14 +310,15 @@ public class CustomerFactoryImpl extends EFactoryImpl implements CustomerFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertZipUnionToString(EDataType eDataType, Object instanceValue)
+  public String convertZipUnionToString(EDataType<Object> eDataType, Object instanceValue)
   {
     if (instanceValue == null) return null;
     if (CustomerPackage.Literals.US_STATE.isInstance(instanceValue))
     {
       try
       {
-        String value = convertUSStateToString(CustomerPackage.Literals.US_STATE, instanceValue);
+        // CHANGE gen: Cast added 3
+        String value = convertUSStateToString(CustomerPackage.Literals.US_STATE, (USState)instanceValue);
         if (value != null) return value;
       }
       catch (Exception e)
@@ -331,7 +330,8 @@ public class CustomerFactoryImpl extends EFactoryImpl implements CustomerFactory
     {
       try
       {
-        String value = convertZipCodesToString(CustomerPackage.Literals.ZIP_CODES, instanceValue);
+        // CHANGE gen: Cast added 3
+        String value = convertZipCodesToString(CustomerPackage.Literals.ZIP_CODES, (BigInteger)instanceValue);
         if (value != null) return value;
       }
       catch (Exception e)

@@ -10,10 +10,14 @@
  */
 package org.eclipse.emf.test.models.order;
 
+import java.util.List;
+import javax.xml.datatype.XMLGregorianCalendar;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.util.FeatureMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -229,7 +233,7 @@ public interface OrderPackage extends EPackage
    * @see org.eclipse.emf.test.models.order.CustomerOrder
    * @generated
    */
-  EClass getCustomerOrder();
+  EClass<CustomerOrder> getCustomerOrder();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.order.CustomerOrder#getMoviesToSee <em>Movies To See</em>}'.
@@ -240,7 +244,7 @@ public interface OrderPackage extends EPackage
    * @see #getCustomerOrder()
    * @generated
    */
-  EReference getCustomerOrder_MoviesToSee();
+  EReference<CustomerOrder, Order> getCustomerOrder_MoviesToSee();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.order.CustomerOrder#getMoviesSeen <em>Movies Seen</em>}'.
@@ -251,7 +255,7 @@ public interface OrderPackage extends EPackage
    * @see #getCustomerOrder()
    * @generated
    */
-  EReference getCustomerOrder_MoviesSeen();
+  EReference<CustomerOrder, Order> getCustomerOrder_MoviesSeen();
 
   /**
    * Returns the meta object for the attribute list '{@link org.eclipse.emf.test.models.order.CustomerOrder#getAny <em>Any</em>}'.
@@ -262,7 +266,7 @@ public interface OrderPackage extends EPackage
    * @see #getCustomerOrder()
    * @generated
    */
-  EAttribute getCustomerOrder_Any();
+  EAttribute<CustomerOrder, FeatureMap> getCustomerOrder_Any();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.order.CustomerOrder#getCustomerID <em>Customer ID</em>}'.
@@ -273,7 +277,7 @@ public interface OrderPackage extends EPackage
    * @see #getCustomerOrder()
    * @generated
    */
-  EAttribute getCustomerOrder_CustomerID();
+  EAttribute<CustomerOrder, String> getCustomerOrder_CustomerID();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.order.DocumentRoot <em>Document Root</em>}'.
@@ -283,7 +287,7 @@ public interface OrderPackage extends EPackage
    * @see org.eclipse.emf.test.models.order.DocumentRoot
    * @generated
    */
-  EClass getDocumentRoot();
+  EClass<DocumentRoot> getDocumentRoot();
 
   /**
    * Returns the meta object for the attribute list '{@link org.eclipse.emf.test.models.order.DocumentRoot#getMixed <em>Mixed</em>}'.
@@ -294,7 +298,7 @@ public interface OrderPackage extends EPackage
    * @see #getDocumentRoot()
    * @generated
    */
-  EAttribute getDocumentRoot_Mixed();
+  EAttribute<DocumentRoot, FeatureMap> getDocumentRoot_Mixed();
 
   /**
    * Returns the meta object for the map '{@link org.eclipse.emf.test.models.order.DocumentRoot#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}'.
@@ -305,7 +309,7 @@ public interface OrderPackage extends EPackage
    * @see #getDocumentRoot()
    * @generated
    */
-  EReference getDocumentRoot_XMLNSPrefixMap();
+  EReference<DocumentRoot, EMap<String, String>> getDocumentRoot_XMLNSPrefixMap();
 
   /**
    * Returns the meta object for the map '{@link org.eclipse.emf.test.models.order.DocumentRoot#getXSISchemaLocation <em>XSI Schema Location</em>}'.
@@ -316,7 +320,7 @@ public interface OrderPackage extends EPackage
    * @see #getDocumentRoot()
    * @generated
    */
-  EReference getDocumentRoot_XSISchemaLocation();
+  EReference<DocumentRoot, EMap<String, String>> getDocumentRoot_XSISchemaLocation();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.order.DocumentRoot#getOrder <em>Order</em>}'.
@@ -327,7 +331,7 @@ public interface OrderPackage extends EPackage
    * @see #getDocumentRoot()
    * @generated
    */
-  EReference getDocumentRoot_Order();
+  EReference<DocumentRoot, CustomerOrder> getDocumentRoot_Order();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.order.Order <em>Order</em>}'.
@@ -337,7 +341,7 @@ public interface OrderPackage extends EPackage
    * @see org.eclipse.emf.test.models.order.Order
    * @generated
    */
-  EClass getOrder();
+  EClass<Order> getOrder();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.order.Order#getDateRequested <em>Date Requested</em>}'.
@@ -348,7 +352,7 @@ public interface OrderPackage extends EPackage
    * @see #getOrder()
    * @generated
    */
-  EAttribute getOrder_DateRequested();
+  EAttribute<Order, XMLGregorianCalendar> getOrder_DateRequested();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.order.Order#getLastUpdated <em>Last Updated</em>}'.
@@ -359,7 +363,7 @@ public interface OrderPackage extends EPackage
    * @see #getOrder()
    * @generated
    */
-  EAttribute getOrder_LastUpdated();
+  EAttribute<Order, XMLGregorianCalendar> getOrder_LastUpdated();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.order.Order#getMovies <em>Movies</em>}'.
@@ -370,7 +374,7 @@ public interface OrderPackage extends EPackage
    * @see #getOrder()
    * @generated
    */
-  EAttribute getOrder_Movies();
+  EAttribute<Order, List<String>> getOrder_Movies();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -403,7 +407,7 @@ public interface OrderPackage extends EPackage
      * @see org.eclipse.emf.test.models.order.impl.OrderPackageImpl#getCustomerOrder()
      * @generated
      */
-    EClass CUSTOMER_ORDER = eINSTANCE.getCustomerOrder();
+    EClass<CustomerOrder> CUSTOMER_ORDER = eINSTANCE.getCustomerOrder();
 
     /**
      * The meta object literal for the '<em><b>Movies To See</b></em>' containment reference feature.
@@ -411,7 +415,7 @@ public interface OrderPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CUSTOMER_ORDER__MOVIES_TO_SEE = eINSTANCE.getCustomerOrder_MoviesToSee();
+    EReference<CustomerOrder, Order> CUSTOMER_ORDER__MOVIES_TO_SEE = eINSTANCE.getCustomerOrder_MoviesToSee();
 
     /**
      * The meta object literal for the '<em><b>Movies Seen</b></em>' containment reference feature.
@@ -419,7 +423,7 @@ public interface OrderPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CUSTOMER_ORDER__MOVIES_SEEN = eINSTANCE.getCustomerOrder_MoviesSeen();
+    EReference<CustomerOrder, Order> CUSTOMER_ORDER__MOVIES_SEEN = eINSTANCE.getCustomerOrder_MoviesSeen();
 
     /**
      * The meta object literal for the '<em><b>Any</b></em>' attribute list feature.
@@ -427,7 +431,7 @@ public interface OrderPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CUSTOMER_ORDER__ANY = eINSTANCE.getCustomerOrder_Any();
+    EAttribute<CustomerOrder, FeatureMap> CUSTOMER_ORDER__ANY = eINSTANCE.getCustomerOrder_Any();
 
     /**
      * The meta object literal for the '<em><b>Customer ID</b></em>' attribute feature.
@@ -435,7 +439,7 @@ public interface OrderPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CUSTOMER_ORDER__CUSTOMER_ID = eINSTANCE.getCustomerOrder_CustomerID();
+    EAttribute<CustomerOrder, String> CUSTOMER_ORDER__CUSTOMER_ID = eINSTANCE.getCustomerOrder_CustomerID();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.order.impl.DocumentRootImpl <em>Document Root</em>}' class.
@@ -445,7 +449,7 @@ public interface OrderPackage extends EPackage
      * @see org.eclipse.emf.test.models.order.impl.OrderPackageImpl#getDocumentRoot()
      * @generated
      */
-    EClass DOCUMENT_ROOT = eINSTANCE.getDocumentRoot();
+    EClass<DocumentRoot> DOCUMENT_ROOT = eINSTANCE.getDocumentRoot();
 
     /**
      * The meta object literal for the '<em><b>Mixed</b></em>' attribute list feature.
@@ -453,7 +457,7 @@ public interface OrderPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DOCUMENT_ROOT__MIXED = eINSTANCE.getDocumentRoot_Mixed();
+    EAttribute<DocumentRoot, FeatureMap> DOCUMENT_ROOT__MIXED = eINSTANCE.getDocumentRoot_Mixed();
 
     /**
      * The meta object literal for the '<em><b>XMLNS Prefix Map</b></em>' map feature.
@@ -461,7 +465,7 @@ public interface OrderPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOCUMENT_ROOT__XMLNS_PREFIX_MAP = eINSTANCE.getDocumentRoot_XMLNSPrefixMap();
+    EReference<DocumentRoot, EMap<String, String>> DOCUMENT_ROOT__XMLNS_PREFIX_MAP = eINSTANCE.getDocumentRoot_XMLNSPrefixMap();
 
     /**
      * The meta object literal for the '<em><b>XSI Schema Location</b></em>' map feature.
@@ -469,7 +473,7 @@ public interface OrderPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOCUMENT_ROOT__XSI_SCHEMA_LOCATION = eINSTANCE.getDocumentRoot_XSISchemaLocation();
+    EReference<DocumentRoot, EMap<String, String>> DOCUMENT_ROOT__XSI_SCHEMA_LOCATION = eINSTANCE.getDocumentRoot_XSISchemaLocation();
 
     /**
      * The meta object literal for the '<em><b>Order</b></em>' containment reference feature.
@@ -477,7 +481,7 @@ public interface OrderPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOCUMENT_ROOT__ORDER = eINSTANCE.getDocumentRoot_Order();
+    EReference<DocumentRoot, CustomerOrder> DOCUMENT_ROOT__ORDER = eINSTANCE.getDocumentRoot_Order();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.order.impl.OrderImpl <em>Order</em>}' class.
@@ -487,7 +491,7 @@ public interface OrderPackage extends EPackage
      * @see org.eclipse.emf.test.models.order.impl.OrderPackageImpl#getOrder()
      * @generated
      */
-    EClass ORDER = eINSTANCE.getOrder();
+    EClass<Order> ORDER = eINSTANCE.getOrder();
 
     /**
      * The meta object literal for the '<em><b>Date Requested</b></em>' attribute feature.
@@ -495,7 +499,7 @@ public interface OrderPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ORDER__DATE_REQUESTED = eINSTANCE.getOrder_DateRequested();
+    EAttribute<Order, XMLGregorianCalendar> ORDER__DATE_REQUESTED = eINSTANCE.getOrder_DateRequested();
 
     /**
      * The meta object literal for the '<em><b>Last Updated</b></em>' attribute feature.
@@ -503,7 +507,7 @@ public interface OrderPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ORDER__LAST_UPDATED = eINSTANCE.getOrder_LastUpdated();
+    EAttribute<Order, XMLGregorianCalendar> ORDER__LAST_UPDATED = eINSTANCE.getOrder_LastUpdated();
 
     /**
      * The meta object literal for the '<em><b>Movies</b></em>' attribute feature.
@@ -511,7 +515,7 @@ public interface OrderPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ORDER__MOVIES = eINSTANCE.getOrder_Movies();
+    EAttribute<Order, List<String>> ORDER__MOVIES = eINSTANCE.getOrder_Movies();
 
   }
 

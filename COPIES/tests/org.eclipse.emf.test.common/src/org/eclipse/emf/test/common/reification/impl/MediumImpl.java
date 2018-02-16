@@ -36,7 +36,7 @@ public class MediumImpl extends LowImpl implements Medium
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.MEDIUM;
   }

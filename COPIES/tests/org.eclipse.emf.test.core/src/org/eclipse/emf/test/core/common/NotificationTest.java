@@ -194,21 +194,21 @@ public class NotificationTest
    * @since 2.5
    */
   @Test
-  public void testNotify()
+  public <T extends EObject> void testNotify()
   {
-    EClass c = EcoreFactory.eINSTANCE.createEClass();
-    EAttribute a1 = createEAttribute("a1");
-    EAttribute a2 = createEAttribute("a2");
-    EAttribute a3 = createEAttribute("a3");
-    EAttribute a4 = createEAttribute("a4");
-    EAttribute a5 = createEAttribute("a5");
-    EAttribute a6 = createEAttribute("a6");
+    EClass<T> c = EcoreFactory.eINSTANCE.createEClass();
+    EAttribute<T, ?> a1 = createEAttribute("a1");
+    EAttribute<T, ?> a2 = createEAttribute("a2");
+    EAttribute<T, ?> a3 = createEAttribute("a3");
+    EAttribute<T, ?> a4 = createEAttribute("a4");
+    EAttribute<T, ?> a5 = createEAttribute("a5");
+    EAttribute<T, ?> a6 = createEAttribute("a6");
 
-    EStructuralFeature eStructuralFeatures = EcorePackage.Literals.ECLASS__ESTRUCTURAL_FEATURES;
+    EStructuralFeature<?, ?> eStructuralFeatures = EcorePackage.Literals.ECLASS__ESTRUCTURAL_FEATURES;
     int eStructuralFeaturesInt = EcorePackage.ECLASS__ESTRUCTURAL_FEATURES;
-    EStructuralFeature name = EcorePackage.Literals.ENAMED_ELEMENT__NAME;
+    EStructuralFeature<?, ?> name = EcorePackage.Literals.ENAMED_ELEMENT__NAME;
     int nameInt = EcorePackage.ENAMED_ELEMENT__NAME;
-    EStructuralFeature upperBound = EcorePackage.Literals.ETYPED_ELEMENT__UPPER_BOUND;
+    EStructuralFeature<?, ?> upperBound = EcorePackage.Literals.ETYPED_ELEMENT__UPPER_BOUND;
     int upperBoundInt = EcorePackage.ETYPED_ELEMENT__UPPER_BOUND;
 
     NotificationResult[] expected = new NotificationResult[]
@@ -233,7 +233,7 @@ public class NotificationTest
     c.eAdapters().add(tester);
     c.getEStructuralFeatures().add(a1);
     c.getEStructuralFeatures().addAll(Arrays.asList(a2, a3, a4, a5));
-    c.getEStructuralFeatures().addAll(Collections.<EStructuralFeature>emptyList()); // noop
+    c.getEStructuralFeatures().addAll(Collections.<EStructuralFeature<T, ?>>emptyList()); // noop
     c.getEStructuralFeatures().remove(1);
     c.getEStructuralFeatures().remove(a6); // noop
     c.getEStructuralFeatures().removeAll(Arrays.asList(a3, a4));
@@ -253,9 +253,9 @@ public class NotificationTest
     tester.finish();
   }
 
-  EAttribute createEAttribute(String name)
+  <C extends EObject, T> EAttribute<C, T> createEAttribute(String name)
   {
-    EAttribute result = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<C, T> result = EcoreFactory.eINSTANCE.createEAttribute();
     result.setName(name);
     return result;
   }

@@ -69,7 +69,7 @@ public class KeyValuePairImpl<K extends EList<?>, V extends KeyValuePair<K, V>> 
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.KEY_VALUE_PAIR;
   }

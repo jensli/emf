@@ -106,7 +106,7 @@ public class BidirectionalImpl<T extends Bidirectional<T>> extends EObjectImpl i
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.BIDIRECTIONAL;
   }

@@ -164,7 +164,7 @@ public interface Switch1Package extends EPackage
    * @see org.eclipse.emf.test.models.switch1.EClass0
    * @generated
    */
-  EClass getEClass0();
+  EClass<EClass0> getEClass0();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.switch1.EClass0#getEAttribute0 <em>EAttribute0</em>}'.
@@ -175,7 +175,7 @@ public interface Switch1Package extends EPackage
    * @see #getEClass0()
    * @generated
    */
-  EAttribute getEClass0_EAttribute0();
+  EAttribute<EClass0, String> getEClass0_EAttribute0();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.switch1.EClass0#getEAttribute1 <em>EAttribute1</em>}'.
@@ -186,7 +186,7 @@ public interface Switch1Package extends EPackage
    * @see #getEClass0()
    * @generated
    */
-  EAttribute getEClass0_EAttribute1();
+  EAttribute<EClass0, String> getEClass0_EAttribute1();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.switch1.EClass1 <em>EClass1</em>}'.
@@ -196,7 +196,7 @@ public interface Switch1Package extends EPackage
    * @see org.eclipse.emf.test.models.switch1.EClass1
    * @generated
    */
-  EClass getEClass1();
+  EClass<EClass1> getEClass1();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.switch1.EClass1#getEAttribute2 <em>EAttribute2</em>}'.
@@ -207,7 +207,7 @@ public interface Switch1Package extends EPackage
    * @see #getEClass1()
    * @generated
    */
-  EAttribute getEClass1_EAttribute2();
+  EAttribute<EClass1, String> getEClass1_EAttribute2();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.switch1.EClass1#getEAttribute3 <em>EAttribute3</em>}'.
@@ -218,7 +218,7 @@ public interface Switch1Package extends EPackage
    * @see #getEClass1()
    * @generated
    */
-  EAttribute getEClass1_EAttribute3();
+  EAttribute<EClass1, String> getEClass1_EAttribute3();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -251,7 +251,7 @@ public interface Switch1Package extends EPackage
      * @see org.eclipse.emf.test.models.switch1.impl.Switch1PackageImpl#getEClass0()
      * @generated
      */
-    EClass ECLASS0 = eINSTANCE.getEClass0();
+    EClass<EClass0> ECLASS0 = eINSTANCE.getEClass0();
 
     /**
      * The meta object literal for the '<em><b>EAttribute0</b></em>' attribute feature.
@@ -259,7 +259,7 @@ public interface Switch1Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ECLASS0__EATTRIBUTE0 = eINSTANCE.getEClass0_EAttribute0();
+    EAttribute<EClass0, String> ECLASS0__EATTRIBUTE0 = eINSTANCE.getEClass0_EAttribute0();
 
     /**
      * The meta object literal for the '<em><b>EAttribute1</b></em>' attribute feature.
@@ -267,7 +267,7 @@ public interface Switch1Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ECLASS0__EATTRIBUTE1 = eINSTANCE.getEClass0_EAttribute1();
+    EAttribute<EClass0, String> ECLASS0__EATTRIBUTE1 = eINSTANCE.getEClass0_EAttribute1();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.switch1.impl.EClass1Impl <em>EClass1</em>}' class.
@@ -277,7 +277,7 @@ public interface Switch1Package extends EPackage
      * @see org.eclipse.emf.test.models.switch1.impl.Switch1PackageImpl#getEClass1()
      * @generated
      */
-    EClass ECLASS1 = eINSTANCE.getEClass1();
+    EClass<EClass1> ECLASS1 = eINSTANCE.getEClass1();
 
     /**
      * The meta object literal for the '<em><b>EAttribute2</b></em>' attribute feature.
@@ -285,7 +285,7 @@ public interface Switch1Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ECLASS1__EATTRIBUTE2 = eINSTANCE.getEClass1_EAttribute2();
+    EAttribute<EClass1, String> ECLASS1__EATTRIBUTE2 = eINSTANCE.getEClass1_EAttribute2();
 
     /**
      * The meta object literal for the '<em><b>EAttribute3</b></em>' attribute feature.
@@ -293,7 +293,7 @@ public interface Switch1Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ECLASS1__EATTRIBUTE3 = eINSTANCE.getEClass1_EAttribute3();
+    EAttribute<EClass1, String> ECLASS1__EATTRIBUTE3 = eINSTANCE.getEClass1_EAttribute3();
 
   }
 

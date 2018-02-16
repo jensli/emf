@@ -37,7 +37,7 @@ public class RawLinkImpl extends BidirectionalImpl implements RawLink
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.RAW_LINK;
   }

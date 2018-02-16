@@ -27,9 +27,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.EObject;
@@ -130,25 +132,27 @@ public class SpecialCasesTest
   }
 
   @Test
-  public void testOneToManyContainment()
+  public <P extends EObject> void testOneToManyContainment()
   {
     // Creating the model
     EPackage pack = EcoreFactory.eINSTANCE.createEPackage();
 
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<P> person = EcoreFactory.eINSTANCE.createEClass();
+    @SuppressWarnings("unchecked")
+    EClassifier<EList<P>> persons = (EClassifier<EList<P>>)person;
     person.setName("Person");
     pack.getEClassifiers().add(person);
 
-    EReference friendsReference = EcoreFactory.eINSTANCE.createEReference();
+    EReference<P, EList<P>> friendsReference = EcoreFactory.eINSTANCE.createEReference();
     friendsReference.setName("Friends");
-    friendsReference.setEType(person);
+    friendsReference.setEType(persons);
     friendsReference.setContainment(true);
     friendsReference.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
     person.getEStructuralFeatures().add(friendsReference);
 
-    EReference enemiesReference = EcoreFactory.eINSTANCE.createEReference();
+    EReference<P, EList<P>> enemiesReference = EcoreFactory.eINSTANCE.createEReference();
     enemiesReference.setName("Enemies");
-    enemiesReference.setEType(person);
+    enemiesReference.setEType(persons);
     enemiesReference.setContainment(true);
     enemiesReference.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
     person.getEStructuralFeatures().add(enemiesReference);
@@ -200,27 +204,27 @@ public class SpecialCasesTest
   }
 
   @Test
-  public void testOneToOneContainment()
+  public <P extends EObject, M extends EObject> void testOneToOneContainment()
   {
     // Creating the model
     EPackage pack = EcoreFactory.eINSTANCE.createEPackage();
 
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<P> person = EcoreFactory.eINSTANCE.createEClass();
     person.setName("Person");
     pack.getEClassifiers().add(person);
 
-    EClass mail = EcoreFactory.eINSTANCE.createEClass();
+    EClass<M> mail = EcoreFactory.eINSTANCE.createEClass();
     mail.setName("Mail");
     pack.getEClassifiers().add(mail);
 
-    EReference inBoxReference = EcoreFactory.eINSTANCE.createEReference();
+    EReference<P, M> inBoxReference = EcoreFactory.eINSTANCE.createEReference();
     inBoxReference.setName("InBox");
     inBoxReference.setEType(mail);
     inBoxReference.setContainment(true);
     inBoxReference.setUpperBound(1);
     person.getEStructuralFeatures().add(inBoxReference);
 
-    EReference outBoxReference = EcoreFactory.eINSTANCE.createEReference();
+    EReference<P, M> outBoxReference = EcoreFactory.eINSTANCE.createEReference();
     outBoxReference.setName("InBox");
     outBoxReference.setEType(mail);
     outBoxReference.setContainment(true);
@@ -228,9 +232,9 @@ public class SpecialCasesTest
     person.getEStructuralFeatures().add(outBoxReference);
 
     // Instantiating the model
-    EObject john = pack.getEFactoryInstance().create(person);
+    P john = pack.getEFactoryInstance().create(person);
     new ResourceImpl().getContents().add(john);
-    EObject rsvp = pack.getEFactoryInstance().create(mail);
+    M rsvp = pack.getEFactoryInstance().create(mail);
 
     // John received a mail
     john.eSet(inBoxReference, rsvp);
@@ -267,45 +271,45 @@ public class SpecialCasesTest
     assertEquals(john, rsvp.eContainer());
   }
 
+  @SuppressWarnings({ "unchecked", "rawtypes" })
   @Test
-  public void testBiDirectional()
+  public <P extends EObject, C extends EObject> void testBiDirectional()
   {
     // Creating the model
     EPackage pack = EcoreFactory.eINSTANCE.createEPackage();
 
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<P> person = EcoreFactory.eINSTANCE.createEClass();
     person.setName("Person");
     pack.getEClassifiers().add(person);
 
-    EClass company = EcoreFactory.eINSTANCE.createEClass();
+    EClass<C> company = EcoreFactory.eINSTANCE.createEClass();
     company.setName("Company");
     pack.getEClassifiers().add(company);
 
-    EReference worksForReference = EcoreFactory.eINSTANCE.createEReference();
+    EReference<P, C> worksForReference = EcoreFactory.eINSTANCE.createEReference();
     worksForReference.setName("WorksFor");
     worksForReference.setEType(company);
     person.getEStructuralFeatures().add(worksForReference);
 
-    EReference employeesReference = EcoreFactory.eINSTANCE.createEReference();
+    EReference<C, EList<P>> employeesReference = EcoreFactory.eINSTANCE.createEReference();
     employeesReference.setName("Employess");
-    employeesReference.setEType(person);
+    employeesReference.setEType((EClassifier)person);
     employeesReference.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
     company.getEStructuralFeatures().add(employeesReference);
 
-    worksForReference.setEOpposite(employeesReference);
+    worksForReference.setEOpposite((EReference)employeesReference);
     employeesReference.setEOpposite(worksForReference);
 
     // Instantiating the model
-    EObject john = pack.getEFactoryInstance().create(person);
+    P john = pack.getEFactoryInstance().create(person);
     new ResourceImpl().getContents().add(john);
 
-    EObject mary = pack.getEFactoryInstance().create(person);
+    P mary = pack.getEFactoryInstance().create(person);
     new ResourceImpl().getContents().add(john);
 
-    EObject acme = pack.getEFactoryInstance().create(company);
+    C acme = pack.getEFactoryInstance().create(company);
     new ResourceImpl().getContents().add(acme);
-    @SuppressWarnings("unchecked")
-    List<EObject> acmeEmployess = (List<EObject>)acme.eGet(employeesReference);
+    List<P> acmeEmployess = acme.eGet(employeesReference);
     acmeEmployess.add(mary);
 
     // Instantiated Model: Initial state
@@ -350,17 +354,17 @@ public class SpecialCasesTest
    * Bugzilla 80502
    */
   @Test
-  public void testMultipleResources() throws Exception
+  public <P extends EObject> void testMultipleResources() throws Exception
   {
     EPackage pack = EcoreFactory.eINSTANCE.createEPackage();
     pack.setName("pack");
     pack.setNsURI("http://www.eclipse.org/emf/pack");
 
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<P> person = EcoreFactory.eINSTANCE.createEClass();
     person.setName("Person");
     pack.getEClassifiers().add(person);
 
-    EAttribute name = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<P, String> name = EcoreFactory.eINSTANCE.createEAttribute();
     name.setName("name");
     name.setEType(EcorePackage.Literals.ESTRING);
     person.getEStructuralFeatures().add(name);
@@ -421,38 +425,38 @@ public class SpecialCasesTest
   /*
    * Bugzilla 80547
    */
+  @SuppressWarnings({ "unchecked", "rawtypes" })
   @Test
-  public void testCopyChangeDescription() throws Exception
+  public <P extends EObject> void testCopyChangeDescription() throws Exception
   {
     EPackage pack = EcoreFactory.eINSTANCE.createEPackage();
     pack.setName("pack");
     pack.setNsURI("http://www.eclipse.org/emf/pack");
 
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<P> person = EcoreFactory.eINSTANCE.createEClass();
     person.setName("Person");
     pack.getEClassifiers().add(person);
 
-    EAttribute name = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<P, String> name = EcoreFactory.eINSTANCE.createEAttribute();
     name.setName("name");
     name.setEType(EcorePackage.Literals.ESTRING);
     person.getEStructuralFeatures().add(name);
-    EAttribute id = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<P, String> id = EcoreFactory.eINSTANCE.createEAttribute();
     id.setName("id");
     id.setEType(EcorePackage.Literals.ESTRING);
     person.getEStructuralFeatures().add(id);
 
-    EReference friendsReference = EcoreFactory.eINSTANCE.createEReference();
+    EReference<P, EList<P>> friendsReference = EcoreFactory.eINSTANCE.createEReference();
     friendsReference.setName("Friends");
-    friendsReference.setEType(person);
+    friendsReference.setEType((EClass)person);
     friendsReference.setContainment(true);
     friendsReference.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
     person.getEStructuralFeatures().add(friendsReference);
 
     EObject john = pack.getEFactoryInstance().create(person);
     john.eSet(id, "123");
-    @SuppressWarnings("unchecked")
-    List<Object> friendsOfJohn = ((List<Object>)john.eGet(friendsReference));
-    EObject mary = pack.getEFactoryInstance().create(person);
+    List<P> friendsOfJohn = john.eGet(friendsReference);
+    P mary = pack.getEFactoryInstance().create(person);
     mary.eSet(name, "Mary");
 
     Resource resource = new ResourceImpl();
@@ -500,38 +504,38 @@ public class SpecialCasesTest
   /*
    * Bugzilla 80547
    */
+  @SuppressWarnings({ "rawtypes", "unchecked" })
   @Test
-  public void testCopyChangeDescriptionAndObject() throws Exception
+  public <P extends EObject> void testCopyChangeDescriptionAndObject() throws Exception
   {
     EPackage pack = EcoreFactory.eINSTANCE.createEPackage();
     pack.setName("pack");
     pack.setNsURI("http://www.eclipse.org/emf/pack");
 
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<P> person = EcoreFactory.eINSTANCE.createEClass();
     person.setName("Person");
     pack.getEClassifiers().add(person);
 
-    EAttribute name = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<P, String> name = EcoreFactory.eINSTANCE.createEAttribute();
     name.setName("name");
     name.setEType(EcorePackage.Literals.ESTRING);
     person.getEStructuralFeatures().add(name);
-    EAttribute id = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<P, String> id = EcoreFactory.eINSTANCE.createEAttribute();
     id.setName("id");
     id.setEType(EcorePackage.Literals.ESTRING);
     person.getEStructuralFeatures().add(id);
 
-    EReference friendsReference = EcoreFactory.eINSTANCE.createEReference();
+    EReference<P, EList<P>> friendsReference = EcoreFactory.eINSTANCE.createEReference();
     friendsReference.setName("Friends");
-    friendsReference.setEType(person);
+    friendsReference.setEType((EClass)person);
     friendsReference.setContainment(true);
     friendsReference.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
     person.getEStructuralFeatures().add(friendsReference);
 
-    EObject john = pack.getEFactoryInstance().create(person);
+    P john = pack.getEFactoryInstance().create(person);
     john.eSet(id, "123");
-    @SuppressWarnings("unchecked")
-    List<EObject> friendsOfJohn = ((List<EObject>)john.eGet(friendsReference));
-    EObject mary = pack.getEFactoryInstance().create(person);
+    List<P> friendsOfJohn = john.eGet(friendsReference);
+    P mary = pack.getEFactoryInstance().create(person);
     mary.eSet(name, "Mary");
 
     Resource resource = new ResourceImpl();
@@ -562,7 +566,7 @@ public class SpecialCasesTest
     Collection<EObject> copiedObjects = EcoreUtil.copyAll(objects);
     assertEquals(objects.size(), copiedObjects.size());
 
-    EObject copiedJohn = null;
+    P copiedJohn = null;
     ChangeDescription copiedChangeDescription = null;
     for (EObject eObject : copiedObjects)
     {
@@ -572,14 +576,13 @@ public class SpecialCasesTest
       }
       else if (john.eGet(id).equals(eObject.eGet(id)))
       {
-        copiedJohn = eObject;
+        copiedJohn = person.getInstanceClass().cast(eObject);
       }
     }
     assertFalse(john.equals(copiedJohn));
     assertFalse(changeDescription.equals(copiedChangeDescription));
     assertNotNull(copiedJohn);
-    @SuppressWarnings("unchecked")
-    List<EObject> friendsOfCopiedJohn = ((List<EObject>)copiedJohn.eGet(friendsReference));
+    List<P> friendsOfCopiedJohn = copiedJohn.eGet(friendsReference);
 
     // State 1
     assertEquals("John", copiedJohn.eGet(name));
@@ -611,43 +614,43 @@ public class SpecialCasesTest
   /*
    * Bugzilla 81013
    */
+  @SuppressWarnings({ "unchecked", "rawtypes" })
   @Test
-  public void testChangeDescriptionWhenResumming1() throws Exception
+  public <P extends EObject> void testChangeDescriptionWhenResumming1() throws Exception
   {
     EPackage pack = EcoreFactory.eINSTANCE.createEPackage();
     pack.setName("pack");
     pack.setNsURI("http://www.eclipse.org/emf/pack");
 
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<P> person = EcoreFactory.eINSTANCE.createEClass();
     person.setName("Person");
     pack.getEClassifiers().add(person);
 
-    EAttribute name = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<P, String> name = EcoreFactory.eINSTANCE.createEAttribute();
     name.setName("name");
     name.setEType(EcorePackage.Literals.ESTRING);
     person.getEStructuralFeatures().add(name);
-    EAttribute id = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<P, String> id = EcoreFactory.eINSTANCE.createEAttribute();
     id.setName("id");
     id.setEType(EcorePackage.Literals.ESTRING);
     person.getEStructuralFeatures().add(id);
 
-    EReference friendsReference = EcoreFactory.eINSTANCE.createEReference();
+    EReference<P, EList<P>> friendsReference = EcoreFactory.eINSTANCE.createEReference();
     friendsReference.setName("Friends");
-    friendsReference.setEType(person);
+    friendsReference.setEType((EClass)person);
     friendsReference.setContainment(true);
     friendsReference.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
     person.getEStructuralFeatures().add(friendsReference);
 
-    EObject john = pack.getEFactoryInstance().create(person);
+    P john = pack.getEFactoryInstance().create(person);
     john.eSet(id, "123");
-    EObject mary = pack.getEFactoryInstance().create(person);
+    P mary = pack.getEFactoryInstance().create(person);
     mary.eSet(name, "Mary");
 
     Resource resource = new ResourceImpl();
     resource.getContents().add(john);
 
-    @SuppressWarnings("unchecked")
-    List<EObject> friendsOfJohn = ((List<EObject>)john.eGet(friendsReference));
+    List<P> friendsOfJohn = john.eGet(friendsReference);
     friendsOfJohn.add(mary);
 
     // State 0
@@ -682,38 +685,38 @@ public class SpecialCasesTest
   /*
    * Bugzilla 81013
    */
+  @SuppressWarnings({ "unchecked", "rawtypes" })
   @Test
-  public void testChangeDescriptionWhenResumming2() throws Exception
+  public <P extends EObject> void testChangeDescriptionWhenResumming2() throws Exception
   {
     EPackage pack = EcoreFactory.eINSTANCE.createEPackage();
     pack.setName("pack");
     pack.setNsURI("http://www.eclipse.org/emf/pack");
 
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<P> person = EcoreFactory.eINSTANCE.createEClass();
     person.setName("Person");
     pack.getEClassifiers().add(person);
 
-    EAttribute name = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<P, String> name = EcoreFactory.eINSTANCE.createEAttribute();
     name.setName("name");
     name.setEType(EcorePackage.Literals.ESTRING);
     person.getEStructuralFeatures().add(name);
-    EAttribute id = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<P, String> id = EcoreFactory.eINSTANCE.createEAttribute();
     id.setName("id");
     id.setEType(EcorePackage.Literals.ESTRING);
     person.getEStructuralFeatures().add(id);
 
-    EReference friendsReference = EcoreFactory.eINSTANCE.createEReference();
+    EReference<P, EList<P>> friendsReference = EcoreFactory.eINSTANCE.createEReference();
     friendsReference.setName("Friends");
-    friendsReference.setEType(person);
+    friendsReference.setEType((EClass)person);
     friendsReference.setContainment(true);
     friendsReference.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
     person.getEStructuralFeatures().add(friendsReference);
 
     EObject john = pack.getEFactoryInstance().create(person);
     john.eSet(id, "123");
-    @SuppressWarnings("unchecked")
-    List<EObject> friendsOfJohn = ((List<EObject>)john.eGet(friendsReference));
-    EObject mary = pack.getEFactoryInstance().create(person);
+    List<P> friendsOfJohn = john.eGet(friendsReference);
+    P mary = pack.getEFactoryInstance().create(person);
     mary.eSet(name, "Mary");
 
     Resource resource = new ResourceImpl();
@@ -780,8 +783,9 @@ public class SpecialCasesTest
     assertEquals("2", mary.eGet(id));
   }
 
+  @SuppressWarnings({ "unchecked", "rawtypes" })
   @Test
-  public void testLoadChangeDescritpions() throws Exception
+  public <P extends EObject, F extends EObject> void testLoadChangeDescritpions() throws Exception
   {
     URI[] changeDescriptionURIs = new URI[]
     {
@@ -796,61 +800,60 @@ public class SpecialCasesTest
     pack.setName("pack");
     pack.setNsURI("http://www.eclipse.org/emf/test.core.change/testLoadChangeDescritpion");
 
-    EClass family = EcoreFactory.eINSTANCE.createEClass();
+    EClass<F> family = EcoreFactory.eINSTANCE.createEClass();
     family.setName("Family");
     pack.getEClassifiers().add(family);
 
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<P> person = EcoreFactory.eINSTANCE.createEClass();
     person.setName("Person");
     pack.getEClassifiers().add(person);
 
-    EAttribute name = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<P, String> name = EcoreFactory.eINSTANCE.createEAttribute();
     name.setName("name");
     name.setEType(EcorePackage.Literals.ESTRING);
     person.getEStructuralFeatures().add(name);
 
-    EReference spouse1 = EcoreFactory.eINSTANCE.createEReference();
+    EReference<F, P> spouse1 = EcoreFactory.eINSTANCE.createEReference();
     spouse1.setName("spouse1");
     spouse1.setContainment(true);
     spouse1.setEType(person);
     family.getEStructuralFeatures().add(spouse1);
 
-    EReference spouse2 = EcoreFactory.eINSTANCE.createEReference();
+    EReference<F, P> spouse2 = EcoreFactory.eINSTANCE.createEReference();
     spouse2.setName("spouse2");
     spouse2.setContainment(true);
     spouse2.setEType(person);
     family.getEStructuralFeatures().add(spouse2);
 
-    EReference children = EcoreFactory.eINSTANCE.createEReference();
+    EReference<F, EList<P>> children = EcoreFactory.eINSTANCE.createEReference();
     children.setName("children");
     children.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
     children.setContainment(true);
-    children.setEType(person);
+    children.setEType((EClassifier)person);
     family.getEStructuralFeatures().add(children);
 
     boolean createFile = false;
     if (createFile)
     {
-      EObject john = pack.getEFactoryInstance().create(person);
+      P john = pack.getEFactoryInstance().create(person);
       john.eSet(name, "John");
 
-      EObject mary = pack.getEFactoryInstance().create(person);
+      P mary = pack.getEFactoryInstance().create(person);
       mary.eSet(name, "Mary");
 
-      EObject paul = pack.getEFactoryInstance().create(person);
+      P paul = pack.getEFactoryInstance().create(person);
       paul.eSet(name, "Paul");
 
-      EObject lisa = pack.getEFactoryInstance().create(person);
+      P lisa = pack.getEFactoryInstance().create(person);
       lisa.eSet(name, "Lisa");
 
-      EObject anna = pack.getEFactoryInstance().create(person);
+      P anna = pack.getEFactoryInstance().create(person);
       anna.eSet(name, "Anna");
 
-      EObject johnsFamily = pack.getEFactoryInstance().create(family);
+      F johnsFamily = pack.getEFactoryInstance().create(family);
       johnsFamily.eSet(spouse1, john);
       johnsFamily.eSet(spouse2, mary);
-      @SuppressWarnings("unchecked")
-      List<EObject> johnsFamilyChildren = ((List<EObject>)johnsFamily.eGet(children));
+      List<P> johnsFamilyChildren = johnsFamily.eGet(children);
       johnsFamilyChildren.add(paul);
 
       int changeDescriptionURIIndex = 3;
@@ -898,8 +901,7 @@ public class SpecialCasesTest
       assertEquals("John", john.eGet(name));
       EObject lisa = (EObject)johnsFamily.eGet(spouse2);
       assertEquals("Lisa", lisa.eGet(name));
-      @SuppressWarnings("unchecked")
-      List<EObject> johnsFamilyChildren = ((List<EObject>)johnsFamily.eGet(children));
+      List<P> johnsFamilyChildren = johnsFamily.eGet(children);
       EObject paul = johnsFamilyChildren.get(0);
       assertEquals("Paul", paul.eGet(name));
       EObject anna = johnsFamilyChildren.get(1);
@@ -922,24 +924,24 @@ public class SpecialCasesTest
    * Bugzilla 92271
    */
   @Test
-  public void testEnumeration() throws Exception
+  public <P extends EObject, E extends EEnumLiteral> void testEnumeration() throws Exception
   {
     EPackage pack = EcoreFactory.eINSTANCE.createEPackage();
     pack.setName("pack");
     pack.setNsURI("http://www.eclipse.org/emf/pack");
     EPackage.Registry.INSTANCE.put(pack.getNsURI(), pack);
 
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<P> person = EcoreFactory.eINSTANCE.createEClass();
     person.setName("Person");
     pack.getEClassifiers().add(person);
 
-    EAttribute name = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<P, String> name = EcoreFactory.eINSTANCE.createEAttribute();
     name.setName("name");
     name.setEType(EcorePackage.Literals.ESTRING);
     person.getEStructuralFeatures().add(name);
 
     //Attribute enumeration
-    EEnum maritalStatusEnum = EcoreFactory.eINSTANCE.createEEnum();
+    EEnum<EEnumLiteral> maritalStatusEnum = EcoreFactory.eINSTANCE.createEEnum();
     pack.getEClassifiers().add(maritalStatusEnum);
     EEnumLiteral single = EcoreFactory.eINSTANCE.createEEnumLiteral();
     single.setName("single");
@@ -950,13 +952,13 @@ public class SpecialCasesTest
     single.setValue(1);
     maritalStatusEnum.getELiterals().add(married);
 
-    EAttribute maritalStatus = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<P, EEnumLiteral> maritalStatus = EcoreFactory.eINSTANCE.createEAttribute();
     maritalStatus.setName("maritalStatus");
     maritalStatus.setEType(maritalStatusEnum);
     person.getEStructuralFeatures().add(maritalStatus);
 
     //Reference enumeration
-    EEnum rankEnum = EcoreFactory.eINSTANCE.createEEnum();
+    EEnum<E> rankEnum = EcoreFactory.eINSTANCE.createEEnum();
     pack.getEClassifiers().add(rankEnum);
     EEnumLiteral beginner = EcoreFactory.eINSTANCE.createEEnumLiteral();
     beginner.setName("beginner");
@@ -971,12 +973,12 @@ public class SpecialCasesTest
     advanced.setValue(2);
     rankEnum.getELiterals().add(advanced);
 
-    EReference emfKnowledge = EcoreFactory.eINSTANCE.createEReference();
+    EReference<P, EEnumLiteral> emfKnowledge = EcoreFactory.eINSTANCE.createEReference();
     emfKnowledge.setName("emfKnowledge");
     emfKnowledge.setEType(EcorePackage.eINSTANCE.getEEnumLiteral());
     person.getEStructuralFeatures().add(emfKnowledge);
 
-    EObject john = pack.getEFactoryInstance().create(person);
+    P john = pack.getEFactoryInstance().create(person);
     john.eSet(name, "John");
     john.eSet(maritalStatus, married);
     john.eSet(emfKnowledge, intermediate);
@@ -1066,22 +1068,22 @@ public class SpecialCasesTest
    * Bugzilla 126639
    */
   @Test
-  public void testNoChange() throws Exception
+  public <P extends EObject> void testNoChange() throws Exception
   {
     EPackage pack = EcoreFactory.eINSTANCE.createEPackage();
     pack.setName("pack");
     pack.setNsURI("http://www.eclipse.org/emf/pack/person");
 
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<P> person = EcoreFactory.eINSTANCE.createEClass();
     person.setName("Person");
     pack.getEClassifiers().add(person);
 
-    EAttribute name = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<P, String> name = EcoreFactory.eINSTANCE.createEAttribute();
     name.setName("name");
     name.setEType(EcorePackage.Literals.ESTRING);
     person.getEStructuralFeatures().add(name);
 
-    EReference father = EcoreFactory.eINSTANCE.createEReference();
+    EReference<P, P> father = EcoreFactory.eINSTANCE.createEReference();
     father.setName("father");
     father.setEType(person);
     person.getEStructuralFeatures().add(father);
@@ -1132,45 +1134,45 @@ public class SpecialCasesTest
   /*
    * Bugzilla 150866
    */
+  @SuppressWarnings({ "unchecked", "rawtypes" })
   @Test
-  public void testAddAllToAnotherContainment()
+  public <P extends EObject> void testAddAllToAnotherContainment()
   {
     // Creating the model
     EPackage pack = EcoreFactory.eINSTANCE.createEPackage();
 
-    EClass person = EcoreFactory.eINSTANCE.createEClass();
+    EClass<P> person = EcoreFactory.eINSTANCE.createEClass();
     person.setName("Person");
     pack.getEClassifiers().add(person);
 
-    EReference friendsReference = EcoreFactory.eINSTANCE.createEReference();
+    EReference<P, EList<P>> friendsReference = EcoreFactory.eINSTANCE.createEReference();
     friendsReference.setName("Friends");
-    friendsReference.setEType(person);
+    friendsReference.setEType((EClass)person);
     friendsReference.setContainment(true);
     friendsReference.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
     person.getEStructuralFeatures().add(friendsReference);
 
-    EReference enemiesReference = EcoreFactory.eINSTANCE.createEReference();
+    EReference<P, EList<P>> enemiesReference = EcoreFactory.eINSTANCE.createEReference();
     enemiesReference.setName("Enemies");
-    enemiesReference.setEType(person);
+    enemiesReference.setEType((EClass)person);
     enemiesReference.setContainment(true);
     enemiesReference.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
     person.getEStructuralFeatures().add(enemiesReference);
 
     // Instantiating the model
-    EObject john = pack.getEFactoryInstance().create(person);
-    @SuppressWarnings("unchecked")
-    List<EObject> johnFriends = (List<EObject>)john.eGet(friendsReference);
+    P john = pack.getEFactoryInstance().create(person);
+    List<P> johnFriends = john.eGet(friendsReference);
     new ResourceImpl().getContents().add(john);
 
-    EObject mary = pack.getEFactoryInstance().create(person);
+    P mary = pack.getEFactoryInstance().create(person);
     johnFriends.add(mary);
-    EObject joe = pack.getEFactoryInstance().create(person);
+    P joe = pack.getEFactoryInstance().create(person);
     johnFriends.add(joe);
-    EObject jane = pack.getEFactoryInstance().create(person);
+    P jane = pack.getEFactoryInstance().create(person);
     johnFriends.add(jane);
-    EObject mark = pack.getEFactoryInstance().create(person);
+    P mark = pack.getEFactoryInstance().create(person);
     johnFriends.add(mark);
-    EObject beth = pack.getEFactoryInstance().create(person);
+    P beth = pack.getEFactoryInstance().create(person);
     johnFriends.add(beth);
 
     // State 0
@@ -1198,7 +1200,7 @@ public class SpecialCasesTest
     assertEquals(mark, johnFriends.get(3));
     assertEquals(beth, johnFriends.get(4));
 
-    List<EObject> list = new ArrayList<EObject>();
+    List<P> list = new ArrayList<P>();
     list.add(joe);
     list.add(mark);
     list.add(mary);
@@ -1226,8 +1228,7 @@ public class SpecialCasesTest
     //======
 
 
-    @SuppressWarnings("unchecked")
-    List<EObject> johnEnemies = (List<EObject>)john.eGet(enemiesReference);
+    List<P> johnEnemies = john.eGet(enemiesReference);
 
     // Part of State 0
     assertTrue(johnEnemies.isEmpty());
@@ -1258,18 +1259,20 @@ public class SpecialCasesTest
   }
 
   @Test
-  public void testFeatureMapWithSingleValuedFeature()
+  public <C extends EObject> void testFeatureMapWithSingleValuedFeature()
   {
     EPackage ePackage = EcoreUtil.copy(CustomerPackage.eINSTANCE);
-    EClass customersType = (EClass)ePackage.getEClassifier("CustomersType");
-    EReference customerFeature = (EReference)customersType.getEStructuralFeature("customer");
+    @SuppressWarnings("unchecked")
+    EClass<C> customersType = (EClass<C>)ePackage.getEClassifier("CustomersType");
+    @SuppressWarnings("unchecked")
+    EReference<C, C> customerFeature = (EReference<C, C>)customersType.getEStructuralFeature("customer");
     customerFeature.setUpperBound(1);
 
-    EObject eObject = EcoreUtil.create(customersType);
-    EObject child1 = EcoreUtil.create(customerFeature.getEReferenceType());
+    C eObject = EcoreUtil.create(customersType);
+    C child1 = EcoreUtil.create(customerFeature.getEReferenceType());
     eObject.eSet(customerFeature, child1);
     ChangeRecorder changeRecorder = new ChangeRecorder(eObject);
-    EObject child2 = EcoreUtil.create(customerFeature.getEReferenceType());
+    C child2 = EcoreUtil.create(customerFeature.getEReferenceType());
     eObject.eSet(customerFeature, child2);
     ChangeDescription changeDescription = changeRecorder.endRecording();
     changeDescription.applyAndReverse();

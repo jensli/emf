@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.test.models.ref.unsettable.*;
 import org.eclipse.emf.test.models.ref.unsettable.AU;
 import org.eclipse.emf.test.models.ref.unsettable.BU;
 import org.eclipse.emf.test.models.ref.unsettable.C1U;
@@ -75,19 +76,20 @@ public class URefFactoryImpl extends EFactoryImpl implements URefFactory
    * @generated
    */
   @Override
-  public EObject create(EClass eClass)
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
     switch (eClass.getClassifierID())
     {
-      case URefPackage.C1U: return createC1U();
-      case URefPackage.C2U: return createC2U();
-      case URefPackage.AU: return createAU();
-      case URefPackage.BU: return createBU();
-      case URefPackage.CU: return createCU();
-      case URefPackage.DU: return createDU();
-      case URefPackage.C4U: return createC4U();
-      case URefPackage.C3U: return createC3U();
-      case URefPackage.EU: return createEU();
+      case URefPackage.C1U: return (T) createC1U();
+      case URefPackage.C2U: return (T) createC2U();
+      case URefPackage.AU: return (T) createAU();
+      case URefPackage.BU: return (T) createBU();
+      case URefPackage.CU: return (T) createCU();
+      case URefPackage.DU: return (T) createDU();
+      case URefPackage.C4U: return (T) createC4U();
+      case URefPackage.C3U: return (T) createC3U();
+      case URefPackage.EU: return (T) createEU();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }

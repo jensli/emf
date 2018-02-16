@@ -98,7 +98,7 @@ public class CriticsReviewTypeImpl extends EObjectImpl implements CriticsReviewT
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return DBPackage.Literals.CRITICS_REVIEW_TYPE;
   }

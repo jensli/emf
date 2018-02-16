@@ -190,7 +190,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return QNamePackage.Literals.DOCUMENT_ROOT;
   }

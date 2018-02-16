@@ -88,7 +88,7 @@ public class EClass1Impl extends EClass0Impl implements EClass1
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return Switch1Package.Literals.ECLASS1;
   }

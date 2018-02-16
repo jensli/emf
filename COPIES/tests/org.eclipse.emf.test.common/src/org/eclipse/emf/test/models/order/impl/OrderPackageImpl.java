@@ -10,11 +10,15 @@
  */
 package org.eclipse.emf.test.models.order.impl;
 
+import java.util.List;
+import javax.xml.datatype.XMLGregorianCalendar;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 import org.eclipse.emf.test.models.customer.CustomerPackage;
 import org.eclipse.emf.test.models.customer.impl.CustomerPackageImpl;
@@ -39,21 +43,21 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass customerOrderEClass = null;
+  private EClass<CustomerOrder> customerOrderEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass documentRootEClass = null;
+  private EClass<DocumentRoot> documentRootEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass orderEClass = null;
+  private EClass<Order> orderEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -134,7 +138,7 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCustomerOrder()
+  public EClass<CustomerOrder> getCustomerOrder()
   {
     return customerOrderEClass;
   }
@@ -144,9 +148,10 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCustomerOrder_MoviesToSee()
+  @SuppressWarnings("unchecked")
+  public EReference<CustomerOrder, Order> getCustomerOrder_MoviesToSee()
   {
-    return (EReference)customerOrderEClass.getEStructuralFeatures().get(0);
+    return (EReference<CustomerOrder, Order>) customerOrderEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -154,9 +159,10 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCustomerOrder_MoviesSeen()
+  @SuppressWarnings("unchecked")
+  public EReference<CustomerOrder, Order> getCustomerOrder_MoviesSeen()
   {
-    return (EReference)customerOrderEClass.getEStructuralFeatures().get(1);
+    return (EReference<CustomerOrder, Order>) customerOrderEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -164,9 +170,10 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCustomerOrder_Any()
+  @SuppressWarnings("unchecked")
+  public EAttribute<CustomerOrder, FeatureMap> getCustomerOrder_Any()
   {
-    return (EAttribute)customerOrderEClass.getEStructuralFeatures().get(2);
+    return (EAttribute<CustomerOrder, FeatureMap>) customerOrderEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -174,9 +181,10 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCustomerOrder_CustomerID()
+  @SuppressWarnings("unchecked")
+  public EAttribute<CustomerOrder, String> getCustomerOrder_CustomerID()
   {
-    return (EAttribute)customerOrderEClass.getEStructuralFeatures().get(3);
+    return (EAttribute<CustomerOrder, String>) customerOrderEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -184,7 +192,7 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDocumentRoot()
+  public EClass<DocumentRoot> getDocumentRoot()
   {
     return documentRootEClass;
   }
@@ -194,9 +202,10 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDocumentRoot_Mixed()
+  @SuppressWarnings("unchecked")
+  public EAttribute<DocumentRoot, FeatureMap> getDocumentRoot_Mixed()
   {
-    return (EAttribute)documentRootEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<DocumentRoot, FeatureMap>) documentRootEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -204,9 +213,10 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_XMLNSPrefixMap()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, EMap<String, String>> getDocumentRoot_XMLNSPrefixMap()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(1);
+    return (EReference<DocumentRoot, EMap<String, String>>) documentRootEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -214,9 +224,10 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_XSISchemaLocation()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, EMap<String, String>> getDocumentRoot_XSISchemaLocation()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(2);
+    return (EReference<DocumentRoot, EMap<String, String>>) documentRootEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -224,9 +235,10 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocumentRoot_Order()
+  @SuppressWarnings("unchecked")
+  public EReference<DocumentRoot, CustomerOrder> getDocumentRoot_Order()
   {
-    return (EReference)documentRootEClass.getEStructuralFeatures().get(3);
+    return (EReference<DocumentRoot, CustomerOrder>) documentRootEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -234,7 +246,7 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getOrder()
+  public EClass<Order> getOrder()
   {
     return orderEClass;
   }
@@ -244,9 +256,10 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getOrder_DateRequested()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Order, XMLGregorianCalendar> getOrder_DateRequested()
   {
-    return (EAttribute)orderEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<Order, XMLGregorianCalendar>) orderEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -254,9 +267,10 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getOrder_LastUpdated()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Order, XMLGregorianCalendar> getOrder_LastUpdated()
   {
-    return (EAttribute)orderEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<Order, XMLGregorianCalendar>) orderEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -264,9 +278,10 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getOrder_Movies()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Order, List<String>> getOrder_Movies()
   {
-    return (EAttribute)orderEClass.getEStructuralFeatures().get(2);
+    return (EAttribute<Order, List<String>>) orderEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -293,27 +308,42 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    customerOrderEClass = createEClass(CUSTOMER_ORDER);
+    // CHANGE gen: Add cast
+    customerOrderEClass = (EClass<CustomerOrder>) createEClass(CUSTOMER_ORDER);
+    // CHANGE gen: Use raw type
     createEReference(customerOrderEClass, CUSTOMER_ORDER__MOVIES_TO_SEE);
+    // CHANGE gen: Use raw type
     createEReference(customerOrderEClass, CUSTOMER_ORDER__MOVIES_SEEN);
+    // CHANGE gen: Use raw type
     createEAttribute(customerOrderEClass, CUSTOMER_ORDER__ANY);
+    // CHANGE gen: Use raw type
     createEAttribute(customerOrderEClass, CUSTOMER_ORDER__CUSTOMER_ID);
 
-    documentRootEClass = createEClass(DOCUMENT_ROOT);
+    // CHANGE gen: Add cast
+    documentRootEClass = (EClass<DocumentRoot>) createEClass(DOCUMENT_ROOT);
+    // CHANGE gen: Use raw type
     createEAttribute(documentRootEClass, DOCUMENT_ROOT__MIXED);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
+    // CHANGE gen: Use raw type
     createEReference(documentRootEClass, DOCUMENT_ROOT__ORDER);
 
-    orderEClass = createEClass(ORDER);
+    // CHANGE gen: Add cast
+    orderEClass = (EClass<Order>) createEClass(ORDER);
+    // CHANGE gen: Use raw type
     createEAttribute(orderEClass, ORDER__DATE_REQUESTED);
+    // CHANGE gen: Use raw type
     createEAttribute(orderEClass, ORDER__LAST_UPDATED);
+    // CHANGE gen: Use raw type
     createEAttribute(orderEClass, ORDER__MOVIES);
   }
 

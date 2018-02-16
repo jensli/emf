@@ -296,8 +296,8 @@ public class EMFProperties
    * @return the property
    * @since 2.6
    */
-  // TODO gen: This method returned IEMFListProperty but that has an EObject bound now.
-  // Should it get this less precise type?
+  // CHANGE gen: This method returned IEMFListProperty but that has an EObject bound now,
+  // and Resource is not an EObject. Should it get this less precise type?
 //  public static IEMFListProperty<Resource, EObject> resource()
   public static IListProperty<Resource, EObject> resource()
   {

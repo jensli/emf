@@ -87,7 +87,7 @@ public class C4UImpl extends EObjectImpl implements C4U
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return URefPackage.Literals.C4U;
   }

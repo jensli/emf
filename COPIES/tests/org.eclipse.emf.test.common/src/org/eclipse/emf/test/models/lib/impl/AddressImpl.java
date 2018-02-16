@@ -68,7 +68,7 @@ public class AddressImpl extends EObjectImpl implements Address
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return LibPackage.Literals.ADDRESS;
   }

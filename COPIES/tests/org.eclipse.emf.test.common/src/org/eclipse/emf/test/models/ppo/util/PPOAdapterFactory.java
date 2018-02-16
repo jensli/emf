@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.test.models.ppo.*;
 import org.eclipse.emf.test.models.ppo.Item;
 import org.eclipse.emf.test.models.ppo.PPOPackage;
 import org.eclipse.emf.test.models.ppo.PurchaseOrder;

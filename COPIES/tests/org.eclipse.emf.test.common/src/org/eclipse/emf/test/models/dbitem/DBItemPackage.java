@@ -10,10 +10,14 @@
  */
 package org.eclipse.emf.test.models.dbitem;
 
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.test.models.dbprice.PenType;
+import org.eclipse.emf.test.models.dbprice.PencilType;
 
 /**
  * <!-- begin-user-doc -->
@@ -183,7 +187,7 @@ public interface DBItemPackage extends EPackage
    * @see org.eclipse.emf.test.models.dbitem.DbType
    * @generated
    */
-  EClass getDbType();
+  EClass<DbType> getDbType();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.dbitem.DbType#getRedPen <em>Red Pen</em>}'.
@@ -194,7 +198,7 @@ public interface DBItemPackage extends EPackage
    * @see #getDbType()
    * @generated
    */
-  EReference getDbType_RedPen();
+  EReference<DbType, PenType> getDbType_RedPen();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.dbitem.DbType#getBluePen <em>Blue Pen</em>}'.
@@ -205,7 +209,7 @@ public interface DBItemPackage extends EPackage
    * @see #getDbType()
    * @generated
    */
-  EReference getDbType_BluePen();
+  EReference<DbType, PenType> getDbType_BluePen();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.dbitem.DbType#getRedPencil <em>Red Pencil</em>}'.
@@ -216,7 +220,7 @@ public interface DBItemPackage extends EPackage
    * @see #getDbType()
    * @generated
    */
-  EReference getDbType_RedPencil();
+  EReference<DbType, PencilType> getDbType_RedPencil();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.dbitem.DbType#getBluePencil <em>Blue Pencil</em>}'.
@@ -227,7 +231,7 @@ public interface DBItemPackage extends EPackage
    * @see #getDbType()
    * @generated
    */
-  EReference getDbType_BluePencil();
+  EReference<DbType, PencilType> getDbType_BluePencil();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.dbitem.DocumentRoot <em>Document Root</em>}'.
@@ -237,7 +241,7 @@ public interface DBItemPackage extends EPackage
    * @see org.eclipse.emf.test.models.dbitem.DocumentRoot
    * @generated
    */
-  EClass getDocumentRoot();
+  EClass<DocumentRoot> getDocumentRoot();
 
   /**
    * Returns the meta object for the attribute list '{@link org.eclipse.emf.test.models.dbitem.DocumentRoot#getMixed <em>Mixed</em>}'.
@@ -248,7 +252,7 @@ public interface DBItemPackage extends EPackage
    * @see #getDocumentRoot()
    * @generated
    */
-  EAttribute getDocumentRoot_Mixed();
+  EAttribute<DocumentRoot, FeatureMap> getDocumentRoot_Mixed();
 
   /**
    * Returns the meta object for the map '{@link org.eclipse.emf.test.models.dbitem.DocumentRoot#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}'.
@@ -259,7 +263,7 @@ public interface DBItemPackage extends EPackage
    * @see #getDocumentRoot()
    * @generated
    */
-  EReference getDocumentRoot_XMLNSPrefixMap();
+  EReference<DocumentRoot, EMap<String, String>> getDocumentRoot_XMLNSPrefixMap();
 
   /**
    * Returns the meta object for the map '{@link org.eclipse.emf.test.models.dbitem.DocumentRoot#getXSISchemaLocation <em>XSI Schema Location</em>}'.
@@ -270,7 +274,7 @@ public interface DBItemPackage extends EPackage
    * @see #getDocumentRoot()
    * @generated
    */
-  EReference getDocumentRoot_XSISchemaLocation();
+  EReference<DocumentRoot, EMap<String, String>> getDocumentRoot_XSISchemaLocation();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.dbitem.DocumentRoot#getDbitem <em>Dbitem</em>}'.
@@ -281,7 +285,7 @@ public interface DBItemPackage extends EPackage
    * @see #getDocumentRoot()
    * @generated
    */
-  EReference getDocumentRoot_Dbitem();
+  EReference<DocumentRoot, DbType> getDocumentRoot_Dbitem();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -314,7 +318,7 @@ public interface DBItemPackage extends EPackage
      * @see org.eclipse.emf.test.models.dbitem.impl.DBItemPackageImpl#getDbType()
      * @generated
      */
-    EClass DB_TYPE = eINSTANCE.getDbType();
+    EClass<DbType> DB_TYPE = eINSTANCE.getDbType();
 
     /**
      * The meta object literal for the '<em><b>Red Pen</b></em>' containment reference feature.
@@ -322,7 +326,7 @@ public interface DBItemPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DB_TYPE__RED_PEN = eINSTANCE.getDbType_RedPen();
+    EReference<DbType, PenType> DB_TYPE__RED_PEN = eINSTANCE.getDbType_RedPen();
 
     /**
      * The meta object literal for the '<em><b>Blue Pen</b></em>' containment reference feature.
@@ -330,7 +334,7 @@ public interface DBItemPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DB_TYPE__BLUE_PEN = eINSTANCE.getDbType_BluePen();
+    EReference<DbType, PenType> DB_TYPE__BLUE_PEN = eINSTANCE.getDbType_BluePen();
 
     /**
      * The meta object literal for the '<em><b>Red Pencil</b></em>' containment reference feature.
@@ -338,7 +342,7 @@ public interface DBItemPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DB_TYPE__RED_PENCIL = eINSTANCE.getDbType_RedPencil();
+    EReference<DbType, PencilType> DB_TYPE__RED_PENCIL = eINSTANCE.getDbType_RedPencil();
 
     /**
      * The meta object literal for the '<em><b>Blue Pencil</b></em>' containment reference feature.
@@ -346,7 +350,7 @@ public interface DBItemPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DB_TYPE__BLUE_PENCIL = eINSTANCE.getDbType_BluePencil();
+    EReference<DbType, PencilType> DB_TYPE__BLUE_PENCIL = eINSTANCE.getDbType_BluePencil();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.dbitem.impl.DocumentRootImpl <em>Document Root</em>}' class.
@@ -356,7 +360,7 @@ public interface DBItemPackage extends EPackage
      * @see org.eclipse.emf.test.models.dbitem.impl.DBItemPackageImpl#getDocumentRoot()
      * @generated
      */
-    EClass DOCUMENT_ROOT = eINSTANCE.getDocumentRoot();
+    EClass<DocumentRoot> DOCUMENT_ROOT = eINSTANCE.getDocumentRoot();
 
     /**
      * The meta object literal for the '<em><b>Mixed</b></em>' attribute list feature.
@@ -364,7 +368,7 @@ public interface DBItemPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DOCUMENT_ROOT__MIXED = eINSTANCE.getDocumentRoot_Mixed();
+    EAttribute<DocumentRoot, FeatureMap> DOCUMENT_ROOT__MIXED = eINSTANCE.getDocumentRoot_Mixed();
 
     /**
      * The meta object literal for the '<em><b>XMLNS Prefix Map</b></em>' map feature.
@@ -372,7 +376,7 @@ public interface DBItemPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOCUMENT_ROOT__XMLNS_PREFIX_MAP = eINSTANCE.getDocumentRoot_XMLNSPrefixMap();
+    EReference<DocumentRoot, EMap<String, String>> DOCUMENT_ROOT__XMLNS_PREFIX_MAP = eINSTANCE.getDocumentRoot_XMLNSPrefixMap();
 
     /**
      * The meta object literal for the '<em><b>XSI Schema Location</b></em>' map feature.
@@ -380,7 +384,7 @@ public interface DBItemPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOCUMENT_ROOT__XSI_SCHEMA_LOCATION = eINSTANCE.getDocumentRoot_XSISchemaLocation();
+    EReference<DocumentRoot, EMap<String, String>> DOCUMENT_ROOT__XSI_SCHEMA_LOCATION = eINSTANCE.getDocumentRoot_XSISchemaLocation();
 
     /**
      * The meta object literal for the '<em><b>Dbitem</b></em>' containment reference feature.
@@ -388,7 +392,7 @@ public interface DBItemPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOCUMENT_ROOT__DBITEM = eINSTANCE.getDocumentRoot_Dbitem();
+    EReference<DocumentRoot, DbType> DOCUMENT_ROOT__DBITEM = eINSTANCE.getDocumentRoot_Dbitem();
 
   }
 

@@ -73,7 +73,7 @@ public class FImpl extends EObjectImpl implements F
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ExtPackage.Literals.F;
   }

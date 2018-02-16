@@ -10,6 +10,7 @@
  */
 package org.eclipse.emf.test.models.ref;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -451,7 +452,7 @@ public interface RefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.A
    * @generated
    */
-  EClass getA();
+  EClass<A> getA();
 
   /**
    * Returns the meta object for the reference '{@link org.eclipse.emf.test.models.ref.A#getB <em>B</em>}'.
@@ -462,7 +463,7 @@ public interface RefPackage extends EPackage
    * @see #getA()
    * @generated
    */
-  EReference getA_B();
+  EReference<A, B> getA_B();
 
   /**
    * Returns the meta object for the container reference '{@link org.eclipse.emf.test.models.ref.A#getC2 <em>C2</em>}'.
@@ -473,7 +474,7 @@ public interface RefPackage extends EPackage
    * @see #getA()
    * @generated
    */
-  EReference getA_C2();
+  EReference<A, C2> getA_C2();
 
   /**
    * Returns the meta object for the reference '{@link org.eclipse.emf.test.models.ref.A#getC <em>C</em>}'.
@@ -484,7 +485,7 @@ public interface RefPackage extends EPackage
    * @see #getA()
    * @generated
    */
-  EReference getA_C();
+  EReference<A, C> getA_C();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ref.B <em>B</em>}'.
@@ -494,7 +495,7 @@ public interface RefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.B
    * @generated
    */
-  EClass getB();
+  EClass<B> getB();
 
   /**
    * Returns the meta object for the reference '{@link org.eclipse.emf.test.models.ref.B#getA <em>A</em>}'.
@@ -505,7 +506,7 @@ public interface RefPackage extends EPackage
    * @see #getB()
    * @generated
    */
-  EReference getB_A();
+  EReference<B, A> getB_A();
 
   /**
    * Returns the meta object for the container reference '{@link org.eclipse.emf.test.models.ref.B#getC2 <em>C2</em>}'.
@@ -516,7 +517,7 @@ public interface RefPackage extends EPackage
    * @see #getB()
    * @generated
    */
-  EReference getB_C2();
+  EReference<B, C2> getB_C2();
 
   /**
    * Returns the meta object for the reference list '{@link org.eclipse.emf.test.models.ref.B#getD <em>D</em>}'.
@@ -527,7 +528,7 @@ public interface RefPackage extends EPackage
    * @see #getB()
    * @generated
    */
-  EReference getB_D();
+  EReference<B, EList<D>> getB_D();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ref.C1 <em>C1</em>}'.
@@ -537,7 +538,7 @@ public interface RefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.C1
    * @generated
    */
-  EClass getC1();
+  EClass<C1> getC1();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.ref.C1#getA <em>A</em>}'.
@@ -548,7 +549,7 @@ public interface RefPackage extends EPackage
    * @see #getC1()
    * @generated
    */
-  EReference getC1_A();
+  EReference<C1, A> getC1_A();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.emf.test.models.ref.C1#getB <em>B</em>}'.
@@ -559,7 +560,7 @@ public interface RefPackage extends EPackage
    * @see #getC1()
    * @generated
    */
-  EReference getC1_B();
+  EReference<C1, EList<B>> getC1_B();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ref.C2 <em>C2</em>}'.
@@ -569,7 +570,7 @@ public interface RefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.C2
    * @generated
    */
-  EClass getC2();
+  EClass<C2> getC2();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.emf.test.models.ref.C2#getB <em>B</em>}'.
@@ -580,7 +581,7 @@ public interface RefPackage extends EPackage
    * @see #getC2()
    * @generated
    */
-  EReference getC2_B();
+  EReference<C2, EList<B>> getC2_B();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.ref.C2#getA <em>A</em>}'.
@@ -591,7 +592,7 @@ public interface RefPackage extends EPackage
    * @see #getC2()
    * @generated
    */
-  EReference getC2_A();
+  EReference<C2, A> getC2_A();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ref.C <em>C</em>}'.
@@ -601,7 +602,7 @@ public interface RefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.C
    * @generated
    */
-  EClass getC();
+  EClass<C> getC();
 
   /**
    * Returns the meta object for the reference list '{@link org.eclipse.emf.test.models.ref.C#getD <em>D</em>}'.
@@ -612,7 +613,7 @@ public interface RefPackage extends EPackage
    * @see #getC()
    * @generated
    */
-  EReference getC_D();
+  EReference<C, EList<D>> getC_D();
 
   /**
    * Returns the meta object for the container reference '{@link org.eclipse.emf.test.models.ref.C#getC4 <em>C4</em>}'.
@@ -623,7 +624,7 @@ public interface RefPackage extends EPackage
    * @see #getC()
    * @generated
    */
-  EReference getC_C4();
+  EReference<C, C4> getC_C4();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ref.D <em>D</em>}'.
@@ -633,7 +634,7 @@ public interface RefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.D
    * @generated
    */
-  EClass getD();
+  EClass<D> getD();
 
   /**
    * Returns the meta object for the reference '{@link org.eclipse.emf.test.models.ref.D#getC <em>C</em>}'.
@@ -644,7 +645,7 @@ public interface RefPackage extends EPackage
    * @see #getD()
    * @generated
    */
-  EReference getD_C();
+  EReference<D, C> getD_C();
 
   /**
    * Returns the meta object for the reference list '{@link org.eclipse.emf.test.models.ref.D#getE <em>E</em>}'.
@@ -655,7 +656,7 @@ public interface RefPackage extends EPackage
    * @see #getD()
    * @generated
    */
-  EReference getD_E();
+  EReference<D, EList<E>> getD_E();
 
   /**
    * Returns the meta object for the container reference '{@link org.eclipse.emf.test.models.ref.D#getC4 <em>C4</em>}'.
@@ -666,7 +667,7 @@ public interface RefPackage extends EPackage
    * @see #getD()
    * @generated
    */
-  EReference getD_C4();
+  EReference<D, C4> getD_C4();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ref.E <em>E</em>}'.
@@ -676,7 +677,7 @@ public interface RefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.E
    * @generated
    */
-  EClass getE();
+  EClass<E> getE();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ref.E#getName <em>Name</em>}'.
@@ -687,7 +688,7 @@ public interface RefPackage extends EPackage
    * @see #getE()
    * @generated
    */
-  EAttribute getE_Name();
+  EAttribute<E, String> getE_Name();
 
   /**
    * Returns the meta object for the attribute list '{@link org.eclipse.emf.test.models.ref.E#getIds <em>Ids</em>}'.
@@ -698,7 +699,7 @@ public interface RefPackage extends EPackage
    * @see #getE()
    * @generated
    */
-  EAttribute getE_Ids();
+  EAttribute<E, EList<String>> getE_Ids();
 
   /**
    * Returns the meta object for the attribute list '{@link org.eclipse.emf.test.models.ref.E#getLabels <em>Labels</em>}'.
@@ -709,7 +710,7 @@ public interface RefPackage extends EPackage
    * @see #getE()
    * @generated
    */
-  EAttribute getE_Labels();
+  EAttribute<E, EList<String>> getE_Labels();
 
   /**
    * Returns the meta object for the reference list '{@link org.eclipse.emf.test.models.ref.E#getD <em>D</em>}'.
@@ -720,7 +721,7 @@ public interface RefPackage extends EPackage
    * @see #getE()
    * @generated
    */
-  EReference getE_D();
+  EReference<E, EList<D>> getE_D();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ref.C4 <em>C4</em>}'.
@@ -730,7 +731,7 @@ public interface RefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.C4
    * @generated
    */
-  EClass getC4();
+  EClass<C4> getC4();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.ref.C4#getC <em>C</em>}'.
@@ -741,7 +742,7 @@ public interface RefPackage extends EPackage
    * @see #getC4()
    * @generated
    */
-  EReference getC4_C();
+  EReference<C4, C> getC4_C();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.emf.test.models.ref.C4#getD <em>D</em>}'.
@@ -752,7 +753,7 @@ public interface RefPackage extends EPackage
    * @see #getC4()
    * @generated
    */
-  EReference getC4_D();
+  EReference<C4, EList<D>> getC4_D();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ref.C3 <em>C3</em>}'.
@@ -762,7 +763,7 @@ public interface RefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.C3
    * @generated
    */
-  EClass getC3();
+  EClass<C3> getC3();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.emf.test.models.ref.C3#getD <em>D</em>}'.
@@ -773,7 +774,7 @@ public interface RefPackage extends EPackage
    * @see #getC3()
    * @generated
    */
-  EReference getC3_D();
+  EReference<C3, EList<D>> getC3_D();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.ref.C3#getC <em>C</em>}'.
@@ -784,7 +785,7 @@ public interface RefPackage extends EPackage
    * @see #getC3()
    * @generated
    */
-  EReference getC3_C();
+  EReference<C3, C> getC3_C();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -817,7 +818,7 @@ public interface RefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.impl.RefPackageImpl#getA()
      * @generated
      */
-    EClass A = eINSTANCE.getA();
+    EClass<A> A = eINSTANCE.getA();
 
     /**
      * The meta object literal for the '<em><b>B</b></em>' reference feature.
@@ -825,7 +826,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference A__B = eINSTANCE.getA_B();
+    EReference<A, B> A__B = eINSTANCE.getA_B();
 
     /**
      * The meta object literal for the '<em><b>C2</b></em>' container reference feature.
@@ -833,7 +834,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference A__C2 = eINSTANCE.getA_C2();
+    EReference<A, C2> A__C2 = eINSTANCE.getA_C2();
 
     /**
      * The meta object literal for the '<em><b>C</b></em>' reference feature.
@@ -841,7 +842,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference A__C = eINSTANCE.getA_C();
+    EReference<A, C> A__C = eINSTANCE.getA_C();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ref.impl.BImpl <em>B</em>}' class.
@@ -851,7 +852,7 @@ public interface RefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.impl.RefPackageImpl#getB()
      * @generated
      */
-    EClass B = eINSTANCE.getB();
+    EClass<B> B = eINSTANCE.getB();
 
     /**
      * The meta object literal for the '<em><b>A</b></em>' reference feature.
@@ -859,7 +860,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference B__A = eINSTANCE.getB_A();
+    EReference<B, A> B__A = eINSTANCE.getB_A();
 
     /**
      * The meta object literal for the '<em><b>C2</b></em>' container reference feature.
@@ -867,7 +868,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference B__C2 = eINSTANCE.getB_C2();
+    EReference<B, C2> B__C2 = eINSTANCE.getB_C2();
 
     /**
      * The meta object literal for the '<em><b>D</b></em>' reference list feature.
@@ -875,7 +876,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference B__D = eINSTANCE.getB_D();
+    EReference<B, EList<D>> B__D = eINSTANCE.getB_D();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ref.impl.C1Impl <em>C1</em>}' class.
@@ -885,7 +886,7 @@ public interface RefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.impl.RefPackageImpl#getC1()
      * @generated
      */
-    EClass C1 = eINSTANCE.getC1();
+    EClass<C1> C1 = eINSTANCE.getC1();
 
     /**
      * The meta object literal for the '<em><b>A</b></em>' containment reference feature.
@@ -893,7 +894,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C1__A = eINSTANCE.getC1_A();
+    EReference<C1, A> C1__A = eINSTANCE.getC1_A();
 
     /**
      * The meta object literal for the '<em><b>B</b></em>' containment reference list feature.
@@ -901,7 +902,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C1__B = eINSTANCE.getC1_B();
+    EReference<C1, EList<B>> C1__B = eINSTANCE.getC1_B();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ref.impl.C2Impl <em>C2</em>}' class.
@@ -911,7 +912,7 @@ public interface RefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.impl.RefPackageImpl#getC2()
      * @generated
      */
-    EClass C2 = eINSTANCE.getC2();
+    EClass<C2> C2 = eINSTANCE.getC2();
 
     /**
      * The meta object literal for the '<em><b>B</b></em>' containment reference list feature.
@@ -919,7 +920,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C2__B = eINSTANCE.getC2_B();
+    EReference<C2, EList<B>> C2__B = eINSTANCE.getC2_B();
 
     /**
      * The meta object literal for the '<em><b>A</b></em>' containment reference feature.
@@ -927,7 +928,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C2__A = eINSTANCE.getC2_A();
+    EReference<C2, A> C2__A = eINSTANCE.getC2_A();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ref.impl.CImpl <em>C</em>}' class.
@@ -937,7 +938,7 @@ public interface RefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.impl.RefPackageImpl#getC()
      * @generated
      */
-    EClass C = eINSTANCE.getC();
+    EClass<C> C = eINSTANCE.getC();
 
     /**
      * The meta object literal for the '<em><b>D</b></em>' reference list feature.
@@ -945,7 +946,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C__D = eINSTANCE.getC_D();
+    EReference<C, EList<D>> C__D = eINSTANCE.getC_D();
 
     /**
      * The meta object literal for the '<em><b>C4</b></em>' container reference feature.
@@ -953,7 +954,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C__C4 = eINSTANCE.getC_C4();
+    EReference<C, C4> C__C4 = eINSTANCE.getC_C4();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ref.impl.DImpl <em>D</em>}' class.
@@ -963,7 +964,7 @@ public interface RefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.impl.RefPackageImpl#getD()
      * @generated
      */
-    EClass D = eINSTANCE.getD();
+    EClass<D> D = eINSTANCE.getD();
 
     /**
      * The meta object literal for the '<em><b>C</b></em>' reference feature.
@@ -971,7 +972,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference D__C = eINSTANCE.getD_C();
+    EReference<D, C> D__C = eINSTANCE.getD_C();
 
     /**
      * The meta object literal for the '<em><b>E</b></em>' reference list feature.
@@ -979,7 +980,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference D__E = eINSTANCE.getD_E();
+    EReference<D, EList<E>> D__E = eINSTANCE.getD_E();
 
     /**
      * The meta object literal for the '<em><b>C4</b></em>' container reference feature.
@@ -987,7 +988,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference D__C4 = eINSTANCE.getD_C4();
+    EReference<D, C4> D__C4 = eINSTANCE.getD_C4();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ref.impl.EImpl <em>E</em>}' class.
@@ -997,7 +998,7 @@ public interface RefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.impl.RefPackageImpl#getE()
      * @generated
      */
-    EClass E = eINSTANCE.getE();
+    EClass<E> E = eINSTANCE.getE();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1005,7 +1006,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute E__NAME = eINSTANCE.getE_Name();
+    EAttribute<E, String> E__NAME = eINSTANCE.getE_Name();
 
     /**
      * The meta object literal for the '<em><b>Ids</b></em>' attribute list feature.
@@ -1013,7 +1014,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute E__IDS = eINSTANCE.getE_Ids();
+    EAttribute<E, EList<String>> E__IDS = eINSTANCE.getE_Ids();
 
     /**
      * The meta object literal for the '<em><b>Labels</b></em>' attribute list feature.
@@ -1021,7 +1022,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute E__LABELS = eINSTANCE.getE_Labels();
+    EAttribute<E, EList<String>> E__LABELS = eINSTANCE.getE_Labels();
 
     /**
      * The meta object literal for the '<em><b>D</b></em>' reference list feature.
@@ -1029,7 +1030,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference E__D = eINSTANCE.getE_D();
+    EReference<E, EList<D>> E__D = eINSTANCE.getE_D();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ref.impl.C4Impl <em>C4</em>}' class.
@@ -1039,7 +1040,7 @@ public interface RefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.impl.RefPackageImpl#getC4()
      * @generated
      */
-    EClass C4 = eINSTANCE.getC4();
+    EClass<C4> C4 = eINSTANCE.getC4();
 
     /**
      * The meta object literal for the '<em><b>C</b></em>' containment reference feature.
@@ -1047,7 +1048,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C4__C = eINSTANCE.getC4_C();
+    EReference<C4, C> C4__C = eINSTANCE.getC4_C();
 
     /**
      * The meta object literal for the '<em><b>D</b></em>' containment reference list feature.
@@ -1055,7 +1056,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C4__D = eINSTANCE.getC4_D();
+    EReference<C4, EList<D>> C4__D = eINSTANCE.getC4_D();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ref.impl.C3Impl <em>C3</em>}' class.
@@ -1065,7 +1066,7 @@ public interface RefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.impl.RefPackageImpl#getC3()
      * @generated
      */
-    EClass C3 = eINSTANCE.getC3();
+    EClass<C3> C3 = eINSTANCE.getC3();
 
     /**
      * The meta object literal for the '<em><b>D</b></em>' containment reference list feature.
@@ -1073,7 +1074,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C3__D = eINSTANCE.getC3_D();
+    EReference<C3, EList<D>> C3__D = eINSTANCE.getC3_D();
 
     /**
      * The meta object literal for the '<em><b>C</b></em>' containment reference feature.
@@ -1081,7 +1082,7 @@ public interface RefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C3__C = eINSTANCE.getC3_C();
+    EReference<C3, C> C3__C = eINSTANCE.getC3_C();
 
   }
 

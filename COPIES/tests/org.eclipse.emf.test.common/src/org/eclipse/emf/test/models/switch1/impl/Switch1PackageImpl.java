@@ -36,14 +36,14 @@ public class Switch1PackageImpl extends EPackageImpl implements Switch1Package
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass eClass0EClass = null;
+  private EClass<EClass0> eClass0EClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass eClass1EClass = null;
+  private EClass<EClass1> eClass1EClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -121,7 +121,7 @@ public class Switch1PackageImpl extends EPackageImpl implements Switch1Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEClass0()
+  public EClass<EClass0> getEClass0()
   {
     return eClass0EClass;
   }
@@ -131,9 +131,10 @@ public class Switch1PackageImpl extends EPackageImpl implements Switch1Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEClass0_EAttribute0()
+  @SuppressWarnings("unchecked")
+  public EAttribute<EClass0, String> getEClass0_EAttribute0()
   {
-    return (EAttribute)eClass0EClass.getEStructuralFeatures().get(0);
+    return (EAttribute<EClass0, String>) eClass0EClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -141,9 +142,10 @@ public class Switch1PackageImpl extends EPackageImpl implements Switch1Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEClass0_EAttribute1()
+  @SuppressWarnings("unchecked")
+  public EAttribute<EClass0, String> getEClass0_EAttribute1()
   {
-    return (EAttribute)eClass0EClass.getEStructuralFeatures().get(1);
+    return (EAttribute<EClass0, String>) eClass0EClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -151,7 +153,7 @@ public class Switch1PackageImpl extends EPackageImpl implements Switch1Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEClass1()
+  public EClass<EClass1> getEClass1()
   {
     return eClass1EClass;
   }
@@ -161,9 +163,10 @@ public class Switch1PackageImpl extends EPackageImpl implements Switch1Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEClass1_EAttribute2()
+  @SuppressWarnings("unchecked")
+  public EAttribute<EClass1, String> getEClass1_EAttribute2()
   {
-    return (EAttribute)eClass1EClass.getEStructuralFeatures().get(0);
+    return (EAttribute<EClass1, String>) eClass1EClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -171,9 +174,10 @@ public class Switch1PackageImpl extends EPackageImpl implements Switch1Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEClass1_EAttribute3()
+  @SuppressWarnings("unchecked")
+  public EAttribute<EClass1, String> getEClass1_EAttribute3()
   {
-    return (EAttribute)eClass1EClass.getEStructuralFeatures().get(1);
+    return (EAttribute<EClass1, String>) eClass1EClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -200,18 +204,25 @@ public class Switch1PackageImpl extends EPackageImpl implements Switch1Package
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    eClass0EClass = createEClass(ECLASS0);
+    // CHANGE gen: Add cast
+    eClass0EClass = (EClass<EClass0>) createEClass(ECLASS0);
+    // CHANGE gen: Use raw type
     createEAttribute(eClass0EClass, ECLASS0__EATTRIBUTE0);
+    // CHANGE gen: Use raw type
     createEAttribute(eClass0EClass, ECLASS0__EATTRIBUTE1);
 
-    eClass1EClass = createEClass(ECLASS1);
+    // CHANGE gen: Add cast
+    eClass1EClass = (EClass<EClass1>) createEClass(ECLASS1);
+    // CHANGE gen: Use raw type
     createEAttribute(eClass1EClass, ECLASS1__EATTRIBUTE2);
+    // CHANGE gen: Use raw type
     createEAttribute(eClass1EClass, ECLASS1__EATTRIBUTE3);
   }
 

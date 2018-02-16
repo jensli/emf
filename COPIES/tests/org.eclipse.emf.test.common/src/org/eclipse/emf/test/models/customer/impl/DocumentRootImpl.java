@@ -113,7 +113,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return CustomerPackage.Literals.DOCUMENT_ROOT;
   }

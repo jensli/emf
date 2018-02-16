@@ -64,7 +64,7 @@ public class RootImpl extends EObjectImpl implements Root
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return KeyPackage.Literals.ROOT;
   }

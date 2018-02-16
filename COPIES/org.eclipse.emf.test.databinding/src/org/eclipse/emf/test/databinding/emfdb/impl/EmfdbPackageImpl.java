@@ -152,6 +152,7 @@ public class EmfdbPackageImpl extends EPackageImpl implements EmfdbPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public EAttribute<org.eclipse.emf.test.databinding.emfdb.A, String> getA_String()
   {
   
@@ -164,6 +165,7 @@ public class EmfdbPackageImpl extends EPackageImpl implements EmfdbPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public EReference<org.eclipse.emf.test.databinding.emfdb.A, EList<org.eclipse.emf.test.databinding.emfdb.B>> getA_Blist()
   {
   
@@ -176,6 +178,7 @@ public class EmfdbPackageImpl extends EPackageImpl implements EmfdbPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public EReference<org.eclipse.emf.test.databinding.emfdb.A, EMap<String, String>> getA_Cmap()
   {
   
@@ -199,6 +202,7 @@ public class EmfdbPackageImpl extends EPackageImpl implements EmfdbPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public EAttribute<org.eclipse.emf.test.databinding.emfdb.B, String> getB_String()
   {
   
@@ -211,6 +215,7 @@ public class EmfdbPackageImpl extends EPackageImpl implements EmfdbPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public EReference<org.eclipse.emf.test.databinding.emfdb.B, org.eclipse.emf.test.databinding.emfdb.D> getB_D()
   {
   
@@ -234,6 +239,7 @@ public class EmfdbPackageImpl extends EPackageImpl implements EmfdbPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public EAttribute<?, String> getC_Key()
   {
   
@@ -246,6 +252,7 @@ public class EmfdbPackageImpl extends EPackageImpl implements EmfdbPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public EAttribute<?, String> getC_Value()
   {
   
@@ -269,6 +276,7 @@ public class EmfdbPackageImpl extends EPackageImpl implements EmfdbPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public EReference<org.eclipse.emf.test.databinding.emfdb.D, EList<org.eclipse.emf.test.databinding.emfdb.E>> getD_Elist()
   {
   
@@ -281,6 +289,7 @@ public class EmfdbPackageImpl extends EPackageImpl implements EmfdbPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public EAttribute<org.eclipse.emf.test.databinding.emfdb.D, String> getD_Name()
   {
   
@@ -304,6 +313,7 @@ public class EmfdbPackageImpl extends EPackageImpl implements EmfdbPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public EAttribute<org.eclipse.emf.test.databinding.emfdb.E, String> getE_Name()
   {
   
@@ -335,6 +345,7 @@ public class EmfdbPackageImpl extends EPackageImpl implements EmfdbPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
@@ -343,15 +354,16 @@ public class EmfdbPackageImpl extends EPackageImpl implements EmfdbPackage
 
     // Create classes and their features
     
-    aEClass = createEClass(A);
+    // CHANGE gen: Add cast
+    aEClass = (EClass<org.eclipse.emf.test.databinding.emfdb.A>) createEClass(A);
   
-    // CHANGE: Use raw type
+    // CHANGE gen: Use raw type
     createEAttribute(aEClass, A__STRING);
   
-    // CHANGE: Use raw type
+    // CHANGE gen: Use raw type
     createEReference(aEClass, A__BLIST);
   
-    // CHANGE: Use raw type
+    // CHANGE gen: Use raw type
     createEReference(aEClass, A__CMAP);
   
   
@@ -359,12 +371,13 @@ public class EmfdbPackageImpl extends EPackageImpl implements EmfdbPackage
 
   
     
-    bEClass = createEClass(B);
+    // CHANGE gen: Add cast
+    bEClass = (EClass<org.eclipse.emf.test.databinding.emfdb.B>) createEClass(B);
   
-    // CHANGE: Use raw type
+    // CHANGE gen: Use raw type
     createEAttribute(bEClass, B__STRING);
   
-    // CHANGE: Use raw type
+    // CHANGE gen: Use raw type
     createEReference(bEClass, B__D);
   
   
@@ -372,12 +385,13 @@ public class EmfdbPackageImpl extends EPackageImpl implements EmfdbPackage
 
   
     
-    cEClass = createEClass(C);
+    // CHANGE gen: Add cast
+    cEClass = (EClass<?>) createEClass(C);
   
-    // CHANGE: Use raw type
+    // CHANGE gen: Use raw type
     createEAttribute(cEClass, C__KEY);
   
-    // CHANGE: Use raw type
+    // CHANGE gen: Use raw type
     createEAttribute(cEClass, C__VALUE);
   
   
@@ -385,12 +399,13 @@ public class EmfdbPackageImpl extends EPackageImpl implements EmfdbPackage
 
   
     
-    dEClass = createEClass(D);
+    // CHANGE gen: Add cast
+    dEClass = (EClass<org.eclipse.emf.test.databinding.emfdb.D>) createEClass(D);
   
-    // CHANGE: Use raw type
+    // CHANGE gen: Use raw type
     createEReference(dEClass, D__ELIST);
   
-    // CHANGE: Use raw type
+    // CHANGE gen: Use raw type
     createEAttribute(dEClass, D__NAME);
   
   
@@ -398,9 +413,10 @@ public class EmfdbPackageImpl extends EPackageImpl implements EmfdbPackage
 
   
     
-    eEClass = createEClass(E);
+    // CHANGE gen: Add cast
+    eEClass = (EClass<org.eclipse.emf.test.databinding.emfdb.E>) createEClass(E);
   
-    // CHANGE: Use raw type
+    // CHANGE gen: Use raw type
     createEAttribute(eEClass, E__NAME);
   
   

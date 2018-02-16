@@ -37,7 +37,7 @@ public class HighBoundedContainerImpl extends BoundedGenericContainerImpl<High> 
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.HIGH_BOUNDED_CONTAINER;
   }

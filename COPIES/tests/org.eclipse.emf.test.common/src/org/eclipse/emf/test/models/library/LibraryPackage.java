@@ -10,6 +10,7 @@
  */
 package org.eclipse.emf.test.models.library;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -222,7 +223,7 @@ public interface LibraryPackage extends EPackage
    * @see org.eclipse.emf.test.models.library.Book
    * @generated
    */
-  EClass getBook();
+  EClass<Book> getBook();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.library.Book#getTitle <em>Title</em>}'.
@@ -233,7 +234,7 @@ public interface LibraryPackage extends EPackage
    * @see #getBook()
    * @generated
    */
-  EAttribute getBook_Title();
+  EAttribute<Book, String> getBook_Title();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.library.Book#getPages <em>Pages</em>}'.
@@ -244,7 +245,7 @@ public interface LibraryPackage extends EPackage
    * @see #getBook()
    * @generated
    */
-  EAttribute getBook_Pages();
+  EAttribute<Book, Integer> getBook_Pages();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.library.Book#getCategory <em>Category</em>}'.
@@ -255,7 +256,7 @@ public interface LibraryPackage extends EPackage
    * @see #getBook()
    * @generated
    */
-  EAttribute getBook_Category();
+  EAttribute<Book, BookCategory> getBook_Category();
 
   /**
    * Returns the meta object for the reference '{@link org.eclipse.emf.test.models.library.Book#getAuthor <em>Author</em>}'.
@@ -266,7 +267,7 @@ public interface LibraryPackage extends EPackage
    * @see #getBook()
    * @generated
    */
-  EReference getBook_Author();
+  EReference<Book, Writer> getBook_Author();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.library.Library <em>Library</em>}'.
@@ -276,7 +277,7 @@ public interface LibraryPackage extends EPackage
    * @see org.eclipse.emf.test.models.library.Library
    * @generated
    */
-  EClass getLibrary();
+  EClass<Library> getLibrary();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.library.Library#getName <em>Name</em>}'.
@@ -287,7 +288,7 @@ public interface LibraryPackage extends EPackage
    * @see #getLibrary()
    * @generated
    */
-  EAttribute getLibrary_Name();
+  EAttribute<Library, String> getLibrary_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.emf.test.models.library.Library#getWriters <em>Writers</em>}'.
@@ -298,7 +299,7 @@ public interface LibraryPackage extends EPackage
    * @see #getLibrary()
    * @generated
    */
-  EReference getLibrary_Writers();
+  EReference<Library, EList<Writer>> getLibrary_Writers();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.emf.test.models.library.Library#getBooks <em>Books</em>}'.
@@ -309,7 +310,7 @@ public interface LibraryPackage extends EPackage
    * @see #getLibrary()
    * @generated
    */
-  EReference getLibrary_Books();
+  EReference<Library, EList<Book>> getLibrary_Books();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.library.Writer <em>Writer</em>}'.
@@ -319,7 +320,7 @@ public interface LibraryPackage extends EPackage
    * @see org.eclipse.emf.test.models.library.Writer
    * @generated
    */
-  EClass getWriter();
+  EClass<Writer> getWriter();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.library.Writer#getName <em>Name</em>}'.
@@ -330,7 +331,7 @@ public interface LibraryPackage extends EPackage
    * @see #getWriter()
    * @generated
    */
-  EAttribute getWriter_Name();
+  EAttribute<Writer, String> getWriter_Name();
 
   /**
    * Returns the meta object for the reference list '{@link org.eclipse.emf.test.models.library.Writer#getBooks <em>Books</em>}'.
@@ -341,7 +342,7 @@ public interface LibraryPackage extends EPackage
    * @see #getWriter()
    * @generated
    */
-  EReference getWriter_Books();
+  EReference<Writer, EList<Book>> getWriter_Books();
 
   /**
    * Returns the meta object for enum '{@link org.eclipse.emf.test.models.library.BookCategory <em>Book Category</em>}'.
@@ -351,7 +352,7 @@ public interface LibraryPackage extends EPackage
    * @see org.eclipse.emf.test.models.library.BookCategory
    * @generated
    */
-  EEnum getBookCategory();
+  EEnum<BookCategory> getBookCategory();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -384,7 +385,7 @@ public interface LibraryPackage extends EPackage
      * @see org.eclipse.emf.test.models.library.impl.LibraryPackageImpl#getBook()
      * @generated
      */
-    EClass BOOK = eINSTANCE.getBook();
+    EClass<Book> BOOK = eINSTANCE.getBook();
 
     /**
      * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
@@ -392,7 +393,7 @@ public interface LibraryPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BOOK__TITLE = eINSTANCE.getBook_Title();
+    EAttribute<Book, String> BOOK__TITLE = eINSTANCE.getBook_Title();
 
     /**
      * The meta object literal for the '<em><b>Pages</b></em>' attribute feature.
@@ -400,7 +401,7 @@ public interface LibraryPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BOOK__PAGES = eINSTANCE.getBook_Pages();
+    EAttribute<Book, Integer> BOOK__PAGES = eINSTANCE.getBook_Pages();
 
     /**
      * The meta object literal for the '<em><b>Category</b></em>' attribute feature.
@@ -408,7 +409,7 @@ public interface LibraryPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BOOK__CATEGORY = eINSTANCE.getBook_Category();
+    EAttribute<Book, BookCategory> BOOK__CATEGORY = eINSTANCE.getBook_Category();
 
     /**
      * The meta object literal for the '<em><b>Author</b></em>' reference feature.
@@ -416,7 +417,7 @@ public interface LibraryPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BOOK__AUTHOR = eINSTANCE.getBook_Author();
+    EReference<Book, Writer> BOOK__AUTHOR = eINSTANCE.getBook_Author();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.library.impl.LibraryImpl <em>Library</em>}' class.
@@ -426,7 +427,7 @@ public interface LibraryPackage extends EPackage
      * @see org.eclipse.emf.test.models.library.impl.LibraryPackageImpl#getLibrary()
      * @generated
      */
-    EClass LIBRARY = eINSTANCE.getLibrary();
+    EClass<Library> LIBRARY = eINSTANCE.getLibrary();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -434,7 +435,7 @@ public interface LibraryPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LIBRARY__NAME = eINSTANCE.getLibrary_Name();
+    EAttribute<Library, String> LIBRARY__NAME = eINSTANCE.getLibrary_Name();
 
     /**
      * The meta object literal for the '<em><b>Writers</b></em>' containment reference list feature.
@@ -442,7 +443,7 @@ public interface LibraryPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LIBRARY__WRITERS = eINSTANCE.getLibrary_Writers();
+    EReference<Library, EList<Writer>> LIBRARY__WRITERS = eINSTANCE.getLibrary_Writers();
 
     /**
      * The meta object literal for the '<em><b>Books</b></em>' containment reference list feature.
@@ -450,7 +451,7 @@ public interface LibraryPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LIBRARY__BOOKS = eINSTANCE.getLibrary_Books();
+    EReference<Library, EList<Book>> LIBRARY__BOOKS = eINSTANCE.getLibrary_Books();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.library.impl.WriterImpl <em>Writer</em>}' class.
@@ -460,7 +461,7 @@ public interface LibraryPackage extends EPackage
      * @see org.eclipse.emf.test.models.library.impl.LibraryPackageImpl#getWriter()
      * @generated
      */
-    EClass WRITER = eINSTANCE.getWriter();
+    EClass<Writer> WRITER = eINSTANCE.getWriter();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -468,7 +469,7 @@ public interface LibraryPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute WRITER__NAME = eINSTANCE.getWriter_Name();
+    EAttribute<Writer, String> WRITER__NAME = eINSTANCE.getWriter_Name();
 
     /**
      * The meta object literal for the '<em><b>Books</b></em>' reference list feature.
@@ -476,7 +477,7 @@ public interface LibraryPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference WRITER__BOOKS = eINSTANCE.getWriter_Books();
+    EReference<Writer, EList<Book>> WRITER__BOOKS = eINSTANCE.getWriter_Books();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.library.BookCategory <em>Book Category</em>}' enum.
@@ -486,7 +487,7 @@ public interface LibraryPackage extends EPackage
      * @see org.eclipse.emf.test.models.library.impl.LibraryPackageImpl#getBookCategory()
      * @generated
      */
-    EEnum BOOK_CATEGORY = eINSTANCE.getBookCategory();
+    EEnum<BookCategory> BOOK_CATEGORY = eINSTANCE.getBookCategory();
 
   }
 

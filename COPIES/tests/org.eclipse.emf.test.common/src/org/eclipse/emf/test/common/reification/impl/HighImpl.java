@@ -36,7 +36,7 @@ public class HighImpl extends MediumImpl implements High
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.HIGH;
   }

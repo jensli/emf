@@ -13,6 +13,7 @@ package org.eclipse.emf.test.models.ref.unsettable.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.eclipse.emf.test.models.ref.unsettable.*;
 import org.eclipse.emf.test.models.ref.unsettable.AU;
 import org.eclipse.emf.test.models.ref.unsettable.BU;
 import org.eclipse.emf.test.models.ref.unsettable.C1U;

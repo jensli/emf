@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.test.models.ref.unsettable.*;
 import org.eclipse.emf.test.models.ref.unsettable.AU;
 import org.eclipse.emf.test.models.ref.unsettable.BU;
 import org.eclipse.emf.test.models.ref.unsettable.C1U;

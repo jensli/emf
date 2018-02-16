@@ -37,7 +37,7 @@ public class VeryLowImpl extends EObjectImpl implements VeryLow
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.VERY_LOW;
   }

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.test.models.ppo.*;
 import org.eclipse.emf.test.models.ppo.Item;
 import org.eclipse.emf.test.models.ppo.PPOFactory;
 import org.eclipse.emf.test.models.ppo.PPOPackage;
@@ -72,13 +73,14 @@ public class PPOFactoryImpl extends EFactoryImpl implements PPOFactory
    * @generated
    */
   @Override
-  public EObject create(EClass eClass)
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
     switch (eClass.getClassifierID())
     {
-      case PPOPackage.ITEM: return createItem();
-      case PPOPackage.US_ADDRESS: return createUSAddress();
-      case PPOPackage.PURCHASE_ORDER: return createPurchaseOrder();
+      case PPOPackage.ITEM: return (T) createItem();
+      case PPOPackage.US_ADDRESS: return (T) createUSAddress();
+      case PPOPackage.PURCHASE_ORDER: return (T) createPurchaseOrder();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -90,14 +92,16 @@ public class PPOFactoryImpl extends EFactoryImpl implements PPOFactory
    * @generated
    */
   @Override
-  public Object createFromString(EDataType eDataType, String initialValue)
+  @SuppressWarnings("unchecked")
+  public <T> T createFromString(EDataType<T> eDataType, String initialValue)
   {
+    // CHANGE gen: Cast 1
     switch (eDataType.getClassifierID())
     {
       case PPOPackage.SKU:
-        return createSKUFromString(eDataType, initialValue);
+        return (T) createSKUFromString((EDataType<String>) eDataType, initialValue);
       case PPOPackage.DATE:
-        return createDateFromString(eDataType, initialValue);
+        return (T) createDateFromString((EDataType<Date>) eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -108,15 +112,16 @@ public class PPOFactoryImpl extends EFactoryImpl implements PPOFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
-  public String convertToString(EDataType eDataType, Object instanceValue)
+  public <T> String convertToString(EDataType<T> eDataType, T instanceValue)
   {
     switch (eDataType.getClassifierID())
     {
       case PPOPackage.SKU:
-        return convertSKUToString(eDataType, instanceValue);
+        return convertSKUToString((EDataType<String>) eDataType, (String) instanceValue);
       case PPOPackage.DATE:
-        return convertDateToString(eDataType, instanceValue);
+        return convertDateToString((EDataType<Date>) eDataType, (Date) instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -160,7 +165,7 @@ public class PPOFactoryImpl extends EFactoryImpl implements PPOFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String createSKUFromString(EDataType eDataType, String initialValue)
+  public String createSKUFromString(EDataType<String> eDataType, String initialValue)
   {
     return (String)super.createFromString(eDataType, initialValue);
   }
@@ -170,9 +175,12 @@ public class PPOFactoryImpl extends EFactoryImpl implements PPOFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertSKUToString(EDataType eDataType, Object instanceValue)
+  // CHANGE gen: Add type parameter, convert type to string
+  // CHANGE gen: Note, instanceValue has type Object. Change the signature made a lot of duplicate
+  // methods get generated for hand-modified convert methods, because signatures didn't match.
+  public String convertSKUToString(EDataType<String> eDataType, Object instanceValue)
   {
-    return super.convertToString(eDataType, instanceValue);
+    return super.convertToString(eDataType, (String)instanceValue);
   }
 
   /**
@@ -180,7 +188,7 @@ public class PPOFactoryImpl extends EFactoryImpl implements PPOFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Date createDateFromString(EDataType eDataType, String initialValue)
+  public Date createDateFromString(EDataType<Date> eDataType, String initialValue)
   {
     return (Date)super.createFromString(eDataType, initialValue);
   }
@@ -190,9 +198,12 @@ public class PPOFactoryImpl extends EFactoryImpl implements PPOFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertDateToString(EDataType eDataType, Object instanceValue)
+  // CHANGE gen: Add type parameter, convert type to string
+  // CHANGE gen: Note, instanceValue has type Object. Change the signature made a lot of duplicate
+  // methods get generated for hand-modified convert methods, because signatures didn't match.
+  public String convertDateToString(EDataType<Date> eDataType, Object instanceValue)
   {
-    return super.convertToString(eDataType, instanceValue);
+    return super.convertToString(eDataType, (Date)instanceValue);
   }
 
   /**

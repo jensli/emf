@@ -10,6 +10,7 @@
  */
 package org.eclipse.emf.test.models.tree.impl;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -33,14 +34,14 @@ public class TreePackageImpl extends EPackageImpl implements TreePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass nodeEClass = null;
+  private EClass<Node> nodeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass dataEClass = null;
+  private EClass<Data> dataEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -110,7 +111,7 @@ public class TreePackageImpl extends EPackageImpl implements TreePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getNode()
+  public EClass<Node> getNode()
   {
     return nodeEClass;
   }
@@ -120,9 +121,10 @@ public class TreePackageImpl extends EPackageImpl implements TreePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getNode_Name()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Node, String> getNode_Name()
   {
-    return (EAttribute)nodeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<Node, String>) nodeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -130,9 +132,10 @@ public class TreePackageImpl extends EPackageImpl implements TreePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNode_Parent()
+  @SuppressWarnings("unchecked")
+  public EReference<Node, Node> getNode_Parent()
   {
-    return (EReference)nodeEClass.getEStructuralFeatures().get(1);
+    return (EReference<Node, Node>) nodeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -140,9 +143,10 @@ public class TreePackageImpl extends EPackageImpl implements TreePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNode_Children()
+  @SuppressWarnings("unchecked")
+  public EReference<Node, EList<Node>> getNode_Children()
   {
-    return (EReference)nodeEClass.getEStructuralFeatures().get(2);
+    return (EReference<Node, EList<Node>>) nodeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -150,9 +154,10 @@ public class TreePackageImpl extends EPackageImpl implements TreePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNode_Data()
+  @SuppressWarnings("unchecked")
+  public EReference<Node, Data> getNode_Data()
   {
-    return (EReference)nodeEClass.getEStructuralFeatures().get(3);
+    return (EReference<Node, Data>) nodeEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -160,9 +165,10 @@ public class TreePackageImpl extends EPackageImpl implements TreePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNode_RelatedNodes()
+  @SuppressWarnings("unchecked")
+  public EReference<Node, EList<Node>> getNode_RelatedNodes()
   {
-    return (EReference)nodeEClass.getEStructuralFeatures().get(4);
+    return (EReference<Node, EList<Node>>) nodeEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -170,7 +176,7 @@ public class TreePackageImpl extends EPackageImpl implements TreePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getData()
+  public EClass<Data> getData()
   {
     return dataEClass;
   }
@@ -180,9 +186,10 @@ public class TreePackageImpl extends EPackageImpl implements TreePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getData_Name()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Data, String> getData_Name()
   {
-    return (EAttribute)dataEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<Data, String>) dataEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -190,9 +197,10 @@ public class TreePackageImpl extends EPackageImpl implements TreePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getData_Node()
+  @SuppressWarnings("unchecked")
+  public EReference<Data, Node> getData_Node()
   {
-    return (EReference)dataEClass.getEStructuralFeatures().get(1);
+    return (EReference<Data, Node>) dataEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -219,21 +227,31 @@ public class TreePackageImpl extends EPackageImpl implements TreePackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    nodeEClass = createEClass(NODE);
+    // CHANGE gen: Add cast
+    nodeEClass = (EClass<Node>) createEClass(NODE);
+    // CHANGE gen: Use raw type
     createEAttribute(nodeEClass, NODE__NAME);
+    // CHANGE gen: Use raw type
     createEReference(nodeEClass, NODE__PARENT);
+    // CHANGE gen: Use raw type
     createEReference(nodeEClass, NODE__CHILDREN);
+    // CHANGE gen: Use raw type
     createEReference(nodeEClass, NODE__DATA);
+    // CHANGE gen: Use raw type
     createEReference(nodeEClass, NODE__RELATED_NODES);
 
-    dataEClass = createEClass(DATA);
+    // CHANGE gen: Add cast
+    dataEClass = (EClass<Data>) createEClass(DATA);
+    // CHANGE gen: Use raw type
     createEAttribute(dataEClass, DATA__NAME);
+    // CHANGE gen: Use raw type
     createEReference(dataEClass, DATA__NODE);
   }
 

@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.test.common.reification.*;
 import org.eclipse.emf.test.common.reification.Bidirectional;
 import org.eclipse.emf.test.common.reification.BoundedGenericContainer;
 import org.eclipse.emf.test.common.reification.BoundedTListKeyValuePair;

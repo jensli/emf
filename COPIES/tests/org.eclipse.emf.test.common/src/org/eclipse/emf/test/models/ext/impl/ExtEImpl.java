@@ -87,7 +87,7 @@ public class ExtEImpl extends EImpl implements ExtE
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ExtPackage.Literals.EXT_E;
   }

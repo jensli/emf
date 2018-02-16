@@ -73,7 +73,7 @@ public class CafeteriaImpl extends EObjectImpl implements Cafeteria
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return LibPackage.Literals.CAFETERIA;
   }

@@ -10,6 +10,7 @@
  */
 package org.eclipse.emf.test.models.ref.unsettable;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -451,7 +452,7 @@ public interface URefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.unsettable.C1U
    * @generated
    */
-  EClass getC1U();
+  EClass<C1U> getC1U();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.ref.unsettable.C1U#getAu <em>Au</em>}'.
@@ -462,7 +463,7 @@ public interface URefPackage extends EPackage
    * @see #getC1U()
    * @generated
    */
-  EReference getC1U_Au();
+  EReference<C1U, AU> getC1U_Au();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.emf.test.models.ref.unsettable.C1U#getBu <em>Bu</em>}'.
@@ -473,7 +474,7 @@ public interface URefPackage extends EPackage
    * @see #getC1U()
    * @generated
    */
-  EReference getC1U_Bu();
+  EReference<C1U, EList<BU>> getC1U_Bu();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ref.unsettable.C2U <em>C2U</em>}'.
@@ -483,7 +484,7 @@ public interface URefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.unsettable.C2U
    * @generated
    */
-  EClass getC2U();
+  EClass<C2U> getC2U();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.ref.unsettable.C2U#getAu <em>Au</em>}'.
@@ -494,7 +495,7 @@ public interface URefPackage extends EPackage
    * @see #getC2U()
    * @generated
    */
-  EReference getC2U_Au();
+  EReference<C2U, AU> getC2U_Au();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.emf.test.models.ref.unsettable.C2U#getBu <em>Bu</em>}'.
@@ -505,7 +506,7 @@ public interface URefPackage extends EPackage
    * @see #getC2U()
    * @generated
    */
-  EReference getC2U_Bu();
+  EReference<C2U, EList<BU>> getC2U_Bu();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ref.unsettable.AU <em>AU</em>}'.
@@ -515,7 +516,7 @@ public interface URefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.unsettable.AU
    * @generated
    */
-  EClass getAU();
+  EClass<AU> getAU();
 
   /**
    * Returns the meta object for the reference '{@link org.eclipse.emf.test.models.ref.unsettable.AU#getBu <em>Bu</em>}'.
@@ -526,7 +527,7 @@ public interface URefPackage extends EPackage
    * @see #getAU()
    * @generated
    */
-  EReference getAU_Bu();
+  EReference<AU, BU> getAU_Bu();
 
   /**
    * Returns the meta object for the container reference '{@link org.eclipse.emf.test.models.ref.unsettable.AU#getC2u <em>C2u</em>}'.
@@ -537,7 +538,7 @@ public interface URefPackage extends EPackage
    * @see #getAU()
    * @generated
    */
-  EReference getAU_C2u();
+  EReference<AU, C2U> getAU_C2u();
 
   /**
    * Returns the meta object for the reference '{@link org.eclipse.emf.test.models.ref.unsettable.AU#getCu <em>Cu</em>}'.
@@ -548,7 +549,7 @@ public interface URefPackage extends EPackage
    * @see #getAU()
    * @generated
    */
-  EReference getAU_Cu();
+  EReference<AU, CU> getAU_Cu();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ref.unsettable.BU <em>BU</em>}'.
@@ -558,7 +559,7 @@ public interface URefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.unsettable.BU
    * @generated
    */
-  EClass getBU();
+  EClass<BU> getBU();
 
   /**
    * Returns the meta object for the reference '{@link org.eclipse.emf.test.models.ref.unsettable.BU#getAu <em>Au</em>}'.
@@ -569,7 +570,7 @@ public interface URefPackage extends EPackage
    * @see #getBU()
    * @generated
    */
-  EReference getBU_Au();
+  EReference<BU, AU> getBU_Au();
 
   /**
    * Returns the meta object for the container reference '{@link org.eclipse.emf.test.models.ref.unsettable.BU#getC2u <em>C2u</em>}'.
@@ -580,7 +581,7 @@ public interface URefPackage extends EPackage
    * @see #getBU()
    * @generated
    */
-  EReference getBU_C2u();
+  EReference<BU, C2U> getBU_C2u();
 
   /**
    * Returns the meta object for the reference list '{@link org.eclipse.emf.test.models.ref.unsettable.BU#getDu <em>Du</em>}'.
@@ -591,7 +592,7 @@ public interface URefPackage extends EPackage
    * @see #getBU()
    * @generated
    */
-  EReference getBU_Du();
+  EReference<BU, EList<DU>> getBU_Du();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ref.unsettable.CU <em>CU</em>}'.
@@ -601,7 +602,7 @@ public interface URefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.unsettable.CU
    * @generated
    */
-  EClass getCU();
+  EClass<CU> getCU();
 
   /**
    * Returns the meta object for the reference list '{@link org.eclipse.emf.test.models.ref.unsettable.CU#getDu <em>Du</em>}'.
@@ -612,7 +613,7 @@ public interface URefPackage extends EPackage
    * @see #getCU()
    * @generated
    */
-  EReference getCU_Du();
+  EReference<CU, EList<DU>> getCU_Du();
 
   /**
    * Returns the meta object for the container reference '{@link org.eclipse.emf.test.models.ref.unsettable.CU#getC4u <em>C4u</em>}'.
@@ -623,7 +624,7 @@ public interface URefPackage extends EPackage
    * @see #getCU()
    * @generated
    */
-  EReference getCU_C4u();
+  EReference<CU, C4U> getCU_C4u();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ref.unsettable.DU <em>DU</em>}'.
@@ -633,7 +634,7 @@ public interface URefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.unsettable.DU
    * @generated
    */
-  EClass getDU();
+  EClass<DU> getDU();
 
   /**
    * Returns the meta object for the reference '{@link org.eclipse.emf.test.models.ref.unsettable.DU#getCu <em>Cu</em>}'.
@@ -644,7 +645,7 @@ public interface URefPackage extends EPackage
    * @see #getDU()
    * @generated
    */
-  EReference getDU_Cu();
+  EReference<DU, CU> getDU_Cu();
 
   /**
    * Returns the meta object for the container reference '{@link org.eclipse.emf.test.models.ref.unsettable.DU#getC4u <em>C4u</em>}'.
@@ -655,7 +656,7 @@ public interface URefPackage extends EPackage
    * @see #getDU()
    * @generated
    */
-  EReference getDU_C4u();
+  EReference<DU, C4U> getDU_C4u();
 
   /**
    * Returns the meta object for the reference list '{@link org.eclipse.emf.test.models.ref.unsettable.DU#getEu <em>Eu</em>}'.
@@ -666,7 +667,7 @@ public interface URefPackage extends EPackage
    * @see #getDU()
    * @generated
    */
-  EReference getDU_Eu();
+  EReference<DU, EList<EU>> getDU_Eu();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ref.unsettable.C4U <em>C4U</em>}'.
@@ -676,7 +677,7 @@ public interface URefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.unsettable.C4U
    * @generated
    */
-  EClass getC4U();
+  EClass<C4U> getC4U();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.ref.unsettable.C4U#getCu <em>Cu</em>}'.
@@ -687,7 +688,7 @@ public interface URefPackage extends EPackage
    * @see #getC4U()
    * @generated
    */
-  EReference getC4U_Cu();
+  EReference<C4U, CU> getC4U_Cu();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.emf.test.models.ref.unsettable.C4U#getDu <em>Du</em>}'.
@@ -698,7 +699,7 @@ public interface URefPackage extends EPackage
    * @see #getC4U()
    * @generated
    */
-  EReference getC4U_Du();
+  EReference<C4U, EList<DU>> getC4U_Du();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ref.unsettable.C3U <em>C3U</em>}'.
@@ -708,7 +709,7 @@ public interface URefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.unsettable.C3U
    * @generated
    */
-  EClass getC3U();
+  EClass<C3U> getC3U();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.ref.unsettable.C3U#getCu <em>Cu</em>}'.
@@ -719,7 +720,7 @@ public interface URefPackage extends EPackage
    * @see #getC3U()
    * @generated
    */
-  EReference getC3U_Cu();
+  EReference<C3U, CU> getC3U_Cu();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.emf.test.models.ref.unsettable.C3U#getDu <em>Du</em>}'.
@@ -730,7 +731,7 @@ public interface URefPackage extends EPackage
    * @see #getC3U()
    * @generated
    */
-  EReference getC3U_Du();
+  EReference<C3U, EList<DU>> getC3U_Du();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ref.unsettable.EU <em>EU</em>}'.
@@ -740,7 +741,7 @@ public interface URefPackage extends EPackage
    * @see org.eclipse.emf.test.models.ref.unsettable.EU
    * @generated
    */
-  EClass getEU();
+  EClass<EU> getEU();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ref.unsettable.EU#getName <em>Name</em>}'.
@@ -751,7 +752,7 @@ public interface URefPackage extends EPackage
    * @see #getEU()
    * @generated
    */
-  EAttribute getEU_Name();
+  EAttribute<EU, String> getEU_Name();
 
   /**
    * Returns the meta object for the attribute list '{@link org.eclipse.emf.test.models.ref.unsettable.EU#getIds <em>Ids</em>}'.
@@ -762,7 +763,7 @@ public interface URefPackage extends EPackage
    * @see #getEU()
    * @generated
    */
-  EAttribute getEU_Ids();
+  EAttribute<EU, EList<String>> getEU_Ids();
 
   /**
    * Returns the meta object for the attribute list '{@link org.eclipse.emf.test.models.ref.unsettable.EU#getLabels <em>Labels</em>}'.
@@ -773,7 +774,7 @@ public interface URefPackage extends EPackage
    * @see #getEU()
    * @generated
    */
-  EAttribute getEU_Labels();
+  EAttribute<EU, EList<String>> getEU_Labels();
 
   /**
    * Returns the meta object for the reference list '{@link org.eclipse.emf.test.models.ref.unsettable.EU#getDu <em>Du</em>}'.
@@ -784,7 +785,7 @@ public interface URefPackage extends EPackage
    * @see #getEU()
    * @generated
    */
-  EReference getEU_Du();
+  EReference<EU, EList<DU>> getEU_Du();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -817,7 +818,7 @@ public interface URefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.unsettable.impl.URefPackageImpl#getC1U()
      * @generated
      */
-    EClass C1U = eINSTANCE.getC1U();
+    EClass<C1U> C1U = eINSTANCE.getC1U();
 
     /**
      * The meta object literal for the '<em><b>Au</b></em>' containment reference feature.
@@ -825,7 +826,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C1U__AU = eINSTANCE.getC1U_Au();
+    EReference<C1U, AU> C1U__AU = eINSTANCE.getC1U_Au();
 
     /**
      * The meta object literal for the '<em><b>Bu</b></em>' containment reference list feature.
@@ -833,7 +834,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C1U__BU = eINSTANCE.getC1U_Bu();
+    EReference<C1U, EList<BU>> C1U__BU = eINSTANCE.getC1U_Bu();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ref.unsettable.impl.C2UImpl <em>C2U</em>}' class.
@@ -843,7 +844,7 @@ public interface URefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.unsettable.impl.URefPackageImpl#getC2U()
      * @generated
      */
-    EClass C2U = eINSTANCE.getC2U();
+    EClass<C2U> C2U = eINSTANCE.getC2U();
 
     /**
      * The meta object literal for the '<em><b>Au</b></em>' containment reference feature.
@@ -851,7 +852,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C2U__AU = eINSTANCE.getC2U_Au();
+    EReference<C2U, AU> C2U__AU = eINSTANCE.getC2U_Au();
 
     /**
      * The meta object literal for the '<em><b>Bu</b></em>' containment reference list feature.
@@ -859,7 +860,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C2U__BU = eINSTANCE.getC2U_Bu();
+    EReference<C2U, EList<BU>> C2U__BU = eINSTANCE.getC2U_Bu();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ref.unsettable.impl.AUImpl <em>AU</em>}' class.
@@ -869,7 +870,7 @@ public interface URefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.unsettable.impl.URefPackageImpl#getAU()
      * @generated
      */
-    EClass AU = eINSTANCE.getAU();
+    EClass<AU> AU = eINSTANCE.getAU();
 
     /**
      * The meta object literal for the '<em><b>Bu</b></em>' reference feature.
@@ -877,7 +878,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference AU__BU = eINSTANCE.getAU_Bu();
+    EReference<AU, BU> AU__BU = eINSTANCE.getAU_Bu();
 
     /**
      * The meta object literal for the '<em><b>C2u</b></em>' container reference feature.
@@ -885,7 +886,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference AU__C2U = eINSTANCE.getAU_C2u();
+    EReference<AU, C2U> AU__C2U = eINSTANCE.getAU_C2u();
 
     /**
      * The meta object literal for the '<em><b>Cu</b></em>' reference feature.
@@ -893,7 +894,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference AU__CU = eINSTANCE.getAU_Cu();
+    EReference<AU, CU> AU__CU = eINSTANCE.getAU_Cu();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ref.unsettable.impl.BUImpl <em>BU</em>}' class.
@@ -903,7 +904,7 @@ public interface URefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.unsettable.impl.URefPackageImpl#getBU()
      * @generated
      */
-    EClass BU = eINSTANCE.getBU();
+    EClass<BU> BU = eINSTANCE.getBU();
 
     /**
      * The meta object literal for the '<em><b>Au</b></em>' reference feature.
@@ -911,7 +912,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BU__AU = eINSTANCE.getBU_Au();
+    EReference<BU, AU> BU__AU = eINSTANCE.getBU_Au();
 
     /**
      * The meta object literal for the '<em><b>C2u</b></em>' container reference feature.
@@ -919,7 +920,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BU__C2U = eINSTANCE.getBU_C2u();
+    EReference<BU, C2U> BU__C2U = eINSTANCE.getBU_C2u();
 
     /**
      * The meta object literal for the '<em><b>Du</b></em>' reference list feature.
@@ -927,7 +928,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BU__DU = eINSTANCE.getBU_Du();
+    EReference<BU, EList<DU>> BU__DU = eINSTANCE.getBU_Du();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ref.unsettable.impl.CUImpl <em>CU</em>}' class.
@@ -937,7 +938,7 @@ public interface URefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.unsettable.impl.URefPackageImpl#getCU()
      * @generated
      */
-    EClass CU = eINSTANCE.getCU();
+    EClass<CU> CU = eINSTANCE.getCU();
 
     /**
      * The meta object literal for the '<em><b>Du</b></em>' reference list feature.
@@ -945,7 +946,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CU__DU = eINSTANCE.getCU_Du();
+    EReference<CU, EList<DU>> CU__DU = eINSTANCE.getCU_Du();
 
     /**
      * The meta object literal for the '<em><b>C4u</b></em>' container reference feature.
@@ -953,7 +954,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CU__C4U = eINSTANCE.getCU_C4u();
+    EReference<CU, C4U> CU__C4U = eINSTANCE.getCU_C4u();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ref.unsettable.impl.DUImpl <em>DU</em>}' class.
@@ -963,7 +964,7 @@ public interface URefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.unsettable.impl.URefPackageImpl#getDU()
      * @generated
      */
-    EClass DU = eINSTANCE.getDU();
+    EClass<DU> DU = eINSTANCE.getDU();
 
     /**
      * The meta object literal for the '<em><b>Cu</b></em>' reference feature.
@@ -971,7 +972,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DU__CU = eINSTANCE.getDU_Cu();
+    EReference<DU, CU> DU__CU = eINSTANCE.getDU_Cu();
 
     /**
      * The meta object literal for the '<em><b>C4u</b></em>' container reference feature.
@@ -979,7 +980,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DU__C4U = eINSTANCE.getDU_C4u();
+    EReference<DU, C4U> DU__C4U = eINSTANCE.getDU_C4u();
 
     /**
      * The meta object literal for the '<em><b>Eu</b></em>' reference list feature.
@@ -987,7 +988,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DU__EU = eINSTANCE.getDU_Eu();
+    EReference<DU, EList<EU>> DU__EU = eINSTANCE.getDU_Eu();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ref.unsettable.impl.C4UImpl <em>C4U</em>}' class.
@@ -997,7 +998,7 @@ public interface URefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.unsettable.impl.URefPackageImpl#getC4U()
      * @generated
      */
-    EClass C4U = eINSTANCE.getC4U();
+    EClass<C4U> C4U = eINSTANCE.getC4U();
 
     /**
      * The meta object literal for the '<em><b>Cu</b></em>' containment reference feature.
@@ -1005,7 +1006,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C4U__CU = eINSTANCE.getC4U_Cu();
+    EReference<C4U, CU> C4U__CU = eINSTANCE.getC4U_Cu();
 
     /**
      * The meta object literal for the '<em><b>Du</b></em>' containment reference list feature.
@@ -1013,7 +1014,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C4U__DU = eINSTANCE.getC4U_Du();
+    EReference<C4U, EList<DU>> C4U__DU = eINSTANCE.getC4U_Du();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ref.unsettable.impl.C3UImpl <em>C3U</em>}' class.
@@ -1023,7 +1024,7 @@ public interface URefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.unsettable.impl.URefPackageImpl#getC3U()
      * @generated
      */
-    EClass C3U = eINSTANCE.getC3U();
+    EClass<C3U> C3U = eINSTANCE.getC3U();
 
     /**
      * The meta object literal for the '<em><b>Cu</b></em>' containment reference feature.
@@ -1031,7 +1032,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C3U__CU = eINSTANCE.getC3U_Cu();
+    EReference<C3U, CU> C3U__CU = eINSTANCE.getC3U_Cu();
 
     /**
      * The meta object literal for the '<em><b>Du</b></em>' containment reference list feature.
@@ -1039,7 +1040,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference C3U__DU = eINSTANCE.getC3U_Du();
+    EReference<C3U, EList<DU>> C3U__DU = eINSTANCE.getC3U_Du();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ref.unsettable.impl.EUImpl <em>EU</em>}' class.
@@ -1049,7 +1050,7 @@ public interface URefPackage extends EPackage
      * @see org.eclipse.emf.test.models.ref.unsettable.impl.URefPackageImpl#getEU()
      * @generated
      */
-    EClass EU = eINSTANCE.getEU();
+    EClass<EU> EU = eINSTANCE.getEU();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1057,7 +1058,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EU__NAME = eINSTANCE.getEU_Name();
+    EAttribute<EU, String> EU__NAME = eINSTANCE.getEU_Name();
 
     /**
      * The meta object literal for the '<em><b>Ids</b></em>' attribute list feature.
@@ -1065,7 +1066,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EU__IDS = eINSTANCE.getEU_Ids();
+    EAttribute<EU, EList<String>> EU__IDS = eINSTANCE.getEU_Ids();
 
     /**
      * The meta object literal for the '<em><b>Labels</b></em>' attribute list feature.
@@ -1073,7 +1074,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EU__LABELS = eINSTANCE.getEU_Labels();
+    EAttribute<EU, EList<String>> EU__LABELS = eINSTANCE.getEU_Labels();
 
     /**
      * The meta object literal for the '<em><b>Du</b></em>' reference list feature.
@@ -1081,7 +1082,7 @@ public interface URefPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EU__DU = eINSTANCE.getEU_Du();
+    EReference<EU, EList<DU>> EU__DU = eINSTANCE.getEU_Du();
 
   }
 

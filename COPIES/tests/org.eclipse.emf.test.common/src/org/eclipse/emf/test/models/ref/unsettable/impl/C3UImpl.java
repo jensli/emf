@@ -87,7 +87,7 @@ public class C3UImpl extends EObjectImpl implements C3U
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return URefPackage.Literals.C3U;
   }

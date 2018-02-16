@@ -10,6 +10,7 @@
  */
 package org.eclipse.emf.test.models.key.impl;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -33,14 +34,14 @@ public class KeyPackageImpl extends EPackageImpl implements KeyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass itemEClass = null;
+  private EClass<Item> itemEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass rootEClass = null;
+  private EClass<Root> rootEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -110,7 +111,7 @@ public class KeyPackageImpl extends EPackageImpl implements KeyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getItem()
+  public EClass<Item> getItem()
   {
     return itemEClass;
   }
@@ -120,9 +121,10 @@ public class KeyPackageImpl extends EPackageImpl implements KeyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getItem_Name()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Item, String> getItem_Name()
   {
-    return (EAttribute)itemEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<Item, String>) itemEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -130,9 +132,10 @@ public class KeyPackageImpl extends EPackageImpl implements KeyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getItem_Signature()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Item, EList<String>> getItem_Signature()
   {
-    return (EAttribute)itemEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<Item, EList<String>>) itemEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -140,9 +143,10 @@ public class KeyPackageImpl extends EPackageImpl implements KeyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getItem_RelatedItems()
+  @SuppressWarnings("unchecked")
+  public EReference<Item, EList<Item>> getItem_RelatedItems()
   {
-    return (EReference)itemEClass.getEStructuralFeatures().get(2);
+    return (EReference<Item, EList<Item>>) itemEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -150,7 +154,7 @@ public class KeyPackageImpl extends EPackageImpl implements KeyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRoot()
+  public EClass<Root> getRoot()
   {
     return rootEClass;
   }
@@ -160,9 +164,10 @@ public class KeyPackageImpl extends EPackageImpl implements KeyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRoot_Items()
+  @SuppressWarnings("unchecked")
+  public EReference<Root, EList<Item>> getRoot_Items()
   {
-    return (EReference)rootEClass.getEStructuralFeatures().get(0);
+    return (EReference<Root, EList<Item>>) rootEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -189,18 +194,25 @@ public class KeyPackageImpl extends EPackageImpl implements KeyPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    itemEClass = createEClass(ITEM);
+    // CHANGE gen: Add cast
+    itemEClass = (EClass<Item>) createEClass(ITEM);
+    // CHANGE gen: Use raw type
     createEAttribute(itemEClass, ITEM__NAME);
+    // CHANGE gen: Use raw type
     createEAttribute(itemEClass, ITEM__SIGNATURE);
+    // CHANGE gen: Use raw type
     createEReference(itemEClass, ITEM__RELATED_ITEMS);
 
-    rootEClass = createEClass(ROOT);
+    // CHANGE gen: Add cast
+    rootEClass = (EClass<Root>) createEClass(ROOT);
+    // CHANGE gen: Use raw type
     createEReference(rootEClass, ROOT__ITEMS);
   }
 

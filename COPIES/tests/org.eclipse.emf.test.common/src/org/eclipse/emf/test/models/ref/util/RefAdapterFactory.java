@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.test.models.ref.*;
 import org.eclipse.emf.test.models.ref.A;
 import org.eclipse.emf.test.models.ref.B;
 import org.eclipse.emf.test.models.ref.C;

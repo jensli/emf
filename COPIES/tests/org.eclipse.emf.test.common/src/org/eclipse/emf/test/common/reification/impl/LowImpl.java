@@ -36,7 +36,7 @@ public class LowImpl extends VeryLowImpl implements Low
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.LOW;
   }

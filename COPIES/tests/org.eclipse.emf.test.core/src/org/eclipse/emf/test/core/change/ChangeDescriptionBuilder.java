@@ -37,17 +37,17 @@ public class ChangeDescriptionBuilder extends BasicChangeRecorder
     setRecording(true);
   }
 
-  public void recordUnsetFeature(EObject eObject, EStructuralFeature feature)
+  public void recordUnsetFeature(EObject eObject, EStructuralFeature<?, ?> feature)
   {
     recordFeature(eObject, feature, null, false);
   }
 
-  public void recordSetFeature(EObject eObject, EStructuralFeature feature, Object value)
+  public void recordSetFeature(EObject eObject, EStructuralFeature<?, ?> feature, Object value)
   {
     recordFeature(eObject, feature, value, true);
   }
 
-  protected void recordFeature(EObject eObject, EStructuralFeature feature, Object value, boolean isSet)
+  protected void recordFeature(EObject eObject, EStructuralFeature<?, ?> feature, Object value, boolean isSet)
   {
     if (shouldRecord(feature, eObject))
     {

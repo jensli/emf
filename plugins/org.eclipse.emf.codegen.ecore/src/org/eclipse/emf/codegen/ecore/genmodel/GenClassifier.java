@@ -79,7 +79,7 @@ public interface GenClassifier extends GenBase
    */
   String getRawImportedMetaType();
   
-  // TODO j: getMetaType, this is unnessecary isn't is? Name never has '.' in it?
+  // TODO j: getMetaType, this is unnecessary isn't is? Name never has '.' in it?
   // String getMetaType();
 
   String getName();

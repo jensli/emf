@@ -16,8 +16,11 @@ import static org.junit.Assert.assertTrue;
 import java.util.Date;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -27,6 +30,7 @@ import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
+import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.xml.type.internal.XMLCalendar;
 import org.eclipse.emf.test.core.featuremap.supplier.PurchaseOrder;
 import org.eclipse.emf.test.core.featuremap.supplier.Supplier;
@@ -38,47 +42,47 @@ import org.eclipse.emf.test.models.customer.CustomerType;
 import org.junit.Before;
 import org.junit.Test;
 
-public class EqualityTest
+public class EqualityTest<E extends EObject>
 {
-  private static SupplierFactory supplierFactoryInstance;
+  private SupplierFactory supplierFactoryInstance;
 
-  private static PurchaseOrder po1;
+  private PurchaseOrder po1;
 
-  private static PurchaseOrder po2;
+  private PurchaseOrder po2;
 
-  private static Supplier supplier1;
+  private Supplier supplier1;
 
-  private static Supplier supplier2;
+  private Supplier supplier2;
 
-  private static CustomerFactory customerFactoryInstance;
+  private CustomerFactory customerFactoryInstance;
 
-  private static CustomerType customer1;
+  private CustomerType customer1;
 
-  private static CustomerType customer2;
+  private CustomerType customer2;
 
-  private static AddressType address1;
+  private AddressType address1;
 
-  private static AddressType address2;
+  private AddressType address2;
 
-  private static CreditInfo credit1;
+  private CreditInfo credit1;
 
-  private static CreditInfo credit2;
+  private CreditInfo credit2;
 
-  private static EPackage employeePackage;
+  private EPackage employeePackage;
 
-  private static EClass employeeClass;
+  private EClass<E> employeeClass;
 
-  private static EAttribute nameAttr;
+  private EAttribute<E, String> nameAttr;
 
-  private static EReference employeesRef;
+  private EReference<E, E> employeesRef;
 
-  private static EAttribute ratingsAttr;
+  private EAttribute<E, EList<Integer>> ratingsAttr;
 
-  private static EAttribute ordersAttr;
+  private EAttribute<E, EList<FeatureMap.Entry>> ordersAttr;
 
-  private static EAttribute preferredAttr;
+  private EAttribute<E, EList<String>> preferredAttr;
 
-  private static EAttribute standardAttr;
+  private EAttribute<E, EList<String>> standardAttr;
 
   /*
    * @see TestCase#setUp()
@@ -155,10 +159,8 @@ public class EqualityTest
     EObject employee1 = createEmployee("Mr. J. C.");
     EObject employee2 = EcoreUtil.copy(employee1);
     assertTrue(EcoreUtil.equals(employee1, employee2));
-    @SuppressWarnings("unchecked")
-    List<Integer> ratings1 = (List<Integer>)employee1.eGet(ratingsAttr);
-    @SuppressWarnings("unchecked")
-    List<Integer> ratings2 = (List<Integer>)employee2.eGet(ratingsAttr);
+    List<Integer> ratings1 = employee1.eGet(ratingsAttr);
+    List<Integer> ratings2 = employee2.eGet(ratingsAttr);
     ratings1.add(456);
     ratings1.add(123);
     ratings2.add(123);
@@ -205,21 +207,17 @@ public class EqualityTest
 
     // test FeatureMaps with EAttributes entries
     assertTrue(EcoreUtil.equals(employee1, employee2));
-    @SuppressWarnings("unchecked")
-    List<String> standards1 = (List<String>)employee1.eGet(standardAttr);
+    List<String> standards1 = employee1.eGet(standardAttr);
     standards1.add("abcd");
     assertTrue(!EcoreUtil.equals(employee1, employee2));
-    @SuppressWarnings("unchecked")
-    List<String> standards2 = (List<String>)employee2.eGet(standardAttr);
+    List<String> standards2 = employee2.eGet(standardAttr);
     standards2.add("abcd");
     assertTrue(EcoreUtil.equals(employee1, employee2));
     standards1.add("efgh");
-    @SuppressWarnings("unchecked")
-    List<String> preferreds2 = (List<String>)employee2.eGet(preferredAttr);
+    List<String> preferreds2 = employee2.eGet(preferredAttr);
     preferreds2.add("efgh");
     assertTrue(!EcoreUtil.equals(employee1, employee2));
-    @SuppressWarnings("unchecked")
-    List<String> preferreds1 = (List<String>)employee1.eGet(preferredAttr);
+    List<String> preferreds1 = employee1.eGet(preferredAttr);
     preferreds1.add("efgh");
     standards1.remove("efgh");
     assertTrue(EcoreUtil.equals(employee1, employee2));
@@ -350,7 +348,8 @@ public class EqualityTest
     assertTrue(EcoreUtil.equals(employee1Prime, employee1));
   }
 
-  private static EPackage getEmployeePackage()
+  @SuppressWarnings("unchecked")
+  private <P extends EObject> EPackage getEmployeePackage()
   {
     EcoreFactory ecoreFactory = EcoreFactory.eINSTANCE;
     EcorePackage ecorePackage = EcorePackage.eINSTANCE;
@@ -364,7 +363,7 @@ public class EqualityTest
     employeePackage.getEClassifiers().add(employeeClass);
     employeeClass.setName("Employee");
 
-    EClass poClass = ecoreFactory.createEClass();
+    EClass<P> poClass = ecoreFactory.createEClass();
     employeePackage.getEClassifiers().add(poClass);
     poClass.setName("PurchaseOrder");
 
@@ -378,7 +377,7 @@ public class EqualityTest
     employeeClass.getEStructuralFeatures().add(ratingsAttr);
     ratingsAttr.setName("phoneNumbers");
     ratingsAttr.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
-    ratingsAttr.setEType(ecorePackage.getEIntegerObject());
+    ratingsAttr.setEType((EDataType<EList<Integer>>)(Object)ecorePackage.getEIntegerObject());
 
     // create a one-way reference to an Employee, employeesRef.
     // This is used to test cases described in cases.gif.
@@ -386,21 +385,21 @@ public class EqualityTest
     employeeClass.getEStructuralFeatures().add(employeesRef);
     employeesRef.setName("employees");
     employeesRef.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
-    employeesRef.setEType(employeeClass);
+    employeesRef.setEType((EClassifier<E>)(Object)employeeClass);
 
     // to test FeatureMaps with EAttributes Entries
     ordersAttr = ecoreFactory.createEAttribute();
     employeeClass.getEStructuralFeatures().add(ordersAttr);
     ordersAttr.setName("orders");
     ordersAttr.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
-    ordersAttr.setEType(ecorePackage.getEFeatureMapEntry());
+    ordersAttr.setEType((EDataType<EList<FeatureMap.Entry>>)(Object)ecorePackage.getEFeatureMapEntry());
     ExtendedMetaData.INSTANCE.setFeatureKind(ordersAttr, ExtendedMetaData.GROUP_FEATURE);
 
     preferredAttr = ecoreFactory.createEAttribute();
     employeeClass.getEStructuralFeatures().add(preferredAttr);
     preferredAttr.setName("preferredOrders");
     preferredAttr.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
-    preferredAttr.setEType(ecorePackage.getEString());
+    preferredAttr.setEType((EDataType<EList<String>>)(Object)ecorePackage.getEString());
     preferredAttr.setVolatile(true);
     preferredAttr.setTransient(true);
     preferredAttr.setDerived(true);
@@ -410,7 +409,7 @@ public class EqualityTest
     employeeClass.getEStructuralFeatures().add(standardAttr);
     standardAttr.setName("standardOrders");
     standardAttr.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
-    standardAttr.setEType(ecorePackage.getEString());
+    standardAttr.setEType((EDataType<EList<String>>)(Object)ecorePackage.getEString());
     standardAttr.setVolatile(true);
     standardAttr.setTransient(true);
     standardAttr.setDerived(true);
@@ -419,7 +418,7 @@ public class EqualityTest
     return employeePackage;
   }
 
-  private static EObject createEmployee(String name)
+  private EObject createEmployee(String name)
   {
     EFactory employeeFactory = employeePackage.getEFactoryInstance();
     EObject employee = employeeFactory.create(employeeClass);

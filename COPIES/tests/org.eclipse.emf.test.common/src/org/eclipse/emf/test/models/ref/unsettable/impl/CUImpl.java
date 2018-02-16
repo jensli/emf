@@ -69,7 +69,7 @@ public class CUImpl extends EObjectImpl implements CU
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return URefPackage.Literals.CU;
   }

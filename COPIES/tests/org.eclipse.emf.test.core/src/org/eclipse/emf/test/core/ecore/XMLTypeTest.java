@@ -222,7 +222,7 @@ public class XMLTypeTest
       {
         if (useReflection)
         {
-          return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.DOUBLE, value);
+          return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.DOUBLE, (Double)value);
         }
         else
         {
@@ -233,7 +233,7 @@ public class XMLTypeTest
       {
         if (useReflection)
         {
-          return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.DOUBLE_OBJECT, value);
+          return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.DOUBLE_OBJECT, (Double)value);
         }
         else
         {
@@ -247,7 +247,7 @@ public class XMLTypeTest
       {
         if (useReflection)
         {
-          return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.FLOAT, value);
+          return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.FLOAT, (Float)value);
         }
         else
         {
@@ -258,7 +258,7 @@ public class XMLTypeTest
       {
         if (useReflection)
         {
-          return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.FLOAT_OBJECT, value);
+          return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.FLOAT_OBJECT, (Float)value);
         }
         else
         {

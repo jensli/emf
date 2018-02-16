@@ -89,7 +89,7 @@ public class EClass2Impl extends EClass1Impl implements EClass2
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return Switch2Package.Literals.ECLASS2;
   }

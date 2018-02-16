@@ -128,7 +128,7 @@ public interface DBPricePackage extends EPackage
    * @see org.eclipse.emf.test.models.dbprice.PencilType
    * @generated
    */
-  EClass getPencilType();
+  EClass<PencilType> getPencilType();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.dbprice.PencilType#getPrice <em>Price</em>}'.
@@ -139,7 +139,7 @@ public interface DBPricePackage extends EPackage
    * @see #getPencilType()
    * @generated
    */
-  EAttribute getPencilType_Price();
+  EAttribute<PencilType, Integer> getPencilType_Price();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.dbprice.PenType <em>Pen Type</em>}'.
@@ -149,7 +149,7 @@ public interface DBPricePackage extends EPackage
    * @see org.eclipse.emf.test.models.dbprice.PenType
    * @generated
    */
-  EClass getPenType();
+  EClass<PenType> getPenType();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.dbprice.PenType#getPrice <em>Price</em>}'.
@@ -160,7 +160,7 @@ public interface DBPricePackage extends EPackage
    * @see #getPenType()
    * @generated
    */
-  EAttribute getPenType_Price();
+  EAttribute<PenType, Integer> getPenType_Price();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -193,7 +193,7 @@ public interface DBPricePackage extends EPackage
      * @see org.eclipse.emf.test.models.dbprice.impl.DBPricePackageImpl#getPencilType()
      * @generated
      */
-    EClass PENCIL_TYPE = eINSTANCE.getPencilType();
+    EClass<PencilType> PENCIL_TYPE = eINSTANCE.getPencilType();
 
     /**
      * The meta object literal for the '<em><b>Price</b></em>' attribute feature.
@@ -201,7 +201,7 @@ public interface DBPricePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PENCIL_TYPE__PRICE = eINSTANCE.getPencilType_Price();
+    EAttribute<PencilType, Integer> PENCIL_TYPE__PRICE = eINSTANCE.getPencilType_Price();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.dbprice.impl.PenTypeImpl <em>Pen Type</em>}' class.
@@ -211,7 +211,7 @@ public interface DBPricePackage extends EPackage
      * @see org.eclipse.emf.test.models.dbprice.impl.DBPricePackageImpl#getPenType()
      * @generated
      */
-    EClass PEN_TYPE = eINSTANCE.getPenType();
+    EClass<PenType> PEN_TYPE = eINSTANCE.getPenType();
 
     /**
      * The meta object literal for the '<em><b>Price</b></em>' attribute feature.
@@ -219,7 +219,7 @@ public interface DBPricePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PEN_TYPE__PRICE = eINSTANCE.getPenType_Price();
+    EAttribute<PenType, Integer> PEN_TYPE__PRICE = eINSTANCE.getPenType_Price();
 
   }
 

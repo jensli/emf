@@ -40,7 +40,7 @@ public class ListDifferenceAnalyzerTest
           new ListChangeImpl()
           {
             @Override
-            public EStructuralFeature getFeature()
+            public EStructuralFeature<?, ?> getFeature()
             {
               return EcorePackage.Literals.ETYPED_ELEMENT__LOWER_BOUND;
             }

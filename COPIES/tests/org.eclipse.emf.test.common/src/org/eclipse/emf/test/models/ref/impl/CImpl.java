@@ -69,7 +69,7 @@ public class CImpl extends EObjectImpl implements C
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return RefPackage.Literals.C;
   }

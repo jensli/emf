@@ -228,7 +228,7 @@ public class MovieTypeImpl extends EObjectImpl implements MovieType
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return DBPackage.Literals.MOVIE_TYPE;
   }

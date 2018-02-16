@@ -37,7 +37,7 @@ public class BoundedTListKeyValuePairImpl<T extends Medium> extends TListKeyValu
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.BOUNDED_TLIST_KEY_VALUE_PAIR;
   }

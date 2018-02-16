@@ -171,7 +171,7 @@ public class ResourceTypeImpl extends EObjectImpl implements ResourceType
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return QNamePackage.Literals.RESOURCE_TYPE;
   }

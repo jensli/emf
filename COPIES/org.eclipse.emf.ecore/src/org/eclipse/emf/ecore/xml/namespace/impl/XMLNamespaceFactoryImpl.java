@@ -1,13 +1,3 @@
-/**
- * Copyright (c) 2003-2006 IBM Corporation and others.
- * All rights reserved.   This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *   IBM - Initial API and implementation
- */
 package org.eclipse.emf.ecore.xml.namespace.impl;
 
 
@@ -15,15 +5,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.xml.namespace.*;
 import org.eclipse.emf.ecore.xml.type.XMLTypeFactory;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -73,6 +60,7 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * @generated
    */
   @Override
+  // CHANGE gen: Added generics and annotation
   @SuppressWarnings("unchecked")
   public <T extends EObject> T create(EClass<T> eClass)
   {
@@ -90,6 +78,7 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * @generated
    */
   @Override
+  // CHANGE gen: Added generics and annotation
   @SuppressWarnings("unchecked")
   public <T> T createFromString(EDataType<T> eDataType, String initialValue)
   {
@@ -149,6 +138,7 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
+    // CHANGE gen: Added type parameter
   public SpaceType createSpaceTypeFromString(EDataType<SpaceType> eDataType, String initialValue)
   {
     SpaceType result = SpaceType.get(initialValue);
@@ -161,6 +151,7 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
+  // CHANGE gen: Add type parameter, convert type to string
   public String convertSpaceTypeToString(EDataType<SpaceType> eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
@@ -171,6 +162,7 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
+    // CHANGE gen: Added type parameter
   public String createLangTypeFromString(EDataType<String> eDataType, String initialValue)
   {
     if (initialValue == null) return null;
@@ -210,6 +202,7 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
+  // CHANGE gen: Add type parameter, convert type to string
   public String convertLangTypeToString(EDataType<String> eDataType, Object instanceValue)
   {
     if (instanceValue == null) return null;
@@ -247,6 +240,7 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
+    // CHANGE gen: Added type parameter
   public String createLangTypeNullFromString(EDataType<String> eDataType, String initialValue)
   {
     return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
@@ -257,9 +251,11 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
+  // CHANGE gen: Add type parameter, convert type to string
   public String convertLangTypeNullToString(EDataType<String> eDataType, Object instanceValue)
   {
-    return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.STRING, instanceValue);
+    // CHANGE gen: Added cast
+    return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.STRING, (String)instanceValue);
   }
 
   /**
@@ -267,6 +263,7 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
+    // CHANGE gen: Added type parameter
   public SpaceType createSpaceTypeObjectFromString(EDataType<SpaceType> eDataType, String initialValue)
   {
     return createSpaceTypeFromString(XMLNamespacePackage.Literals.SPACE_TYPE, initialValue);
@@ -277,6 +274,7 @@ public class XMLNamespaceFactoryImpl extends EFactoryImpl implements XMLNamespac
    * <!-- end-user-doc -->
    * @generated
    */
+  // CHANGE gen: Add type parameter, convert type to string
   public String convertSpaceTypeObjectToString(EDataType<SpaceType> eDataType, Object instanceValue)
   {
     return convertSpaceTypeToString(XMLNamespacePackage.Literals.SPACE_TYPE, instanceValue);

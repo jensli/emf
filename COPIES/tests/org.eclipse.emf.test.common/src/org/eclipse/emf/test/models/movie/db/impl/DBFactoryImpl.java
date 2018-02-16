@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.xml.type.XMLTypeFactory;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
+import org.eclipse.emf.test.models.movie.db.*;
 import org.eclipse.emf.test.models.movie.db.CriticsReviewType;
 import org.eclipse.emf.test.models.movie.db.CustomerReviewType;
 import org.eclipse.emf.test.models.movie.db.DBFactory;
@@ -77,15 +78,16 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
    * @generated
    */
   @Override
-  public EObject create(EClass eClass)
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
     switch (eClass.getClassifierID())
     {
-      case DBPackage.CRITICS_REVIEW_TYPE: return createCriticsReviewType();
-      case DBPackage.CUSTOMER_REVIEW_TYPE: return createCustomerReviewType();
-      case DBPackage.DOCUMENT_ROOT: return createDocumentRoot();
-      case DBPackage.MOVIE_DB_TYPE: return createMovieDBType();
-      case DBPackage.MOVIE_TYPE: return createMovieType();
+      case DBPackage.CRITICS_REVIEW_TYPE: return (T) createCriticsReviewType();
+      case DBPackage.CUSTOMER_REVIEW_TYPE: return (T) createCustomerReviewType();
+      case DBPackage.DOCUMENT_ROOT: return (T) createDocumentRoot();
+      case DBPackage.MOVIE_DB_TYPE: return (T) createMovieDBType();
+      case DBPackage.MOVIE_TYPE: return (T) createMovieType();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -97,24 +99,26 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
    * @generated
    */
   @Override
-  public Object createFromString(EDataType eDataType, String initialValue)
+  @SuppressWarnings("unchecked")
+  public <T> T createFromString(EDataType<T> eDataType, String initialValue)
   {
+    // CHANGE gen: Cast added 1
     switch (eDataType.getClassifierID())
     {
       case DBPackage.GENRE_TYPES:
-        return createGenreTypesFromString(eDataType, initialValue);
+        return (T) createGenreTypesFromString((EDataType<GenreTypes>) eDataType, initialValue);
       case DBPackage.ACTORS_LIST:
-        return createActorsListFromString(eDataType, initialValue);
+        return (T) createActorsListFromString((EDataType<List<String>>) eDataType, initialValue);
       case DBPackage.GENRE_TYPES_OBJECT:
-        return createGenreTypesObjectFromString(eDataType, initialValue);
+        return (T) createGenreTypesObjectFromString((EDataType<GenreTypes>) eDataType, initialValue);
       case DBPackage.RATING_TYPE:
-        return createRatingTypeFromString(eDataType, initialValue);
+        return (T) createRatingTypeFromString((EDataType<Integer>) eDataType, initialValue);
       case DBPackage.RATING_TYPE_OBJECT:
-        return createRatingTypeObjectFromString(eDataType, initialValue);
+        return (T) createRatingTypeObjectFromString((EDataType<Integer>) eDataType, initialValue);
       case DBPackage.RATING_VALUES:
-        return createRatingValuesFromString(eDataType, initialValue);
+        return (T) createRatingValuesFromString((EDataType<Integer>) eDataType, initialValue);
       case DBPackage.RATING_VALUES_OBJECT:
-        return createRatingValuesObjectFromString(eDataType, initialValue);
+        return (T) createRatingValuesObjectFromString((EDataType<Integer>) eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -125,25 +129,26 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
-  public String convertToString(EDataType eDataType, Object instanceValue)
+  public <T> String convertToString(EDataType<T> eDataType, T instanceValue)
   {
     switch (eDataType.getClassifierID())
     {
       case DBPackage.GENRE_TYPES:
-        return convertGenreTypesToString(eDataType, instanceValue);
+        return convertGenreTypesToString((EDataType<GenreTypes>) eDataType, (GenreTypes) instanceValue);
       case DBPackage.ACTORS_LIST:
-        return convertActorsListToString(eDataType, instanceValue);
+        return convertActorsListToString((EDataType<List<String>>) eDataType, (List<String>) instanceValue);
       case DBPackage.GENRE_TYPES_OBJECT:
-        return convertGenreTypesObjectToString(eDataType, instanceValue);
+        return convertGenreTypesObjectToString((EDataType<GenreTypes>) eDataType, (GenreTypes) instanceValue);
       case DBPackage.RATING_TYPE:
-        return convertRatingTypeToString(eDataType, instanceValue);
+        return convertRatingTypeToString((EDataType<Integer>) eDataType, (Integer) instanceValue);
       case DBPackage.RATING_TYPE_OBJECT:
-        return convertRatingTypeObjectToString(eDataType, instanceValue);
+        return convertRatingTypeObjectToString((EDataType<Integer>) eDataType, (Integer) instanceValue);
       case DBPackage.RATING_VALUES:
-        return convertRatingValuesToString(eDataType, instanceValue);
+        return convertRatingValuesToString((EDataType<Integer>) eDataType, (Integer) instanceValue);
       case DBPackage.RATING_VALUES_OBJECT:
-        return convertRatingValuesObjectToString(eDataType, instanceValue);
+        return convertRatingValuesObjectToString((EDataType<Integer>) eDataType, (Integer) instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -209,7 +214,7 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public GenreTypes createGenreTypesFromString(EDataType eDataType, String initialValue)
+  public GenreTypes createGenreTypesFromString(EDataType<GenreTypes> eDataType, String initialValue)
   {
     GenreTypes result = GenreTypes.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -221,7 +226,10 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertGenreTypesToString(EDataType eDataType, Object instanceValue)
+  // CHANGE gen: Add type parameter, convert type to string
+  // CHANGE gen: Note, instanceValue has type Object. Change the signature made a lot of duplicate
+  // methods get generated for hand-modified convert methods, because signatures didn't match.
+  public String convertGenreTypesToString(EDataType<GenreTypes> eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -231,7 +239,7 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public List<String> createActorsListFromString(EDataType eDataType, String initialValue)
+  public List<String> createActorsListFromString(EDataType<List<String>> eDataType, String initialValue)
   {
     if (initialValue == null) return null;
     List<String> result = new ArrayList<String>();
@@ -247,7 +255,10 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertActorsListToString(EDataType eDataType, Object instanceValue)
+  // CHANGE gen: Add type parameter, convert type to string
+  // CHANGE gen: Note, instanceValue has type Object. Change the signature made a lot of duplicate
+  // methods get generated for hand-modified convert methods, because signatures didn't match.
+  public String convertActorsListToString(EDataType<List<String>> eDataType, Object instanceValue)
   {
     if (instanceValue == null) return null;
     List<?> list = (List<?>)instanceValue;
@@ -255,7 +266,8 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
     StringBuffer result = new StringBuffer();
     for (Object item : list)
     {
-      result.append(XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.NC_NAME, item));
+      // CHANGE gen: Added cast 6
+      result.append(XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.NC_NAME, (String) item));
       result.append(' ');
     }
     return result.substring(0, result.length() - 1);
@@ -266,7 +278,7 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public GenreTypes createGenreTypesObjectFromString(EDataType eDataType, String initialValue)
+  public GenreTypes createGenreTypesObjectFromString(EDataType<GenreTypes> eDataType, String initialValue)
   {
     return createGenreTypesFromString(DBPackage.Literals.GENRE_TYPES, initialValue);
   }
@@ -276,7 +288,10 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertGenreTypesObjectToString(EDataType eDataType, Object instanceValue)
+  // CHANGE gen: Add type parameter, convert type to string
+  // CHANGE gen: Note, instanceValue has type Object. Change the signature made a lot of duplicate
+  // methods get generated for hand-modified convert methods, because signatures didn't match.
+  public String convertGenreTypesObjectToString(EDataType<GenreTypes> eDataType, Object instanceValue)
   {
     return convertGenreTypesToString(DBPackage.Literals.GENRE_TYPES, instanceValue);
   }
@@ -286,7 +301,7 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Integer createRatingTypeFromString(EDataType eDataType, String initialValue)
+  public Integer createRatingTypeFromString(EDataType<Integer> eDataType, String initialValue)
   {
     return (Integer)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.INT, initialValue);
   }
@@ -296,9 +311,13 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertRatingTypeToString(EDataType eDataType, Object instanceValue)
+  // CHANGE gen: Add type parameter, convert type to string
+  // CHANGE gen: Note, instanceValue has type Object. Change the signature made a lot of duplicate
+  // methods get generated for hand-modified convert methods, because signatures didn't match.
+  public String convertRatingTypeToString(EDataType<Integer> eDataType, Object instanceValue)
   {
-    return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.INT, instanceValue);
+    // CHANGE gen: Added cast
+    return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.INT, (Integer)instanceValue);
   }
 
   /**
@@ -306,7 +325,7 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Integer createRatingTypeObjectFromString(EDataType eDataType, String initialValue)
+  public Integer createRatingTypeObjectFromString(EDataType<Integer> eDataType, String initialValue)
   {
     return createRatingTypeFromString(DBPackage.Literals.RATING_TYPE, initialValue);
   }
@@ -316,7 +335,10 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertRatingTypeObjectToString(EDataType eDataType, Object instanceValue)
+  // CHANGE gen: Add type parameter, convert type to string
+  // CHANGE gen: Note, instanceValue has type Object. Change the signature made a lot of duplicate
+  // methods get generated for hand-modified convert methods, because signatures didn't match.
+  public String convertRatingTypeObjectToString(EDataType<Integer> eDataType, Object instanceValue)
   {
     return convertRatingTypeToString(DBPackage.Literals.RATING_TYPE, instanceValue);
   }
@@ -326,7 +348,7 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Integer createRatingValuesFromString(EDataType eDataType, String initialValue)
+  public Integer createRatingValuesFromString(EDataType<Integer> eDataType, String initialValue)
   {
     return (Integer)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.INT, initialValue);
   }
@@ -336,9 +358,13 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertRatingValuesToString(EDataType eDataType, Object instanceValue)
+  // CHANGE gen: Add type parameter, convert type to string
+  // CHANGE gen: Note, instanceValue has type Object. Change the signature made a lot of duplicate
+  // methods get generated for hand-modified convert methods, because signatures didn't match.
+  public String convertRatingValuesToString(EDataType<Integer> eDataType, Object instanceValue)
   {
-    return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.INT, instanceValue);
+    // CHANGE gen: Added cast
+    return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.INT, (Integer)instanceValue);
   }
 
   /**
@@ -346,7 +372,7 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Integer createRatingValuesObjectFromString(EDataType eDataType, String initialValue)
+  public Integer createRatingValuesObjectFromString(EDataType<Integer> eDataType, String initialValue)
   {
     return createRatingValuesFromString(DBPackage.Literals.RATING_VALUES, initialValue);
   }
@@ -356,7 +382,10 @@ public class DBFactoryImpl extends EFactoryImpl implements DBFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertRatingValuesObjectToString(EDataType eDataType, Object instanceValue)
+  // CHANGE gen: Add type parameter, convert type to string
+  // CHANGE gen: Note, instanceValue has type Object. Change the signature made a lot of duplicate
+  // methods get generated for hand-modified convert methods, because signatures didn't match.
+  public String convertRatingValuesObjectToString(EDataType<Integer> eDataType, Object instanceValue)
   {
     return convertRatingValuesToString(DBPackage.Literals.RATING_VALUES, instanceValue);
   }

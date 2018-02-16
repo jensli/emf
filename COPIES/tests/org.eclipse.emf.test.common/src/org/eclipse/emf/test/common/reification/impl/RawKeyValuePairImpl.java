@@ -37,7 +37,7 @@ public class RawKeyValuePairImpl extends KeyValuePairImpl implements RawKeyValue
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.RAW_KEY_VALUE_PAIR;
   }

@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.eclipse.emf.test.models.ppo.*;
 import org.eclipse.emf.test.models.ppo.Item;
 import org.eclipse.emf.test.models.ppo.PPOPackage;
 import org.eclipse.emf.test.models.ppo.PurchaseOrder;

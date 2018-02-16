@@ -111,7 +111,7 @@ public class EImpl extends EObjectImpl implements E
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return RefPackage.Literals.E;
   }

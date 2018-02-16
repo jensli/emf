@@ -94,7 +94,7 @@ public class AUImpl extends EObjectImpl implements AU
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return URefPackage.Literals.AU;
   }

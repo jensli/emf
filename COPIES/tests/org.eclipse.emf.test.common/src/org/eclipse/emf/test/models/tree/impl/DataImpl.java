@@ -82,7 +82,7 @@ public class DataImpl extends EObjectImpl implements Data
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return TreePackage.Literals.DATA;
   }

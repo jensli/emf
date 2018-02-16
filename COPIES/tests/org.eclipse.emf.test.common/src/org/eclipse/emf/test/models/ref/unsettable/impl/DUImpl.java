@@ -90,7 +90,7 @@ public class DUImpl extends EObjectImpl implements DU
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return URefPackage.Literals.DU;
   }

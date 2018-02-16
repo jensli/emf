@@ -391,51 +391,51 @@ public class ChangeDescriptionTest
    * Bugzilla 83872
    */
   @Test
-  public void testObjectsToDetach2() throws Exception
+  public <T extends EObject> void testObjectsToDetach2() throws Exception
   {
     EPackage pack = EcoreFactory.eINSTANCE.createEPackage();
     pack.setNsURI("testObjectsToDetach2");
     EPackage.Registry.INSTANCE.put(pack.getNsURI(), pack);
-    EClass<EObject> anEClass = EcoreFactory.eINSTANCE.createEClass();
+    EClass<T> anEClass = EcoreFactory.eINSTANCE.createEClass();
     anEClass.setName("AnEClass");
     pack.getEClassifiers().add(anEClass);
-    EAttribute<EObject, String> name = EcoreFactory.eINSTANCE.createEAttribute();
+    EAttribute<T, String> name = EcoreFactory.eINSTANCE.createEAttribute();
     name.setName("name");
     // TODO gen:
     name.setEType(EcorePackage.Literals.ESTRING);
     anEClass.getEStructuralFeatures().add(name);
-    EReference<EObject, EObject> ref1 = EcoreFactory.eINSTANCE.createEReference();
+    EReference<T, T> ref1 = EcoreFactory.eINSTANCE.createEReference();
     ref1.setName("Ref1");
     ref1.setEType(anEClass);
     ref1.setContainment(true);
     anEClass.getEStructuralFeatures().add(ref1);
-    EReference ref2 = EcoreFactory.eINSTANCE.createEReference();
+    EReference<T, T> ref2 = EcoreFactory.eINSTANCE.createEReference();
     ref2.setName("Ref2");
     ref2.setEType(anEClass);
     ref2.setContainment(true);
     anEClass.getEStructuralFeatures().add(ref2);
-    EReference ref3 = EcoreFactory.eINSTANCE.createEReference();
+    EReference<T, T> ref3 = EcoreFactory.eINSTANCE.createEReference();
     ref3.setName("Ref3");
     ref3.setEType(anEClass);
     ref3.setContainment(true);
     anEClass.getEStructuralFeatures().add(ref3);
-    EReference ref4 = EcoreFactory.eINSTANCE.createEReference();
+    EReference<T, T> ref4 = EcoreFactory.eINSTANCE.createEReference();
     ref4.setName("Ref4");
     ref4.setEType(anEClass);
     ref4.setContainment(true);
     anEClass.getEStructuralFeatures().add(ref4);
 
-    EObject root1 = pack.getEFactoryInstance().create(anEClass);
+    T root1 = pack.getEFactoryInstance().create(anEClass);
     root1.eSet(name, "root1");
-    EObject obj1 = pack.getEFactoryInstance().create(anEClass);
+    T obj1 = pack.getEFactoryInstance().create(anEClass);
     obj1.eSet(name, "obj1");
-    EObject obj2 = pack.getEFactoryInstance().create(anEClass);
+    T obj2 = pack.getEFactoryInstance().create(anEClass);
     obj2.eSet(name, "obj2");
-    EObject obj3 = pack.getEFactoryInstance().create(anEClass);
+    T obj3 = pack.getEFactoryInstance().create(anEClass);
     obj3.eSet(name, "obj3");
-    EObject obj4 = pack.getEFactoryInstance().create(anEClass);
+    T obj4 = pack.getEFactoryInstance().create(anEClass);
     obj4.eSet(name, "obj4");
-    EObject root2 = pack.getEFactoryInstance().create(anEClass);
+    T root2 = pack.getEFactoryInstance().create(anEClass);
     root2.eSet(name, "root2");
 
     root1.eSet(ref1, obj1);
@@ -590,7 +590,7 @@ public class ChangeDescriptionTest
   {
     EPackage ePackage = EcoreFactory.eINSTANCE.createEPackage();
 
-    EDataType eDataType = EcoreFactory.eINSTANCE.createEDataType();
+    EDataType<?> eDataType = EcoreFactory.eINSTANCE.createEDataType();
     ePackage.getEClassifiers().add(eDataType);
 
     ChangeRecorder changeRecorder = new ChangeRecorder(ePackage);

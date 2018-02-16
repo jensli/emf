@@ -80,7 +80,7 @@ public class BImpl extends EObjectImpl implements B
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return RefPackage.Literals.B;
   }

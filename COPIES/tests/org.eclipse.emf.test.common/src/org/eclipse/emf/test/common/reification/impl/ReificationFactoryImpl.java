@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.test.common.reification.*;
 import org.eclipse.emf.test.common.reification.Bidirectional;
 import org.eclipse.emf.test.common.reification.BoundedGenericContainer;
 import org.eclipse.emf.test.common.reification.BoundedTListKeyValuePair;
@@ -90,37 +91,38 @@ public class ReificationFactoryImpl extends EFactoryImpl implements ReificationF
    * @generated
    */
   @Override
-  public EObject create(EClass eClass)
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
     switch (eClass.getClassifierID())
     {
-      case ReificationPackage.ROOT: return createRoot();
-      case ReificationPackage.VERY_LOW: return createVeryLow();
-      case ReificationPackage.LOW: return createLow();
-      case ReificationPackage.MEDIUM: return createMedium();
-      case ReificationPackage.HIGH: return createHigh();
-      case ReificationPackage.VERY_HIGH: return createVeryHigh();
-      case ReificationPackage.CONTAINER: return createContainer();
-      case ReificationPackage.UNBOUNDED_GENERIC_CONTAINER: return createUnboundedGenericContainer();
-      case ReificationPackage.RAW_UNBOUNDED_CONTAINER: return createRawUnboundedContainer();
-      case ReificationPackage.MEDIUM_UNBOUNDED_CONTAINER: return createMediumUnboundedContainer();
-      case ReificationPackage.BOUNDED_GENERIC_CONTAINER: return createBoundedGenericContainer();
-      case ReificationPackage.HIGH_BOUNDED_CONTAINER: return createHighBoundedContainer();
-      case ReificationPackage.KEY_VALUE_PAIR: return createKeyValuePair();
-      case ReificationPackage.RAW_KEY_VALUE_PAIR: return createRawKeyValuePair();
-      case ReificationPackage.STRING_LIST_KEY_VALUE_PAIR: return createStringListKeyValuePair();
-      case ReificationPackage.TLIST_KEY_VALUE_PAIR: return createTListKeyValuePair();
-      case ReificationPackage.BOUNDED_TLIST_KEY_VALUE_PAIR: return createBoundedTListKeyValuePair();
-      case ReificationPackage.HIGH_LIST_KEY_VALUE_PAIR: return createHighListKeyValuePair();
-      case ReificationPackage.INTEGER_LIST_KEY_VALUE_PAIR: return createIntegerListKeyValuePair();
-      case ReificationPackage.KEY_VALUE_PAIR_CONTAINER: return createKeyValuePairContainer();
-      case ReificationPackage.STRING_LIST_KEY_VALUE_PAIR_CONTAINER: return createStringListKeyValuePairContainer();
-      case ReificationPackage.BIDIRECTIONAL: return createBidirectional();
-      case ReificationPackage.LINK: return createLink();
-      case ReificationPackage.RAW_LINK: return createRawLink();
-      case ReificationPackage.LINK_ITEM: return createLinkItem();
-      case ReificationPackage.MEDIUM_BIDIRECTIONAL: return createMediumBidirectional();
-      case ReificationPackage.MEDIUM_LINK: return createMediumLink();
+      case ReificationPackage.ROOT: return (T) createRoot();
+      case ReificationPackage.VERY_LOW: return (T) createVeryLow();
+      case ReificationPackage.LOW: return (T) createLow();
+      case ReificationPackage.MEDIUM: return (T) createMedium();
+      case ReificationPackage.HIGH: return (T) createHigh();
+      case ReificationPackage.VERY_HIGH: return (T) createVeryHigh();
+      case ReificationPackage.CONTAINER: return (T) createContainer();
+      case ReificationPackage.UNBOUNDED_GENERIC_CONTAINER: return (T) createUnboundedGenericContainer();
+      case ReificationPackage.RAW_UNBOUNDED_CONTAINER: return (T) createRawUnboundedContainer();
+      case ReificationPackage.MEDIUM_UNBOUNDED_CONTAINER: return (T) createMediumUnboundedContainer();
+      case ReificationPackage.BOUNDED_GENERIC_CONTAINER: return (T) createBoundedGenericContainer();
+      case ReificationPackage.HIGH_BOUNDED_CONTAINER: return (T) createHighBoundedContainer();
+      case ReificationPackage.KEY_VALUE_PAIR: return (T) createKeyValuePair();
+      case ReificationPackage.RAW_KEY_VALUE_PAIR: return (T) createRawKeyValuePair();
+      case ReificationPackage.STRING_LIST_KEY_VALUE_PAIR: return (T) createStringListKeyValuePair();
+      case ReificationPackage.TLIST_KEY_VALUE_PAIR: return (T) createTListKeyValuePair();
+      case ReificationPackage.BOUNDED_TLIST_KEY_VALUE_PAIR: return (T) createBoundedTListKeyValuePair();
+      case ReificationPackage.HIGH_LIST_KEY_VALUE_PAIR: return (T) createHighListKeyValuePair();
+      case ReificationPackage.INTEGER_LIST_KEY_VALUE_PAIR: return (T) createIntegerListKeyValuePair();
+      case ReificationPackage.KEY_VALUE_PAIR_CONTAINER: return (T) createKeyValuePairContainer();
+      case ReificationPackage.STRING_LIST_KEY_VALUE_PAIR_CONTAINER: return (T) createStringListKeyValuePairContainer();
+      case ReificationPackage.BIDIRECTIONAL: return (T) createBidirectional();
+      case ReificationPackage.LINK: return (T) createLink();
+      case ReificationPackage.RAW_LINK: return (T) createRawLink();
+      case ReificationPackage.LINK_ITEM: return (T) createLinkItem();
+      case ReificationPackage.MEDIUM_BIDIRECTIONAL: return (T) createMediumBidirectional();
+      case ReificationPackage.MEDIUM_LINK: return (T) createMediumLink();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }

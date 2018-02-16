@@ -78,7 +78,7 @@ public class C3Impl extends EObjectImpl implements C3
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return RefPackage.Literals.C3;
   }

@@ -7,6 +7,7 @@
  */
 package org.eclipse.emf.test.common.reification.impl;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
@@ -56,189 +57,189 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass rootEClass = null;
+  private EClass<Root> rootEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass veryLowEClass = null;
+  private EClass<VeryLow> veryLowEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass lowEClass = null;
+  private EClass<Low> lowEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass mediumEClass = null;
+  private EClass<Medium> mediumEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass highEClass = null;
+  private EClass<High> highEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass veryHighEClass = null;
+  private EClass<VeryHigh> veryHighEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass containerEClass = null;
+  private EClass<org.eclipse.emf.test.common.reification.Container> containerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass unboundedGenericContainerEClass = null;
+  private EClass<UnboundedGenericContainer<?>> unboundedGenericContainerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass rawUnboundedContainerEClass = null;
+  private EClass<RawUnboundedContainer> rawUnboundedContainerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass mediumUnboundedContainerEClass = null;
+  private EClass<MediumUnboundedContainer> mediumUnboundedContainerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass boundedGenericContainerEClass = null;
+  private EClass<BoundedGenericContainer<?>> boundedGenericContainerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass highBoundedContainerEClass = null;
+  private EClass<HighBoundedContainer> highBoundedContainerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass keyValuePairEClass = null;
+  private EClass<KeyValuePair<?, ?>> keyValuePairEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass rawKeyValuePairEClass = null;
+  private EClass<RawKeyValuePair> rawKeyValuePairEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass stringListKeyValuePairEClass = null;
+  private EClass<StringListKeyValuePair> stringListKeyValuePairEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass tListKeyValuePairEClass = null;
+  private EClass<TListKeyValuePair<?>> tListKeyValuePairEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass boundedTListKeyValuePairEClass = null;
+  private EClass<BoundedTListKeyValuePair<?>> boundedTListKeyValuePairEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass highListKeyValuePairEClass = null;
+  private EClass<HighListKeyValuePair> highListKeyValuePairEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass integerListKeyValuePairEClass = null;
+  private EClass<IntegerListKeyValuePair> integerListKeyValuePairEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass keyValuePairContainerEClass = null;
+  private EClass<KeyValuePairContainer<?, ?>> keyValuePairContainerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass stringListKeyValuePairContainerEClass = null;
+  private EClass<StringListKeyValuePairContainer> stringListKeyValuePairContainerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass bidirectionalEClass = null;
+  private EClass<Bidirectional<?>> bidirectionalEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass linkEClass = null;
+  private EClass<Link> linkEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass rawLinkEClass = null;
+  private EClass<RawLink> rawLinkEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass linkItemEClass = null;
+  private EClass<LinkItem> linkItemEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass mediumBidirectionalEClass = null;
+  private EClass<MediumBidirectional<?>> mediumBidirectionalEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass mediumLinkEClass = null;
+  private EClass<MediumLink> mediumLinkEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -308,7 +309,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRoot()
+  public EClass<Root> getRoot()
   {
     return rootEClass;
   }
@@ -318,9 +319,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRoot_Name()
+  @SuppressWarnings("unchecked")
+  public EAttribute<Root, String> getRoot_Name()
   {
-    return (EAttribute)rootEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<Root, String>) rootEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -328,9 +330,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRoot_Container()
+  @SuppressWarnings("unchecked")
+  public EReference<Root, org.eclipse.emf.test.common.reification.Container> getRoot_Container()
   {
-    return (EReference)rootEClass.getEStructuralFeatures().get(1);
+    return (EReference<Root, org.eclipse.emf.test.common.reification.Container>) rootEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -338,9 +341,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRoot_UnboundedGenericContainerWithRawType()
+  @SuppressWarnings("unchecked")
+  public EReference<Root, UnboundedGenericContainer> getRoot_UnboundedGenericContainerWithRawType()
   {
-    return (EReference)rootEClass.getEStructuralFeatures().get(2);
+    return (EReference<Root, UnboundedGenericContainer>) rootEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -348,9 +352,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRoot_UnboundedGenericContainerWithWildcard()
+  @SuppressWarnings("unchecked")
+  public EReference<Root, UnboundedGenericContainer<?>> getRoot_UnboundedGenericContainerWithWildcard()
   {
-    return (EReference)rootEClass.getEStructuralFeatures().get(3);
+    return (EReference<Root, UnboundedGenericContainer<?>>) rootEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -358,9 +363,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRoot_UnboundedGenericContainerWithSuper()
+  @SuppressWarnings("unchecked")
+  public EReference<Root, UnboundedGenericContainer<? super Medium>> getRoot_UnboundedGenericContainerWithSuper()
   {
-    return (EReference)rootEClass.getEStructuralFeatures().get(4);
+    return (EReference<Root, UnboundedGenericContainer<? super Medium>>) rootEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -368,9 +374,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRoot_UnboundedGenericContainerWithExtends()
+  @SuppressWarnings("unchecked")
+  public EReference<Root, UnboundedGenericContainer<? extends Medium>> getRoot_UnboundedGenericContainerWithExtends()
   {
-    return (EReference)rootEClass.getEStructuralFeatures().get(5);
+    return (EReference<Root, UnboundedGenericContainer<? extends Medium>>) rootEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -378,9 +385,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRoot_BoundedGenericContainerWithRawType()
+  @SuppressWarnings("unchecked")
+  public EReference<Root, BoundedGenericContainer> getRoot_BoundedGenericContainerWithRawType()
   {
-    return (EReference)rootEClass.getEStructuralFeatures().get(6);
+    return (EReference<Root, BoundedGenericContainer>) rootEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -388,9 +396,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRoot_BoundedGenericContainerWithWildcard()
+  @SuppressWarnings("unchecked")
+  public EReference<Root, BoundedGenericContainer<?>> getRoot_BoundedGenericContainerWithWildcard()
   {
-    return (EReference)rootEClass.getEStructuralFeatures().get(7);
+    return (EReference<Root, BoundedGenericContainer<?>>) rootEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -398,9 +407,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRoot_BoundedGenericContainerWithSuper()
+  @SuppressWarnings("unchecked")
+  public EReference<Root, BoundedGenericContainer<? super Medium>> getRoot_BoundedGenericContainerWithSuper()
   {
-    return (EReference)rootEClass.getEStructuralFeatures().get(8);
+    return (EReference<Root, BoundedGenericContainer<? super Medium>>) rootEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -408,9 +418,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRoot_BoundedGenericContainerWithExtends()
+  @SuppressWarnings("unchecked")
+  public EReference<Root, BoundedGenericContainer<? extends Medium>> getRoot_BoundedGenericContainerWithExtends()
   {
-    return (EReference)rootEClass.getEStructuralFeatures().get(9);
+    return (EReference<Root, BoundedGenericContainer<? extends Medium>>) rootEClass.getEStructuralFeatures().get(9);
   }
 
   /**
@@ -418,7 +429,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getVeryLow()
+  public EClass<VeryLow> getVeryLow()
   {
     return veryLowEClass;
   }
@@ -428,7 +439,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLow()
+  public EClass<Low> getLow()
   {
     return lowEClass;
   }
@@ -438,7 +449,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMedium()
+  public EClass<Medium> getMedium()
   {
     return mediumEClass;
   }
@@ -448,7 +459,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getHigh()
+  public EClass<High> getHigh()
   {
     return highEClass;
   }
@@ -458,7 +469,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getVeryHigh()
+  public EClass<VeryHigh> getVeryHigh()
   {
     return veryHighEClass;
   }
@@ -468,7 +479,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getContainer()
+  public EClass<org.eclipse.emf.test.common.reification.Container> getContainer()
   {
     return containerEClass;
   }
@@ -478,7 +489,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getUnboundedGenericContainer()
+  public EClass<UnboundedGenericContainer<?>> getUnboundedGenericContainer()
   {
     return unboundedGenericContainerEClass;
   }
@@ -488,9 +499,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUnboundedGenericContainer_Content()
+  @SuppressWarnings("unchecked")
+  public EReference<UnboundedGenericContainer<?>, ?> getUnboundedGenericContainer_Content()
   {
-    return (EReference)unboundedGenericContainerEClass.getEStructuralFeatures().get(0);
+    return (EReference<UnboundedGenericContainer<?>, ?>) unboundedGenericContainerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -498,7 +510,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRawUnboundedContainer()
+  public EClass<RawUnboundedContainer> getRawUnboundedContainer()
   {
     return rawUnboundedContainerEClass;
   }
@@ -508,7 +520,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMediumUnboundedContainer()
+  public EClass<MediumUnboundedContainer> getMediumUnboundedContainer()
   {
     return mediumUnboundedContainerEClass;
   }
@@ -518,7 +530,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBoundedGenericContainer()
+  public EClass<BoundedGenericContainer<?>> getBoundedGenericContainer()
   {
     return boundedGenericContainerEClass;
   }
@@ -528,9 +540,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBoundedGenericContainer_Content()
+  @SuppressWarnings("unchecked")
+  public EReference<BoundedGenericContainer<?>, ?> getBoundedGenericContainer_Content()
   {
-    return (EReference)boundedGenericContainerEClass.getEStructuralFeatures().get(0);
+    return (EReference<BoundedGenericContainer<?>, ?>) boundedGenericContainerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -538,7 +551,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getHighBoundedContainer()
+  public EClass<HighBoundedContainer> getHighBoundedContainer()
   {
     return highBoundedContainerEClass;
   }
@@ -548,7 +561,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getKeyValuePair()
+  public EClass<KeyValuePair<?, ?>> getKeyValuePair()
   {
     return keyValuePairEClass;
   }
@@ -558,9 +571,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getKeyValuePair_Key()
+  @SuppressWarnings("unchecked")
+  public EAttribute<KeyValuePair<?, ?>, ?> getKeyValuePair_Key()
   {
-    return (EAttribute)keyValuePairEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<KeyValuePair<?, ?>, ?>) keyValuePairEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -568,9 +582,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getKeyValuePair_Value()
+  @SuppressWarnings("unchecked")
+  public EReference<KeyValuePair<?, ?>, ?> getKeyValuePair_Value()
   {
-    return (EReference)keyValuePairEClass.getEStructuralFeatures().get(1);
+    return (EReference<KeyValuePair<?, ?>, ?>) keyValuePairEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -578,7 +593,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRawKeyValuePair()
+  public EClass<RawKeyValuePair> getRawKeyValuePair()
   {
     return rawKeyValuePairEClass;
   }
@@ -588,7 +603,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getStringListKeyValuePair()
+  public EClass<StringListKeyValuePair> getStringListKeyValuePair()
   {
     return stringListKeyValuePairEClass;
   }
@@ -598,7 +613,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTListKeyValuePair()
+  public EClass<TListKeyValuePair<?>> getTListKeyValuePair()
   {
     return tListKeyValuePairEClass;
   }
@@ -608,7 +623,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBoundedTListKeyValuePair()
+  public EClass<BoundedTListKeyValuePair<?>> getBoundedTListKeyValuePair()
   {
     return boundedTListKeyValuePairEClass;
   }
@@ -618,7 +633,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getHighListKeyValuePair()
+  public EClass<HighListKeyValuePair> getHighListKeyValuePair()
   {
     return highListKeyValuePairEClass;
   }
@@ -628,7 +643,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getIntegerListKeyValuePair()
+  public EClass<IntegerListKeyValuePair> getIntegerListKeyValuePair()
   {
     return integerListKeyValuePairEClass;
   }
@@ -638,7 +653,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getKeyValuePairContainer()
+  public EClass<KeyValuePairContainer<?, ?>> getKeyValuePairContainer()
   {
     return keyValuePairContainerEClass;
   }
@@ -648,9 +663,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getKeyValuePairContainer_KeyValuePairs()
+  @SuppressWarnings("unchecked")
+  public EReference<KeyValuePairContainer<?, ?>, EList<KeyValuePair<?, ?>>> getKeyValuePairContainer_KeyValuePairs()
   {
-    return (EReference)keyValuePairContainerEClass.getEStructuralFeatures().get(0);
+    return (EReference<KeyValuePairContainer<?, ?>, EList<KeyValuePair<?, ?>>>) keyValuePairContainerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -658,7 +674,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getStringListKeyValuePairContainer()
+  public EClass<StringListKeyValuePairContainer> getStringListKeyValuePairContainer()
   {
     return stringListKeyValuePairContainerEClass;
   }
@@ -668,7 +684,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBidirectional()
+  public EClass<Bidirectional<?>> getBidirectional()
   {
     return bidirectionalEClass;
   }
@@ -678,9 +694,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBidirectional_In()
+  @SuppressWarnings("unchecked")
+  public EReference<Bidirectional<?>, ?> getBidirectional_In()
   {
-    return (EReference)bidirectionalEClass.getEStructuralFeatures().get(0);
+    return (EReference<Bidirectional<?>, ?>) bidirectionalEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -688,9 +705,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBidirectional_Out()
+  @SuppressWarnings("unchecked")
+  public EReference<Bidirectional<?>, ?> getBidirectional_Out()
   {
-    return (EReference)bidirectionalEClass.getEStructuralFeatures().get(1);
+    return (EReference<Bidirectional<?>, ?>) bidirectionalEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -698,9 +716,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBidirectional_Value()
+  @SuppressWarnings("unchecked")
+  public EReference<Bidirectional<?>, ?> getBidirectional_Value()
   {
-    return (EReference)bidirectionalEClass.getEStructuralFeatures().get(2);
+    return (EReference<Bidirectional<?>, ?>) bidirectionalEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -708,9 +727,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBidirectional_Values()
+  @SuppressWarnings("unchecked")
+  public EReference<Bidirectional<?>, EList<?>> getBidirectional_Values()
   {
-    return (EReference)bidirectionalEClass.getEStructuralFeatures().get(3);
+    return (EReference<Bidirectional<?>, EList<?>>) bidirectionalEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -718,7 +738,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLink()
+  public EClass<Link> getLink()
   {
     return linkEClass;
   }
@@ -728,7 +748,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRawLink()
+  public EClass<RawLink> getRawLink()
   {
     return rawLinkEClass;
   }
@@ -738,7 +758,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLinkItem()
+  public EClass<LinkItem> getLinkItem()
   {
     return linkItemEClass;
   }
@@ -748,7 +768,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMediumBidirectional()
+  public EClass<MediumBidirectional<?>> getMediumBidirectional()
   {
     return mediumBidirectionalEClass;
   }
@@ -758,9 +778,10 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMediumBidirectional_Contents()
+  @SuppressWarnings("unchecked")
+  public EReference<MediumBidirectional<?>, EList<MediumBidirectional<?>>> getMediumBidirectional_Contents()
   {
-    return (EReference)mediumBidirectionalEClass.getEStructuralFeatures().get(0);
+    return (EReference<MediumBidirectional<?>, EList<MediumBidirectional<?>>>) mediumBidirectionalEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -768,7 +789,7 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMediumLink()
+  public EClass<MediumLink> getMediumLink()
   {
     return mediumLinkEClass;
   }
@@ -797,85 +818,133 @@ public class ReificationPackageImpl extends EPackageImpl implements ReificationP
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    rootEClass = createEClass(ROOT);
+    // CHANGE gen: Add cast
+    rootEClass = (EClass<Root>) createEClass(ROOT);
+    // CHANGE gen: Use raw type
     createEAttribute(rootEClass, ROOT__NAME);
+    // CHANGE gen: Use raw type
     createEReference(rootEClass, ROOT__CONTAINER);
+    // CHANGE gen: Use raw type
     createEReference(rootEClass, ROOT__UNBOUNDED_GENERIC_CONTAINER_WITH_RAW_TYPE);
+    // CHANGE gen: Use raw type
     createEReference(rootEClass, ROOT__UNBOUNDED_GENERIC_CONTAINER_WITH_WILDCARD);
+    // CHANGE gen: Use raw type
     createEReference(rootEClass, ROOT__UNBOUNDED_GENERIC_CONTAINER_WITH_SUPER);
+    // CHANGE gen: Use raw type
     createEReference(rootEClass, ROOT__UNBOUNDED_GENERIC_CONTAINER_WITH_EXTENDS);
+    // CHANGE gen: Use raw type
     createEReference(rootEClass, ROOT__BOUNDED_GENERIC_CONTAINER_WITH_RAW_TYPE);
+    // CHANGE gen: Use raw type
     createEReference(rootEClass, ROOT__BOUNDED_GENERIC_CONTAINER_WITH_WILDCARD);
+    // CHANGE gen: Use raw type
     createEReference(rootEClass, ROOT__BOUNDED_GENERIC_CONTAINER_WITH_SUPER);
+    // CHANGE gen: Use raw type
     createEReference(rootEClass, ROOT__BOUNDED_GENERIC_CONTAINER_WITH_EXTENDS);
 
-    veryLowEClass = createEClass(VERY_LOW);
+    // CHANGE gen: Add cast
+    veryLowEClass = (EClass<VeryLow>) createEClass(VERY_LOW);
 
-    lowEClass = createEClass(LOW);
+    // CHANGE gen: Add cast
+    lowEClass = (EClass<Low>) createEClass(LOW);
 
-    mediumEClass = createEClass(MEDIUM);
+    // CHANGE gen: Add cast
+    mediumEClass = (EClass<Medium>) createEClass(MEDIUM);
 
-    highEClass = createEClass(HIGH);
+    // CHANGE gen: Add cast
+    highEClass = (EClass<High>) createEClass(HIGH);
 
-    veryHighEClass = createEClass(VERY_HIGH);
+    // CHANGE gen: Add cast
+    veryHighEClass = (EClass<VeryHigh>) createEClass(VERY_HIGH);
 
-    containerEClass = createEClass(CONTAINER);
+    // CHANGE gen: Add cast
+    containerEClass = (EClass<org.eclipse.emf.test.common.reification.Container>) createEClass(CONTAINER);
 
-    unboundedGenericContainerEClass = createEClass(UNBOUNDED_GENERIC_CONTAINER);
+    // CHANGE gen: Add cast
+    unboundedGenericContainerEClass = (EClass<UnboundedGenericContainer<?>>) createEClass(UNBOUNDED_GENERIC_CONTAINER);
+    // CHANGE gen: Use raw type
     createEReference(unboundedGenericContainerEClass, UNBOUNDED_GENERIC_CONTAINER__CONTENT);
 
-    rawUnboundedContainerEClass = createEClass(RAW_UNBOUNDED_CONTAINER);
+    // CHANGE gen: Add cast
+    rawUnboundedContainerEClass = (EClass<RawUnboundedContainer>) createEClass(RAW_UNBOUNDED_CONTAINER);
 
-    mediumUnboundedContainerEClass = createEClass(MEDIUM_UNBOUNDED_CONTAINER);
+    // CHANGE gen: Add cast
+    mediumUnboundedContainerEClass = (EClass<MediumUnboundedContainer>) createEClass(MEDIUM_UNBOUNDED_CONTAINER);
 
-    boundedGenericContainerEClass = createEClass(BOUNDED_GENERIC_CONTAINER);
+    // CHANGE gen: Add cast
+    boundedGenericContainerEClass = (EClass<BoundedGenericContainer<?>>) createEClass(BOUNDED_GENERIC_CONTAINER);
+    // CHANGE gen: Use raw type
     createEReference(boundedGenericContainerEClass, BOUNDED_GENERIC_CONTAINER__CONTENT);
 
-    highBoundedContainerEClass = createEClass(HIGH_BOUNDED_CONTAINER);
+    // CHANGE gen: Add cast
+    highBoundedContainerEClass = (EClass<HighBoundedContainer>) createEClass(HIGH_BOUNDED_CONTAINER);
 
-    keyValuePairEClass = createEClass(KEY_VALUE_PAIR);
+    // CHANGE gen: Add cast
+    keyValuePairEClass = (EClass<KeyValuePair<?, ?>>) createEClass(KEY_VALUE_PAIR);
+    // CHANGE gen: Use raw type
     createEAttribute(keyValuePairEClass, KEY_VALUE_PAIR__KEY);
+    // CHANGE gen: Use raw type
     createEReference(keyValuePairEClass, KEY_VALUE_PAIR__VALUE);
 
-    rawKeyValuePairEClass = createEClass(RAW_KEY_VALUE_PAIR);
+    // CHANGE gen: Add cast
+    rawKeyValuePairEClass = (EClass<RawKeyValuePair>) createEClass(RAW_KEY_VALUE_PAIR);
 
-    stringListKeyValuePairEClass = createEClass(STRING_LIST_KEY_VALUE_PAIR);
+    // CHANGE gen: Add cast
+    stringListKeyValuePairEClass = (EClass<StringListKeyValuePair>) createEClass(STRING_LIST_KEY_VALUE_PAIR);
 
-    tListKeyValuePairEClass = createEClass(TLIST_KEY_VALUE_PAIR);
+    // CHANGE gen: Add cast
+    tListKeyValuePairEClass = (EClass<TListKeyValuePair<?>>) createEClass(TLIST_KEY_VALUE_PAIR);
 
-    boundedTListKeyValuePairEClass = createEClass(BOUNDED_TLIST_KEY_VALUE_PAIR);
+    // CHANGE gen: Add cast
+    boundedTListKeyValuePairEClass = (EClass<BoundedTListKeyValuePair<?>>) createEClass(BOUNDED_TLIST_KEY_VALUE_PAIR);
 
-    highListKeyValuePairEClass = createEClass(HIGH_LIST_KEY_VALUE_PAIR);
+    // CHANGE gen: Add cast
+    highListKeyValuePairEClass = (EClass<HighListKeyValuePair>) createEClass(HIGH_LIST_KEY_VALUE_PAIR);
 
-    integerListKeyValuePairEClass = createEClass(INTEGER_LIST_KEY_VALUE_PAIR);
+    // CHANGE gen: Add cast
+    integerListKeyValuePairEClass = (EClass<IntegerListKeyValuePair>) createEClass(INTEGER_LIST_KEY_VALUE_PAIR);
 
-    keyValuePairContainerEClass = createEClass(KEY_VALUE_PAIR_CONTAINER);
+    // CHANGE gen: Add cast
+    keyValuePairContainerEClass = (EClass<KeyValuePairContainer<?, ?>>) createEClass(KEY_VALUE_PAIR_CONTAINER);
+    // CHANGE gen: Use raw type
     createEReference(keyValuePairContainerEClass, KEY_VALUE_PAIR_CONTAINER__KEY_VALUE_PAIRS);
 
-    stringListKeyValuePairContainerEClass = createEClass(STRING_LIST_KEY_VALUE_PAIR_CONTAINER);
+    // CHANGE gen: Add cast
+    stringListKeyValuePairContainerEClass = (EClass<StringListKeyValuePairContainer>) createEClass(STRING_LIST_KEY_VALUE_PAIR_CONTAINER);
 
-    bidirectionalEClass = createEClass(BIDIRECTIONAL);
+    // CHANGE gen: Add cast
+    bidirectionalEClass = (EClass<Bidirectional<?>>) createEClass(BIDIRECTIONAL);
+    // CHANGE gen: Use raw type
     createEReference(bidirectionalEClass, BIDIRECTIONAL__IN);
+    // CHANGE gen: Use raw type
     createEReference(bidirectionalEClass, BIDIRECTIONAL__OUT);
+    // CHANGE gen: Use raw type
     createEReference(bidirectionalEClass, BIDIRECTIONAL__VALUE);
+    // CHANGE gen: Use raw type
     createEReference(bidirectionalEClass, BIDIRECTIONAL__VALUES);
 
-    linkEClass = createEClass(LINK);
+    // CHANGE gen: Add cast
+    linkEClass = (EClass<Link>) createEClass(LINK);
 
-    rawLinkEClass = createEClass(RAW_LINK);
+    // CHANGE gen: Add cast
+    rawLinkEClass = (EClass<RawLink>) createEClass(RAW_LINK);
 
-    linkItemEClass = createEClass(LINK_ITEM);
+    // CHANGE gen: Add cast
+    linkItemEClass = (EClass<LinkItem>) createEClass(LINK_ITEM);
 
-    mediumBidirectionalEClass = createEClass(MEDIUM_BIDIRECTIONAL);
+    // CHANGE gen: Add cast
+    mediumBidirectionalEClass = (EClass<MediumBidirectional<?>>) createEClass(MEDIUM_BIDIRECTIONAL);
+    // CHANGE gen: Use raw type
     createEReference(mediumBidirectionalEClass, MEDIUM_BIDIRECTIONAL__CONTENTS);
 
-    mediumLinkEClass = createEClass(MEDIUM_LINK);
+    // CHANGE gen: Add cast
+    mediumLinkEClass = (EClass<MediumLink>) createEClass(MEDIUM_LINK);
   }
 
   /**

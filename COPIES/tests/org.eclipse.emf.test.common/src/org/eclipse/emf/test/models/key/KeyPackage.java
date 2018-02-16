@@ -10,6 +10,7 @@
  */
 package org.eclipse.emf.test.models.key;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -147,7 +148,7 @@ public interface KeyPackage extends EPackage
    * @see org.eclipse.emf.test.models.key.Item
    * @generated
    */
-  EClass getItem();
+  EClass<Item> getItem();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.key.Item#getName <em>Name</em>}'.
@@ -158,7 +159,7 @@ public interface KeyPackage extends EPackage
    * @see #getItem()
    * @generated
    */
-  EAttribute getItem_Name();
+  EAttribute<Item, String> getItem_Name();
 
   /**
    * Returns the meta object for the attribute list '{@link org.eclipse.emf.test.models.key.Item#getSignature <em>Signature</em>}'.
@@ -169,7 +170,7 @@ public interface KeyPackage extends EPackage
    * @see #getItem()
    * @generated
    */
-  EAttribute getItem_Signature();
+  EAttribute<Item, EList<String>> getItem_Signature();
 
   /**
    * Returns the meta object for the reference list '{@link org.eclipse.emf.test.models.key.Item#getRelatedItems <em>Related Items</em>}'.
@@ -180,7 +181,7 @@ public interface KeyPackage extends EPackage
    * @see #getItem()
    * @generated
    */
-  EReference getItem_RelatedItems();
+  EReference<Item, EList<Item>> getItem_RelatedItems();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.key.Root <em>Root</em>}'.
@@ -190,7 +191,7 @@ public interface KeyPackage extends EPackage
    * @see org.eclipse.emf.test.models.key.Root
    * @generated
    */
-  EClass getRoot();
+  EClass<Root> getRoot();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.emf.test.models.key.Root#getItems <em>Items</em>}'.
@@ -201,7 +202,7 @@ public interface KeyPackage extends EPackage
    * @see #getRoot()
    * @generated
    */
-  EReference getRoot_Items();
+  EReference<Root, EList<Item>> getRoot_Items();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -234,7 +235,7 @@ public interface KeyPackage extends EPackage
      * @see org.eclipse.emf.test.models.key.impl.KeyPackageImpl#getItem()
      * @generated
      */
-    EClass ITEM = eINSTANCE.getItem();
+    EClass<Item> ITEM = eINSTANCE.getItem();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -242,7 +243,7 @@ public interface KeyPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ITEM__NAME = eINSTANCE.getItem_Name();
+    EAttribute<Item, String> ITEM__NAME = eINSTANCE.getItem_Name();
 
     /**
      * The meta object literal for the '<em><b>Signature</b></em>' attribute list feature.
@@ -250,7 +251,7 @@ public interface KeyPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ITEM__SIGNATURE = eINSTANCE.getItem_Signature();
+    EAttribute<Item, EList<String>> ITEM__SIGNATURE = eINSTANCE.getItem_Signature();
 
     /**
      * The meta object literal for the '<em><b>Related Items</b></em>' reference list feature.
@@ -258,7 +259,7 @@ public interface KeyPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ITEM__RELATED_ITEMS = eINSTANCE.getItem_RelatedItems();
+    EReference<Item, EList<Item>> ITEM__RELATED_ITEMS = eINSTANCE.getItem_RelatedItems();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.key.impl.RootImpl <em>Root</em>}' class.
@@ -268,7 +269,7 @@ public interface KeyPackage extends EPackage
      * @see org.eclipse.emf.test.models.key.impl.KeyPackageImpl#getRoot()
      * @generated
      */
-    EClass ROOT = eINSTANCE.getRoot();
+    EClass<Root> ROOT = eINSTANCE.getRoot();
 
     /**
      * The meta object literal for the '<em><b>Items</b></em>' containment reference list feature.
@@ -276,7 +277,7 @@ public interface KeyPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ROOT__ITEMS = eINSTANCE.getRoot_Items();
+    EReference<Root, EList<Item>> ROOT__ITEMS = eINSTANCE.getRoot_Items();
 
   }
 

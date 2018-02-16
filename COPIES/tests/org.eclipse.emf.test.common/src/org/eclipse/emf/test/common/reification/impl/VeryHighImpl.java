@@ -36,7 +36,7 @@ public class VeryHighImpl extends HighImpl implements VeryHigh
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.VERY_HIGH;
   }

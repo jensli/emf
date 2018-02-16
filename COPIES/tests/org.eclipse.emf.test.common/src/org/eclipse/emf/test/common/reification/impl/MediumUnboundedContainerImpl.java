@@ -38,7 +38,7 @@ public class MediumUnboundedContainerImpl extends UnboundedGenericContainerImpl<
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return ReificationPackage.Literals.MEDIUM_UNBOUNDED_CONTAINER;
   }

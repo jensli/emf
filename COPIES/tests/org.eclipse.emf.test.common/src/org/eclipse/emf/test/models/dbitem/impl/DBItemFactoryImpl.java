@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.test.models.dbitem.*;
 import org.eclipse.emf.test.models.dbitem.DBItemFactory;
 import org.eclipse.emf.test.models.dbitem.DBItemPackage;
 import org.eclipse.emf.test.models.dbitem.DbType;
@@ -68,12 +69,13 @@ public class DBItemFactoryImpl extends EFactoryImpl implements DBItemFactory
    * @generated
    */
   @Override
-  public EObject create(EClass eClass)
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
     switch (eClass.getClassifierID())
     {
-      case DBItemPackage.DB_TYPE: return createDbType();
-      case DBItemPackage.DOCUMENT_ROOT: return createDocumentRoot();
+      case DBItemPackage.DB_TYPE: return (T) createDbType();
+      case DBItemPackage.DOCUMENT_ROOT: return (T) createDocumentRoot();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }

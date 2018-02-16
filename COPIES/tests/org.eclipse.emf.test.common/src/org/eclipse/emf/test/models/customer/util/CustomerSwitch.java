@@ -13,6 +13,7 @@ package org.eclipse.emf.test.models.customer.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.eclipse.emf.test.models.customer.*;
 import org.eclipse.emf.test.models.customer.AddressType;
 import org.eclipse.emf.test.models.customer.CanadaAddr;
 import org.eclipse.emf.test.models.customer.CreditInfo;

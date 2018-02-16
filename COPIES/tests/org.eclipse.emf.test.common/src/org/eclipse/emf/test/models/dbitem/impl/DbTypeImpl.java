@@ -95,7 +95,7 @@ public class DbTypeImpl extends EObjectImpl implements DbType
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return DBItemPackage.Literals.DB_TYPE;
   }

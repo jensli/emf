@@ -10,6 +10,7 @@
  */
 package org.eclipse.emf.test.models.ref.impl;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -35,63 +36,63 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass aEClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.A> aEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass bEClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.B> bEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass c1EClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.C1> c1EClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass c2EClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.C2> c2EClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass cEClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.C> cEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass dEClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.D> dEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass eEClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.E> eEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass c4EClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.C4> c4EClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass c3EClass = null;
+  private EClass<org.eclipse.emf.test.models.ref.C3> c3EClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -169,7 +170,7 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getA()
+  public EClass<org.eclipse.emf.test.models.ref.A> getA()
   {
     return aEClass;
   }
@@ -179,9 +180,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getA_B()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.A, org.eclipse.emf.test.models.ref.B> getA_B()
   {
-    return (EReference)aEClass.getEStructuralFeatures().get(0);
+    return (EReference<org.eclipse.emf.test.models.ref.A, org.eclipse.emf.test.models.ref.B>) aEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -189,9 +191,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getA_C2()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.A, org.eclipse.emf.test.models.ref.C2> getA_C2()
   {
-    return (EReference)aEClass.getEStructuralFeatures().get(1);
+    return (EReference<org.eclipse.emf.test.models.ref.A, org.eclipse.emf.test.models.ref.C2>) aEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -199,9 +202,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getA_C()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.A, org.eclipse.emf.test.models.ref.C> getA_C()
   {
-    return (EReference)aEClass.getEStructuralFeatures().get(2);
+    return (EReference<org.eclipse.emf.test.models.ref.A, org.eclipse.emf.test.models.ref.C>) aEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -209,7 +213,7 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getB()
+  public EClass<org.eclipse.emf.test.models.ref.B> getB()
   {
     return bEClass;
   }
@@ -219,9 +223,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getB_A()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.B, org.eclipse.emf.test.models.ref.A> getB_A()
   {
-    return (EReference)bEClass.getEStructuralFeatures().get(0);
+    return (EReference<org.eclipse.emf.test.models.ref.B, org.eclipse.emf.test.models.ref.A>) bEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -229,9 +234,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getB_C2()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.B, org.eclipse.emf.test.models.ref.C2> getB_C2()
   {
-    return (EReference)bEClass.getEStructuralFeatures().get(1);
+    return (EReference<org.eclipse.emf.test.models.ref.B, org.eclipse.emf.test.models.ref.C2>) bEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -239,9 +245,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getB_D()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.B, EList<org.eclipse.emf.test.models.ref.D>> getB_D()
   {
-    return (EReference)bEClass.getEStructuralFeatures().get(2);
+    return (EReference<org.eclipse.emf.test.models.ref.B, EList<org.eclipse.emf.test.models.ref.D>>) bEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -249,7 +256,7 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getC1()
+  public EClass<org.eclipse.emf.test.models.ref.C1> getC1()
   {
     return c1EClass;
   }
@@ -259,9 +266,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC1_A()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.C1, org.eclipse.emf.test.models.ref.A> getC1_A()
   {
-    return (EReference)c1EClass.getEStructuralFeatures().get(0);
+    return (EReference<org.eclipse.emf.test.models.ref.C1, org.eclipse.emf.test.models.ref.A>) c1EClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -269,9 +277,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC1_B()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.C1, EList<org.eclipse.emf.test.models.ref.B>> getC1_B()
   {
-    return (EReference)c1EClass.getEStructuralFeatures().get(1);
+    return (EReference<org.eclipse.emf.test.models.ref.C1, EList<org.eclipse.emf.test.models.ref.B>>) c1EClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -279,7 +288,7 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getC2()
+  public EClass<org.eclipse.emf.test.models.ref.C2> getC2()
   {
     return c2EClass;
   }
@@ -289,9 +298,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC2_B()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.C2, EList<org.eclipse.emf.test.models.ref.B>> getC2_B()
   {
-    return (EReference)c2EClass.getEStructuralFeatures().get(0);
+    return (EReference<org.eclipse.emf.test.models.ref.C2, EList<org.eclipse.emf.test.models.ref.B>>) c2EClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -299,9 +309,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC2_A()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.C2, org.eclipse.emf.test.models.ref.A> getC2_A()
   {
-    return (EReference)c2EClass.getEStructuralFeatures().get(1);
+    return (EReference<org.eclipse.emf.test.models.ref.C2, org.eclipse.emf.test.models.ref.A>) c2EClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -309,7 +320,7 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getC()
+  public EClass<org.eclipse.emf.test.models.ref.C> getC()
   {
     return cEClass;
   }
@@ -319,9 +330,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC_D()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.C, EList<org.eclipse.emf.test.models.ref.D>> getC_D()
   {
-    return (EReference)cEClass.getEStructuralFeatures().get(0);
+    return (EReference<org.eclipse.emf.test.models.ref.C, EList<org.eclipse.emf.test.models.ref.D>>) cEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -329,9 +341,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC_C4()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.C, org.eclipse.emf.test.models.ref.C4> getC_C4()
   {
-    return (EReference)cEClass.getEStructuralFeatures().get(1);
+    return (EReference<org.eclipse.emf.test.models.ref.C, org.eclipse.emf.test.models.ref.C4>) cEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -339,7 +352,7 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getD()
+  public EClass<org.eclipse.emf.test.models.ref.D> getD()
   {
     return dEClass;
   }
@@ -349,9 +362,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getD_C()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.D, org.eclipse.emf.test.models.ref.C> getD_C()
   {
-    return (EReference)dEClass.getEStructuralFeatures().get(0);
+    return (EReference<org.eclipse.emf.test.models.ref.D, org.eclipse.emf.test.models.ref.C>) dEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -359,9 +373,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getD_E()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.D, EList<org.eclipse.emf.test.models.ref.E>> getD_E()
   {
-    return (EReference)dEClass.getEStructuralFeatures().get(1);
+    return (EReference<org.eclipse.emf.test.models.ref.D, EList<org.eclipse.emf.test.models.ref.E>>) dEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -369,9 +384,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getD_C4()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.D, org.eclipse.emf.test.models.ref.C4> getD_C4()
   {
-    return (EReference)dEClass.getEStructuralFeatures().get(2);
+    return (EReference<org.eclipse.emf.test.models.ref.D, org.eclipse.emf.test.models.ref.C4>) dEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -379,7 +395,7 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getE()
+  public EClass<org.eclipse.emf.test.models.ref.E> getE()
   {
     return eEClass;
   }
@@ -389,9 +405,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getE_Name()
+  @SuppressWarnings("unchecked")
+  public EAttribute<org.eclipse.emf.test.models.ref.E, String> getE_Name()
   {
-    return (EAttribute)eEClass.getEStructuralFeatures().get(0);
+    return (EAttribute<org.eclipse.emf.test.models.ref.E, String>) eEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -399,9 +416,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getE_Ids()
+  @SuppressWarnings("unchecked")
+  public EAttribute<org.eclipse.emf.test.models.ref.E, EList<String>> getE_Ids()
   {
-    return (EAttribute)eEClass.getEStructuralFeatures().get(1);
+    return (EAttribute<org.eclipse.emf.test.models.ref.E, EList<String>>) eEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -409,9 +427,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getE_Labels()
+  @SuppressWarnings("unchecked")
+  public EAttribute<org.eclipse.emf.test.models.ref.E, EList<String>> getE_Labels()
   {
-    return (EAttribute)eEClass.getEStructuralFeatures().get(2);
+    return (EAttribute<org.eclipse.emf.test.models.ref.E, EList<String>>) eEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -419,9 +438,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getE_D()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.E, EList<org.eclipse.emf.test.models.ref.D>> getE_D()
   {
-    return (EReference)eEClass.getEStructuralFeatures().get(3);
+    return (EReference<org.eclipse.emf.test.models.ref.E, EList<org.eclipse.emf.test.models.ref.D>>) eEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -429,7 +449,7 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getC4()
+  public EClass<org.eclipse.emf.test.models.ref.C4> getC4()
   {
     return c4EClass;
   }
@@ -439,9 +459,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC4_C()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.C4, org.eclipse.emf.test.models.ref.C> getC4_C()
   {
-    return (EReference)c4EClass.getEStructuralFeatures().get(0);
+    return (EReference<org.eclipse.emf.test.models.ref.C4, org.eclipse.emf.test.models.ref.C>) c4EClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -449,9 +470,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC4_D()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.C4, EList<org.eclipse.emf.test.models.ref.D>> getC4_D()
   {
-    return (EReference)c4EClass.getEStructuralFeatures().get(1);
+    return (EReference<org.eclipse.emf.test.models.ref.C4, EList<org.eclipse.emf.test.models.ref.D>>) c4EClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -459,7 +481,7 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getC3()
+  public EClass<org.eclipse.emf.test.models.ref.C3> getC3()
   {
     return c3EClass;
   }
@@ -469,9 +491,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC3_D()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.C3, EList<org.eclipse.emf.test.models.ref.D>> getC3_D()
   {
-    return (EReference)c3EClass.getEStructuralFeatures().get(0);
+    return (EReference<org.eclipse.emf.test.models.ref.C3, EList<org.eclipse.emf.test.models.ref.D>>) c3EClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -479,9 +502,10 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getC3_C()
+  @SuppressWarnings("unchecked")
+  public EReference<org.eclipse.emf.test.models.ref.C3, org.eclipse.emf.test.models.ref.C> getC3_C()
   {
-    return (EReference)c3EClass.getEStructuralFeatures().get(1);
+    return (EReference<org.eclipse.emf.test.models.ref.C3, org.eclipse.emf.test.models.ref.C>) c3EClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -508,51 +532,84 @@ public class RefPackageImpl extends EPackageImpl implements RefPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   public void createPackageContents()
   {
     if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
-    aEClass = createEClass(A);
+    // CHANGE gen: Add cast
+    aEClass = (EClass<org.eclipse.emf.test.models.ref.A>) createEClass(A);
+    // CHANGE gen: Use raw type
     createEReference(aEClass, A__B);
+    // CHANGE gen: Use raw type
     createEReference(aEClass, A__C2);
+    // CHANGE gen: Use raw type
     createEReference(aEClass, A__C);
 
-    bEClass = createEClass(B);
+    // CHANGE gen: Add cast
+    bEClass = (EClass<org.eclipse.emf.test.models.ref.B>) createEClass(B);
+    // CHANGE gen: Use raw type
     createEReference(bEClass, B__A);
+    // CHANGE gen: Use raw type
     createEReference(bEClass, B__C2);
+    // CHANGE gen: Use raw type
     createEReference(bEClass, B__D);
 
-    c1EClass = createEClass(C1);
+    // CHANGE gen: Add cast
+    c1EClass = (EClass<org.eclipse.emf.test.models.ref.C1>) createEClass(C1);
+    // CHANGE gen: Use raw type
     createEReference(c1EClass, C1__A);
+    // CHANGE gen: Use raw type
     createEReference(c1EClass, C1__B);
 
-    c2EClass = createEClass(C2);
+    // CHANGE gen: Add cast
+    c2EClass = (EClass<org.eclipse.emf.test.models.ref.C2>) createEClass(C2);
+    // CHANGE gen: Use raw type
     createEReference(c2EClass, C2__B);
+    // CHANGE gen: Use raw type
     createEReference(c2EClass, C2__A);
 
-    cEClass = createEClass(C);
+    // CHANGE gen: Add cast
+    cEClass = (EClass<org.eclipse.emf.test.models.ref.C>) createEClass(C);
+    // CHANGE gen: Use raw type
     createEReference(cEClass, C__D);
+    // CHANGE gen: Use raw type
     createEReference(cEClass, C__C4);
 
-    dEClass = createEClass(D);
+    // CHANGE gen: Add cast
+    dEClass = (EClass<org.eclipse.emf.test.models.ref.D>) createEClass(D);
+    // CHANGE gen: Use raw type
     createEReference(dEClass, D__C);
+    // CHANGE gen: Use raw type
     createEReference(dEClass, D__E);
+    // CHANGE gen: Use raw type
     createEReference(dEClass, D__C4);
 
-    eEClass = createEClass(E);
+    // CHANGE gen: Add cast
+    eEClass = (EClass<org.eclipse.emf.test.models.ref.E>) createEClass(E);
+    // CHANGE gen: Use raw type
     createEAttribute(eEClass, E__NAME);
+    // CHANGE gen: Use raw type
     createEAttribute(eEClass, E__IDS);
+    // CHANGE gen: Use raw type
     createEAttribute(eEClass, E__LABELS);
+    // CHANGE gen: Use raw type
     createEReference(eEClass, E__D);
 
-    c4EClass = createEClass(C4);
+    // CHANGE gen: Add cast
+    c4EClass = (EClass<org.eclipse.emf.test.models.ref.C4>) createEClass(C4);
+    // CHANGE gen: Use raw type
     createEReference(c4EClass, C4__C);
+    // CHANGE gen: Use raw type
     createEReference(c4EClass, C4__D);
 
-    c3EClass = createEClass(C3);
+    // CHANGE gen: Add cast
+    c3EClass = (EClass<org.eclipse.emf.test.models.ref.C3>) createEClass(C3);
+    // CHANGE gen: Use raw type
     createEReference(c3EClass, C3__D);
+    // CHANGE gen: Use raw type
     createEReference(c3EClass, C3__C);
   }
 

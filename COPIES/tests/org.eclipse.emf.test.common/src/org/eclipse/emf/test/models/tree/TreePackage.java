@@ -10,6 +10,7 @@
  */
 package org.eclipse.emf.test.models.tree;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -174,7 +175,7 @@ public interface TreePackage extends EPackage
    * @see org.eclipse.emf.test.models.tree.Node
    * @generated
    */
-  EClass getNode();
+  EClass<Node> getNode();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.tree.Node#getName <em>Name</em>}'.
@@ -185,7 +186,7 @@ public interface TreePackage extends EPackage
    * @see #getNode()
    * @generated
    */
-  EAttribute getNode_Name();
+  EAttribute<Node, String> getNode_Name();
 
   /**
    * Returns the meta object for the container reference '{@link org.eclipse.emf.test.models.tree.Node#getParent <em>Parent</em>}'.
@@ -196,7 +197,7 @@ public interface TreePackage extends EPackage
    * @see #getNode()
    * @generated
    */
-  EReference getNode_Parent();
+  EReference<Node, Node> getNode_Parent();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.emf.test.models.tree.Node#getChildren <em>Children</em>}'.
@@ -207,7 +208,7 @@ public interface TreePackage extends EPackage
    * @see #getNode()
    * @generated
    */
-  EReference getNode_Children();
+  EReference<Node, EList<Node>> getNode_Children();
 
   /**
    * Returns the meta object for the reference '{@link org.eclipse.emf.test.models.tree.Node#getData <em>Data</em>}'.
@@ -218,7 +219,7 @@ public interface TreePackage extends EPackage
    * @see #getNode()
    * @generated
    */
-  EReference getNode_Data();
+  EReference<Node, Data> getNode_Data();
 
   /**
    * Returns the meta object for the reference list '{@link org.eclipse.emf.test.models.tree.Node#getRelatedNodes <em>Related Nodes</em>}'.
@@ -229,7 +230,7 @@ public interface TreePackage extends EPackage
    * @see #getNode()
    * @generated
    */
-  EReference getNode_RelatedNodes();
+  EReference<Node, EList<Node>> getNode_RelatedNodes();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.tree.Data <em>Data</em>}'.
@@ -239,7 +240,7 @@ public interface TreePackage extends EPackage
    * @see org.eclipse.emf.test.models.tree.Data
    * @generated
    */
-  EClass getData();
+  EClass<Data> getData();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.tree.Data#getName <em>Name</em>}'.
@@ -250,7 +251,7 @@ public interface TreePackage extends EPackage
    * @see #getData()
    * @generated
    */
-  EAttribute getData_Name();
+  EAttribute<Data, String> getData_Name();
 
   /**
    * Returns the meta object for the reference '{@link org.eclipse.emf.test.models.tree.Data#getNode <em>Node</em>}'.
@@ -261,7 +262,7 @@ public interface TreePackage extends EPackage
    * @see #getData()
    * @generated
    */
-  EReference getData_Node();
+  EReference<Data, Node> getData_Node();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -294,7 +295,7 @@ public interface TreePackage extends EPackage
      * @see org.eclipse.emf.test.models.tree.impl.TreePackageImpl#getNode()
      * @generated
      */
-    EClass NODE = eINSTANCE.getNode();
+    EClass<Node> NODE = eINSTANCE.getNode();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -302,7 +303,7 @@ public interface TreePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NODE__NAME = eINSTANCE.getNode_Name();
+    EAttribute<Node, String> NODE__NAME = eINSTANCE.getNode_Name();
 
     /**
      * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
@@ -310,7 +311,7 @@ public interface TreePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NODE__PARENT = eINSTANCE.getNode_Parent();
+    EReference<Node, Node> NODE__PARENT = eINSTANCE.getNode_Parent();
 
     /**
      * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
@@ -318,7 +319,7 @@ public interface TreePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NODE__CHILDREN = eINSTANCE.getNode_Children();
+    EReference<Node, EList<Node>> NODE__CHILDREN = eINSTANCE.getNode_Children();
 
     /**
      * The meta object literal for the '<em><b>Data</b></em>' reference feature.
@@ -326,7 +327,7 @@ public interface TreePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NODE__DATA = eINSTANCE.getNode_Data();
+    EReference<Node, Data> NODE__DATA = eINSTANCE.getNode_Data();
 
     /**
      * The meta object literal for the '<em><b>Related Nodes</b></em>' reference list feature.
@@ -334,7 +335,7 @@ public interface TreePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NODE__RELATED_NODES = eINSTANCE.getNode_RelatedNodes();
+    EReference<Node, EList<Node>> NODE__RELATED_NODES = eINSTANCE.getNode_RelatedNodes();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.tree.impl.DataImpl <em>Data</em>}' class.
@@ -344,7 +345,7 @@ public interface TreePackage extends EPackage
      * @see org.eclipse.emf.test.models.tree.impl.TreePackageImpl#getData()
      * @generated
      */
-    EClass DATA = eINSTANCE.getData();
+    EClass<Data> DATA = eINSTANCE.getData();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -352,7 +353,7 @@ public interface TreePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DATA__NAME = eINSTANCE.getData_Name();
+    EAttribute<Data, String> DATA__NAME = eINSTANCE.getData_Name();
 
     /**
      * The meta object literal for the '<em><b>Node</b></em>' reference feature.
@@ -360,7 +361,7 @@ public interface TreePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DATA__NODE = eINSTANCE.getData_Node();
+    EReference<Data, Node> DATA__NODE = eINSTANCE.getData_Node();
 
   }
 

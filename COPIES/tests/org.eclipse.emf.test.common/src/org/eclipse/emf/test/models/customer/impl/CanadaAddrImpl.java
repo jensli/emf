@@ -88,7 +88,7 @@ public class CanadaAddrImpl extends AddressTypeImpl implements CanadaAddr
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return CustomerPackage.Literals.CANADA_ADDR;
   }

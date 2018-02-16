@@ -77,7 +77,7 @@ public class PencilTypeImpl extends EObjectImpl implements PencilType
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return DBPricePackage.Literals.PENCIL_TYPE;
   }

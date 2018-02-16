@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 import org.eclipse.emf.ecore.xml.type.util.XMLTypeValidator;
+import org.eclipse.emf.test.models.qname.*;
 import org.eclipse.emf.test.models.qname.DocumentRoot;
 import org.eclipse.emf.test.models.qname.QNamePackage;
 import org.eclipse.emf.test.models.qname.ResourceType;

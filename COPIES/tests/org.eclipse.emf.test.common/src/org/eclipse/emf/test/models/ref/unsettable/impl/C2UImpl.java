@@ -87,7 +87,7 @@ public class C2UImpl extends EObjectImpl implements C2U
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return URefPackage.Literals.C2U;
   }

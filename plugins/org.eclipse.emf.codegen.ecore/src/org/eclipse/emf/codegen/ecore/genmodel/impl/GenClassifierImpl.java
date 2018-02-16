@@ -262,7 +262,7 @@ public abstract class GenClassifierImpl extends GenBaseImpl implements GenClassi
 
   public String getClassifierInstanceName()
   {
-	  // CHANGE gen: Remove type params in name
+	  // CHANGE gen: Use getRawImportedMetaType
     return uncapPrefixedName(getName()) + getRawImportedMetaType();
   }
 
@@ -361,5 +361,4 @@ public abstract class GenClassifierImpl extends GenBaseImpl implements GenClassi
      return (instanceClass == null || EObject.class.isAssignableFrom(instanceClass))
        && !this.getGenModel().isSuppressInterfaces();
   }
-
 }

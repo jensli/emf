@@ -309,7 +309,7 @@ public interface Switch3Package extends EPackage
    * @see org.eclipse.emf.test.models.switch3.EClass4
    * @generated
    */
-  EClass getEClass4();
+  EClass<EClass4> getEClass4();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.switch3.EClass4#getEAttribute8 <em>EAttribute8</em>}'.
@@ -320,7 +320,7 @@ public interface Switch3Package extends EPackage
    * @see #getEClass4()
    * @generated
    */
-  EAttribute getEClass4_EAttribute8();
+  EAttribute<EClass4, String> getEClass4_EAttribute8();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.switch3.EClass4#getEAttribute9 <em>EAttribute9</em>}'.
@@ -331,7 +331,7 @@ public interface Switch3Package extends EPackage
    * @see #getEClass4()
    * @generated
    */
-  EAttribute getEClass4_EAttribute9();
+  EAttribute<EClass4, String> getEClass4_EAttribute9();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.switch3.EClass5 <em>EClass5</em>}'.
@@ -341,7 +341,7 @@ public interface Switch3Package extends EPackage
    * @see org.eclipse.emf.test.models.switch3.EClass5
    * @generated
    */
-  EClass getEClass5();
+  EClass<EClass5> getEClass5();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.switch3.EClass5#getEAttribute10 <em>EAttribute10</em>}'.
@@ -352,7 +352,7 @@ public interface Switch3Package extends EPackage
    * @see #getEClass5()
    * @generated
    */
-  EAttribute getEClass5_EAttribute10();
+  EAttribute<EClass5, String> getEClass5_EAttribute10();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.switch3.EClass5#getEAttribute11 <em>EAttribute11</em>}'.
@@ -363,7 +363,7 @@ public interface Switch3Package extends EPackage
    * @see #getEClass5()
    * @generated
    */
-  EAttribute getEClass5_EAttribute11();
+  EAttribute<EClass5, String> getEClass5_EAttribute11();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -396,7 +396,7 @@ public interface Switch3Package extends EPackage
      * @see org.eclipse.emf.test.models.switch3.impl.Switch3PackageImpl#getEClass4()
      * @generated
      */
-    EClass ECLASS4 = eINSTANCE.getEClass4();
+    EClass<EClass4> ECLASS4 = eINSTANCE.getEClass4();
 
     /**
      * The meta object literal for the '<em><b>EAttribute8</b></em>' attribute feature.
@@ -404,7 +404,7 @@ public interface Switch3Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ECLASS4__EATTRIBUTE8 = eINSTANCE.getEClass4_EAttribute8();
+    EAttribute<EClass4, String> ECLASS4__EATTRIBUTE8 = eINSTANCE.getEClass4_EAttribute8();
 
     /**
      * The meta object literal for the '<em><b>EAttribute9</b></em>' attribute feature.
@@ -412,7 +412,7 @@ public interface Switch3Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ECLASS4__EATTRIBUTE9 = eINSTANCE.getEClass4_EAttribute9();
+    EAttribute<EClass4, String> ECLASS4__EATTRIBUTE9 = eINSTANCE.getEClass4_EAttribute9();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.switch3.impl.EClass5Impl <em>EClass5</em>}' class.
@@ -422,7 +422,7 @@ public interface Switch3Package extends EPackage
      * @see org.eclipse.emf.test.models.switch3.impl.Switch3PackageImpl#getEClass5()
      * @generated
      */
-    EClass ECLASS5 = eINSTANCE.getEClass5();
+    EClass<EClass5> ECLASS5 = eINSTANCE.getEClass5();
 
     /**
      * The meta object literal for the '<em><b>EAttribute10</b></em>' attribute feature.
@@ -430,7 +430,7 @@ public interface Switch3Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ECLASS5__EATTRIBUTE10 = eINSTANCE.getEClass5_EAttribute10();
+    EAttribute<EClass5, String> ECLASS5__EATTRIBUTE10 = eINSTANCE.getEClass5_EAttribute10();
 
     /**
      * The meta object literal for the '<em><b>EAttribute11</b></em>' attribute feature.
@@ -438,7 +438,7 @@ public interface Switch3Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ECLASS5__EATTRIBUTE11 = eINSTANCE.getEClass5_EAttribute11();
+    EAttribute<EClass5, String> ECLASS5__EATTRIBUTE11 = eINSTANCE.getEClass5_EAttribute11();
 
   }
 

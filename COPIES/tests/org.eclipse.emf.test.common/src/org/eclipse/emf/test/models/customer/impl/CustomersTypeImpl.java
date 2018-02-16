@@ -66,7 +66,7 @@ public class CustomersTypeImpl extends EObjectImpl implements CustomersType
    * @generated
    */
   @Override
-  protected EClass eStaticClass()
+  protected EClass<?> eStaticClass()
   {
     return CustomerPackage.Literals.CUSTOMERS_TYPE;
   }

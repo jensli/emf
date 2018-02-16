@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.test.models.ext.*;
 import org.eclipse.emf.test.models.ext.ExtE;
 import org.eclipse.emf.test.models.ext.ExtFactory;
 import org.eclipse.emf.test.models.ext.ExtPackage;
@@ -68,12 +69,13 @@ public class ExtFactoryImpl extends EFactoryImpl implements ExtFactory
    * @generated
    */
   @Override
-  public EObject create(EClass eClass)
+  @SuppressWarnings("unchecked")
+  public <T extends EObject> T create(EClass<T> eClass)
   {
     switch (eClass.getClassifierID())
     {
-      case ExtPackage.EXT_E: return createExtE();
-      case ExtPackage.F: return createF();
+      case ExtPackage.EXT_E: return (T) createExtE();
+      case ExtPackage.F: return (T) createF();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }

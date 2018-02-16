@@ -2084,7 +2084,7 @@ public class BenchmarkHarness
   public static class EObjectEGet extends Benchmark
   {
     protected EObject eObject = EcorePackage.eINSTANCE;
-    protected EStructuralFeature[] choose = { EcorePackage.Literals.EPACKAGE__NS_PREFIX, EcorePackage.Literals.ENAMED_ELEMENT__NAME, EcorePackage.Literals.EPACKAGE__NS_PREFIX, EcorePackage.Literals.EPACKAGE__NS_URI };
+    protected EStructuralFeature<?, ?>[] choose = { EcorePackage.Literals.EPACKAGE__NS_PREFIX, EcorePackage.Literals.ENAMED_ELEMENT__NAME, EcorePackage.Literals.EPACKAGE__NS_PREFIX, EcorePackage.Literals.EPACKAGE__NS_URI };
 
     public EObjectEGet()
     {

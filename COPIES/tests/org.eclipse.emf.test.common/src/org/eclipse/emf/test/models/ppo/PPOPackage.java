@@ -10,6 +10,8 @@
  */
 package org.eclipse.emf.test.models.ppo;
 
+import java.util.Date;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -304,7 +306,7 @@ public interface PPOPackage extends EPackage
    * @see org.eclipse.emf.test.models.ppo.Item
    * @generated
    */
-  EClass getItem();
+  EClass<Item> getItem();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ppo.Item#getProductName <em>Product Name</em>}'.
@@ -315,7 +317,7 @@ public interface PPOPackage extends EPackage
    * @see #getItem()
    * @generated
    */
-  EAttribute getItem_ProductName();
+  EAttribute<Item, String> getItem_ProductName();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ppo.Item#getQuantity <em>Quantity</em>}'.
@@ -326,7 +328,7 @@ public interface PPOPackage extends EPackage
    * @see #getItem()
    * @generated
    */
-  EAttribute getItem_Quantity();
+  EAttribute<Item, Integer> getItem_Quantity();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ppo.Item#getUSPrice <em>US Price</em>}'.
@@ -337,7 +339,7 @@ public interface PPOPackage extends EPackage
    * @see #getItem()
    * @generated
    */
-  EAttribute getItem_USPrice();
+  EAttribute<Item, Integer> getItem_USPrice();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ppo.Item#getComment <em>Comment</em>}'.
@@ -348,7 +350,7 @@ public interface PPOPackage extends EPackage
    * @see #getItem()
    * @generated
    */
-  EAttribute getItem_Comment();
+  EAttribute<Item, String> getItem_Comment();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ppo.Item#getShipDate <em>Ship Date</em>}'.
@@ -359,7 +361,7 @@ public interface PPOPackage extends EPackage
    * @see #getItem()
    * @generated
    */
-  EAttribute getItem_ShipDate();
+  EAttribute<Item, Date> getItem_ShipDate();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ppo.Item#getPartNum <em>Part Num</em>}'.
@@ -370,7 +372,7 @@ public interface PPOPackage extends EPackage
    * @see #getItem()
    * @generated
    */
-  EAttribute getItem_PartNum();
+  EAttribute<Item, String> getItem_PartNum();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ppo.USAddress <em>US Address</em>}'.
@@ -380,7 +382,7 @@ public interface PPOPackage extends EPackage
    * @see org.eclipse.emf.test.models.ppo.USAddress
    * @generated
    */
-  EClass getUSAddress();
+  EClass<USAddress> getUSAddress();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ppo.USAddress#getName <em>Name</em>}'.
@@ -391,7 +393,7 @@ public interface PPOPackage extends EPackage
    * @see #getUSAddress()
    * @generated
    */
-  EAttribute getUSAddress_Name();
+  EAttribute<USAddress, String> getUSAddress_Name();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ppo.USAddress#getStreet <em>Street</em>}'.
@@ -402,7 +404,7 @@ public interface PPOPackage extends EPackage
    * @see #getUSAddress()
    * @generated
    */
-  EAttribute getUSAddress_Street();
+  EAttribute<USAddress, String> getUSAddress_Street();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ppo.USAddress#getCity <em>City</em>}'.
@@ -413,7 +415,7 @@ public interface PPOPackage extends EPackage
    * @see #getUSAddress()
    * @generated
    */
-  EAttribute getUSAddress_City();
+  EAttribute<USAddress, String> getUSAddress_City();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ppo.USAddress#getState <em>State</em>}'.
@@ -424,7 +426,7 @@ public interface PPOPackage extends EPackage
    * @see #getUSAddress()
    * @generated
    */
-  EAttribute getUSAddress_State();
+  EAttribute<USAddress, String> getUSAddress_State();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ppo.USAddress#getZip <em>Zip</em>}'.
@@ -435,7 +437,7 @@ public interface PPOPackage extends EPackage
    * @see #getUSAddress()
    * @generated
    */
-  EAttribute getUSAddress_Zip();
+  EAttribute<USAddress, Integer> getUSAddress_Zip();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ppo.USAddress#getCountry <em>Country</em>}'.
@@ -446,7 +448,7 @@ public interface PPOPackage extends EPackage
    * @see #getUSAddress()
    * @generated
    */
-  EAttribute getUSAddress_Country();
+  EAttribute<USAddress, String> getUSAddress_Country();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.emf.test.models.ppo.PurchaseOrder <em>Purchase Order</em>}'.
@@ -456,7 +458,7 @@ public interface PPOPackage extends EPackage
    * @see org.eclipse.emf.test.models.ppo.PurchaseOrder
    * @generated
    */
-  EClass getPurchaseOrder();
+  EClass<PurchaseOrder> getPurchaseOrder();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.emf.test.models.ppo.PurchaseOrder#getItems <em>Items</em>}'.
@@ -467,7 +469,7 @@ public interface PPOPackage extends EPackage
    * @see #getPurchaseOrder()
    * @generated
    */
-  EReference getPurchaseOrder_Items();
+  EReference<PurchaseOrder, EList<Item>> getPurchaseOrder_Items();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ppo.PurchaseOrder#getComment <em>Comment</em>}'.
@@ -478,7 +480,7 @@ public interface PPOPackage extends EPackage
    * @see #getPurchaseOrder()
    * @generated
    */
-  EAttribute getPurchaseOrder_Comment();
+  EAttribute<PurchaseOrder, String> getPurchaseOrder_Comment();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.emf.test.models.ppo.PurchaseOrder#getOrderDate <em>Order Date</em>}'.
@@ -489,7 +491,7 @@ public interface PPOPackage extends EPackage
    * @see #getPurchaseOrder()
    * @generated
    */
-  EAttribute getPurchaseOrder_OrderDate();
+  EAttribute<PurchaseOrder, Date> getPurchaseOrder_OrderDate();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.ppo.PurchaseOrder#getBillTo <em>Bill To</em>}'.
@@ -500,7 +502,7 @@ public interface PPOPackage extends EPackage
    * @see #getPurchaseOrder()
    * @generated
    */
-  EReference getPurchaseOrder_BillTo();
+  EReference<PurchaseOrder, USAddress> getPurchaseOrder_BillTo();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.emf.test.models.ppo.PurchaseOrder#getShipTo <em>Ship To</em>}'.
@@ -511,7 +513,7 @@ public interface PPOPackage extends EPackage
    * @see #getPurchaseOrder()
    * @generated
    */
-  EReference getPurchaseOrder_ShipTo();
+  EReference<PurchaseOrder, USAddress> getPurchaseOrder_ShipTo();
 
   /**
    * Returns the meta object for data type '{@link java.lang.String <em>SKU</em>}'.
@@ -522,7 +524,7 @@ public interface PPOPackage extends EPackage
    * @model instanceClass="java.lang.String"
    * @generated
    */
-  EDataType getSKU();
+  EDataType<String> getSKU();
 
   /**
    * Returns the meta object for data type '{@link java.util.Date <em>Date</em>}'.
@@ -533,7 +535,7 @@ public interface PPOPackage extends EPackage
    * @model instanceClass="java.util.Date"
    * @generated
    */
-  EDataType getDate();
+  EDataType<Date> getDate();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -566,7 +568,7 @@ public interface PPOPackage extends EPackage
      * @see org.eclipse.emf.test.models.ppo.impl.PPOPackageImpl#getItem()
      * @generated
      */
-    EClass ITEM = eINSTANCE.getItem();
+    EClass<Item> ITEM = eINSTANCE.getItem();
 
     /**
      * The meta object literal for the '<em><b>Product Name</b></em>' attribute feature.
@@ -574,7 +576,7 @@ public interface PPOPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ITEM__PRODUCT_NAME = eINSTANCE.getItem_ProductName();
+    EAttribute<Item, String> ITEM__PRODUCT_NAME = eINSTANCE.getItem_ProductName();
 
     /**
      * The meta object literal for the '<em><b>Quantity</b></em>' attribute feature.
@@ -582,7 +584,7 @@ public interface PPOPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ITEM__QUANTITY = eINSTANCE.getItem_Quantity();
+    EAttribute<Item, Integer> ITEM__QUANTITY = eINSTANCE.getItem_Quantity();
 
     /**
      * The meta object literal for the '<em><b>US Price</b></em>' attribute feature.
@@ -590,7 +592,7 @@ public interface PPOPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ITEM__US_PRICE = eINSTANCE.getItem_USPrice();
+    EAttribute<Item, Integer> ITEM__US_PRICE = eINSTANCE.getItem_USPrice();
 
     /**
      * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
@@ -598,7 +600,7 @@ public interface PPOPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ITEM__COMMENT = eINSTANCE.getItem_Comment();
+    EAttribute<Item, String> ITEM__COMMENT = eINSTANCE.getItem_Comment();
 
     /**
      * The meta object literal for the '<em><b>Ship Date</b></em>' attribute feature.
@@ -606,7 +608,7 @@ public interface PPOPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ITEM__SHIP_DATE = eINSTANCE.getItem_ShipDate();
+    EAttribute<Item, Date> ITEM__SHIP_DATE = eINSTANCE.getItem_ShipDate();
 
     /**
      * The meta object literal for the '<em><b>Part Num</b></em>' attribute feature.
@@ -614,7 +616,7 @@ public interface PPOPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ITEM__PART_NUM = eINSTANCE.getItem_PartNum();
+    EAttribute<Item, String> ITEM__PART_NUM = eINSTANCE.getItem_PartNum();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ppo.impl.USAddressImpl <em>US Address</em>}' class.
@@ -624,7 +626,7 @@ public interface PPOPackage extends EPackage
      * @see org.eclipse.emf.test.models.ppo.impl.PPOPackageImpl#getUSAddress()
      * @generated
      */
-    EClass US_ADDRESS = eINSTANCE.getUSAddress();
+    EClass<USAddress> US_ADDRESS = eINSTANCE.getUSAddress();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -632,7 +634,7 @@ public interface PPOPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute US_ADDRESS__NAME = eINSTANCE.getUSAddress_Name();
+    EAttribute<USAddress, String> US_ADDRESS__NAME = eINSTANCE.getUSAddress_Name();
 
     /**
      * The meta object literal for the '<em><b>Street</b></em>' attribute feature.
@@ -640,7 +642,7 @@ public interface PPOPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute US_ADDRESS__STREET = eINSTANCE.getUSAddress_Street();
+    EAttribute<USAddress, String> US_ADDRESS__STREET = eINSTANCE.getUSAddress_Street();
 
     /**
      * The meta object literal for the '<em><b>City</b></em>' attribute feature.
@@ -648,7 +650,7 @@ public interface PPOPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute US_ADDRESS__CITY = eINSTANCE.getUSAddress_City();
+    EAttribute<USAddress, String> US_ADDRESS__CITY = eINSTANCE.getUSAddress_City();
 
     /**
      * The meta object literal for the '<em><b>State</b></em>' attribute feature.
@@ -656,7 +658,7 @@ public interface PPOPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute US_ADDRESS__STATE = eINSTANCE.getUSAddress_State();
+    EAttribute<USAddress, String> US_ADDRESS__STATE = eINSTANCE.getUSAddress_State();
 
     /**
      * The meta object literal for the '<em><b>Zip</b></em>' attribute feature.
@@ -664,7 +666,7 @@ public interface PPOPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute US_ADDRESS__ZIP = eINSTANCE.getUSAddress_Zip();
+    EAttribute<USAddress, Integer> US_ADDRESS__ZIP = eINSTANCE.getUSAddress_Zip();
 
     /**
      * The meta object literal for the '<em><b>Country</b></em>' attribute feature.
@@ -672,7 +674,7 @@ public interface PPOPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute US_ADDRESS__COUNTRY = eINSTANCE.getUSAddress_Country();
+    EAttribute<USAddress, String> US_ADDRESS__COUNTRY = eINSTANCE.getUSAddress_Country();
 
     /**
      * The meta object literal for the '{@link org.eclipse.emf.test.models.ppo.impl.PurchaseOrderImpl <em>Purchase Order</em>}' class.
@@ -682,7 +684,7 @@ public interface PPOPackage extends EPackage
      * @see org.eclipse.emf.test.models.ppo.impl.PPOPackageImpl#getPurchaseOrder()
      * @generated
      */
-    EClass PURCHASE_ORDER = eINSTANCE.getPurchaseOrder();
+    EClass<PurchaseOrder> PURCHASE_ORDER = eINSTANCE.getPurchaseOrder();
 
     /**
      * The meta object literal for the '<em><b>Items</b></em>' containment reference list feature.
@@ -690,7 +692,7 @@ public interface PPOPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PURCHASE_ORDER__ITEMS = eINSTANCE.getPurchaseOrder_Items();
+    EReference<PurchaseOrder, EList<Item>> PURCHASE_ORDER__ITEMS = eINSTANCE.getPurchaseOrder_Items();
 
     /**
      * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
@@ -698,7 +700,7 @@ public interface PPOPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PURCHASE_ORDER__COMMENT = eINSTANCE.getPurchaseOrder_Comment();
+    EAttribute<PurchaseOrder, String> PURCHASE_ORDER__COMMENT = eINSTANCE.getPurchaseOrder_Comment();
 
     /**
      * The meta object literal for the '<em><b>Order Date</b></em>' attribute feature.
@@ -706,7 +708,7 @@ public interface PPOPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PURCHASE_ORDER__ORDER_DATE = eINSTANCE.getPurchaseOrder_OrderDate();
+    EAttribute<PurchaseOrder, Date> PURCHASE_ORDER__ORDER_DATE = eINSTANCE.getPurchaseOrder_OrderDate();
 
     /**
      * The meta object literal for the '<em><b>Bill To</b></em>' containment reference feature.
@@ -714,7 +716,7 @@ public interface PPOPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PURCHASE_ORDER__BILL_TO = eINSTANCE.getPurchaseOrder_BillTo();
+    EReference<PurchaseOrder, USAddress> PURCHASE_ORDER__BILL_TO = eINSTANCE.getPurchaseOrder_BillTo();
 
     /**
      * The meta object literal for the '<em><b>Ship To</b></em>' containment reference feature.
@@ -722,7 +724,7 @@ public interface PPOPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PURCHASE_ORDER__SHIP_TO = eINSTANCE.getPurchaseOrder_ShipTo();
+    EReference<PurchaseOrder, USAddress> PURCHASE_ORDER__SHIP_TO = eINSTANCE.getPurchaseOrder_ShipTo();
 
     /**
      * The meta object literal for the '<em>SKU</em>' data type.
@@ -732,7 +734,7 @@ public interface PPOPackage extends EPackage
      * @see org.eclipse.emf.test.models.ppo.impl.PPOPackageImpl#getSKU()
      * @generated
      */
-    EDataType SKU = eINSTANCE.getSKU();
+    EDataType<String> SKU = eINSTANCE.getSKU();
 
     /**
      * The meta object literal for the '<em>Date</em>' data type.
@@ -742,7 +744,7 @@ public interface PPOPackage extends EPackage
      * @see org.eclipse.emf.test.models.ppo.impl.PPOPackageImpl#getDate()
      * @generated
      */
-    EDataType DATE = eINSTANCE.getDate();
+    EDataType<Date> DATE = eINSTANCE.getDate();
 
   }
 
